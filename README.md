@@ -31,3 +31,7 @@ To limit the risk brought by SD card corruption (a known risk with Pi3) I use a 
 **The services I use**
 
 **Automations**
+
+**Notes**
+
+* These are (automatically) modified versions of my actual configurations
