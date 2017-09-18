@@ -49,3 +49,7 @@ To limit the risk brought by SD card corruption (a known risk with Pi3) I use a 
 
 * These are (automatically) modified versions of my actual configurations
 * My primary goal is to minimise human actions, and where that isn't possible streamline those human actions
+
+**Useful links**
+
+* Problems with Z-Wave delays and inconsistencies? Try [this script](https://hastebin.com/igujenogud.coffeescript) in the dev-states section and you'll see if you've problem devices - shown by an RTT value of 1,000 or more, and retries significantly more than other devices
