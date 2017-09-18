@@ -1,0 +1,11 @@
+- platform: uk_transport
+  app_id: !secret transport_app_id
+  app_key: !secret transport_app_key
+  scan_interval: 500
+  queries:
+    - mode: train
+      origin: abc
+      destination: xyz
+    - mode: train
+      origin: xyz
+      destination: abc

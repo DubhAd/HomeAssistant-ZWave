@@ -1,0 +1,3 @@
+- name: Lounge lights on
+  entities:
+    group.living_room_lights: on

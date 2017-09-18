@@ -1,0 +1,6 @@
+- platform: yeelight
+  devices:
+    192.168.0.150:
+      name: Master Bedroom bedhead
+      transition: 1000
+      use_music_mode: True #(defaults to False)

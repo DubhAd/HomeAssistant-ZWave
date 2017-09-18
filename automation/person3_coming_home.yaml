@@ -1,0 +1,21 @@
+alias: 'person3 coming home'
+initial_state: 'on'
+trigger:
+  platform: numeric_state
+  entity_id: proximity.person3_home
+  below: 701
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: device_tracker.person3_mobile
+      state: 'not_home'
+    - condition: template
+      value_template: '{{ states.proximity.person3_home.attributes.dir_of_travel == "towards"  }}'
+    - condition: state
+      entity_id: device_tracker.person2_mobile
+      state: home
+action:
+  service: notify.person2
+  data:
+    message: "person3's nearly home"

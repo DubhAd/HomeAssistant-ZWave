@@ -1,0 +1,5 @@
+- name: Bedtime all off
+  entities:
+    group.living_room_lights: off
+    group.outside_lights: off
+    group.tv: off

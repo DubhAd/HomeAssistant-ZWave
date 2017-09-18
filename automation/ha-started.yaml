@@ -1,0 +1,10 @@
+alias: 'HA started'
+initial_state: 'on'
+trigger:
+  platform: homeassistant
+  # Event can also be 'shutdown'
+  event: start
+action:
+  - service: notify.slack_notify
+    data:
+      message: "Home Assistant has started"

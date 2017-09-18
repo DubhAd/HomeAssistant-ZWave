@@ -1,0 +1,11 @@
+initial_state: 'on'
+alias: 'Battery garage door car'
+trigger:
+  platform: numeric_state
+  entity_id: zwave.garage_car
+  value_template: "{{ states.zwave.garage_car.attributes.battery_level }}"
+  below: 30
+action:
+  service: notify.person2
+  data:
+    message: "The garage door sensor for the car is at {{ states.zwave.garage_car.attributes.battery_level }}% battery, it uses a CR123A lithium battery"

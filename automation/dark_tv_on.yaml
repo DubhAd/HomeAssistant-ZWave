@@ -1,0 +1,37 @@
+initial_state: 'on'
+alias: 'Dark TV on'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 15
+  - platform: state
+    entity_id: media_player.samsung_tv_remote
+    from: 'off'
+    to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: switch.tv_light_switch
+      state: 'off'
+    - condition: state
+      entity_id: media_player.samsung_tv_remote
+      state: 'on'
+    - condition: numeric_state
+      entity_id: sensor.living_room_multi_luminance
+      below: 15
+    - condition: state
+      entity_id: group.my_adults
+      state: 'home'
+    - condition: time
+      after: '04:00:00'
+    - condition: time
+      before: '23:00:00'
+action:
+  - service: homeassistant.turn_off
+    entity_id: automation.lounge_in_daylight_2
+  - service: homeassistant.turn_on
+    entity_id: switch.tv_light_switch
+  - delay: 00:00:10
+  - service: homeassistant.turn_on
+    entity_id: automation.lounge_in_daylight_2

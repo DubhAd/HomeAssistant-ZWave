@@ -1,0 +1,16 @@
+alias: 'Bedhead light dim late'
+initial_state: 'on'
+trigger:
+  platform: time
+  at: '23:00:00'
+condition:
+  condition: state
+  entity_id: light.master_bedroom_bedhead
+  state: 'on'
+action:
+  service: light.turn_on
+  data:
+    entity_id: light.master_bedroom_bedhead
+    brightness: 10
+    color_temp: 500
+    transition: 30

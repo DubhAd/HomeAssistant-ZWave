@@ -1,0 +1,12 @@
+- platform: template
+  sensors: 
+    living_room_motion:
+      device_class: motion
+      entity_id: sensor.living_room_multi_burglar
+      friendly_name: 'Living room motion'
+      value_template: >- 
+        {%- if is_state("sensor.living_room_multi_burglar", "8") -%}
+        true
+        {%- else -%}
+        false
+        {%- endif -%}

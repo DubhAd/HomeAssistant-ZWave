@@ -1,0 +1,4 @@
+- name: All lights off
+  entities:
+    group.living_room_lights: off
+    group.garden_lights: off

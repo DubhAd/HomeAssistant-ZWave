@@ -1,0 +1,21 @@
+initial_state: 'on'
+alias: 'Train status'
+trigger:
+  platform: time
+  at: '07:10:00'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_boolean.notify_train_status_work
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person2_is_awake
+      state: 'on'
+action:
+  - service: notify.person2
+    data_template: 
+      message: "{{ states.sensor.trains_to_work.state }}"
+  - service: notify.lm_notify
+    data_template: 
+      message: "{{ states.sensor.trains_to_work.state }}"

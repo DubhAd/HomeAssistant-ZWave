@@ -1,0 +1,4 @@
+- platform: command_line
+  command: "/srv/homeassistant/homeassistant_venv/bin/hass --version"
+  name: 'HASS Installed'
+  icon: mdi:folder-download

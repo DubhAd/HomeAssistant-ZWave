@@ -1,0 +1,12 @@
+initial_state: 'on'
+alias: 'person2 home'
+trigger:
+  platform: state
+  entity_id: group.person_person2
+  from: 'not_home'
+  to: 'home'
+action:
+  - service: homeassistant.turn_on
+    entity_id: automation.person2_coming_home
+  - service: homeassistant.turn_on
+    entity_id: automation.person2_at_station

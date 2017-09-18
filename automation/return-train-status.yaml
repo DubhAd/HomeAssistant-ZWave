@@ -1,0 +1,19 @@
+initial_state: 'on'
+alias: 'Return train status'
+trigger:
+  platform: time
+  at: '16:35:00'
+condition:
+  condition: and
+  conditions: 
+    - condition: zone
+      zone: zone.work
+      entity_id: device_tracker.person2_mobile
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+action:
+  service: notify.person2
+  data_template: 
+      message: "{{ states.sensor.trains_from_work.state }}"
+

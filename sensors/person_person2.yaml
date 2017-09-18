@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    person2_travel:
+      friendly_name: "person2's location"
+      value_template: '{% if is_state("device_tracker.person2_mobile", "not_home") -%} {{ states.sensor.person2s_time_to_home.attributes.duration }} to home{%- else -%} At {{ states("device_tracker.person2_mobile") }} {%- endif %}'

@@ -1,0 +1,18 @@
+alias: 'Bedhead light dim sunset off'
+initial_state: 'on'
+trigger:
+  platform: sun
+  event: sunset
+condition:
+  condition: state
+  entity_id: light.master_bedroom_bedhead
+  state: 'off'
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.master_bedroom_bedhead
+      brightness: 255
+      color_temp: 347
+  - service: light.turn_off
+    data:
+      entity_id: light.master_bedroom_bedhead

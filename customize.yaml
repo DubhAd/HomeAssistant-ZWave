@@ -1,0 +1,274 @@
+scene.bedtime_all_off:
+  icon: mdi:hotel
+scene.all_lights_off:
+  icon: mdi:lightbulb-outline
+scene.lounge_lights_off:
+  icon: mdi:lightbulb-outline
+scene.lounge_lights_on:
+  icon: mdi:lightbulb
+sensor.hass_installed:
+  icon: mdi:folder-download
+sensor.current_ha_version:
+  icon: mdi:github-circle
+sensor.person1s_time_to_home:
+  entity_picture: /local/person1Thumb.jpg
+  friendly_name: "person1's travel time to home"
+sensor.person2s_time_to_home:
+  entity_picture: /local/person2Thumb.jpg
+  friendly_name: "person2's travel time to home"
+sensor.person3s_time_to_home:
+  entity_picture: /local/person3Thumb.jpg
+  friendly_name: "person3's travel time to home"
+sensor.person2_travel:
+  entity_picture: /local/person2Thumb.jpg
+  friendly_name: "person2"
+sensor.person3_travel:
+  entity_picture: /local/person3Thumb.jpg
+  friendly_name: "person3"
+sensor.person1_travel:
+  entity_picture: /local/person1Thumb.jpg
+  friendly_name: "person1"
+input_slider.garden_time:
+  icon: mdi:timer
+input_slider.door_delay:
+  icon: mdi:clock-fast
+calendar.person3:
+  icon: mdi:calendar
+calendar.birthdays_and_anniversaries:
+  icon: mdi:calendar-check
+calendar.person1:
+  icon: mdi:calendar
+calendar.person2:
+  icon: mdi:calendar
+calendar.person2_family_tripit:
+  icon: mdi:calendar-clock
+calendar.person2_work:
+  icon: mdi:calendar-multiple
+switch.table_light_switch:
+  friendly_name: Table light
+  icon: mdi:spotlight-beam
+switch.cabinet_light_switch:
+  friendly_name: cabinet light
+  icon: mdi:lamp
+switch.tv_light_switch:
+  friendly_name: TV light
+  icon: mdi:television
+switch.number_sign_switch:
+  friendly_name: House number
+  icon: mdi:home-variant
+switch.garden_lights_switch:
+  friendly_name: Garden lights
+  icon: mdi:flower
+sensor.dark_sky_apparent_temperature:
+  friendly_name: Apparent temperature
+sensor.dark_sky_temperature:
+  friendly_name: Temperature
+sensor.dark_sky_wind_speed:
+  friendly_name: Wind speed
+sensor.dark_sky_hourly_summary:
+  friendly_name: Hourly summary
+sensor.dark_sky_precip:
+  friendly_name: Precipitation
+sensor.dark_sky_precip_intensity:
+  friendly_name: Precipitation intensity
+sensor.dark_sky_precip_probability:
+  friendly_name: Precipitation probability
+sensor.dark_sky_summary:
+  friendly_name: Summary
+binary_sensor.utility_door_exterior_sensor:
+  icon: mdi:glassdoor
+  friendly_name: Utility room door
+  sensor_class: opening
+sensor.utility_door:
+  icon: mdi:glassdoor
+  friendly_name: Utility room door
+  sensor_class: opening
+binary_sensor.garage_door_bike_sensor:
+  friendly_name: Garage door, left
+  sensor_class: opening
+  icon: mdi:bike
+binary_sensor.garage_car_sensor:
+  friendly_name: Garage door, car
+  sensor_class: opening
+  icon: mdi:car
+sensor.garage_door_l:
+  friendly_name: Garage door, left
+  sensor_class: opening
+  icon: mdi:bike
+sensor.garage_door_r:
+  friendly_name: Garage door, car
+  sensor_class: opening
+  icon: mdi:car
+sensor.office_multi_luminance:
+  friendly_name: "Office light level"
+  icon: mdi:white-balance-sunny
+sensor.office_multi_relative_humidity:
+  friendly_name: "Office humidity"
+  icon: mdi:water-percent
+sensor.office_multi_temperature:
+  friendly_name: "Office temperature"
+  icon: mdi:thermometer
+sensor.office_multi_burglar:
+  friendly_name: "Office motion sensor"
+  icon: mdi:account
+sensor.office_motion:
+  friendly_name: "Office motion sensor"
+  sensor_class: motion
+  icon: mdi:account
+binary_sensor.office_multi_sensor:
+  friendly_name: "Office motion sensor"
+  sensor_class: motion
+  icon: mdi:account
+group.my_scenes:
+  order: 1
+group.my_people:
+  order: 2
+group.living_room:
+  order: 3
+group.outside:
+  order: 4
+group.my_weather:
+  order: 5
+device_tracker.tv_living_room:
+  friendly_name: "TV in the lounge"
+  icon: mdi:television
+media_player.samsung_tv_remote:
+  friendly_name: "TV in the lounge"
+  icon: mdi:television
+media_player.living_room_tv:
+  friendly_name: "Chromecast in the lounge"
+  icon: mdi:google-chrome
+media_player.living_room:
+  friendly_name: "Sonos in the lounge"
+  icon: mdi:speaker
+media_player.family_room:
+  friendly_name: "Sonos in the family room"
+  icon: mdi:speaker
+media_player.office:
+  friendly_name: "Sonos in the office"
+  icon: mdi:speaker
+device_tracker.livingroom_chromecast:
+  friendly_name: "Chromecast in the lounge"
+  icon: mdi:google-chrome
+device_tracker.family_tv:
+  friendly_name: "TV in the family room"
+  icon: mdi:television
+zwave.cabinet_light:
+  friendly_name: "cabinet light"
+zwave.garden_lights:
+  friendly_name: "Garden lights"
+zwave.nodon_crc3100_octan_remote:
+  friendly_name: "Remote"
+zwave.number_sign:
+  friendly_name: "Number sign"
+zwave.office_multi:
+  friendly_name: "Office sensor"
+zwave.utility_door_exterior:
+  friendly_name: "Utility door strip"
+zwave.table_light:
+  friendly_name: "Table light"
+zwave.tv_light:
+  friendly_name: "TV light"
+zwave.garage_door_bike:
+  friendly_name: "Garage door, bike"
+zwave.garage_car:
+  friendly_name: "Garage door, car"
+zwave.spare_socket:
+  friendly_name: "Spare socket"
+  icon: mdi:power
+switch.spare_socket_switch:
+  friendly_name: "Spare socket"
+  icon: mdi:power
+zwave.zwaveme_razberry_controller_2016_zwave:
+  friendly_name: "Razberry controller"
+  icon: mdi:raspberrypi
+binary_sensor.workday_sensor:
+  icon: mdi:calendar-clock
+group.person_person2:
+  entity_picture: /local/person2Thumb.jpg
+device_tracker.person2_mobile_bt:
+  entity_picture: /local/person2Thumb.jpg
+group.person_person3:
+  entity_picture: /local/person3Thumb.jpg
+device_tracker.person3_mobile_bt:
+  entity_picture: /local/person3Thumb.jpg
+  friendly_name: person3 BT
+binary_sensor.living_room_motion:
+  icon: mdi:account-multiple
+sensor.living_room_multi_luminance:
+  friendly_name: 'Lounge Light level'
+  icon: mdi:white-balance-sunny
+sensor.living_room_multi_temperature:
+  friendly_name: 'Lounge Temperature'
+zwave.living_room_multi:
+  friendly_name: "Living room multi-sensor"
+device_tracker.person1_headphones:
+  friendly_name: "person1's headphones"
+  icon: mdi:headphones
+device_tracker.laptop:
+  friendly_name: "person2's laptop"
+  icon: mdi:laptop-windows
+device_tracker.person2s_tablet_bt:
+  friendly_name: "person2's tablet (BT)"
+  icon: mdi:tablet-android
+device_tracker.person2_tablet:
+  icon: mdi:tablet-android
+device_tracker.person1_tablet:
+  icon: mdi:tablet-android
+device_tracker.person3_mobile_bt:
+  entity_picture: /local/person1Thumb.jpg
+  friendly_name: "person1's mobile (BT)"
+group.person_person1:
+  entity_picture: /local/person1Thumb.jpg
+device_tracker.timetrveller:
+  entity_picture: /local/person2Work.jpg
+group.person_person2_work:
+  entity_picture: /local/person2Work.jpg
+sensor.next_train_xyz_estimated:
+  icon: mdi:clock-fast
+sensor.next_train_xyz_scheduled:
+  icon: mdi:clock
+sensor.second_train_xyz_estimated:
+  icon: mdi:clock-fast
+sensor.second_train_xyz_scheduled:
+  icon: mdi:clock
+sensor.third_train_xyz_estimated:
+  icon: mdi:clock-fast
+sensor.third_train_xyz_scheduled:
+  icon: mdi:clock
+sensor.next_train_abc_estimated:
+  icon: mdi:clock-fast
+sensor.next_train_abc_scheduled:
+  icon: mdi:clock
+sensor.second_train_abc_estimated:
+  icon: mdi:clock-fast
+sensor.second_train_abc_scheduled:
+  icon: mdi:clock
+sensor.third_train_abc_estimated:
+  icon: mdi:clock-fast
+sensor.third_train_abc_scheduled:
+  icon: mdi:clock
+binary_sensor.trains_to_abc_ontime:
+  icon: mdi:train
+binary_sensor.trains_to_xyz_ontime:
+  icon: mdi:train
+media_player.plex_web_chrome_2:
+  friendly_name: "Plex App"
+media_player.laptop:
+  friendly_name: "Plex Home Theatre"
+sensor.met_office_probability_of_precipitation:
+  icon: mdi:water-percent
+sensor.met_office_humidity:
+  icon: mdi:water-percent
+sensor.met_office_wind_direction:
+  icon: mdi:weather-windy
+sensor.met_office_wind_gust:
+  icon: mdi:weather-windy
+sensor.met_office_wind_speed:
+  icon: mdi:weather-windy
+sensor.met_office_uv:
+  icon: mdi:sunglasses
+sensor.met_office_visibility:
+  icon: mdi:weather-partlycloudy
+binary_sensor.garden_lights_left_on:
+  icon: mdi:lightbulb

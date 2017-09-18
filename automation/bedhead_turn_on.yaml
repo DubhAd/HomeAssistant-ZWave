@@ -1,0 +1,37 @@
+alias: 'Bedhead turn on'
+initial_state: 'on'
+trigger:
+  platform: event
+  event_type: zwave.scene_activated
+  event_data:
+    scene_id: 10
+    entity_id: zwave.nodon_crc3100_octan_remote
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.master_bedroom_bedhead
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_warm_pause
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_cool_pause
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_bright_pause
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_dim_pause
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_warm
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_cool
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_bright
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_dim
+

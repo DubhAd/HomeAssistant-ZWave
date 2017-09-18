@@ -1,0 +1,17 @@
+alias: 'Wake person1'
+initial_state: 'off'
+trigger:
+  platform: time
+  at: '07:50:00'
+condition:
+  condition: state
+  entity_id: input_boolean.person1_is_awake
+  state: 'off'
+action:
+  - service: media_player.turn_on
+    entity_id: media_player.person1
+  - service: media_player.media_play
+    entity_id: media_player.person1
+    data:
+      media_content_type: music
+      media_content_id: tbc

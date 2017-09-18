@@ -1,0 +1,19 @@
+alias: 'House awake'
+initial_state: 'on'
+trigger:
+  # Consider the house awake if I'm up, person1 is up, or the TV comes on after 03:00
+  - platform: state
+    entity_id: input_boolean.person2_is_awake
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.person1_is_awake
+    to: 'on'
+  - platform: state
+    entity_id: media_player.samsung_tv_remote
+    to: 'on'
+condition:
+  - condition: time
+    after: '03:00:00'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.bedtime

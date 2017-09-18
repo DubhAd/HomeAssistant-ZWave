@@ -1,0 +1,16 @@
+initial_state: 'on'
+alias: 'Sonos off TV unmute'
+trigger:
+  platform: state
+  entity_id: media_player.living_room
+  from: 'playing'
+  to: 'paused'
+condition:
+  condition: state
+  entity_id: media_player.samsung_tv_remote
+  state: 'on'
+action:
+  service: media_player.volume_mute
+  data:
+    entity_id: media_player.samsung_tv_remote
+    is_volume_muted: false

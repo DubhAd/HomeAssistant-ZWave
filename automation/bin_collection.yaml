@@ -1,0 +1,13 @@
+initial_state: 'on'
+alias: 'Bin collection check'
+trigger:
+  - platform: time
+    at: '19:00:00'
+condition:
+  condition: template
+  # If tomorrow is the bin collection day
+  value_template: '{{ (as_timestamp(now()) + ( 60 * 60 * 24 )) | timestamp_custom("%A %d %B %Y") == states("sensor.bin_collection_day") }}'
+action:
+  service: notify.lm_notify
+  data_template:
+    message: 'Tomorrow is {{ states("sensor.bin_collection_type") }}'

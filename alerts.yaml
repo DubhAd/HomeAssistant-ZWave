@@ -1,0 +1,20 @@
+garage_door_l:
+  name: "Garage door for the bike has been open for {{ relative_time(states.binary_sensor.garage_door_bike_sensor.last_changed) }}"
+  done_message: "Garage door for the bike is now closed"
+  entity_id: binary_sensor.garage_door_bike_sensor
+  state: 'on'
+  repeat: 10
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - garage
+garage_door_r:
+  name: "Garage door for car has been open for {{ relative_time(states.binary_sensor.garage_car_sensor.last_changed) }}"
+  done_message: "Garage door for car is now closed"
+  entity_id: binary_sensor.garage_car_sensor
+  state: 'on'
+  repeat: 10
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - garage

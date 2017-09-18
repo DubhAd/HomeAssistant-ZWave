@@ -1,0 +1,15 @@
+alias: 'Master bedhead warm stop'
+initial_state: 'on'
+trigger:
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      scene_id: 41
+      entity_id: zwave.nodon_crc3100_octan_remote
+action:
+  - service: script.turn_off
+    data_template:
+      entity_id: script.bedhead_light_warm
+  - service: script.turn_off
+    data:
+      entity_id: script.bedhead_light_warm_pause

@@ -1,0 +1,14 @@
+initial_state: 'on'
+alias: 'person1 mobile low battery'
+trigger:
+  platform: numeric_state
+  entity_id: device_tracker.person1_mobile
+  value_template: "{{ state.attributes.battery }}"
+  below: 10
+action:
+  - service: notify.person2
+    data:
+      message: "person1's phone is at {{ states.device_tracker.person1_mobile.attributes.battery }}% battery"
+  - service: notify.person3
+    data:
+      message: "person1's phone is at {{ states.device_tracker.person1_mobile.attributes.battery }}% battery"

@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    garage_door_r:
+      friendly_name: 'Garage door, car'
+      value_template: '{% if is_state("sensor.garage_car_alarm_level", "255") %} open {% else %} closed {% endif %}'

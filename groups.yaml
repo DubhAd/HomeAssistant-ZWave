@@ -1,0 +1,700 @@
+person_person2:
+  name: person2
+  entities:
+  - device_tracker.person2_mobile
+  - device_tracker.person2_mobile_bt
+person_person2_tablet:
+  name: person2's tablet
+  icon: mdi:tablet-android
+  entities:
+  - device_tracker.person2s_tablet_bt
+  - device_tracker.person2_tablet
+person_person2_work:
+  name: person2's work phone
+  entities:
+  - device_tracker.person2_work
+  - device_tracker.timetrveller
+person_person3:
+  name: person3
+  entities:
+  - device_tracker.person3_mobile
+  - device_tracker.person3_mobile_bt
+person_person1:
+  name: person1
+  entities:
+  - device_tracker.person1_mobile
+  - device_tracker.person3_mobile_bt
+person_person1_tablet:
+  name: person1's tablet
+  icon: mdi:tablet
+  entities:
+  - device_tracker.person1_tablet
+my_children:
+  name: children
+  entities:
+  - group.person_person1
+  view: false
+my_adults:
+  name: adults
+  entities:
+  - device_tracker.person3_mobile
+  - device_tracker.person2_mobile_bt
+  - device_tracker.person2_mobile
+  - device_tracker.person3_mobile_bt
+  view: false
+my_calendars:
+  name: Calendars
+  entities:
+  - calendar.person3
+  - calendar.birthdays_and_anniversaries
+  - calendar.person1
+  - calendar.person1_holiday
+  - calendar.person2
+  - calendar.person2_family_tripit
+  - calendar.person2_work
+  - calendar.person2_wfh
+  - calendar.person2_holiday
+  view: false
+my_people_terse:
+  name: People
+  entities:
+  - sensor.person2_travel
+  - sensor.person3_travel
+  - sensor.person1_travel
+  view: false
+my_people:
+  name: People (travel time)
+  entities:
+  - device_tracker.person3_mobile
+  - sensor.person3s_time_to_home
+  - device_tracker.person1_mobile
+  - sensor.person1s_time_to_home
+  - device_tracker.person2_mobile
+  - sensor.person2s_time_to_home
+  view: false
+my_pihole:
+  name: PiHole Statistics
+  view: false
+  entities:
+  - sensor.pihole_ads_blocked_today
+  - sensor.pihole_ads_percentage_blocked_today
+  - sensor.pihole_dns_queries_forwarded
+  - sensor.pihole_dns_queries_today
+  - sensor.pihole_dns_queries_clients
+  - sensor.pihole_dns_unique_clients
+  - sensor.pihole_dns_unique_domains
+  - sensor.pihole_domains_blocked
+train_status:
+  name: Ontime status
+  view: false
+  entities:
+  - binary_sensor.trains_to_xyz_ontime
+  - binary_sensor.trains_to_abc_ontime
+trains_abc_to_xyz_1:
+  name: Next train home to work
+  view: false
+  entities:
+  - sensor.next_train_xyz_status
+  - sensor.next_train_xyz_scheduled
+  - sensor.next_train_xyz_estimated
+trains_abc_to_xyz_2:
+  name: Second train home to work
+  view: false
+  entities:
+  - sensor.second_train_xyz_status
+  - sensor.second_train_xyz_scheduled
+  - sensor.second_train_xyz_estimated
+trains_abc_to_xyz_3:
+  name: Third train home to work
+  view: false
+  entities:
+  - sensor.third_train_xyz_status
+  - sensor.third_train_xyz_scheduled
+  - sensor.third_train_xyz_estimated
+trains_xyz_to_abc_1:
+  name: Next train work to home
+  view: false
+  entities:
+  - sensor.next_train_abc_status
+  - sensor.next_train_abc_scheduled
+  - sensor.next_train_abc_estimated
+trains_xyz_to_abc_2:
+  name: Second train work to home
+  view: false
+  entities:
+  - sensor.second_train_abc_status
+  - sensor.second_train_abc_scheduled
+  - sensor.second_train_abc_estimated
+trains_xyz_to_abc_3:
+  name: Third train work to home
+  view: false
+  entities:
+  - sensor.third_train_abc_status
+  - sensor.third_train_abc_scheduled
+  - sensor.third_train_abc_estimated
+my_system:
+  name: HA system status
+  entities:
+  - sensor.average_load_1m
+  - sensor.average_load_5m
+  - sensor.average_load_15m
+  - sensor.cpu_use
+  - sensor.disk_use_
+  - sensor.disk_use_datahomeassistant
+  - sensor.last_boot
+  - sensor.ram_free
+  - sensor.ram_use
+  - sensor.swap_free
+  - sensor.swap_use
+  view: false
+livingroom_tv:
+  name: Livingroom TV
+  icon: mdi:television
+  entities:
+  - device_tracker.livingroom_chromecast
+  - device_tracker.tv_living_room
+my_work:
+  name: Work
+  entities:
+  - group.person_person2_work
+  - device_tracker.work_laptop
+  view: false
+my_devices:
+  name: Devices
+  entities:
+  - device_tracker.person1_headphones
+  - group.person_person1_tablet
+  - device_tracker.laptop
+  - group.person_person2_tablet
+  view: false
+my_switches:
+  name: Switches
+  entities:
+  - switch.table_light_switch
+  - switch.cabinet_light_switch
+  - switch.tv_light_switch
+  - switch.number_sign_switch
+  - switch.garden_lights_switch
+  view: false
+tv:
+  name: TVs
+  entities:
+  - media_player.samsung_tv_remote
+  - media_player.living_room_tv
+  view: false
+squeezebox:
+  name: Squeezebox radios
+  entities:
+  - media_player.person2
+  - media_player.person1
+  view: false
+sonos:
+  name: Sonos speakers
+  entities:
+  - media_player.family_room
+  - media_player.living_room
+  - media_player.office
+  view: false
+my_media:
+  name: Media players
+  entities:
+    # TVs
+  - media_player.samsung_tv_remote
+  - media_player.living_room_tv
+    # Plex
+  - media_player.plex_web_chrome
+  - media_player.plex_web_chrome_2
+  - media_player.laptop
+    # Sonos
+  - media_player.family_room
+  - media_player.living_room
+  - media_player.office
+    # Squeezebox
+  - media_player.person2
+  - media_player.person1
+  view: false
+my_input_boolean:
+  name: Toggles for automations
+  entities:
+  - input_boolean.notify_train_status_work
+  - input_boolean.notify_person2_working
+  - input_boolean.notify_person1_school
+  - input_boolean.person2_is_awake
+  - input_boolean.person1_is_awake
+  - input_boolean.bedtime
+my_input_slider:
+  name: Sliders for automations
+  entities:
+  - input_slider.door_delay
+  - input_slider.garden_time
+  - input_slider.room_low_light
+  - input_slider.room_dark
+  - input_slider.light_step
+  - input_slider.light_minimum
+  - input_slider.light_maximum
+  - input_slider.light_step_colour
+my_weather_metoffice:
+  name: Weather from the Met Office
+  entities:
+  - sensor.met_office_weather
+  - sensor.met_office_feels_like_temperature
+  - sensor.met_office_temperature
+  - sensor.met_office_probability_of_precipitation
+  - sensor.met_office_visibility
+  - sensor.met_office_visibility_distance
+  - sensor.met_office_humidity 
+  - sensor.met_office_wind_direction
+  - sensor.met_office_wind_gust
+  - sensor.met_office_wind_speed
+  - sensor.met_office_uv
+my_weather_darksky:
+  name: Weather from Dark Sky
+  entities:
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_hourly_summary
+  - sensor.dark_sky_apparent_temperature
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_daily_high_temperature
+  - sensor.dark_sky_daily_low_temperature
+  - sensor.dark_sky_precip
+  - sensor.dark_sky_precip_intensity
+  - sensor.dark_sky_daily_max_precip_intensity
+  - sensor.dark_sky_precip_probability
+  - sensor.dark_sky_wind_speed
+  - sensor.dark_sky_visibility
+  - sensor.dark_sky_humidity
+  - sensor.dark_sky_cloud_coverage
+  view: false
+my_exterior_doors:
+  name: Outside doors
+  entities:
+  - binary_sensor.utility_door_exterior_sensor
+  - binary_sensor.garage_door_bike_sensor
+  - binary_sensor.garage_car_sensor
+  view: false
+my_sensors:
+  name: Sensors
+  entities:
+  - sun.sun
+  - sensor.hass_installed
+  - sensor.current_ha_version
+  view: false
+my_social:
+  name: Social media
+  entities:
+  - sensor.person1_xbox
+  - sensor.person1
+  - sensor.person2_xbox
+  view: false
+my_scenes:
+  name: Scenes
+  entities:
+  - scene.lounge_lights_on
+  - scene.lounge_lights_off
+  - scene.all_lights_off
+  - scene.bedtime_all_off
+  view: false
+garden_lights:
+  name: Garden Lights
+  entities:
+  - switch.garden_lights_switch
+  view: false
+number_sign:
+  name: Number sign - switch.number_sign_switch
+  view: false
+utility:
+  name: Utility room
+  icon: mdi:washing-machine
+  entities:
+  - binary_sensor.utility_door_exterior_sensor
+  view: false
+garage:
+  name: Garage
+  icon: mdi:garage
+  entities:
+  - binary_sensor.garage_door_bike_sensor
+  - binary_sensor.garage_car_sensor
+  view: false
+outside_doors:
+  name: External doors
+  entities:
+  - binary_sensor.utility_door_exterior_sensor
+  - binary_sensor.garage_door_bike_sensor
+  - binary_sensor.garage_car_sensor
+outside_lights:
+  name: Outside Lights
+  entities:
+  - switch.number_sign_switch
+  - switch.garden_lights_switch
+  view: false
+living_room_sensors:
+  name: Living room sensors
+  entities:
+  - binary_sensor.living_room_motion
+  - sensor.living_room_multi_luminance
+  - sensor.living_room_multi_temperature
+living_room_lights:
+  name: Living room lights
+  entities:
+  - switch.table_light_switch
+  - switch.cabinet_light_switch
+  - switch.tv_light_switch
+  view: false
+living_room:
+  name: Living room
+  control: hidden
+  icon: mdi:seat-recline-extra
+  entities:
+  - binary_sensor.living_room_motion
+  - sensor.living_room_multi_luminance
+  - sensor.living_room_multi_temperature
+  - switch.table_light_switch
+  - switch.cabinet_light_switch
+  - switch.tv_light_switch
+downstairs:
+  name: Downstairs
+  icon: mdi:checkbox-multiple-blank-outline
+  entities:
+  - group.living_room_lights
+  - group.living_room_sensors
+binary_sensors:
+  name: Binary sensors
+  entities:
+  - binary_sensor.living_room_motion
+  - binary_sensor.office_multi_sensor
+  - binary_sensor.utility_door_exterior_sensor
+  - binary_sensor.garage_door_bike_sensor
+  - binary_sensor.garage_car_sensor
+  - binary_sensor.workday_sensor
+  view: false
+office:
+  name: Office
+  icon: mdi:domain
+  entities:
+  - binary_sensor.office_multi_sensor
+  - sensor.office_multi_luminance
+  - sensor.office_multi_temperature
+  - sensor.office_multi_relative_humidity
+  - switch.spare_socket_switch
+  view: false
+media_devices:
+  name: Media Devices
+  entities:
+  - device_tracker.family_tv
+  - device_tracker.livingroom_chromecast
+  - device_tracker.tv_living_room
+  view: false
+my_alerts:
+  name: Alerts
+  entities:
+  - alert.garage_door_l
+  - alert.garage_door_r
+  view: false
+default_view:
+  name: My Home
+  icon: mdi:home
+  view: true
+  entities:
+  - group.my_alerts
+  - group.my_scenes
+  - group.master_bedroom
+  - group.living_room_lights
+  - group.outside_lights
+  - group.my_people_terse
+  - group.my_exterior_doors
+master_bedroom:
+  name: Master bedroom
+  icon: mdi:hotel
+  entities:
+  - light.master_bedroom_bedhead
+all_rooms:
+  name: Rooms
+  icon: mdi:checkbox-multiple-blank-outline
+  view: true
+  entities:
+  - group.living_room
+  - group.utility
+  - group.outside_lights
+  - group.garage
+  - group.office
+  - group.master_bedroom
+People:
+  name: People
+  icon: mdi:account-multiple
+  view: true
+  entities:
+  - group.my_people
+  - group.my_work
+  - group.my_calendars
+  - group.my_social
+  - group.my_devices
+Cameras:
+  name: Cameras
+  icon: mdi:video
+  view: true
+  entities:
+  - camera.garage_camera
+Weather:
+  name: Weather
+  icon: mdi:weather-partlycloudy
+  view: true
+  entities:
+  - group.my_weather_darksky
+  - group.my_weather_metoffice
+Entertainment:
+  name: Media
+  icon: mdi:filmstrip
+  view: true
+  entities:
+    # TVs
+  - media_player.samsung_tv_remote
+  - media_player.living_room_tv
+    # Plex
+  - media_player.plex_web_chrome
+  - media_player.plex_web_chrome_2
+  - media_player.laptop
+    # Sonos
+  - media_player.family_room
+  - media_player.living_room
+  - media_player.office
+    # Squeezebox
+  - media_player.person2
+  - media_player.person1
+  - group.media_devices
+z_wave:
+  name: Z-Wave information
+  view: false
+  entities:
+  - zwave.zwaveme_razberry_controller_2016_zwave
+  - zwave.table_light
+  - zwave.cabinet_light
+  - zwave.tv_light
+  - zwave.number_sign
+  - zwave.garden_lights
+  - zwave.utility_door_exterior
+  - zwave.garage_door_bike
+  - zwave.garage_car
+  - zwave.spare_socket
+  - zwave.office_multi
+  - zwave.nodon_crc3100_octan_remote
+  - zwave.living_room_multi
+my_trains:
+  name: Train status
+  view: true
+  icon: mdi:train
+  entities:
+  - group.train_status
+  - group.trains_abc_to_xyz_1
+  - group.trains_abc_to_xyz_2
+  - group.trains_abc_to_xyz_3
+  - group.trains_xyz_to_abc_1
+  - group.trains_xyz_to_abc_2
+  - group.trains_xyz_to_abc_3
+Spacer:
+  name: Spacer
+  view: true
+  icon: mdi:dots-horizontal
+Network:
+  name: Network
+  icon: mdi:network
+  view: true
+  entities:
+  - group.my_pihole
+  - group.my_system
+Information:
+  name: Information
+  icon: mdi:information-outline
+  view: true
+  entities:
+  - group.my_sensors
+  - group.binary_sensors
+  - group.z_wave
+my_scripts:
+  name: Scripts
+  entities:
+  - scripts.garden_door_before_sunrise
+  - scripts.garden_door_after_sunset
+  - scripts.garage_opened
+  - scripts.garage_open
+  - scripts.garage_closed
+  view: false
+my_automations_office:
+  name: Automations for the office
+  entities:
+  - automation.play_classical_music_in_the_office
+  - automation.stop_classical_music_in_the_office
+my_automations_masterbed:
+  name: Automations for the master bedroom
+  entities:
+  - automation.person2_up_bedhead_light_on
+  - automation.person2_up_bedhead_light_off
+  - automation.bedhead_light_left_on
+  - automation.bedhead_light_on_night
+  - automation.bedhead_light_dim_sunset
+  - automation.bedhead_light_dim_sunset_off
+  - automation.bedhead_light_dim
+  - automation.bedhead_light_dim_off
+  - automation.bedhead_light_dim_late
+  - automation.bedhead_light_dim_late_off
+  - automation.bedhead_light_dim_midnight
+  - automation.bedhead_light_dim_midnight_off
+  - automation.bedhead_light_bright_sunrise
+my_automations_bedhead_remote:
+  name: Remote automations for the light
+  entities:
+  - automation.bedhead_turn_on
+  - automation.bedhead_turn_off
+  - automation.bedhead_turn_on_min
+  - automation.bedhead_turn_on_max
+  - automation.bedhead_turn_on_cool
+  - automation.bedhead_turn_on_warm
+  - automation.bedhead_turn_white
+  - automation.bedhead_turn_red
+  - automation.master_bedhead_bright
+  - automation.master_bedhead_bright_pause
+  - automation.master_bedhead_dim
+  - automation.master_bedhead_dim_pause
+  - automation.master_bedhead_cool
+  - automation.master_bedhead_cool_pause
+  - automation.master_bedhead_warm
+  - automation.master_bedhead_warm_pause
+my_automations_front:
+  name: Automations for the front of the house
+  entities:
+  - automation.number_on_at_sunset
+  - automation.number_on_in_the_morning
+  - automation.number_sign_off
+  - automation.person2_up_early
+  - automation.garage_door_opened
+  - automation.garage_door_closed
+  - automation.adults_away_doors_open
+  - automation.garage_opened_at_night
+  view: false
+my_automations_garden:
+  name: Automations for the garden
+  entities:
+  - automation.utility_door_open_after_sunset_closed
+  - automation.utility_door_open_after_sunset_turn_on
+  - automation.utility_door_open_after_sunset_turn_off
+  - automation.utility_door_open_before_sunrise_closed
+  - automation.utility_door_open_before_sunrise_turn_on
+  - automation.utility_door_open_before_sunrise_turn_off
+  - automation.nighttime_garden_off
+  - input_slider.door_delay
+  - automation.garden_lights_left_on
+  - input_slider.garden_time
+  - binary_sensor.garden_lights_left_on
+  view: false
+my_automations_livingroom:
+  name: Automations for the Livingroom
+  entities:
+  - automation.all_away_lights_off
+  - automation.all_away_media_off
+  - automation.adults_home_lights_on
+  - automation.adults_home_dark
+  - automation.dark_tv_on
+  - automation.lounge_dark_motion
+  - automation.table_light_on
+  - automation.tv_off_bedtime
+  - automation.lounge_in_daylight
+  - automation.lounge_in_daylight_2
+  view: false
+my_automations_general:
+  name: Misc automations
+  entities:
+  - automation.bin_collection_check
+  - automation.ha_update_available_notifications
+  - automation.test_notify
+  - automation.train_status
+  - automation.return_train_status
+  - automation.sunrise_enable_automations
+  - automation.clear_states
+  - automation.house_awake
+  - automation.ha_started
+  - automation.ha_stopped
+  - automation.test_zwave_network
+  - automation.zwave_check
+  view: false
+my_automations_people:
+  name: People driven automations
+  entities:
+  - automation.person1_up
+  - automation.person2_home
+  - automation.person2_coming_home
+  - automation.person2_at_station
+  - automation.person3_coming_home
+  - automation.person1_mobile_low_battery
+  - automation.workday_for_person2
+my_automations_input:
+  name: Automations changing inputs
+  entities:
+  - automation.not_workday_for_person2
+  - automation.person2_working_from_home
+  - automation.person2_working_trains
+  - automation.school_day_for_person1
+  - automation.not_school_day_for_person1
+  view: false
+my_automations_media:
+  name: Media automations
+  entities:
+  - automation.tv_on_sonos_off
+  - automation.sonos_on_tv_mute
+  - automation.sonos_off_tv_unmute
+my_automations_battery:
+  name: Battery level automations
+  entities:
+  - automation.battery_garage_door_car
+  - automation.battery_garage_door_bike
+  - automation.battery_livingroom_multi
+  - automation.battery_utility_door
+  - automation.battery_remote
+my_automations_downstairs:
+  name: Automations
+  icon: mdi:home-variant
+  view: true
+  entities:
+  - group.my_automations_livingroom
+  - group.my_automations_front
+  - group.my_automations_garden
+  - group.my_automations_media
+my_automations_upstairs:
+  name: Upstairs automations
+  icon: mdi:home-modern
+  view: true
+  entities:
+  - group.my_automations_masterbed
+  - group.my_automations_bedhead_remote
+  - group.my_automations_office
+my_automations:
+  name: Automations
+  icon: mdi:engine
+  view: true
+  entities:
+  - group.my_automations_people
+  - group.my_automations_input
+  - group.my_automations_general
+  - group.my_automations_remotes
+  - group.my_automations_battery
+view_inputs:
+  name: Inputs
+  icon: mdi:information-variant
+  view: true
+  entities:
+  - group.my_input_boolean
+  - group.my_input_slider
+view_scripts:
+  name: scripts
+  icon: mdi:script
+  view: true
+  entities:
+  - script.bedhead_light_bright
+  - script.bedhead_light_bright_pause 
+  - script.bedhead_light_cool
+  - script.bedhead_light_cool_pause
+  - script.bedhead_light_dim
+  - script.bedhead_light_dim_pause
+  - script.bedhead_light_warm
+  - script.bedhead_light_warm_pause
+  - script.bedtime_slow_off 
+  - script.garden_door_after_sunset
+  - script.garden_door_before_sunrise

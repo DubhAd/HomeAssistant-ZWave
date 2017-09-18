@@ -1,0 +1,23 @@
+alias: 'person2 at station'
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id: device_tracker.person2_mobile
+  to: 'home station'
+condition:
+  condition: and
+  conditions:
+    - condition: time
+      after: '15:00:00'
+    - condition: state
+      entity_id: group.my_adults
+      state: 'home'
+    - condition: state
+      entity_id: group.person_person2
+      state: 'not_home'
+action:
+  - service: notify.person3
+    data_template:
+      message: "person2's at home station, they should be home in around {% set travel_time = states.sensor.person2s_time_to_home.attributes.duration_in_traffic.split(' ') %} {{ travel_time[0] | int + 15 }} to {{ travel_time[0] | int + 25 }} {{ travel_time[1] }}"
+  - service: homeassistant.turn_off
+    entity_id: automation.person2_at_station

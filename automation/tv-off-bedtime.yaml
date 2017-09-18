@@ -1,0 +1,35 @@
+initial_state: 'on'
+alias: 'TV off Bedtime'
+trigger:
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+    to: 'not_home'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: sensor.utility_door
+    to: 'closed'
+condition:
+  condition: and
+  conditions:
+  - condition: state
+    entity_id: media_player.samsung_tv_remote
+    state: 'off'
+  - condition: state
+    entity_id: device_tracker.livingroom_chromecast
+    state: 'not_home'
+  - condition: or
+    conditions:
+      - condition: time
+        before: '04:00:00'
+      - condition: time
+        after: '22:00:00'
+action:
+    # Disable the turning on of the lights automatically
+  - service: homeassistant.turn_off
+    entity_id: automation.adults_home_lights_on
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.bedtime
+    # Now turn the lights off
+  - service: script.turn_on
+    entity_id: script.bedtime_slow_off

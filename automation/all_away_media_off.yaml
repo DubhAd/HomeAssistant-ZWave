@@ -1,0 +1,28 @@
+alias: 'All away media off'
+initial_state: 'off'
+trigger:
+  platform: state
+  entity_id: group.my_adults
+  to: 'not_home'
+  for:
+    minutes: 5
+condition:
+  condition: or
+  conditions:
+  - condition: state
+    entity_id: media_player.office
+    state: 'playing'
+  - condition: state
+    entity_id: media_player.family_room
+    state: 'playing'
+  - condition: state
+    entity_id: media_player.living_room
+    state: 'playing'
+  - condition: state
+    entity_id: media_player.person1
+    state: 'playing'
+  - condition: state
+    entity_id: media_player.person2
+    state: 'playing'
+action:
+  service: media_player.media_pause

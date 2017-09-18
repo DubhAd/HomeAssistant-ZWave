@@ -1,0 +1,23 @@
+alias: 'Adults away doors open'
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id: group.my_adults
+  from: 'home'
+  to: 'not_home'
+condition:
+  condition: and
+  conditions: 
+    - condition: state
+      entity_id: group.outside_doors
+      state: 'on'
+    - condition: state
+      entity_id: group.tv
+      state: 'not_home'
+action:
+  - service: notify.person3
+    data_template: 
+      message: "Utility door is {%- if states.binary_sensor.utility_door_exterior_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (car) is {%- if states.binary_sensor.garage_car_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (bike) is {%- if states.binary_sensor.garage_door_bike_sensor.state == 'off' %} closed {% else %} open {% endif -%}"
+  - service: notify.person2
+    data_template: 
+      message: "Utility door is {%- if states.binary_sensor.utility_door_exterior_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (car) is {%- if states.binary_sensor.garage_car_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (bike) is {%- if states.binary_sensor.garage_door_bike_sensor.state == 'off' %} closed {% else %} open {% endif -%}"

@@ -1,0 +1,31 @@
+initial_state: 'on'
+alias: 'Adults home lights on'
+trigger:
+  - platform: state
+    entity_id: group.my_adults
+    from: 'not_home'
+    to: 'home'
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 10
+condition:
+  condition: and
+  conditions: 
+    - condition: numeric_state
+      entity_id: sensor.living_room_multi_luminance
+      below: 10
+    - condition: state
+      entity_id: group.my_adults
+      state: home
+    - condition: time
+      after: '14:00:00'
+    - condition: time
+      before: '23:00:00'
+    - condition: state
+      entity_id: switch.cabinet_light_switch
+      state: 'off'
+      for:
+        minutes: 5
+action:
+  - service: scene.turn_on
+    entity_id: scene.lounge_lights_on

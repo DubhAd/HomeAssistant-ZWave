@@ -1,0 +1,28 @@
+notify_train_status_work:
+  name: Notify about trains to work
+  initial: off
+  icon: mdi:train
+notify_person2_working:
+  name: Work day for person2
+  initial: off
+  icon: mdi:calendar-multiple
+notify_person1_school:
+  name: School day for person1
+  initial: off
+  icon: mdi:calendar-text
+person2_is_awake:
+  name: person2 is awake
+  initial: off
+  icon: mdi:alarm
+person1_is_awake:
+  name: person1 is awake
+  initial: off
+  icon: mdi:alarm
+lighting_automations:
+  name: Enable lighting automations
+  initial: on
+  icon: mdi:lightbulb
+bedtime:
+  name: Everybody is asleep
+  initial: off
+  icon: mdi:hotel

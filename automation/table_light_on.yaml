@@ -1,0 +1,20 @@
+initial_state: 'on'
+alias: 'Table light on'
+trigger:
+  platform: state
+  entity_id: binary_sensor.living_room_motion
+  to: 'off'
+  for:
+    minutes: 2
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: switch.table_light_switch
+      state: 'on'
+    - condition: state
+      entity_id: switch.cabinet_light_switch
+      state: 'off'
+action:
+  service: homeassistant.turn_off
+  entity_id: switch.table_light_switch

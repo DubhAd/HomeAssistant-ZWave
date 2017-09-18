@@ -1,0 +1,22 @@
+alias: 'Utility door open after sunset closed'
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id: sensor.utility_door
+  to: 'closed'
+condition:
+  condition: and
+  conditions:
+    - condition: sun
+      after: sunset
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: "{{ state.attributes.elevation }}"
+      below: -5
+    - condition: state
+      entity_id: switch.garden_lights_switch
+      state: 'on'
+action:
+  - delay: 00:00:01
+  - service: homeassistant.turn_on
+    entity_id: automation.utility_door_open_after_sunset_turn_off

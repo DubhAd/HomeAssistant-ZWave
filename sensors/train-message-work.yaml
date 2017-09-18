@@ -1,0 +1,5 @@
+- platform: command_line
+  command: /local/bin/train-status-message
+  name: Trains to work
+  icon: mdi:train
+  scan_interval: 60

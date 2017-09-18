@@ -1,0 +1,23 @@
+initial_state: 'on'
+alias: 'Lounge dark motion'
+trigger:
+  platform: state
+  entity_id: binary_sensor.living_room_motion
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: numeric_state
+      entity_id: sensor.living_room_multi_luminance
+      below: 1
+    - condition: state
+      entity_id: media_player.samsung_tv_remote
+      state: 'off'
+    - condition: state
+      entity_id: switch.table_light_switch
+      state: 'off'
+      for:
+        minutes: 2
+action:
+  service: switch.turn_on
+  entity_id: switch.table_light_switch

@@ -1,0 +1,27 @@
+alias: 'Garage opened at night'
+initial_state: true
+trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_car_sensor
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.garage_door_bike_sensor
+    to: 'on'
+condition:
+  - condition: or
+    conditions:
+      - condition: state
+        entity_id: input_boolean.bedtime
+        state: 'on'
+      - condition: state
+        entity_id: group.my_adults
+        state: 'not_home'
+action:
+  - service: notify.person2
+    data:
+      message: "The garage door has been opened"
+      data:
+        priority: '1'
+  - service: notify.push
+    data:
+      message: "The garage door has been opened"

@@ -1,0 +1,9 @@
+alias: 'Test notify'
+initial_state: 'off'
+trigger:
+  platform: time
+  at: '04:00:00'
+action:
+  - service: notify.lametric_info
+    data: 
+      message: "This is a test"

@@ -1,0 +1,9 @@
+alias: 'Garden lights left on'
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id: input_boolean.garden_lights_left_on
+  to: 'on'
+action:
+  service: homeassistant.turn_off
+  entity_id: switch.garden_lights_switch

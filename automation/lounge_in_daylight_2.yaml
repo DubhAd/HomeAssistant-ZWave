@@ -1,0 +1,22 @@
+initial_state: 'on'
+alias: 'Lounge in daylight 2'
+trigger:
+  platform: numeric_state
+  entity_id: sensor.living_room_multi_luminance
+  above: 20
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: switch.cabinet_light_switch
+      state: 'off'
+      for:
+        minutes: 2
+    - condition: state
+      entity_id: group.living_room_lights
+      state: 'on'
+      for:
+        minutes: 2
+action:
+  service: scene.turn_on
+  entity_id: scene.lounge_lights_off
