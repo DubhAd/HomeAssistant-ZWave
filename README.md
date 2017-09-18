@@ -41,9 +41,11 @@ To limit the risk brought by SD card corruption (a known risk with Pi3) I use a 
 * [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles
 * [XBoxAPI](https://xboxapi.com/) to track when one of us is on the XBox
 * Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
+* For use with the [IMAP email content](https://home-assistant.io/components/sensor.imap_email_content/) sensor I run a local [Dovecot](https://www.dovecot.org/) IMAP sensor, [Postfix](http://www.postfix.org/) SMTP server, and [Fetchmail](http://www.fetchmail.info/) to retrieve the remote email. I do it this way because of reliability issues with using a remote IMAP server (which I suspect is a reflection of my Internet connection)
 
 **Automations**
 
 **Notes**
 
 * These are (automatically) modified versions of my actual configurations
+* My primary goal is to minimise human actions, and where that isn't possible streamline those human actions
