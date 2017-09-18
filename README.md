@@ -14,6 +14,8 @@ To limit the risk brought by SD card corruption (a known risk with Pi3) I use a 
 * [pi-hole](https://pi-hole.net/) so I can easily block "smart" devices from calling home
 * [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/)
 * [netdata](https://my-netdata.io/) so I can keep an eye on the performance
+* [LaMetric](https://lametric.com/) a clock and low resolution display
+* [Nmap](https://nmap.org/) to support device tracking
 
 **The devices I use**
 
@@ -27,8 +29,18 @@ To limit the risk brought by SD card corruption (a known risk with Pi3) I use a 
 * Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller
 * Yeelight [led strip](https://www.yeelight.com/en_US/product/pitaya)
 * Outdoor mains [240V led strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
+* [CSL Bluetooth adapter](https://www.amazon.co.uk/gp/product/B00VFT4LD2/) to augment the Nmap device tracker
 
-**The services I use**
+**The services and other software I use**
+
+* [LaMetric](https://lametric.com/) for notifications "in person"
+* [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, alongside [HTML5 push](https://home-assistant.io/components/notify.html5/), and for rich notifications I'm experimenting with [Slack](https://slack.com/)
+* [OwnTracks](http://owntracks.org/) for device tracking, combined with [CloudMQTT](https://www.cloudmqtt.com/) so I don't have to expose another service
+* [TransportAPI](https://developer.transportapi.com/) for information on the local train service
+* [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint)
+* [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles
+* [XBoxAPI](https://xboxapi.com/) to track when one of us is on the XBox
+* Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
 
 **Automations**
 
