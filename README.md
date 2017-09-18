@@ -14,3 +14,20 @@ To limit the risk brought by SD card corruption (a known risk with Pi3) I use a 
 * [pi-hole](https://pi-hole.net/) so I can easily block "smart" devices from calling home
 * [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/)
 * [netdata](https://my-netdata.io/) so I can keep an eye on the performance
+
+**The devices I use**
+
+* Z-Wave.me [Razberry](https://razberry.z-wave.me/) Z-Wave board - it has the advantage of not using a USB port, but does require that the onboard Bluetooth is disabled
+* Z-Wave Vision Garage Door detector - these are tilt sensors
+* Aeotec [MultiSensor 6](https://aeotec.com/z-wave-sensor)
+* Fibaro [motion sensor](https://www.fibaro.com/en/products/motion-sensor/)
+* Sensative [door/window strips](https://www.stripsbysensative.com/strips-guard/)
+* TKB [TKB TZ69E](http://www.tkbhome.com/?cn-p-d-271.html) - metering wall plugs
+* NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2)
+* Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller
+* Yeelight [led strip](https://www.yeelight.com/en_US/product/pitaya)
+* Outdoor mains [240V led strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
+
+**The services I use**
+
+**Automations**
