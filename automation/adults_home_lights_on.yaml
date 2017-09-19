@@ -7,13 +7,13 @@ trigger:
     to: 'home'
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    below: 10
+    below: 11
 condition:
   condition: and
   conditions: 
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
-      below: 10
+      below: 11
     - condition: state
       entity_id: group.my_adults
       state: home
