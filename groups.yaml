@@ -477,6 +477,7 @@ z_wave:
   - zwave.spare_socket
   - zwave.office_multi
   - zwave.nodon_crc3100_octan_remote
+  - zwave.utility
   - zwave.living_room_multi
 my_trains:
   name: Train status

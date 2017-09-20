@@ -159,6 +159,8 @@ zwave.garden_lights:
   friendly_name: "Garden lights"
 zwave.nodon_crc3100_octan_remote:
   friendly_name: "Remote"
+zwave.utility:
+  friendly_name: "Utility exterior switch"
 zwave.number_sign:
   friendly_name: "Number sign"
 zwave.office_multi:

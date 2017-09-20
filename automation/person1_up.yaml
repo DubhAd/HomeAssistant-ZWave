@@ -6,7 +6,7 @@ trigger:
   to: 'playing'
 condition:
   condition: time
-  before: '07:00:00'
+  before: '10:00:00'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person1_is_awake

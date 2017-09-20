@@ -18,7 +18,7 @@ homeassistant:
 
 config:
 
-frontend:
+frontend: !include frontend.yaml
 
 http:
   # Uncomment this to add a password (recommended!)
