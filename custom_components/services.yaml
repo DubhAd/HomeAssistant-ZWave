@@ -1,0 +1,43 @@
+variable_int:
+  set_value:
+    description: Use this service to set or update value of integer variable
+    fields:
+      entity_id:
+        description: Entity id of the global integer variable
+        example: 'integer.some_number'
+      value:
+        description: Value you want to set
+        example: '1234'
+
+variable_float:
+  set_value:
+    description: Use this service to set or update value of float variable
+    fields:
+      entity_id:
+        description: Entity id of the global float variable
+        example: 'variable_float.some_float_number'
+      value:
+        description: Value you want to set
+        example: '23.15'
+
+variable_bool:
+  set_value:
+    description: Use this service to set or update value of boolean variable
+    fields:
+      entity_id:
+        description: Entity id of the global boolean variable
+        example: 'variable_bool.some_flag'
+      value:
+        description: Value you want to set
+        example: 'False'
+
+variable_string:
+  set_value:
+    description: Use this service to set or update value of string variable
+    fields:
+      entity_id:
+        description: Entity id of the global string variable
+        example: 'variable_string.some_string'
+      value:
+        description: String value you want to set
+        example: "Hello, Home Assistant!"

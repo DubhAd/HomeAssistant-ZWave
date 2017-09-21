@@ -1,3 +1,19 @@
+new_batteries:
+  control: hidden
+  name: Mobile device battery states
+  entities:
+  - variable_int.person2_battery
+  - variable_int.person3_battery
+  - variable_int.person1_battery
+  - variable_int.person2_tablet_battery
+wifi_state:
+  control: hidden
+  name: Mobile devices on WiFi?
+  entities:
+  - variable_wifi.person2_wifi
+  - variable_wifi.person3_wifi
+  - variable_wifi.person1_wifi
+  - variable_wifi.person2_tablet_wifi
 person_person2:
   name: person2
   entities:
@@ -428,6 +444,8 @@ People:
   - group.my_calendars
   - group.my_social
   - group.my_devices
+  - group.new_batteries
+  - group.wifi_state
 Cameras:
   name: Cameras
   icon: mdi:video
@@ -615,6 +633,8 @@ my_automations_general:
   - automation.ha_stopped
   - automation.test_zwave_network
   - automation.zwave_check
+  - automation.flight_seen_arriving
+  - automation.flight_seen_departing
   view: false
 my_automations_people:
   name: People driven automations

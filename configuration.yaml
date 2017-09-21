@@ -118,3 +118,7 @@ lametric:
   client_secret: !secret lametric_secret
 
 camera: !include camera.yaml
+
+variable_int: !include variable_int.yaml
+
+variable_bool: !include variable_bool.yaml

@@ -5,4 +5,4 @@
   username: !secret local_imap_user
   password: !secret local_imap_pass
   senders:
-    - !secret local_imap_search
+    - email@greenboxday.co.uk

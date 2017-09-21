@@ -71,3 +71,8 @@
       data:
         data:
           url: !secret garage_camera_url
+
+- name: logfile
+  platform: file
+  filename: /data/homeassistant/notify.log
+  timestamp: true

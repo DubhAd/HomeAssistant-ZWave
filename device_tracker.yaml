@@ -8,5 +8,5 @@
     - 192.168.0.225-227
     - 192.168.0.251
 - platform: owntracks
-  max_gps_accuracy: 500
+  max_gps_accuracy: 600
 - platform: bluetooth_tracker
