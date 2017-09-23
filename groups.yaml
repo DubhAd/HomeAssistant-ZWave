@@ -2,10 +2,22 @@ new_batteries:
   control: hidden
   name: Mobile device battery states
   entities:
-  - variable_int.person2_battery
-  - variable_int.person3_battery
-  - variable_int.person1_battery
-  - variable_int.person2_tablet_battery
+  - sensor.battery_person3_mobile
+  - sensor.battery_person1_mobile
+  - sensor.battery_person2_mobile
+zwave_batteries:
+  control: hidden
+  view: false
+  name: Z-Wave device batteries
+  entities:
+  - sensor.zwave_battery_garage_car
+  - sensor.zwave_battery_garage_closed_bike
+  - sensor.zwave_battery_garage_closed_car
+  - sensor.zwave_battery_garage_door_bike
+  - sensor.zwave_battery_living_room_multi
+  - sensor.zwave_battery_nodon_crc3100_octan_remote
+  - sensor.zwave_battery_utility_door_exterior
+  - sensor.zwave_battery_utility
 wifi_state:
   control: hidden
   name: Mobile devices on WiFi?
@@ -285,8 +297,8 @@ my_exterior_doors:
   name: Outside doors
   entities:
   - binary_sensor.utility_door_exterior_sensor
-  - binary_sensor.garage_door_bike_sensor
-  - binary_sensor.garage_car_sensor
+  - binary_sensor.garage_closed_bike_sensor
+  - binary_sensor.garage_closed_car_sensor
   view: false
 my_sensors:
   name: Sensors
@@ -328,15 +340,17 @@ garage:
   name: Garage
   icon: mdi:garage
   entities:
-  - binary_sensor.garage_door_bike_sensor
-  - binary_sensor.garage_car_sensor
+  - binary_sensor.garage_door_l
+  - binary_sensor.garage_door_r
+  - binary_sensor.garage_closed_bike_sensor
+  - binary_sensor.garage_closed_car_sensor
   view: false
 outside_doors:
   name: External doors
   entities:
   - binary_sensor.utility_door_exterior_sensor
-  - binary_sensor.garage_door_bike_sensor
-  - binary_sensor.garage_car_sensor
+  - binary_sensor.garage_closed_bike_sensor
+  - binary_sensor.garage_closed_car_sensor
 outside_lights:
   name: Outside Lights
   entities:
@@ -381,6 +395,10 @@ binary_sensors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_door_bike_sensor
   - binary_sensor.garage_car_sensor
+  - binary_sensor.garage_closed_bike_sensor
+  - binary_sensor.garage_closed_car_sensor
+  - binary_sensor.garage_door_l
+  - binary_sensor.garage_door_r
   - binary_sensor.workday_sensor
   view: false
 office:
@@ -492,6 +510,8 @@ z_wave:
   - zwave.utility_door_exterior
   - zwave.garage_door_bike
   - zwave.garage_car
+  - zwave.garage_closed_bike
+  - zwave.garage_closed_car
   - zwave.spare_socket
   - zwave.office_multi
   - zwave.nodon_crc3100_octan_remote
@@ -528,6 +548,7 @@ Information:
   - group.my_sensors
   - group.binary_sensors
   - group.z_wave
+  - group.zwave_batteries
 my_scripts:
   name: Scripts
   entities:
@@ -667,6 +688,8 @@ my_automations_battery:
   entities:
   - automation.battery_garage_door_car
   - automation.battery_garage_door_bike
+  - automation.battery_garage_door_closed_car
+  - automation.battery_garage_door_closed_bike
   - automation.battery_livingroom_multi
   - automation.battery_utility_door
   - automation.battery_remote

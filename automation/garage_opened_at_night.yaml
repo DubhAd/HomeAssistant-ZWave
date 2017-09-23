@@ -2,7 +2,7 @@ alias: 'Garage opened at night'
 initial_state: true
 trigger:
   - platform: state
-    entity_id: binary_sensor.garage_car_sensor
+    entity_id: binary_sensor.garage_closed_car_sensor
     to: 'on'
   - platform: state
     entity_id: binary_sensor.garage_door_bike_sensor

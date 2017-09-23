@@ -83,12 +83,20 @@ sensor.utility_door:
   icon: mdi:glassdoor
   friendly_name: Utility room door
   sensor_class: opening
-binary_sensor.garage_door_bike_sensor:
+binary_sensor.garage_closed_bike_sensor:
   friendly_name: Garage door, left
   sensor_class: opening
   icon: mdi:bike
-binary_sensor.garage_car_sensor:
+binary_sensor.garage_door_bike_sensor:
+  friendly_name: Garage door (tilt), left
+  sensor_class: opening
+  icon: mdi:bike
+binary_sensor.garage_closed_car_sensor:
   friendly_name: Garage door, car
+  sensor_class: opening
+  icon: mdi:car
+binary_sensor.garage_car_sensor:
+  friendly_name: Garage door (tilt), car
   sensor_class: opening
   icon: mdi:car
 sensor.garage_door_l:
@@ -171,10 +179,14 @@ zwave.table_light:
   friendly_name: "Table light"
 zwave.tv_light:
   friendly_name: "TV light"
+zwave.garage_closed_bike_sensor:
+  friendly_name: "Garage door, bike"
 zwave.garage_door_bike:
+  friendly_name: "Garage door (tilt), bike"
+zwave.garage_closed_car_sensor:
   friendly_name: "Garage door, bike"
 zwave.garage_car:
-  friendly_name: "Garage door, car"
+  friendly_name: "Garage door (tilt), car"
 zwave.spare_socket:
   friendly_name: "Spare socket"
   icon: mdi:power
@@ -274,3 +286,25 @@ sensor.met_office_visibility:
   icon: mdi:weather-partlycloudy
 binary_sensor.garden_lights_left_on:
   icon: mdi:lightbulb
+sensor.zwave_battery_garage_car:
+  friendly_name: "Garage door (tilt), car"
+sensor.zwave_battery_garage_closed_bike:
+  friendly_name: "Garage door, bike"
+sensor.zwave_battery_garage_closed_car:
+  friendly_name: "Garage door, car"
+sensor.zwave_battery_garage_door_bike:
+  friendly_name: "Garage door (tilt), bike"
+sensor.zwave_battery_living_room_multi:
+  friendly_name: "Living room multi-sensor"
+sensor.zwave_battery_nodon_crc3100_octan_remote:
+  friendly_name: "Nodon remote"
+sensor.zwave_battery_utility_door_exterior:
+  friendly_name: "Utility door strip"
+sensor.zwave_battery_utility:
+  friendly_name: "Utility exterior switch"
+sensor.battery_person3_mobile:
+  friendly_name: "person3's mobile"
+sensor.battery_person1_mobile:
+  friendly_name: "person1's mobile"
+sensor.battery_person2_mobile:
+  friendly_name: "person2's mobile"

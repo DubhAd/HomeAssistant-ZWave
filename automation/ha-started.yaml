@@ -8,3 +8,6 @@ action:
   - service: notify.slack_notify
     data:
       message: "Home Assistant has started"
+  - service: frontend.set_theme
+    data:
+      name: 'midnight'

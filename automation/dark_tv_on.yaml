@@ -20,9 +20,6 @@ condition:
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
       below: 15
-    - condition: numeric_state
-      entity_id: sensor.living_room_multi_luminance
-      above: 9
     - condition: state
       entity_id: group.my_adults
       state: 'home'
