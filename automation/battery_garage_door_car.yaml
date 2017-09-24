@@ -4,7 +4,7 @@ trigger:
   platform: numeric_state
   entity_id: zwave.garage_car
   value_template: "{{ states.zwave.garage_car.attributes.battery_level }}"
-  below: 30
+  below: 25
 action:
   service: notify.person2
   data:

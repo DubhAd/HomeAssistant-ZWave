@@ -4,7 +4,7 @@ trigger:
   platform: numeric_state
   entity_id: zwave.utility_door_exterior
   value_template: "{{ states.zwave.utility_door_exterior.attributes.battery_level }}"
-  below: 30
+  below: 25
 action:
   service: notify.person2
   data:
