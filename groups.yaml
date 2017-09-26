@@ -401,6 +401,22 @@ binary_sensors:
   - binary_sensor.garage_door_r
   - binary_sensor.workday_sensor
   view: false
+access_control:
+  name: Access control
+  entities:
+  - sensor.garage_closed_bike_access_control
+  - sensor.garage_closed_car_access_control
+  - sensor.utility_door_exterior_access_control
+burglar:
+  name: Burglar sensors
+  entities:
+  - sensor.garage_car_burglar
+  - sensor.garage_closed_bike_burglar
+  - sensor.garage_closed_car_burglar
+  - sensor.garage_door_bike_burglar
+  - sensor.living_room_multi_burglar
+  - sensor.office_multi_burglar
+  - sensor.utility_door_exterior_burglar
 office:
   name: Office
   icon: mdi:domain
@@ -547,6 +563,8 @@ Information:
   entities:
   - group.my_sensors
   - group.binary_sensors
+  - group.burglar
+  - group.access_control
   - group.z_wave
   - group.zwave_batteries
 my_scripts:
