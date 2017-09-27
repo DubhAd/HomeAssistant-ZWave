@@ -308,3 +308,17 @@ sensor.battery_person1_mobile:
   friendly_name: "person1's mobile"
 sensor.battery_person2_mobile:
   friendly_name: "person2's mobile"
+sensor.printer_forward_roller_remaining:
+  friendly_name: "Forward roller remaining"
+sensor.printer_fuser_life_remaining:
+  friendly_name: "Fuser life remaining"
+sensor.printer_imaging_unit_remaining:
+  friendly_name: "Imaging unit remaining"
+sensor.printer_pick_up_roller_remaining:
+  friendly_name: "Pick up roller remaining"
+sensor.printer_retard_roller_remaining:
+  friendly_name: "Retard roller remaining"
+sensor.printer_toner_remaining:
+  friendly_name: "Toner remaining"
+sensor.printer_transfer_roller_remaining:
+  friendly_name: "Transfer roller remaining"

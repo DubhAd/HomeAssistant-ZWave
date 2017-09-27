@@ -533,6 +533,18 @@ z_wave:
   - zwave.nodon_crc3100_octan_remote
   - zwave.utility
   - zwave.living_room_multi
+my_printer:
+  name: Printer status
+  view: false
+  icon: mdi:printer
+  entities:
+  - sensor.printer_toner_remaining
+  - sensor.printer_imaging_unit_remaining
+  - sensor.printer_forward_roller_remaining
+  - sensor.printer_pick_up_roller_remaining
+  - sensor.printer_retard_roller_remaining
+  - sensor.printer_transfer_roller_remaining
+  - sensor.printer_fuser_life_remaining
 my_trains:
   name: Train status
   view: true
@@ -556,6 +568,7 @@ Network:
   entities:
   - group.my_pihole
   - group.my_system
+  - group.my_printer
 Information:
   name: Information
   icon: mdi:information-outline
@@ -675,6 +688,7 @@ my_automations_general:
   - automation.zwave_check
   - automation.flight_seen_arriving
   - automation.flight_seen_departing
+  - automation.printer_low
   view: false
 my_automations_people:
   name: People driven automations
