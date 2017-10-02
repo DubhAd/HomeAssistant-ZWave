@@ -400,6 +400,7 @@ binary_sensors:
   - binary_sensor.garage_door_l
   - binary_sensor.garage_door_r
   - binary_sensor.workday_sensor
+  - binary_sensor.zwave_health
   view: false
 access_control:
   name: Access control
@@ -684,8 +685,10 @@ my_automations_general:
   - automation.house_awake
   - automation.ha_started
   - automation.ha_stopped
+  - automation.ha_ready
   - automation.test_zwave_network
   - automation.zwave_check
+  - automation.zwave_health_check
   - automation.flight_seen_arriving
   - automation.flight_seen_departing
   - automation.printer_low

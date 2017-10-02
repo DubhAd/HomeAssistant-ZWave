@@ -1,0 +1,16 @@
+- platform: template
+  sensors: 
+    zwave_health:
+      friendly_name: 'Z-Wave Mesh health'
+      value_template: >- 
+        {%- macro zwave_check() -%}
+        {% for item in states.zwave if ((as_timestamp(now()) | int) - as_timestamp(strptime(item.attributes.receivedTS | string | truncate(19,True,'',0),'%Y-%m-%d %H:%M:%S:%f')) | int < 600 )%}
+        {{ item.name.ljust(40) }} - {{ (((as_timestamp(now()) | int) - as_timestamp(strptime(item.attributes.receivedTS | string | truncate(19,True,'',0),'%Y-%m-%d %H:%M:%S:%f')) | int)) }} seconds ago
+        {%- endfor %}
+        {%- endmacro -%}
+        {% set output = zwave_check() %}
+        {% if output | trim == "" %}
+        False
+        {% else %}
+        True
+        {% endif %}
