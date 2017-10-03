@@ -762,6 +762,7 @@ view_inputs:
   entities:
   - group.my_input_boolean
   - group.my_input_slider
+  - switch.fluxer
 view_scripts:
   name: scripts
   icon: mdi:script

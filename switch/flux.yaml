@@ -1,0 +1,10 @@
+- platform: flux
+  lights:
+    - light.master_bedroom_bedhead
+  name: Fluxer
+  stop_time: '23:00'
+  start_colortemp: 4000
+  sunset_colortemp: 3000
+  stop_colortemp: 1900
+  disable_brightness_adjust: True
+  mode: mired

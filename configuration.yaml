@@ -66,6 +66,8 @@ binary_sensor: !include_dir_merge_list binary_sensors/
 
 light: !include_dir_merge_list light/
 
+switch: !include_dir_merge_list switch/
+
 device_tracker: !include device_tracker.yaml
 
 mqtt:

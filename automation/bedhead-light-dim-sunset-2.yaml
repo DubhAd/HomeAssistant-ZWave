@@ -12,5 +12,4 @@ action:
   data:
     entity_id: light.master_bedroom_bedhead
     brightness: 255
-    color_temp: 347
     transition: 30
