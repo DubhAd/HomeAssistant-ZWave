@@ -611,6 +611,7 @@ my_automations_masterbed:
   - automation.bedhead_light_dim_midnight
   - automation.bedhead_light_dim_midnight_off
   - automation.bedhead_light_bright_sunrise
+  - automation.late_disable_fluxer
 my_automations_bedhead_remote:
   name: Remote automations for the light
   entities:

@@ -8,3 +8,5 @@ action:
     entity_id: input_boolean.person2_is_awake
   - service: input_boolean.turn_off
     entity_id: input_boolean.person1_is_awake
+  - service: switch.turn_on
+    entity_id: switch.fluxer
