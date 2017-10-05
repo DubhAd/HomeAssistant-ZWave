@@ -2,9 +2,10 @@
   lights:
     - light.master_bedroom_bedhead
   name: Fluxer
+  start_time: '12:00'
   stop_time: '23:00'
-  start_colortemp: 4000
-  sunset_colortemp: 3000
+  start_colortemp: 6500
+  sunset_colortemp: 3500
   stop_colortemp: 1900
   disable_brightness_adjust: True
   mode: mired

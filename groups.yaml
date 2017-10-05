@@ -685,6 +685,7 @@ my_automations_general:
   - automation.clear_states
   - automation.house_awake
   - automation.ha_started
+  - automation.ha_started_later
   - automation.ha_stopped
   - automation.ha_ready
   - automation.test_zwave_network

@@ -99,7 +99,7 @@ alert: !include alerts.yaml
 
 emulated_hue:
   type: google_home
-  listen_port: 88
+  listen_port: 80
   host_ip: 192.168.0.10
   advertise_ip: 192.168.0.10
   exposed_domains:
