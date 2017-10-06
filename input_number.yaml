@@ -1,0 +1,64 @@
+garden_time:
+  name: 'Garden lights turned off after'
+  initial: 7
+  min: 2
+  max: 120
+  step: 1
+  mode: both
+
+door_delay:
+  name: 'Turn off lights if open for more than'
+  initial: 8
+  min: 4
+  max: 60
+  step: 1
+  mode: both
+
+room_low_light:
+  name: 'How many lux is low light'
+  initial: 9
+  min: 5
+  max: 30
+  step: 1
+  mode: both
+
+room_dark:
+  name: 'How many lux is dark'
+  initial: 6
+  min: 0
+  max: 15
+  step: 1
+  mode: both
+
+light_step:
+  name: 'Step the lights this much'
+  initial: 40
+  min: 1
+  max: 80
+  step: 1
+  mode: both
+
+light_minimum:
+  name: 'No dimmer than this'
+  initial: 5
+  min: 1
+  max: 255
+  step: 1
+  mode: both
+  
+light_maximum:
+  name: 'No brighter than this'
+  initial: 255
+  min: 50
+  max: 255
+  step: 1
+  mode: both
+
+light_step_colour:
+  name: 'Step the light colour temp this much'
+  initial: 60
+  min: 1
+  max: 128
+  step: 1
+  mode: both
+

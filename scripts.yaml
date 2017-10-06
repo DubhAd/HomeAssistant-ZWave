@@ -27,6 +27,7 @@ garden_door_before_sunrise:
     - service: homeassistant.turn_on
       entity_id: switch.garden_lights_switch
       data: {}
+    #- delay: '00:00:{{ states.input_number.door_delay.state | int }}'
     - delay: '00:00:{{ states.input_slider.door_delay.state | int }}'
     - service: homeassistant.turn_on
       entity_id: automation.utility_door_open_before_sunrise_turn_off
@@ -41,6 +42,7 @@ garden_door_after_sunset:
     - service: homeassistant.turn_on
       entity_id: switch.garden_lights_switch
       data: {}
+    #- delay: '00:00:{{ states.input_number.door_delay.state | int }}'
     - delay: '00:00:{{ states.input_slider.door_delay.state | int }}'
     - service: homeassistant.turn_on
       entity_id: automation.utility_door_open_after_sunset_turn_off
@@ -169,3 +171,5 @@ bedhead_light_cool_pause:
     - service: script.turn_on
       data:
         entity_id: script.bedhead_light_cool
+
+

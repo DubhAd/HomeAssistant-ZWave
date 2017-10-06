@@ -250,8 +250,8 @@ my_input_boolean:
   - input_boolean.person2_is_awake
   - input_boolean.person1_is_awake
   - input_boolean.bedtime
-my_input_slider:
-  name: Sliders for automations
+my_input_numbers:
+  name: Inputs for automations
   entities:
   - input_slider.door_delay
   - input_slider.garden_time
@@ -763,7 +763,7 @@ view_inputs:
   view: true
   entities:
   - group.my_input_boolean
-  - group.my_input_slider
+  - group.my_input_numbers
   - switch.fluxer
 view_scripts:
   name: scripts
