@@ -1,0 +1,5 @@
+- name: lametric_info
+  platform: lametric
+  display_time: 10
+  icon: i59
+  sound: "notification"

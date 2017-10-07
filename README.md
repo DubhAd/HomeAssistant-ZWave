@@ -19,12 +19,13 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [LaMetric](https://lametric.com/) a clock and low resolution display
 * [Nmap](https://nmap.org/) to support device tracking
 
-## The devices I use
+## The devices I use (with HA)
 
 * Z-Wave.me [Razberry](https://razberry.z-wave.me/) Z-Wave board - it has the advantage of not using a USB port, but does require that the onboard Bluetooth is disabled
 * Z-Wave Vision Garage Door detector - these are tilt sensors
 * Aeotec [MultiSensor 6](https://aeotec.com/z-wave-sensor)
 * Fibaro [motion sensor](https://www.fibaro.com/en/products/motion-sensor/)
+* Fibaro FGK10x door sensors (previous generation, superseded by the [FGDW-002](http://manuals.fibaro.com/door-window-sensor-2/))
 * Sensative [door/window strips](https://www.stripsbysensative.com/strips-guard/)
 * TKB [TKB TZ69E](http://www.tkbhome.com/?cn-p-d-271.html) - metering wall plugs
 * NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2)

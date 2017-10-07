@@ -1,0 +1,5 @@
+- name: lametric_alert
+  platform: lametric
+  display_time: 30
+  icon: i555
+  sound: "lose1"
