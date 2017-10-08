@@ -5,7 +5,7 @@ trigger:
     entity_id: binary_sensor.garage_closed_car_sensor
     to: 'on'
   - platform: state
-    entity_id: binary_sensor.garage_door_bike_sensor
+    entity_id: binary_sensor.garage_closed_bike_sensor
     to: 'on'
 condition:
   - condition: or

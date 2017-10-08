@@ -10,10 +10,8 @@ zwave_batteries:
   view: false
   name: Z-Wave device batteries
   entities:
-  - sensor.zwave_battery_garage_car
   - sensor.zwave_battery_garage_closed_bike
   - sensor.zwave_battery_garage_closed_car
-  - sensor.zwave_battery_garage_door_bike
   - sensor.zwave_battery_living_room_multi
   - sensor.zwave_battery_nodon_crc3100_octan_remote
   - sensor.zwave_battery_utility_door_exterior
@@ -340,8 +338,6 @@ garage:
   name: Garage
   icon: mdi:garage
   entities:
-  - binary_sensor.garage_door_l
-  - binary_sensor.garage_door_r
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
   view: false
@@ -393,12 +389,8 @@ binary_sensors:
   - binary_sensor.living_room_motion
   - binary_sensor.office_multi_sensor
   - binary_sensor.utility_door_exterior_sensor
-  - binary_sensor.garage_door_bike_sensor
-  - binary_sensor.garage_car_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
-  - binary_sensor.garage_door_l
-  - binary_sensor.garage_door_r
   - binary_sensor.workday_sensor
   - binary_sensor.zwave_health
   view: false
@@ -411,10 +403,8 @@ access_control:
 burglar:
   name: Burglar sensors
   entities:
-  - sensor.garage_car_burglar
   - sensor.garage_closed_bike_burglar
   - sensor.garage_closed_car_burglar
-  - sensor.garage_door_bike_burglar
   - sensor.living_room_multi_burglar
   - sensor.office_multi_burglar
   - sensor.utility_door_exterior_burglar
@@ -525,8 +515,6 @@ z_wave:
   - zwave.number_sign
   - zwave.garden_lights
   - zwave.utility_door_exterior
-  - zwave.garage_door_bike
-  - zwave.garage_car
   - zwave.garage_closed_bike
   - zwave.garage_closed_car
   - zwave.spare_socket

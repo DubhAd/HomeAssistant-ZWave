@@ -45,17 +45,17 @@ background-color: var(--primary-background-color);
   fill: #d4d4d4 !important;
 }
 
-/*
+/* 
   transform-origin: top left;
 }
-*/
+ */
 
 
 .door-closed {
   fill: #77FF77 !important;
   fill-opacity: 1 !important;
 /*   stroke: #82caa8 !important;
-  stroke-width: 1px !important; 
+  stroke-width: 1px !important;  
   animation-duration: 4s;
   animation-name: rotateReset90; */
 }
@@ -69,7 +69,7 @@ background-color: var(--primary-background-color);
   stroke-opacity: 0.8 !important;
 /*  animation-duration: 4s;
   animation-name: rotate90;
-  animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;  */
 }
 
 

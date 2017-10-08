@@ -89,7 +89,7 @@ scene: !include_dir_list scenes/
 
 group: !include groups.yaml
 
-script: !include scripts.yaml
+script: !include_dir_list scripts.yaml
 
 input_slider: !include input_slider.yaml
 

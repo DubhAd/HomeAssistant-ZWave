@@ -17,7 +17,7 @@ condition:
 action:
   - service: notify.person3
     data_template: 
-      message: "Utility door is {%- if states.binary_sensor.utility_door_exterior_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (car) is {%- if states.binary_sensor.garage_closed_car_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (bike) is {%- if states.binary_sensor.garage_door_bike_sensor.state == 'off' %} closed {% else %} open {% endif -%}"
+      message: "Utility door is {%- if states.binary_sensor.utility_door_exterior_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (car) is {%- if states.binary_sensor.garage_closed_car_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (bike) is {%- if states.binary_sensor.garage_closed_bike_sensor.state == 'off' %} closed {% else %} open {% endif -%}"
   - service: notify.person2
     data_template: 
-      message: "Utility door is {%- if states.binary_sensor.utility_door_exterior_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (car) is {%- if states.binary_sensor.garage_closed_car_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (bike) is {%- if states.binary_sensor.garage_door_bike_sensor.state == 'off' %} closed {% else %} open {% endif -%}"
+      message: "Utility door is {%- if states.binary_sensor.utility_door_exterior_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (car) is {%- if states.binary_sensor.garage_closed_car_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (bike) is {%- if states.binary_sensor.garage_closed_bike_sensor.state == 'off' %} closed {% else %} open {% endif -%}"
