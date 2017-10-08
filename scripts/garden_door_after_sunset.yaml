@@ -1,14 +1,12 @@
-garden_door_after_sunset:
-  alias: Garden door after sunset
-  sequence:
-    - service: homeassistant.turn_off
-      entity_id: automation.utility_door_open_after_sunset_turn_off
-      data: {}
-    - service: homeassistant.turn_on
-      entity_id: switch.garden_lights_switch
-      data: {}
-    #- delay: '00:00:{{ states.input_number.door_delay.state | int }}'
-    - delay: '00:00:{{ states.input_slider.door_delay.state | int }}'
-    - service: homeassistant.turn_on
-      entity_id: automation.utility_door_open_after_sunset_turn_off
-      data: {}
+alias: Garden door after sunset
+sequence:
+  - service: homeassistant.turn_off
+    entity_id: automation.utility_door_open_after_sunset_turn_off
+    data: {}
+  - service: homeassistant.turn_on
+    entity_id: switch.garden_lights_switch
+    data: {}
+  - delay: '00:00:{{ states.input_number.door_delay.state | int }}'
+  - service: homeassistant.turn_on
+    entity_id: automation.utility_door_open_after_sunset_turn_off
+    data: {}

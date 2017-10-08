@@ -251,14 +251,14 @@ my_input_boolean:
 my_input_numbers:
   name: Inputs for automations
   entities:
-  - input_slider.door_delay
-  - input_slider.garden_time
-  - input_slider.room_low_light
-  - input_slider.room_dark
-  - input_slider.light_step
-  - input_slider.light_minimum
-  - input_slider.light_maximum
-  - input_slider.light_step_colour
+  - input_number.door_delay
+  - input_number.garden_time
+  - input_number.room_low_light
+  - input_number.room_dark
+  - input_number.light_step
+  - input_number.light_minimum
+  - input_number.light_maximum
+  - input_number.light_step_colour
 my_weather_metoffice:
   name: Weather from the Met Office
   entities:
@@ -471,12 +471,17 @@ People:
   - group.my_devices
   - group.new_batteries
   - group.wifi_state
+camera_left:
+  name: Cameras on the left
+  view: false
+  entities:
+  - camera.garage_camera
 Cameras:
   name: Cameras
   icon: mdi:video
   view: true
   entities:
-  - camera.garage_camera
+  - group.camera_left
 Weather:
   name: Weather
   icon: mdi:weather-partlycloudy

@@ -1,19 +1,18 @@
-bedtime_slow_off:
-  alias: Bedtime slow off
-  sequence:
-    - alias: TV light off
-      service: switch.turn_off
-      data:
-        entity_id: switch.tv_light_switch
-    - delay:
-        seconds: 10
-    - alias: Table light off
-      service: switch.turn_off
-      data:
-        entity_id: switch.table_light_switch
-    - delay:
-        seconds: 10
-    - alias: Cabinet light off
-      service: switch.turn_off
-      data:
-        entity_id: switch.cabinet_light_switch
+alias: Bedtime slow off
+sequence:
+  - alias: TV light off
+    service: switch.turn_off
+    data:
+      entity_id: switch.tv_light_switch
+  - delay:
+      seconds: 10
+  - alias: Table light off
+    service: switch.turn_off
+    data:
+      entity_id: switch.table_light_switch
+  - delay:
+      seconds: 10
+  - alias: Cabinet light off
+    service: switch.turn_off
+    data:
+      entity_id: switch.cabinet_light_switch

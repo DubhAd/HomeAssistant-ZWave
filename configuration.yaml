@@ -41,8 +41,9 @@ logbook:
 sun:
 
 recorder:
-  purge_days: 4
   db_url: sqlite:///data/homeassistant/homeassistant.sqlite
+  purge_interval: 2
+  purge_keep_days: 4
 
 tts:
   platform: google
@@ -89,9 +90,9 @@ scene: !include_dir_list scenes/
 
 group: !include groups.yaml
 
-script: !include_dir_list scripts.yaml
+script: !include_dir_named scripts/
 
-input_slider: !include input_slider.yaml
+input_number: !include input_number.yaml
 
 input_boolean: !include input_boolean.yaml
 
@@ -119,7 +120,7 @@ lametric:
   client_id: !secret lametric_id
   client_secret: !secret lametric_secret
 
-camera: !include camera.yaml
+camera: !include_dir_list camera/
 
 variable_int: !include variable_int.yaml
 

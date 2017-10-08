@@ -28,9 +28,9 @@ sensor.person3_travel:
 sensor.person1_travel:
   entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1"
-input_slider.garden_time:
+input_number.garden_time:
   icon: mdi:timer
-input_slider.door_delay:
+input_number.door_delay:
   icon: mdi:clock-fast
 calendar.person3:
   icon: mdi:calendar

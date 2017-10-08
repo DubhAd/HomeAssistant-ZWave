@@ -9,4 +9,7 @@
     - 192.168.0.251
 - platform: owntracks
   max_gps_accuracy: 600
+- platform: owntracks_http
+  max_gps_accuracy: 600
+  secret: !secret owntracks_secret
 - platform: bluetooth_tracker

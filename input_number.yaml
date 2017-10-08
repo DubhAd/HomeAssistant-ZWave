@@ -4,7 +4,7 @@ garden_time:
   min: 2
   max: 120
   step: 1
-  mode: both
+  mode: slider
 
 door_delay:
   name: 'Turn off lights if open for more than'
@@ -12,7 +12,7 @@ door_delay:
   min: 4
   max: 60
   step: 1
-  mode: both
+  mode: slider
 
 room_low_light:
   name: 'How many lux is low light'
@@ -20,7 +20,7 @@ room_low_light:
   min: 5
   max: 30
   step: 1
-  mode: both
+  mode: slider
 
 room_dark:
   name: 'How many lux is dark'
@@ -28,7 +28,7 @@ room_dark:
   min: 0
   max: 15
   step: 1
-  mode: both
+  mode: slider
 
 light_step:
   name: 'Step the lights this much'
@@ -36,7 +36,7 @@ light_step:
   min: 1
   max: 80
   step: 1
-  mode: both
+  mode: slider
 
 light_minimum:
   name: 'No dimmer than this'
@@ -44,7 +44,7 @@ light_minimum:
   min: 1
   max: 255
   step: 1
-  mode: both
+  mode: slider
   
 light_maximum:
   name: 'No brighter than this'
@@ -52,7 +52,7 @@ light_maximum:
   min: 50
   max: 255
   step: 1
-  mode: both
+  mode: slider
 
 light_step_colour:
   name: 'Step the light colour temp this much'
@@ -60,5 +60,5 @@ light_step_colour:
   min: 1
   max: 128
   step: 1
-  mode: both
+  mode: slider
 
