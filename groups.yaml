@@ -4,7 +4,9 @@ new_batteries:
   entities:
   - sensor.battery_person3_mobile
   - sensor.battery_person1_mobile
+  - sensor.battery_person1_tablet
   - sensor.battery_person2_mobile
+  - sensor.battery_person2_tablet
 zwave_batteries:
   control: hidden
   view: false

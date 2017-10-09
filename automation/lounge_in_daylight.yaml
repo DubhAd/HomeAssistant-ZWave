@@ -3,7 +3,7 @@ alias: 'Lounge in daylight'
 trigger:
   platform: numeric_state
   entity_id: sensor.living_room_multi_luminance
-  above: 95
+  above: 75
 condition:
   condition: state
   entity_id: group.living_room_lights
