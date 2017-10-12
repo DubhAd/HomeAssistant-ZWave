@@ -362,6 +362,22 @@ background-color: var(--primary-background-color);
   fill: #505050 !important;
 }
 
+.bin-today {
+  fill: #FF0000 !important;
+}
+
+.bin-tomorrow {
+  fill: #FFFF00 !important;
+}
+
+.bin-future {
+  fill: #00FF00 !important;
+}
+
+.bin-false {
+  fill: #000000 !important;
+}
+
 .hidden {
   visibility: hidden;
 }

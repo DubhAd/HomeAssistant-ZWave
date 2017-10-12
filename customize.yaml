@@ -292,6 +292,8 @@ sensor.zwave_battery_living_room_multi:
   friendly_name: "Living room multi-sensor"
 sensor.zwave_battery_nodon_crc3100_octan_remote:
   friendly_name: "Nodon remote"
+sensor.zwave_battery_patio_door_left:
+  friendly_name: "Patio door (left)"
 sensor.zwave_battery_utility_door_exterior:
   friendly_name: "Utility door strip"
 sensor.zwave_battery_utility:

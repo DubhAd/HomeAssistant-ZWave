@@ -1,0 +1,11 @@
+initial_state: 'on'
+alias: 'Battery patio door (left)'
+trigger:
+  platform: numeric_state
+  entity_id: zwave.patio_door_left
+  value_template: "{{ states.zwave.patio_door_left.attributes.battery_level }}"
+  below: 25
+action:
+  service: notify.person2
+  data:
+    message: "The utility door sensor is at {{ states.zwave.patio_door_left.attributes.battery_level }}% battery, buy a replacement soon"

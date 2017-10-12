@@ -17,7 +17,7 @@ zwave_batteries:
   - sensor.zwave_battery_living_room_multi
   - sensor.zwave_battery_nodon_crc3100_octan_remote
   - sensor.zwave_battery_utility_door_exterior
-  - sensor.zwave_battery_patio_door_left_sensor
+  - sensor.zwave_battery_patio_door_left
   - sensor.zwave_battery_utility
 wifi_state:
   control: hidden
@@ -530,6 +530,7 @@ z_wave:
   - zwave.number_sign
   - zwave.garden_lights
   - zwave.utility_door_exterior
+  - zwave.patio_door_left
   - zwave.garage_closed_bike
   - zwave.garage_closed_car
   - zwave.spare_socket
@@ -735,6 +736,7 @@ my_automations_battery:
   - automation.battery_garage_door_closed_bike
   - automation.battery_livingroom_multi
   - automation.battery_utility_door
+  - automation.battery_patio_door_left
   - automation.battery_remote
 my_automations_downstairs:
   name: Automations

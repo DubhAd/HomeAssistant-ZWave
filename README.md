@@ -48,7 +48,41 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 
 ## Automations
 
-* ToDo 
+* Master Bedroom
+  * Using the remote with the light strip to control the light, including dimming and colour temperature
+  * Dim the light through the night, turning it to lowest brightness and red at midnight
+  * Turn the light off if it was left on for half an hour
+  * Turn the light on with the alarm
+* Front of the house
+  * Turn on the light by the house number on at dusk, and at 06:00
+  * Turn the light off at sunrise and (just before) midnight
+  * Send alerts if we've left the garage doors open for 10 minutes (and nag every 10 minutes)
+  * Warn us if an outside door is opened when we're away from home
+  * Warn us if the garage doors are opened once we've gone to bed
+* Back of the house
+  * Turn on the garden lights if the utility door is opened after dusk and before dawn. This temporarily turns off the "off" automations - for 8 seconds (controlled by an input_number)
+  * Turn off the garden lights when the utility door is closed
+  * Turn off the lights if they're left on and the door is shut
+* Lounge
+  * Turn on the lights when we come home and it's dark
+  * Turn off the lights if we all leave (and the TV is off)
+  * Turn on lights as the room gets dark (if we're home, and the TV is on)
+  * Turn on the table light if motion is detected in the dark, and turn it off 2 minutes after the last motion detection
+  * Mute the TV if the Sonos starts playing, and unmute when it stops
+  * Stop the Sonos if the TV is turned on
+  * At the end of the night, when the TV has been off for 5 minutes, or the utility door has been shut after the TV is turned off, run the bedtime script (turns of the lights one at a time)
+* Home office
+  * When I'm working for home, start music at the beginning of the day, and stop it at the end
+* People
+  * Track when we get up, for other automations
+  * Notify about commute delays
+  * Let the adults know when the other is going to be home
+* Misc
+  * When battery powered sensors are getting low (25%) warn us so that we know to order a replacement (need to write ones to alert at 5% to say "replace now")
+  * Check the health of the Z-Wave mesh (by looking to see that at least one device has checked in within the last 5 minutes) and run a Heal and Test if necessary
+  * Send notifications on startup and shutdown of HA
+  * Notify us about bin collections being due (links in with a green/amber/red Floorplan notification)
+* MoreToDo 
 
 ## Notes
 
