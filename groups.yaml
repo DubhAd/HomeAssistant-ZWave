@@ -17,6 +17,7 @@ zwave_batteries:
   - sensor.zwave_battery_living_room_multi
   - sensor.zwave_battery_nodon_crc3100_octan_remote
   - sensor.zwave_battery_utility_door_exterior
+  - sensor.zwave_battery_patio_door_left_sensor
   - sensor.zwave_battery_utility
 wifi_state:
   control: hidden
@@ -296,6 +297,7 @@ my_weather_darksky:
 my_exterior_doors:
   name: Outside doors
   entities:
+  - binary_sensor.patio_door_left_sensor
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
@@ -346,6 +348,7 @@ garage:
 outside_doors:
   name: External doors
   entities:
+  - binary_sensor.patio_door_left_sensor
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
@@ -358,6 +361,7 @@ outside_lights:
 living_room_sensors:
   name: Living room sensors
   entities:
+  - binary_sensor.patio_door_left_sensor
   - binary_sensor.living_room_motion
   - sensor.living_room_multi_luminance
   - sensor.living_room_multi_temperature
@@ -374,6 +378,7 @@ living_room:
   icon: mdi:seat-recline-extra
   entities:
   - binary_sensor.living_room_motion
+  - binary_sensor.patio_door_left_sensor
   - sensor.living_room_multi_luminance
   - sensor.living_room_multi_temperature
   - switch.table_light_switch
@@ -390,6 +395,7 @@ binary_sensors:
   entities:
   - binary_sensor.living_room_motion
   - binary_sensor.office_multi_sensor
+  - binary_sensor.patio_door_left_sensor
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
@@ -402,6 +408,7 @@ access_control:
   - sensor.garage_closed_bike_access_control
   - sensor.garage_closed_car_access_control
   - sensor.utility_door_exterior_access_control
+  - sensor.patio_door_left_access_control
 burglar:
   name: Burglar sensors
   entities:
@@ -410,6 +417,7 @@ burglar:
   - sensor.living_room_multi_burglar
   - sensor.office_multi_burglar
   - sensor.utility_door_exterior_burglar
+  - sensor.patio_door_left_burglar
 office:
   name: Office
   icon: mdi:domain
@@ -613,10 +621,13 @@ my_automations_bedhead_remote:
   - automation.bedhead_turn_on
   - automation.bedhead_turn_off
   - automation.bedhead_turn_on_min
+  - automation.bedhead_turn_on_min_2
   - automation.bedhead_turn_on_max
   - automation.bedhead_turn_on_cool
   - automation.bedhead_turn_on_warm
   - automation.bedhead_turn_white
+  - automation.bedhead_turn_white_max
+  - automation.bedhead_turn_on_red
   - automation.bedhead_turn_red
   - automation.master_bedhead_bright
   - automation.master_bedhead_bright_pause

@@ -1,4 +1,4 @@
-alias: 'Bedhead turn off'
+alias: 'Bedhead turn on min 2'
 initial_state: 'on'
 trigger:
   platform: event
@@ -11,9 +11,10 @@ condition:
     state: 'on'
     entity_id: light.master_bedroom_bedhead
 action:
-  - service: light.turn_off
+  - service: light.turn_on
     data:
       entity_id: light.master_bedroom_bedhead
+      brightness: 5
   - service: script.turn_off
     data:
       entity_id: script.bedhead_light_warm_pause

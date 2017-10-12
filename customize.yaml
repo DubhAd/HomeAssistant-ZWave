@@ -75,6 +75,14 @@ sensor.dark_sky_precip_probability:
   friendly_name: Precipitation probability
 sensor.dark_sky_summary:
   friendly_name: Summary
+binary_sensor.patio_door_left_sensor:
+  icon: mdi:glassdoor
+  friendly_name: Patio door (left)
+  sensor_class: opening
+sensor.patio_door_left:
+  icon: mdi:glassdoor
+  friendly_name: Patio door (left)
+  sensor_class: opening
 binary_sensor.utility_door_exterior_sensor:
   icon: mdi:glassdoor
   friendly_name: Utility room door
@@ -157,6 +165,8 @@ zwave.number_sign:
   friendly_name: "Number sign"
 zwave.office_multi:
   friendly_name: "Office sensor"
+zwave.patio_door_left:
+  friendly_name: "Patio door (left)"
 zwave.utility_door_exterior:
   friendly_name: "Utility door strip"
 zwave.table_light:

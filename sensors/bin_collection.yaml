@@ -3,13 +3,13 @@
     bin_collection_type:
       friendly_name: 'Bin collection type'
       value_template: >
-        {% set mymessage = states("sensor.imap_content") | striptags | replace("= ", "") | replace("Reminder emailDear Recycler,This email reminder relates to the forthcoming scheduled ", "") | replace("for POST CODEItems should normally be ready for collection by ", "                                                 ") | truncate(52,True,"") %}
+        {% set mymessage = states("sensor.imap_content") | striptags | replace("= ", "") | replace("Reminder emailDear Recycler,This email reminder relates to the forthcoming scheduled ", "") | replace("for POST CODE.Items should normally be ready for collection by ", "                                                 ") | replace("for POST CODEItems should normally be ready for collection by ", "                                                 ") | truncate(52,True,"") %}
         {% set myarray = mymessage.split(' on ') %}
         {{  myarray[0] }}
 
     bin_collection_day:
       friendly_name: 'Bin collection day'
       value_template: >
-        {% set mymessage = states("sensor.imap_content") | striptags | replace("= ", "") | replace("Reminder emailDear Recycler,This email reminder relates to the forthcoming scheduled ", "") | replace("for POST CODEItems should normally be ready for collection by ", "                                                 ") | truncate(52,True,"") %}
+        {% set mymessage = states("sensor.imap_content") | striptags | replace("= ", "") | replace("Reminder emailDear Recycler,This email reminder relates to the forthcoming scheduled ", "") | replace("for POST CODEItems should normally be ready for collection by ", "                                                 ") | replace("for POST CODE.Items should normally be ready for collection by ", "                                                 ") | truncate(52,True,"") %}
         {% set myarray = mymessage.split(' on ') %}
         {{ myarray[1] | replace("st "," ") |replace("nd "," ") | replace("rd "," ") | replace("th "," ") | trim }}
