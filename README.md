@@ -38,8 +38,9 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 
 ## The services and other software I use
 
-* [LaMetric](https://lametric.com/) for notifications "in person"
-* [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, alongside [HTML5 push](https://home-assistant.io/components/notify.html5/), and for rich notifications I'm experimenting with [Slack](https://slack.com/)
+* Notifications:
+  * [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, alongside [HTML5 push](https://home-assistant.io/components/notify.html5/), and for rich notifications I'm experimenting with [Slack](https://slack.com/)
+  * [LaMetric](https://lametric.com/) for notifications "in person"
 * [OwnTracks](http://owntracks.org/) for device tracking, combined with [CloudMQTT](https://www.cloudmqtt.com/) so I don't have to expose another service
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service
 * [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint)

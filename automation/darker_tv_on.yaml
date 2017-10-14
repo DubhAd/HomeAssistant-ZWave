@@ -12,7 +12,7 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: switch.tv_light_switch
+      entity_id: switch.cabinet_light_switch
       state: 'off'
     - condition: state
       entity_id: media_player.samsung_tv_remote
