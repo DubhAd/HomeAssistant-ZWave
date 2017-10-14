@@ -9,17 +9,17 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 
 * [Home Assistant](https://home-assistant.io/)
 * [Floorplan](https://github.com/pkozul/ha-floorplan) for a high level overview
+  * ![Screenshot of floorplan](https://i.imgur.com/fmplQER.png)
 * [HA Dashboard](https://appdaemon.readthedocs.io/en/latest/DASHBOARD_INSTALL.html) for a "finger friendly" interface
+  * ![Screenshot of HA Dashboard](https://i.imgur.com/gEvzY9x.png)
 * [nginx](https://nginx.org/en/) to provide remote access, in conjunction with [Let's Encrypt](https://letsencrypt.org/)
 * [rpi-clone](https://github.com/billw2/rpi-clone) for bootable backups
 * [rclone](https://rclone.org/) for offsite backups
 * [pi-hole](https://pi-hole.net/) so I can easily block "smart" devices from calling home
-* [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/)
 * [netdata](https://my-netdata.io/) so I can keep an eye on the performance
 * [LaMetric](https://lametric.com/) a clock and low resolution display
 * [Nmap](https://nmap.org/) to support device tracking
-
-![Screenshot of floorplan](https://i.imgur.com/fmplQER.png)
+* I did use [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/), but since moving to [OwnTracks HTTP](https://home-assistant.io/components/device_tracker.owntracks_http/) I've ditched it
 
 ## The devices I use (with HA)
 
@@ -41,7 +41,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * Notifications:
   * [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, alongside [HTML5 push](https://home-assistant.io/components/notify.html5/), and for rich notifications I'm experimenting with [Slack](https://slack.com/)
   * [LaMetric](https://lametric.com/) for notifications "in person"
-* [OwnTracks](http://owntracks.org/) for device tracking, combined with [CloudMQTT](https://www.cloudmqtt.com/) so I don't have to expose another service
+* [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/)
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service
 * [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint)
 * [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles

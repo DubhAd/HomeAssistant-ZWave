@@ -8,15 +8,15 @@ trigger:
     entity_id: media_player.samsung_tv_remote
     from: 'off'
     to: 'on'
+  - platform: state
+    entity_id: media_player.living_room_tv
+    to: 'playing'
 condition:
   condition: and
   conditions:
     - condition: state
       entity_id: switch.tv_light_switch
       state: 'off'
-    - condition: state
-      entity_id: media_player.samsung_tv_remote
-      state: 'on'
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
       below: 15
@@ -25,8 +25,15 @@ condition:
       state: 'home'
     - condition: time
       after: '04:00:00'
-    - condition: time
       before: '23:00:00'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: media_player.samsung_tv_remote
+        state: 'on'
+      - condition: state
+        entity_id: media_player.living_room_tv
+        state: 'playing'
 action:
   - service: homeassistant.turn_off
     entity_id: automation.lounge_in_daylight_2
