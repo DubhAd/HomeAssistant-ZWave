@@ -10,6 +10,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [Home Assistant](https://home-assistant.io/)
 * [Floorplan](https://github.com/pkozul/ha-floorplan) for a high level overview
   * ![Screenshot of floorplan](https://i.imgur.com/fmplQER.png)
+  * Showing: The grey bin is being collected today. The background lighting in the lounge is on, as is the light by the house number. The TV and Chromecast are on, but the Sonos speakers are off. The outside doors are closed. The TV and X-Box in the family room are on. All the mobiles are home, as is the tablet. Oh, and the printer isn't yet low on consumables.
 * [HA Dashboard](https://appdaemon.readthedocs.io/en/latest/DASHBOARD_INSTALL.html) for a "finger friendly" interface
   * ![Screenshot of HA Dashboard](https://i.imgur.com/gEvzY9x.png)
 * [nginx](https://nginx.org/en/) to provide remote access, in conjunction with [Let's Encrypt](https://letsencrypt.org/)
