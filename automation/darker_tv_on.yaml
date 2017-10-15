@@ -11,6 +11,9 @@ trigger:
   - platform: state
     entity_id: media_player.living_room_tv
     to: 'playing'
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+    to: 'home'
 condition:
   condition: and
   conditions:
@@ -34,6 +37,9 @@ condition:
       - condition: state
         entity_id: media_player.living_room_tv
         state: 'playing'
+      - condition: state
+        entity_id: device_tracker.livingroom_chromecast
+        state: 'home'
 action:
   - service: scene.turn_on
     entity_id: scene.lounge_lights_on
