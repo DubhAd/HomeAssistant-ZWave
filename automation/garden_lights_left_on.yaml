@@ -1,9 +1,18 @@
 alias: 'Garden lights left on'
 initial_state: 'on'
 trigger:
-  platform: state
-  entity_id: input_boolean.garden_lights_left_on
-  to: 'on'
+  - platform: state
+    entity_id: input_boolean.garden_lights_left_on
+    to: 'on'
+condition:
+  - condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.utility_door_exterior_sensor
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.patio_door_left_sensor
+        state: 'off'
 action:
-  service: homeassistant.turn_off
-  entity_id: switch.garden_lights_switch
+  - service: homeassistant.turn_off
+    entity_id: switch.garden_lights_switch

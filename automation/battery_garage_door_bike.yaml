@@ -1,10 +1,18 @@
 initial_state: 'on'
 alias: 'Battery garage door bike'
 trigger:
-  platform: numeric_state
-  entity_id: zwave.garage_door_bike
-  value_template: "{{ states.zwave.garage_door_bike.attributes.battery_level }}"
-  below: 25
+  - platform: numeric_state
+    entity_id: zwave.garage_door_bike
+    value_template: "{{ states.zwave.garage_door_bike.attributes.battery_level }}"
+    below: 25
+  - platform: numeric_state
+    entity_id: zwave.garage_door_bike
+    value_template: "{{ states.zwave.garage_door_bike.attributes.battery_level }}"
+    below: 10
+  - platform: numeric_state
+    entity_id: zwave.garage_door_bike
+    value_template: "{{ states.zwave.garage_door_bike.attributes.battery_level }}"
+    below: 5
 action:
   service: notify.person2
   data:

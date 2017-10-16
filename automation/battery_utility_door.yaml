@@ -1,10 +1,18 @@
 initial_state: 'on'
 alias: 'Battery utility door'
 trigger:
-  platform: numeric_state
-  entity_id: zwave.utility_door_exterior
-  value_template: "{{ states.zwave.utility_door_exterior.attributes.battery_level }}"
-  below: 25
+  - platform: numeric_state
+    entity_id: zwave.utility_door_exterior
+    value_template: "{{ states.zwave.utility_door_exterior.attributes.battery_level }}"
+    below: 25
+  - platform: numeric_state
+    entity_id: zwave.utility_door_exterior
+    value_template: "{{ states.zwave.utility_door_exterior.attributes.battery_level }}"
+    below: 10
+  - platform: numeric_state
+    entity_id: zwave.utility_door_exterior
+    value_template: "{{ states.zwave.utility_door_exterior.attributes.battery_level }}"
+    below: 5
 action:
   service: notify.person2
   data:

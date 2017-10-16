@@ -1,10 +1,18 @@
 initial_state: 'on'
 alias: 'Battery livingroom multi'
 trigger:
-  platform: numeric_state
-  entity_id: zswave.living_room_multi
-  value_template: "{{ states.zwave.living_room_multi.attributes.battery_level }}"
-  below: 25
+  - platform: numeric_state
+    entity_id: zswave.living_room_multi
+    value_template: "{{ states.zwave.living_room_multi.attributes.battery_level }}"
+    below: 25
+  - platform: numeric_state
+    entity_id: zswave.living_room_multi
+    value_template: "{{ states.zwave.living_room_multi.attributes.battery_level }}"
+    below: 10
+  - platform: numeric_state
+    entity_id: zswave.living_room_multi
+    value_template: "{{ states.zwave.living_room_multi.attributes.battery_level }}"
+    below: 5
 action:
   service: notify.person2
   data:

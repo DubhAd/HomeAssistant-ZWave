@@ -95,6 +95,10 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * Notify us about bin collections being due (links in with a green/amber/red Floorplan notification)
 * MoreToDo 
 
+### Garden lights
+
+This is the most complex of my current automations, to make it "human friendly". The basic logic is that there are automations to turn the light on when the door opens, and off when it closes. To stop that simply having the light on when the door is open, it actually calls a script to turn on the lights. That script turns off the "off" automation temporarily - the duration is determined by the value of `input_number.door_delay` (in seconds).  That means that if we open and close the door (to let the dog out or going out into the garden for some other reason) the lights will stay on when the door closes.  There's another automation (and a template binary sensor) to track if the lights have been left on, and if so to turn them off. That supports a variable delay up to 2 hours, or we can just turn off the automation.
+
 ## Notes
 
 * These are (automatically) modified versions of my actual configurations

@@ -302,6 +302,11 @@ my_exterior_doors:
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
   view: false
+my_back_doors:
+  name: Doors at the back
+  entities:
+  - binary_sensor.patio_door_left_sensor
+  - binary_sensor.utility_door_exterior_sensor
 my_sensors:
   name: Sensors
   entities:

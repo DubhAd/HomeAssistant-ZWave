@@ -1,10 +1,18 @@
 initial_state: 'on'
 alias: 'Battery remote'
 trigger:
-  platform: numeric_state
-  entity_id: zwave.nodon_crc3100_octan_remote
-  value_template: "{{ states.zwave.nodon_crc3100_octan_remote.attributes.battery_level }}"
-  below: 25
+  - platform: numeric_state
+    entity_id: zwave.nodon_crc3100_octan_remote
+    value_template: "{{ states.zwave.nodon_crc3100_octan_remote.attributes.battery_level }}"
+    below: 25
+  - platform: numeric_state
+    entity_id: zwave.nodon_crc3100_octan_remote
+    value_template: "{{ states.zwave.nodon_crc3100_octan_remote.attributes.battery_level }}"
+    below: 10
+  - platform: numeric_state
+    entity_id: zwave.nodon_crc3100_octan_remote
+    value_template: "{{ states.zwave.nodon_crc3100_octan_remote.attributes.battery_level }}"
+    below: 5
 action:
   service: notify.person2
   data:
