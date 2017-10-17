@@ -9,7 +9,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 
 * [Home Assistant](https://home-assistant.io/)
 * [Floorplan](https://github.com/pkozul/ha-floorplan) for a high level overview
-  * ![Screenshot of floorplan] (https://i.imgur.com/LEUpofO.png)
+  * ![Screenshot of floorplan](https://i.imgur.com/LEUpofO.png)
   * Showing: 
     * The blue bin is being collected tomorrow (yellow outline), and the brown bin in 2 or more days (green outline). The grey bin isn't currently scheduled for collection. 
     * The background lighting in the lounge is on, as is the light by the house number. 
