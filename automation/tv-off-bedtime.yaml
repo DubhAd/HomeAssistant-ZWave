@@ -2,6 +2,11 @@ initial_state: 'on'
 alias: 'TV off Bedtime'
 trigger:
   - platform: state
+    entity_id: media_player.samsung_tv_remote
+    to: 'off'
+    for:
+      minutes: 5
+  - platform: state
     entity_id: device_tracker.livingroom_chromecast
     to: 'not_home'
     for:

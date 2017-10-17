@@ -107,7 +107,7 @@ emulated_hue:
 panel_custom:
   - name: floorplan
     sidebar_title: Floorplan
-    sidebar_icon: mdi:home
+    sidebar_icon: mdi:floor-plan
     url_path: floorplan
     config: !include floorplan.yaml
 

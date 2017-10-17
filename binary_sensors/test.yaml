@@ -1,0 +1,11 @@
+- platform: template
+  sensors: 
+    motion_sensor:
+      device_class: moving
+      friendly_name: 'Motion sensor'
+      value_template: >- 
+        {%- if states("sensor.kaipule_unknown_type0002_id0002_burglar") == 8 -%}
+        true
+        {%- else -%}
+        false
+        {%- endif -%}
