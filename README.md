@@ -14,7 +14,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
     * The blue bin is being collected tomorrow (yellow outline), and the brown bin in 2 or more days (green outline). The grey bin isn't currently scheduled for collection. 
     * The background lighting in the lounge is on, as is the light by the house number. 
     * The utility door is open, and the garden lights are on. Other exterior doors are closed.
-    * The TV and Chromecast are off, as are the Sonos speakers are off.
+    * The TV and Chromecast are off, as are the Sonos speakers.
     * The TV and X-Box in the family room are on. 
     * All the mobiles are home, as is the tablet. 
     * Oh, and the printer isn't yet low on consumables.
