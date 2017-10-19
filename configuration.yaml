@@ -38,8 +38,6 @@ history:
 
 logbook:
 
-sun:
-
 recorder:
   db_url: sqlite:///data/homeassistant/homeassistant.sqlite
   purge_interval: 2
@@ -55,30 +53,57 @@ zwave:
   device_config: !include zwave_device_config.yaml
   network_key: !secret zwave_network_key
 
-media_player: !include media_player.yaml
-
-notify: !include_dir_merge_list notify/
-
-google: !include google.yaml
-
-sensor: !include_dir_merge_list sensors/
-
-binary_sensor: !include_dir_merge_list binary_sensors/
-
-light: !include_dir_merge_list light/
-
-switch: !include_dir_merge_list switch/
-
-device_tracker: !include device_tracker.yaml
-
 mqtt:
   broker: 127.0.0.1
   port: 1883
   client_id: pi3HA
 
+
+device_tracker: !include device_tracker.yaml
+
 zone: !include zones.yaml
 
 proximity: !include_dir_merge_named proximity/ 
+
+
+notify: !include_dir_merge_list notify/
+
+alert: !include alerts.yaml
+
+lametric:
+  client_id: !secret lametric_id
+  client_secret: !secret lametric_secret
+
+
+google: !include google.yaml
+
+
+sensor: !include_dir_merge_list sensors/
+
+binary_sensor: !include_dir_merge_list binary_sensors/
+
+sun:
+
+camera: !include_dir_list camera/
+
+
+input_number: !include input_number.yaml
+
+input_boolean: !include input_boolean.yaml
+
+variable_int: !include variable_int.yaml
+
+variable_bool: !include variable_bool.yaml
+
+
+light: !include_dir_merge_list light/
+
+switch: !include_dir_merge_list switch/
+
+media_player: !include media_player.yaml
+
+
+script: !include_dir_named scripts/
 
 automation: !include automations.yaml
 
@@ -88,20 +113,6 @@ scene: !include_dir_list scenes/
 
 group: !include groups.yaml
 
-script: !include_dir_named scripts/
-
-input_number: !include input_number.yaml
-
-input_boolean: !include input_boolean.yaml
-
-alert: !include alerts.yaml
-
-emulated_hue:
-  listen_port: 80
-  host_ip: 192.168.0.10
-  exposed_domains:
-    - light
-    - switch
 
 
 panel_custom:
@@ -111,12 +122,11 @@ panel_custom:
     url_path: floorplan
     config: !include floorplan.yaml
 
-lametric:
-  client_id: !secret lametric_id
-  client_secret: !secret lametric_secret
 
-camera: !include_dir_list camera/
+emulated_hue:
+  listen_port: 80
+  host_ip: 192.168.0.10
+  exposed_domains:
+    - light
+    - switch
 
-variable_int: !include variable_int.yaml
-
-variable_bool: !include variable_bool.yaml
