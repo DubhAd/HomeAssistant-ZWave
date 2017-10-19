@@ -1,5 +1,0 @@
-- platform: mqtt
-  state_topic: "owntracks/person2/mobile"
-  name: "Owntracks battery person2"
-  unit_of_measurement: "%"
-  value_template: '{{ value_json.batt }}'
