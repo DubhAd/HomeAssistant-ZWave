@@ -153,6 +153,10 @@ device_tracker.livingroom_chromecast:
 device_tracker.family_tv:
   friendly_name: "TV in the family room"
   icon: mdi:television
+zwave.front_spare_extender:
+  friendly_name: "Z-Wave extender"
+zwave.master_bedroom_socket:
+  friendly_name: "Master bedroom socket"
 zwave.cabinet_light:
   friendly_name: "cabinet light"
 zwave.garden_lights:
@@ -173,17 +177,20 @@ zwave.table_light:
   friendly_name: "Table light"
 zwave.tv_light:
   friendly_name: "TV light"
-zwave.garage_closed_bike_sensor:
+zwave.garage_closed_bike:
   friendly_name: "Garage door, bike"
 zwave.garage_door_bike:
   friendly_name: "Garage door (tilt), bike"
-zwave.garage_closed_car_sensor:
+zwave.garage_closed_car:
   friendly_name: "Garage door, bike"
 zwave.garage_car:
   friendly_name: "Garage door (tilt), car"
 zwave.spare_socket:
   friendly_name: "Spare socket"
   icon: mdi:power
+switch.master_bedroom_socket_switch:
+  friendly_name: "Master bedroom socket"
+  icon: mdi:power-socket-uk
 switch.spare_socket_switch:
   friendly_name: "Spare socket"
   icon: mdi:power

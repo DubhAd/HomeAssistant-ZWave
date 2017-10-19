@@ -38,6 +38,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * Fibaro FGK10x door sensors (previous generation, superseded by the [FGDW-002](http://manuals.fibaro.com/door-window-sensor-2/))
 * Sensative [door/window strips](https://www.stripsbysensative.com/strips-guard/)
 * TKB [TKB TZ69E](http://www.tkbhome.com/?cn-p-d-271.html) - metering wall plugs
+* Foxx Project (Smart Switch)[https://www.getfoxx.com/products] (which identifies itself as an Aeotec ZW075, aka Smart Switch Gen5). These are cheap, but there's no local switch control for the attached device.
 * NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2)
 * Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller
 * Yeelight [led strip](https://www.yeelight.com/en_US/product/pitaya)
@@ -71,7 +72,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * Warn us if an outside door is opened when we're away from home
   * Warn us if the garage doors are opened once we've gone to bed
 * Back of the house
-  * Turn on the garden lights if the utility door is opened after dusk and before dawn. This temporarily turns off the "off" automations - for 8 seconds (controlled by an input_number)
+  * Turn on the garden lights if the utility door is opened between dusk and dawn (elevation below -5). This temporarily turns off the "off" automations - for 8 seconds (controlled by an input_number)
   * Turn off the garden lights when the utility door is closed
   * Turn off the lights if they're left on and the door is shut
 * Lounge
@@ -89,7 +90,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * Notify about commute delays
   * Let the adults know when the other is going to be home
 * Misc
-  * When battery powered sensors are getting low (25%) warn us so that we know to order a replacement (need to write ones to alert at 5% to say "replace now")
+  * When battery powered sensors are getting low (25%) warn us so that we know to order a replacement, remind again at 10% and 5%
   * Check the health of the Z-Wave mesh (by looking to see that at least one device has checked in within the last 5 minutes) and run a Heal and Test if necessary
   * Send notifications on startup and shutdown of HA
   * Notify us about bin collections being due (links in with a green/amber/red Floorplan notification)

@@ -204,6 +204,7 @@ my_switches:
   - switch.tv_light_switch
   - switch.number_sign_switch
   - switch.garden_lights_switch
+  - switch.master_bedroom_socket_switch
   view: false
 tv:
   name: TVs
@@ -431,6 +432,11 @@ office:
   - sensor.office_multi_luminance
   - sensor.office_multi_temperature
   - sensor.office_multi_relative_humidity
+  view: false
+back_bedroom:
+  name: Back bedroom
+  icon: mdi:hotel
+  entities:
   - switch.spare_socket_switch
   view: false
 media_devices:
@@ -463,6 +469,7 @@ master_bedroom:
   icon: mdi:hotel
   entities:
   - light.master_bedroom_bedhead
+  - switch.master_bedroom_socket_switch
 all_rooms:
   name: Rooms
   icon: mdi:checkbox-multiple-blank-outline
@@ -473,6 +480,7 @@ all_rooms:
   - group.outside_lights
   - group.garage
   - group.office
+  - group.back_bedroom
   - group.master_bedroom
 People:
   name: People
@@ -535,14 +543,16 @@ z_wave:
   - zwave.number_sign
   - zwave.garden_lights
   - zwave.utility_door_exterior
+  - zwave.utility
   - zwave.patio_door_left
   - zwave.garage_closed_bike
   - zwave.garage_closed_car
   - zwave.spare_socket
+  - zwave.master_bedroom_socket
   - zwave.office_multi
   - zwave.nodon_crc3100_octan_remote
-  - zwave.utility
   - zwave.living_room_multi
+  - zwave.front_spare_extender
 my_printer:
   name: Printer status
   view: false
@@ -661,9 +671,6 @@ my_automations_garden:
   - automation.utility_door_open_after_sunset_closed
   - automation.utility_door_open_after_sunset_turn_on
   - automation.utility_door_open_after_sunset_turn_off
-  - automation.utility_door_open_before_sunrise_closed
-  - automation.utility_door_open_before_sunrise_turn_on
-  - automation.utility_door_open_before_sunrise_turn_off
   - automation.nighttime_garden_off
   - input_slider.door_delay
   - automation.garden_lights_left_on

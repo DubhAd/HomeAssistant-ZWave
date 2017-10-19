@@ -5,6 +5,8 @@
   timeout: 30
 - platform: cast
   host: 192.168.0.225
+- platform: cast
+  host: 192.168.0.80
 - platform: sonos
   hosts:
     - 192.168.0.180

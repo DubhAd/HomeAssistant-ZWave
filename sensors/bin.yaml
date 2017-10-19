@@ -11,6 +11,7 @@
 - platform: template
   sensors:
     bin_grey:
+      entity_id: sensor.office_multi_ultraviolet # This is a sensor that updates regularly, to force this to be updated regularly
       friendly_name: 'Grey bin collection'
       value_template: >-
         {% if is_state('sensor.collection_type', 'Grey Bin Collection') %}
@@ -30,6 +31,7 @@
 - platform: template
   sensors:
     bin_blue:
+      entity_id: sensor.office_multi_ultraviolet
       friendly_name: 'Blue bin collection'
       value_template: >-
         {% if is_state('sensor.collection_type', 'Blue Bin Collection') %}
@@ -49,6 +51,7 @@
 - platform: template
   sensors:
     bin_brown:
+      entity_id: sensor.office_multi_ultraviolet
       friendly_name: 'Brown bin collection'
       value_template: >-
         {% if is_state('sensor.collection_type', 'Brown Bin Collection') %}

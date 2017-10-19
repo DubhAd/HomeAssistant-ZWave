@@ -123,10 +123,4 @@ panel_custom:
     config: !include floorplan.yaml
 
 
-emulated_hue:
-  listen_port: 80
-  host_ip: 192.168.0.10
-  exposed_domains:
-    - light
-    - switch
 
