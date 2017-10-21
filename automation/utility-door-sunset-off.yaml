@@ -1,9 +1,12 @@
 alias: 'Utility door open after sunset turn on'
 initial_state: 'on'
 trigger:
-  platform: state
-  entity_id: sensor.utility_door
-  to: 'open'
+  - platform: state
+    entity_id: sensor.utility_door
+    to: 'open'
+  - platform: state
+    entity_id: binary_sensor.patio_door_left_sensor
+    to: 'on'
 condition:
   condition: and
   conditions:
