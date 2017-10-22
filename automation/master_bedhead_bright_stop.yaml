@@ -8,7 +8,7 @@ trigger:
       entity_id: zwave.nodon_crc3100_octan_remote
 action:
   - service: script.turn_off
-    data_template:
+    data:
       entity_id: script.bedhead_light_bright
   - service: script.turn_off
     data:

@@ -11,12 +11,12 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/London
   #time_zone: Etc/UTC
-
   customize: !include customize.yaml
 
 
 
 config:
+
 
 frontend: !include frontend.yaml
 
@@ -48,8 +48,6 @@ tts:
 
 zwave:
   usb_path: /dev/ttyAMA0
-  config_path: /srv/homeassistant/src/python-openzwave/openzwave/config
-  #config_path: /home/.homeassistant/homeassistant/
   device_config: !include zwave_device_config.yaml
   network_key: !secret zwave_network_key
 
