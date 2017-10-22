@@ -17,6 +17,7 @@ homeassistant:
 
 config:
 
+map:
 
 frontend: !include frontend.yaml
 
@@ -122,3 +123,10 @@ panel_custom:
 
 
 
+google_assistant:
+  project_id: !secret assistant_project_id
+  client_id: !secret assistant_client_id
+  access_token: !secret assistant_access_token
+  exposed_domains:
+    - switch
+    - light
