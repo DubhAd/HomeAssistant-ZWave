@@ -358,10 +358,14 @@ outside_doors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
-outside_lights:
-  name: Outside Lights
+front_of_house:
+  name: Front of house
   entities:
   - switch.number_sign_switch
+  view: false
+back_of_house:
+  name: Back of house
+  entities:
   - switch.garden_lights_switch
   view: false
 living_room_sensors:
@@ -461,7 +465,8 @@ default_view:
   - group.my_scenes
   - group.master_bedroom
   - group.living_room_lights
-  - group.outside_lights
+  - group.back_of_house
+  - group.front_of_house
   - group.my_people_terse
   - group.my_exterior_doors
 master_bedroom:
@@ -469,7 +474,16 @@ master_bedroom:
   icon: mdi:hotel
   entities:
   - light.master_bedroom_bedhead
-  - switch.master_bedroom_socket_switch
+  - switch.spare_socket_switch
+all_lights:
+  name: All lights
+  icon: mdi:lightbulb
+  entities:
+  - light.master_bedroom_bedhead
+  - switch.table_light_switch
+  - switch.cabinet_light_switch
+  - switch.tv_light_switch
+  - switch.spare_socket_switch
 all_rooms:
   name: Rooms
   icon: mdi:checkbox-multiple-blank-outline
@@ -477,7 +491,8 @@ all_rooms:
   entities:
   - group.living_room
   - group.utility
-  - group.outside_lights
+  - group.back_of_house
+  - group.front_of_house
   - group.garage
   - group.office
   - group.back_bedroom
@@ -710,8 +725,6 @@ my_automations_general:
   - automation.test_zwave_network
   - automation.zwave_check
   - automation.zwave_health_check
-  - automation.flight_seen_arriving
-  - automation.flight_seen_departing
   - automation.printer_low
   view: false
 my_automations_people:
