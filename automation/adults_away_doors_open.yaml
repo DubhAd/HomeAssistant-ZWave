@@ -17,7 +17,19 @@ condition:
 action:
   - service: notify.person3
     data_template: 
-      message: "Utility door is {%- if states.binary_sensor.utility_door_exterior_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (car) is {%- if states.binary_sensor.garage_closed_car_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (bike) is {%- if states.binary_sensor.garage_closed_bike_sensor.state == 'off' %} closed {% else %} open {% endif -%}"
+      message: >
+        The following doors are open: 
+        {%- for entity_id in states.group.outside_doors.attributes.entity_id -%}
+          {% set parts = entity_id.split('.') -%}
+          {%- if states(entity_id) == 'on' %}
+          {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}
+        {%- endfor %}
   - service: notify.person2
     data_template: 
-      message: "Utility door is {%- if states.binary_sensor.utility_door_exterior_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (car) is {%- if states.binary_sensor.garage_closed_car_sensor.state == 'off' %} closed {% else %} open {% endif -%}, Garage door (bike) is {%- if states.binary_sensor.garage_closed_bike_sensor.state == 'off' %} closed {% else %} open {% endif -%}"
+      message: >
+        The following doors are open: 
+        {%- for entity_id in states.group.outside_doors.attributes.entity_id -%}
+          {% set parts = entity_id.split('.') -%}
+          {%- if states(entity_id) == 'on' %}
+          {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}
+        {%- endfor %}

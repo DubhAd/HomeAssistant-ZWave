@@ -1,0 +1,37 @@
+initial_state: 'on'
+alias: 'Moved to family room'
+trigger:
+  - platform: state
+    entity_id: media_player.samsung_tv_remote
+    to: 'off'
+    for:
+      minutes: 2
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+    to: 'not_home'
+    for:
+      minutes: 2
+  - platform: state
+    entity_id: device_tracker.family_tv
+    to: 'home'
+condition:
+  condition: and
+  conditions:
+    # Require both the livingroom TV and Chromecast to be off
+  - condition: state
+    entity_id: media_player.samsung_tv_remote
+    state: 'off'
+  - condition: state
+    entity_id: device_tracker.livingroom_chromecast
+    state: 'not_home'
+    # The Family room TV must be on
+  - condition: state
+    entity_id: device_tracker.family_tv
+    state: 'home'
+    # As must the lights
+  - condition: state
+    entity_id: group.living_room_lights
+    state: 'on'
+action:
+  - service: homeassistant.turn_off
+    entity_id: group.living_room_lights

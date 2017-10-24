@@ -568,6 +568,7 @@ z_wave:
   - zwave.nodon_crc3100_octan_remote
   - zwave.living_room_multi
   - zwave.front_spare_extender
+  - zwave.second_bedroom
 my_printer:
   name: Printer status
   view: false
@@ -692,8 +693,12 @@ my_automations_garden:
   - input_slider.garden_time
   - binary_sensor.garden_lights_left_on
   view: false
+my_automations_familyroom:
+  name: Automations for the Family room
+  entities:
+  - automation.moved_to_family_room
 my_automations_livingroom:
-  name: Automations for the Livingroom
+  name: Automations for the Living room
   entities:
   - automation.all_away_lights_off
   - automation.all_away_media_off
@@ -769,6 +774,7 @@ my_automations_downstairs:
   view: true
   entities:
   - group.my_automations_livingroom
+  - group.my_automations_familyroom
   - group.my_automations_front
   - group.my_automations_garden
   - group.my_automations_media
