@@ -130,3 +130,5 @@ google_assistant:
   exposed_domains:
     - switch
     - light
+    - group
+    - scene
