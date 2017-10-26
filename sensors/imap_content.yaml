@@ -1,8 +1,0 @@
-- platform: imap_email_content
-  name: imap_content
-  server: !secret local_imap_host
-  port: 993
-  username: !secret local_imap_user
-  password: !secret local_imap_pass
-  senders:
-    - email@greenboxday.co.uk
