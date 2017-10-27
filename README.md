@@ -44,6 +44,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * Yeelight [led strip](https://www.yeelight.com/en_US/product/pitaya)
 * Outdoor mains [240V led strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
 * [CSL Bluetooth adapter](https://www.amazon.co.uk/gp/product/B00VFT4LD2/) to augment the Nmap device tracker
+* [Google Home Mini](https://store.google.com/product/google_home_mini), with the [Google Assistant](https://home-assistant.io/components/google_assistant/) component
 
 ## The services and other software I use
 
