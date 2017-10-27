@@ -1,11 +1,11 @@
 - platform: file
   name: collection_date
-  file_path: '/data/homeassistant/notify.log'
+  file_path: '/data/homeassistant/bin.json'
   value_template: '{{ value_json.collection_date }}' 
 
 - platform: file
   name: collection_type
-  file_path: '/data/homeassistant/notify.log'
+  file_path: '/data/homeassistant/bin.json'
   value_template: '{{ value_json.collection_type }}' 
 
 - platform: template
