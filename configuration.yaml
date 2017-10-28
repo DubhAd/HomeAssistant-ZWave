@@ -13,8 +13,6 @@ homeassistant:
   #time_zone: Etc/UTC
   customize: !include customize.yaml
 
-
-
 config:
 
 map:
@@ -31,7 +29,6 @@ updater:
   include_used_components: true
 
 discovery:
-
 
 conversation:
 
@@ -57,13 +54,11 @@ mqtt:
   port: 1883
   client_id: pi3HA
 
-
 device_tracker: !include device_tracker.yaml
 
 zone: !include zones.yaml
 
 proximity: !include_dir_merge_named proximity/ 
-
 
 notify: !include_dir_merge_list notify/
 
@@ -73,9 +68,7 @@ lametric:
   client_id: !secret lametric_id
   client_secret: !secret lametric_secret
 
-
 google: !include google.yaml
-
 
 sensor: !include_dir_merge_list sensors/
 
@@ -85,7 +78,6 @@ sun:
 
 camera: !include_dir_list camera/
 
-
 input_number: !include input_number.yaml
 
 input_boolean: !include input_boolean.yaml
@@ -94,13 +86,11 @@ variable_int: !include variable_int.yaml
 
 variable_bool: !include variable_bool.yaml
 
-
 light: !include_dir_merge_list light/
 
 switch: !include_dir_merge_list switch/
 
 media_player: !include media_player.yaml
-
 
 script: !include_dir_named scripts/
 
@@ -112,16 +102,12 @@ scene: !include_dir_list scenes/
 
 group: !include groups.yaml
 
-
-
 panel_custom:
   - name: floorplan
     sidebar_title: Floorplan
     sidebar_icon: mdi:floor-plan
     url_path: floorplan
     config: !include floorplan.yaml
-
-
 
 google_assistant:
   project_id: !secret assistant_project_id

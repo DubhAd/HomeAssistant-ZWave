@@ -19,7 +19,6 @@
       friendly_name: 'Scheduled departure'
       value_template: '{{states.sensor.next_train_to_xyz.attributes.next_trains[0].scheduled}}'
 
-
     second_train_xyz_status:
       friendly_name: 'Train status'
       value_template: '{{states.sensor.next_train_to_xyz.attributes.next_trains[1].status}}'
@@ -38,7 +37,6 @@
     second_train_xyz_scheduled:
       friendly_name: 'Scheduled departure'
       value_template: '{{states.sensor.next_train_to_xyz.attributes.next_trains[1].scheduled}}'
-
 
     third_train_xyz_status:
       friendly_name: 'Train status'
@@ -59,7 +57,6 @@
       friendly_name: 'Scheduled departure'
       value_template: '{{states.sensor.next_train_to_xyz.attributes.next_trains[2].scheduled}}'
 
-
     next_train_abc_status:
       friendly_name: 'Train status'
       value_template: '{{states.sensor.next_train_to_abc.attributes.next_trains[0].status}}'
@@ -79,7 +76,6 @@
       friendly_name: 'Scheduled departure'
       value_template: '{{states.sensor.next_train_to_abc.attributes.next_trains[0].scheduled}}'
 
-
     second_train_abc_status:
       friendly_name: 'Train status'
       value_template: '{{states.sensor.next_train_to_abc.attributes.next_trains[1].status}}'
@@ -98,7 +94,6 @@
     second_train_abc_scheduled:
       friendly_name: 'Scheduled departure'
       value_template: '{{states.sensor.next_train_to_abc.attributes.next_trains[1].scheduled}}'
-
 
     third_train_abc_status:
       friendly_name: 'Train status'
