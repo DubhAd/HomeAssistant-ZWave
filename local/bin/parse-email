@@ -1,0 +1,25 @@
+#!/usr/bin/zsh
+
+LOGFILE=/data/homeassistant/notify.log
+BINFILE=/data/homeassistant/bin
+
+SENDER=$(echo ${1}|tr -d '/'| sed "s/@/-a-/")
+
+case ${SENDER} in 
+	*-a-greenboxday.co.uk )
+		TDIR=$(mktemp --directory --suffix=.pe)
+		MASTER=${TDIR}/email.file.${SENDER}
+		cat > ${MASTER}
+
+		cat ${MASTER} | sed "1,/^$/d" | sed ':a;N;$!ba;s/=\n//g' | sed 's/<[^>]*>//g' > ${MASTER}.body
+
+		WHAT=$(cat ${MASTER}.body | grep " Bin Collection " | sed -e "s/.*relates to the forthcoming scheduled //" -e "s/ Bin Collection on .*//")
+		WHEN=$(date --date="$(cat ${MASTER}.body | grep " Bin Collection " | sed -e "s/.* Bin Collection on //" -e "s/ for POST CODE.*//" | sed "s/\([0-9]\)[a-z][a-z] /\1 /")" +"%F %T")
+
+		cat << EOM >> ${BINFILE}.${WHAT:l}.json
+{ "collection_date":"${WHEN}", "collection_type":"${WHAT} Bin Collection","timestamp":"$(date +"%F %T")" }
+EOM
+		;;
+esac
+
+rm -rf ${TDIR}

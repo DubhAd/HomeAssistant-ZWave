@@ -19,11 +19,11 @@
       entity_id: sensor.grey_collection_date
       friendly_name: 'Grey bin collection'
       value_template: >-
-        {% if (as_timestamp(now()) + ( 60 * 60 * 24 )) | timestamp_custom("%A %-d %B %Y") == states('sensor.grey_collection_date') %}
+        {% if (as_timestamp(now()) + ( 60 * 60 * 24 )) | timestamp_custom("%Y-%m-%d 00:00:00") == states('sensor.grey_collection_date') %}
           tomorrow 
-        {% elif as_timestamp(now()) > as_timestamp(strptime(states('sensor.grey_collection_date'), "%A %-d %B %Y"))+(60*60*12) %}
+        {% elif as_timestamp(now()) > as_timestamp(states('sensor.grey_collection_date'))+(60*60*12) %}
           past
-        {% elif (as_timestamp(now()) | timestamp_custom("%A %-d %B %Y")) == states('sensor.grey_collection_date') %}
+        {% elif (as_timestamp(now()) | timestamp_custom("%Y-%m-%d 00:00:00")) == states('sensor.grey_collection_date') %}
           today
         {% else %}
           future
@@ -35,11 +35,11 @@
       entity_id: sensor.blue_collection_date
       friendly_name: 'Blue bin collection'
       value_template: >-
-        {% if (as_timestamp(now()) + ( 60 * 60 * 24 )) | timestamp_custom("%A %-d %B %Y") == states('sensor.blue_collection_date') %}
+        {% if (as_timestamp(now()) + ( 60 * 60 * 24 )) | timestamp_custom("%Y-%m-%d 00:00:00") == states('sensor.blue_collection_date') %}
           tomorrow 
-        {% elif as_timestamp(now()) > as_timestamp(strptime(states('sensor.blue_collection_date'), "%A %-d %B %Y"))+(60*60*12) %}
+        {% elif as_timestamp(now()) > as_timestamp(states('sensor.blue_collection_date'))+(60*60*12) %}
           past
-        {% elif (as_timestamp(now()) | timestamp_custom("%A %-d %B %Y")) == states('sensor.blue_collection_date') %}
+        {% elif (as_timestamp(now()) | timestamp_custom("%Y-%m-%d 00:00:00")) == states('sensor.blue_collection_date') %}
           today
         {% else %}
           future
@@ -51,11 +51,11 @@
       entity_id: sensor.brown_collection_date
       friendly_name: 'Brown bin collection'
       value_template: >-
-        {% if (as_timestamp(now()) + ( 60 * 60 * 24 )) | timestamp_custom("%A %-d %B %Y") == states('sensor.brown_collection_date') %}
+        {% if (as_timestamp(now()) + ( 60 * 60 * 24 )) | timestamp_custom("%Y-%m-%d 00:00:00") == states('sensor.brown_collection_date') %}
           tomorrow 
-        {% elif as_timestamp(now()) > as_timestamp(strptime(states('sensor.brown_collection_date'), "%A %-d %B %Y"))+(60*60*12) %}
+        {% elif as_timestamp(now()) > as_timestamp(states('sensor.brown_collection_date'))+(60*60*12) %}
           past
-        {% elif (as_timestamp(now()) | timestamp_custom("%A %-d %B %Y")) == states('sensor.brown_collection_date') %}
+        {% elif (as_timestamp(now()) | timestamp_custom("%Y-%m-%d 00:00:00")) == states('sensor.brown_collection_date') %}
           today
         {% else %}
           future
