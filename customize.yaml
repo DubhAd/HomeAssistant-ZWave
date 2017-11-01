@@ -158,6 +158,8 @@ zwave.front_spare_extender:
   friendly_name: "Z-Wave extender"
 zwave.master_bedroom_socket:
   friendly_name: "Master bedroom socket"
+zwave.second_bedroom_switch:
+  friendly_name: "Second bedroom socket"
 zwave.cabinet_light:
   friendly_name: "cabinet light"
 zwave.garden_lights:
@@ -192,6 +194,9 @@ zwave.spare_socket:
 switch.master_bedroom_socket_switch:
   friendly_name: "Master bedroom socket"
   icon: mdi:power-socket-uk
+switch.second_bedroom_switch:
+  friendly_name: "Second bedroom socket"
+  icon: mdi:power
 switch.spare_socket_switch:
   friendly_name: "Spare socket"
   icon: mdi:power
@@ -272,6 +277,9 @@ media_player.plex_web_chrome_2:
   friendly_name: "Plex App"
 media_player.laptop:
   friendly_name: "Plex Home Theatre"
+media_player.master_bedroom_speaker:
+  friendly_name: Master bedroom Google Home Mini
+  icon: mdi:google-assistant
 sensor.met_office_probability_of_precipitation:
   icon: mdi:water-percent
 sensor.met_office_humidity:

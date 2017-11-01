@@ -231,6 +231,8 @@ my_media:
     # TVs
   - media_player.samsung_tv_remote
   - media_player.living_room_tv
+    # Google Home
+  - media_player.master_bedroom_speaker
     # Plex
   - media_player.plex_web_chrome
   - media_player.plex_web_chrome_2
@@ -469,6 +471,11 @@ default_view:
   - group.front_of_house
   - group.my_people_terse
   - group.my_exterior_doors
+second_bedroom:
+  name: Second bedroom
+  icon: mdi:hotel
+  entities:
+  - switch.second_bedroom_switch
 master_bedroom:
   name: Master bedroom
   icon: mdi:hotel
@@ -497,6 +504,7 @@ all_rooms:
   - group.office
   - group.back_bedroom
   - group.master_bedroom
+  - group.second_bedroom
 People:
   name: People
   icon: mdi:account-multiple
@@ -535,6 +543,8 @@ Entertainment:
     # TVs
   - media_player.samsung_tv_remote
   - media_player.living_room_tv
+    # Google Home
+  - media_player.master_bedroom_speaker
     # Plex
   - media_player.plex_web_chrome
   - media_player.plex_web_chrome_2
