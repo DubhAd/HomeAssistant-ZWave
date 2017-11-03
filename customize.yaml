@@ -158,7 +158,7 @@ zwave.front_spare_extender:
   friendly_name: "Z-Wave extender"
 zwave.master_bedroom_socket:
   friendly_name: "Master bedroom socket"
-zwave.second_bedroom_switch:
+zwave.second_bedroom:
   friendly_name: "Second bedroom socket"
 zwave.cabinet_light:
   friendly_name: "cabinet light"

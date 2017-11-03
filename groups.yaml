@@ -725,7 +725,6 @@ my_automations_livingroom:
 my_automations_general:
   name: Misc automations
   entities:
-  - automation.bin_collection_check
   - automation.ha_update_available_notifications
   - automation.test_notify
   - automation.train_status
