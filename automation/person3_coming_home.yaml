@@ -13,9 +13,9 @@ condition:
     - condition: template
       value_template: '{{ states.proximity.person3_home.attributes.dir_of_travel == "towards"  }}'
     - condition: state
-      entity_id: device_tracker.person2_mobile
+      entity_id: group.person_person2
       state: home
 action:
-  service: notify.person2
+  service: notify.push
   data:
     message: "person3's nearly home"

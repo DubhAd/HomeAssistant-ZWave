@@ -6,7 +6,7 @@ trigger:
   value_template: "{{ state.attributes.battery }}"
   below: 10
 action:
-  - service: notify.person2
+  - service: notify.push
     data:
       message: "person1's phone is at {{ states.device_tracker.person1_mobile.attributes.battery }}% battery"
   - service: notify.person3

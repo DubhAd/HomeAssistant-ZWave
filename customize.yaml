@@ -338,3 +338,23 @@ sensor.printer_toner_remaining:
   friendly_name: "Toner remaining"
 sensor.printer_transfer_roller_remaining:
   friendly_name: "Transfer roller remaining"
+script.bedtime_slow_off:
+  google_assistant_name: "Time for bed"
+script.bedhead_light_bright:
+  google_assistant: false
+script.bedhead_light_cool_pause:
+  google_assistant: false
+script.bedhead_light_cool:
+  google_assistant: false
+script.bedhead_light_dim_pause:
+  google_assistant: false
+script.bedhead_light_dim:
+  google_assistant: false
+script.bedhead_light_warm_pause:
+  google_assistant: false
+script.bedhead_light_warm:
+  google_assistant: false
+script.garden_door_after_sunset:
+  google_assistant: false
+script.garden_door_before_sunrise:
+  google_assistant: false

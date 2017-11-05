@@ -13,7 +13,7 @@ condition:
       entity_id: binary_sensor.workday_sensor
       state: 'on'
 action:
-  service: notify.person2
+  service: notify.push_person2_phone
   data_template: 
       message: "{{ states.sensor.trains_from_work.state }}"
 
