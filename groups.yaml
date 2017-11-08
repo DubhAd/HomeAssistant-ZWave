@@ -727,6 +727,7 @@ my_automations_general:
   entities:
   - automation.ha_update_available_notifications
   - automation.test_notify
+  - automation.test_media
   - automation.train_status
   - automation.return_train_status
   - automation.sunrise_enable_automations
