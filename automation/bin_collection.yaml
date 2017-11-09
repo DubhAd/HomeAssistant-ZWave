@@ -1,0 +1,33 @@
+alias: 'Bin collection'
+initial_state: 'on'
+trigger:
+  - platform: time
+    at: '20:00:00'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: group.my_adults
+      state: 'home'
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: sensor.bin_blue
+          state: 'tomorrow'
+        - condition: state
+          entity_id: sensor.bin_grey
+          state: 'tomorrow'
+        - condition: state
+          entity_id: sensor.bin_brown
+          state: 'tomorrow'
+action:
+  - service: notify.lamatric_info
+    data_template:
+      message: >-
+        Don't forget to put out 
+        {%- for entity_id in states.group.bins.attributes.entity_id -%}
+          {% set parts = entity_id.split('.') -%}
+          {%- if states(entity_id) == 'tomorrow' %}
+          {%- if loop.first %} {% elif loop.last %} and the {% else %} the {% endif -%}{{ states[parts[0]][parts[1]].name }} {% endif -%}
+        {%- endfor -%}
+        for tomorrow

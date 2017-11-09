@@ -358,3 +358,9 @@ script.garden_door_after_sunset:
   google_assistant: false
 script.garden_door_before_sunrise:
   google_assistant: false
+sensor.bin_blue:
+  friendly_name: "Blue bin"
+sensor.bin_grey:
+  friendly_name: "Grey bin"
+sensor.bin_brown:
+  friendly_name: "Brown bin"

@@ -1,3 +1,9 @@
+bins:
+  view: false
+  entities:
+  - sensor.bin_blue
+  - sensor.bin_grey
+  - sensor.bin_brown
 new_batteries:
   control: hidden
   name: Mobile device battery states
@@ -702,6 +708,7 @@ my_automations_garden:
   - automation.garden_lights_left_on
   - input_slider.garden_time
   - binary_sensor.garden_lights_left_on
+  - automation.bin_collection
   view: false
 my_automations_familyroom:
   name: Automations for the Family room
