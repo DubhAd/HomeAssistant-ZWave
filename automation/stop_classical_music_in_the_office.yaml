@@ -4,6 +4,8 @@ trigger:
   platform: state
   entity_id: device_tracker.work_laptop
   to: 'not_home'
+  for:
+    minutes: 2
 action:
   service: media_player.media_pause
   data:
