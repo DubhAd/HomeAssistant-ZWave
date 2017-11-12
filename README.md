@@ -32,13 +32,14 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 ## The devices I use (with HA)
 
 * Z-Wave.me [Razberry](https://razberry.z-wave.me/) Z-Wave board - it has the advantage of not using a USB port, but does require that the onboard Bluetooth is disabled
+* [Sandisk Extreme](https://www.sandisk.co.uk/home/memory-cards/microsd-cards/extreme-microsd) micro SD cards
 * Z-Wave Vision Garage Door detector - these are tilt sensors
 * Aeotec [MultiSensor 6](https://aeotec.com/z-wave-sensor)
 * Fibaro [motion sensor](https://www.fibaro.com/en/products/motion-sensor/)
 * Fibaro FGK10x door sensors (previous generation, superseded by the [FGDW-002](http://manuals.fibaro.com/door-window-sensor-2/))
 * Sensative [door/window strips](https://www.stripsbysensative.com/strips-guard/)
 * TKB [TKB TZ69E](http://www.tkbhome.com/?cn-p-d-271.html) - metering wall plugs
-* Foxx Project (Smart Switch)[https://www.getfoxx.com/products] (which identifies itself as an Aeotec ZW075, aka Smart Switch Gen5). These are cheap, but there's no local switch control for the attached device.
+* Foxx Project [Smart Switch](https://www.getfoxx.com/products) (which identifies itself as an Aeotec ZW075, aka Smart Switch Gen5). These are cheap, but there's no local switch control for the attached device.
 * NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2)
 * Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller
 * Yeelight [led strip](https://www.yeelight.com/en_US/product/pitaya)
