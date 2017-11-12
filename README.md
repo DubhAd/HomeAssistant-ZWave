@@ -33,7 +33,6 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 
 * Z-Wave.me [Razberry](https://razberry.z-wave.me/) Z-Wave board - it has the advantage of not using a USB port, but does require that the onboard Bluetooth is disabled
 * [Sandisk Extreme](https://www.sandisk.co.uk/home/memory-cards/microsd-cards/extreme-microsd) micro SD cards
-* Z-Wave Vision Garage Door detector - these are tilt sensors
 * Aeotec [MultiSensor 6](https://aeotec.com/z-wave-sensor)
 * Fibaro [motion sensor](https://www.fibaro.com/en/products/motion-sensor/)
 * Fibaro FGK10x door sensors (previous generation, superseded by the [FGDW-002](http://manuals.fibaro.com/door-window-sensor-2/))
