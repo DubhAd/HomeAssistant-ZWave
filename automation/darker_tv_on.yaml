@@ -41,5 +41,10 @@ condition:
         entity_id: device_tracker.livingroom_chromecast
         state: 'home'
 action:
+  - service: homeassistant.turn_off
+    entity_id: automation.lounge_in_daylight_2
   - service: scene.turn_on
     entity_id: scene.lounge_lights_on
+  - delay: 00:00:05
+  - service: homeassistant.turn_on
+    entity_id: automation.lounge_in_daylight_2

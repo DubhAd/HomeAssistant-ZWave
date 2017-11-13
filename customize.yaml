@@ -85,11 +85,11 @@ sensor.patio_door_left:
   friendly_name: Patio door (left)
   sensor_class: opening
 binary_sensor.utility_door_exterior_sensor:
-  icon: mdi:glassdoor
+  icon: mdi:door
   friendly_name: Utility room door
   sensor_class: opening
 sensor.utility_door:
-  icon: mdi:glassdoor
+  icon: mdi:door
   friendly_name: Utility room door
   sensor_class: opening
 binary_sensor.garage_closed_bike_sensor:

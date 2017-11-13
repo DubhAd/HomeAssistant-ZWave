@@ -6,6 +6,10 @@ trigger:
   event_data:
     scene_id: 43
     entity_id: zwave.nodon_crc3100_octan_remote
+condition:
+  condition: state
+  entity_id: light.master_bedroom_bedhead
+  state: 'off'
 action:
   - service: light.turn_on
     data:

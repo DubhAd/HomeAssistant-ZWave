@@ -75,7 +75,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * Back of the house
   * Turn on the garden lights if the utility door is opened between dusk and dawn (elevation below -5). This temporarily turns off the "off" automations - for 8 seconds (controlled by an input_number)
   * Turn off the garden lights when the utility door is closed
-  * Turn off the lights if they're left on and the door is shut
+  * Turn off the lights if they're left on and the door is closed
 * Lounge
   * Turn on the lights when we come home and it's dark
   * Turn off the lights if we all leave (and the TV is off)
