@@ -11,8 +11,8 @@ condition:
       entity_id: sensor.living_room_multi_luminance
       below: 5
     - condition: state
-      entity_id: media_player.samsung_tv_remote
-      state: 'off'
+      entity_id: device_tracker.livingroom_chromecast
+      state: 'not_home'
     - condition: state
       entity_id: switch.table_light_switch
       state: 'off'
