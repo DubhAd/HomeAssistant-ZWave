@@ -20,6 +20,8 @@ condition:
     - condition: state
       entity_id: switch.cabinet_light_switch
       state: 'off'
+      for:
+        minutes: 5
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
       below: 11
