@@ -26,3 +26,7 @@ bedtime:
   name: Everybody is asleep
   initial: off
   icon: mdi:hotel
+all_away:
+  name: Everybody is away
+  initial: off
+  icon: mdi:account-multiple

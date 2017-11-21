@@ -260,6 +260,7 @@ my_input_boolean:
   - input_boolean.person2_is_awake
   - input_boolean.person1_is_awake
   - input_boolean.bedtime
+  - input_boolean.all_away
 my_input_numbers:
   name: Inputs for automations
   entities:
@@ -759,6 +760,8 @@ my_automations_people:
   - automation.person3_coming_home
   - automation.person1_mobile_low_battery
   - automation.workday_for_person2
+  - automation.all_away
+  - automation.returned_home
 my_automations_input:
   name: Automations changing inputs
   entities:
