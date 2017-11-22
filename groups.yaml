@@ -259,8 +259,13 @@ my_input_boolean:
   - input_boolean.notify_person1_school
   - input_boolean.person2_is_awake
   - input_boolean.person1_is_awake
+  - input_boolean.person3_is_awake
   - input_boolean.bedtime
+  - input_boolean.adults_away
   - input_boolean.all_away
+  - input_boolean.guest_mode
+  - input_boolean.holiday_mode
+  - input_boolean.alarm_mode
 my_input_numbers:
   name: Inputs for automations
   entities:

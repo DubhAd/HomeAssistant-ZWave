@@ -14,6 +14,10 @@ person2_is_awake:
   name: person2 is awake
   initial: off
   icon: mdi:alarm
+person3_is_awake:
+  name: person3 is awake
+  initial: off
+  icon: mdi:alarm
 person1_is_awake:
   name: person1 is awake
   initial: off
@@ -26,7 +30,23 @@ bedtime:
   name: Everybody is asleep
   initial: off
   icon: mdi:hotel
+adults_away:
+  name: Adults are away
+  initial: off
+  icon: mdi:account-multiple
 all_away:
   name: Everybody is away
   initial: off
   icon: mdi:account-multiple
+guest_mode:
+  name: Guest mode
+  initial: off
+  icon: mdi:account-multiple-plus
+holiday_mode:
+  name: Holiday mode
+  initial: off
+  icon: mdi:plane-shield
+alarm_mode:
+  name: Alarm mode
+  initial: off
+  icon: mdi:verified

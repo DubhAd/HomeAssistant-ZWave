@@ -2,4 +2,5 @@
   name: SSL cert expiry
   unit_of_measurement: days
   scan_interval: 3600
-  command: "ssl-cert-check -c /etc/letsencrypt/live/myhost.dynamic.dom/cert.pem | tail -n 1 | awk '{ print $NF }'"
+  command: "/usr/bin/ssl-cert-check -c /etc/letsencrypt/live/myhost.dynamic.dom/cert.pem | tail -n 1 | awk '{ print $NF }'"
+  # The ssl-cert-check program comes from the ssl-cert-check package
