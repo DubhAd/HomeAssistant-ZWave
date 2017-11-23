@@ -1,14 +1,10 @@
-alias: 'All away lights off'
+alias: 'Adults returned'
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: input_boolean.adults_away
-    from: 'on'
-    to: 'off'
-  - platform: state
-    entity_id: input_boolean.all_away
-    from: 'on'
-    to: 'off'
+    entity_id: group.my_adults
+    from: 'not_home'
+    to: 'home'
 condition:
   condition: and
   conditions:
@@ -22,5 +18,5 @@ condition:
       entity_id: media_player.samsung_tv_remote
       state: 'off'
 action:
-  service: scene.turn_on
-  entity_id: scene.all_lights_off
+  service: input_boolean.turn_off
+  entity_id: input_boolean.adults_away

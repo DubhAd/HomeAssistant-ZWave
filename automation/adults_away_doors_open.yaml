@@ -1,10 +1,10 @@
 alias: 'Adults away doors open'
 initial_state: 'on'
 trigger:
-  platform: state
-  entity_id: group.my_adults
-  from: 'home'
-  to: 'not_home'
+  - platform: state
+    entity_id: input_boolean.adults_away
+    from: 'off'
+    to: 'on'
 condition:
   condition: and
   conditions: 

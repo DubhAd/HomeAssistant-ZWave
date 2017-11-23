@@ -1,16 +1,13 @@
-alias: 'Returned home'
-initial_state: 'off'
+alias: 'All returned'
+initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: group.my_adults
+    entity_id: group.my_family
     from: 'not_home'
     to: 'home'
 condition:
   condition: and
   conditions:
-    - condition: state
-      entity_id: input_boolean.all_away
-      state: 'off'
     - condition: state
       entity_id: device_tracker.family_tv
       state: 'not_home'

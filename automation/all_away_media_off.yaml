@@ -1,11 +1,10 @@
 alias: 'All away media off'
 initial_state: 'off'
 trigger:
-  platform: state
-  entity_id: group.my_adults
-  to: 'not_home'
-  for:
-    minutes: 5
+  - platform: state
+    entity_id: input_boolean.adults_away
+    from: 'off'
+    to: 'on'
 condition:
   condition: or
   conditions:

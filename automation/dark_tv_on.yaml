@@ -26,8 +26,8 @@ condition:
       entity_id: sensor.living_room_multi_luminance
       below: 15
     - condition: state
-      entity_id: group.my_adults
-      state: 'home'
+      entity_id: input_boolean.adults_away
+      state: 'off'
     - condition: time
       after: '04:00:00'
       before: '23:00:00'

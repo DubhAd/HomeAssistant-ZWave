@@ -77,6 +77,16 @@ my_adults:
   - device_tracker.person2_mobile
   - device_tracker.person3_mobile_bt
   view: false
+my_family:
+  name: Family
+  entities:
+  - device_tracker.person3_mobile
+  - device_tracker.person2_mobile_bt
+  - device_tracker.person2_mobile
+  - device_tracker.person3_mobile_bt
+  - device_tracker.person1_mobile
+  - device_tracker.person3_mobile_bt
+  view: false
 my_calendars:
   name: Calendars
   entities:
@@ -765,8 +775,10 @@ my_automations_people:
   - automation.person3_coming_home
   - automation.person1_mobile_low_battery
   - automation.workday_for_person2
+  - automation.adults_away
+  - automation.adults_returned
   - automation.all_away
-  - automation.returned_home
+  - automation.all_returned
 my_automations_input:
   name: Automations changing inputs
   entities:
