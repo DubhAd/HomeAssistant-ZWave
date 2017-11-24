@@ -428,6 +428,7 @@ binary_sensors:
   name: Binary sensors
   entities:
   - binary_sensor.living_room_motion
+  - binary_sensor.living_room_multi_sensor
   - binary_sensor.office_multi_sensor
   - binary_sensor.patio_door_left_sensor
   - binary_sensor.utility_door_exterior_sensor
@@ -768,7 +769,9 @@ my_automations_general:
 my_automations_people:
   name: People driven automations
   entities:
+  - automation.person1_asleep
   - automation.person1_up
+  - automation.person2_asleep
   - automation.person2_home
   - automation.person2_coming_home
   - automation.person2_at_station
