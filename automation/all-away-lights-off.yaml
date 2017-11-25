@@ -3,12 +3,12 @@ initial_state: 'on'
 trigger:
   - platform: state
     entity_id: input_boolean.adults_away
-    from: 'on'
-    to: 'off'
+    to: 'on'
+    from: 'off'
   - platform: state
     entity_id: input_boolean.all_away
-    from: 'on'
-    to: 'off'
+    to: 'on'
+    from: 'off'
 condition:
   condition: and
   conditions:

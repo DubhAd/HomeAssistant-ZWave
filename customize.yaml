@@ -185,7 +185,7 @@ zwave.garage_closed_bike:
 zwave.garage_door_bike:
   friendly_name: "Garage door (tilt), bike"
 zwave.garage_closed_car:
-  friendly_name: "Garage door, bike"
+  friendly_name: "Garage door, car"
 zwave.garage_car:
   friendly_name: "Garage door (tilt), car"
 zwave.spare_socket:

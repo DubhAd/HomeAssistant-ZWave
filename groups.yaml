@@ -326,6 +326,8 @@ my_exterior_doors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
+  - binary_sensor.garage_closed_bike
+  - binary_sensor.garage_closed_car
   view: false
 my_back_doors:
   name: Doors at the back
@@ -374,6 +376,8 @@ garage:
   entities:
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
+  - binary_sensor.garage_closed_bike
+  - binary_sensor.garage_closed_car
   view: false
 outside_doors:
   name: External doors
@@ -382,6 +386,8 @@ outside_doors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
+  - binary_sensor.garage_closed_bike
+  - binary_sensor.garage_closed_car
 front_of_house:
   name: Front of house
   entities:
@@ -434,6 +440,8 @@ binary_sensors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
+  - binary_sensor.garage_closed_bike
+  - binary_sensor.garage_closed_car
   - binary_sensor.workday_sensor
   - binary_sensor.zwave_health
   view: false
