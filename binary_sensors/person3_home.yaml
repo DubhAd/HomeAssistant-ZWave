@@ -8,7 +8,7 @@
       pperson2_given_false: 0.2
       platform: 'state'
       to_state: 'home'
-    - entity_id: 'device_tracker.person3_mobile_bt'
+    - entity_id: 'device_tracker.nexus_5x'
       pperson2_given_true: 1.00
       pperson2_given_false: 0.2
       platform: 'state'

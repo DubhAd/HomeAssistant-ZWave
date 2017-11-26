@@ -92,6 +92,14 @@ sensor.utility_door:
   icon: mdi:door
   friendly_name: Utility room door
   sensor_class: opening
+binary_sensor.garage_closed_bike:
+  friendly_name: Garage door, left
+  sensor_class: opening
+  icon: mdi:bike
+binary_sensor.garage_closed_car:
+  friendly_name: Garage door, car
+  sensor_class: opening
+  icon: mdi:car
 binary_sensor.garage_closed_bike_sensor:
   friendly_name: Garage door, left
   sensor_class: opening

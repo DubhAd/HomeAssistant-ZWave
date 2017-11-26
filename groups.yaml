@@ -53,7 +53,7 @@ person_person3:
   name: person3
   entities:
   - device_tracker.person3_mobile
-  - device_tracker.person3_mobile_bt
+  - device_tracker.nexus_5x
 person_person1:
   name: person1
   entities:
@@ -75,7 +75,7 @@ my_adults:
   - device_tracker.person3_mobile
   - device_tracker.person2_mobile_bt
   - device_tracker.person2_mobile
-  - device_tracker.person3_mobile_bt
+  - device_tracker.nexus_5x
   view: false
 my_family:
   name: Family
@@ -83,7 +83,7 @@ my_family:
   - device_tracker.person3_mobile
   - device_tracker.person2_mobile_bt
   - device_tracker.person2_mobile
-  - device_tracker.person3_mobile_bt
+  - device_tracker.nexus_5x
   - device_tracker.person1_mobile
   - device_tracker.person3_mobile_bt
   view: false
@@ -326,8 +326,6 @@ my_exterior_doors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
-  - binary_sensor.garage_closed_bike
-  - binary_sensor.garage_closed_car
   view: false
 my_back_doors:
   name: Doors at the back
