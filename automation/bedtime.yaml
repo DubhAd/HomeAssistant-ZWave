@@ -1,26 +1,17 @@
-alias: 'House awake'
 initial_state: 'on'
+alias: 'Bedtime'
 trigger:
-  # Consider the house awake if I'm up, person1 is up, or the TV comes on after 03:00
-  - platform: state
-    entity_id: input_boolean.person2_is_awake
-    to: 'on'
-  - platform: state
-    entity_id: input_boolean.person1_is_awake
-    to: 'on'
   - platform: state
     entity_id: input_boolean.person3_is_awake
-    to: 'on'
+    to: 'off'
   - platform: state
-    entity_id: media_player.samsung_tv_remote
-    to: 'on'
+    entity_id: input_boolean.person2_is_awake
+    to: 'off'
   - platform: state
-    entity_id: device_tracker.family_tv
-    to: 'on'
+    entity_id: input_boolean.person1_is_awake
+    to: 'off'
 condition:
-  - condition: time
-    after: '03:00:00'
-  - condition: or
+  - condition: and
     conditions:
     - condition: or
       conditions:
@@ -31,7 +22,7 @@ condition:
         conditions:
         - condition: state
           entity_id: input_boolean.person3_is_awake
-          state: 'on'
+          state: 'off'
         - condition: state
           entity_id: group.person_person3
           state: 'home'
@@ -44,7 +35,7 @@ condition:
         conditions:
         - condition: state
           entity_id: input_boolean.person2_is_awake
-          state: 'on'
+          state: 'off'
         - condition: state
           entity_id: group.person_person2
           state: 'home'
@@ -57,10 +48,10 @@ condition:
         conditions:
         - condition: state
           entity_id: input_boolean.person1_is_awake
-          state: 'on'
+          state: 'off'
         - condition: state
           entity_id: group.person_person1
           state: 'home'
 action:
-  - service: input_boolean.turn_off
+  - service: input_boolean.turn_on
     entity_id: input_boolean.bedtime

@@ -1,0 +1,12 @@
+title: Panel
+widget_dimensions: [140, 140]
+widget_margins: [5, 5]
+columns: 10
+
+layout:
+    - include: widgets
+    - clock(2x1), weather(2x2), lounge_temperature, lounge_light_level, lounge_light_gauge, lounge_motion
+    - spacer(4x1), office_temperature, office_light_level, office_light_gauge
+    - bedhead_light, spacer, tv_light, table_light, cabinet_light, spacer, garden_light, number_sign
+    - patio_door_left, utility_door_exterior, garage_door_bike, garage_door_car, spacer, person2, person3, person1
+    - display_upstairs, display_downstairs, display_screen, spacer(2x1), person2_travel, person3_travel, person1_travel, spacer, reload

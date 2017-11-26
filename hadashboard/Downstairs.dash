@@ -1,0 +1,10 @@
+title: Panel
+widget_dimensions: [120, 120]
+widget_margins: [5, 5]
+columns: 7
+
+layout:
+    - include: widgets
+    - clock(2x1), lounge_temperature, lounge_light_level, lounge_motion, spacer, display_main
+    - garden_light, spacer, tv_light, table_light, cabinet_light, display_upstairs, display_screen
+    - patio_door_left, utility_door_exterior, spacer, garage_door_bike, garage_door_car, spacer, reload

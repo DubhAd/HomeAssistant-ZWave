@@ -82,6 +82,8 @@ input_number: !include input_number.yaml
 
 input_boolean: !include input_boolean.yaml
 
+input_select: !include input_select.yaml
+
 variable_int: !include variable_int.yaml
 
 variable_bool: !include variable_bool.yaml

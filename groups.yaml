@@ -775,10 +775,13 @@ my_automations_general:
 my_automations_people:
   name: People driven automations
   entities:
+  - automation.bedtime
+  - automation.person3_up
   - automation.person1_asleep
   - automation.person1_up
   - automation.person2_asleep
   - automation.person2_home
+  - automation.person2_up
   - automation.person2_coming_home
   - automation.person2_at_station
   - automation.person3_coming_home

@@ -14,5 +14,3 @@ action:
       transition: 30
       brightness_pct: 100
       color_name: white
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.person2_is_awake

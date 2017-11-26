@@ -1,0 +1,10 @@
+title: Upstairs
+widget_dimensions: [120, 120]
+widget_margins: [5, 5]
+columns: 7
+
+layout:
+    - include: widgets
+    - clock(2x1), office_temperature, office_light_level, office_motion, spacer, display_downstairs
+    - bedhead_light, spacer(2x1), office_light_gauge, spacer(2x1), display_screen
+    - spacer(5x1), spacer, reload
