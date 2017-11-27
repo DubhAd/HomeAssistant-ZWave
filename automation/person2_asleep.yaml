@@ -7,8 +7,12 @@ trigger:
   for: 
     minutes: 5
 condition:
-  - condition: time
-    after: '22:00:00'
+  - condition: or
+    conditions:
+    - condition: time
+      after: '22:00:00'
+    - condition: time
+      before: '04:00:00'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person2_is_awake
