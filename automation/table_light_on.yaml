@@ -16,5 +16,5 @@ condition:
       entity_id: switch.cabinet_light_switch
       state: 'off'
 action:
-  service: homeassistant.turn_off
+  service: switch.turn_off
   entity_id: switch.table_light_switch
