@@ -34,14 +34,14 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * Z-Wave.me [Razberry](https://razberry.z-wave.me/) Z-Wave board - it has the advantage of not using a USB port, but does require that the onboard Bluetooth is disabled
 * [Sandisk Extreme](https://www.sandisk.co.uk/home/memory-cards/microsd-cards/extreme-microsd) micro SD cards
 * Aeotec [MultiSensor 6](https://aeotec.com/z-wave-sensor)
-* Fibaro [motion sensor](https://www.fibaro.com/en/products/motion-sensor/)
-* Fibaro FGK10x door sensors (previous generation, superseded by the [FGDW-002](http://manuals.fibaro.com/door-window-sensor-2/))
-* Sensative [door/window strips](https://www.stripsbysensative.com/strips-guard/)
+* Fibaro [motion sensor](https://www.fibaro.com/en/products/motion-sensor/) in the living room
+* Fibaro FGK10x door sensors (previous generation, superseded by the [FGDW-002](http://manuals.fibaro.com/door-window-sensor-2/)) on the garage doors
+* Sensative [door/window strips](https://www.stripsbysensative.com/strips-guard/) on the external house doors
 * TKB [TKB TZ69E](http://www.tkbhome.com/?cn-p-d-271.html) - metering wall plugs
-* Foxx Project [Smart Switch](https://www.getfoxx.com/products) (which identifies itself as an Aeotec ZW075, aka Smart Switch Gen5). These are cheap, but there's no local switch control for the attached device.
-* NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2)
-* Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller
-* Yeelight [led strip](https://www.yeelight.com/en_US/product/pitaya)
+* Foxx Project [Smart Switch](https://www.getfoxx.com/products) (which identifies itself as an Aeotec ZW075, aka Smart Switch Gen5). These are cheap, but there's no local switch control for the attached device. Mostly I'm using these as range extenders.
+* NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2) in the bedroom to provide manual control of the Yeelight. It was originally used by the kitchen door, where the next item is now mounted.
+* Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller, to provide a wall switch for the garden lights
+* Yeelight [led strip](https://www.yeelight.com/en_US/product/pitaya), in the bedroom, mounted behind the headboard. This provides good enough lighting to read by at night, and also to help wake us in the morning.
 * Outdoor mains [240V led strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
 * [CSL Bluetooth adapter](https://www.amazon.co.uk/gp/product/B00VFT4LD2/) to augment the Nmap device tracker
 * [Google Home Mini](https://store.google.com/product/google_home_mini), with the [Google Assistant](https://home-assistant.io/components/google_assistant/) component
