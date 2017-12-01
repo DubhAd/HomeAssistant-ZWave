@@ -138,8 +138,8 @@ utility_door_exterior:
     title: Utility door
     title2: exterior
     entity: binary_sensor.utility_door_exterior_sensor
-    icon_on: mdi-door-open
-    icon_off: mdi-door-closed
+    icon_on: mdi-glassdoor
+    icon_off: mdi-glassdoor
     icon_style_active: "color: red"
 
 patio_door_left:

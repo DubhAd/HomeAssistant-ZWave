@@ -120,3 +120,7 @@ google_assistant:
   exposed_domains:
     - switch
     - light
+
+dialogflow:
+
+intent_script: !include intent_scripts.yaml
