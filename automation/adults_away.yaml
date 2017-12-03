@@ -7,18 +7,32 @@ trigger:
     to: 'not_home'
     for:
       minutes: 2
+  - platform: state
+    entity_id: group.my_adults
+    from: 'home'
+    to: 'not_home'
+    for:
+      minutes: 10
 condition:
-  condition: and
+  condition: or:
   conditions:
-    - condition: state
-      entity_id: device_tracker.family_tv
-      state: 'not_home'
-    - condition: state
-      entity_id: device_tracker.livingroom_chromecast
-      state: 'not_home'
-    - condition: state
-      entity_id: media_player.samsung_tv_remote
-      state: 'off'
+  # Either we've been away for a bit
+  - condition: state
+    entity_id: group.my_adults
+    state: 'not_home'
+    for: minutes: 9
+  # Or the TVs are off
+  - condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.family_tv
+        state: 'not_home'
+      - condition: state
+        entity_id: device_tracker.livingroom_chromecast
+        state: 'not_home'
+      - condition: state
+        entity_id: media_player.samsung_tv_remote
+        state: 'off'
 action:
   service: input_boolean.turn_on
   entity_id: input_boolean.adults_away
