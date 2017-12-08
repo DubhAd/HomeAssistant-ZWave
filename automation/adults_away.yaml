@@ -14,13 +14,14 @@ trigger:
     for:
       minutes: 10
 condition:
-  condition: or:
+  condition: or
   conditions:
   # Either we've been away for a bit
   - condition: state
     entity_id: group.my_adults
     state: 'not_home'
-    for: minutes: 9
+    for: 
+      minutes: 9
   # Or the TVs are off
   - condition: and
     conditions:
