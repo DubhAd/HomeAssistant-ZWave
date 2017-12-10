@@ -287,6 +287,10 @@ my_input_numbers:
   - input_number.light_minimum
   - input_number.light_maximum
   - input_number.light_step_colour
+my_input_select:
+  name: Selections for automations
+  entities:
+  - input_select.season
 my_weather_metoffice:
   name: Weather from the Met Office
   entities:
@@ -374,8 +378,6 @@ garage:
   entities:
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
-  - binary_sensor.garage_closed_bike
-  - binary_sensor.garage_closed_car
   view: false
 outside_doors:
   name: External doors
@@ -384,8 +386,6 @@ outside_doors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
-  - binary_sensor.garage_closed_bike
-  - binary_sensor.garage_closed_car
 front_of_house:
   name: Front of house
   entities:
@@ -505,6 +505,11 @@ second_bedroom:
   icon: mdi:hotel
   entities:
   - switch.second_bedroom_switch
+master_bedroom_lights:
+  name: Master bedroom lights
+  icon: mdi:hotel
+  entities:
+  - light.master_bedroom_bedhead
 master_bedroom:
   name: Master bedroom
   icon: mdi:hotel
@@ -702,12 +707,16 @@ my_automations_bedhead_remote:
   - automation.bedhead_turn_red
   - automation.master_bedhead_bright
   - automation.master_bedhead_bright_pause
+  - automation.master_bedhead_bright_stop
   - automation.master_bedhead_dim
   - automation.master_bedhead_dim_pause
+  - automation.master_bedhead_dim_stop
   - automation.master_bedhead_cool
   - automation.master_bedhead_cool_pause
+  - automation.master_bedhead_cool_stop
   - automation.master_bedhead_warm
   - automation.master_bedhead_warm_pause
+  - automation.master_bedhead_warm_stop
 my_automations_front:
   name: Automations for the front of the house
   entities:
@@ -779,6 +788,7 @@ my_automations_people:
   - automation.person3_up
   - automation.person1_asleep
   - automation.person1_up
+  - automation.wake_person1
   - automation.person2_asleep
   - automation.person2_home
   - automation.person2_up
@@ -852,6 +862,7 @@ view_inputs:
   entities:
   - group.my_input_boolean
   - group.my_input_numbers
+  - group.my_input_select
   - switch.fluxer
 view_scripts:
   name: scripts

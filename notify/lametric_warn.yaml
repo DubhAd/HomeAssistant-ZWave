@@ -1,5 +1,6 @@
 - name: lametric_warn
   platform: lametric
-  display_time: 20
+  lifetime: 20
+  cycles: 2
   icon: i9183
   sound: "positive1"

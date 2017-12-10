@@ -1,10 +1,11 @@
 initial_state: 'on'
 alias: 'Number on at sunset'
 trigger:
-  platform: numeric_state
-  entity_id: sun.sun
-  value_template: "{{ state.attributes.elevation }}"
-  below: 3
+  - platform: state
+    entity_id: sun.sun
+    to: 'below_horizon'
+  - platform: homeassistant
+    event: start
 condition:
   condition: and
   conditions:
@@ -13,6 +14,9 @@ condition:
       state: 'off'
     - condition: time
       after: '12:00:00'
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
 action:
   service: switch.turn_on
   entity_id: switch.number_sign_switch

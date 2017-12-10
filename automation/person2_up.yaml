@@ -1,4 +1,4 @@
-alias: 'person2 up bedhead light on'
+alias: 'person2 up'
 initial_state: 'on'
 trigger:
   - platform: state

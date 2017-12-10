@@ -18,26 +18,7 @@ action:
       brightness_pct: 5
   - service: script.turn_off
     data:
-      entity_id: script.bedhead_light_warm_pause
-  - service: script.turn_off
-    data:
-      entity_id: script.bedhead_light_cool_pause
-  - service: script.turn_off
-    data:
-      entity_id: script.bedhead_light_bright_pause
-  - service: script.turn_off
-    data:
-      entity_id: script.bedhead_light_dim_pause
-  - service: script.turn_off
-    data:
-      entity_id: script.bedhead_light_warm
-  - service: script.turn_off
-    data:
-      entity_id: script.bedhead_light_cool
-  - service: script.turn_off
-    data:
-      entity_id: script.bedhead_light_bright
-  - service: script.turn_off
-    data:
-      entity_id: script.bedhead_light_dim
+      entity_id: script.bedhead_light_warm_pause, script.bedhead_light_cool_pause, script.bedhead_light_bright_pause, script.bedhead_light_dim_pause, script.bedhead_light_warm, script.bedhead_light_cool, script.bedhead_light_bright, script.bedhead_light_dim
+  - service: switch.turn_off
+    entity_id: switch.fluxer
 

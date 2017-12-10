@@ -1,5 +1,6 @@
 - name: lametric_info
   platform: lametric
-  display_time: 10
+  lifetime: 10
+  cycles: 1
   icon: i59
   sound: "notification"

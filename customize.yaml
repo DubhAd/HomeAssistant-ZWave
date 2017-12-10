@@ -372,3 +372,5 @@ sensor.bin_grey:
   friendly_name: "Grey bin"
 sensor.bin_brown:
   friendly_name: "Brown bin"
+device_tracker.person2_5x:
+  friendly_name: "Old mobile"
