@@ -266,7 +266,7 @@ my_input_boolean:
   entities:
   - input_boolean.notify_train_status_work
   - input_boolean.notify_person2_working
-  - input_boolean.notify_person1_school
+  - input_boolean.notify_person1_work
   - input_boolean.person2_is_awake
   - input_boolean.person1_is_awake
   - input_boolean.person3_is_awake
@@ -812,8 +812,8 @@ my_automations_input:
   - automation.not_workday_for_person2
   - automation.person2_working_from_home
   - automation.person2_working_trains
-  - automation.school_day_for_person1
-  - automation.not_school_day_for_person1
+  - automation.work_day_for_person1
+  - automation.not_work_day_for_person1
   view: false
 my_automations_media:
   name: Media automations

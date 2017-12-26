@@ -1,4 +1,4 @@
-alias: 'School day for person1'
+alias: 'work day for person1'
 initial_state: 'on'
 trigger:
   - platform: state
@@ -23,4 +23,4 @@ condition:
       - fri
 action:
   - service: input_boolean.turn_on
-    entity_id: input_boolean.notify_person1_school
+    entity_id: input_boolean.notify_person1_work

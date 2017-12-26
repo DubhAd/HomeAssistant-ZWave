@@ -6,8 +6,8 @@ notify_person2_working:
   name: Work day for person2
   initial: off
   icon: mdi:calendar-multiple
-notify_person1_school:
-  name: School day for person1
+notify_person1_work:
+  name: work day for person1
   initial: off
   icon: mdi:calendar-text
 person2_is_awake:
