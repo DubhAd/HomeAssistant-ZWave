@@ -50,3 +50,11 @@ alarm_mode:
   name: Alarm mode
   initial: off
   icon: mdi:verified
+person2_travelling:
+  name: person2 travelling
+  initial: off
+  icon: mdi:airplane
+livingroom_lights_auto:
+  name: Living room lights turned on automatically
+  initial: off
+  icon: mdi:lightbulb

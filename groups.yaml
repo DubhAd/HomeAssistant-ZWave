@@ -276,6 +276,7 @@ my_input_boolean:
   - input_boolean.guest_mode
   - input_boolean.holiday_mode
   - input_boolean.alarm_mode
+  - input_boolean.person2_travelling
 my_input_numbers:
   name: Inputs for automations
   entities:
@@ -559,7 +560,7 @@ camera_left:
 Cameras:
   name: Cameras
   icon: mdi:video
-  view: true
+  view: false
   entities:
   - group.camera_left
 Weather:
@@ -767,8 +768,6 @@ my_automations_general:
   - automation.ha_update_available_notifications
   - automation.test_notify
   - automation.test_media
-  - automation.train_status
-  - automation.return_train_status
   - automation.sunrise_enable_automations
   - automation.clear_states
   - automation.house_awake
@@ -781,6 +780,14 @@ my_automations_general:
   - automation.zwave_health_check
   - automation.printer_low
   view: false
+my_automations_travel:
+  name: Automations for travel
+  entities:
+  - automation.person2_coming_home
+  - automation.person2_at_station
+  - automation.person3_coming_home
+  - automation.train_status
+  - automation.return_train_status
 my_automations_people:
   name: People driven automations
   entities:
@@ -788,13 +795,11 @@ my_automations_people:
   - automation.person3_up
   - automation.person1_asleep
   - automation.person1_up
+  - automation.person1_returning
   - automation.wake_person1
   - automation.person2_asleep
   - automation.person2_home
   - automation.person2_up
-  - automation.person2_coming_home
-  - automation.person2_at_station
-  - automation.person3_coming_home
   - automation.person1_mobile_low_battery
   - automation.workday_for_person2
   - automation.adults_away
@@ -845,16 +850,21 @@ my_automations_upstairs:
   - group.my_automations_masterbed
   - group.my_automations_bedhead_remote
   - group.my_automations_office
+my_automations_other:
+  name: More Automations
+  icon: mdi:engine-outline
+  view: true
+  entities:
+  - group.my_automations_battery
+  - group.my_automations_general
 my_automations:
   name: Automations
   icon: mdi:engine
   view: true
   entities:
   - group.my_automations_people
+  - group.my_automations_travel
   - group.my_automations_input
-  - group.my_automations_general
-  - group.my_automations_remotes
-  - group.my_automations_battery
 view_inputs:
   name: Inputs
   icon: mdi:information-variant

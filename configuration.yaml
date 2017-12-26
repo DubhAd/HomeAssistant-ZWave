@@ -49,11 +49,6 @@ zwave:
   device_config: !include zwave_device_config.yaml
   network_key: !secret zwave_network_key
 
-mqtt:
-  broker: 127.0.0.1
-  port: 1883
-  client_id: pi3HA
-
 device_tracker: !include device_tracker.yaml
 
 zone: !include zones.yaml
@@ -75,8 +70,6 @@ sensor: !include_dir_merge_list sensors/
 binary_sensor: !include_dir_merge_list binary_sensors/
 
 sun:
-
-camera: !include_dir_list camera/
 
 input_number: !include input_number.yaml
 

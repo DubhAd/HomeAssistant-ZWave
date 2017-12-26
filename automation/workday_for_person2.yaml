@@ -4,6 +4,9 @@ trigger:
   - platform: state
     entity_id: calendar.person2_holiday
     to: 'off'
+  - platform: state
+    entity_id: binary_sensor.workday_sensor
+    to: 'on'
   - platform: homeassistant
     event: start
 condition:

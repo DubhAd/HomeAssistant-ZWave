@@ -10,6 +10,8 @@ trigger:
   - platform: state
     entity_id: group.person_person1
     to: 'not_home'
+    for:
+      minutes: 5
 condition:
   - condition: or
     conditions:

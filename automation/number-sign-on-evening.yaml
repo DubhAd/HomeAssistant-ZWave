@@ -18,5 +18,11 @@ condition:
       entity_id: sun.sun
       state: 'below_horizon'
 action:
-  service: switch.turn_on
-  entity_id: switch.number_sign_switch
+  - service: switch.turn_on
+    entity_id: switch.number_sign_switch
+  - delay: 00:01:00
+  - condition: state
+    entity_id: switch.number_sign_switch
+    state: 'off'
+  - service: switch.turn_on
+    entity_id: switch.number_sign_switch

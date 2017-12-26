@@ -12,9 +12,6 @@ condition:
     - condition: state
       entity_id: input_boolean.person2_is_awake
       state: 'on'
-    - condition: state
-      entity_id: group.person_person2
-      state: 'home'
 action:
   - service: notify.person2
     data_template: 

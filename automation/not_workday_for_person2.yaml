@@ -23,7 +23,7 @@ condition:
         entity_id: binary_sensor.workday_sensor
         state: 'off'
       - condition: state
-        entity_id: binary_sensor.person2_work
+        entity_id: calendar.person2_work
         state: 'off'
 action:
   - service: input_boolean.turn_off

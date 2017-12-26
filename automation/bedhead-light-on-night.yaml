@@ -5,7 +5,7 @@ trigger:
   entity_id: light.master_bedroom_bedhead
   to: 'on'
   for: 
-    minutes: 30
+    minutes: 60
 condition:
   condition: and
   conditions:
