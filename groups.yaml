@@ -221,6 +221,10 @@ my_switches:
   - switch.number_sign_switch
   - switch.garden_lights_switch
   - switch.master_bedroom_socket_switch
+  - switch.family_room_socket_switch
+  - switch.hall_downstairs_switch
+  - switch.livingroom_socket_switch
+  - switch.vestibule_switch
   view: false
 tv:
   name: TVs
@@ -365,7 +369,9 @@ garden_lights:
   - switch.garden_lights_switch
   view: false
 number_sign:
-  name: Number sign - switch.number_sign_switch
+  name: Number sign 
+  entities:
+  - switch.number_sign_switch
   view: false
 utility:
   name: Utility room
@@ -411,6 +417,19 @@ living_room_lights:
   - switch.cabinet_light_switch
   - switch.tv_light_switch
   view: false
+downstairs_hall:
+  name: Downstairs hall
+  control: hidden
+  view: false
+  entities:
+  - switch.hall_downstairs_switch
+  - switch.vestibule_switch
+family_room:
+  name: Family room
+  control: hidden
+  view: false
+  entities:
+  - switch.family_room_socket_switch
 living_room:
   name: Living room
   control: hidden
@@ -423,12 +442,17 @@ living_room:
   - switch.table_light_switch
   - switch.cabinet_light_switch
   - switch.tv_light_switch
+  - switch.livingroom_socket_switch
 downstairs:
   name: Downstairs
   icon: mdi:checkbox-multiple-blank-outline
   entities:
   - group.living_room_lights
   - group.living_room_sensors
+  - group.family_room
+  - group.downstairs_hall
+  - switch.family_room_socket_switch
+  - switch.hall_downstairs_switch
 binary_sensors:
   name: Binary sensors
   entities:
@@ -501,6 +525,37 @@ default_view:
   - group.front_of_house
   - group.my_people_terse
   - group.my_exterior_doors
+my_controls_spare:
+  name: Unused switches
+  view: false
+  entities:
+  - switch.spare_socket_switch
+  - switch.master_bedroom_socket_switch
+my_controls_switches:
+  name: Switches
+  view: false
+  entities:
+  - switch.table_light_switch
+  - switch.cabinet_light_switch
+  - switch.tv_light_switch
+  - switch.garden_lights_switch
+  - switch.family_room_socket_switch
+  - switch.hall_downstairs_switch
+  - switch.livingroom_socket_switch
+  - switch.vestibule_switch
+my_controls_lights:
+  name: Lights
+  view: false
+  entities:
+  - light.master_bedroom_bedhead
+my_controls:
+  name: Lights and Switches
+  icon: mdi:toggle-switch
+  view: true
+  entities:
+  - group.my_controls_spare
+  - group.my_controls_switches
+  - group.my_controls_lights
 second_bedroom:
   name: Second bedroom
   icon: mdi:hotel
@@ -532,7 +587,9 @@ all_rooms:
   view: true
   entities:
   - group.living_room
+  - group.family_room
   - group.utility
+  - group.downstairs_hall
   - group.back_of_house
   - group.front_of_house
   - group.garage
@@ -614,6 +671,10 @@ z_wave:
   - zwave.living_room_multi
   - zwave.front_spare_extender
   - zwave.second_bedroom
+  - zwave.family_room_socket
+  - zwave.hall_downstairs
+  - zwave.livingroom_socket
+  - zwave.vestibule
 my_printer:
   name: Printer status
   view: false
@@ -691,6 +752,7 @@ my_automations_masterbed:
   - automation.bedhead_light_dim_midnight
   - automation.bedhead_light_dim_midnight_off
   - automation.bedhead_light_bright_sunrise
+  - automation.bedhead_light_on_morning
   - automation.late_disable_fluxer
 my_automations_bedhead_remote:
   name: Remote automations for the light
@@ -832,6 +894,13 @@ my_automations_battery:
   - automation.battery_utility_door
   - automation.battery_patio_door_left
   - automation.battery_remote
+my_automations_seasons:
+  name: Seasonal automations
+  icon: mdi:pine-tree
+  entities:
+  - automation.christmas_lights_on
+  - automation.christmas_lights_off
+  - automation.christmas_lights_off_season
 my_automations_downstairs:
   name: Automations
   icon: mdi:home-variant
@@ -857,6 +926,7 @@ my_automations_other:
   entities:
   - group.my_automations_battery
   - group.my_automations_general
+  - group.my_automations_seasons
 my_automations:
   name: Automations
   icon: mdi:engine

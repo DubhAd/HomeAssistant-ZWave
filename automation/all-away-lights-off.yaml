@@ -22,5 +22,5 @@ condition:
       entity_id: media_player.samsung_tv_remote
       state: 'off'
 action:
-  service: scene.turn_on
-  entity_id: scene.all_lights_off
+  - service: scene.turn_on
+    entity_id: scene.all_lights_off

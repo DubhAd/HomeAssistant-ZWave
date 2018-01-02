@@ -3,7 +3,7 @@ alias: 'Lounge in daylight 2'
 trigger:
   platform: numeric_state
   entity_id: sensor.living_room_multi_luminance
-  above: 20
+  above: 25
 condition:
   condition: and
   conditions:

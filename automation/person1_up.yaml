@@ -24,6 +24,7 @@ condition:
         entity_id: group.person_person1
         state: 'home'
       - condition: time
+        after: '04:00:00'
         before: '10:00:00'
       - condition: state
         entity_id: media_player.person1
@@ -34,6 +35,7 @@ condition:
         entity_id: group.person_person1
         state: 'home'
       - condition: time
+        after: '04:00:00'
         before: '12:00:00'
       - condition: state
         entity_id: sensor.person1

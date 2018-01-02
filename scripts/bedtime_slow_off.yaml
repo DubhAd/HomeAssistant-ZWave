@@ -16,3 +16,15 @@ sequence:
     service: switch.turn_off
     data:
       entity_id: switch.cabinet_light_switch
+  - condition: state
+    entity_id: input_select.season
+    state: 'Christmas'
+  - service: switch.turn_off
+    entity_id:
+      - switch.family_room_socket_switch
+      - switch.livingroom_socket_switch
+      - switch.vestibule_switch
+  - delay:
+      minutes: 5
+  - service: switch.turn_off
+    entity_id: switch.hall_downstairs_switch

@@ -1,12 +1,14 @@
 alias: 'person1 asleep'
 initial_state: 'on'
 trigger:
-  platform: state
-  entity_id: media_player.person1
-  from: 'playing'
-  to: 'off'
-  for:
-    minutes: 5
+  - platform: state
+    entity_id: media_player.person1
+    from: 'playing'
+    to: 'off'
+    for:
+      minutes: 5
+  - platform: time
+    at: '23:30:00'
 condition:
   - condition: time
     after: '20:00:00'

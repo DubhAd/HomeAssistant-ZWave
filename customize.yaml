@@ -374,3 +374,27 @@ sensor.bin_brown:
   friendly_name: "Brown bin"
 device_tracker.person2_5x:
   friendly_name: "Old mobile"
+switch.family_room_socket_switch:
+  friendly_name: "Family room socket"
+  icon: mdi:power
+switch.hall_downstairs_switch:
+  friendly_name: "Downstairs hall socket"
+  icon: mdi:power
+switch.livingroom_socket_switch:
+  friendly_name: "Living room socket"
+  icon: mdi:power
+switch.vestibule_switch:
+  friendly_name: "Vestibule socket"
+  icon: mdi:power
+zwave.family_room_socket:
+  friendly_name: "Family room socket"
+  icon: mdi:power
+zwave.hall_downstairs:
+  friendly_name: "Downstairs hall socket"
+  icon: mdi:power
+zwave.livingroom_socket:
+  friendly_name: "Living room socket"
+  icon: mdi:power
+zwave.vestibule:
+  friendly_name: "Vestibule socket"
+  icon: mdi:power

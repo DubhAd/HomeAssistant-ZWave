@@ -3,7 +3,7 @@ alias: 'Dark TV on'
 trigger:
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    below: 15
+    below: 18
   - platform: state
     entity_id: media_player.samsung_tv_remote
     from: 'off'
@@ -24,7 +24,7 @@ condition:
         minutes: 5
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
-      below: 15
+      below: 18
     - condition: state
       entity_id: input_boolean.adults_away
       state: 'off'
