@@ -903,6 +903,12 @@ my_automations_seasons:
   - automation.christmas_lights_on
   - automation.christmas_lights_off
   - automation.christmas_lights_off_season
+  - automation.season_is_christmas
+  - automation.season_is_easter
+  - automation.season_is_winter
+  - automation.season_is_spring
+  - automation.season_is_summer
+  - automation.season_is_autumn
 my_automations_downstairs:
   name: Automations
   icon: mdi:home-variant
