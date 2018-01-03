@@ -15,6 +15,9 @@ condition:
     entity_id: input_boolean.notify_person2_working
     state: 'on'
   - condition: state
+    entity_id: input_boolean.person2_travelling
+    state: 'off'
+  - condition: state
     entity_id: group.person_person2
     state: 'home'
 action:

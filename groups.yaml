@@ -571,7 +571,7 @@ master_bedroom:
   icon: mdi:hotel
   entities:
   - light.master_bedroom_bedhead
-  - switch.spare_socket_switch
+  - switch.master_bedroom_socket_switch
 all_lights:
   name: All lights
   icon: mdi:lightbulb
@@ -874,6 +874,8 @@ my_automations_input:
   - automation.not_workday_for_person2
   - automation.person2_working_from_home
   - automation.person2_working_trains
+  - automation.person2_working_away
+  - automation.person2_not_working_away
   - automation.work_day_for_person1
   - automation.not_work_day_for_person1
   view: false
