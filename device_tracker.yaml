@@ -10,4 +10,5 @@
 - platform: owntracks_http
   max_gps_accuracy: 600
   secret: !secret owntracks_secret
+- platform: gpslogger
 - platform: bluetooth_tracker

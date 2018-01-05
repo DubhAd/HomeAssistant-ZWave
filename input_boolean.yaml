@@ -54,6 +54,14 @@ person2_travelling:
   name: person2 travelling
   initial: off
   icon: mdi:airplane
+person3_travelling:
+  name: person3 travelling
+  initial: off
+  icon: mdi:airplane
+person1_travelling:
+  name: person1 travelling
+  initial: off
+  icon: mdi:airplane
 livingroom_lights_auto:
   name: Living room lights turned on automatically
   initial: off
