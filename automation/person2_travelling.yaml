@@ -1,0 +1,24 @@
+alias: 'person2 Travelling'
+initial_state: 'on'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.person2s_time_to_home
+    above: '180'
+    for:
+      hours: 3
+  - platform: homeassistant
+    event: start
+  - platform: time
+    at: '21:00:00'
+condition:
+  condition: and
+  conditions:
+  - condition: state
+    entity_id: group.person_person2
+    state: 'not_home'
+  - condition: numeric_state
+    entity_id: sensor.person2s_time_to_home
+    above: '180'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.person2_travelling

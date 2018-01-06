@@ -7,6 +7,6 @@ layout:
     - include: widgets
     - lounge_temperature, lounge_light_gauge, lounge_motion
     - tv_light, table_light, cabinet_light
-    - spacer (2x1), garden_light
+    - hall_light, spacer, garden_light
     - utility_door_exterior, garage_door_bike, garage_door_car
     - person2, person3, person1

@@ -15,5 +15,5 @@ condition:
 action:
   service: notify.push_person2_phone
   data_template: 
-      message: "{{ states.sensor.trains_from_work.state }}"
+      message: "{{ states.sensor.trains_from_station.state }}"
 

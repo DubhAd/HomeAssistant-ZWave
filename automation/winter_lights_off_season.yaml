@@ -1,0 +1,14 @@
+alias: 'Winter lights off season'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: input_select.season
+    from: 'Winter'
+action:
+  - service: switch.turn_off
+    entity_id:
+      - switch.hall_downstairs_switch
+  - delay: '00:01:00'
+  - service: switch.turn_off
+    entity_id:
+      - switch.hall_downstairs_switch

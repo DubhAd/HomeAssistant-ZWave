@@ -136,42 +136,42 @@ train_status:
   - binary_sensor.trains_to_xyz_ontime
   - binary_sensor.trains_to_abc_ontime
 trains_abc_to_xyz_1:
-  name: Next train home to work
+  name: Next train home to station
   view: false
   entities:
   - sensor.next_train_xyz_status
   - sensor.next_train_xyz_scheduled
   - sensor.next_train_xyz_estimated
 trains_abc_to_xyz_2:
-  name: Second train home to work
+  name: Second train home to station
   view: false
   entities:
   - sensor.second_train_xyz_status
   - sensor.second_train_xyz_scheduled
   - sensor.second_train_xyz_estimated
 trains_abc_to_xyz_3:
-  name: Third train home to work
+  name: Third train home to station
   view: false
   entities:
   - sensor.third_train_xyz_status
   - sensor.third_train_xyz_scheduled
   - sensor.third_train_xyz_estimated
 trains_xyz_to_abc_1:
-  name: Next train work to home
+  name: Next train station to home
   view: false
   entities:
   - sensor.next_train_abc_status
   - sensor.next_train_abc_scheduled
   - sensor.next_train_abc_estimated
 trains_xyz_to_abc_2:
-  name: Second train work to home
+  name: Second train station to home
   view: false
   entities:
   - sensor.second_train_abc_status
   - sensor.second_train_abc_scheduled
   - sensor.second_train_abc_estimated
 trains_xyz_to_abc_3:
-  name: Third train work to home
+  name: Third train station to home
   view: false
   entities:
   - sensor.third_train_abc_status
@@ -521,6 +521,7 @@ default_view:
   - group.my_scenes
   - group.master_bedroom
   - group.living_room_lights
+  - group.downstairs_hall
   - group.back_of_house
   - group.front_of_house
   - group.my_people_terse
@@ -903,6 +904,9 @@ my_automations_seasons:
   - automation.christmas_lights_on
   - automation.christmas_lights_off
   - automation.christmas_lights_off_season
+  - automation.winter_lights_on
+  - automation.winter_lights_off
+  - automation.winter_lights_off_season
   - automation.season_is_christmas
   - automation.season_is_easter
   - automation.season_is_winter

@@ -104,6 +104,9 @@ panel_custom:
     url_path: floorplan
     config: !include floorplan.yaml
 
+zoneminder:
+  host: 192.168.0.17
+
 google_assistant:
   project_id: !secret assistant_project_id
   client_id: !secret assistant_client_id

@@ -379,7 +379,7 @@ switch.family_room_socket_switch:
   icon: mdi:power
 switch.hall_downstairs_switch:
   friendly_name: "Downstairs hall socket"
-  icon: mdi:power
+  icon: mdi:stairs
 switch.livingroom_socket_switch:
   friendly_name: "Living room socket"
   icon: mdi:power
@@ -391,7 +391,7 @@ zwave.family_room_socket:
   icon: mdi:power
 zwave.hall_downstairs:
   friendly_name: "Downstairs hall socket"
-  icon: mdi:power
+  icon: mdi:stairs
 zwave.livingroom_socket:
   friendly_name: "Living room socket"
   icon: mdi:power

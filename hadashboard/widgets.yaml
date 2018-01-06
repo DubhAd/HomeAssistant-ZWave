@@ -169,6 +169,14 @@ garage_door_car:
     icon_off: mdi-car
     icon_style_active: "color: red"
 
+hall_light:
+    widget_type: switch
+    title: Hall light
+    entity: switch.hall_downstairs_switch
+    icon_on: mdi-stairs
+    icon_off: mdi-stairs
+    icon_style_active: "color: yellow"
+    
 tv_light:
     widget_type: switch
     title: TV light

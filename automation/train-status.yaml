@@ -15,7 +15,7 @@ condition:
 action:
   - service: notify.person2
     data_template: 
-      message: "{{ states.sensor.trains_to_work.state }}"
+      message: "{{ states.sensor.trains_to_station.state }}"
   - service: notify.lm_notify
     data_template: 
-      message: "{{ states.sensor.trains_to_work.state }}"
+      message: "{{ states.sensor.trains_to_station.state }}"
