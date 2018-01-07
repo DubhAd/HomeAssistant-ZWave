@@ -7,6 +7,9 @@ trigger:
   for: 
     minutes: 5
 condition:
+  - condition: state
+    entity_id: group.person_person2
+    condition: 'home'
   - condition: or
     conditions:
     - condition: time

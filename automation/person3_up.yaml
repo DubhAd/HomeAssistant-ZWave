@@ -9,12 +9,25 @@ trigger:
     to: 'not_home'
     for:
       minutes: 5
+  - platform: state
+    entity_id: sensor.utility_door
+    to: 'open'
 condition:
   - condition: or
     conditions:
-    - condition: state
-      entity_id: group.person_person3
-      state: 'not_home'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.person3_is_awake
+        state: 'off'
+      - condition: state
+        entity_id: sensor.utility_door
+        state: 'open'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: group.person_person3
+        state: 'not_home'
     - condition: and
       conditions:
       - condition: state
