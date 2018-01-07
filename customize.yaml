@@ -383,6 +383,9 @@ switch.hall_downstairs_switch:
 switch.livingroom_socket_switch:
   friendly_name: "Living room socket"
   icon: mdi:power
+switch.front_bedroom_switch:
+  friendly_name: "Front bedroom socket"
+  icon: mdi:power
 switch.vestibule_switch:
   friendly_name: "Vestibule socket"
   icon: mdi:power
@@ -398,3 +401,12 @@ zwave.livingroom_socket:
 zwave.vestibule:
   friendly_name: "Vestibule socket"
   icon: mdi:power
+zwave.front_bedroom:
+  friendly_name: "Front bedroom socket"
+  icon: mdi:power
+binary_sensor.front_door_sensor:
+  icon: mdi:door
+  friendly_name: Front door
+  sensor_class: opening
+zwave.front_door:
+  friendly_name: "Front door"

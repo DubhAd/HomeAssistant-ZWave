@@ -133,6 +133,14 @@ lounge_motion:
     icon_off: mdi-account-multiple
     icon_style_active: "color: yellow"
 
+front_door:
+    widget_type: binary_sensor
+    title: Front door
+    entity: binary_sensor.front_door_sensor
+    icon_on: mdi-glassdoor
+    icon_off: mdi-glassdoor
+    icon_style_active: "color: red"
+
 utility_door_exterior:
     widget_type: binary_sensor
     title: Utility door

@@ -1,0 +1,19 @@
+initial_state: 'on'
+alias: 'Battery front door'
+trigger:
+  - platform: numeric_state
+    entity_id: zwave.front_door
+    value_template: "{{ states.zwave.front_door.attributes.battery_level }}"
+    below: 25
+  - platform: numeric_state
+    entity_id: zwave.front_door
+    value_template: "{{ states.zwave.front_door.attributes.battery_level }}"
+    below: 10
+  - platform: numeric_state
+    entity_id: zwave.front_door
+    value_template: "{{ states.zwave.front_door.attributes.battery_level }}"
+    below: 5
+action:
+  service: notify.person2
+  data:
+    message: "The utility door sensor is at {{ states.zwave.front_door.attributes.battery_level }}% battery, buy a replacement soon"

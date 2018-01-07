@@ -66,3 +66,15 @@ livingroom_lights_auto:
   name: Living room lights turned on automatically
   initial: off
   icon: mdi:lightbulb
+person2_home:
+  name: person2 home
+  initial: off
+  icon: mdi:home
+person3_home:
+  name: person3 home
+  initial: off
+  icon: mdi:home
+person1_home:
+  name: person1 home
+  initial: off
+  icon: mdi:home

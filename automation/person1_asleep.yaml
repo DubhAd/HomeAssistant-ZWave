@@ -12,7 +12,7 @@ trigger:
 condition:
   - condition: state
     entity_id: group.person_person1
-    condition: 'home'
+    state: 'home'
   - condition: time
     after: '20:00:00'
 action:

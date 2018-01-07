@@ -9,7 +9,7 @@ trigger:
 condition:
   - condition: state
     entity_id: group.person_person2
-    condition: 'home'
+    state: 'home'
   - condition: or
     conditions:
     - condition: time
