@@ -1,14 +1,22 @@
 initial_state: 'on'
 alias: 'person2 home'
 trigger:
-  platform: state
-  entity_id: group.person_person2
-  from: 'not_home'
-  to: 'home'
+  - platform: state
+    entity_id: group.person_person2
+    from: 'not_home'
+    to: 'home'
+  - platform: homeassistant
+    event: start
+condition:
+  - condition: state
+    entity_id: group.person_person2
+    state: 'home'
 action:
-  - service: homeassistant.turn_on
+  - service: automation.turn_on
     entity_id: automation.person2_coming_home
-  - service: homeassistant.turn_on
+  - service: automation.turn_on
     entity_id: automation.person2_at_station
   - service: input_boolean.turn_off
     entity_id: input_boolean.person2_travelling
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.person2_home

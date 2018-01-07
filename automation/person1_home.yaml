@@ -1,0 +1,18 @@
+initial_state: 'on'
+alias: 'person1 home'
+trigger:
+  - platform: state
+    entity_id: group.person_person1
+    from: 'not_home'
+    to: 'home'
+  - platform: homeassistant
+    event: start
+condition:
+  - condition: state
+    entity_id: group.person_person1
+    state: 'home'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.person1_travelling
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.person1_home

@@ -25,7 +25,7 @@ condition:
         state: 'home'
       - condition: time
         after: '04:00:00'
-        before: '10:00:00'
+        before: '20:00:00'
       - condition: state
         entity_id: media_player.person1
         state: 'playing'
@@ -36,7 +36,7 @@ condition:
         state: 'home'
       - condition: time
         after: '04:00:00'
-        before: '12:00:00'
+        before: '20:00:00'
       - condition: state
         entity_id: sensor.person1
         state: 'Online'

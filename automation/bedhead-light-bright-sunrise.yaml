@@ -1,8 +1,8 @@
 alias: 'Bedhead light bright sunrise'
 initial_state: 'on'
 trigger:
-  platform: sun
-  event: sunrise
+  - platform: sun
+    event: sunrise
 action:
   - service: light.turn_on
     data:

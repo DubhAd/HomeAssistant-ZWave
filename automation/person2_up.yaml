@@ -22,6 +22,9 @@ condition:
     - condition: state
       entity_id: group.person_person2
       state: 'not_home'
+    - condition: state
+      entity_id: input_boolean.person2_home
+      state: 'off'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person2_is_awake

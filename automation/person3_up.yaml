@@ -28,6 +28,9 @@ condition:
       - condition: state
         entity_id: group.person_person3
         state: 'not_home'
+      - condition: state
+        entity_id: input_boolean.person3_travelling
+        state: 'off'
     - condition: and
       conditions:
       - condition: state

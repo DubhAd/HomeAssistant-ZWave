@@ -14,6 +14,6 @@ trigger:
     value_template: "{{ states.zwave.garage_door_bike.attributes.battery_level }}"
     below: 5
 action:
-  service: notify.person2
-  data:
-    message: "The garage door sensor for the bike is at {{ states.zwave.garage_door_bike.attributes.battery_level }}% battery, it uses a CR123A lithium battery"
+  - service: notify.person2
+    data:
+      message: "The garage door sensor for the bike is at {{ states.zwave.garage_door_bike.attributes.battery_level }}% battery, it uses a CR123A lithium battery"

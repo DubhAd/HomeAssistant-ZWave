@@ -1,16 +1,16 @@
 alias: 'Bedhead light dim midnight off'
 initial_state: 'on'
 trigger:
-  platform: time
-  at: '00:00:00'
+  - platform: time
+    at: '00:00:00'
 condition:
-  condition: and
-  conditions:
-    - condition: state
-      entity_id: light.master_bedroom_bedhead
-      state: 'off'
-    - condition: template
-      value_template: '{{ states.light.master_bedroom_bedhead.attributes.brightness|default(0) > 5 }}'
+  - condition: and
+    conditions:
+      - condition: state
+        entity_id: light.master_bedroom_bedhead
+        state: 'off'
+      - condition: template
+        value_template: '{{ states.light.master_bedroom_bedhead.attributes.brightness|default(0) > 5 }}'
 action:
   - service: light.turn_on
     data:

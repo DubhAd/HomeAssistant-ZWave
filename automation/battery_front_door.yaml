@@ -14,6 +14,6 @@ trigger:
     value_template: "{{ states.zwave.front_door.attributes.battery_level }}"
     below: 5
 action:
-  service: notify.person2
-  data:
-    message: "The utility door sensor is at {{ states.zwave.front_door.attributes.battery_level }}% battery, buy a replacement soon"
+  - service: notify.person2
+    data:
+      message: "The front door sensor is at {{ states.zwave.front_door.attributes.battery_level }}% battery, buy a replacement soon"

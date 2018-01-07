@@ -1,9 +1,9 @@
 alias: 'person3 coming home'
 initial_state: 'on'
 trigger:
-  platform: numeric_state
-  entity_id: proximity.person3_home
-  below: 701
+  - platform: numeric_state
+    entity_id: proximity.person3_home
+    below: 701
 condition:
   condition: and
   conditions:
@@ -16,6 +16,6 @@ condition:
       entity_id: group.person_person2
       state: home
 action:
-  service: notify.push
-  data:
-    message: "person3's nearly home"
+  - service: notify.push
+    data:
+      message: "person3's nearly home"

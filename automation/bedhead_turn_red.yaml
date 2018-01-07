@@ -1,15 +1,15 @@
 alias: 'Bedhead turn red'
 initial_state: 'on'
 trigger:
-  platform: event
-  event_type: zwave.scene_activated
-  event_data:
-    scene_id: 43
-    entity_id: zwave.nodon_crc3100_octan_remote
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      scene_id: 43
+      entity_id: zwave.nodon_crc3100_octan_remote
 condition:
-  condition: state
-  entity_id: light.master_bedroom_bedhead
-  state: 'on'
+  - condition: state
+    entity_id: light.master_bedroom_bedhead
+    state: 'on'
 action:
   - service: light.turn_on
     data:
@@ -21,4 +21,3 @@ action:
       entity_id: script.bedhead_light_warm_pause, script.bedhead_light_cool_pause, script.bedhead_light_bright_pause, script.bedhead_light_dim_pause, script.bedhead_light_warm, script.bedhead_light_cool, script.bedhead_light_bright, script.bedhead_light_dim
   - service: switch.turn_off
     entity_id: switch.fluxer
-
