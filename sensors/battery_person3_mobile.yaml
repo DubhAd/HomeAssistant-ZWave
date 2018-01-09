@@ -1,7 +1,7 @@
 - platform: template
   sensors:
     battery_person3_mobile:
-      value_template: '{{ states.device_tracker.person3_mobile.attributes.battery|default(0) }}'
+      value_template: '{{ states.device_tracker.person3_mobile.attributes.battery|default(0)|int() }}'
       icon_template: >
         {% set battery_level = states.device_tracker.person3_mobile.attributes.battery|default(0)|int %}
         {% set battery_round = (battery_level / 10) |int * 10 %}

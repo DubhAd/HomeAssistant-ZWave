@@ -919,8 +919,6 @@ my_automations_media:
 my_automations_battery:
   name: Battery level automations
   entities:
-  - automation.battery_garage_door_car
-  - automation.battery_garage_door_bike
   - automation.battery_garage_door_closed_car
   - automation.battery_garage_door_closed_bike
   - automation.battery_livingroom_multi

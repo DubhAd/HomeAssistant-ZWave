@@ -3,7 +3,6 @@ alias: 'person1 home'
 trigger:
   - platform: state
     entity_id: group.person_person1
-    from: 'not_home'
     to: 'home'
   - platform: homeassistant
     event: start

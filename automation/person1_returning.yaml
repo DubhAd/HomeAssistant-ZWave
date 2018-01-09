@@ -32,3 +32,9 @@ action:
   - service: notify.lametric_info
     data_template:
       message: "person1 should be home from work in about {{ states('sensor.person1s_time_to_home') }} to {{ states('sensor.person1s_time_to_home')|int + 15 }} minutes"
+  - condition: state
+    entity_id: group.person_person3
+    state: 'home'
+  - service: notify.person3
+    data_template:
+      message: "person1 should be home from work in about {{ states('sensor.person1s_time_to_home') }} to {{ states('sensor.person1s_time_to_home')|int + 15 }} minutes"
