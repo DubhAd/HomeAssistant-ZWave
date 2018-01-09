@@ -25,6 +25,11 @@ condition:
     - condition: state
       entity_id: input_boolean.person2_home
       state: 'on'
+  - condition: state
+    entity_id: calendar.person2_wfh
+    state: 'off'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.notify_train_status_work
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.notify_person2_working
