@@ -115,6 +115,7 @@ my_people:
   - sensor.person3s_time_to_home
   - device_tracker.person1_mobile
   - sensor.person1s_time_to_home
+  - sensor.person1s_time_to_home_by_transit
   - device_tracker.person2_mobile
   - sensor.person2s_time_to_home
   view: false
