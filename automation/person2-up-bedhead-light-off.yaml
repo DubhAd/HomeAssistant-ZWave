@@ -5,6 +5,10 @@ trigger:
     entity_id: media_player.person2
     to: 'off'
     for: '00:30:00'
+  - platform: state
+    entity_id: media_player.master_bedroom_speaker
+    to: 'off'
+    for: '00:30:00'
 condition:
   - condition: state
     entity_id: light.master_bedroom_bedhead

@@ -5,6 +5,9 @@ trigger:
     entity_id: media_player.person2
     to: 'playing'
   - platform: state
+    entity_id: media_player.master_bedroom_speaker
+    to: 'playing'
+  - platform: state
     entity_id: light.master_bedroom_bedhead
     to: 'on'
     for:
@@ -19,6 +22,7 @@ condition:
     conditions:
     - condition: time
       after: '04:00:00'
+      before: '18:00:00'
     - condition: state
       entity_id: group.person_person2
       state: 'not_home'
