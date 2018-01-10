@@ -1,8 +1,8 @@
 alias: 'Test media'
 initial_state: 'off'
 trigger:
-  platform: time
-  at: '14:00:00'
+  - platform: time
+    at: '14:00:00'
 action:
   - service: media_player.play_media
     data_template:
