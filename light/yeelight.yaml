@@ -4,3 +4,7 @@
       name: Master Bedroom bedhead
       transition: 1000
       use_music_mode: True #(defaults to False)
+    192.168.0.151:
+      name: person1 bedroom bedside
+      transition: 1000
+      use_music_mode: True #(defaults to False)
