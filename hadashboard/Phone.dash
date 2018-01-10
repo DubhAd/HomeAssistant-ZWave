@@ -5,8 +5,8 @@ columns: 3
 
 layout:
     - include: widgets
-    - lounge_temperature, lounge_light_gauge, lounge_motion
+    - lounge_temperature, lounge_motion, garden_light
     - tv_light, table_light, cabinet_light
-    - hall_light, garden_light, front_door
-    - utility_door_exterior, garage_door_bike, garage_door_car
+    - hall_light, garage_door_bike, garage_door_car
+    - utility_door_exterior, patio_door_left, front_door
     - person2, person3, person1

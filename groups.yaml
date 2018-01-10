@@ -576,6 +576,7 @@ second_bedroom:
   icon: mdi:hotel
   entities:
   - switch.second_bedroom_switch
+  - light.person1_bedroom_bedside
 master_bedroom_lights:
   name: Master bedroom lights
   icon: mdi:hotel
