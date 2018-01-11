@@ -1,0 +1,19 @@
+initial_state: 'on'
+alias: 'Hall lights off'
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: '1:00:00'
+condition:
+  - condition: state
+    entity_id: switch.hall_downstairs_switch
+    state: 'on'
+action:
+  - service: switch.turn_off
+    entity_id: switch.hall_downstairs_switch
+  - delay: 00:01:00
+  - condition: state
+    entity_id: switch.hall_downstairs_switch
+    state: 'on'
+  - service: switch.turn_off
+    entity_id: switch.hall_downstairs_switch

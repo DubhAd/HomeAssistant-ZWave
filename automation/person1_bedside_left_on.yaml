@@ -1,0 +1,22 @@
+alias: 'person1 bedside left on'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: light.person1_bedroom_bedside
+    to: 'on'
+    for: 
+      minutes: 30
+condition:
+  condition: and
+  conditions:
+    - condition: sun
+      after: sunrise
+      before: sunset
+    - condition: state
+      entity_id: media_player.person1
+      state: 'off'
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 30

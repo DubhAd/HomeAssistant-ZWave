@@ -1,0 +1,19 @@
+alias: 'person1 radio off'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: media_player.person1
+    to: 'off'
+condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: light.person1_bedroom_bedside
+      state: 'on'
+    - condition: time
+      before: '10:00:00'
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 10

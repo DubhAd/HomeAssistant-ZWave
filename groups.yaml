@@ -533,7 +533,6 @@ default_view:
   entities:
   - group.my_alerts
   - group.my_scenes
-  - group.master_bedroom
   - group.living_room_lights
   - group.downstairs_hall
   - group.back_of_house
@@ -563,6 +562,7 @@ my_controls_lights:
   view: false
   entities:
   - light.master_bedroom_bedhead
+  - light.person1_bedroom_bedside
 my_controls:
   name: Lights and Switches
   icon: mdi:toggle-switch
@@ -593,6 +593,7 @@ all_lights:
   icon: mdi:lightbulb
   entities:
   - light.master_bedroom_bedhead
+  - light.person1_bedroom_bedside
   - switch.table_light_switch
   - switch.cabinet_light_switch
   - switch.tv_light_switch
@@ -613,6 +614,13 @@ all_rooms:
   - group.back_bedroom
   - group.master_bedroom
   - group.second_bedroom
+room_second_bedroom:
+  name: person1's bedroom
+  icon: mdi:hotel
+  view: true
+  entities:
+  - light.person1_bedroom_bedside
+  - media_player.person1
 People:
   name: People
   icon: mdi:account-multiple
@@ -754,6 +762,27 @@ my_automations_office:
   entities:
   - automation.play_classical_music_in_the_office
   - automation.stop_classical_music_in_the_office
+my_automations_secondbed:
+  name: Automations for the second bedroom
+  entities:
+  - automation.person1_up_bedhead_light_on
+  - automation.person1_up_bedhead_light_off
+  - automation.person1_bedside_left_on
+  - automation.person1_radio_on
+  - automation.person1_radio_on_late
+  - automation.person1_radio_on_night
+  - automation.person1_radio_off
+  - automation.person1_bedside_turn_on
+  - automation.person1_bedside_turn_off
+  - automation.person1_bedside_turn_on_min
+  - automation.person1_bedside_turn_on_min_2
+  - automation.person1_bedside_turn_on_max
+  - automation.person1_bedside_turn_on_cool
+  - automation.person1_bedside_turn_on_warm
+  - automation.person1_bedside_turn_white
+  - automation.person1_bedside_turn_white_max
+  - automation.person1_bedside_turn_on_red
+  - automation.person1_bedside_turn_red
 my_automations_masterbed:
   name: Automations for the master bedroom
   entities:
@@ -841,6 +870,12 @@ my_automations_livingroom:
   - automation.tv_off_bedtime
   - automation.lounge_in_daylight
   - automation.lounge_in_daylight_2
+  view: false
+my_automations_downstairs_other:
+  name: Automations for downstairs
+  entities:
+  - automation.hall_lights_off
+  - automation.hall_lights_off_departure
   view: false
 my_automations_general:
   name: Misc automations
@@ -951,6 +986,7 @@ my_automations_downstairs:
   entities:
   - group.my_automations_livingroom
   - group.my_automations_familyroom
+  - group.my_automations_downstairs_other
   - group.my_automations_front
   - group.my_automations_garden
   - group.my_automations_media
@@ -961,6 +997,7 @@ my_automations_upstairs:
   entities:
   - group.my_automations_masterbed
   - group.my_automations_bedhead_remote
+  - group.my_automations_secondbed
   - group.my_automations_office
 my_automations_other:
   name: More Automations

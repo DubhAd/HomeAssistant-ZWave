@@ -1,0 +1,322 @@
+      name: Demo Floorplan
+      image: /local/custom_ui/floorplan/floorplan.svg
+      stylesheet: /local/custom_ui/floorplan/floorplan.css
+      
+      # These options are optional
+      warnings:            # enable warnings (to find out why things might ot be working correctly)
+     # pan_zoom:            # enable experimental panning / zooming
+      # hide_app_toolbar:    # hide the application toolbar (when used as a custom panel)
+
+      last_motion_entity: sensor.template_last_motion
+      last_motion_class: last-motion
+
+      groups:
+
+        - name: People
+          entities:
+             - device_tracker.person3_mobile
+             - device_tracker.person1_mobile
+             - device_tracker.person1_tablet
+             - device_tracker.person2_mobile
+             - device_tracker.work_laptop
+             - device_tracker.person2_work
+          states:
+            - state: 'home'
+              class: 'tracker-home'
+            - state: 'not_home'
+              class: 'tracker-away'
+            - state: 'Work'
+              class: 'tracker-work'
+            - state: 'other'
+              class: 'tracker-work'
+            - state: 'London'
+              class: 'tracker-work'
+            - state: 'London 2'
+              class: 'tracker-work'
+            - state: 'work'
+              class: 'tracker-other'
+            - state: 'home station'
+              class: 'tracker-travel'
+            - state: 'station train station'
+              class: 'tracker-travel'
+            - state: 'work Airport'
+              class: 'tracker-travel'
+            - state: 'London City Airport'
+              class: 'tracker-travel'
+            - state: 'London Heathrow Airport'
+              class: 'tracker-travel'
+
+        - name: bins
+          entities:
+            - sensor.bin_blue
+            - sensor.bin_grey
+            - sensor.bin_brown
+          states:
+            - state: 'today'
+              class: 'bin-today'
+            - state: 'tomorrow'
+              class: 'bin-tomorrow'
+            - state: 'future'
+              class: 'bin-future'
+            - state: 'false'
+              class: 'bin-false'
+
+        - name: Sonos Media
+          entities:
+             - media_player.office
+             - media_player.family_room
+             - media_player.living_room
+          states:
+            - state: 'playing'
+              class: 'squeezebox-on'
+            - state: 'paused'
+              class: 'squeezebox-off'
+
+        - name: Squeezebox Media
+          entities:
+             - media_player.person2
+             - media_player.person1
+          states:
+            - state: 'playing'
+              class: 'squeezebox-on'
+            - state: 'paused'
+              class: 'squeezebox-paused'
+            - state: 'off'
+              class: 'squeezebox-off'
+
+        - name: Chromecasts
+          entities:
+             - media_player.master_bedroom_speaker
+             - media_player.living_room_speaker
+          states:
+            - state: 'playing'
+              class: 'squeezebox-on'
+            - state: 'paused'
+              class: 'squeezebox-paused'
+            - state: 'off'
+              class: 'squeezebox-off'
+            - state: 'idle'
+              class: 'squeezebox-off'
+
+        - name: TVs
+          entities:
+            # Chromecast
+            - media_player.living_room_tv
+          states:
+            - state: 'on'
+              class: 'tv-on'
+            - state: 'playing'
+              class: 'tv-on'
+            - state: 'off'
+              class: 'tv-off'
+
+        - name: Devices and social media
+          entities:
+             - device_tracker.family_tv
+             - device_tracker.livingroom_chromecast
+             - media_player.samsung_tv_remote
+             - sensor.person1
+          states:
+            - state: 'on'
+              class: 'squeezebox-on'
+            - state: 'home'
+              class: 'squeezebox-on'
+            - state: 'Online'
+              class: 'squeezebox-on'
+            - state: 'off'
+              class: 'squeezebox-off'
+            - state: 'not home'
+              class: 'squeezebox-off'
+            - state: 'not_home'
+              class: 'squeezebox-off'
+            - state: 'Offline'
+              class: 'squeezebox-off'
+            - state: 'unknown'
+              class: 'squeezebox-unknown'
+
+        - name: Printers
+          entities:
+            - sensor.printer
+          class_template: '
+            var health = parseFloat(entity.state.replace("°", ""));
+            if (health < 50)
+              return "health-critical";
+            else if (health < 100)
+              return "health-warning";
+            else if (health < 250)
+              return "health-info";
+            else if (health >= 25)
+              return "health-good";
+            else
+              return "health-unknown";
+            '
+
+        - name: Temperature Sensors
+          entities:
+             - sensor.living_room_multi_temperature
+             - sensor.office_multi_temperature
+             - sensor.dark_sky_temperature
+          text_template: '${entity.state ? entity.state : "unknown"} C'
+          # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
+          # text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'  
+          class_template: '
+            var temp = parseFloat(entity.state.replace("°", ""));
+            if (temp < 5)
+              return "temp-freeze";
+            else if (temp < 15)
+              return "temp-low";
+            else if (temp < 25)
+              return "temp-medium";
+            else if (temp >= 25)
+              return "temp-high";
+            else
+              return "temp-unknown";
+            '
+
+        - name: Humidity sensor
+          entities:
+             - sensor.office_multi_relative_humidity
+          text_template: '${entity.state ? entity.state : "unknown"} %'
+          class_template: '
+            var humid = parseFloat(entity.state.replace("%", ""));
+            if (humid < 30)
+              return "humid-low";
+            else if (humid < 45)
+              return "humid-med-low";
+            else if (humid < 55)
+              return "humid-medium";
+            else if (humid < 65)
+              return "humid-med-high";
+            else
+              return "humid-high";
+            '
+
+        - name: Light sensor
+          entities:
+             - sensor.living_room_multi_luminance
+             - sensor.office_multi_luminance
+          text_template: '${entity.state ? entity.state : "unknown"} lux'
+          class_template: '
+            var light = parseFloat(entity.state.replace("°", ""));
+            if (light < 10)
+              return "light-low";
+            else if (light < 100)
+              return "light-medium-low";
+            else if (light < 400)
+              return "light-medium";
+            else
+              return "light-high";
+            '
+
+        - name: Travel sensor
+          entities:
+             - sensor.person3_travel
+             - sensor.person1_travel
+             - sensor.person2_travel
+          text_template: '${entity.state ? entity.state : "unknown"}'
+          class_template: '
+              return "info-text";
+            '
+
+        - name: Indicators
+          entities:
+             - switch.number_sign_switch
+          states:
+            - state: 'on'
+              class: 'indicator-on'
+            - state: 'off'
+              class: 'light-off'
+          action:
+            domain: homeassistant
+            service: toggle
+
+        - name: Lights
+          entities:
+             - switch.table_light_switch
+             - switch.cabinet_light_switch
+             - switch.tv_light_switch
+             - switch.garden_lights_switch
+             - light.master_bedroom_bedhead
+             - light.person1_bedroom_bedside
+          states:
+            - state: 'on'
+              class: 'light-on'
+            - state: 'off'
+              class: 'light-off'
+          action:
+            domain: homeassistant
+            service: toggle
+
+        - name: Switches
+          entities:
+            - switch.spare_socket_switch
+            - switch.master_bedroom_socket_switch
+            - switch.second_bedroom_switch
+            - switch.front_bedroom_switch
+            - switch.family_room_socket_switch
+            - switch.hall_downstairs_switch
+            - switch.livingroom_socket_switch
+            - switch.vestibule_switch
+          states:
+            - state: 'on'
+              class: 'doorbell-on'
+            - state: 'off'
+              class: 'doorbell-off'
+          action:
+            domain: homeassistant
+            service: toggle
+
+        - name: Binary sensors
+          entities:
+            - binary_sensor.living_room_motion
+            - binary_sensor.office_multi_sensor
+          states:
+            - state: 'off'
+              class: 'motion-background'
+            - state: 'on'
+              class: 'warning-background'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+
+        - name: Exterior Doors and window sensors
+          entities:
+            - binary_sensor.utility_door_exterior_sensor
+            - binary_sensor.patio_door_left_sensor
+            - binary_sensor.front_door_sensor
+          states:
+            - state: 'off'
+              class: 'door-closed'
+            - state: 'on'
+              class: 'door-open'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+
+        - name: Garage Doors 
+          entities:
+            - binary_sensor.garage_closed_bike_sensor
+            - binary_sensor.garage_closed_car_sensor
+          states:
+            - state: 'off'
+              class: 'closed-background'
+            - state: 'on'
+              class: 'open-background'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+
+        - name: Cameras
+          entities:
+            - camera.garage_camera
+          states:
+            - state: 'idle'
+              class: 'camera-idle'
+              
+
