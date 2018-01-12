@@ -11,7 +11,7 @@ condition:
       entity_id: light.person1_bedroom_bedside
       state: 'on'
     - condition: time
-      before: '10:00:00'
+      after: '09:59:59'
 action:
   - service: light.turn_off
     data:

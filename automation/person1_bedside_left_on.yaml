@@ -6,12 +6,22 @@ trigger:
     to: 'on'
     for: 
       minutes: 30
+  - platform: state
+    entity_id: light.person1_bedroom_bedside
+    to: 'on'
+    for: 
+      hours: 1
+  - platform: time
+    at: '23:00:00'
+  - platform: time
+    at: '23:30:00'
+  - platform: time
+    at: '23:59:59'
 condition:
   condition: and
   conditions:
-    - condition: sun
-      after: sunrise
-      before: sunset
+    - condition: time
+      after: '09:59:59'
     - condition: state
       entity_id: media_player.person1
       state: 'off'
