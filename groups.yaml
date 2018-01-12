@@ -884,6 +884,7 @@ my_automations_livingroom:
 my_automations_downstairs_other:
   name: Automations for downstairs
   entities:
+  - automation.hall_lights_on
   - automation.hall_lights_off
   - automation.hall_lights_off_departure
   view: false
