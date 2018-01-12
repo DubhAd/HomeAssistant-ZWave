@@ -27,7 +27,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [netdata](https://my-netdata.io/) so I can keep an eye on the performance
 * [LaMetric](https://lametric.com/) a clock and low resolution display
 * [Nmap](https://nmap.org/) to support device tracking
-* I did use [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/), but since moving to [OwnTracks HTTP](https://home-assistant.io/components/device_tracker.owntracks_http/) I've ditched it
+* I did use [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/), but since moving to [OwnTracks HTTP](https://home-assistant.io/components/device_tracker.owntracks_http/) I've ditched it. I'm now in the process of switching to [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) because I'm fed up with OwnTracks disabling itself (on Android) at random.
 
 ## The devices I use (with HA)
 

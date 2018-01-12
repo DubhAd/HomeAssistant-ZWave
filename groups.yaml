@@ -757,6 +757,16 @@ my_scripts:
   - scripts.garage_open
   - scripts.garage_closed
   view: false
+my_automations_startup:
+  name: Automations at startup
+  entities:
+  - automation.startup_person3_up
+  - automation.startup_person1_up
+  - automation.startup_person2_up
+  - automation.ha_started
+  - automation.ha_started_later
+  - automation.ha_stopped
+  - automation.ha_ready
 my_automations_office:
   name: Automations for the office
   entities:
@@ -886,10 +896,6 @@ my_automations_general:
   - automation.sunrise_enable_automations
   - automation.clear_states
   - automation.house_awake
-  - automation.ha_started
-  - automation.ha_started_later
-  - automation.ha_stopped
-  - automation.ha_ready
   - automation.test_zwave_network
   - automation.zwave_check
   - automation.zwave_health_check
@@ -1004,6 +1010,7 @@ my_automations_other:
   icon: mdi:engine-outline
   view: true
   entities:
+  - group.my_automations_startup
   - group.my_automations_battery
   - group.my_automations_general
   - group.my_automations_seasons

@@ -1,9 +1,10 @@
 initial_state: 'on'
 alias: 'Hall lights off'
 trigger:
-  - platform: sun
-    event: sunrise
-    offset: '1:00:00'
+  - platform: numeric_state
+    entity_id: sun.sun
+    value_template: "{{ state.attributes.elevation }}"
+    above: 5
 condition:
   - condition: state
     entity_id: switch.hall_downstairs_switch

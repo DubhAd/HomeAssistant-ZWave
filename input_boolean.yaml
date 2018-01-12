@@ -22,22 +22,18 @@ person1_is_awake:
   name: person1 is awake
   initial: off
   icon: mdi:alarm
-lighting_automations:
-  name: Enable lighting automations
-  initial: on
-  icon: mdi:lightbulb
 bedtime:
   name: Everybody is asleep
   initial: off
   icon: mdi:hotel
-adults_away:
-  name: Adults are away
-  initial: off
-  icon: mdi:account-multiple
-all_away:
-  name: Everybody is away
-  initial: off
-  icon: mdi:account-multiple
+lighting_automations:
+  name: Enable lighting automations
+  initial: on
+  icon: mdi:lightbulb
+livingroom_lights_auto:
+  name: Living room lights turned on automatically
+  initial: on
+  icon: mdi:lightbulb
 guest_mode:
   name: Guest mode
   initial: off
@@ -62,19 +58,23 @@ person1_travelling:
   name: person1 travelling
   initial: off
   icon: mdi:airplane
-livingroom_lights_auto:
-  name: Living room lights turned on automatically
-  initial: off
-  icon: mdi:lightbulb
 person2_home:
   name: person2 home
-  initial: off
+  initial: on
   icon: mdi:home
 person3_home:
   name: person3 home
-  initial: off
+  initial: on
   icon: mdi:home
 person1_home:
   name: person1 home
-  initial: off
+  initial: on
   icon: mdi:home
+adults_away:
+  name: Adults are away
+  initial: off
+  icon: mdi:account-multiple
+all_away:
+  name: Everybody is away
+  initial: off
+  icon: mdi:account-multiple
