@@ -40,3 +40,8 @@ action:
   - condition: state
     entity_id: device_tracker.family_tv
     state: 'not_home'
+  - condition: state
+    entity_id: sensor.person1
+    state: 'Offline'
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.all_away

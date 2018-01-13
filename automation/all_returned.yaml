@@ -5,18 +5,8 @@ trigger:
     entity_id: group.my_family
     from: 'not_home'
     to: 'home'
-condition:
-  condition: and
-  conditions:
-    - condition: state
-      entity_id: device_tracker.family_tv
-      state: 'not_home'
-    - condition: state
-      entity_id: device_tracker.livingroom_chromecast
-      state: 'not_home'
-    - condition: state
-      entity_id: media_player.samsung_tv_remote
-      state: 'off'
 action:
-  service: input_boolean.turn_off
-  entity_id: input_boolean.all_away
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.all_away
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.alarm_mode
