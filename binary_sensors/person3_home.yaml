@@ -4,16 +4,21 @@
   probability_threshold: 0.95
   observations:
     - entity_id: 'device_tracker.person3_mobile'
-      pperson2_given_true: 1.0
+      pperson2_given_true: 0.9
       pperson2_given_false: 0.2
       platform: 'state'
       to_state: 'home'
     - entity_id: 'device_tracker.nexus_5x'
-      pperson2_given_true: 1.00
+      pperson2_given_true: 0.90
       pperson2_given_false: 0.2
       platform: 'state'
       to_state: 'home'
     - entity_id: 'device_tracker.family_tv'
+      pperson2_given_true: 0.2
+      pperson2_given_false: 0.5
+      platform: 'state'
+      to_state: 'home'
+    - entity_id: 'device_tracker.livingroom_chromecast'
       pperson2_given_true: 0.2
       pperson2_given_false: 0.5
       platform: 'state'
