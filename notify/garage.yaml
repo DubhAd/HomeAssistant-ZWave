@@ -3,15 +3,5 @@
   services:
     - service: lm_notify
     - service: slack_notify
-      data:
-        data: 
-          file:
-            url: !secret garage_camera_url
     - service: person3
-      data:
-        data:
-          url: !secret garage_camera_url
     - service: push
-      data:
-        data:
-          image: !secret garage_camera_url
