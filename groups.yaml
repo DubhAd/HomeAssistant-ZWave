@@ -259,6 +259,7 @@ my_media:
   - media_player.living_room_tv
     # Google Home
   - media_player.master_bedroom_speaker
+  - media_player.living_room_speaker
     # Plex
   - media_player.plex_web_chrome
   - media_player.plex_web_chrome_2
@@ -665,6 +666,7 @@ Entertainment:
   - media_player.living_room_tv
     # Google Home
   - media_player.master_bedroom_speaker
+  - media_player.living_room_speaker
     # Plex
   - media_player.plex_web_chrome
   - media_player.plex_web_chrome_2
@@ -1030,6 +1032,12 @@ my_automations:
   - group.my_automations_people_person1
   - group.my_automations_travel
   - group.my_automations_input
+view_alarm:
+  name: Alarm automations
+  icon: mdi:alarm-bell
+  view: true
+  entities:
+  - group.alarm_automations
 view_inputs:
   name: Inputs
   icon: mdi:information-variant
