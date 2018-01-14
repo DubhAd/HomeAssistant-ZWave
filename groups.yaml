@@ -1,3 +1,7 @@
+alarm_automations:
+  view: false
+  entities:
+  - automation.doors_open_alarm_mode
 bins:
   view: false
   entities:

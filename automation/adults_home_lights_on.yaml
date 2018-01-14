@@ -12,6 +12,9 @@ trigger:
 condition:
   condition: and
   conditions: 
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
       below: 11

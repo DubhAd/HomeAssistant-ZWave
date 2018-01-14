@@ -16,20 +16,25 @@ trigger:
     entity_id: input_select.season
     to: 'Winter'
 condition:
-  - condition: state
-    entity_id: input_select.season
-    state: 'Winter'
-  - condition: time
-    after: '05:00:00'
-    before: '22:00:00'
-  - condition: or
+  - condition: and
     conditions:
-      - condition: state
-        entity_id: input_boolean.adults_away
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.all_away
-        state: 'off'
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
+      entity_id: input_select.season
+      state: 'Winter'
+    - condition: time
+      after: '05:00:00'
+      before: '22:00:00'
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: input_boolean.adults_away
+          state: 'off'
+        - condition: state
+          entity_id: input_boolean.all_away
+          state: 'off'
 action:
   - service: switch.turn_on
     entity_id:

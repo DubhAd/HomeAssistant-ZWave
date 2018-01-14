@@ -15,20 +15,23 @@ trigger:
     entity_id: sensor.utility_door
     to: 'closed'
 condition:
-  condition: and
-  conditions:
-  - condition: state
-    entity_id: media_player.samsung_tv_remote
-    state: 'off'
-  - condition: state
-    entity_id: device_tracker.livingroom_chromecast
-    state: 'not_home'
-  - condition: or
+  - condition: and
     conditions:
-      - condition: time
-        before: '04:00:00'
-      - condition: time
-        after: '22:00:00'
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
+      entity_id: media_player.samsung_tv_remote
+      state: 'off'
+    - condition: state
+      entity_id: device_tracker.livingroom_chromecast
+      state: 'not_home'
+    - condition: or
+      conditions:
+        - condition: time
+          before: '04:00:00'
+        - condition: time
+          after: '22:00:00'
 action:
     # Disable the turning on of the lights automatically
   - service: homeassistant.turn_off

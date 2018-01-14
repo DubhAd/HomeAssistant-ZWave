@@ -1,14 +1,16 @@
 initial_state: 'on'
 alias: 'TV on Sonos off'
 trigger:
-  platform: state
-  entity_id: device_tracker.livingroom_chromecast
-  from: 'not_home'
-  to: 'home'
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+    from: 'not_home'
+    to: 'home'
 condition:
-  condition: state
-  entity_id: media_player.samsung_tv_remote
-  state: 'on'
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: media_player.samsung_tv_remote
+      state: 'on'
 action:
-  service: media_player.media_stop
-  entity_id: media_player.living_room
+  - service: media_player.media_stop
+    entity_id: media_player.living_room

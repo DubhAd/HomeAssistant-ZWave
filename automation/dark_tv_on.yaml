@@ -18,6 +18,9 @@ condition:
   condition: and
   conditions:
     - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
       entity_id: switch.tv_light_switch
       state: 'off'
       for:

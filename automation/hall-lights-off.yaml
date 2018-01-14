@@ -6,9 +6,14 @@ trigger:
     value_template: "{{ state.attributes.elevation }}"
     above: 5
 condition:
-  - condition: state
-    entity_id: switch.hall_downstairs_switch
-    state: 'on'
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
+      entity_id: switch.hall_downstairs_switch
+      state: 'on'
 action:
   - service: switch.turn_off
     entity_id: switch.hall_downstairs_switch

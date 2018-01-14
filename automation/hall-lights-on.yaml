@@ -9,16 +9,21 @@ trigger:
     entity_id: input_boolean.all_away
     to: 'off'
 condition:
-  - condition: state
-    entity_id: switch.hall_downstairs_switch
-    state: 'off'
-  - condition: state
-    entity_id: input_boolean.all_away
-    state: 'off'
-  - condition: numeric_state
-    entity_id: sun.sun
-    value_template: "{{ state.attributes.elevation }}"
-    below: 5
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
+      entity_id: switch.hall_downstairs_switch
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.all_away
+      state: 'off'
+    - condition: numeric_state
+      entity_id: sun.sun
+      value_template: "{{ state.attributes.elevation }}"
+      below: 5
 action:
   - service: switch.turn_on
     entity_id: switch.hall_downstairs_switch

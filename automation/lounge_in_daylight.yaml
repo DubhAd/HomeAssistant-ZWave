@@ -1,15 +1,20 @@
 initial_state: 'on'
 alias: 'Lounge in daylight'
 trigger:
-  platform: numeric_state
-  entity_id: sensor.living_room_multi_luminance
-  above: 75
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 75
 condition:
-  condition: state
-  entity_id: group.living_room_lights
-  state: 'on'
-  for:
-    minutes: 1
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
+      entity_id: group.living_room_lights
+      state: 'on'
+      for:
+        minutes: 1
 action:
-  service: scene.turn_on
-  entity_id: scene.lounge_lights_off
+  - service: scene.turn_on
+    entity_id: scene.lounge_lights_off

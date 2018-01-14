@@ -28,6 +28,9 @@ sensor.person3_travel:
 sensor.person1_travel:
   entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1"
+sensor.person1_travel_by_transit:
+  entity_picture: /local/person1Thumb.jpg
+  friendly_name: "person1"
 input_number.garden_time:
   icon: mdi:timer
 input_number.door_delay:

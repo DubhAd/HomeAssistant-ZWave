@@ -10,6 +10,9 @@ condition:
   condition: and
   conditions:
     - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
       entity_id: switch.table_light_switch
       state: 'on'
     - condition: state

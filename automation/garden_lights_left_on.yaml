@@ -7,12 +7,15 @@ trigger:
 condition:
   - condition: and
     conditions:
-      - condition: state
-        entity_id: binary_sensor.utility_door_exterior_sensor
-        state: 'off'
-      - condition: state
-        entity_id: binary_sensor.patio_door_left_sensor
-        state: 'off'
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.utility_door_exterior_sensor
+      state: 'off'
+    - condition: state
+      entity_id: binary_sensor.patio_door_left_sensor
+      state: 'off'
 action:
   - service: homeassistant.turn_off
     entity_id: switch.garden_lights_switch

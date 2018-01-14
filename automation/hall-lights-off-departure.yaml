@@ -8,15 +8,20 @@ trigger:
     entity_id: input_boolean.person1_home
     to: 'off'
 condition:
-  - condition: state
-    entity_id: switch.hall_downstairs_switch
-    state: 'on'
-  - condition: state
-    entity_id: input_boolean.person2_home
-    state: 'off'
-  - condition: state
-    entity_id: input_boolean.person1_home
-    state: 'off'
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
+      entity_id: switch.hall_downstairs_switch
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person2_home
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.person1_home
+      state: 'off'
 action:
   - service: switch.turn_off
     entity_id: switch.hall_downstairs_switch
