@@ -1,7 +1,6 @@
 - platform: template
   sensors: 
     garden_lights_left_on:
-      entity_id: sun.sun
       friendly_name: 'Garden lights left on'
       value_template: >-
         {% if is_state("switch.garden_lights_switch", "on" ) %} 

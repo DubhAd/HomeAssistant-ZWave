@@ -3,7 +3,6 @@
     garage_closed_car:
       device_class: opening
       friendly_name: 'Garage door, car'
-      entity_id: sensor.garage_closed_car_access_control
       value_template: >- 
         {%- if is_state('binary_sensor.garage_closed_car_sensor', 'on') and is_state('sensor.garage_closed_car_access_control', '22') -%}
         on

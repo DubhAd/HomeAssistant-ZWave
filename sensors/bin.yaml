@@ -25,6 +25,8 @@
           past
         {% elif (as_timestamp(now()) | timestamp_custom("%Y-%m-%d 00:00:00")) == states('sensor.grey_collection_date') %}
           today
+        {% elif states.sun.sun.state != None %}
+          future
         {% else %}
           future
         {% endif %}
@@ -41,6 +43,8 @@
           past
         {% elif (as_timestamp(now()) | timestamp_custom("%Y-%m-%d 00:00:00")) == states('sensor.blue_collection_date') %}
           today
+        {% elif states.sun.sun.state != None %}
+          future
         {% else %}
           future
         {% endif %}
@@ -57,6 +61,8 @@
           past
         {% elif (as_timestamp(now()) | timestamp_custom("%Y-%m-%d 00:00:00")) == states('sensor.brown_collection_date') %}
           today
+        {% elif states.sun.sun.state != None %}
+          future
         {% else %}
           future
         {% endif %}
