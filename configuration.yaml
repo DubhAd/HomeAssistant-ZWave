@@ -71,6 +71,8 @@ binary_sensor: !include_dir_merge_list binary_sensors/
 
 sun:
 
+camera: !include_dir_list camera/
+
 input_number: !include input_number.yaml
 
 input_boolean: !include input_boolean.yaml

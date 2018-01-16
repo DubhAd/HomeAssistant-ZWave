@@ -1,2 +1,6 @@
-platform: zoneminder
+platform: generic
 name: 'Front camera'
+still_image_url: !secret front_camera_image
+username: !secret front_camera_user
+password: !secret front_camera_pass
+authentication: basic

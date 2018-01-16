@@ -1,4 +1,0 @@
-platform: mjpeg
-name: 'Garage camera'
-mjpeg_url: http://192.168.0.10/cgi/mjpg/mjpeg.cgi
-still_image_url: http://192.168.0.10/cgi/jpg/image.cgi
