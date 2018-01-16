@@ -3,3 +3,4 @@
     group.living_room_lights: off
     group.outside_lights: off
     group.tv: off
+    switch.hall_downstairs_switch: off

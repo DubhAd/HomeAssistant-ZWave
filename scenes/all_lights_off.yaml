@@ -2,3 +2,5 @@
   entities:
     group.living_room_lights: off
     group.garden_lights: off
+    group.my_controls_lights: off
+    switch.hall_downstairs_switch: off
