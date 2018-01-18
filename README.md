@@ -39,9 +39,10 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * Sensative [door/window strips](https://www.stripsbysensative.com/strips-guard/) on the external house doors
 * TKB [TKB TZ69E](http://www.tkbhome.com/?cn-p-d-271.html) - metering wall plugs
 * Foxx Project [Smart Switch](https://www.getfoxx.com/products) (which identifies itself as an Aeotec ZW075, aka Smart Switch Gen5). These are cheap, but there's no local switch control for the attached device. Mostly I'm using these as range extenders.
-* NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2) in the bedroom to provide manual control of the Yeelight. It was originally used by the kitchen door, where the next item is now mounted.
+* NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2) in the master bedroom to provide manual control of the Yeelight. It was originally used by the kitchen door, where the next item is now mounted.
+* NodOn [Soft Remote](https://nodon.fr/en/nodon/z-wave-soft-remote/) in the second bedroom, to also provide manual control of that room's Yeelight.
 * Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller, to provide a wall switch for the garden lights
-* Yeelight [led strip](https://www.yeelight.com/en_US/product/pitaya), in the bedroom, mounted behind the headboard. This provides good enough lighting to read by at night, and also to help wake us in the morning.
+* Yeelight [led strips](https://www.yeelight.com/en_US/product/pitaya), one mounted behind the headboard in the master bedroom, and one along the wall side of the bed frame in the second bedroom. These provide good enough lighting to read by at night, and also to help wake us in the morning.
 * Outdoor mains [240V led strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
 * [CSL Bluetooth adapter](https://www.amazon.co.uk/gp/product/B00VFT4LD2/) to augment the Nmap device tracker (uses a CSR8510 A10 chip)
 * [Google Home Mini](https://store.google.com/product/google_home_mini), with the [Google Assistant](https://home-assistant.io/components/google_assistant/) component
@@ -53,23 +54,24 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * [LaMetric](https://lametric.com/) for notifications "in person"
   * [TTS](https://home-assistant.io/components/tts/) with the Google Home Mini's, Sonos, and Squeezeboxes
 * [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) for device tracking
-  * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only does it have an annoying bug that causes it to randomly disable reporting, but it's been abandoned by the developer
+  * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only does it have an [annoying bug](https://github.com/owntracks/android/issues/508) that causes it to randomly disable reporting, but it's been abandoned by the developer
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service
 * [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint)
 * [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles
 * [XBoxAPI](https://xboxapi.com/) to track when one of us is on the XBox
 * Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
-* For use with the [IMAP email content](https://home-assistant.io/components/sensor.imap_email_content/) sensor I run a local [Dovecot](https://www.dovecot.org/) IMAP sensor, [Postfix](http://www.postfix.org/) SMTP server, and [Fetchmail](http://www.fetchmail.info/) to retrieve the remote email. I do it this way because of reliability issues with using a remote IMAP server (which I suspect is a reflection of my Internet connection)
+* [Getmail](http://pyropus.ca/software/getmail/) with [a script](blob/master/local/bin/parse-email) that acts as the message delivery agent, to parse the recycling collection emails
+  * I gave up on the the [IMAP email content](https://home-assistant.io/components/sensor.imap_email_content/) sensor since it doesn't keep state through restarts (which isn't unique to it, Home Assistant doesn't have a persistence mechanism)
 
 ## Automations
 
-* Master Bedroom
+* Master and second bedrooms
   * Using the remote with the light strip to control the light, including dimming and colour temperature
   * Dim the light through the night, turning it to lowest brightness and red at midnight
   * Turn the light off if it was left on for half an hour
   * Turn the light on with the alarm
 * Front of the house
-  * Turn on the light by the house number on at dusk, and at 06:00
+  * Turn on the light by the house number on at dusk, and at 06:00 (or earlier if we're awake earlier than normal)
   * Turn the light off at sunrise and (just before) midnight
   * Send alerts if we've left the garage doors open for 10 minutes (and nag every 10 minutes)
   * Warn us if an outside door is opened when we're away from home
@@ -86,16 +88,18 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * Mute the TV if the Sonos starts playing, and unmute when it stops
   * Stop the Sonos if the TV is turned on
   * At the end of the night, when the TV has been off for 5 minutes, or the utility door has been shut after the TV is turned off, run the bedtime script (turns of the lights one at a time)
+* Hall
+  * During Autumn and Winter, turn on the LED lights when the sun is below 5 degrees elevation (and we're home). Our hall is an internal hall with no windows, so it gets dark quickly.
 * Home office
   * When I'm working for home, start music at the beginning of the day, and stop it at the end
 * People
-  * Track when we get up, for other automations
+  * Track when we get up, go to bed, leave, and return, for other automations
   * Notify about commute delays
   * Let the adults know when the other is going to be home
 * Misc
   * When battery powered sensors are getting low (25%) warn us so that we know to order a replacement, remind again at 10% and 5%
   * Check the health of the Z-Wave mesh (by looking to see that at least one device has checked in within the last 5 minutes) and run a Heal and Test if necessary
-  * Send notifications on startup and shutdown of HA
+  * Send notifications on startup and shutdown of HA, and when the Z-Wave mesh is ready
   * Notify us about bin collections being due (links in with a green/amber/red Floorplan notification)
 * MoreToDo 
 
