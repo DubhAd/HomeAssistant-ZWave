@@ -13,6 +13,9 @@ sensor.current_ha_version:
 sensor.person1s_time_to_home:
   entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1's travel time to home"
+sensor.person1s_time_to_home_by_transit:
+  entity_picture: /local/person1Thumb.jpg
+  friendly_name: "person1's bus time to home"
 sensor.person2s_time_to_home:
   entity_picture: /local/person2Thumb.jpg
   friendly_name: "person2's travel time to home"
@@ -26,9 +29,6 @@ sensor.person3_travel:
   entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3"
 sensor.person1_travel:
-  entity_picture: /local/person1Thumb.jpg
-  friendly_name: "person1"
-sensor.person1_travel_by_transit:
   entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1"
 input_number.garden_time:
