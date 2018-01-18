@@ -27,7 +27,7 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [netdata](https://my-netdata.io/) so I can keep an eye on the performance
 * [LaMetric](https://lametric.com/) a clock and low resolution display
 * [Nmap](https://nmap.org/) to support device tracking
-* I did use [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/), but since moving to [OwnTracks HTTP](https://home-assistant.io/components/device_tracker.owntracks_http/) I've ditched it. I'm now in the process of switching to [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) because I'm fed up with OwnTracks disabling itself (on Android) at random.
+  * _I used to use [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/), for location tracking. Having ditched OwnTracks MQTT I no longer needed it, so removed it._
 
 ## The devices I use (with HA)
 
@@ -52,8 +52,8 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * [HTML5 push](https://home-assistant.io/components/notify.html5/), alongside [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, and for rich notifications I'm experimenting with [Slack](https://slack.com/)
   * [LaMetric](https://lametric.com/) for notifications "in person"
   * [TTS](https://home-assistant.io/components/tts/) with the Google Home Mini's, Sonos, and Squeezeboxes
-* (phasing out because it disables itself randomly) [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/)
 * [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) for device tracking
+  * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only does it have an annoying bug that causes it to randomly disable reporting, but it's been abandoned by the developer
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service
 * [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint)
 * [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles
