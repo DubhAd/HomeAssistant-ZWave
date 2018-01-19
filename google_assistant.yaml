@@ -6,3 +6,8 @@ api_key: !secret assistant_api_key
 exposed_domains:
   - switch
   - light
+entity_config:
+  switch.number_sign_switch:
+    expose: false
+  script.bedtime_slow_off:
+    name: "Time for bed"

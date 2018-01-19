@@ -57,6 +57,33 @@ background-color: var(--primary-background-color);
   animation-fill-mode: forwards;  */
 }
 
+.alarm-disarmed {
+  fill: #81D9a7 !important;
+  fill-opacity: 1 !important;
+}
+
+.alarm-triggered {
+  fill: #FF0000 !important;
+  fill-opacity: 1 !important;
+  stroke: #FFFF00 !important;
+}
+
+.alarm-armed_night {
+  fill: #FFCC66; !important;
+}
+
+.alarm-armed_away {
+  fill: #FFCC66; !important;
+}
+
+.alarm-armed_home {
+  fill: #FFCC66; !important;
+}
+
+.alarm-armed_custom_bypass {
+  fill: #FFCC66; !important;
+}
+
 .closed-background, .closed-text-background {
   /* fill: #77FF77 !important; */
   fill: #81D9a7 !important;

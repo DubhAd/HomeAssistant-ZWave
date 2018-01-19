@@ -59,7 +59,6 @@ switch.tv_light_switch:
 switch.number_sign_switch:
   friendly_name: House number
   icon: mdi:home-variant
-  google_assistant: false
 switch.garden_lights_switch:
   friendly_name: Garden lights
   icon: mdi:flower
@@ -349,8 +348,6 @@ sensor.printer_toner_remaining:
   friendly_name: "Toner remaining"
 sensor.printer_transfer_roller_remaining:
   friendly_name: "Transfer roller remaining"
-script.bedtime_slow_off:
-  google_assistant_name: "Time for bed"
 script.bedhead_light_bright:
   google_assistant: false
 script.bedhead_light_cool_pause:
@@ -413,3 +410,9 @@ binary_sensor.front_door_sensor:
   sensor_class: opening
 zwave.front_door:
   friendly_name: "Front door"
+input_select.person3_status_dropdown:
+  entity_picture: /local/person3Thumb.jpg
+input_select.person1_status_dropdown:
+  entity_picture: /local/person1Thumb.jpg
+input_select.person2_status_dropdown:
+  entity_picture: /local/person2Thumb.jpg

@@ -79,10 +79,6 @@ input_boolean: !include input_boolean.yaml
 
 input_select: !include input_select.yaml
 
-variable_int: !include variable_int.yaml
-
-variable_bool: !include variable_bool.yaml
-
 light: !include_dir_merge_list light/
 
 switch: !include_dir_merge_list switch/
@@ -119,9 +115,6 @@ alarm_control_panel:
     armed_home:
       pending_time: 0
       delay_time: 0
-
-zoneminder:
-  host: 192.168.0.17
 
 google_assistant: !include google_assistant.yaml
 

@@ -12,6 +12,23 @@
 
       groups:
 
+        - name: Alarms
+          entities:
+             - alarm_control_panel.ha_alarm
+          states:
+            - state: 'disarmed'
+              class: 'alarm-disarmed'
+            - state: 'triggered'
+              class: 'alarm-triggered'
+            - state: 'armed_night'
+              class: 'alarm-armed_night'
+            - state: 'armed_away'
+              class: 'alarm-armed_away'
+            - state: 'armed_home'
+              class: 'alarm-armed_home'
+            - state: 'armed_custom_bypass'
+              class: 'alarm-armed_custom_bypass'
+
         - name: People
           entities:
              - device_tracker.person3_mobile

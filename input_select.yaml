@@ -9,3 +9,25 @@ season:
     - Spring
     - Summer
     - Autumn
+    - Celebration
+person3_status_dropdown:
+  name: person3
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+person1_status_dropdown:
+  name: person1
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+person2_status_dropdown:
+  name: person2
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away

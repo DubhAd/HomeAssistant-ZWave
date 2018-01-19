@@ -1,8 +1,14 @@
 alarm_automations:
+  name: Alarm automations
   view: false
   entities:
   - automation.doors_open_alarm_mode
+  - automation.alarm_arm_away
+  - automation.alarm_arm_at_night
+  - automation.alarm_disarm_in_the_morning
+  - automation.alarm_disarm_upon_return
 bins:
+  name: Bin automations
   view: false
   entities:
   - sensor.bin_blue
@@ -29,14 +35,6 @@ zwave_batteries:
   - sensor.zwave_battery_utility_door_exterior
   - sensor.zwave_battery_patio_door_left
   - sensor.zwave_battery_utility
-wifi_state:
-  control: hidden
-  name: Mobile devices on WiFi?
-  entities:
-  - variable_wifi.person2_wifi
-  - variable_wifi.person3_wifi
-  - variable_wifi.person1_wifi
-  - variable_wifi.person2_tablet_wifi
 person_person2:
   name: person2
   entities:
@@ -111,6 +109,13 @@ my_people_terse:
   - sensor.person2_travel
   - sensor.person3_travel
   - sensor.person1_travel
+  view: false
+my_people_states:
+  name: People
+  entities:
+  - input_select.person3_status_dropdown
+  - input_select.person1_status_dropdown
+  - input_select.person2_status_dropdown
   view: false
 my_people:
   name: People (travel time)
@@ -531,11 +536,17 @@ my_alerts:
   - alert.garage_door_l
   - alert.garage_door_r
   view: false
+my_alarm:
+  name: Alarm
+  view: false
+  entities:
+  - alarm_control_panel.ha_alarm
 default_view:
   name: My Home
   icon: mdi:home
   view: true
   entities:
+  - alarm_control_panel.ha_alarm
   - group.my_alerts
   - group.my_scenes
   - group.living_room_lights
@@ -646,9 +657,9 @@ camera_left:
 Cameras:
   name: Cameras
   icon: mdi:video
-  view: false
+  view: true
   entities:
-  - group.camera_left
+  - camera.front_camera
 Weather:
   name: Weather
   icon: mdi:weather-partlycloudy
@@ -925,6 +936,10 @@ my_automations_people:
   - automation.adults_returned
   - automation.all_away
   - automation.all_returned
+  - automation.mark_person_as_just_arrived
+  - automation.mark_person_as_away
+  - automation.mark_person_as_home
+  - automation.mark_person_as_just_left
 my_automations_people_person1:
   name: People driven automations - person1
   entities:
@@ -1037,6 +1052,7 @@ view_alarm:
   icon: mdi:alarm-bell
   view: true
   entities:
+  - group.my_alarm
   - group.alarm_automations
 view_inputs:
   name: Inputs
@@ -1047,6 +1063,7 @@ view_inputs:
   - group.my_input_boolean_people
   - group.my_input_numbers
   - group.my_input_select
+  - group.my_people_states
   - switch.fluxer
 view_scripts:
   name: scripts

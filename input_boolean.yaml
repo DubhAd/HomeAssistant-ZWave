@@ -1,80 +1,60 @@
 notify_train_status_work:
   name: Notify about trains to work
-  initial: off
   icon: mdi:train
 notify_person2_working:
   name: Work day for person2
-  initial: off
   icon: mdi:calendar-multiple
 notify_person1_work:
   name: work day for person1
-  initial: off
   icon: mdi:calendar-text
 person2_is_awake:
   name: person2 is awake
-  initial: off
   icon: mdi:alarm
 person3_is_awake:
   name: person3 is awake
-  initial: off
   icon: mdi:alarm
 person1_is_awake:
   name: person1 is awake
-  initial: off
   icon: mdi:alarm
 bedtime:
   name: Everybody is asleep
-  initial: off
   icon: mdi:hotel
 lighting_automations:
   name: Enable lighting automations
-  initial: on
   icon: mdi:lightbulb
 livingroom_lights_auto:
   name: Living room lights turned on automatically
-  initial: on
   icon: mdi:lightbulb
 guest_mode:
   name: Guest mode
-  initial: off
   icon: mdi:account-multiple-plus
 holiday_mode:
   name: Holiday mode
-  initial: off
   icon: mdi:plane-shield
 alarm_mode:
   name: Alarm mode
-  initial: off
   icon: mdi:verified
 person2_travelling:
   name: person2 travelling
-  initial: off
   icon: mdi:airplane
 person3_travelling:
   name: person3 travelling
-  initial: off
   icon: mdi:airplane
 person1_travelling:
   name: person1 travelling
-  initial: off
   icon: mdi:airplane
 person2_home:
   name: person2 home
-  initial: on
   icon: mdi:home
 person3_home:
   name: person3 home
-  initial: on
   icon: mdi:home
 person1_home:
   name: person1 home
-  initial: on
   icon: mdi:home
 adults_away:
   name: Adults are away
-  initial: off
   icon: mdi:account-multiple
 all_away:
   name: Everybody is away
-  initial: off
   icon: mdi:account-multiple

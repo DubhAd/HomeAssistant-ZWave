@@ -12,11 +12,5 @@ condition:
     entity_id: group.person_person2
     state: 'home'
 action:
-  - service: automation.turn_on
-    entity_id: automation.person2_coming_home
-  - service: automation.turn_on
-    entity_id: automation.person2_at_station
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.person2_travelling
   - service: input_boolean.turn_on
     entity_id: input_boolean.person2_home
