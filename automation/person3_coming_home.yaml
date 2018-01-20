@@ -8,13 +8,13 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: device_tracker.person3_mobile
-      state: 'not_home'
+      entity_id: input_boolean.person3_home
+      state: 'off'
     - condition: template
       value_template: '{{ states.proximity.person3_home.attributes.dir_of_travel == "towards"  }}'
     - condition: state
-      entity_id: group.person_person2
-      state: home
+      entity_id: input_boolean.person2_home
+      state: 'off'
 action:
   - service: notify.push
     data:

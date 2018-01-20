@@ -16,14 +16,9 @@ trigger:
 condition:
   condition: and
   conditions:
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: group.person_person2
-      state: 'not_home'
-    - condition: state
-      entity_id: input_boolean.person2_home
-      state: 'off'
+  - condition: state
+    entity_id: input_boolean.person2_home
+    state: 'off'
   - condition: state
     entity_id: input_boolean.person2_travelling
     state: 'on'

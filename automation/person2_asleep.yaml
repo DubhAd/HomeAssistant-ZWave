@@ -7,14 +7,9 @@ trigger:
   for: 
     minutes: 5
 condition:
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: group.person_person2
-      state: 'home'
-    - condition: state
-      entity_id: input_boolean.person2_home
-      state: 'on'
+  - condition: state
+    entity_id: input_boolean.person2_home
+    state: 'on'
   - condition: or
     conditions:
     - condition: time

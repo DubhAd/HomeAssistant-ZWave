@@ -5,10 +5,11 @@ trigger:
     entity_id: media_player.samsung_tv_remote
     to: 'on'
   - platform: state
-    entity_id: group.person_person3
-    to: 'not_home'
-    for:
-      minutes: 5
+    entity_id: device_tracker.livingroom_chromecast
+    to: 'home'
+  - platform: state
+    entity_id: input_select.person3_status_dropdown
+    to: 'Away'
   - platform: state
     entity_id: sensor.utility_door
     to: 'open'
@@ -21,24 +22,29 @@ condition:
         entity_id: input_boolean.person3_is_awake
         state: 'off'
       - condition: state
-        entity_id: sensor.utility_door
-        state: 'open'
+        entity_id: binary_sensor.utility_door_exterior_sensor
+        state: 'on'
     - condition: and
       conditions:
       - condition: state
-        entity_id: group.person_person3
-        state: 'not_home'
+        entity_id: input_boolean.person3_home
+        state: 'off'
       - condition: state
         entity_id: input_boolean.person3_travelling
         state: 'off'
     - condition: and
       conditions:
       - condition: state
-        entity_id: media_player.samsung_tv_remote
+        entity_id: input_boolean.person3_home
         state: 'on'
-      - condition: state
-        entity_id: group.person_person3
-        state: 'home'
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: media_player.samsung_tv_remote
+          state: 'on'
+        - condition: state
+          entity_id: device_tracker.livingroom_chromecast
+          state: 'home'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person3_is_awake
