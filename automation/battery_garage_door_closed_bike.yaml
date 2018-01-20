@@ -2,18 +2,15 @@ initial_state: 'on'
 alias: 'Battery garage door closed bike'
 trigger:
   - platform: numeric_state
-    entity_id: zwave.garage_door_closed_bike
-    value_template: "{{ states.zwave.garage_door_closed_bike.attributes.battery_level }}"
+    entity_id: sensor.zwave_battery_garage_closed_bike
     below: 25
   - platform: numeric_state
-    entity_id: zwave.garage_door_closed_bike
-    value_template: "{{ states.zwave.garage_door_closed_bike.attributes.battery_level }}"
+    entity_id: sensor.zwave_battery_garage_closed_bike
     below: 10
   - platform: numeric_state
-    entity_id: zwave.garage_door_closed_bike
-    value_template: "{{ states.zwave.garage_door_closed_bike.attributes.battery_level }}"
+    entity_id: sensor.zwave_battery_garage_closed_bike
     below: 5
 action:
   service: notify.person2
   data:
-    message: "The garage door sensor for the bike is at {{ states.zwave.garage_door_closed_bike.attributes.battery_level }}% battery, it uses a ER14250 battery"
+    message: "The garage door sensor for the bike is at {{ states('zwave_battery_garage_closed_bike') }}% battery, it uses a ER14250 battery"

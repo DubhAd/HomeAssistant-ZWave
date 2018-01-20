@@ -2,18 +2,15 @@ initial_state: 'on'
 alias: 'Battery remote'
 trigger:
   - platform: numeric_state
-    entity_id: zwave.nodon_crc3100_octan_remote
-    value_template: "{{ states.zwave.nodon_crc3100_octan_remote.attributes.battery_level }}"
+    entity_id: sensor.zwave_battery_nodon_crc3100_octan_remote
     below: 25
   - platform: numeric_state
-    entity_id: zwave.nodon_crc3100_octan_remote
-    value_template: "{{ states.zwave.nodon_crc3100_octan_remote.attributes.battery_level }}"
+    entity_id: sensor.zwave_battery_nodon_crc3100_octan_remote
     below: 10
   - platform: numeric_state
-    entity_id: zwave.nodon_crc3100_octan_remote
-    value_template: "{{ states.zwave.nodon_crc3100_octan_remote.attributes.battery_level }}"
+    entity_id: sensor.zwave_battery_nodon_crc3100_octan_remote
     below: 5
 action:
   service: notify.person2
   data:
-    message: "The remote is at {{ states.zwave.nodon_crc3100_octan_remote.attributes.battery_level }}% battery, it uses a CR2032 coin cell"
+    message: "The remote is at {{ states('sensor.zwave_battery_nodon_crc3100_octan_remote') }}% battery, it uses a CR2032 coin cell"

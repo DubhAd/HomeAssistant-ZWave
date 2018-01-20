@@ -74,10 +74,8 @@ my_children:
 my_adults:
   name: adults
   entities:
-  - device_tracker.person3_mobile
-  - device_tracker.person2_mobile_bt
-  - device_tracker.person2_mobile
-  - device_tracker.nexus_5x
+  - group.person_person2
+  - group.person_person3
   view: false
 my_family:
   name: Family

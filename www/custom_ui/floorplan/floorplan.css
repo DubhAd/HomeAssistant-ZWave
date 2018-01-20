@@ -34,6 +34,18 @@ background-color: var(--primary-background-color);
   fill: #d4d4d4 !important;
 }
 
+.hidden {
+  visibility: hidden !important;
+}
+
+.transparent {
+  fill-opacity: 0.5 !important;
+}
+
+.visible {
+  visibility: hidden !important;
+}
+
 .door-closed {
   /* fill: #77FF77 !important; */
   /* fill: #81c9a7 !important; */
