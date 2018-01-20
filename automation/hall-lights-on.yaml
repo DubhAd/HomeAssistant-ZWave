@@ -8,6 +8,9 @@ trigger:
   - platform: state
     entity_id: input_boolean.all_away
     to: 'off'
+  - platform: state
+    entity_id: input_boolean.bedtime
+    to: 'off'
 condition:
   - condition: and
     conditions:
@@ -24,6 +27,9 @@ condition:
       entity_id: sun.sun
       value_template: "{{ state.attributes.elevation }}"
       below: 5
+    - condition: state
+      entity_id: input_boolean.bedtime
+      state: 'on'
 action:
   - service: switch.turn_on
     entity_id: switch.hall_downstairs_switch

@@ -8,6 +8,9 @@ trigger:
     entity_id: sensor.person1
     to: 'Online'
   - platform: state
+    entity_id: device_tracker.family_tv
+    to: 'home'
+  - platform: state
     entity_id: group.person_person1
     to: 'not_home'
     for:
@@ -26,20 +29,17 @@ condition:
       - condition: time
         after: '04:00:00'
         before: '20:00:00'
-      - condition: state
-        entity_id: media_player.person1
-        state: 'playing'
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: group.person_person1
-        state: 'home'
-      - condition: time
-        after: '04:00:00'
-        before: '20:00:00'
-      - condition: state
-        entity_id: sensor.person1
-        state: 'Online'
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: media_player.person1
+          state: 'playing'
+        - condition: state
+          entity_id: sensor.person1
+          state: 'Online'
+        - condition: state
+          entity_id: device_tracker.family_tv
+          state: 'home'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person1_is_awake
