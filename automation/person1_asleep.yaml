@@ -14,7 +14,7 @@ trigger:
       minutes: 5
   - platform: state
     entity_id: device_tracker.family_tv
-    to: 'off'
+    to: 'not_home'
     for:
       minutes: 15
 condition:
@@ -31,7 +31,7 @@ condition:
       before: '03:00:00'
     - condition: state
       entity_id: device_tracker.family_tv
-      state: 'off'
+      state: 'not_home'
     - condition: state
       entity_id: media_player.person1
       state: 'off'
@@ -42,7 +42,7 @@ condition:
       conditions:
       - condition: state
         entity_id: device_tracker.livingroom_chromecast
-        state: 'on'
+        state: 'home'
       - condition: state
         entity_id: input_boolean.person2_home
         state: 'on'
