@@ -331,7 +331,7 @@
 
         - name: Cameras
           entities:
-            - camera.garage_camera
+            - camera.front_camera
           states:
             - state: 'idle'
               class: 'camera-idle'

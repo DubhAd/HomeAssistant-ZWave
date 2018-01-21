@@ -539,6 +539,11 @@ my_alarm:
   view: false
   entities:
   - alarm_control_panel.ha_alarm
+my_cameras:
+  name: Cameras
+  view: false
+  entities:
+  - camera.front_camera
 default_view:
   name: My Home
   icon: mdi:home
@@ -652,7 +657,7 @@ camera_left:
   view: false
   entities:
   - camera.garage_camera
-Cameras:
+camera_view:
   name: Cameras
   icon: mdi:video
   view: true
