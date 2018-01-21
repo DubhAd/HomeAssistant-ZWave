@@ -164,8 +164,8 @@ garage_door_bike:
     title: Garage door
     title2: bike/bike
     entity: binary_sensor.garage_closed_bike_sensor
-    icon_on: mdi-bike
-    icon_off: mdi-bike
+    icon_on: mdi-garage-open
+    icon_off: mdi-garage
     icon_style_active: "color: red"
 
 garage_door_car:
@@ -173,8 +173,8 @@ garage_door_car:
     title: Garage door
     title2: car
     entity: binary_sensor.garage_closed_car_sensor
-    icon_on: mdi-car
-    icon_off: mdi-car
+    icon_on: mdi-garage-open
+    icon_off: mdi-garage
     icon_style_active: "color: red"
 
 hall_light:

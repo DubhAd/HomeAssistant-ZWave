@@ -7,14 +7,45 @@ trigger:
     to: 'off'
     for:
       minutes: 5
-  - platform: time
-    at: '23:00:00'
+  - platform: state
+    entity_id: light.person1_bedroom_bedside
+    to: 'off'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: device_tracker.family_tv
+    to: 'off'
+    for:
+      minutes: 15
 condition:
-  - condition: state
-    entity_id: group.person_person1
-    state: 'home'
-  - condition: time
-    after: '20:00:00'
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.person1_is_awake
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person1_home
+      state: 'on'
+    - condition: time
+      after: '20:00:00'
+      before: '03:00:00'
+    - condition: state
+      entity_id: device_tracker.family_tv
+      state: 'off'
+    - condition: state
+      entity_id: media_player.person1
+      state: 'off'
+    - condition: state
+      entity_id: light.person1_bedroom_bedside
+      state: 'off'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: device_tracker.livingroom_chromecast
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.person2_home
+        state: 'on'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person1_is_awake

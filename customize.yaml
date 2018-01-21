@@ -79,7 +79,6 @@ sensor.dark_sky_precip_probability:
 sensor.dark_sky_summary:
   friendly_name: Summary
 binary_sensor.patio_door_left_sensor:
-  icon: mdi:glassdoor
   friendly_name: Patio door (left)
   device_class: door
 sensor.patio_door_left:
@@ -87,7 +86,6 @@ sensor.patio_door_left:
   friendly_name: Patio door (left)
   sensor_class: opening
 binary_sensor.utility_door_exterior_sensor:
-  icon: mdi:door
   friendly_name: Utility room door
   device_class: door
 sensor.utility_door:
@@ -96,19 +94,15 @@ sensor.utility_door:
   sensor_class: opening
 binary_sensor.garage_closed_bike:
   friendly_name: Garage door, left
-  icon: mdi:bike
   device_class: garage_door
 binary_sensor.garage_closed_car:
   friendly_name: Garage door, car
-  icon: mdi:car
   device_class: garage_door
 binary_sensor.garage_closed_bike_sensor:
   friendly_name: Garage door, left
-  icon: mdi:bike
   device_class: garage_door
 binary_sensor.garage_closed_car_sensor:
   friendly_name: Garage door, car
-  icon: mdi:car
   device_class: garage_door
 sensor.office_multi_luminance:
   friendly_name: "Office light level"
@@ -405,9 +399,8 @@ zwave.front_bedroom:
   friendly_name: "Front bedroom socket"
   icon: mdi:power
 binary_sensor.front_door_sensor:
-  icon: mdi:door
-  friendly_name: Front door
   device_class: door
+  friendly_name: Front door
 zwave.front_door:
   friendly_name: "Front door"
 input_select.person3_status_dropdown:
