@@ -34,6 +34,7 @@ zwave_batteries:
   - sensor.zwave_battery_nodon_crc3100_octan_remote
   - sensor.zwave_battery_utility_door_exterior
   - sensor.zwave_battery_patio_door_left
+  - sensor.zwave_battery_front_door
   - sensor.zwave_battery_utility
 person_person2:
   name: person2
@@ -485,8 +486,6 @@ binary_sensors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
-  - binary_sensor.garage_closed_bike
-  - binary_sensor.garage_closed_car
   - binary_sensor.workday_sensor
   - binary_sensor.zwave_health
   view: false

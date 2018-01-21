@@ -2,6 +2,7 @@
   sensors:
     zwave_battery_patio_door_left:
       value_template: '{{ states.zwave.patio_door_left.attributes.battery_level|default(0) }}'
+      unit_of_measurement: "%"
       icon_template: >
         {% set battery_level = states.zwave.patio_door_left.attributes.battery_level | default(0) | int %}
         {% set battery_round = (battery_level / 10) |int * 10 %}

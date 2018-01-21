@@ -318,6 +318,8 @@ sensor.zwave_battery_utility_door_exterior:
   friendly_name: "Utility door strip"
 sensor.zwave_battery_utility:
   friendly_name: "Utility exterior switch"
+sensor.zwave_battery_front_door:
+  friendly_name: "Front door"
 sensor.battery_person3_mobile:
   friendly_name: "person3's mobile"
 sensor.battery_person1_mobile:

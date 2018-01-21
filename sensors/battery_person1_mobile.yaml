@@ -2,6 +2,7 @@
   sensors:
     battery_person1_mobile:
       value_template: '{{ states.device_tracker.person1_mobile.attributes.battery|default(0)|int() }}'
+      unit_of_measurement: "%"
       icon_template: >
         {% set battery_level = states.device_tracker.person1_mobile.attributes.battery|default(0)|int %}
         {% set battery_round = (battery_level / 10) |int * 10 %}

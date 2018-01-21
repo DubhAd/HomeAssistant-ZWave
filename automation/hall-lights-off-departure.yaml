@@ -2,11 +2,8 @@ initial_state: 'on'
 alias: 'Hall lights off departure'
 trigger:
   - platform: state
-    entity_id: input_boolean.person2_home
-    to: 'off'
-  - platform: state
-    entity_id: input_boolean.person1_home
-    to: 'off'
+    entity_id: input_boolean.all_away
+    to: 'on'
 condition:
   - condition: and
     conditions:
@@ -16,12 +13,6 @@ condition:
     - condition: state
       entity_id: switch.hall_downstairs_switch
       state: 'on'
-    - condition: state
-      entity_id: input_boolean.person2_home
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.person1_home
-      state: 'off'
 action:
   - service: switch.turn_off
     entity_id: switch.hall_downstairs_switch
