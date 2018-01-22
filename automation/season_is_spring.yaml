@@ -6,10 +6,12 @@ trigger:
   - platform: time
     at: '03:00:00'
 condition:
-  - condition: template
-    value_template: "{{ states('input_select.season') != 'Easter' }}"
-  - condition: template
-    value_template: '{{ 6 > now().month > 2  }}'
+  - condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ states('input_select.season') != 'Easter' }}"
+    - condition: template
+      value_template: '{{ 6 > now().month > 2  }}'
 action:
   - service: input_select.select_option
     data:
