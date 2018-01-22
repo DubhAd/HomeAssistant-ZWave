@@ -1,0 +1,25 @@
+- platform: 'bayesian'
+  prior: 0.6
+  name: 'person2 Home'
+  probability_threshold: 0.95
+  observations:
+    - entity_id: 'device_tracker.person2_mobile'
+      pperson2_given_true: 1
+      pperson2_given_false: 0.1
+      platform: 'state'
+      to_state: 'home'
+    - entity_id: 'device_tracker.person2_mobile_bt'
+      pperson2_given_true: 1
+      pperson2_given_false: 0.1
+      platform: 'state'
+      to_state: 'home'
+    - entity_id: 'device_tracker.person2_tablet'
+      pperson2_given_true: 0.6
+      pperson2_given_false: 0.1
+      platform: 'state'
+      to_state: 'home'
+    - entity_id: 'device_tracker.work_laptop'
+      pperson2_given_true: 1
+      pperson2_given_false: 0.6
+      platform: 'state'
+      to_state: 'home'
