@@ -9,7 +9,7 @@ condition:
   - condition: and
     conditions:
     - condition: template
-      value_template: "{{ states('input_select.season') != 'Christmas' }}"
+      value_template: '{{ states("input_select.season") != "Christmas" }}'
     - condition: template
       value_template: '{{ ( now().month == 12 ) or ( now().month < 3 ) }}'
 action:
