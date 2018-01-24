@@ -899,6 +899,7 @@ my_automations_livingroom:
   - automation.tv_off_bedtime
   - automation.lounge_in_daylight
   - automation.lounge_in_daylight_2
+  - automation.lounge_off
   view: false
 my_automations_downstairs_other:
   name: Automations for downstairs

@@ -1,0 +1,30 @@
+initial_state: 'on'
+alias: 'Lounge off'
+trigger:
+  - platform: state
+    entity_id: input_select.person3_status_dropdown
+    to: 'Away'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_select.person2_status_dropdown
+      state: 'Home'
+    - condition: state
+      entity_id: device_tracker.work_laptop
+      state: 'home'
+    - condition: state
+      entity_id: device_tracker.livingroom_chromecast
+      state: 'not_home'
+    - condition: state
+      entity_id: media_player.samsung_tv_remote
+      state: 'off'
+    - condition: state
+      entity_id: media_player.living_room
+      state: 'paused'
+    - condition: state
+      entity_id: group.living_room_lights
+      state: 'on'
+action:
+  - service: homeassistant.turn_off
+    entity_id: group.living_room_lights
