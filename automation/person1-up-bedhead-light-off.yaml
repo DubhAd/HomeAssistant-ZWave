@@ -14,3 +14,8 @@ action:
     data:
       entity_id: light.person1_bedroom_bedside
       transition: 10
+  - delay: '00:10:00'
+  - service: light.turn_off
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 10
