@@ -1,0 +1,4 @@
+- platform: hikvision
+  host: !secret front_camera_ip
+  username: !secret front_camera_user
+  password: !secret front_camera_pass
