@@ -18,3 +18,10 @@ action:
       transition: 30
       color_temp: 394
       brightness_pct: 100
+  - delay: '00:00:30'
+  - service: light.turn_on
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 30
+      color_temp: 394
+      brightness_pct: 100

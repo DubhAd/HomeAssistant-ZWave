@@ -20,3 +20,10 @@ action:
       transition: 30
       color_name: "red"
       brightness_pct: 5
+  - delay: '00:30:00'
+  - service: light.turn_on
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 30
+      color_name: "red"
+      brightness_pct: 5
