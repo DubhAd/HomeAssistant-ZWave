@@ -1,0 +1,12 @@
+initial_state: 'on'
+alias: 'person1 at work'
+trigger:
+  platform: state
+  entity_id: device_tracker.person1_mobile
+  to: 'work'
+action:
+  - service: notify.person3
+    data_template:
+      message: "person1 has reached work"
+  - service: automation.turn_off
+    entity_id: automation.person1_at_work

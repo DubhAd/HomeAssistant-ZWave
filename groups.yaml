@@ -950,6 +950,7 @@ my_automations_people_person1:
   - automation.person1_up
   - automation.person1_home
   - automation.person1_away
+  - automation.person1_at_work
   - automation.person1_returning
   - automation.wake_person1
   - automation.person1_mobile_low_battery
