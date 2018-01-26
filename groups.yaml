@@ -7,6 +7,7 @@ alarm_automations:
   - automation.alarm_arm_at_night
   - automation.alarm_disarm_in_the_morning
   - automation.alarm_disarm_upon_return
+  - automation.alarm_armed_trigger
 bins:
   name: Bin automations
   view: false
@@ -385,16 +386,6 @@ my_scenes:
   - scene.all_lights_off
   - scene.bedtime_all_off
   view: false
-garden_lights:
-  name: Garden Lights
-  entities:
-  - switch.garden_lights_switch
-  view: false
-number_sign:
-  name: Number sign 
-  entities:
-  - switch.number_sign_switch
-  view: false
 utility:
   name: Utility room
   icon: mdi:washing-machine
@@ -651,11 +642,6 @@ People:
   - group.my_devices
   - group.new_batteries
   - group.wifi_state
-camera_left:
-  name: Cameras on the left
-  view: false
-  entities:
-  - camera.garage_camera
 camera_view:
   name: Cameras
   icon: mdi:video

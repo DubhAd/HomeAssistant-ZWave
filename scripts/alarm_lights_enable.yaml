@@ -2,12 +2,12 @@ sequence:
   - service: light.turn_on
     data:
       brightness_pct: 100
-      effect: 'Police'
+      effect: 'Police2'
   - delay: '00:00:05'
   - service: light.turn_on
     data:
       brightness_pct: 100
-      effect: 'Police'
+      effect: 'Police2'
   - delay: '00:00:05'
   - condition: template
     value_template: "{{ state('alarm_control_panel.ha_alarm') != 'disarmed' }}"
