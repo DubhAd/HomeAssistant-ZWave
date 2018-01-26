@@ -66,7 +66,16 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 
 ## Presence detection
 
-* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). Bluetooth is needed because modern smart phones will turn off WiFi when they're idle, and the combination gives me high confidence "at home" detection. GPS Logger gives me geolocation, for location and travel time automations.
+* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html).
+
+## Template sensors
+
+* [Skalavala](https://github.com/skalavala/smarthome) provided a fantastic [template](sensors/zwave_battery_front_door.yaml) that sets the icon for the entity to a representation of the battery level. I use this for all mobile devices, and sensors.
+  * ![Screenshot of battery template](https://i.imgur.com/4MnzuLM.png)
+* Recycling collection [file and template sensors](sensors/bin.yaml), and [supporting script](local/bin/parse-email)
+  * Notifications about upcoming collections are sent by email, the supporting script parses these emails and writes the date of the next collection for each type to it's own file, in JSON formatting
+  * A file sensor for each collection type, using the above files
+  * A template sensor for each collection type. This tracks whether the collection is two or more days away (future), tomorrow (tomorrow), this morning (today) or past (past). These states are used in automations, and in the HA Dashboard display.
 
 ## Automations
 
