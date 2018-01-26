@@ -1,7 +1,7 @@
 # Home Assistant configuration
-This is my [Home Assistant](https://home-assistant.io/) configuration. It is installed on a Raspberry Pi 3, using the [All in One installer](https://home-assistant.io/docs/installation/raspberry-pi-all-in-one/), on a 16 GB card. I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
+This is my [Home Assistant](https://home-assistant.io/) configuration. It is installed on a Raspberry Pi 3, using the [All in One installer](https://home-assistant.io/docs/installation/raspberry-pi-all-in-one/), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
 
-To limit the risk brought by SD card corruption (a known risk with Pi3) I store the Home Assistant database on a USB stick, and use a multi-port USB charger with sufficient power for all ports, but have left one unused. The power cables are short, and high quality, to minimise issues with voltage drop. For backups I use a USB micro-SD reader and [rpi-clone](https://github.com/billw2/rpi-clone) to provide live-boot backups, [rsnapshot](http://rsnapshot.org/) for on-site backups (from another Pi3), and [rclone](https://rclone.org/) for offsite backups to [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html).
+To limit the risk brought by SD card corruption (a known risk with Pi3) I store the Home Assistant database on a USB stick, and use a multi-port USB charger with sufficient power for all ports, but have left one unused. The power cables are short, and high quality, to minimise issues with voltage drop. Of course, I also take [many different backups](https://blog.ceard.tech/2017/10/backing-up-home-assistant.html) to reduce the risk of losing anything.
 
 This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackable case](https://www.modmypi.com/raspberry-pi/cases-183/multi-pi-stacker/multi-pi-stackable-raspberry-pi-case), to keep the footprint down. They share an HDMI cable to a nearby monitor, and an old USB keyboard I've got kicking around, because having a Pi fail to respond isn't that uncommon.
 
@@ -26,7 +26,6 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * [rclone](https://rclone.org/) for offsite backups
 * [pi-hole](https://pi-hole.net/) so I can easily block "smart" devices from calling home
 * [netdata](https://my-netdata.io/) so I can keep an eye on the performance
-* [LaMetric](https://lametric.com/) a clock and low resolution display
 * [Nmap](https://nmap.org/) to support on network device tracking
   * _I used to use [mosquitto](https://mosquitto.org/) to provide local MQTT services, and bridge to [CloudMQTT](https://www.cloudmqtt.com/), for location tracking. Having ditched OwnTracks MQTT I no longer needed it, so removed it._
 
@@ -43,12 +42,13 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
 * NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2) in the master bedroom to provide manual control of the Yeelight. It was originally used by the kitchen door, where the next item is now mounted.
 * NodOn [Soft Remote](https://nodon.fr/en/nodon/z-wave-soft-remote/) in the second bedroom, to also provide manual control of that room's Yeelight.
 * Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller, to provide a wall switch for the garden lights
+* [LaMetric](https://lametric.com/) a clock and low resolution display
 * Yeelight [led strips](https://www.yeelight.com/en_US/product/pitaya), one mounted behind the headboard in the master bedroom, and one along the wall side of the bed frame in the second bedroom. These provide good enough lighting to read by at night, and also to help wake us in the morning.
 * Outdoor mains [240V led strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
 * [CSL Bluetooth adapter](https://www.amazon.co.uk/gp/product/B00VFT4LD2/) for the [Bluetooth device tracker](https://home-assistant.io/components/device_tracker.bluetooth_tracker/), to augment the Nmap device tracker (uses a CSR8510 A10 chip)
 * [Google Home Mini](https://store.google.com/product/google_home_mini), with the [Google Assistant](https://home-assistant.io/components/google_assistant/) component
 
-## The services and other software I use
+## The services and other software, and hardware, I use
 
 * Notifications:
   * [HTML5 push](https://home-assistant.io/components/notify.html5/), alongside [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, and for rich notifications I'm experimenting with [Slack](https://slack.com/)
@@ -58,7 +58,9 @@ This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackab
   * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only does it have an [annoying bug](https://github.com/owntracks/android/issues/508) that causes it to randomly disable reporting, but it's been abandoned by the developer
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service
 * [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint)
-* [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles
+* [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles. I don't currently use [the component](https://home-assistant.io/components/media_player.plex/)
+* [Sonos](https://www.sonos.com/) speakers and [component](https://home-assistant.io/components/media_player.sonos/)
+* [Squeezebox Radio](http://support.logitech.com/en_us/product/squeezebox-radio-black) as a smart alarm clock, and [associated component](https://home-assistant.io/components/media_player.squeezebox/)
 * [XBoxAPI](https://xboxapi.com/) to track when one of us is on the XBox
 * Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
 * [Getmail](http://pyropus.ca/software/getmail/) with [a script](local/bin/parse-email) that acts as the message delivery agent, to parse the recycling collection emails
