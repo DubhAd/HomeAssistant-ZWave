@@ -13,7 +13,7 @@ condition:
         entity_id: group.my_adults
         state: 'not_home'
 action:
-  - service: notify.push_person2_phone
+  - service: notify.person2
     data:
       message: "Nobody's home right now"
   - service: homeassistant.turn_off

@@ -4,6 +4,6 @@ trigger:
   platform: state
   entity_id: updater.updater
 action:
-  service: notify.push
+  service: notify.person2
   data:
     message: 'Update for Home Assistant is available.'

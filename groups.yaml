@@ -770,11 +770,19 @@ Information:
 my_scripts:
   name: Scripts
   entities:
-  - scripts.garden_door_before_sunrise
-  - scripts.garden_door_after_sunset
-  - scripts.garage_opened
-  - scripts.garage_open
-  - scripts.garage_closed
+  - script.alarm_lights_enable
+  - script.alarm_lights_on
+  - script.bedhead_light_bright_pause
+  - script.bedhead_light_bright
+  - script.bedhead_light_cool_pause
+  - script.bedhead_light_cool
+  - script.bedhead_light_dim_pause
+  - script.bedhead_light_dim
+  - script.bedhead_light_warm_pause
+  - script.bedhead_light_warm
+  - script.bedtime_slow_off
+  - script.garden_door_after_sunset
+  - script.garden_door_before_sunrise
   view: false
 my_automations_startup:
   name: Automations at startup
@@ -1074,14 +1082,16 @@ view_scripts:
   icon: mdi:script
   view: true
   entities:
+  - script.alarm_lights_enable
+  - script.alarm_lights_on
+  - script.bedhead_light_bright_pause
   - script.bedhead_light_bright
-  - script.bedhead_light_bright_pause 
-  - script.bedhead_light_cool
   - script.bedhead_light_cool_pause
-  - script.bedhead_light_dim
+  - script.bedhead_light_cool
   - script.bedhead_light_dim_pause
-  - script.bedhead_light_warm
+  - script.bedhead_light_dim
   - script.bedhead_light_warm_pause
-  - script.bedtime_slow_off 
+  - script.bedhead_light_warm
+  - script.bedtime_slow_off
   - script.garden_door_after_sunset
   - script.garden_door_before_sunrise

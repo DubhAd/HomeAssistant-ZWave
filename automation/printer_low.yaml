@@ -8,6 +8,6 @@ trigger:
     entity_id: sensor.printer
     below: 20
 action:
-  - service: notify.push
+  - service: notify.person2
     data:
       message: "The printer is running low on consumables, time to buy something."

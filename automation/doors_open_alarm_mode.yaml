@@ -12,7 +12,7 @@ condition:
       entity_id: input_boolean.alarm_mode
       state: 'on'
 action:
-  - service: notify.push
+  - service: notify.person2
     data_template: 
       message: >
         The following doors were just opened: 

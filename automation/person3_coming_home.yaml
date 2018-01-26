@@ -16,6 +16,6 @@ condition:
       entity_id: input_boolean.person2_home
       state: 'off'
 action:
-  - service: notify.push
+  - service: notify.person2
     data:
       message: "person3's nearly home"

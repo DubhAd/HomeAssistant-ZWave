@@ -1,0 +1,16 @@
+sequence:
+  - service: homeassistant.turn_on
+    entity_id: group.livingroom_lights
+  - service: homeassistant.turn_on
+    entity_id: switch.hall_downstairs_switch
+  - delay: '00:00:10'
+  - service: homeassistant.turn_off
+    entity_id: group.livingroom_lights
+  - service: homeassistant.turn_off
+    entity_id: switch.hall_downstairs_switch
+  - delay: '00:00:10'
+  - condition: template
+    value_template: "{{ state('alarm_control_panel.ha_alarm') != 'disarmed' }}"
+  - service: script.turn_on
+    data:
+      entity_id: script.alarm_lights_on

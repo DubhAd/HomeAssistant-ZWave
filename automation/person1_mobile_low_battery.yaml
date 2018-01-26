@@ -5,7 +5,7 @@ trigger:
   entity_id: sensor.battery_person1_mobile
   below: 10
 action:
-  - service: notify.push
+  - service: notify.person2
     data:
       message: "person1's phone is at {{ states('sensor.battery_person1_mobile') }}% battery"
   - service: notify.person3
