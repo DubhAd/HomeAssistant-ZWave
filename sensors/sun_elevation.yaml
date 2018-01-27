@@ -1,0 +1,12 @@
+- platform: template
+  sensors:
+    sun_elevation:
+      value_template: '{{ states.sun.sun.attributes.elevation }}'
+      unit_of_measurement: "degrees"
+      icon_template: >
+        {% set elevation = states.sun.sun.attributes.elevation|default(0) %}
+        {% if elevation > 0 %}
+          mdi:weather-sunny
+        {% else %}
+          mdi:weather-night
+        {% endif %}

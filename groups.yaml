@@ -368,6 +368,7 @@ my_sensors:
   name: Sensors
   entities:
   - sun.sun
+  - sensor.sun_elevation
   - sensor.hass_installed
   - sensor.current_ha_version
   view: false

@@ -6,10 +6,15 @@ trigger:
     value_template: "{{ state.attributes.elevation }}"
     below: 5
   - platform: state
-    entity_id: input_boolean.all_away
+    entity_id: input_boolean.bedtime
     to: 'off'
   - platform: state
-    entity_id: input_boolean.bedtime
+    entity_id: input_boolean.adults_away
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.all_away
+    from: 'on'
     to: 'off'
 condition:
   - condition: and
@@ -20,9 +25,6 @@ condition:
     - condition: state
       entity_id: switch.hall_downstairs_switch
       state: 'off'
-    - condition: state
-      entity_id: input_boolean.all_away
-      state: 'off'
     - condition: numeric_state
       entity_id: sun.sun
       value_template: "{{ state.attributes.elevation }}"
@@ -30,6 +32,14 @@ condition:
     - condition: state
       entity_id: input_boolean.bedtime
       state: 'off'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: input_boolean.all_away
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.adults_away
+        state: 'off'
 action:
   - service: switch.turn_on
     entity_id: switch.hall_downstairs_switch
