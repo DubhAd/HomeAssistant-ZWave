@@ -4,6 +4,8 @@ trigger:
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     below: 13
+    for:
+      minutes: 5
   - platform: state
     entity_id: media_player.samsung_tv_remote
     from: 'off'
