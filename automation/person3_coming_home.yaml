@@ -14,7 +14,7 @@ condition:
       value_template: '{{ states.proximity.person3_home.attributes.dir_of_travel == "towards"  }}'
     - condition: state
       entity_id: input_boolean.person2_home
-      state: 'off'
+      state: 'on'
 action:
   - service: notify.person2
     data:
