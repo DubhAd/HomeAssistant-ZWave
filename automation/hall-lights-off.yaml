@@ -17,6 +17,18 @@ condition:
     - condition: state
       entity_id: switch.hall_downstairs_switch
       state: 'on'
+    - condition: or
+      conditions:
+      - condition: template
+        value_template: "{{ (states.sun.sun.attributes.elevation)|float > 5 }}"
+      - condition: and
+        conditions:
+        - condition: state
+          entity_id: input_boolean.bedtime
+          state: 'on'
+        - condition: state
+          entity_id: input_boolean.guest_mode
+          state: 'off'
 action:
   - service: switch.turn_off
     entity_id: switch.hall_downstairs_switch
