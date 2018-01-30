@@ -1,0 +1,16 @@
+alias: 'Alarm triggered home'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    to: 'triggered'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_boolean.adults_away
+      state: 'off'
+action:
+  - service: notify.person2
+    data:
+      message: "The alarm has been triggered"

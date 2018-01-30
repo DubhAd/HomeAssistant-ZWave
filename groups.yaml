@@ -8,6 +8,8 @@ alarm_automations:
   - automation.alarm_disarm_in_the_morning
   - automation.alarm_disarm_upon_return
   - automation.alarm_armed_trigger
+  - automation.alarm_triggered_away
+  - automation.alarm_triggered_home
 bins:
   name: Bin automations
   view: false
