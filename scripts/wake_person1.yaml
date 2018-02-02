@@ -1,0 +1,33 @@
+sequence:
+  - service: light.turn_on
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 30
+      color_temp: 394
+      brightness_pct: 100
+  - delay: 00:00:10
+  - service: light.turn_on
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 30
+      color_temp: 394
+      brightness_pct: 100
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.person1
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.person1
+      volume_level: 0.4
+  - delay: 00:01:00
+  - service: light.turn_on
+    data:
+      entity_id: light.person1_bedroom_bedside
+      effect: Alarm
+  - delay: 00:01:00
+  - service: light.turn_on
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 30
+      color_temp: 394
+      brightness_pct: 100

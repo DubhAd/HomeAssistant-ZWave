@@ -11,3 +11,5 @@ entity_config:
     expose: false
   script.bedtime_slow_off:
     name: "Time for bed"
+  script.wake_person1:
+    name: "Wake person1"
