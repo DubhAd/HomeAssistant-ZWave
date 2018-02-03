@@ -49,6 +49,12 @@ zwave:
   device_config: !include zwave_device_config.yaml
   network_key: !secret zwave_network_key
 
+mqtt:
+
+mqtt_eventstream:
+  publish_topic: master/topic
+  subscribe_topic: slaves/#
+
 device_tracker: !include device_tracker.yaml
 
 zone: !include zones.yaml
