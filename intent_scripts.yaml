@@ -21,9 +21,9 @@ WhereAreWeIntent:
                is_state('group.person_person1', 'home') -%}
           You are all home, you silly
         {%- else -%}
-          person2 is {{ states("sensor.person2_travel") }},
-          person1 is {{ states("sensor.person1_travel") }}
-          and person3 is {{ states("sensor.person3_travel") }}
+          person2 is {{ states('sensor.person2_travel') }},
+          person1 is {{ states('sensor.person1_travel') }}
+          and person3 is {{ states('sensor.person3_travel') }}
         {% endif %}
 
 TurnLights:
@@ -40,16 +40,16 @@ TurnLights:
           home_assistant.turn_off
         {%- endif -%}
       data_template:
-        entity_id: "group.{{ Room | replace(' ', '_') }}_lights"
+        entity_id: group.{{ Room | replace(' ', '_') }}_lights
 
 OutsideDoors:
   speech:
     text: >
-      {%- if is_state('group.outside_doors', 'off') -%}
+      {%- if is_state('group.my_exterior_doors', 'off') -%}
         All the outside doors are closed
       {%- else -%}
         The following doors are open: 
-        {%- for entity_id in states.group.outside_doors.attributes.entity_id -%}
+        {%- for entity_id in states.group.my_exterior_doors.attributes.entity_id -%}
           {% set parts = entity_id.split('.') -%}
           {%- if states(entity_id) == 'on' %}
           {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}

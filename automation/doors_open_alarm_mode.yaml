@@ -2,7 +2,7 @@ alias: 'Doors open alarm mode'
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: group.outside_doors
+    entity_id: group.my_exterior_doors
     from: 'off'
     to: 'on'
 condition:
@@ -16,7 +16,7 @@ action:
     data_template: 
       message: >
         The following doors were just opened: 
-        {%- for entity_id in states.group.outside_doors.attributes.entity_id -%}
+        {%- for entity_id in states.group.my_exterior_doors.attributes.entity_id -%}
           {% set parts = entity_id.split('.') -%}
           {%- if states(entity_id) == 'on' %}
           {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}
