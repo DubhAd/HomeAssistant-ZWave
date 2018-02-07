@@ -1,16 +1,16 @@
 initial_state: 'on'
 alias: 'Play classical music in the office'
 trigger:
-  platform: state
-  entity_id: device_tracker.work_laptop
-  to: 'home'
+  - platform: state
+    entity_id: device_tracker.work_laptop
+    to: 'home'
 condition:
-  condition: state
-  entity_id: media_player.office
-  state: 'paused'
-action:
-  service: media_player.select_source
-  data:
+  - condition: state
     entity_id: media_player.office
-    source: classical
+    state: 'paused'
+action:
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.office
+      source: classical
 
