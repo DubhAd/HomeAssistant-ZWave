@@ -6,6 +6,12 @@ trigger:
   to: 'not_home'
   for:
     minutes: 2
+condition:
+  condition: state
+  entity_id: media_player.office
+  state: 'playing'
+  for:
+    minutes: 10
 action:
   service: media_player.media_pause
   data:
