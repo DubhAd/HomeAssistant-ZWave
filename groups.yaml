@@ -791,6 +791,7 @@ my_automations_secondbed:
   - automation.person1_radio_on_late
   - automation.person1_radio_on_night
   - automation.person1_radio_off
+  - automation.person1_radio_off_late
   - automation.person1_bedside_turn_on
   - automation.person1_bedside_turn_off
   - automation.person1_bedside_turn_on_min
