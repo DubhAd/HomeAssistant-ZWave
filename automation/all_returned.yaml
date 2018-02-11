@@ -5,6 +5,10 @@ trigger:
     entity_id: group.my_family
     from: 'not_home'
     to: 'home'
+  - platform: state
+    entity_id: group.my_adults
+    from: 'not_home'
+    to: 'home'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.all_away

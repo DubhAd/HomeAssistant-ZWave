@@ -4,6 +4,9 @@ trigger:
   - platform: state
     entity_id: input_boolean.all_away
     to: 'off'
+  - platform: state
+    entity_id: input_boolean.adults_away
+    to: 'off'
 action:
   - service: alarm_control_panel.alarm_disarm
     entity_id: alarm_control_panel.ha_alarm
