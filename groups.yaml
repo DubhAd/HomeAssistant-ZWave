@@ -239,6 +239,10 @@ my_switches:
   - switch.livingroom_socket_switch
   - switch.vestibule_switch
   view: false
+hall_lights:
+  name: Hall lights
+  entities:
+  - switch.hall_downstairs_switch
 tv:
   name: TVs
   entities:
@@ -943,6 +947,7 @@ my_automations_people_person1:
   - automation.person1_away
   - automation.person1_at_work
   - automation.person1_returning
+  - automation.person1_home_after_work
   - automation.wake_person1
   - automation.person1_mobile_low_battery
 my_automations_people_person3:

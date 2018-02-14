@@ -1,0 +1,34 @@
+initial_state: 'on'
+alias: 'person1 home after work'
+trigger:
+  platform: state
+  entity_id: device_tracker.person1_mobile
+  to: 'home'
+  for:
+    minutes: 10
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_boolean.notify_person1_work
+      state: 'on'
+    - condition: or
+      conditions: 
+      - condition: time
+        after: '15:00:00'
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+      - condition: time
+        after: '12:00:00'
+        weekday:
+          - fri
+action:
+  - service: notify.push
+    data:
+      message: "Don't forget to take your lunch out of your workbag"
+      target: "unnamed device_3"
+  - service: homeassistant.turn_off
+    entity_id: automation.person1_home_after_work

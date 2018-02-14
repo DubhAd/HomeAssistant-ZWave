@@ -32,7 +32,10 @@ TurnLights:
   action:
     - service: notify.lametric_info
       data_template:
-        message: Someone asked via Dialogflow to turn {{ Room }} lights {{ OnOff }}
+        message: "Someone asked via Dialogflow to turn {{ Room }} lights {{ OnOff }}"
+    - service: notify.logfile
+      data_template:
+        message: "Someone asked via Dialogflow to turn {{ Room }} lights {{ OnOff }} - group.{{ Room | replace(' ', '_') }}_lights"
     - service_template: >
         {%- if OnOff == "on" -%}
           home_assistant.turn_on
