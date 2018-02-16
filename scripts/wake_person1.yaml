@@ -5,6 +5,10 @@ sequence:
       transition: 30
       color_temp: 394
       brightness_pct: 100
+  - service: tts.google_say
+    entity_id: media_player.second_bedroom_speaker
+    data:
+      message: "Time to get up"
   - delay: 00:00:10
   - service: light.turn_on
     data:
@@ -12,6 +16,10 @@ sequence:
       transition: 30
       color_temp: 394
       brightness_pct: 100
+  - service: tts.google_say
+    entity_id: media_player.second_bedroom_speaker
+    data:
+      message: "Time to get up"
   - service: media_player.play_media
     data:
       entity_id: media_player.person1
@@ -20,14 +28,25 @@ sequence:
       entity_id: media_player.person1
       volume_level: 0.4
   - delay: 00:01:00
+  - condition: state
+    entity_id: media_player.person1
+    state: 'playing'
   - service: light.turn_on
     data:
       entity_id: light.person1_bedroom_bedside
       effect: Alarm
-  - delay: 00:01:00
+  - delay: 00:00:10
   - service: light.turn_on
     data:
       entity_id: light.person1_bedroom_bedside
       transition: 30
       color_temp: 394
       brightness_pct: 100
+  - delay: 00:00:30
+  - condition: state
+    entity_id: media_player.person1
+    state: 'playing'
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.person1
+      volume_level: 0.5

@@ -630,6 +630,7 @@ room_second_bedroom:
   entities:
   - light.person1_bedroom_bedside
   - media_player.person1
+  - script.wake_person1
 People:
   name: People
   icon: mdi:account-multiple

@@ -411,3 +411,5 @@ input_select.person1_status_dropdown:
   entity_picture: /local/person1Thumb.jpg
 input_select.person2_status_dropdown:
   entity_picture: /local/person2Thumb.jpg
+script.wake_person1:
+  friendly_name: "Wake person1"
