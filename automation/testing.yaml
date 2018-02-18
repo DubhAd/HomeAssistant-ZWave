@@ -1,0 +1,18 @@
+alias: 'Cold Day'
+trigger:
+  - platform: time
+    at: '8:57'
+condition:
+  - condition: numeric_state
+    entity_id: climate.3_floor
+    value_template: '{{ states.climate.3_floor.attributes.current_temperature }}'
+    below: 70
+action:
+  - service: climate.set_operation_mode
+    data:
+      entity_id: climate.3_floor
+      operation_mode: heat
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.3_floor
+      temperature: 68
