@@ -58,3 +58,4 @@ OutsideDoors:
           {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}
         {%- endfor %}
       {%- endif -%}
+
