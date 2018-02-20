@@ -1,3 +1,4 @@
+## Experimental sensor for tracking home or away state
 - platform: 'bayesian'
   prior: 0.75
   name: 'person3 Home'

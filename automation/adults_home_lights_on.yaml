@@ -1,3 +1,4 @@
+#
 initial_state: 'on'
 alias: 'Adults home lights on'
 trigger:

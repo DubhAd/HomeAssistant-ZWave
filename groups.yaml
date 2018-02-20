@@ -130,6 +130,7 @@ my_people:
   - device_tracker.person2_mobile
   - sensor.person2s_time_to_home
   view: false
+######################################## ########################################
 my_pihole:
   name: PiHole Statistics
   view: false
@@ -142,6 +143,7 @@ my_pihole:
   - sensor.pihole_dns_unique_clients
   - sensor.pihole_dns_unique_domains
   - sensor.pihole_domains_blocked
+######################################## ########################################
 train_status:
   name: Ontime status
   view: false
@@ -190,6 +192,7 @@ trains_xyz_to_abc_3:
   - sensor.third_train_abc_status
   - sensor.third_train_abc_scheduled
   - sensor.third_train_abc_estimated
+######################################## ########################################
 my_system:
   name: HA system status
   entities:
@@ -324,6 +327,7 @@ my_input_select:
   name: Selections for automations
   entities:
   - input_select.season
+#my_inputs:
 my_weather_metoffice:
   name: Weather from the Met Office
   entities:
@@ -393,6 +397,8 @@ my_scenes:
   - scene.all_lights_off
   - scene.bedtime_all_off
   view: false
+#garden_lights:
+#number_sign:
 utility:
   name: Utility room
   icon: mdi:washing-machine
@@ -406,6 +412,7 @@ garage:
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
   view: false
+#outside_doors:
 front_of_house:
   name: Front of house
   entities:
@@ -643,6 +650,8 @@ People:
   - group.my_devices
   - group.new_batteries
   - group.wifi_state
+#camera_left:
+#camera_right:
 camera_view:
   name: Cameras
   icon: mdi:video
@@ -719,6 +728,7 @@ my_printer:
   - sensor.printer_retard_roller_remaining
   - sensor.printer_transfer_roller_remaining
   - sensor.printer_fuser_life_remaining
+########################################
 my_trains:
   name: Train status
   view: true
@@ -731,10 +741,12 @@ my_trains:
   - group.trains_xyz_to_abc_1
   - group.trains_xyz_to_abc_2
   - group.trains_xyz_to_abc_3
+########################################
 Spacer:
   name: Spacer
   view: true
   icon: mdi:dots-horizontal
+########################################
 Network:
   name: Network
   icon: mdi:network
@@ -877,6 +889,7 @@ my_automations_garden:
   - binary_sensor.garden_lights_left_on
   - automation.bin_collection
   view: false
+#my_automations_remotes:
 my_automations_familyroom:
   name: Automations for the Family room
   entities:
@@ -1066,6 +1079,7 @@ view_inputs:
   - group.my_input_select
   - group.my_people_states
   - switch.fluxer
+#my_floorplan:
 view_scripts:
   name: scripts
   icon: mdi:script

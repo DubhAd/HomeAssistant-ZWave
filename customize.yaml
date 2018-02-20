@@ -31,6 +31,8 @@ sensor.person3_travel:
 sensor.person1_travel:
   entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1"
+#input_slider.garden_time:
+#input_slider.door_delay:
 input_number.garden_time:
   icon: mdi:timer
 input_number.door_delay:
@@ -101,9 +103,13 @@ binary_sensor.garage_closed_car:
 binary_sensor.garage_closed_bike_sensor:
   friendly_name: Garage door, left
   device_class: garage_door
+#binary_sensor.garage_door_bike_sensor:
 binary_sensor.garage_closed_car_sensor:
   friendly_name: Garage door, car
   device_class: garage_door
+#binary_sensor.garage_car_sensor:
+#sensor.garage_door_l:
+#sensor.garage_door_r:
 sensor.office_multi_luminance:
   friendly_name: "Office light level"
   icon: mdi:white-balance-sunny
@@ -249,6 +255,8 @@ device_tracker.timetrveller:
   entity_picture: /local/person2Work.jpg
 group.person_person2_work:
   entity_picture: /local/person2Work.jpg
+#binary_sensor.floorplan:
+##  config: !include floorplan.yaml
 sensor.next_train_xyz_estimated:
   icon: mdi:clock-fast
 sensor.next_train_xyz_scheduled:
@@ -344,6 +352,7 @@ sensor.printer_toner_remaining:
   friendly_name: "Toner remaining"
 sensor.printer_transfer_roller_remaining:
   friendly_name: "Transfer roller remaining"
+#script.bedtime_slow_off:
 script.bedhead_light_bright:
   google_assistant: false
 script.bedhead_light_cool_pause:

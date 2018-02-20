@@ -7,6 +7,7 @@ notify_person2_working:
 notify_person1_work:
   name: work day for person1
   icon: mdi:calendar-text
+#
 person2_is_awake:
   name: person2 is awake
   icon: mdi:alarm
@@ -19,6 +20,7 @@ person1_is_awake:
 bedtime:
   name: Everybody is asleep
   icon: mdi:hotel
+#
 lighting_automations:
   name: Enable lighting automations
   icon: mdi:lightbulb
@@ -29,6 +31,7 @@ update_mesh_diagram:
   name: Enable updates of the Z-Wave mesh diagram
   initial: off
   icon: mdi:webhook
+#
 guest_mode:
   name: Guest mode
   icon: mdi:account-multiple-plus
@@ -38,6 +41,7 @@ holiday_mode:
 alarm_mode:
   name: Alarm mode
   icon: mdi:verified
+#
 person2_travelling:
   name: person2 travelling
   icon: mdi:airplane
@@ -47,6 +51,7 @@ person3_travelling:
 person1_travelling:
   name: person1 travelling
   icon: mdi:airplane
+#
 person2_home:
   name: person2 home
   icon: mdi:home
@@ -56,6 +61,7 @@ person3_home:
 person1_home:
   name: person1 home
   icon: mdi:home
+#
 adults_away:
   name: Adults are away
   icon: mdi:account-multiple

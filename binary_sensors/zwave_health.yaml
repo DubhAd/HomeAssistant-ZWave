@@ -1,3 +1,6 @@
+## Tracks the health of my Z-Wave mesh, by ensuring that there's been at least one update in the last 10 minutes.
+## If the mesh is hung, there will be no updates, and I've a couple of multi-sensors that normally update at least once every few minutes
+##  If you're using this, adjust the interval to suit your environment.
 - platform: template
   sensors: 
     zwave_health:

@@ -1,5 +1,6 @@
+  # Replaced by the alarm function
 alias: 'Adults away doors open'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: state
     entity_id: input_boolean.adults_away

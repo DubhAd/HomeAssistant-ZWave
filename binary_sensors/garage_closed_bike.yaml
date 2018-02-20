@@ -1,3 +1,4 @@
+## Sensor that merges two sensors into one hopefully more reliable one (sometimes when closing, only one is updated)
 - platform: template
   sensors: 
     garage_closed_bike:

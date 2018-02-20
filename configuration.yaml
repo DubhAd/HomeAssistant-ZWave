@@ -13,6 +13,10 @@ homeassistant:
   #time_zone: Etc/UTC
   customize: !include customize.yaml
 
+#introduction:
+
+#logger:
+
 config:
 
 map:
@@ -29,6 +33,8 @@ updater:
   include_used_components: true
 
 discovery:
+
+#zeroconf:
 
 conversation:
 
@@ -56,11 +62,15 @@ mqtt_eventstream:
   publish_topic: master/topic
   subscribe_topic: slaves/#
 
+####################
+
 device_tracker: !include device_tracker.yaml
 
 zone: !include zones.yaml
 
 proximity: !include_dir_merge_named proximity/ 
+
+####################
 
 notify: !include_dir_merge_list notify/
 
@@ -70,7 +80,11 @@ lametric:
   client_id: !secret lametric_id
   client_secret: !secret lametric_secret
 
+####################
+
 google: !include google.yaml
+
+####################
 
 sensor: !include_dir_merge_list sensors/
 
@@ -80,17 +94,29 @@ sun:
 
 camera: !include_dir_list camera/
 
+#ffmpeg:
+
+####################
+
 input_number: !include input_number.yaml
 
 input_boolean: !include input_boolean.yaml
 
 input_select: !include input_select.yaml
 
+#variable_int: !include variable_int.yaml
+
+#variable_bool: !include variable_bool.yaml
+
+####################
+
 light: !include_dir_merge_list light/
 
 switch: !include_dir_merge_list switch/
 
 media_player: !include media_player.yaml
+
+####################
 
 script: !include_dir_named scripts/
 
@@ -103,6 +129,12 @@ scene: !include_dir_list scenes/
 group: !include groups.yaml
 
 shell_command: !include_dir_merge_named shell_commands/
+
+####################
+
+#datadog:
+
+#panel_iframe: !include_dir_merge_named panel_iframe/
 
 panel_custom:
   - name: floorplan
@@ -124,6 +156,10 @@ alarm_control_panel:
     armed_home:
       pending_time: 0
       delay_time: 0
+
+####################
+
+#zoneminder:
 
 google_assistant: !include google_assistant.yaml
 

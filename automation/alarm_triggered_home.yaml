@@ -12,5 +12,11 @@ condition:
       state: 'off'
 action:
   - service: notify.person2
-    data:
-      message: "The alarm has been triggered"
+    data_template: 
+      message: >
+        The alarm was triggered, the following doors are open: 
+        {%- for entity_id in states.group.my_exterior_doors.attributes.entity_id -%}
+          {% set parts = entity_id.split('.') -%}
+          {%- if states(entity_id) == 'on' %}
+          {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}
+        {%- endfor %}
