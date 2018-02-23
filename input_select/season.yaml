@@ -1,0 +1,11 @@
+name: Season
+icon: mdi:calendar-question
+options:
+  - Christmas
+  - Halloween
+  - Easter
+  - Winter
+  - Spring
+  - Summer
+  - Autumn
+  - Celebration
