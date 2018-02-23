@@ -170,7 +170,7 @@ Automations to determine if they're awake or asleep, if they're home, away, at s
 
 ## Train status
 
-## TV
+## TV 
 
 ## Updater
 
