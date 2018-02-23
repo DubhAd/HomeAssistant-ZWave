@@ -94,7 +94,7 @@ Turns fluxer off at 23:00. After this I want the bedroom lights to be in "night"
 
 ### Dark motion
 
-If motion is detected when the lounge is dark, it'll turn on one light - enough to see by and not trip over pets, but not so much as to destroy night vision
+If motion is detected when the lounge is dark, it'll turn on one light - enough to see by and not trip over pets, but not so much as to destroy night vision. Uses an input boolean so that 
 
 ### Daylight
 
@@ -116,7 +116,7 @@ Rather than wait for the normal timeout, if we've left the garden lights on duri
 
 ## Not
 
-These use the [Google Calendar](https://home-assistant.io/components/calendar.google/) component, to determine if it's not a school or work day, and turns off the booleans. Those booleans are used in some of the people specific automations
+These use the [Google Calendar](https://home-assistant.io/components/calendar.google/) component, to determine if it's not a work day, and turns off the booleans. Those booleans are used in some of the people specific automations
 
 ## Number sign
 
@@ -140,7 +140,7 @@ Another set of automations, using another Z-Wave remote, to control the brightne
 
 #### Misc bits
 
-Automations to determine if they're awake or asleep, if they're home, away, at school, if the phone is running low (so there can be an automated nudge to charge it) and other pieces.
+Automations to determine if they're awake or asleep, if they're home, away, at work, if the phone is running low (so there can be an automated nudge to charge it) and other pieces.
 
 ### Person Two
 
@@ -184,46 +184,88 @@ If the calendar says they're working from home, don't notify about commute delay
 
 If the relevant booleans are set, notify about the state of the commute
 
-
 #### Misc
 
 Standard awake, asleep, home and away toggles
 
-
 ### Person Three
+
+Standard awake, home, and away toggles.
+
+One automation to notify person2 (if they're at home) that person3 is nearly home.
 
 ## Playing music
 
+When person2 is working from home, play music in the home office.
+
 ## Printer
+
+Notifications when the state of one of the printers consumables gets low.
 
 ## Return trains
 
-## School
+When person2 is working from the local office, send a notification about the state of return commute near the end of the day.
 
 ## Seasons
 
+Set the input select for the seasons, based on the date
+
 ## Sonos
+
+Mute the TV if the Sonos starts playing, and unmute it when it stops.
 
 ## Startup
 
+For when I restart HA during the day
+
 ## Stopping music
+
+At the end of the day, turn off the music in the home office.
 
 ## Sunrise
 
+Some automations may get turned off overnight, this turns them back on at sunrise
+
 ## Table light
+
+Two minutes after the motion is last detection in the living room, if the light was turned on automatically, turn it off
 
 ## Test automations
 
+For when I'm testing things out
+
+Also, at 3 AM and 3 PM run *Test Network* on the Z-Wave mesh
+
 ## Train status
+
+In the morning, just before it's time to leave, send the notifications about the commute status 
 
 ## TV 
 
+Turn the TV off when it's bedtime, as identified by the TV being turned off between 10 PM and 4 AM
+
+When the TV is turned on, stop the Sonos if it's playing.
+
 ## Updater
+
+When there's an update available, send a notification. I rarely update when the release comes out though, usually waiting a day or so to ensure there's no unexpected problems.
 
 ## Utility door
 
+No longer just the utility door, but also the patio door - I simply haven't bothered to give it a more appropriate name.
+
+A trio of automations to turn on and off the garden lights automatically as the door opens and closes. The trick though is that the light doesn't turn off if we just open and close the door relatively quickly. 
+
 ## Wake person one
 
+Some people are hard to get out of bed in the morning, this is for helping one such person not sleep in.
+
 ## Winter
+
+These are for the lighting automations during winter.
+
+## Work
+
+
 
 ## Z-Wave

@@ -13,11 +13,16 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
     - condition: state
+      entity_id: input_boolean.livingroom_lights_auto
+      state: 'on'
+    - condition: state
       entity_id: switch.table_light_switch
       state: 'on'
     - condition: state
       entity_id: switch.cabinet_light_switch
       state: 'off'
 action:
-  service: switch.turn_off
-  entity_id: switch.table_light_switch
+  - service: switch.turn_off
+    entity_id: switch.table_light_switch
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.livingroom_lights_auto

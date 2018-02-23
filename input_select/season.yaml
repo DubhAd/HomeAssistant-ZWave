@@ -1,6 +1,7 @@
 name: Season
 icon: mdi:calendar-question
 options:
+  - Celebration
   - Christmas
   - Halloween
   - Easter
@@ -8,4 +9,3 @@ options:
   - Spring
   - Summer
   - Autumn
-  - Celebration

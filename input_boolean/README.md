@@ -32,7 +32,7 @@ Just in case we ever want to disable the lighting automations, this will control
 
 ## Living room
 
-A toggle to indicate that the lights were turned on automatically. Nor currently used.
+A toggle to indicate that the lights were turned on automatically
 
 ## Notifications
 

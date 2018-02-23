@@ -11,6 +11,9 @@ condition:
     - condition: state
       entity_id: media_player.samsung_tv_remote
       state: 'on'
+    - condition: state
+      entity_id: media_player.living_room
+      state: 'playing'
 action:
   - service: media_player.media_stop
     entity_id: media_player.living_room

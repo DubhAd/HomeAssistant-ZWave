@@ -20,5 +20,7 @@ condition:
       entity_id: switch.table_light_switch
       state: 'off'
 action:
-  service: switch.turn_on
-  entity_id: switch.table_light_switch
+  - service: homeassistant.turn_on
+    entity_id: input_boolean.livingroom_lights_auto
+  - service: switch.turn_on
+    entity_id: switch.table_light_switch
