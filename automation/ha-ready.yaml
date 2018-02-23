@@ -7,3 +7,5 @@ action:
   - service: notify.slack_notify
     data:
       message: "The Z-Wave network is now ready"
+  - service: homeassistant.turn_on
+    entity_id: group.my_automations_battery
