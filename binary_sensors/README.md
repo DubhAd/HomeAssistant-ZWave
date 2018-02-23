@@ -1,5 +1,11 @@
 # Binary sensors
 
+Components:
+	[binary sensor](https://home-assistant.io/components/binary_sensor/)
+	[template binary sensor](https://home-assistant.io/components/binary_sensor.template/)
+	[bayesian binary sensor](https://home-assistant.io/components/binary_sensor.bayesian/)
+	[workday binary sensor](https://home-assistant.io/components/binary_sensor.workday/)
+
 A summary of the sensors, and what they're for
 
 ## Garage
