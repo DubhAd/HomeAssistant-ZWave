@@ -1,3 +1,5 @@
+## Not used any more
+
 alias: Garden door before sunrise
 sequence:
   - service: homeassistant.turn_off
@@ -11,3 +13,5 @@ sequence:
   - service: homeassistant.turn_on
     entity_id: automation.utility_door_open_before_sunrise_turn_off
     data: {}
+
+## Not used any more

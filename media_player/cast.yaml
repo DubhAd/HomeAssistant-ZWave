@@ -1,0 +1,2 @@
+- platform: cast
+  entity_namespace: cast

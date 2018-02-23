@@ -2,8 +2,7 @@ initial_state: 'on'
 alias: 'Hall lights off'
 trigger:
   - platform: numeric_state
-    entity_id: sun.sun
-    value_template: "{{ state.attributes.elevation }}"
+    entity_id: sensor.sun_elevation
     above: 5
   - platform: state
     entity_id: input_boolean.bedtime
@@ -20,8 +19,9 @@ condition:
       state: 'on'
     - condition: or
       conditions:
-      - condition: template
-        value_template: "{{ (states.sun.sun.attributes.elevation)|float > 5 }}"
+      - condition: numeric_state
+        entity_id: sensor.sun_elevation
+        above: 5
       - condition: and
         conditions:
         - condition: state

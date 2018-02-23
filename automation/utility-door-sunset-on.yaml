@@ -14,8 +14,7 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
     - condition: numeric_state
-      entity_id: sun.sun
-      value_template: "{{ state.attributes.elevation }}"
+      entity_id: sensor.sun_elevation
       below: -5
     - condition: state
       entity_id: switch.garden_lights_switch
