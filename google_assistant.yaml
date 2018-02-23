@@ -13,3 +13,15 @@ entity_config:
     name: "Time for bed"
   script.wake_person1:
     name: "Wake person1"
+  sensor.living_room_multi_temperature:
+    expose: true
+    type: climate
+    name: "Living room"
+  sensor.office_multi_temperature:
+    expose: true
+    type: climate
+    name: "Office"
+  sensor.dark_sky_temperature:
+    expose: true
+    type: climate
+    name: "Outside"

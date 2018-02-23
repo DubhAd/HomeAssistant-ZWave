@@ -1,0 +1,6 @@
+media_player.person1:
+  platform: squeezebox
+  unique_id: 00:04:20:2e:38:4a
+media_player.person2:
+  platform: squeezebox
+  unique_id: 00:04:20:2d:4a:f1
