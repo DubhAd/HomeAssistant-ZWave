@@ -1,21 +1,21 @@
 media_player.person1:
   platform: squeezebox
-  unique_id: de:ea:be:ef:00:11
+  unique_id: 00:de:ad:be:ef:4a
 media_player.person2:
   platform: squeezebox
-  unique_id: de:ea:be:ef:00:11
+  unique_id: 00:de:ad:be:ef:f1
 media_player.office:
   platform: sonos
-  unique_id: RINCON_B8E9DEADBEEF01400
+  unique_id: RINCON_B8EDEADBEEF2201400
 media_player.family_room:
   platform: sonos
-  unique_id: RINCON_B8E9DEADBEEF01400
+  unique_id: RINCON_B8EDEADBEEF0601400
 media_player.living_room:
   platform: sonos
-  unique_id: RINCON_B8E9DEADBEEF01400
+  unique_id: RINCON_B8EDEADBEEF1401400
 media_player.living_room_2:
   platform: sonos
-  unique_id: RINCON_B8E9DEADBEEF01400
+  unique_id: RINCON_B8EDEADBEEF4601400
 switch.table_light_switch:
   platform: zwave
   unique_id: 2-72057594076282880
