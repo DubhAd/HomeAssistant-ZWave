@@ -1,5 +1,11 @@
 # Notifiers
 
+Components:
+* [HTML5 push](https://home-assistant.io/components/notify.html5/)
+* [LaMetric component](https://home-assistant.io/components/notify.lametric/)
+* [Pushover](https://home-assistant.io/components/notify.pushover/)
+* [Slack](https://home-assistant.io/components/notify.slack/)
+
 ## Adults
 
 This is a simple group notifier, for things that I want to ensure somebody is aware of 

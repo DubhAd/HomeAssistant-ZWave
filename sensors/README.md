@@ -1,5 +1,19 @@
 # Sensors
 
+Components:
+* [sensor](https://home-assistant.io/components/sensor/)
+* [Dark Sky sensor](https://home-assistant.io/components/sensor.darksky/) 
+* [file sensor](https://home-assistant.io/components/sensor.file/)
+* [Google Travel Time](https://home-assistant.io/components/sensor.google_travel_time/)
+* [have i been pwned sensor](https://home-assistant.io/components/sensor.haveibeenpwned/)
+* [Met Office sensor](https://home-assistant.io/components/sensor.metoffice/)
+* [Season](https://home-assistant.io/components/sensor.season/)
+* [Sun](https://home-assistant.io/components/sun/)
+* [template sensor](https://home-assistant.io/components/sensor.template/)
+* [Twitch sensor](https://home-assistant.io/components/sensor.twitch/)
+* [UK transport sensor](https://home-assistant.io/components/sensor.uk_transport/)
+* [XBox Live](https://home-assistant.io/components/sensor.xbox_live/)
+
 Sooo many sensors.
 
 ## Battery
@@ -18,7 +32,7 @@ The [Dark Sky sensor](https://home-assistant.io/components/sensor.darksky/) for 
 
 ## Google Travel Time
 
-Knowing how long it'll take people to get places is handy for various automations, so I sue the [Google Travel Time](https://home-assistant.io/components/sensor.google_travel_time/) sensor.
+Knowing how long it'll take people to get places is handy for various automations, so I use the [Google Travel Time](https://home-assistant.io/components/sensor.google_travel_time/) sensor.
 
 The names of the resulting sensor entities are personXs_time_to_home.
 

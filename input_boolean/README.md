@@ -1,5 +1,7 @@
 # Input booleans
 
+Component: [input boolean](https://home-assistant.io/components/input_boolean/)
+
 Some of these are used to enable and disable automations, some are used to track whether something is in a particular state (and then trigger automations).
 
 ## Adults

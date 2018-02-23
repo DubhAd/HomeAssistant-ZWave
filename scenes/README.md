@@ -1,6 +1,6 @@
 # Scenes
 
-We don't really use [scenes](https://home-assistant.io/components/scene/) much.
+Component: [scene](https://home-assistant.io/components/scene/)
 
 ## All lights off
 

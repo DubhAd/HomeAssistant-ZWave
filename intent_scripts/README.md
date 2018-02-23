@@ -1,5 +1,7 @@
 # Intent scripts
 
+Component: [intent script](https://home-assistant.io/components/intent_script/)
+
 For use with [Dialogflow](https://home-assistant.io/components/dialogflow/), allowing (in theory) more natural voice control. In reality with [Google Assistant](https://home-assistant.io/components/google_assistant/) it's a pain, because you have to go _Hey Google, talk to Home Assistant_, then have your conversation with Dialogflow, then end that...
 
 These are mostly taken directly from the examples, so there's nothing exciting.

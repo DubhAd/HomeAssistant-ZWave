@@ -1,5 +1,7 @@
 # Input Selects
 
+Component: [input select](https://home-assistant.io/components/input_select/)
+
 ## People
 
 For use with Phil Hawthorne's [making presence detection not so binary](https://philhawthorne.com/making-home-assistants-presence-detection-not-so-binary/) automations. 

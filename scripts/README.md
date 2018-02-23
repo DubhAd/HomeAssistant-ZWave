@@ -1,5 +1,7 @@
 # Scripts
 
+Component: [script](https://home-assistant.io/components/script/)
+
 ## Alarm
 
 These aren't used yet, there for use with the [manual alarm](https://home-assistant.io/components/alarm_control_panel.manual/), or not.

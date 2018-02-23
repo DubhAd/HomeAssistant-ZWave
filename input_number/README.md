@@ -1,5 +1,7 @@
 # Input numbers
 
+Component: [input number](https://home-assistant.io/components/input_number/)
+
 ## Door delay
 
 This is the delay after the garden door opens (in seconds) before the automation for turning the lights off is re-enabled.
