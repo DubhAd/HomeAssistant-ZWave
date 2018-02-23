@@ -1,9 +1,9 @@
 media_player.person1:
   platform: squeezebox
-  unique_id: 00:04:20:2e:38:4a
+  unique_id: de:ea:be:ef:00:11
 media_player.person2:
   platform: squeezebox
-  unique_id: 00:04:20:2d:4a:f1
+  unique_id: de:ea:be:ef:00:11
 media_player.office:
   platform: sonos
   unique_id: RINCON_B8E937877B2201400
