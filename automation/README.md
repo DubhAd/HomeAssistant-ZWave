@@ -266,6 +266,8 @@ These are for the lighting automations during winter.
 
 ## Work
 
-
+Sets the input booleans if this is a day when people are working
 
 ## Z-Wave
+
+Automations for updating the Z-Wave mesh graph, and to check the health of the mesh. If the mesh isn't healthy it'll run a *Test Network*, wait a minute, then run a *Heal Network*
