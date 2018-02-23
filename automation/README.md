@@ -116,7 +116,7 @@ Rather than wait for the normal timeout, if we've left the garden lights on duri
 
 ## Not
 
-These use the [Google Calendar](https://home-assistant.io/components/calendar.google/) component, to determine if it's not a school or work day, and turns off the booleans.
+These use the [Google Calendar](https://home-assistant.io/components/calendar.google/) component, to determine if it's not a school or work day, and turns off the booleans. Those booleans are used in some of the people specific automations
 
 ## Number sign
 
@@ -143,6 +143,52 @@ Another set of automations, using another Z-Wave remote, to control the brightne
 Automations to determine if they're awake or asleep, if they're home, away, at school, if the phone is running low (so there can be an automated nudge to charge it) and other pieces.
 
 ### Person Two
+
+#### Bedhead light
+
+Turn on the bedhead light with the alarm, and turn it off half an hour later
+
+#### Up early
+
+Getting up early probably means a taxi ride to the airport, so turn on the number sign so the taxi driver can find the house.
+
+#### At (the) station
+
+Send a "will be home in X minutes", based on the travel time sensor, and taking into account the usual delays in getting from the station to the car park, and out of the car park.
+
+#### Coming home
+
+If they're at the station, and the other adult isn't home, notify them
+
+#### Not working away
+
+Uses the calendar component to turn off the the travelling boolean (this one can almost certainly go as control of the boolean is also handled elsewhere)
+
+#### Returning
+
+When they reach either of the local airports or major train stations, turn off the travelling boolean if they're currently travelling.
+
+#### Travelling
+
+When they're at least 3 hours away, turn the travelling boolean on.
+
+#### Working away
+
+When the calender says they're working away, set and unset various booleans (the most important being don't notify about commute delays)
+
+#### Working from home
+
+If the calendar says they're working from home, don't notify about commute delays
+
+#### Working trains
+
+If the relevant booleans are set, notify about the state of the commute
+
+
+#### Misc
+
+Standard awake, asleep, home and away toggles
+
 
 ### Person Three
 

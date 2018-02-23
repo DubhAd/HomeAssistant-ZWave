@@ -5,6 +5,8 @@ To limit the risk brought by SD card corruption (a known risk with Pi3) I store 
 
 This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackable case](https://www.modmypi.com/raspberry-pi/cases-183/multi-pi-stacker/multi-pi-stackable-raspberry-pi-case), to keep the footprint down. They share an HDMI cable to a nearby monitor, and an old USB keyboard I've got kicking around, because having a Pi fail to respond isn't that uncommon.
 
+Each directory has a short readme explaining what's in there, and the purpose of each file or group of files.
+
 ## On the Pi itself I run
 
 * [Home Assistant](https://home-assistant.io/)
