@@ -134,7 +134,7 @@ shell_command: !include_dir_merge_named shell_commands/
 
 #datadog:
 
-#panel_iframe: !include_dir_merge_named panel_iframe/
+panel_iframe: !include_dir_merge_named panel_iframe/
 
 panel_custom:
   - name: floorplan
