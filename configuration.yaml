@@ -64,7 +64,8 @@ mqtt_eventstream:
 
 ####################
 
-device_tracker: !include device_tracker.yaml
+#device_tracker: !include device_tracker.yaml
+device_tracker: !include_dir_list device_tracker/
 
 zone: !include zones.yaml
 

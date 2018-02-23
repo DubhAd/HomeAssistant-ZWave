@@ -1,5 +1,3 @@
-_Note: I'm breaking out some of the large files into directories, so I can provide more information in various ReadMe files, without turning this into a wall of text. This process will take a while._
-
 # Home Assistant configuration
 This is my [Home Assistant](https://home-assistant.io/) configuration. It is installed on a Raspberry Pi 3, using the [All in One installer](https://home-assistant.io/docs/installation/raspberry-pi-all-in-one/), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
 
