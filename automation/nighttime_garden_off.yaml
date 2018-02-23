@@ -5,7 +5,7 @@ trigger:
   entity_id: switch.garden_lights_switch
   to: 'on'
   for:
-    minutes: 30
+    minutes: 15
 condition:
   condition: and
   conditions:

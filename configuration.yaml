@@ -98,6 +98,8 @@ camera: !include_dir_list camera/
 
 #ffmpeg:
 
+history_graph: !include_dir_named history_graph/
+
 ####################
 
 #input_number: !include input_number.yaml

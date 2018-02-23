@@ -20,6 +20,8 @@ The [Dark Sky sensor](https://home-assistant.io/components/sensor.darksky/) for 
 
 Knowing how long it'll take people to get places is handy for various automations, so I sue the [Google Travel Time](https://home-assistant.io/components/sensor.google_travel_time/) sensor.
 
+The names of the resulting sensor entities are personXs_time_to_home.
+
 ## Hass
 
 Version number trackers, for a display in Overview that nobody ever looks at.
