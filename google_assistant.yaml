@@ -27,3 +27,7 @@ entity_config:
     expose: true
     type: climate
     name: "Outside"
+  input_boolean.guest_mode:
+    expose: true
+    type: switch
+    name: "Guest mode"

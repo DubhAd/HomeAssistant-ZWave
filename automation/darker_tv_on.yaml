@@ -55,6 +55,8 @@ condition:
         state: 'playing'
 action:
   - service: homeassistant.turn_off
+    entity_id: input_boolean.livingroom_lights_auto
+  - service: homeassistant.turn_off
     entity_id: automation.lounge_in_daylight_2
   - service: scene.turn_on
     entity_id: scene.lounge_lights_on
