@@ -226,6 +226,17 @@ number_sign:
     icon_off: mdi-home-variant
     icon_style_active: "color: yellow"
 
+bedside_light:
+    widget_type: light
+    entity: light.person1_bedroom_bedside
+    title: Second bedroom
+    title2: Bedhead light
+    on_attributes:
+        brightness: 100
+    icon_on: fa-lightbulb-o
+    icon_off: fa-lightbulb-o
+    icon_style_active: "color: yellow"
+
 bedhead_light:
     widget_type: light
     entity: light.master_bedroom_bedhead
