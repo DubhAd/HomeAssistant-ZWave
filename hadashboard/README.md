@@ -8,6 +8,7 @@ At some point I'll set up permanent displays and make more use of these.
 ![Screenshot of dashboard](https://i.imgur.com/YJyWMlS.png)
 
 ## Main
+This one is a bit of a mess, there's no other way of saying it. This one is highly likely to get ditched at some point.
 ![Screenshot of dashboard](https://i.imgur.com/kyioXWl.png)
 
 ## Phone
