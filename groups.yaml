@@ -485,6 +485,8 @@ binary_sensors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
+  - binary_sensor.garage_closed_bike
+  - binary_sensor.garage_closed_car
   - binary_sensor.workday_sensor
   - binary_sensor.zwave_health
   view: false
