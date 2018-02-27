@@ -925,6 +925,7 @@ my_automations_general:
   name: Misc automations
   entities:
   - automation.ha_update_available_notifications
+  - automation.test
   - automation.test_notify
   - automation.test_media
   - automation.sunrise_enable_automations
