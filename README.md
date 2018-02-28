@@ -67,6 +67,10 @@ Each directory has a short readme explaining what's in there, and the purpose of
 * [Getmail](http://pyropus.ca/software/getmail/) with [a script](local/bin/parse-email) that acts as the message delivery agent, to parse the recycling collection emails
   * I gave up on the the [IMAP email content](https://home-assistant.io/components/sensor.imap_email_content/) sensor since it doesn't keep state through restarts (which isn't unique to it, Home Assistant doesn't have a persistence mechanism other than for the `input_*` entities)
 
+### Other software
+
+* [PiVPN](http://www.pivpn.io/) for remote access to my network
+
 ## Presence detection
 
 * If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html).
