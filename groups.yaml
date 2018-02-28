@@ -934,6 +934,7 @@ my_automations_general:
   - automation.test_zwave_network
   - automation.zwave_check
   - automation.zwave_health_check
+  - automation.weather_notification
   - automation.printer_low
   view: false
 my_automations_travel:

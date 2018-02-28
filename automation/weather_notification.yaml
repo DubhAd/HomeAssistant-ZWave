@@ -1,0 +1,15 @@
+initial_state: 'on'
+alias: 'Weather notification'
+trigger:
+  - platform: time
+    minutes: '/5'
+    seconds: 00
+condition:
+  - condition: state
+    entity_id: media_player.samsung_tv_remote
+    state: 'on'
+action:
+  - service: notify.lm_notify
+    data_template:
+      message: >-
+        {{ states('sensor.dark_sky_minutely_summary') }} {{ states('sensor.dark_sky_hourly_summary') }}
