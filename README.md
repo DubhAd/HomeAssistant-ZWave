@@ -70,6 +70,7 @@ Each directory has a short readme explaining what's in there, and the purpose of
 ### Other software
 
 * [PiVPN](http://www.pivpn.io/) for remote access to my network
+* [Pi Hole](https://pi-hole.net/) for blocking those pesky adverts
 
 ## Presence detection
 
