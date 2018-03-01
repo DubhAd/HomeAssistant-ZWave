@@ -248,14 +248,12 @@
             domain: homeassistant
             service: toggle
 
-        - name: Lights
+        - name: Light switches
           entities:
              - switch.table_light_switch
              - switch.cabinet_light_switch
              - switch.tv_light_switch
              - switch.garden_lights_switch
-             - light.master_bedroom_bedhead
-             - light.person1_bedroom_bedside
           states:
             - state: 'on'
               class: 'light-on'
@@ -264,6 +262,16 @@
           action:
             domain: homeassistant
             service: toggle
+
+        - name: Lights
+          entities:
+             - light.master_bedroom_bedhead
+             - light.person1_bedroom_bedside
+          states:
+            - state: 'on'
+              class: 'light-on'
+            - state: 'off'
+              class: 'light-off'
 
         - name: Switches
           entities:
