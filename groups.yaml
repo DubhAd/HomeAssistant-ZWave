@@ -328,6 +328,7 @@ my_input_select:
   name: Selections for automations
   entities:
   - input_select.season
+  - sensor.season
 #my_inputs:
 my_weather_metoffice:
   name: Weather from the Met Office

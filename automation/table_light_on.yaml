@@ -18,9 +18,6 @@ condition:
     - condition: state
       entity_id: switch.table_light_switch
       state: 'on'
-    - condition: state
-      entity_id: switch.cabinet_light_switch
-      state: 'off'
 action:
   - service: switch.turn_off
     entity_id: switch.table_light_switch

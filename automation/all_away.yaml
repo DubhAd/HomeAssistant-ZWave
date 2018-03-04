@@ -10,6 +10,7 @@ trigger:
 condition:
   condition: and
   conditions:
+    # TVs
     - condition: state
       entity_id: device_tracker.family_tv
       state: 'not_home'
@@ -19,6 +20,16 @@ condition:
     - condition: state
       entity_id: media_player.samsung_tv_remote
       state: 'off'
+    # Media players
+    - condition: state
+      entity_id: media_player.office
+      state: 'paused'
+    - condition: state
+      entity_id: media_player.family_room
+      state: 'paused'
+    - condition: state
+      entity_id: media_player.living_room
+      state: 'paused'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.all_away
