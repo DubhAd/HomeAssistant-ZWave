@@ -5,9 +5,14 @@ trigger:
     minutes: '/5'
     seconds: 00
 condition:
-  - condition: state
-    entity_id: media_player.samsung_tv_remote
-    state: 'on'
+  - condition: or
+    conditions:
+      - condition: state
+        entity_id: media_player.samsung_tv_remote
+        state: 'on'
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'playing'
 action:
   - service: notify.lm_notify
     data_template:
