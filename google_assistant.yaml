@@ -15,19 +15,3 @@ entity_config:
   script.wake_person1:
     expose: true
     name: "Wake person1"
-  sensor.living_room_multi_temperature:
-    expose: true
-    type: climate
-    name: "Living room"
-  sensor.office_multi_temperature:
-    expose: true
-    type: climate
-    name: "Office"
-  sensor.dark_sky_temperature:
-    expose: true
-    type: climate
-    name: "Outside"
-  input_boolean.guest_mode:
-    expose: true
-    type: switch
-    name: "Guest mode"
