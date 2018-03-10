@@ -6,12 +6,16 @@ api_key: !secret assistant_api_key
 exposed_domains:
   - switch
   - light
+  - climate
 entity_config:
   switch.number_sign_switch:
     expose: false
   script.bedtime_slow_off:
     expose: true
-    name: "Time for bed"
+    name: "Bedtime"
   script.wake_person1:
     expose: true
     name: "Wake person1"
+  input_boolean.guest_mode:
+    expose: true
+    name: "Guest mode"
