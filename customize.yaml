@@ -175,7 +175,9 @@ zwave.cabinet_light:
 zwave.garden_lights:
   friendly_name: "Garden lights"
 zwave.nodon_crc3100_octan_remote:
-  friendly_name: "Remote"
+  friendly_name: "Octan remote"
+zwave.green_remote:
+  friendly_name: "Green remote"
 zwave.utility:
   friendly_name: "Utility exterior switch"
 zwave.number_sign:
@@ -320,6 +322,8 @@ sensor.zwave_battery_living_room_multi:
   friendly_name: "Living room multi-sensor"
 sensor.zwave_battery_nodon_crc3100_octan_remote:
   friendly_name: "Nodon remote"
+sensor.zwave_battery_green_remote:
+  friendly_name: "Green remote"
 sensor.zwave_battery_patio_door_left:
   friendly_name: "Patio door (left)"
 sensor.zwave_battery_utility_door_exterior:
@@ -422,3 +426,5 @@ input_select.person2_status_dropdown:
   entity_picture: /local/person2Thumb.jpg
 script.wake_person1:
   friendly_name: "Wake person1"
+sensor.sun_elevation:
+  friendly_name: "Sun elevation"
