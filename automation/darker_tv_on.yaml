@@ -11,7 +11,7 @@ trigger:
     from: 'off'
     to: 'on'
   - platform: state
-    entity_id: media_player.living_room_tv
+    entity_id: media_player.cast_living_room_tv
     to: 'playing'
   - platform: state
     entity_id: device_tracker.livingroom_chromecast
@@ -45,7 +45,7 @@ condition:
         entity_id: media_player.samsung_tv_remote
         state: 'on'
       - condition: state
-        entity_id: media_player.living_room_tv
+        entity_id: media_player.cast_living_room_tv
         state: 'playing'
       - condition: state
         entity_id: device_tracker.livingroom_chromecast

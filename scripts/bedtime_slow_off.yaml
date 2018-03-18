@@ -16,10 +16,15 @@ sequence:
     service: switch.turn_off
     data:
       entity_id: switch.cabinet_light_switch
+  - delay:
+      minutes: 10
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.person3_is_awake
+  - condition: state
+    entity_id: input_boolean.bedtime
+    state: 'on'
   - condition: state
     entity_id: input_boolean.guest_mode
     state: 'off'
-  - delay:
-      minutes: 10
   - service: switch.turn_off
     entity_id: switch.hall_downstairs_switch

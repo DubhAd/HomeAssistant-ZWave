@@ -41,5 +41,3 @@ action:
     # Now turn the lights off
   - service: script.turn_on
     entity_id: script.bedtime_slow_off
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.person3_is_awake
