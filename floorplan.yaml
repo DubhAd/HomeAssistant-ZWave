@@ -1,11 +1,13 @@
-      name: Demo Floorplan
+      name: Floorplan
       image: /local/custom_ui/floorplan/floorplan.svg
       stylesheet: /local/custom_ui/floorplan/floorplan.css
       
       # These options are optional
-      warnings:            # enable warnings (to find out why things might ot be working correctly)
+      warnings:            # enable warnings (to find out why things might not be working correctly)
      # pan_zoom:            # enable experimental panning / zooming
       # hide_app_toolbar:    # hide the application toolbar (when used as a custom panel)
+
+      date_format: YYYY-MM-DD
 
       last_motion_entity: sensor.template_last_motion
       last_motion_class: last-motion
@@ -103,9 +105,12 @@
 
         - name: Chromecasts
           entities:
-             - media_player.master_bedroom_speaker
-             - media_player.living_room_speaker_2
-             - media_player.second_bedroom_speaker_2
+             - media_player.cast_master_bedroom_speaker
+             - media_player.cast_living_room_speaker
+             - media_player.cast_second_bedroom_speaker
+             - media_player.cast_office_speaker
+             - media_player.cast_kitchen_speaker
+             - media_player.cast_guest_bedroom_speaker
           states:
             - state: 'playing'
               class: 'squeezebox-on'
@@ -245,7 +250,7 @@
             - state: 'off'
               class: 'light-off'
           action:
-            domain: homeassistant
+            domain: switch
             service: toggle
 
         - name: Light switches
@@ -260,7 +265,7 @@
             - state: 'off'
               class: 'light-off'
           action:
-            domain: homeassistant
+            domain: switch
             service: toggle
 
         - name: Lights
@@ -289,7 +294,7 @@
             - state: 'off'
               class: 'doorbell-off'
           action:
-            domain: homeassistant
+            domain: switch
             service: toggle
 
         - name: Binary sensors

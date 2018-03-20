@@ -71,7 +71,7 @@ background-color: var(--primary-background-color);
 
 .alarm-disarmed {
   fill: #81D9a7 !important;
-  fill-opacity: 1 !important;
+  fill-opacity: 0.5 !important;
 }
 
 .alarm-triggered {
