@@ -16,7 +16,7 @@ trigger:
     entity_id: device_tracker.family_tv
     to: 'not_home'
     for:
-      minutes: 15
+      minutes: 20
 condition:
   - condition: and
     conditions:
