@@ -19,3 +19,9 @@ entity_config:
   input_boolean.guest_mode:
     expose: true
     name: "Guest mode"
+  light.master_bedroom_bedhead:
+    room: "Master Bedroom"
+  media_player.cast_master_bedroom_speaker:
+    room: "Master Bedroom"
+  switch.master_bedroom_socket_switch:
+    room: "Master Bedroom"
