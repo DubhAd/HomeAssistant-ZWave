@@ -344,6 +344,7 @@ my_weather_darksky:
   name: Weather from Dark Sky
   entities:
   - sensor.dark_sky_summary
+  - sensor.dark_sky_minutely_summary
   - sensor.dark_sky_hourly_summary
   - sensor.dark_sky_apparent_temperature
   - sensor.dark_sky_temperature
@@ -934,6 +935,7 @@ my_automations_general:
   - automation.zwave_check
   - automation.zwave_health_check
   - automation.weather_notification
+  - automation.bin_notification
   - automation.printer_low
   view: false
 my_automations_travel:
