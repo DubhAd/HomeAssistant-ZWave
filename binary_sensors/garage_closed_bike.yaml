@@ -6,7 +6,7 @@
       friendly_name: 'Garage door, bike'
       value_template: >- 
         {%- if is_state('sensor.garage_closed_bike_access_control', '22') -%}
-        on
+        True
         {%- else -%}
-        off
+        False
         {%- endif -%}
