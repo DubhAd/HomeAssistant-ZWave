@@ -629,6 +629,7 @@ all_rooms:
   - group.back_bedroom
   - group.master_bedroom
   - group.second_bedroom
+  - history_graph.indoor_temperature
 room_second_bedroom:
   name: person1's bedroom
   icon: mdi:hotel
