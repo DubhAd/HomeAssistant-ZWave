@@ -21,7 +21,7 @@ config:
 
 map:
 
-#cloud:
+cloud:
 
 frontend: !include frontend.yaml
 
