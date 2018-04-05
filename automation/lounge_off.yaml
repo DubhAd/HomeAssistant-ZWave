@@ -11,7 +11,7 @@ condition:
       entity_id: input_select.person2_status_dropdown
       state: 'Home'
     - condition: state
-      entity_id: device_tracker.work_laptop
+      entity_id: device_tracker.00e04c680550
       state: 'home'
     - condition: state
       entity_id: device_tracker.livingroom_chromecast

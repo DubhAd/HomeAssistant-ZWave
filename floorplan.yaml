@@ -37,8 +37,8 @@
              - device_tracker.person1_mobile
              - device_tracker.person1_tablet
              - device_tracker.person2_mobile
-             - device_tracker.work_laptop
-             - device_tracker.person2_work
+             - device_tracker.00e04c680550
+             - group.person_person2_work
           states:
             - state: 'home'
               class: 'tracker-home'

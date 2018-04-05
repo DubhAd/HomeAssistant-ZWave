@@ -107,7 +107,7 @@ sensor.utility_door_exterior_burglar:
   platform: zwave
   unique_id: 10-72057594211745953
 switch.spare_socket_switch:
-  name:
+  name: ''
   platform: zwave
   unique_id: 13-72057594260832256
 binary_sensor.living_room_multi_sensor:

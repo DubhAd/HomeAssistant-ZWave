@@ -428,3 +428,6 @@ script.wake_person1:
   friendly_name: "Wake person1"
 sensor.sun_elevation:
   friendly_name: "Sun elevation"
+device_tracker.00e04c680550:
+  friendly_name: "Work laptop"
+  picture: /local/laptop.jpg

@@ -2,7 +2,7 @@ initial_state: 'on'
 alias: 'Play classical music in the office'
 trigger:
   - platform: state
-    entity_id: device_tracker.work_laptop
+    entity_id: device_tracker.00e04c680550
     to: 'home'
 condition:
   - condition: state

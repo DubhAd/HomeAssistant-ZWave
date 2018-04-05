@@ -211,7 +211,7 @@ my_work:
   name: Work
   entities:
   - group.person_person2_work
-  - device_tracker.work_laptop
+  - device_tracker.00e04c680550
   view: false
 my_devices:
   name: Devices
