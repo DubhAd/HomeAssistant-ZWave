@@ -1,3 +1,9 @@
+trend_sensors:
+  name: Trend sensors
+  view: false
+  entities:
+  - binary_sensor.trend_living_room_light
+  - binary_sensor.trend_sun_elevation
 alarm_automations:
   name: Alarm automations
   view: false
@@ -766,6 +772,7 @@ Information:
   view: true
   entities:
   - group.my_sensors
+  - group.trend_sensors
   - group.binary_sensors
   - group.burglar
   - group.access_control
