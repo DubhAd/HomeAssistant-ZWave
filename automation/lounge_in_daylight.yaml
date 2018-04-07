@@ -4,17 +4,31 @@ trigger:
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     above: 75
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 30
 condition:
   - condition: and
     conditions:
     - condition: state
       entity_id: input_boolean.lighting_automations
       state: 'on'
+    # Lights have been on for at least a minute
     - condition: state
       entity_id: group.living_room_lights
       state: 'on'
       for:
         minutes: 1
+    - condition: or
+      conditions:
+        # Very bright, or...
+      - condition: numeric_state
+        entity_id: sensor.living_room_multi_luminance
+        above: 70
+        # Sun is rising
+      - condition: state
+        entity_id: binary_sensor.trend_sun_elevation
+        state: 'on'
 action:
   - service: scene.turn_on
     entity_id: scene.lounge_lights_off

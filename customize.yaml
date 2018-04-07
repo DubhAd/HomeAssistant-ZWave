@@ -431,3 +431,5 @@ sensor.sun_elevation:
 device_tracker.00e04c680550:
   friendly_name: "Work laptop"
   picture: /local/laptop.jpg
+binary_sensor.trend_sun_elevation:
+  icon: mdi:white-balance-sunny
