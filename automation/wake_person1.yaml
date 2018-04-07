@@ -9,9 +9,9 @@ condition:
   state: 'off'
 action:
   - service: media_player.turn_on
-    entity_id: media_player.person1
+    entity_id: media_player.cast_second_bedroom_speaker
   - service: media_player.media_play
-    entity_id: media_player.person1
+    entity_id: media_player.cast_second_bedroom_speaker
     data:
       media_content_type: music
       media_content_id: tbc
