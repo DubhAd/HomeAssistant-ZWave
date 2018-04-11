@@ -970,12 +970,14 @@ my_automations_people_person1:
   - automation.person1_home_after_work
   - automation.wake_person1
   - automation.person1_mobile_low_battery
+  - automation.person1_travelling
 my_automations_people_person3:
   name: People driven automations - person3
   entities:
   - automation.person3_up
   - automation.person3_home
   - automation.person3_away
+  - automation.person3_travelling
 my_automations_people_person2:
   name: People driven automations - person2
   entities:
@@ -984,6 +986,7 @@ my_automations_people_person2:
   - automation.person2_away
   - automation.person2_up
   - automation.workday_for_person2
+  - automation.person2_travelling
 my_automations_input:
   name: Automations changing inputs
   entities:
