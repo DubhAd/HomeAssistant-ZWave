@@ -6,12 +6,15 @@ trigger:
 condition:
   condition: and
   conditions:
+    # Notifications for the train status are enabled
     - condition: state
       entity_id: input_boolean.notify_train_status_work
       state: 'on'
+    # Is awake
     - condition: state
       entity_id: input_boolean.person2_is_awake
       state: 'on'
+    # Is home
     - condition: state
       entity_id: group.person_person2
       state: 'home'

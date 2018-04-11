@@ -17,14 +17,9 @@ condition:
   - condition: state
     entity_id: input_boolean.person2_travelling
     state: 'off'
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: group.person_person2
-      state: 'home'
-    - condition: state
-      entity_id: input_boolean.person2_home
-      state: 'on'
+  - condition: state
+    entity_id: input_boolean.person2_home
+    state: 'on'
   - condition: state
     entity_id: calendar.person2_wfh
     state: 'off'
