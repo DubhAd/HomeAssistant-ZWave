@@ -5,8 +5,8 @@
       device_class: opening
       friendly_name: 'Garage door, car'
       value_template: >- 
-        {%- if is_state('sensor.garage_closed_car_access_control', '22') -%}
+        {% if is_state('sensor.garage_closed_car_access_control', '22') and is_state('binary_sensor.garage_closed_car_sensor', 'on') %}
         True
-        {%- else -%}
+        {% else %}
         False
-        {%- endif -%}
+        {% endif %}
