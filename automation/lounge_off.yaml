@@ -19,9 +19,14 @@ condition:
     - condition: state
       entity_id: media_player.samsung_tv_remote
       state: 'off'
-    - condition: state
-      entity_id: media_player.living_room
-      state: 'paused'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'paused'
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'off'
     - condition: state
       entity_id: group.living_room_lights
       state: 'on'

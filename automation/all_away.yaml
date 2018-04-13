@@ -21,15 +21,30 @@ condition:
       entity_id: media_player.samsung_tv_remote
       state: 'off'
     # Media players
-    - condition: state
-      entity_id: media_player.office
-      state: 'paused'
-    - condition: state
-      entity_id: media_player.family_room
-      state: 'paused'
-    - condition: state
-      entity_id: media_player.living_room
-      state: 'paused'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: media_player.office
+        state: 'paused'
+      - condition: state
+        entity_id: media_player.office
+        state: 'off'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: media_player.family_room
+        state: 'paused'
+      - condition: state
+        entity_id: media_player.family_room
+        state: 'off'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'paused'
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'off'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.all_away
