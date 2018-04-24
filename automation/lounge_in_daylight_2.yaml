@@ -16,12 +16,12 @@ condition:
       state: 'off'
       for:
         minutes: 2
-    # Lights have been on for at least 2 minutes
+    # Lights have been on for at least one minutes
     - condition: state
       entity_id: group.living_room_lights
       state: 'on'
       for:
-        minutes: 2
+        minutes: 1
     # Sun is rising
     - condition: state
       entity_id: binary_sensor.trend_sun_elevation
