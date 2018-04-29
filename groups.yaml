@@ -483,6 +483,7 @@ binary_sensors:
   - binary_sensor.living_room_motion
   - binary_sensor.living_room_multi_sensor
   - binary_sensor.office_multi_sensor
+  - binary_sensor.front_door_sensor
   - binary_sensor.patio_door_left_sensor
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
@@ -495,6 +496,7 @@ binary_sensors:
 access_control:
   name: Access control
   entities:
+  - sensor.front_door_access_control
   - sensor.garage_closed_bike_access_control
   - sensor.garage_closed_car_access_control
   - sensor.utility_door_exterior_access_control
@@ -502,6 +504,7 @@ access_control:
 burglar:
   name: Burglar sensors
   entities:
+  - sensor.front_door_burglar
   - sensor.garage_closed_bike_burglar
   - sensor.garage_closed_car_burglar
   - sensor.living_room_multi_burglar
