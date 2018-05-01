@@ -639,6 +639,15 @@ all_rooms:
   - group.master_bedroom
   - group.second_bedroom
   - history_graph.indoor_temperature
+room_master_bedroom:
+  name: Master bedroom
+  icon: mdi:bed-empty
+  view: true
+  entities:
+  - light.master_bedroom_bedhead
+  - switch.master_bedroom_socket_switch
+  - media_player.person2
+  - media_player.cast_master_bedroom_speaker
 room_second_bedroom:
   name: person1's bedroom
   icon: mdi:hotel
