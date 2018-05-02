@@ -752,6 +752,15 @@ my_printer:
   - sensor.printer_retard_roller_remaining
   - sensor.printer_transfer_roller_remaining
   - sensor.printer_fuser_life_remaining
+my_samsung_printer:
+  name: Samsung printer
+  view: false
+  icon: mdi:printer
+  entities:
+  - sensor.samsung_m283x_series_172237250_output_tray_0
+  - sensor.samsung_m283x_series_172237250_tray_1
+  - sensor.samsung_m283x_series_172237250_drum_black
+  - sensor.samsung_m283x_series_172237250_toner_black
 ########################################
 my_trains:
   name: Train status
@@ -1100,6 +1109,7 @@ ha_automations_misc:
   - automation.zwave_health_check
   - automation.clear_states
   - automation.sunrise_enable_automations
+  - automation.recorder_purge
 view_ha_automations:
   name: Automations about Home Assistant
   icon: mdi:settings
