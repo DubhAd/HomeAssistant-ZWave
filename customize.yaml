@@ -238,7 +238,7 @@ zwave.living_room_multi:
 device_tracker.person1_headphones:
   friendly_name: "person1's headphones"
   icon: mdi:headphones
-device_tracker.laptop:
+device_tracker.jayne:
   friendly_name: "person2's laptop"
   icon: mdi:laptop-windows
 device_tracker.person2s_tablet_bt:

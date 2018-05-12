@@ -57,6 +57,11 @@ person_person2_tablet:
   entities:
   - device_tracker.person2s_tablet_bt
   - device_tracker.person2_tablet
+person_person2_laptop:
+  name: person2's laptop
+  icon: mdi:laptop-windows
+  entities:
+  - device_tracker.jayne
 person_person2_work:
   name: person2's work phone
   entities:
@@ -224,7 +229,7 @@ my_devices:
   entities:
   - device_tracker.person1_headphones
   - group.person_person1_tablet
-  - device_tracker.laptop
+  - device_tracker.jayne
   - group.person_person2_tablet
   view: false
 my_switches:
