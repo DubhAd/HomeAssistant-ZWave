@@ -66,6 +66,7 @@ Each directory has a short readme explaining what's in there, and the purpose of
 * [Google Travel Time component](https://home-assistant.io/components/sensor.google_travel_time/) which uses the Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
 * [Getmail](http://pyropus.ca/software/getmail/) with [a script](local/bin/parse-email) that acts as the message delivery agent, to parse the recycling collection emails
   * I gave up on the the [IMAP email content](https://home-assistant.io/components/sensor.imap_email_content/) sensor since it doesn't keep state through restarts (which isn't unique to it, Home Assistant doesn't have a persistence mechanism other than for the `input_*` entities)
+* A HiWatch IPC-T140 dome camera, using the generic camera component. It's a 4K camera, and the Pi3 can't keep up when I use the FFMPEG component. I use the camera's built in motion detection, writing to a 200 GB SMB share (there's a firmware issue apparently, if the share is above that the camera gets confused and won't write).
 
 ### Other software
 
