@@ -21,7 +21,7 @@ trigger:
     entity_id: group.person_person2_laptop
     to: 'home'
     for:
-      minutes: 5
+      minutes: 2
 condition:
   - condition: or
     conditions:
