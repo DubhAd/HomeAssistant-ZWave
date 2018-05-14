@@ -497,6 +497,7 @@ binary_sensors:
   - binary_sensor.garage_closed_car
   - binary_sensor.workday_sensor
   - binary_sensor.zwave_health
+  - binary_sensor.garden_lights_left_on
   view: false
 access_control:
   name: Access control
