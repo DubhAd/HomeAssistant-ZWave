@@ -128,7 +128,7 @@ sensor.office_motion:
   icon: mdi:account
 binary_sensor.office_multi_sensor:
   friendly_name: "Office motion sensor"
-  sensor_class: motion
+  device_class: motion
   icon: mdi:account
 group.my_scenes:
   order: 1
@@ -228,6 +228,7 @@ device_tracker.person3_mobile_bt:
   friendly_name: person3 BT
 binary_sensor.living_room_motion:
   icon: mdi:account-multiple
+  device_class: motion
 sensor.living_room_multi_luminance:
   friendly_name: 'Lounge Light level'
   icon: mdi:white-balance-sunny
