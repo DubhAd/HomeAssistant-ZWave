@@ -990,6 +990,7 @@ my_automations_people_person1:
   entities:
   - automation.person1_asleep
   - automation.person1_up
+  - automation.person1_up_reminder
   - automation.person1_home
   - automation.person1_away
   - automation.person1_at_work
