@@ -8,7 +8,7 @@ trigger:
       minutes: 3
 condition:
   - condition: and
-    conditions
+    conditions:
     - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'
@@ -16,6 +16,23 @@ condition:
       entity_id: calendar.person1_holiday
       state: 'off'
 action:
+  - service: media_player.turn_on
+    data:
+      entity_id: media_player.cast_second_bedroom_speaker
+  - delay: '00:00:05'
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.cast_second_bedroom_speaker
+      volume_level: 0.3
+  - service: tts.google_say
+    entity_id: media_player.cast_second_bedroom_speaker
+    data:
+      message: "Hi person1, if you're not already up, time to get moving."
+  - delay: '00:03:00'
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.cast_second_bedroom_speaker
+      volume_level: 0.4
   - service: tts.google_say
     entity_id: media_player.cast_second_bedroom_speaker
     data:
