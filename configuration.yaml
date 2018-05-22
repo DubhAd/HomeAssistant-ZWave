@@ -12,7 +12,8 @@ homeassistant:
   time_zone: Europe/London
   #time_zone: Etc/UTC
   customize: !include customize.yaml
-  whitelist_external_dirs: /data/homeassistant
+  whitelist_external_dirs: 
+    - /data/homeassistant
 
 #introduction:
 
