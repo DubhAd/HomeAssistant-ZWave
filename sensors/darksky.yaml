@@ -11,10 +11,6 @@
     - precip_probability
     - temperature
     - apparent_temperature
-    - temperature_max
-    - temperature_min
-    - apparent_temperature_max
-    - apparent_temperature_min
     - wind_speed
     - wind_cabineting
     - cloud_cover
@@ -22,3 +18,7 @@
     - icon
     - humidity
     - pressure
+    - temperature_max
+    - temperature_min
+    - apparent_temperature_max
+    - apparent_temperature_min
