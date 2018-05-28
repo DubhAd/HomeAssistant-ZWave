@@ -33,26 +33,36 @@ condition:
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
       below: 18
-    # Adults are home
-    - condition: state
-      entity_id: input_boolean.adults_away
-      state: 'off'
     # During operational hours
     - condition: time
       after: '04:00:00'
       before: '23:00:00'
-    # TV is on
+    # We're home
     - condition: or
       conditions:
       - condition: state
+        entity_id: input_boolean.adults_away
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.all_away
+        state: 'off'
+    - condition: or
+      conditions:
+      # TV is on
+      - condition: state
         entity_id: media_player.samsung_tv_remote
         state: 'on'
+      # Chromecast
       - condition: state
         entity_id: media_player.cast_living_room_tv
         state: 'playing'
       - condition: state
         entity_id: device_tracker.livingroom_chromecast
         state: 'home'
+      # Sonos
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'playing'
 action:
   - service: homeassistant.turn_off
     entity_id: input_boolean.livingroom_lights_auto

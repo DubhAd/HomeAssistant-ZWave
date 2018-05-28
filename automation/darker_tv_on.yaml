@@ -6,6 +6,14 @@ trigger:
     below: 13
     for:
       minutes: 5
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 6
+    for:
+      minutes: 1
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 1
   - platform: state
     entity_id: media_player.samsung_tv_remote
     from: 'off'
@@ -33,23 +41,31 @@ condition:
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
       below: 13
-    - condition: state
-      entity_id: input_boolean.adults_away
-      state: 'off'
     - condition: time
       after: '04:00:00'
       before: '23:00:00'
     - condition: or
       conditions:
       - condition: state
+        entity_id: input_boolean.adults_away
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.all_away
+        state: 'off'
+    - condition: or
+      conditions:
+      # TV
+      - condition: state
         entity_id: media_player.samsung_tv_remote
         state: 'on'
+      # Chromecast
       - condition: state
         entity_id: media_player.cast_living_room_tv
         state: 'playing'
       - condition: state
         entity_id: device_tracker.livingroom_chromecast
         state: 'home'
+      # Sonos
       - condition: state
         entity_id: media_player.living_room
         state: 'playing'
