@@ -223,6 +223,9 @@ device_tracker.person2_mobile_bt:
   entity_picture: /local/person2Thumb.jpg
 group.person_person3:
   entity_picture: /local/person3Thumb.jpg
+device_tracker.nexus_5x:
+  entity_picture: /local/person3Thumb.jpg
+  friendly_name: person3 mobile
 device_tracker.person3_mobile_bt:
   entity_picture: /local/person3Thumb.jpg
   friendly_name: person3 BT
