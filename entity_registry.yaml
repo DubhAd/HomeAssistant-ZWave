@@ -386,3 +386,99 @@ media_player.cast_master_bedroom_speaker:
   name:
   platform: cast
   unique_id: c2cd9fa4-2db5-2bae-3c11-103e8d942c5a
+zwave.zwaveme_razberry_controller_2016_zwave:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.table_light:
+  name:
+  platform: zwave
+  unique_id: node-2
+zwave.cabinet_light:
+  name:
+  platform: zwave
+  unique_id: node-3
+zwave.tv_light:
+  name:
+  platform: zwave
+  unique_id: node-4
+zwave.number_sign:
+  name:
+  platform: zwave
+  unique_id: node-5
+zwave.garden_lights:
+  name:
+  platform: zwave
+  unique_id: node-6
+zwave.nodon_crc3100_octan_remote:
+  name:
+  platform: zwave
+  unique_id: node-9
+zwave.utility_door_exterior:
+  name:
+  platform: zwave
+  unique_id: node-10
+zwave.spare_socket:
+  name:
+  platform: zwave
+  unique_id: node-13
+zwave.living_room_multi:
+  name:
+  platform: zwave
+  unique_id: node-15
+zwave.office_multi:
+  name:
+  platform: zwave
+  unique_id: node-17
+zwave.utility:
+  name:
+  platform: zwave
+  unique_id: node-18
+zwave.garage_closed_car:
+  name:
+  platform: zwave
+  unique_id: node-19
+zwave.garage_closed_bike:
+  name:
+  platform: zwave
+  unique_id: node-20
+zwave.patio_door_left:
+  name:
+  platform: zwave
+  unique_id: node-21
+zwave.master_bedroom_socket:
+  name:
+  platform: zwave
+  unique_id: node-23
+zwave.second_bedroom:
+  name:
+  platform: zwave
+  unique_id: node-24
+zwave.livingroom_socket:
+  name:
+  platform: zwave
+  unique_id: node-25
+zwave.hall_downstairs:
+  name:
+  platform: zwave
+  unique_id: node-26
+zwave.vestibule:
+  name:
+  platform: zwave
+  unique_id: node-28
+zwave.green_remote:
+  name:
+  platform: zwave
+  unique_id: node-29
+zwave.front_door:
+  name:
+  platform: zwave
+  unique_id: node-30
+zwave.front_bedroom:
+  name:
+  platform: zwave
+  unique_id: node-31
+zwave.family_room_socket:
+  name:
+  platform: zwave
+  unique_id: node-27

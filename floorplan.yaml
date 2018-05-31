@@ -124,7 +124,7 @@
         - name: TVs
           entities:
             # Chromecast
-            - media_player.living_room_tv
+            - media_player.cast_living_room_tv
           states:
             - state: 'on'
               class: 'tv-on'
