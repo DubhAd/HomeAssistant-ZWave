@@ -27,6 +27,9 @@ trigger:
   - platform: state
     entity_id: media_player.living_room
     to: 'playing'
+  - platform: state
+    entity_id: input_boolean.lighting_automations
+    to: 'on'
 condition:
   condition: and
   conditions:

@@ -15,6 +15,9 @@ trigger:
     entity_id: input_boolean.all_away
     from: 'on'
     to: 'off'
+  - platform: state
+    entity_id: input_boolean.lighting_automations
+    to: 'on'
 condition:
   - condition: and
     conditions:

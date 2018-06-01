@@ -16,6 +16,9 @@ trigger:
   - platform: state
     entity_id: device_tracker.livingroom_chromecast
     to: 'home'
+  - platform: state
+    entity_id: input_boolean.lighting_automations
+    to: 'on'
 condition:
   condition: and
   conditions:
