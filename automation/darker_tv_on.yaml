@@ -16,7 +16,6 @@ trigger:
     below: 1
   - platform: state
     entity_id: media_player.samsung_tv_remote
-    from: 'off'
     to: 'on'
   - platform: state
     entity_id: media_player.cast_living_room_tv
@@ -79,6 +78,6 @@ action:
     entity_id: automation.lounge_in_daylight_2
   - service: scene.turn_on
     entity_id: scene.lounge_lights_on
-  - delay: 00:00:05
+  - delay: 00:00:10
   - service: homeassistant.turn_on
     entity_id: automation.lounge_in_daylight_2
