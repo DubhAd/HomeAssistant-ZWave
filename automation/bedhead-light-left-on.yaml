@@ -9,12 +9,14 @@ trigger:
 condition:
   condition: and
   conditions:
-    - condition: sun
-      after: sunrise
-    - condition: sun
-      before: sunset
+    - condition: state
+      entity_id: sun.sun
+      state: above_horizon
     - condition: state
       entity_id: media_player.person2
+      state: 'off'
+    - condition: state
+      entity_id: media_player.cast_master_bedroom_speaker
       state: 'off'
 action:
   - service: light.turn_off

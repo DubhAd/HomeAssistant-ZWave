@@ -12,12 +12,12 @@ condition:
     - condition: state
       entity_id: media_player.person2
       state: 'off'
-    - condition: or
-      conditions:
-        - condition: sun
-          before: sunrise
-        - condition: sun
-          after: sunset
+    - condition: state
+      entity_id: media_player.cast_master_bedroom_speaker
+      state: 'off'
+    - condition: state
+      entity_id: sun.sun
+      state: above_horizon
 action:
   - service: light.turn_off
     data:
