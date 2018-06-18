@@ -144,7 +144,7 @@ device_tracker.tv_living_room:
   friendly_name: "TV in the lounge"
   icon: mdi:television
 media_player.samsung_tv_remote:
-  friendly_name: "TV in the lounge"
+  friendly_name: "Samsung TV in the lounge"
   icon: mdi:television
 media_player.living_room_tv:
   friendly_name: "Chromecast in the lounge"
