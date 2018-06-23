@@ -173,7 +173,10 @@ alarm_control_panel:
 
 google_assistant: !include google_assistant.yaml
 
-dialogflow:
-
+#dialogflow:
 #intent_script: !include intent_scripts.yaml
-intent_script: !include_dir_named intent_scripts/
+#intent_script: !include_dir_named intent_scripts/
+
+#sonos:
+#
+#cast:
