@@ -1,4 +1,4 @@
-initial_state: 'off'
+initial_state: 'on'
 alias: 'Battery garage door closed car'
 trigger:
   - platform: numeric_state

@@ -43,6 +43,7 @@ zwave_batteries:
   - sensor.zwave_battery_nodon_crc3100_octan_remote
   - sensor.zwave_battery_green_remote
   - sensor.zwave_battery_utility_door_exterior
+  - sensor.zwave_battery_utility
   - sensor.zwave_battery_patio_door_left
   - sensor.zwave_battery_front_door
   - sensor.zwave_battery_utility
@@ -1039,9 +1040,11 @@ my_automations_battery:
   - automation.battery_garage_door_closed_bike
   - automation.battery_livingroom_multi
   - automation.battery_utility_door
+  - automation.battery_utility_light_switch
   - automation.battery_front_door
   - automation.battery_patio_door_left
   - automation.battery_remote
+  - automation.battery_green_remote
 my_automations_seasons:
   name: Seasonal automations
   icon: mdi:pine-tree

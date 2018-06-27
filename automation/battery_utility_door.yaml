@@ -1,16 +1,16 @@
-initial_state: 'off'
+initial_state: 'on'
 alias: 'Battery utility door'
 trigger:
   - platform: numeric_state
-    entity_id: sensor.zwave_battery_utility
+    entity_id: sensor.zwave_battery_utility_door_exterior
     below: 25
   - platform: numeric_state
-    entity_id: sensor.zwave_battery_utility
+    entity_id: sensor.zwave_battery_utility_door_exterior
     below: 10
   - platform: numeric_state
-    entity_id: sensor.zwave_battery_utility
+    entity_id: sensor.zwave_battery_utility_door_exterior
     below: 5
 action:
   service: notify.person2
   data:
-    message: "The utility door sensor is at {{ states('sensor.zwave_battery_utility') }}% battery, buy a replacement soon"
+    message: "The utility door sensor is at {{ states('sensor.zwave_battery_utility_door_exterior') }}% battery, buy a replacement soon"

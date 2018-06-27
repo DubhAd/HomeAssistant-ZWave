@@ -1,0 +1,16 @@
+initial_state: 'on'
+alias: 'Battery green remote'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.zwave_battery_green_remote
+    below: 25
+  - platform: numeric_state
+    entity_id: sensor.zwave_battery_green_remote
+    below: 10
+  - platform: numeric_state
+    entity_id: sensor.zwave_battery_green_remote
+    below: 5
+action:
+  service: notify.person2
+  data:
+    message: "The remote is at {{ states('sensor.zwave_battery_green_remote') }}% battery, it uses a CR2032 coin cell"

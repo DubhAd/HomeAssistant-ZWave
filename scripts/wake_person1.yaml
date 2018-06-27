@@ -1,32 +1,69 @@
 sequence:
+  # Light goes on
   - service: light.turn_on
     data:
       entity_id: light.person1_bedroom_bedside
       transition: 30
       color_temp: 394
       brightness_pct: 100
-  - service: tts.google_say
-    entity_id: media_player.cast_second_bedroom_speaker
+  # Gently first, sound the alarm and give a nudge
+  - service: media_player.volume_set
     data:
-      message: "Time to get up"
-  - delay: 00:00:10
-  - service: light.turn_on
-    data:
-      entity_id: light.person1_bedroom_bedside
-      transition: 30
-      color_temp: 394
-      brightness_pct: 100
-  - service: tts.google_say
-    entity_id: media_player.cast_second_bedroom_speaker
-    data:
-      message: "Time to get up"
+      entity_id: media_player.cast_second_bedroom_speaker
+      volume_level: 0.2
   - service: media_player.play_media
+    data:
+      entity_id: media_player.cast_second_bedroom_speaker
+      media_content_id: https://myhost.dynamic.dom:18443/local/sounds/sub_alert.mp3
+      media_content_type: music
+  - delay: 00:00:03
+  # Light goes on (just in case it didn't catch the first message)
+  - service: light.turn_on
+    data:
+      entity_id: light.person1_bedroom_bedside
+      transition: 30
+      color_temp: 394
+      brightness_pct: 100
+  - service: tts.google_say
+    entity_id: media_player.cast_second_bedroom_speaker
+    data:
+      message: "Time to get up"
+  # Brief pause
+  - delay: 00:00:10
+  # A little louder now, alarm and nudge
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.cast_second_bedroom_speaker
+      volume_level: 0.3
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.cast_second_bedroom_speaker
+      media_content_id: https://myhost.dynamic.dom:18443/local/sounds/sub_alert.mp3
+      media_content_type: music
+  - delay: 00:00:03
+  - service: tts.google_say
+    entity_id: media_player.cast_second_bedroom_speaker
+    data:
+      message: "Time to get up"
+  # Turn off the GHome
+  - service: media_player.turn_off
+    data:
+      entity_id: media_player.cast_second_bedroom_speaker
+  # And if the Squeezebox isn't playing, let's turn it on and up
+  - condition: state
+    entity_id: media_player.person1
+    state: 'off'
+  - service: media_player.turn_on
     data:
       entity_id: media_player.person1
   - service: media_player.volume_set
     data:
       entity_id: media_player.person1
-      volume_level: 0.4
+      volume_level: 0.3
+  - service: media_player.media_play_pause
+    data:
+      entity_id: media_player.person1
+  # Still playing a minute later?
   - delay: 00:01:00
   - condition: state
     entity_id: media_player.person1
@@ -34,19 +71,16 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.person1_bedroom_bedside
-      effect: Alarm
-  - delay: 00:00:10
-  - service: light.turn_on
-    data:
-      entity_id: light.person1_bedroom_bedside
       transition: 30
       color_temp: 394
       brightness_pct: 100
+  # Still playing half a minute later?
   - delay: 00:00:30
   - condition: state
     entity_id: media_player.person1
     state: 'playing'
+  # Make it very loud!
   - service: media_player.volume_set
     data:
       entity_id: media_player.person1
-      volume_level: 0.5
+      volume_level: 0.4
