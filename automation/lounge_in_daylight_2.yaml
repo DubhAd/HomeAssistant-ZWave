@@ -27,5 +27,7 @@ condition:
       entity_id: binary_sensor.trend_sun_elevation
       state: 'on'
 action:
-  service: scene.turn_on
-  entity_id: scene.lounge_lights_off
+  - service: scene.turn_on
+    entity_id: scene.lounge_lights_off
+  - service: switch.turn_off
+    entity_id: switch.livingroom_socket_switch

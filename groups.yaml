@@ -941,6 +941,7 @@ my_automations_livingroom:
   - automation.dark_tv_on
   - automation.darker_tv_on
   - automation.lounge_dark_motion
+  - automation.lounge_dull
   - automation.table_light_on
   - automation.tv_off_bedtime
   - automation.lounge_in_daylight
