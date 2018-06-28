@@ -439,6 +439,10 @@ living_room_sensors:
   - binary_sensor.living_room_motion
   - sensor.living_room_multi_luminance
   - sensor.living_room_multi_temperature
+living_room_switches:
+  name: Living room switches
+  entities:
+  - switch.livingroom_socket_switch
 living_room_lights:
   name: Living room lights
   entities:
