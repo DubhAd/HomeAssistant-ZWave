@@ -979,6 +979,7 @@ my_automations_travel:
   - automation.train_status
   - automation.return_train_status
   - automation.holiday
+  - automation.holiday_over
 my_automations_people:
   name: People driven automations
   entities:
