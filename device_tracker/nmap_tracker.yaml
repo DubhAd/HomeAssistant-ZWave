@@ -5,7 +5,4 @@ track_new_devices: yes
 #scan_options: " --privileged -n -sn "
 scan_options: " --privileged -F -n --host-timeout 5s "
 hosts:
-  - 192.168.0.140-145
-  - 192.168.0.170-179
-  - 192.168.0.225-227
-  - 192.168.0.251
+  - 192.168.0.140-251
