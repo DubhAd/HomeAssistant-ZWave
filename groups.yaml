@@ -63,6 +63,7 @@ person_person2_laptop:
   icon: mdi:laptop-windows
   entities:
   - device_tracker.jayne
+  - device_tracker.9c305b3c6c87
 person_person2_work:
   name: person2's work phone
   entities:
@@ -743,7 +744,6 @@ z_wave:
   - zwave.nodon_crc3100_octan_remote
   - zwave.green_remote
   - zwave.living_room_multi
-  - zwave.front_spare_extender
   - zwave.second_bedroom
   - zwave.family_room_socket
   - zwave.hall_downstairs

@@ -129,7 +129,6 @@ sensor.office_motion:
 binary_sensor.office_multi_sensor:
   friendly_name: "Office motion sensor"
   device_class: motion
-  icon: mdi:account
 group.my_scenes:
   order: 1
 group.my_people:
