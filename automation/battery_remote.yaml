@@ -4,12 +4,18 @@ trigger:
   - platform: numeric_state
     entity_id: sensor.zwave_battery_nodon_crc3100_octan_remote
     below: 25
+    for:
+      minutes: 5
   - platform: numeric_state
     entity_id: sensor.zwave_battery_nodon_crc3100_octan_remote
     below: 10
+    for:
+      minutes: 5
   - platform: numeric_state
     entity_id: sensor.zwave_battery_nodon_crc3100_octan_remote
     below: 5
+    for:
+      minutes: 5
 action:
   service: notify.person2
   data:

@@ -230,7 +230,6 @@ device_tracker.person3_mobile_bt:
   entity_picture: /local/person3Thumb.jpg
   friendly_name: person3 BT
 binary_sensor.living_room_motion:
-  icon: mdi:account-multiple
   device_class: motion
 sensor.living_room_multi_luminance:
   friendly_name: 'Lounge Light level'
@@ -437,3 +436,9 @@ device_tracker.00e04c680550:
   picture: /local/laptop.jpg
 binary_sensor.trend_sun_elevation:
   icon: mdi:white-balance-sunny
+input_boolean.person2_home:
+  icon: mdi:human-male
+input_boolean.person3_home:
+  icon: mdi:human-female
+input_boolean.person1_home:
+  icon: mdi:human-child
