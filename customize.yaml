@@ -163,6 +163,8 @@ device_tracker.livingroom_chromecast:
 device_tracker.family_tv:
   friendly_name: "TV in the family room"
   icon: mdi:television
+device_tracker.livingroom_tv:
+  icon: mdi:television
 zwave.front_spare_extender:
   friendly_name: "Z-Wave extender"
 zwave.master_bedroom_socket:
