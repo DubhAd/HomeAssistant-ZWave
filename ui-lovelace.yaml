@@ -52,6 +52,7 @@ views:
             name: Patio door
           - entity: binary_sensor.utility_door_exterior_sensor
             name: Utility
+        show_empty: false
         state_filter:
           - 'on'
         card:
@@ -76,6 +77,10 @@ views:
           - entity: binary_sensor.utility_door_exterior_sensor
             name: Door
           - switch.garden_lights_switch
+          - entity: sensor.dark_sky_apparent_temperature
+            name: Temperature
+          - entity: sensor.dark_sky_minutely_summary
+            name: Weather
       - type: glance
         title: Scenes
         entities:
@@ -136,9 +141,11 @@ views:
     icon: mdi:floor-plan
     cards:
       - type: picture-glance
-        title: "Front of the house"
+        title: "The house"
         image: /local/images/house.jpg
         entities:
+          - binary_sensor.garage_closed_bike_sensor
+          - binary_sensor.garage_closed_car_sensor
           - binary_sensor.front_door_sensor
           - switch.number_sign_switch
           - input_boolean.person3_home
@@ -160,6 +167,7 @@ views:
           - binary_sensor.living_room_motion
         state_image: 
           "on": /local/images/living_room_night.jpg
+          "off": /local/images/living_room_day.jpg
         entity: group.living_room_lights
   - title: Who's where
     id: map
@@ -433,6 +441,12 @@ views:
       - zwave.vestibule
       - zwave.front_door
       - zwave.front_bedroom
+  - title: Z-Wave
+    panel: true
+    icon: mdi:nfc
+    cards:
+    - type: iframe
+      url: /local/z-wave-graph.html
   - title: Automations
     icon: mdi:home-variant
     cards:
