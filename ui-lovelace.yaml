@@ -532,7 +532,6 @@ views:
       - automation.number_on_in_the_morning
       - automation.number_sign_off
       - automation.person2_up_early
-      - automation.adults_away_doors_open
       - automation.garage_opened_at_night
     - type: entities
       title: Automations for the garden
@@ -543,7 +542,6 @@ views:
       - automation.nighttime_garden_off
       - automation.garden_lights_left_on
       - binary_sensor.garden_lights_left_on
-      - automation.bin_collection
     - type: entities
       title: Media automations
       entities:
