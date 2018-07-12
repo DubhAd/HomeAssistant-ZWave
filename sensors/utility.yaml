@@ -1,9 +1,0 @@
-## No longer used
-
-- platform: template
-  sensors:
-    utility_door:
-      friendly_name: 'Utility room door'
-      value_template: '{% if is_state("binary_sensor.utility_door_exterior_sensor", "on") %} open {% else %} closed {% endif %}'
-
-## No longer used

@@ -1,4 +1,11 @@
 title: Our Home
+excluded_entities:
+  - climate.living_room
+  - climate.office
+  - sensor.samsung_m283x_series_172237250
+  - sensor.samsung_m283x_series_172237250_output_tray_0
+  - sensor.samsung_m283x_series_172237250_tray_1
+  - sensor.printer
 views:
   - title: Overview
     id: overview
@@ -181,6 +188,13 @@ views:
           "on": /local/images/living_room_night.jpg
           "off": /local/images/living_room_day.jpg
         entity: group.living_room_lights
+      - type: history-graph
+        title: Temperatures
+        entities:
+          - sensor.living_room_multi_temperature
+          - sensor.office_multi_temperature
+        hours_to_show: 36
+        refresh_interval: 600
   - title: Who's where
     id: map
     icon: mdi:google-maps
@@ -240,20 +254,23 @@ views:
     id: device_status
     icon: mdi:cellphone-link
     cards:
-      - type: entities
+      - type: glance
         title: Z-Wave sensors
         entities:
-          - sensor.zwave_battery_garage_closed_bike
-          - sensor.zwave_battery_garage_closed_car
+          - entity: sensor.zwave_battery_garage_closed_bike
+            name: Garage left
+          - entity: sensor.zwave_battery_garage_closed_car
+            name: Garage car
+          - sensor.zwave_battery_front_door
+          - sensor.zwave_battery_patio_door_left
+          - entity: sensor.zwave_battery_utility_door_exterior
+            name: Utility door
           - sensor.zwave_battery_living_room_multi
           - sensor.zwave_battery_nodon_crc3100_octan_remote
           - sensor.zwave_battery_green_remote
-          - sensor.zwave_battery_utility_door_exterior
-          - sensor.zwave_battery_utility
-          - sensor.zwave_battery_patio_door_left
-          - sensor.zwave_battery_front_door
-          - sensor.zwave_battery_utility
-      - type: entities
+          - entity: sensor.zwave_battery_utility
+            name: Utility switch
+      - type: glance
         title: Mobiles etc
         entities:
           - sensor.battery_person3_mobile
@@ -261,17 +278,21 @@ views:
           - sensor.battery_person1_tablet
           - sensor.battery_person2_mobile
           - sensor.battery_person2_tablet
-      - type: entities
+      - type: glance
         title: Devices
         entities:
         - device_tracker.person1_headphones
         - device_tracker.jayne
         - group.person_person1_tablet
         - group.person_person2_tablet
-      - type: entities
+      - type: glance
         title: Printer status
         entities:
+        - entity: sensor.samsung_m283x_series_172237250_toner_black
+          name: Toner
         - sensor.printer_toner_remaining
+        - entity: sensor.samsung_m283x_series_172237250_drum_black
+          name: Drum
         - sensor.printer_imaging_unit_remaining
         - sensor.printer_forward_roller_remaining
         - sensor.printer_pick_up_roller_remaining
@@ -282,6 +303,20 @@ views:
     id: people
     icon: mdi:account-multiple
     cards:
+      - type: entities
+        title: People
+        entities:
+        - device_tracker.person3_mobile
+        - sensor.person3s_time_to_home
+        - proximity.person3_home
+        - device_tracker.person1_mobile
+        - proximity.person1_home
+        - sensor.person1s_time_to_home
+        - sensor.person1s_time_to_home_by_transit
+        - device_tracker.person2_mobile
+        - sensor.person2s_time_to_home
+        - proximity.person2_home
+        - proximity.person2_work
       - type: entities
         title: Calendars
         entities:
@@ -653,6 +688,7 @@ views:
       - automation.person2_up
       - automation.workday_for_person2
       - automation.person2_travelling
+      - automation.person2_returning
     - type: entities
       title: People driven automations - person3
       entities:
@@ -711,6 +747,7 @@ views:
       - automation.test_zwave_network
       - automation.zwave_check
       - automation.zwave_health_check
+      - automation.generate_zwave_graph
       - automation.clear_states
       - automation.sunrise_enable_automations
       - automation.recorder_purge

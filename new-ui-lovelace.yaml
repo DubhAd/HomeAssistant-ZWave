@@ -357,7 +357,7 @@ views:
     - sensor.last_boot
     - sensor.hass_installed
     - sensor.current_ha_version
-  - type: entities
+  - type: glance
     title: Printer status
     entities:
     - sensor.printer_toner_remaining
@@ -367,6 +367,7 @@ views:
     - sensor.printer_retard_roller_remaining
     - sensor.printer_transfer_roller_remaining
     - sensor.printer_fuser_life_remaining
+  - type
 - name: Information
   tab_icon: mdi:information-outline
   cards:

@@ -15,12 +15,12 @@
       platform: 'state'
       to_state: 'home'
     - entity_id: 'device_tracker.family_tv'
-      pperson2_given_true: 0.2
-      pperson2_given_false: 0.5
+      pperson2_given_true: 0.5
+      pperson2_given_false: 0.2
       platform: 'state'
       to_state: 'home'
     - entity_id: 'device_tracker.livingroom_chromecast'
-      pperson2_given_true: 0.2
-      pperson2_given_false: 0.5
+      pperson2_given_true: 0.5
+      pperson2_given_false: 0.2
       platform: 'state'
       to_state: 'home'
