@@ -165,23 +165,23 @@ views:
           - switch.livingroom_socket_switch
           - binary_sensor.patio_door_left_sensor
           - binary_sensor.living_room_motion
-        state_image: 
-          "on": /local/images/living_room_night.jpg
-          "off": /local/images/living_room_day.jpg
         entity: group.living_room_lights
   - title: Who's where
     id: map
     icon: mdi:google-maps
     cards:
       - type: map
+        title: person3
         aspect_ratio: 100%
         entities:
           - device_tracker.person3_mobile
       - type: map
+        title: person1
         aspect_ratio: 100%
         entities:
           - device_tracker.person1_mobile
       - type: map
+        title: person2
         aspect_ratio: 100%
         entities:
           - device_tracker.person2_mobile

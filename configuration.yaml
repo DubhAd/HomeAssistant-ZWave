@@ -68,7 +68,6 @@ mqtt:
 
 ####################
 
-#device_tracker: !include device_tracker.yaml
 device_tracker: !include_dir_list device_tracker/
 
 zone: !include zones.yaml
@@ -79,7 +78,6 @@ proximity: !include_dir_merge_named proximity/
 
 notify: !include_dir_merge_list notify/
 
-#alert: !include alerts.yaml
 alert: !include_dir_named alerts/
 
 lametric:
@@ -93,13 +91,10 @@ google: !include google.yaml
 ####################
 
 sensor: !include_dir_merge_list sensors/
-
 binary_sensor: !include_dir_merge_list binary_sensors/
 
 sun:
-
 camera: !include_dir_list camera/
-
 climate: !include_dir_merge_list climate/
 
 #ffmpeg:
@@ -108,37 +103,24 @@ history_graph: !include_dir_named history_graph/
 
 ####################
 
-#input_number: !include input_number.yaml
 input_number: !include_dir_named input_number/
-
-#input_boolean: !include input_boolean.yaml
 input_boolean: !include_dir_named input_boolean/
-
-#input_select: !include input_select.yaml
 input_select: !include_dir_named input_select/
 
 ####################
 
 light: !include_dir_merge_list light/
-
 switch: !include_dir_merge_list switch/
-
-#media_player: !include media_player.yaml
 media_player: !include_dir_merge_list media_player/ 
 
 ####################
 
 script: !include_dir_named scripts/
-
 automation: !include automations.yaml
-
 automation old: !include_dir_list automation/
-
 scene: !include_dir_list scenes/
-
-group: !include groups.yaml
-
 shell_command: !include_dir_merge_named shell_commands/
+group: !include groups.yaml
 
 ####################
 
