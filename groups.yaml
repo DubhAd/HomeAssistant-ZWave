@@ -4,49 +4,10 @@ trend_sensors:
   entities:
   - binary_sensor.trend_living_room_light
   - binary_sensor.trend_sun_elevation
-alarm_automations:
-  name: Alarm automations
-  view: false
-  entities:
-  - automation.doors_open_alarm_mode
-  - automation.alarm_arm_away
-  - automation.alarm_arm_at_night
-  - automation.alarm_disarm_in_the_morning
-  - automation.alarm_disarm_upon_return
-  - automation.alarm_armed_trigger
-  - automation.alarm_triggered_away
-  - automation.alarm_triggered_home
-bins:
-  name: Bin automations
-  view: false
-  entities:
-  - sensor.bin_blue
-  - sensor.bin_grey
-  - sensor.bin_brown
-new_batteries:
-  control: hidden
-  name: Mobile device battery states
-  entities:
-  - sensor.battery_person3_mobile
-  - sensor.battery_person1_mobile
-  - sensor.battery_person1_tablet
-  - sensor.battery_person2_mobile
-  - sensor.battery_person2_tablet
-zwave_batteries:
-  control: hidden
-  view: false
-  name: Z-Wave device batteries
-  entities:
-  - sensor.zwave_battery_garage_closed_bike
-  - sensor.zwave_battery_garage_closed_car
-  - sensor.zwave_battery_living_room_multi
-  - sensor.zwave_battery_nodon_crc3100_octan_remote
-  - sensor.zwave_battery_green_remote
-  - sensor.zwave_battery_utility_door_exterior
-  - sensor.zwave_battery_utility
-  - sensor.zwave_battery_patio_door_left
-  - sensor.zwave_battery_front_door
-  - sensor.zwave_battery_utility
+#alarm_automations:
+#bins:
+#new_batteries:
+#zwave_batteries:
 person_person2:
   name: person2
   entities:
@@ -105,115 +66,23 @@ my_family:
   - device_tracker.person1_mobile
   - device_tracker.person3_mobile_bt
   view: false
-my_calendars:
-  name: Calendars
-  entities:
-  - calendar.person3
-  - calendar.birthdays_and_anniversaries
-  - calendar.person1
-  - calendar.person1_holiday
-  - calendar.person2
-  - calendar.person2_family_tripit
-  - calendar.person2_work
-  - calendar.person2_wfh
-  - calendar.person2_away
-  - calendar.person2_holiday
-  view: false
-my_people_terse:
-  name: People
-  entities:
-  - sensor.person2_travel
-  - sensor.person3_travel
-  - sensor.person1_travel
-  view: false
-my_people_states:
-  name: People
-  entities:
-  - input_select.person3_status_dropdown
-  - input_select.person1_status_dropdown
-  - input_select.person2_status_dropdown
-  view: false
-my_people:
-  name: People (travel time)
-  entities:
-  - device_tracker.person3_mobile
-  - sensor.person3s_time_to_home
-  - device_tracker.person1_mobile
-  - sensor.person1s_time_to_home
-  - sensor.person1s_time_to_home_by_transit
-  - device_tracker.person2_mobile
-  - sensor.person2s_time_to_home
-  view: false
+#my_calendars:
+#my_people_terse:
+##  - sensor.person3_travel
+#my_people_states:
+#my_people:
 ######################################## ########################################
-my_pihole:
-  name: PiHole Statistics
-  view: false
-  entities:
-  - sensor.pihole_ads_blocked_today
-  - sensor.pihole_ads_percentage_blocked_today
-  - sensor.pihole_dns_queries_forwarded
-  - sensor.pihole_dns_queries_today
-  - sensor.pihole_dns_queries_clients
-  - sensor.pihole_dns_unique_clients
-  - sensor.pihole_dns_unique_domains
-  - sensor.pihole_domains_blocked
+#my_pihole:
 ######################################## ########################################
-train_status:
-  name: Ontime status
-  view: false
-  entities:
-  - binary_sensor.trains_to_xyz_ontime
-  - binary_sensor.trains_to_abc_ontime
-trains_abc_to_xyz_1:
-  name: Next train home to station
-  view: false
-  entities:
-  - sensor.next_train_xyz_status
-  - sensor.next_train_xyz_scheduled
-  - sensor.next_train_xyz_estimated
-trains_abc_to_xyz_2:
-  name: Second train home to station
-  view: false
-  entities:
-  - sensor.second_train_xyz_status
-  - sensor.second_train_xyz_scheduled
-  - sensor.second_train_xyz_estimated
-trains_abc_to_xyz_3:
-  name: Third train home to station
-  view: false
-  entities:
-  - sensor.third_train_xyz_status
-  - sensor.third_train_xyz_scheduled
-  - sensor.third_train_xyz_estimated
-trains_xyz_to_abc_1:
-  name: Next train station to home
-  view: false
-  entities:
-  - sensor.next_train_abc_status
-  - sensor.next_train_abc_scheduled
-  - sensor.next_train_abc_estimated
-trains_xyz_to_abc_2:
-  name: Second train station to home
-  view: false
-  entities:
-  - sensor.second_train_abc_status
-  - sensor.second_train_abc_scheduled
-  - sensor.second_train_abc_estimated
-trains_xyz_to_abc_3:
-  name: Third train station to home
-  view: false
-  entities:
-  - sensor.third_train_abc_status
-  - sensor.third_train_abc_scheduled
-  - sensor.third_train_abc_estimated
-######################################## ########################################
-my_system:
-  name: HA system status
-  entities:
-  - sensor.last_boot
-  - sensor.hass_installed
-  - sensor.current_ha_version
-  view: false
+#train_status:
+#trains_abc_to_xyz_1:
+#trains_abc_to_xyz_2:
+#trains_abc_to_xyz_3:
+#trains_xyz_to_abc_1:
+#trains_xyz_to_abc_2:
+#trains_xyz_to_abc_3:
+######################################### ########################################
+#my_system:
 livingroom_tv:
   name: Livingroom TV
   icon: mdi:television
@@ -258,120 +127,20 @@ tv:
   - media_player.samsung_tv_remote
   - media_player.cast_living_room_tv
   view: false
-squeezebox:
-  name: Squeezebox radios
-  entities:
-  - media_player.person2
-  - media_player.person1
-  view: false
-sonos:
-  name: Sonos speakers
-  entities:
-  - media_player.family_room
-  - media_player.living_room
-  - media_player.office
-  view: false
-my_media:
-  name: Media players
-  entities:
-    # TVs
-  - media_player.samsung_tv_remote
-  - media_player.cast_living_room_tv
-    # Google Home
-  - media_player.cast_master_bedroom_speaker
-  - media_player.cast_living_room_speaker
-  - media_player.cast_second_bedroom_speaker
-  - media_player.cast_guest_bedroom_speaker
-  - media_player.cast_kitchen_speaker
-  - media_player.cast_office_speaker
-    # Plex
-  - media_player.plex_web_chrome
-  - media_player.plex_web_chrome_2
-  - media_player.laptop
-    # Sonos
-  - media_player.family_room
-  - media_player.living_room
-  - media_player.office
-    # Squeezebox
-  - media_player.person2
-  - media_player.person1
-  view: false
-my_input_boolean_people:
-  name: Toggles for people automations
-  entities:
-  - input_boolean.person2_is_awake
-  - input_boolean.person1_is_awake
-  - input_boolean.person3_is_awake
-  - input_boolean.person2_travelling
-  - input_boolean.person1_travelling
-  - input_boolean.person3_travelling
-  - input_boolean.person2_home
-  - input_boolean.person1_home
-  - input_boolean.person3_home
-  - input_boolean.notify_train_status_work
-  - input_boolean.notify_person2_working
-  - input_boolean.notify_person1_work
-my_input_boolean:
-  name: Toggles for automations
-  entities:
-  - input_boolean.bedtime
-  - input_boolean.adults_away
-  - input_boolean.all_away
-  - input_boolean.lighting_automations
-  - input_boolean.livingroom_lights_auto
-  - input_boolean.guest_mode
-  - input_boolean.holiday_mode
-  - input_boolean.alarm_mode
-my_input_numbers:
-  name: Inputs for automations
-  entities:
-  - input_number.door_delay
-  - input_number.garden_time
-  - input_number.room_low_light
-  - input_number.room_dark
-  - input_number.light_step
-  - input_number.light_minimum
-  - input_number.light_maximum
-  - input_number.light_step_colour
-my_input_select:
-  name: Selections for automations
-  entities:
-  - input_select.season
-  - sensor.season
-#my_inputs:
-my_weather_metoffice:
-  name: Weather from the Met Office
-  entities:
-  - sensor.met_office_weather
-  - sensor.met_office_feels_like_temperature
-  - sensor.met_office_temperature
-  - sensor.met_office_probability_of_precipitation
-  - sensor.met_office_visibility
-  - sensor.met_office_visibility_distance
-  - sensor.met_office_humidity 
-  - sensor.met_office_wind_direction
-  - sensor.met_office_wind_gust
-  - sensor.met_office_wind_speed
-  - sensor.met_office_uv
-my_weather_darksky:
-  name: Weather from Dark Sky
-  entities:
-  - sensor.dark_sky_summary
-  - sensor.dark_sky_minutely_summary
-  - sensor.dark_sky_hourly_summary
-  - sensor.dark_sky_apparent_temperature
-  - sensor.dark_sky_temperature
-  - sensor.dark_sky_daily_high_temperature
-  - sensor.dark_sky_daily_low_temperature
-  - sensor.dark_sky_precip
-  - sensor.dark_sky_precip_intensity
-  - sensor.dark_sky_daily_max_precip_intensity
-  - sensor.dark_sky_precip_probability
-  - sensor.dark_sky_wind_speed
-  - sensor.dark_sky_visibility
-  - sensor.dark_sky_humidity
-  - sensor.dark_sky_cloud_coverage
-  view: false
+#squeezebox:
+#sonos:
+#my_media:
+#my_input_boolean_people:
+#my_input_boolean:
+#my_input_numbers:
+#my_input_select:
+##my_inputs:
+##  name: Inputs
+##  entities:
+##  - group.my_input_boolean
+##  - group.my_input_numbers
+#my_weather_metoffice:
+#my_weather_darksky:
 my_exterior_doors:
   name: Outside doors
   entities:
@@ -386,19 +155,8 @@ my_back_doors:
   entities:
   - binary_sensor.patio_door_left_sensor
   - binary_sensor.utility_door_exterior_sensor
-my_sensors:
-  name: Sensors
-  entities:
-  - sun.sun
-  - sensor.sun_elevation
-  view: false
-my_social:
-  name: Social media
-  entities:
-  - sensor.person1_xbox
-  - sensor.person1
-  - sensor.person2_xbox
-  view: false
+#my_sensors:
+#my_social:
 my_scenes:
   name: Scenes
   entities:
@@ -433,13 +191,7 @@ back_of_house:
   entities:
   - switch.garden_lights_switch
   view: false
-living_room_sensors:
-  name: Living room sensors
-  entities:
-  - binary_sensor.patio_door_left_sensor
-  - binary_sensor.living_room_motion
-  - sensor.living_room_multi_luminance
-  - sensor.living_room_multi_temperature
+#living_room_sensors:
 living_room_switches:
   name: Living room switches
   entities:
@@ -575,38 +327,12 @@ default_view:
   - group.front_of_house
   - group.my_people_terse
   - group.my_exterior_doors
-my_controls_spare:
-  name: Unused switches
-  view: false
-  entities:
-  - switch.spare_socket_switch
-  - switch.master_bedroom_socket_switch
-my_controls_switches:
-  name: Switches
-  view: false
-  entities:
-  - switch.table_light_switch
-  - switch.cabinet_light_switch
-  - switch.tv_light_switch
-  - switch.garden_lights_switch
-  - switch.family_room_socket_switch
-  - switch.hall_downstairs_switch
-  - switch.livingroom_socket_switch
-  - switch.vestibule_switch
-my_controls_lights:
-  name: Lights
-  view: false
-  entities:
-  - light.master_bedroom_bedhead
-  - light.person1_bedroom_bedside
-my_controls:
-  name: Lights and Switches
-  icon: mdi:toggle-switch
-  view: true
-  entities:
-  - group.my_controls_spare
-  - group.my_controls_switches
-  - group.my_controls_lights
+  - group.master_bedroom
+  - history_graph.indoor_temperature
+#my_controls_spare:
+#my_controls_switches:
+#my_controls_lights:
+#my_controls:
 second_bedroom:
   name: Second bedroom
   icon: mdi:hotel
@@ -634,23 +360,7 @@ all_lights:
   - switch.cabinet_light_switch
   - switch.tv_light_switch
   - switch.spare_socket_switch
-all_rooms:
-  name: Rooms
-  icon: mdi:checkbox-multiple-blank-outline
-  view: true
-  entities:
-  - group.living_room
-  - group.family_room
-  - group.utility
-  - group.downstairs_hall
-  - group.back_of_house
-  - group.front_of_house
-  - group.garage
-  - group.office
-  - group.back_bedroom
-  - group.master_bedroom
-  - group.second_bedroom
-  - history_graph.indoor_temperature
+#all_rooms:
 room_master_bedroom:
   name: Master bedroom
   icon: mdi:bed-empty
@@ -669,18 +379,7 @@ room_second_bedroom:
   - media_player.person1
   - media_player.cast_second_bedroom_speaker
   - script.wake_person1
-People:
-  name: People
-  icon: mdi:account-multiple
-  view: true
-  entities:
-  - group.my_people
-  - group.my_work
-  - group.my_calendars
-  - group.my_social
-  - group.my_devices
-  - group.new_batteries
-  - group.wifi_state
+#People:
 #camera_left:
 #camera_right:
 camera_view:
@@ -689,356 +388,59 @@ camera_view:
   view: true
   entities:
   - camera.front_camera
-Weather:
-  name: Weather
-  icon: mdi:weather-partlycloudy
-  view: true
-  entities:
-  - group.my_weather_darksky
-  - group.my_weather_metoffice
-Entertainment:
-  name: Media
-  icon: mdi:filmstrip
-  view: true
-  entities:
-    # TVs
-  - media_player.samsung_tv_remote
-  - media_player.cast_living_room_tv
-    # Google Home
-  - media_player.cast_master_bedroom_speaker
-  - media_player.cast_living_room_speaker
-  - media_player.cast_second_bedroom_speaker
-  - media_player.cast_guest_bedroom_speaker
-  - media_player.cast_kitchen_speaker
-  - media_player.cast_office_speaker
-    # Plex
-  - media_player.plex_web_chrome
-  - media_player.plex_web_chrome_2
-  - media_player.laptop
-    # Sonos
-  - media_player.family_room
-  - media_player.living_room
-  - media_player.office
-    # Squeezebox
-  - media_player.person2
-  - media_player.person1
-  - group.media_devices
-z_wave:
-  name: Z-Wave information
-  view: false
-  entities:
-  - zwave.zwaveme_razberry_controller_2016_zwave
-  - zwave.table_light
-  - zwave.cabinet_light
-  - zwave.tv_light
-  - zwave.number_sign
-  - zwave.garden_lights
-  - zwave.utility_door_exterior
-  - zwave.utility
-  - zwave.patio_door_left
-  - zwave.garage_closed_bike
-  - zwave.garage_closed_car
-  - zwave.spare_socket
-  - zwave.master_bedroom_socket
-  - zwave.office_multi
-  - zwave.nodon_crc3100_octan_remote
-  - zwave.green_remote
-  - zwave.living_room_multi
-  - zwave.second_bedroom
-  - zwave.family_room_socket
-  - zwave.hall_downstairs
-  - zwave.livingroom_socket
-  - zwave.vestibule
-  - zwave.front_door
-  - zwave.front_bedroom
-my_printer:
-  name: Printer status
-  view: false
-  icon: mdi:printer
-  entities:
-  - sensor.printer_toner_remaining
-  - sensor.printer_imaging_unit_remaining
-  - sensor.printer_forward_roller_remaining
-  - sensor.printer_pick_up_roller_remaining
-  - sensor.printer_retard_roller_remaining
-  - sensor.printer_transfer_roller_remaining
-  - sensor.printer_fuser_life_remaining
-my_samsung_printer:
-  name: Samsung printer
-  view: false
-  icon: mdi:printer
-  entities:
-  - sensor.samsung_m283x_series_172237250_output_tray_0
-  - sensor.samsung_m283x_series_172237250_tray_1
-  - sensor.samsung_m283x_series_172237250_drum_black
-  - sensor.samsung_m283x_series_172237250_toner_black
-########################################
-my_trains:
-  name: Train status
-  view: true
-  icon: mdi:train
-  entities:
-  - group.train_status
-  - group.trains_abc_to_xyz_1
-  - group.trains_abc_to_xyz_2
-  - group.trains_abc_to_xyz_3
-  - group.trains_xyz_to_abc_1
-  - group.trains_xyz_to_abc_2
-  - group.trains_xyz_to_abc_3
-########################################
-Spacer:
-  name: Spacer
-  view: true
-  icon: mdi:dots-horizontal
-########################################
-Network:
-  name: Network
-  icon: mdi:network
-  view: true
-  entities:
-  - group.my_pihole
-  - group.my_system
-  - group.my_printer
-Information:
-  name: Information
-  icon: mdi:information-outline
-  view: true
-  entities:
-  - group.my_sensors
-  - group.trend_sensors
-  - group.binary_sensors
-  - group.burglar
-  - group.access_control
-  - group.z_wave
-  - group.zwave_batteries
-my_scripts:
-  name: Scripts
-  entities:
-  - script.alarm_lights_enable
-  - script.alarm_lights_on
-  - script.bedhead_light_bright_pause
-  - script.bedhead_light_bright
-  - script.bedhead_light_cool_pause
-  - script.bedhead_light_cool
-  - script.bedhead_light_dim_pause
-  - script.bedhead_light_dim
-  - script.bedhead_light_warm_pause
-  - script.bedhead_light_warm
-  - script.bedtime_slow_off
-  - script.garden_door_after_sunset
-  - script.garden_door_before_sunrise
-  view: false
-my_automations_startup:
-  name: Automations at startup
-  entities:
-  - automation.startup_person3_up
-  - automation.startup_person1_up
-  - automation.startup_person2_up
-my_automations_office:
-  name: Automations for the office
-  entities:
-  - automation.play_classical_music_in_the_office
-  - automation.stop_classical_music_in_the_office
-my_automations_secondbed:
-  name: Automations for the second bedroom
-  entities:
-  - automation.person1_up_bedhead_light_on
-  - automation.person1_up_bedhead_light_off
-  - automation.person1_bedside_left_on
-  - automation.person1_radio_on
-  - automation.person1_radio_on_late
-  - automation.person1_radio_on_night
-  - automation.person1_radio_off
-  - automation.person1_radio_off_late
-  - automation.person1_bedside_turn_on
-  - automation.person1_bedside_turn_off
-  - automation.person1_bedside_turn_on_min
-  - automation.person1_bedside_turn_on_min_2
-  - automation.person1_bedside_turn_on_max
-  - automation.person1_bedside_turn_on_cool
-  - automation.person1_bedside_turn_on_warm
-  - automation.person1_bedside_turn_white
-  - automation.person1_bedside_turn_white_max
-  - automation.person1_bedside_turn_on_red
-  - automation.person1_bedside_turn_red
-my_automations_masterbed:
-  name: Automations for the master bedroom
-  entities:
-  - automation.person2_up_bedhead_light_on
-  - automation.person2_up_bedhead_light_off
-  - automation.bedhead_light_left_on
-  - automation.bedhead_light_on_night
-  - automation.bedhead_light_dim_sunset
-  - automation.bedhead_light_dim_sunset_off
-  - automation.bedhead_light_dim
-  - automation.bedhead_light_dim_off
-  - automation.bedhead_light_dim_late
-  - automation.bedhead_light_dim_late_off
-  - automation.bedhead_light_dim_midnight
-  - automation.bedhead_light_dim_midnight_off
-  - automation.bedhead_light_bright_sunrise
-  - automation.bedhead_light_on_morning
-  - automation.late_disable_fluxer
-my_automations_bedhead_remote:
-  name: Remote automations for the light
-  entities:
-  - automation.bedhead_turn_on
-  - automation.bedhead_turn_off
-  - automation.bedhead_turn_on_min
-  - automation.bedhead_turn_on_min_2
-  - automation.bedhead_turn_on_max
-  - automation.bedhead_turn_on_cool
-  - automation.bedhead_turn_on_warm
-  - automation.bedhead_turn_white
-  - automation.bedhead_turn_white_max
-  - automation.bedhead_turn_on_red
-  - automation.bedhead_turn_red
-  - automation.master_bedhead_bright
-  - automation.master_bedhead_bright_pause
-  - automation.master_bedhead_bright_stop
-  - automation.master_bedhead_dim
-  - automation.master_bedhead_dim_pause
-  - automation.master_bedhead_dim_stop
-  - automation.master_bedhead_cool
-  - automation.master_bedhead_cool_pause
-  - automation.master_bedhead_cool_stop
-  - automation.master_bedhead_warm
-  - automation.master_bedhead_warm_pause
-  - automation.master_bedhead_warm_stop
-my_automations_front:
-  name: Automations for the front of the house
-  entities:
-  - automation.number_on_at_sunset
-  - automation.number_on_in_the_morning
-  - automation.number_sign_off
-  - automation.person2_up_early
-  - automation.garage_door_opened
-  - automation.garage_door_closed
-  - automation.adults_away_doors_open
-  - automation.garage_opened_at_night
-  view: false
-my_automations_garden:
-  name: Automations for the garden
-  entities:
-  - automation.utility_door_open_after_sunset_closed
-  - automation.utility_door_open_after_sunset_turn_on
-  - automation.utility_door_open_after_sunset_turn_off
-  - automation.nighttime_garden_off
-  - input_slider.door_delay
-  - automation.garden_lights_left_on
-  - input_slider.garden_time
-  - binary_sensor.garden_lights_left_on
-  - automation.bin_collection
-  view: false
-#my_automations_remotes:
-my_automations_familyroom:
-  name: Automations for the Family room
-  entities:
-  - automation.moved_to_family_room
-my_automations_livingroom:
-  name: Automations for the Living room
-  entities:
-  - automation.all_away_lights_off
-  - automation.all_away_media_off
-  - automation.adults_home_lights_on
-  - automation.adults_home_dark
-  - automation.dark_tv_on
-  - automation.darker_tv_on
-  - automation.lounge_dark_motion
-  - automation.lounge_dull
-  - automation.table_light_on
-  - automation.tv_off_bedtime
-  - automation.lounge_in_daylight
-  - automation.lounge_in_daylight_2
-  - automation.lounge_off
-  view: false
-my_automations_downstairs_other:
-  name: Automations for downstairs
-  entities:
-  - automation.hall_lights_on
-  - automation.hall_lights_off
-  - automation.hall_lights_off_departure
-  view: false
-my_automations_general:
-  name: Misc automations
-  entities:
-  - automation.house_awake
-  - automation.weather_notification
-  - automation.bin_notification
-  - automation.printer_low
-  - automation.test
-  - automation.test_notify
-  - automation.test_media
-  view: false
-my_automations_travel:
-  name: Automations for travel
-  entities:
-  - automation.person2_coming_home
-  - automation.person2_at_station
-  - automation.person3_coming_home
-  - automation.train_status
-  - automation.return_train_status
-  - automation.holiday
-  - automation.holiday_over
-my_automations_people:
-  name: People driven automations
-  entities:
-  - automation.bedtime
-  - automation.adults_away
-  - automation.adults_returned
-  - automation.all_away
-  - automation.all_returned
-  - automation.mark_person_as_just_arrived
-  - automation.mark_person_as_away
-  - automation.mark_person_as_home
-  - automation.mark_person_as_just_left
-my_automations_people_person1:
-  name: People driven automations - person1
-  entities:
-  - automation.person1_asleep
-  - automation.person1_up
-  - automation.person1_up_reminder
-  - automation.person1_home
-  - automation.person1_away
-  - automation.person1_at_work
-  - automation.person1_returning
-  - automation.person1_home_after_work
-  - automation.wake_person1
-  - automation.person1_mobile_low_battery
-  - automation.person1_travelling
-my_automations_people_person3:
-  name: People driven automations - person3
-  entities:
-  - automation.person3_up
-  - automation.person3_home
-  - automation.person3_away
-  - automation.person3_travelling
-my_automations_people_person2:
-  name: People driven automations - person2
-  entities:
-  - automation.person2_asleep
-  - automation.person2_home
-  - automation.person2_away
-  - automation.person2_up
-  - automation.workday_for_person2
-  - automation.person2_travelling
-my_automations_input:
-  name: Automations changing inputs
-  entities:
-  - automation.not_workday_for_person2
-  - automation.person2_working_from_home
-  - automation.person2_working_trains
-  - automation.person2_working_away
-  - automation.person2_not_working_away
-  - automation.work_day_for_person1
-  - automation.not_work_day_for_person1
-  view: false
-my_automations_media:
-  name: Media automations
-  entities:
-  - automation.tv_on_sonos_off
-  - automation.sonos_on_tv_mute
-  - automation.sonos_off_tv_unmute
+#Weather:
+#Entertainment:
+#z_wave:
+#my_printer:
+#my_samsung_printer:
+#########################################
+#my_trains:
+#########################################
+#Spacer:
+#########################################
+#Network:
+#Information:
+#my_scripts:
+#my_automations_startup:
+#my_automations_office:
+#my_automations_secondbed:
+#my_automations_masterbed:
+#my_automations_bedhead_remote:
+#my_automations_front:
+#my_automations_garden:
+##  - automation.utility_door_open_before_sunrise_closed
+##  - automation.utility_door_open_before_sunrise_turn_on
+##  - automation.utility_door_open_before_sunrise_turn_off
+##  - automation.garden_lights_turned_on
+##  - automation.garden_lights_turned_off
+##my_automations_remotes:
+##  name: Automations for Remotes
+##  view: false
+##  entities:
+##  - automation.remote_switch_circle_pressed
+##  - automation.remote_switch_disc_pressed
+##  - automation.remote_switch_hold_minus__activate_bedtime
+##  - automation.remote_switch_plus__lounge_lights_on
+##  - automation.remote_switch_minus__lounge_lights_off
+##  - automation.remote_switch_long_press_plus__lounge_lights_off
+#my_automations_familyroom:
+#my_automations_livingroom:
+#my_automations_downstairs_other:
+#my_automations_general:
+##  - automation.bin_collection_check
+##  - automation.flight_seen_arriving
+##  - automation.flight_seen_departing
+#my_automations_travel:
+#my_automations_people:
+#my_automations_people_person1:
+#my_automations_people_person3:
+#my_automations_people_person2:
+##  - automation.status_person2_arrived
+##  - automation.status_person2_away
+##  - automation.status_person2_home
+##  - automation.status_person2_left
+#my_automations_input:
+#my_automations_media:
 my_automations_battery:
   name: Battery level automations
   entities:
@@ -1051,123 +453,16 @@ my_automations_battery:
   - automation.battery_patio_door_left
   - automation.battery_remote
   - automation.battery_green_remote
-my_automations_seasons:
-  name: Seasonal automations
-  icon: mdi:pine-tree
-  entities:
-  - automation.christmas_lights_on
-  - automation.christmas_lights_off
-  - automation.christmas_lights_off_season
-  - automation.winter_lights_on
-  - automation.winter_lights_off
-  - automation.winter_lights_off_season
-  - automation.season_is_christmas
-  - automation.season_is_easter
-  - automation.season_is_winter
-  - automation.season_is_spring
-  - automation.season_is_summer
-  - automation.season_is_autumn
-my_automations_downstairs:
-  name: Automations
-  icon: mdi:home-variant
-  view: true
-  entities:
-  - group.my_automations_livingroom
-  - group.my_automations_familyroom
-  - group.my_automations_downstairs_other
-  - group.my_automations_front
-  - group.my_automations_garden
-  - group.my_automations_media
-my_automations_upstairs:
-  name: Upstairs automations
-  icon: mdi:home-modern
-  view: true
-  entities:
-  - group.my_automations_masterbed
-  - group.my_automations_bedhead_remote
-  - group.my_automations_secondbed
-  - group.my_automations_office
-my_automations_other:
-  name: More Automations
-  icon: mdi:engine-outline
-  view: true
-  entities:
-  - group.my_automations_startup
-  - group.my_automations_battery
-  - group.my_automations_general
-  - group.my_automations_seasons
-my_automations:
-  name: Automations
-  icon: mdi:engine
-  view: true
-  entities:
-  - group.my_automations_people
-  - group.my_automations_people_person2
-  - group.my_automations_people_person3
-  - group.my_automations_people_person1
-  - group.my_automations_travel
-  - group.my_automations_input
-ha_automations_core:
-  name: Core HA automations
-  view: false
-  entities:
-  - automation.ha_update_available_notifications
-  - automation.ha_started
-  - automation.ha_started_later
-  - automation.ha_stopped
-  - automation.ha_ready
-ha_automations_misc:
-  name: Misc HA automations
-  view: false
-  entities:
-  - automation.test_zwave_network
-  - automation.zwave_check
-  - automation.zwave_health_check
-  - automation.clear_states
-  - automation.sunrise_enable_automations
-  - automation.recorder_purge
-view_ha_automations:
-  name: Automations about Home Assistant
-  icon: mdi:settings
-  view: true
-  entities:
-  - group.ha_automations_core
-  - group.ha_automations_misc
-view_alarm:
-  name: Alarm automations
-  icon: mdi:alarm-bell
-  view: true
-  entities:
-  - group.my_alarm
-  - group.alarm_automations
-view_inputs:
-  name: Inputs
-  icon: mdi:information-variant
-  view: true
-  entities:
-  - group.my_input_boolean
-  - group.my_input_boolean_people
-  - group.my_input_numbers
-  - group.my_input_select
-  - group.my_people_states
-  - switch.fluxer
+#my_automations_seasons:
+#my_automations_downstairs:
+#my_automations_upstairs:
+#my_automations_other:
+##  - group.my_scripts
+#my_automations:
+#ha_automations_core:
+#ha_automations_misc:
+#view_ha_automations:
+#view_alarm:
+#view_inputs:
 #my_floorplan:
-view_scripts:
-  name: scripts
-  icon: mdi:script
-  view: true
-  entities:
-  - script.alarm_lights_enable
-  - script.alarm_lights_on
-  - script.bedhead_light_bright_pause
-  - script.bedhead_light_bright
-  - script.bedhead_light_cool_pause
-  - script.bedhead_light_cool
-  - script.bedhead_light_dim_pause
-  - script.bedhead_light_dim
-  - script.bedhead_light_warm_pause
-  - script.bedhead_light_warm
-  - script.bedtime_slow_off
-  - script.garden_door_after_sunset
-  - script.garden_door_before_sunrise
-  - script.wake_person1
+#view_scripts:

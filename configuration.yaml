@@ -166,5 +166,3 @@ google_assistant: !include google_assistant.yaml
 weather:
   - platform: metoffice
     api_key: !secret metoffice_key
-  - platform: openweathermap
-    api_key: !secret openweathermap_key

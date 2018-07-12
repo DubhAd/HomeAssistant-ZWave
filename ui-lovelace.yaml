@@ -6,6 +6,18 @@ views:
     cards:
     - type: vertical-stack
       cards:
+      - type: entity-filter
+        entities:
+          - entity: alert.garage_door_l
+            name: Garage door, bike
+          - entity: alert.garage_door_r
+            name: Garage door, car
+        show_empty: false
+        state_filter:
+          - 'on'
+        card:
+          type: entities
+          title: Alerts
       - type: glance
         title: People
         entities:
@@ -165,6 +177,9 @@ views:
           - switch.livingroom_socket_switch
           - binary_sensor.patio_door_left_sensor
           - binary_sensor.living_room_motion
+        state_image: 
+          "on": /local/images/living_room_night.jpg
+          "off": /local/images/living_room_day.jpg
         entity: group.living_room_lights
   - title: Who's where
     id: map
