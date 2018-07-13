@@ -459,6 +459,12 @@ views:
       entities:
       - sun.sun
       - sensor.sun_elevation
+    - type: history-graph
+      title: Temperatures
+      entities:
+        - sensor.sun_elevation
+      hours_to_show: 48
+      refresh_interval: 600
     - type: entities
       title: Trend sensors
       entities:
