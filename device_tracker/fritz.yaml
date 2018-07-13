@@ -1,0 +1,3 @@
+platform: fritz
+#username: !secret router_user
+#password: !secret router_pass

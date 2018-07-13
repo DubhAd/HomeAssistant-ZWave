@@ -328,7 +328,6 @@ default_view:
   - group.my_people_terse
   - group.my_exterior_doors
   - group.master_bedroom
-  - history_graph.indoor_temperature
 #my_controls_spare:
 #my_controls_switches:
 #my_controls_lights:

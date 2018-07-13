@@ -175,6 +175,11 @@ views:
           "on": /local/images/house_away.jpg
         entity: input_boolean.all_away
       - type: picture-glance
+        image: /local/images/downstairs_hall.jpg
+        title: Downstairs hall
+        entities:
+          - switch.hall_downstairs_switch
+      - type: picture-glance
         image: /local/images/living_room_day.jpg
         title: Living room
         entities:
@@ -188,6 +193,16 @@ views:
           "on": /local/images/living_room_night.jpg
           "off": /local/images/living_room_day.jpg
         entity: group.living_room_lights
+      - type: picture-glance
+        image: /local/images/master_bedroom.jpg
+        title: Master bedroom
+        entities:
+          - light.master_bedroom_bedhead
+      - type: picture-glance
+        image: /local/images/second_bedroom.jpg
+        title: Second bedroom
+        entities:
+          - light.person1_bedroom_bedside
       - type: history-graph
         title: Temperatures
         entities:
