@@ -100,16 +100,6 @@ views:
             name: Temperature
           - entity: sensor.dark_sky_minutely_summary
             name: Weather
-      - type: glance
-        title: Scenes
-        entities:
-        - entity: scene.lounge_lights_on
-          name: "Lounge on"
-        - entity: scene.lounge_lights_off
-          name: "Lounge off"
-        - scene.all_lights_off
-        - entity: scene.bedtime_all_off
-          name: "Bedtime"
     - type: vertical-stack
       cards:
       - type: glance
@@ -314,42 +304,6 @@ views:
         - sensor.printer_retard_roller_remaining
         - sensor.printer_transfer_roller_remaining
         - sensor.printer_fuser_life_remaining
-  - title: People
-    id: people
-    icon: mdi:account-multiple
-    cards:
-      - type: entities
-        title: People
-        entities:
-        - device_tracker.person3_mobile
-        - sensor.person3s_time_to_home
-        - proximity.person3_home
-        - device_tracker.person1_mobile
-        - proximity.person1_home
-        - sensor.person1s_time_to_home
-        - sensor.person1s_time_to_home_by_transit
-        - device_tracker.person2_mobile
-        - sensor.person2s_time_to_home
-        - proximity.person2_home
-        - proximity.person2_work
-      - type: entities
-        title: Calendars
-        entities:
-        - calendar.person3
-        - calendar.birthdays_and_anniversaries
-        - calendar.person1
-        - calendar.person1_holiday
-        - calendar.person2
-        - calendar.person2_family_tripit
-        - calendar.person2_work
-        - calendar.person2_wfh
-        - calendar.person2_away
-        - calendar.person2_holiday
-      - type: entities
-        title: Work
-        entities:
-        - group.person_person2_work
-        - device_tracker.00e04c680550
   - title: Cameras
     id: cameras
     icon: mdi:video
@@ -466,6 +420,42 @@ views:
   - title: Spacer
     icon: mdi:dots-horizontal
     cards: []
+  - title: People
+    id: people
+    icon: mdi:account-multiple
+    cards:
+      - type: entities
+        title: People
+        entities:
+        - device_tracker.person3_mobile
+        - sensor.person3s_time_to_home
+        - proximity.person3_home
+        - device_tracker.person1_mobile
+        - proximity.person1_home
+        - sensor.person1s_time_to_home
+        - sensor.person1s_time_to_home_by_transit
+        - device_tracker.person2_mobile
+        - sensor.person2s_time_to_home
+        - proximity.person2_home
+        - proximity.person2_work
+      - type: entities
+        title: Calendars
+        entities:
+        - calendar.person3
+        - calendar.birthdays_and_anniversaries
+        - calendar.person1
+        - calendar.person1_holiday
+        - calendar.person2
+        - calendar.person2_family_tripit
+        - calendar.person2_work
+        - calendar.person2_wfh
+        - calendar.person2_away
+        - calendar.person2_holiday
+      - type: entities
+        title: Work
+        entities:
+        - group.person_person2_work
+        - device_tracker.00e04c680550
   - title: Information
     icon: mdi:information-outline
     cards:
