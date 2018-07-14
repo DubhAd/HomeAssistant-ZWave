@@ -36,8 +36,6 @@ action:
     # Disable the turning on of the lights automatically
   - service: homeassistant.turn_off
     entity_id: automation.adults_home_lights_on
-  - service: homeassistant.turn_off
-    entity_id: input_boolean.livingroom_lights_auto
     # Now turn the lights off
   - service: script.turn_on
     entity_id: script.bedtime_slow_off

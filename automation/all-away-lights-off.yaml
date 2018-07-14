@@ -27,5 +27,3 @@ condition:
 action:
   - service: scene.turn_on
     entity_id: scene.all_lights_off
-  - service: homeassistant.turn_off
-    entity_id: input_boolean.livingroom_lights_auto
