@@ -1,9 +1,9 @@
 initial_state: 'on'
 alias: 'Number on at sunset'
 trigger:
-  - platform: state
-    entity_id: sun.sun
-    to: 'below_horizon'
+  - platform: numeric_state
+    entity_id: sensor.sun_elevation
+    below: 0
   - platform: homeassistant
     event: start
 condition:
@@ -14,13 +14,13 @@ condition:
       state: 'off'
     - condition: time
       after: '12:00:00'
-    - condition: state
-      entity_id: sun.sun
-      state: 'below_horizon'
+    - condition: numeric_state
+      entity_id: sensor.sun_elevation
+      below: 0
 action:
   - service: switch.turn_on
     entity_id: switch.number_sign_switch
-  - delay: 00:01:00
+  - delay: 00:00:30
   - condition: state
     entity_id: switch.number_sign_switch
     state: 'off'

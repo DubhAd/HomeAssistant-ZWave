@@ -15,7 +15,7 @@ action:
     data:
       entity_id: light.master_bedroom_bedhead
       color_name: "red"
-      brightness_pct: 5
+      brightness_pct: 2
   - service: script.turn_off
     data:
       entity_id: script.bedhead_light_warm_pause, script.bedhead_light_cool_pause, script.bedhead_light_bright_pause, script.bedhead_light_dim_pause, script.bedhead_light_warm, script.bedhead_light_cool, script.bedhead_light_bright, script.bedhead_light_dim
