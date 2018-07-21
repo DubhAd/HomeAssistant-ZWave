@@ -3,7 +3,9 @@ alias: 'Lounge in daylight'
 trigger:
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    above: 75
+    above: 60
+    for:
+      minutes: 5
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     above: 30
@@ -22,7 +24,7 @@ condition:
         # Very bright, or...
       - condition: numeric_state
         entity_id: sensor.living_room_multi_luminance
-        above: 70
+        above: 40
         # Sun is rising
       - condition: state
         entity_id: binary_sensor.trend_sun_elevation

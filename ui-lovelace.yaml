@@ -39,6 +39,7 @@ views:
           - switch.table_light_switch
           - entity: switch.livingroom_socket_switch
             name: "Socket"
+            tap_action: toggle
           - entity: binary_sensor.patio_door_left_sensor
             name: "Patio door"
           - entity: binary_sensor.living_room_motion
