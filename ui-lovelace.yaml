@@ -27,16 +27,20 @@ views:
           title: Alerts
       - type: glance
         title: People
+        column_width: 33%
         entities:
-          - input_select.person3_status_dropdown
-          - input_select.person1_status_dropdown
-          - input_select.person2_status_dropdown
+          - sensor.person3_travel
+          - sensor.person1_travel
+          - sensor.person2_travel
       - type: glance
         title: Living room
         entities:
-          - switch.tv_light_switch
-          - switch.cabinet_light_switch
-          - switch.table_light_switch
+          - entity: switch.tv_light_switch
+            tap_action: toggle
+          - entity: switch.cabinet_light_switch
+            tap_action: toggle
+          - entity: switch.table_light_switch
+            tap_action: toggle
           - entity: switch.livingroom_socket_switch
             name: "Socket"
             tap_action: toggle
@@ -52,13 +56,17 @@ views:
             name: TV
       - type: glance
         title: Hall and front
+        column_width: 25%
         entities:
-          - switch.number_sign_switch
+          - entity: switch.number_sign_switch
+            tap_action: toggle
           - binary_sensor.front_door_sensor
           - entity: switch.vestibule_switch
             name: Vestibule
+            tap_action: toggle
           - entity: switch.hall_downstairs_switch
             name: Hall lights
+            tap_action: toggle
     - type: vertical-stack
       cards:
       - type: entity-filter
@@ -91,20 +99,26 @@ views:
             name: Home Mini
           - entity: switch.family_room_socket_switch
             name: Socket
+            tap_action: toggle
       - type: glance
         title: Utility room & outside
+        column_width: 25%
         entities:
           - entity: binary_sensor.utility_door_exterior_sensor
             name: Door
-          - switch.garden_lights_switch
+          - entity: switch.garden_lights_switch
+            tap_action: toggle
           - entity: sensor.dark_sky_apparent_temperature
             name: Temperature
           - entity: sensor.dark_sky_minutely_summary
             name: Weather
+      - type: weather-forecast
+        entity: weather.met_office_home
     - type: vertical-stack
       cards:
       - type: glance
         title: Master bedroom
+        column_width: 25%
         entities:
           - entity: light.master_bedroom_bedhead
             name: Bedhead
@@ -116,6 +130,7 @@ views:
             name: Socket
       - type: glance
         title: Second bedroom
+        column_width: 25%
         entities:
           - entity: light.person1_bedroom_bedside
             name: Bedhead
@@ -127,6 +142,7 @@ views:
             name: Socket
       - type: glance
         title: Guest bedroom
+        column_width: 33%
         entities:
           - entity: media_player.cast_guest_bedroom_speaker
             name: Home Mini
@@ -335,20 +351,8 @@ views:
       - sensor.dark_sky_visibility
       - sensor.dark_sky_humidity
       - sensor.dark_sky_cloud_coverage
-    - type: entities
-      title: Weather from the Met Office
-      entities:
-      - sensor.met_office_weather
-      - sensor.met_office_feels_like_temperature
-      - sensor.met_office_temperature
-      - sensor.met_office_probability_of_precipitation
-      - sensor.met_office_visibility
-      - sensor.met_office_visibility_distance
-      - sensor.met_office_humidity
-      - sensor.met_office_wind_direction
-      - sensor.met_office_wind_gust
-      - sensor.met_office_wind_speed
-      - sensor.met_office_uv
+    - type: weather-forecast
+      entity: weather.met_office_home
   - title: Train status
     id: train_status
     icon: mdi:train
@@ -364,6 +368,7 @@ views:
       cards:
       - type: glance
         title: Next train home to station
+        column_width: 33%
         entities:
         - entity: sensor.next_train_xyz_status
           name: Status
@@ -373,6 +378,7 @@ views:
           name: Expected
       - type: glance
         title: Second train home to station
+        column_width: 33%
         entities:
         - entity: sensor.second_train_xyz_status
           name: Status
@@ -382,6 +388,7 @@ views:
           name: Expected
       - type: glance
         title: Third train home to station
+        column_width: 33%
         entities:
         - entity: sensor.third_train_xyz_status
           name: Status
@@ -393,6 +400,7 @@ views:
       cards:
       - type: glance
         title: Next train station to home
+        column_width: 33%
         entities:
         - entity: sensor.next_train_abc_status
           name: Status
@@ -402,6 +410,7 @@ views:
           name: Expected
       - type: glance
         title: Second train station to home
+        column_width: 33%
         entities:
         - entity: sensor.second_train_abc_status
           name: Status
@@ -411,6 +420,7 @@ views:
           name: Expected
       - type: glance
         title: Third train station to home
+        column_width: 33%
         entities:
         - entity: sensor.third_train_abc_status
           name: Status
@@ -466,9 +476,10 @@ views:
       - sun.sun
       - sensor.sun_elevation
     - type: history-graph
-      title: Temperatures
+      title: Sun
       entities:
-        - sensor.sun_elevation
+        - entity: sensor.sun_elevation
+          name: Elevation
       hours_to_show: 48
       refresh_interval: 600
     - type: entities
