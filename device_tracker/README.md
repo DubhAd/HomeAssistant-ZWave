@@ -3,7 +3,7 @@
 Components:
 * [bluetooth device tracker](https://home-assistant.io/components/device_tracker.bluetooth_tracker/)
 * [GPSlogger](https://home-assistant.io/components/device_tracker.gpslogger/)
-* [nmap device tracker](https://home-assistant.io/components/device_tracker.nmap_tracker/)
+* [Fritz!Box](https://www.home-assistant.io/components/device_tracker.fritz/)
 
 You can read about [my approach here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html)
 
@@ -15,6 +15,6 @@ Relatively short range, but unlike WiFi devices don't turn this off when they go
 
 For knowing (roughly) where people are. This is used for the proximity and travel time sensors, and other automations.
 
-## nmap
+## Fritz!Box
 
-Used for detecting when devices are home, from mobile devices to media players. Modern smart phones turn their WiFi off when they go into deep sleep though, so by itself it's not reliable.
+I recently upgraded my home router (well, my ISP gave me the option of a free upgrade), and I've switched to using this instead of [nmap](https://www.home-assistant.io/components/device_tracker.nmap_tracker/).
