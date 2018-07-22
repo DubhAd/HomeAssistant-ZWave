@@ -231,7 +231,7 @@ views:
         hours_to_show: 36
         refresh_interval: 600
   - title: Who's where
-    id: map
+    id: locations
     icon: mdi:google-maps
     cards:
       - type: map
@@ -249,6 +249,21 @@ views:
         aspect_ratio: 100%
         entities:
           - device_tracker.person2_mobile
+  - title: Map
+    id: map
+    icon: mdi:map
+    panel: true
+    cards:
+      - type: map
+        entities:
+          - device_tracker.person3_mobile
+          - device_tracker.person1_mobile
+          - device_tracker.person2_mobile
+          - zone.home
+          - zone.elliott
+          - zone.zane
+          - zone.home_station
+          - zone.work
   - title: Media players downstairs
     id: media_downstairs
     icon: mdi:movie
