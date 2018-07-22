@@ -3,9 +3,12 @@ alias: 'Lounge in daylight'
 trigger:
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    above: 60
+    above: 70
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 50
     for:
-      minutes: 5
+      minutes: 20
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     above: 30
@@ -16,9 +19,14 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
     # Lights are on
-    - condition: state
-      entity_id: group.living_room_lights
-      state: 'on'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: group.living_room_lights
+        state: 'on'
+      - condition: state
+        entity_id: switch.livingroom_socket_switch
+        state: 'on'
     - condition: or
       conditions:
         # Very bright, or...

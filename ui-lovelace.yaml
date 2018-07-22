@@ -2,6 +2,12 @@ title: Our Home
 excluded_entities:
   - climate.living_room
   - climate.office
+  - device_tracker.echo_dot6n6
+  - device_tracker.jasons_iphone
+  - device_tracker.link_sc17_zgp
+  - device_tracker.parrot_ck3100
+  - device_tracker.rac_cf19
+  - device_tracker.person2_5x
   - sensor.samsung_m283x_series_172237250
   - sensor.samsung_m283x_series_172237250_output_tray_0
   - sensor.samsung_m283x_series_172237250_tray_1
@@ -44,6 +50,7 @@ views:
             tap_action: toggle
           - entity: switch.livingroom_socket_switch
             name: "Socket"
+            icon: mdi:power-socket-uk
             tap_action: toggle
           - entity: media_player.samsung_tv_remote
             name: TV
@@ -101,6 +108,7 @@ views:
             name: Home Mini
           - entity: switch.family_room_socket_switch
             name: Socket
+            icon: mdi:power-socket-uk
             tap_action: toggle
       - type: glance
         title: Utility room & outside
@@ -130,6 +138,7 @@ views:
           - entity: media_player.cast_master_bedroom_speaker
             name: Home Mini
           - entity: switch.master_bedroom_socket_switch
+            icon: mdi:power-socket-uk
             name: Socket
       - type: glance
         title: Second bedroom
@@ -151,7 +160,8 @@ views:
             name: Home Mini
           - entity: switch.front_bedroom_switch
             name: Socket
-          - switch.spare_socket_switch
+          - entity: switch.spare_socket_switch
+            icon: mdi:power-socket-uk
       - type: glance
         title: Office
         entities:
