@@ -456,6 +456,38 @@ views:
           name: Scheduled
         - entity: sensor.third_train_abc_estimated
           name: Expected
+  - title: Floorplan
+    id: floorplan
+    icon: mdi:floor-plan
+    panel: true
+    cards: 
+      - type: picture-elements
+        image: /local/images/lovelace-floorplan.svg
+        elements:
+        - type: image
+          image: /local/images/patio.svg
+          entity: binary_sensor.patio_door_left_sensor
+          state_filter:
+            'on': hue-rotate(90deg)
+          style:
+            top: 9%
+            left: 11.5%
+            width: 3%
+            height: 0.5%
+            border: 1px solid red
+            border-radius: 1%
+        - type: image
+          image: /local/images/light-circle.svg
+          entity: switch.tv_light_switch
+          tap_action: toggle
+          state_filter:
+            'on': brightness(110%) hue-rotate(90deg)
+          style:
+            top: 25%
+            left: 25%
+            border: 1px solid red
+            border-radius: 1%
+ 
   - title: Spacer
     icon: mdi:dots-horizontal
     cards: []
