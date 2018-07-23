@@ -469,24 +469,72 @@ views:
           entity: binary_sensor.patio_door_left_sensor
           state_filter:
             'on': hue-rotate(90deg)
+            'off': hue-rotate(30deg)
           style:
-            top: 9%
+            top: 8.7%
             left: 11.5%
-            width: 3%
-            height: 0.5%
-            border: 1px solid red
-            border-radius: 1%
+            width: 3.5%
+        - type: image
+          image: /local/images/patio.svg
+          entity: binary_sensor.utility_door_exterior_sensor
+          state_filter:
+            'on': hue-rotate(90deg)
+            'off': hue-rotate(30deg)
+          style:
+            top: 8.7%
+            left: 29.6%
+            width: 3.8%
         - type: image
           image: /local/images/light-circle.svg
           entity: switch.tv_light_switch
           tap_action: toggle
           state_filter:
-            'on': brightness(110%) hue-rotate(90deg)
+            'on': brightness(310%) hue-rotate(10deg)
+            'off': brightness(10%) hue-rotate(0deg)
           style:
-            top: 25%
-            left: 25%
-            border: 1px solid red
-            border-radius: 1%
+            top: 14%
+            left: 7.5%
+        - type: image
+          image: /local/images/light-circle.svg
+          entity: switch.table_light_switch
+          tap_action: toggle
+          state_filter:
+            'on': brightness(310%) hue-rotate(10deg)
+            'off': brightness(10%) hue-rotate(0deg)
+          style:
+            top: 44%
+            left: 5%
+        - type: image
+          image: /local/images/light-circle.svg
+          entity: switch.cabinet_light_switch
+          tap_action: toggle
+          state_filter:
+            'off': brightness(10%) 
+            'on': brightness(300%) 
+          style:
+            top: 14%
+            left: 23%
+            "color": yellow
+        - type: image
+          image: /local/images/tv.svg
+          entity: media_player.samsung_tv_remote
+          state_filter:
+            'off': brightness(10%)
+            'on': brightness(180%) hue-rotate(120deg)
+          style:
+            top: 16.2%
+            left: 4.7%
+            "transform": rotate(335deg) scale(1.3,1.3)
+        - type: image
+          image: /local/images/tv.svg
+          entity: device_tracker.family_tv
+          state_filter:
+            'off': brightness(10%)
+            'on': brightness(300%)
+          style:
+            top: 69%
+            left: 33%
+            "transform": rotate(270deg) scale(1,1)
  
   - title: Spacer
     icon: mdi:dots-horizontal
