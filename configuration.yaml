@@ -151,9 +151,4 @@ google_assistant: !include google_assistant.yaml
 #
 #cast:
 
-weather:
-  - platform: metoffice
-    api_key: !secret metoffice_key
-  - platform: openweathermap
-    api_key: !secret openweathermap_key
-  - platform: yweather
+weather: !include_dir_merge_list weather/
