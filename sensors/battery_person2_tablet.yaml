@@ -1,10 +1,10 @@
 - platform: template
   sensors:
     battery_person2_tablet:
-      value_template: '{{ states.device_tracker.person2_tablet.attributes.battery|default(0)|int() }}'
+      value_template: '{{ states.device_tracker.person2_table_5.attributes.battery|default(50)|int() }}'
       unit_of_measurement: "%"
       icon_template: >
-        {% set battery_level = states.device_tracker.person2_tablet.attributes.battery|default(0)|int %}
+        {% set battery_level = states.device_tracker.person2_table_5.attributes.battery|default(50)|int %}
         {% set battery_round = (battery_level / 10) |int * 10 %}
         {% if battery_round >= 100 %}
           mdi:battery

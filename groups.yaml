@@ -17,10 +17,9 @@ person_person2_tablet:
   name: person2's tablet
   icon: mdi:tablet-android
   entities:
-  - device_tracker.person2s_tablet_bt
-  - device_tracker.person2_tablet
   - device_tracker.person2s_m5
   - device_tracker.pc1722372113
+  - device_tracker.person2_tablet_5
 person_person2_laptop:
   name: person2's laptop
   icon: mdi:laptop-windows
