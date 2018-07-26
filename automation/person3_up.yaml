@@ -11,8 +11,8 @@ trigger:
     entity_id: input_select.person3_status_dropdown
     to: 'Away'
   - platform: state
-    entity_id: sensor.utility_door
-    to: 'open'
+    entity_id: binary_sensor.utility_door_exterior_sensor
+    to: 'on'
 condition:
   - condition: or
     conditions:

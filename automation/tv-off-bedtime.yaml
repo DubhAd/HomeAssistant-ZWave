@@ -12,8 +12,8 @@ trigger:
     for:
       minutes: 5
   - platform: state
-    entity_id: sensor.utility_door
-    to: 'closed'
+    entity_id: binary_sensor.utility_door_exterior_sensor
+    to: 'off'
 condition:
   - condition: and
     conditions:
