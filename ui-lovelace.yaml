@@ -16,6 +16,8 @@ views:
   - title: Overview
     id: overview
     icon: mdi:home
+    badges:
+    - alarm_control_panel.ha_alarm
     cards:
     #####
     - type: vertical-stack
