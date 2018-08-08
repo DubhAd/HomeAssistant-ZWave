@@ -847,6 +847,7 @@ views:
       - automation.person3_coming_home
       - automation.train_status
       - automation.return_train_status
+      - automation.return_train_watcher
       - automation.holiday
       - automation.holiday_over
     - type: entities

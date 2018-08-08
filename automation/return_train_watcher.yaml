@@ -1,0 +1,32 @@
+initial_state: 'on'
+alias: 'Return train watcher'
+trigger:
+  - platform: template
+    value_template: >-
+      {%- macro getTrainStatus() -%}
+      
+      {%- for train in states.sensor.next_train_to_abc.attributes.next_trains -%}
+      {%- if train.status == "ON TIME" -%}
+        X
+      {%- endif -%}
+      {%- endfor -%}
+      {%- endmacro -%}
+      
+      {%- if getTrainStatus()[:-2] == "XXXX" -%}
+      true
+      {%- else -%}
+      false
+      {%- endif -%}
+condition:
+  condition: and
+  conditions: 
+    - condition: zone
+      zone: zone.work
+      entity_id: device_tracker.person2_mobile
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+action:
+  service: notify.person2
+  data_template: 
+    message: "You need to check the trains, they're looking a bit messed up"
