@@ -252,7 +252,7 @@ views:
             - device_tracker.person1_mobile
             - device_tracker.person2_mobile
             - zone.home
-            - zone.friend1t
+            - zone.friend1
             - zone.friend2
             - zone.home_station
             - zone.work
