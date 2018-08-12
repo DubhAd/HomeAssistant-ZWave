@@ -1,7 +1,0 @@
-- platform: sonos
-  entity_namespace: sonos
-  hosts:
-    - 192.168.0.180
-    - 192.168.0.182
-    - 192.168.0.183
-    - 192.168.0.184

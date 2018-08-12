@@ -36,7 +36,8 @@ views:
           title: Alerts
       - type: glance
         title: People
-        column_width: 33%
+        #column_width: 33%
+        column_width: calc(100% / 3)
         entities:
           - sensor.person3_travel
           - sensor.person1_travel
@@ -66,7 +67,8 @@ views:
             name: "Light level"
       - type: glance
         title: Hall and front
-        column_width: 25%
+        #column_width: 25%
+        column_width: calc(100% / 4)
         entities:
           - entity: switch.number_sign_switch
             tap_action: toggle
@@ -114,7 +116,8 @@ views:
             tap_action: toggle
       - type: glance
         title: Utility room & outside
-        column_width: 25%
+        #column_width: 25%
+        column_width: calc(100% / 4)
         entities:
           - entity: binary_sensor.utility_door_exterior_sensor
             name: Door
@@ -125,13 +128,14 @@ views:
           - entity: sensor.dark_sky_minutely_summary
             name: Weather
       - type: weather-forecast
-        entity: weather.met_office_home
+        entity: weather.openweathermap # hourly
     #####
     - type: vertical-stack
       cards:
       - type: glance
         title: Master bedroom
-        column_width: 25%
+        #column_width: 25%
+        column_width: calc(100% / 4)
         entities:
           - entity: light.master_bedroom_bedhead
             name: Bedhead
@@ -144,7 +148,8 @@ views:
             name: Socket
       - type: glance
         title: Second bedroom
-        column_width: 25%
+        #column_width: 25%
+        column_width: calc(100% / 4)
         entities:
           - entity: light.person1_bedroom_bedside
             name: Bedhead
@@ -156,7 +161,8 @@ views:
             name: Socket
       - type: glance
         title: Guest bedroom
-        column_width: 33%
+        #column_width: 33%
+        column_width: calc(100% / 3)
         entities:
           - entity: media_player.cast_guest_bedroom_speaker
             name: Home Mini
@@ -246,8 +252,8 @@ views:
             - device_tracker.person1_mobile
             - device_tracker.person2_mobile
             - zone.home
-            - zone.elliott
-            - zone.zane
+            - zone.friend1t
+            - zone.friend2
             - zone.home_station
             - zone.work
         - type: horizontal-stack
@@ -381,6 +387,12 @@ views:
       - sensor.dark_sky_cloud_coverage
     - type: weather-forecast
       entity: weather.met_office_home
+    - type: weather-forecast
+      entity: weather.dark_sky  # hourly
+    - type: weather-forecast
+      entity: weather.openweathermap # hourly
+    - type: weather-forecast
+      entity: weather.yweather # Daily
   - title: Train status
     id: train_status
     icon: mdi:train
@@ -396,7 +408,8 @@ views:
       cards:
       - type: glance
         title: Next train home to station
-        column_width: 33%
+        #column_width: 33%
+        column_width: calc(100% / 3)
         entities:
         - entity: sensor.next_train_xyz_status
           name: Status
@@ -406,7 +419,8 @@ views:
           name: Expected
       - type: glance
         title: Second train home to station
-        column_width: 33%
+        #column_width: 33%
+        column_width: calc(100% / 3)
         entities:
         - entity: sensor.second_train_xyz_status
           name: Status
@@ -416,7 +430,8 @@ views:
           name: Expected
       - type: glance
         title: Third train home to station
-        column_width: 33%
+        #column_width: 33%
+        column_width: calc(100% / 3)
         entities:
         - entity: sensor.third_train_xyz_status
           name: Status
@@ -428,7 +443,8 @@ views:
       cards:
       - type: glance
         title: Next train station to home
-        column_width: 33%
+        #column_width: 33%
+        column_width: calc(100% / 3)
         entities:
         - entity: sensor.next_train_abc_status
           name: Status
@@ -438,7 +454,8 @@ views:
           name: Expected
       - type: glance
         title: Second train station to home
-        column_width: 33%
+        #column_width: 33%
+        column_width: calc(100% / 3)
         entities:
         - entity: sensor.second_train_abc_status
           name: Status
@@ -448,7 +465,8 @@ views:
           name: Expected
       - type: glance
         title: Third train station to home
-        column_width: 33%
+        #column_width: 33%
+        column_width: calc(100% / 3)
         entities:
         - entity: sensor.third_train_abc_status
           name: Status
@@ -547,14 +565,14 @@ views:
         title: People
         entities:
         - device_tracker.person3_mobile
-        - sensor.person3s_time_to_home
+        - sensor.person3s_time_to_home_2
         - proximity.person3_home
         - device_tracker.person1_mobile
         - proximity.person1_home
-        - sensor.person1s_time_to_home
+        - sensor.person1s_time_to_home_2
         - sensor.person1s_time_to_home_by_transit
         - device_tracker.person2_mobile
-        - sensor.person2s_time_to_home
+        - sensor.person2s_time_to_home_2
         - proximity.person2_home
         - proximity.person2_work
       - type: entities

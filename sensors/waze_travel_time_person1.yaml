@@ -1,5 +1,5 @@
 - platform: waze_travel_time
   name: 'person1s time to home'
   origin: device_tracker.person1_mobile
-  destination: !secret home_location
+  destination: zone.home
   region: 'EU'

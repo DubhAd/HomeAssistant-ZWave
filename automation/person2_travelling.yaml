@@ -2,7 +2,7 @@ alias: 'person2 Travelling'
 initial_state: 'on'
 trigger:
   - platform: numeric_state
-    entity_id: sensor.person2s_time_to_home
+    entity_id: sensor.person2s_time_to_home_2
     above: '180'
     for:
       hours: 3
@@ -17,7 +17,7 @@ condition:
     entity_id: input_boolean.person2_home
     state: 'off'
   - condition: numeric_state
-    entity_id: sensor.person2s_time_to_home
+    entity_id: sensor.person2s_time_to_home_2
     above: '180'
 action:
   - service: input_boolean.turn_on
