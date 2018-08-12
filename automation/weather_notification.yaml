@@ -17,4 +17,4 @@ action:
   - service: notify.lm_notify
     data_template:
       message: >-
-        {{ states('sensor.dark_sky_minutely_summary') }} {{ states('sensor.dark_sky_hourly_summary') }}
+        {{ states('sensor.dark_sky_temperature')|round(0) }}C outside and {{ states('sensor.dark_sky_minutely_summary')|lower }} {{ states('sensor.dark_sky_hourly_summary') }}
