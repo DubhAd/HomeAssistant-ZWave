@@ -8,5 +8,5 @@
         {% elif not is_state("device_tracker.person1_mobile", "not_home") %}
           At {{ states("device_tracker.person1_mobile") }}
         {% else %}
-          {{ states.sensor.person1s_time_to_home.attributes.duration }} to home
+          {{ state_attr('sensor.person1s_time_to_home_2', 'duration') }} to home
         {% endif %}

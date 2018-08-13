@@ -12,7 +12,7 @@ trigger:
       {%- endfor -%}
       {%- endmacro -%}
       
-      {%- if getTrainStatus()[:-2] == "XXXX" -%}
+      {%- if getTrainStatus()[1,4] == "XXXX" -%}
       true
       {%- else -%}
       false
