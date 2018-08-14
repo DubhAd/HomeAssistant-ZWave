@@ -10,6 +10,15 @@ sensor.hass_installed:
   icon: mdi:folder-download
 sensor.current_ha_version:
   icon: mdi:github-circle
+sensor.person1s_time_to_home_2:
+  entity_picture: /local/person1Thumb.jpg
+  friendly_name: "person1's travel time to home"
+sensor.person2s_time_to_home_2:
+  entity_picture: /local/person2Thumb.jpg
+  friendly_name: "person2's travel time to home"
+sensor.person3s_time_to_home_2:
+  entity_picture: /local/person3Thumb.jpg
+  friendly_name: "person3's travel time to home"
 sensor.person1s_time_to_home:
   entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1's travel time to home"
@@ -22,6 +31,9 @@ sensor.person2s_time_to_home:
 sensor.person3s_time_to_home:
   entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3's travel time to home"
+sensor.person4s_time_to_home:
+  entity_picture: /local/person4Thumb.jpg
+  friendly_name: "person4's travel time to home"
 sensor.person2_travel:
   entity_picture: /local/person2Thumb.jpg
   friendly_name: "person2"
@@ -218,6 +230,8 @@ zwave.zwaveme_razberry_controller_2016_zwave:
   icon: mdi:raspberrypi
 binary_sensor.workday_sensor:
   icon: mdi:calendar-clock
+group.person_dor:
+  entity_picture: /local/person4Thumb.jpg
 group.person_person2:
   entity_picture: /local/person2Thumb.jpg
 device_tracker.person2_mobile_bt:
@@ -316,36 +330,55 @@ binary_sensor.garden_lights_left_on:
   icon: mdi:lightbulb
 sensor.zwave_battery_garage_car:
   friendly_name: "Garage door (tilt), car"
+  device_class: battery
 sensor.zwave_battery_garage_closed_bike:
   friendly_name: "Garage door, bike"
+  device_class: battery
 sensor.zwave_battery_garage_closed_car:
   friendly_name: "Garage door, car"
+  device_class: battery
 sensor.zwave_battery_garage_door_bike:
   friendly_name: "Garage door (tilt), bike"
+  device_class: battery
 sensor.zwave_battery_living_room_multi:
   friendly_name: "Living room multi-sensor"
+  device_class: battery
 sensor.zwave_battery_nodon_crc3100_octan_remote:
   friendly_name: "Nodon remote"
+  device_class: battery
 sensor.zwave_battery_green_remote:
   friendly_name: "Green remote"
+  device_class: battery
 sensor.zwave_battery_patio_door_left:
   friendly_name: "Patio door (left)"
+  device_class: battery
 sensor.zwave_battery_utility_door_exterior:
   friendly_name: "Utility door strip"
+  device_class: battery
 sensor.zwave_battery_utility:
   friendly_name: "Utility exterior switch"
+  device_class: battery
 sensor.zwave_battery_front_door:
   friendly_name: "Front door"
+  device_class: battery
+sensor.battery_person4_mobile:
+  friendly_name: "person4's mobile"
+  device_class: battery
 sensor.battery_person3_mobile:
   friendly_name: "person3's mobile"
+  device_class: battery
 sensor.battery_person1_mobile:
   friendly_name: "person1's mobile"
+  device_class: battery
 sensor.battery_person1_tablet:
   friendly_name: "person1's tablet"
+  device_class: battery
 sensor.battery_person2_mobile:
   friendly_name: "person2's mobile"
+  device_class: battery
 sensor.battery_person2_tablet:
   friendly_name: "person2's tablet"
+  device_class: battery
 sensor.printer_forward_roller_remaining:
   friendly_name: "Forward roller remaining"
 sensor.printer_fuser_life_remaining:

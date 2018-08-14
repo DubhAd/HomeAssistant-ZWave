@@ -1,0 +1,12 @@
+- platform: template
+  sensors:
+    person4_travel:
+      friendly_name: "person4's location"
+      value_template: >-
+        {% if is_state("group.person_dor", "home") %} 
+          {{ states("input_select.person4_stats_dropdown") }}
+        {% elif not is_state("device_tracker.person4_mobile", "not_home") %}
+          At {{ states("device_tracker.person4_mobile") }}
+        {% else %}
+          {{ state_attr('sensor.person4s_time_to_home', 'duration')|round(0) }} {{ state_attr('sensor.person4s_time_to_home', 'unit_of_measurement') }} to home
+        {% endif %}
