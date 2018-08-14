@@ -8,6 +8,11 @@ trend_sensors:
 #bins:
 #new_batteries:
 #zwave_batteries:
+person_dor:
+  name: person4
+  entities:
+  - device_tracker.001d29a549ae
+  - device_tracker.person4_mobile
 person_person2:
   name: person2
   entities:
