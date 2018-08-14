@@ -31,9 +31,15 @@ sensor.person2s_time_to_home:
 sensor.person3s_time_to_home:
   entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3's travel time to home"
+device_tracker.person4_mobile:
+  entity_picture: /local/person4Thumb.jpg
+  friendly_name: person4
 sensor.person4s_time_to_home:
   entity_picture: /local/person4Thumb.jpg
   friendly_name: "person4's travel time to home"
+sensor.person4_travel:
+  entity_picture: /local/person4Thumb.jpg
+  friendly_name: "person4"
 sensor.person2_travel:
   entity_picture: /local/person2Thumb.jpg
   friendly_name: "person2"

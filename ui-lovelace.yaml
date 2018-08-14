@@ -36,12 +36,12 @@ views:
           title: Alerts
       - type: glance
         title: People
-        #column_width: 33%
-        column_width: calc(100% / 3)
+        column_width: calc(100% / 4)
         entities:
           - sensor.person3_travel
           - sensor.person1_travel
           - sensor.person2_travel
+          - sensor.person4_travel
       - type: glance
         title: Living room
         column_width: calc(100% / 4)
@@ -339,6 +339,7 @@ views:
           - sensor.battery_person1_tablet
           - sensor.battery_person2_mobile
           - sensor.battery_person2_tablet
+          - sensor.battery_person4_mobile
       - type: glance
         title: Devices
         entities:
