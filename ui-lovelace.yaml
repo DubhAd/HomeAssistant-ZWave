@@ -1,6 +1,8 @@
 title: Our Home
 resources:
-  - url: /local/google-calendar-card.js?v=1
+  - url: /local/monster-card.js?v=2
+    type: js
+  - url: /local/dist/google-calendar-card.js?v=1
     type: module
   - url: https://use.fontawesome.com/releases/v5.2.0/css/all.css
     type: css
@@ -572,38 +574,52 @@ views:
     id: people
     icon: mdi:account-multiple
     cards:
+    - type: vertical-stack
+      cards:
       - type: entities
-        title: People
+        title: person3
         entities:
         - device_tracker.person3_mobile
         - sensor.person3s_time_to_home_2
         - proximity.person3_home
-        - device_tracker.person1_mobile
-        - proximity.person1_home
-        - sensor.person1s_time_to_home_2
-        - sensor.person1s_time_to_home_by_transit
+      - type: custom:google-calendar-card
+        entities: 
+          - calendar.person3
+    - type: vertical-stack
+      cards:
+      - type: entities
+        title: person2
+        entities:
         - device_tracker.person2_mobile
         - sensor.person2s_time_to_home_2
         - proximity.person2_home
-        - proximity.person2_work
-      - type: entities
-        title: Calendars
-        entities:
-        - calendar.person3
-        - calendar.birthdays_and_anniversaries
-        - calendar.person1
-        - calendar.person1_holiday
-        - calendar.person2
-        - calendar.person2_family_tripit
-        - calendar.person2_work
-        - calendar.person2_wfh
-        - calendar.person2_away
         - calendar.person2_holiday
+      - type: custom:google-calendar-card
+        entities:
+          - calendar.person2
+          - calendar.person2_work
+          - calendar.birthdays_and_anniversaries
       - type: entities
         title: Work
         entities:
         - group.person_person2_work
         - device_tracker.00e04c680550
+        - proximity.person2_work
+        - calendar.person2_wfh
+        - calendar.person2_away
+    - type: vertical-stack
+      cards:
+      - type: entities
+        title: person1
+        entities:
+        - device_tracker.person1_mobile
+        - sensor.person1s_time_to_home_2
+        - sensor.person1s_time_to_home_by_transit
+        - proximity.person1_home
+        - calendar.person1_holiday
+      - type: custom:google-calendar-card
+        entities:
+          - calendar.person1
   - title: Information
     icon: mdi:information-outline
     cards:
@@ -1002,7 +1018,18 @@ views:
   - title: Test
     id: monster-test
     cards:
+    - type: custom:monster-card
+      card:
+        type: glance
+        title: Monster
+      filter:
+        include:
+          - domain: light
+            state: 'on'
     - type: custom:google-calendar-card
       entities: 
         - calendar.person3
         - calendar.person2
+        - calendar.person1
+        - calendar.birthdays_and_anniversaries
+        - calendar.person2_work
