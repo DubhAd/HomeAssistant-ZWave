@@ -1,4 +1,7 @@
 title: Our Home
+resources:
+  - url: /local/monster-card.js?v=1
+    type: js
 excluded_entities:
   - climate.living_room
   - climate.office
@@ -994,4 +997,14 @@ views:
       - script.garden_door_after_sunset
       - script.garden_door_before_sunrise
       - script.wake_person1
-    
+  - title: Test
+    id: monster-test
+    cards:
+    - type: custom:monster-card
+      card:
+        type: glance
+        title: Monster
+      filter:
+        include:
+          - domain: light
+            state: 'on'
