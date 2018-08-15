@@ -1,7 +1,9 @@
 title: Our Home
 resources:
-  - url: /local/monster-card.js?v=1
-    type: js
+  - url: /local/google-calendar-card.js?v=1
+    type: module
+  - url: https://use.fontawesome.com/releases/v5.2.0/css/all.css
+    type: css
 excluded_entities:
   - climate.living_room
   - climate.office
@@ -1000,11 +1002,7 @@ views:
   - title: Test
     id: monster-test
     cards:
-    - type: custom:monster-card
-      card:
-        type: glance
-        title: Monster
-      filter:
-        include:
-          - domain: light
-            state: 'on'
+    - type: custom:google-calendar-card
+      entities: 
+        - calendar.person3
+        - calendar.person2
