@@ -1,9 +1,4 @@
-trend_sensors:
-  name: Trend sensors
-  view: false
-  entities:
-  - binary_sensor.trend_living_room_light
-  - binary_sensor.trend_sun_elevation
+#trend_sensors:
 #alarm_automations:
 #bins:
 #new_batteries:
@@ -89,44 +84,11 @@ my_family:
 #trains_xyz_to_abc_3:
 ######################################### ########################################
 #my_system:
-livingroom_tv:
-  name: Livingroom TV
-  icon: mdi:television
-  entities:
-  - device_tracker.livingroom_chromecast
-  - device_tracker.tv_living_room
-my_work:
-  name: Work
-  entities:
-  - group.person_person2_work
-  - device_tracker.00e04c680550
-  view: false
-my_devices:
-  name: Devices
-  entities:
-  - device_tracker.person1_headphones
-  - group.person_person1_tablet
-  - device_tracker.jayne
-  - group.person_person2_tablet
-  view: false
-my_switches:
-  name: Switches
-  entities:
-  - switch.table_light_switch
-  - switch.cabinet_light_switch
-  - switch.tv_light_switch
-  - switch.number_sign_switch
-  - switch.garden_lights_switch
-  - switch.master_bedroom_socket_switch
-  - switch.family_room_socket_switch
-  - switch.hall_downstairs_switch
-  - switch.livingroom_socket_switch
-  - switch.vestibule_switch
-  view: false
-hall_lights:
-  name: Hall lights
-  entities:
-  - switch.hall_downstairs_switch
+#livingroom_tv:
+#my_work:
+#my_devices:
+#my_switches:
+#hall_lights:
 tv:
   name: TVs
   entities:
@@ -156,52 +118,19 @@ my_exterior_doors:
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
   view: false
-my_back_doors:
-  name: Doors at the back
-  entities:
-  - binary_sensor.patio_door_left_sensor
-  - binary_sensor.utility_door_exterior_sensor
+#my_back_doors:
 #my_sensors:
 #my_social:
-my_scenes:
-  name: Scenes
-  entities:
-  - scene.lounge_lights_on
-  - scene.lounge_lights_off
-  - scene.all_lights_off
-  - scene.bedtime_all_off
-  view: false
+#my_scenes:
 #garden_lights:
 #number_sign:
-utility:
-  name: Utility room
-  icon: mdi:washing-machine
-  entities:
-  - binary_sensor.utility_door_exterior_sensor
-  view: false
-garage:
-  name: Garage
-  icon: mdi:garage
-  entities:
-  - binary_sensor.garage_closed_bike_sensor
-  - binary_sensor.garage_closed_car_sensor
-  view: false
+#utility:
+#garage:
 #outside_doors:
-front_of_house:
-  name: Front of house
-  entities:
-  - switch.number_sign_switch
-  view: false
-back_of_house:
-  name: Back of house
-  entities:
-  - switch.garden_lights_switch
-  view: false
+#front_of_house:
+#back_of_house:
 #living_room_sensors:
-living_room_switches:
-  name: Living room switches
-  entities:
-  - switch.livingroom_socket_switch
+#living_room_switches:
 living_room_lights:
   name: Living room lights
   entities:
@@ -209,190 +138,47 @@ living_room_lights:
   - switch.cabinet_light_switch
   - switch.tv_light_switch
   view: false
-downstairs_hall:
-  name: Downstairs hall
-  control: hidden
-  view: false
-  entities:
-  - binary_sensor.front_door_sensor
-  - switch.vestibule_switch
-  - switch.hall_downstairs_switch
-family_room:
-  name: Family room
-  control: hidden
-  view: false
-  entities:
-  - switch.family_room_socket_switch
-living_room:
-  name: Living room
-  control: hidden
-  icon: mdi:seat-recline-extra
-  entities:
-  - binary_sensor.living_room_motion
-  - binary_sensor.patio_door_left_sensor
-  - sensor.living_room_multi_luminance
-  - sensor.living_room_multi_temperature
-  - switch.table_light_switch
-  - switch.cabinet_light_switch
-  - switch.tv_light_switch
-  - switch.livingroom_socket_switch
-downstairs:
-  name: Downstairs
-  icon: mdi:checkbox-multiple-blank-outline
-  entities:
-  - group.living_room_lights
-  - group.living_room_sensors
-  - group.family_room
-  - group.downstairs_hall
-  - switch.family_room_socket_switch
-  - switch.hall_downstairs_switch
-binary_sensors:
-  name: Binary sensors
-  entities:
-  - binary_sensor.living_room_motion
-  - binary_sensor.living_room_multi_sensor
-  - binary_sensor.office_multi_sensor
-  - binary_sensor.front_door_sensor
-  - binary_sensor.patio_door_left_sensor
-  - binary_sensor.utility_door_exterior_sensor
-  - binary_sensor.garage_closed_bike_sensor
-  - binary_sensor.garage_closed_car_sensor
-  - binary_sensor.garage_closed_bike
-  - binary_sensor.garage_closed_car
-  - binary_sensor.workday_sensor
-  - binary_sensor.zwave_health
-  - binary_sensor.garden_lights_left_on
-  view: false
-access_control:
-  name: Access control
-  entities:
-  - sensor.front_door_access_control
-  - sensor.garage_closed_bike_access_control
-  - sensor.garage_closed_car_access_control
-  - sensor.utility_door_exterior_access_control
-  - sensor.patio_door_left_access_control
-burglar:
-  name: Burglar sensors
-  entities:
-  - sensor.front_door_burglar
-  - sensor.garage_closed_bike_burglar
-  - sensor.garage_closed_car_burglar
-  - sensor.living_room_multi_burglar
-  - sensor.office_multi_burglar
-  - sensor.utility_door_exterior_burglar
-  - sensor.patio_door_left_burglar
-office:
-  name: Office
-  icon: mdi:domain
-  entities:
-  - binary_sensor.office_multi_sensor
-  - sensor.office_multi_luminance
-  - sensor.office_multi_temperature
-  - sensor.office_multi_relative_humidity
-  view: false
-back_bedroom:
-  name: Back bedroom
-  icon: mdi:hotel
-  entities:
-  - switch.spare_socket_switch
-  view: false
-media_devices:
-  name: Media Devices
-  entities:
-  - device_tracker.family_tv
-  - device_tracker.livingroom_chromecast
-  - device_tracker.tv_living_room
-  view: false
-my_alerts:
-  name: Alerts
-  entities:
-  - alert.garage_door_l
-  - alert.garage_door_r
-  view: false
-my_alarm:
-  name: Alarm
-  view: false
-  entities:
-  - alarm_control_panel.ha_alarm
-my_cameras:
-  name: Cameras
-  view: false
-  entities:
-  - camera.front_camera
+#downstairs_hall:
+#family_room:
+#living_room:
+#downstairs:
+#binary_sensors:
+##  - binary_sensor.garage_door_bike_sensor
+##  - binary_sensor.garage_car_sensor
+##  - binary_sensor.garage_door_l
+##  - binary_sensor.garage_door_r
+#access_control:
+#burglar:
+##  - sensor.garage_car_burglar
+##  - sensor.garage_door_bike_burglar
+#office:
+#back_bedroom:
+#media_devices:
+##  - group.livingroom_tv
+#my_alerts:
+#my_alarm:
+#my_cameras:
 default_view:
   name: My Home
   icon: mdi:home
   view: true
   entities:
   - alarm_control_panel.ha_alarm
-  - group.my_alerts
-  - group.my_scenes
-  - group.living_room_lights
-  - group.downstairs_hall
-  - group.back_of_house
-  - group.front_of_house
-  - group.my_people_terse
-  - group.my_exterior_doors
-  - group.master_bedroom
 #my_controls_spare:
 #my_controls_switches:
 #my_controls_lights:
 #my_controls:
-second_bedroom:
-  name: Second bedroom
-  icon: mdi:hotel
-  entities:
-  - switch.second_bedroom_switch
-  - light.person1_bedroom_bedside
-master_bedroom_lights:
-  name: Master bedroom lights
-  icon: mdi:hotel
-  entities:
-  - light.master_bedroom_bedhead
-master_bedroom:
-  name: Master bedroom
-  icon: mdi:hotel
-  entities:
-  - light.master_bedroom_bedhead
-  - switch.master_bedroom_socket_switch
-all_lights:
-  name: All lights
-  icon: mdi:lightbulb
-  entities:
-  - light.master_bedroom_bedhead
-  - light.person1_bedroom_bedside
-  - switch.table_light_switch
-  - switch.cabinet_light_switch
-  - switch.tv_light_switch
-  - switch.spare_socket_switch
+#second_bedroom:
+#master_bedroom_lights:
+#master_bedroom:
+#all_lights:
 #all_rooms:
-room_master_bedroom:
-  name: Master bedroom
-  icon: mdi:bed-empty
-  view: true
-  entities:
-  - light.master_bedroom_bedhead
-  - switch.master_bedroom_socket_switch
-  - media_player.person2
-  - media_player.cast_master_bedroom_speaker
-room_second_bedroom:
-  name: person1's bedroom
-  icon: mdi:hotel
-  view: true
-  entities:
-  - light.person1_bedroom_bedside
-  - media_player.person1
-  - media_player.cast_second_bedroom_speaker
-  - script.wake_person1
+#room_master_bedroom:
+#room_second_bedroom:
 #People:
 #camera_left:
 #camera_right:
-camera_view:
-  name: Cameras
-  icon: mdi:video
-  view: true
-  entities:
-  - camera.front_camera
+#camera_view:
 #Weather:
 #Entertainment:
 #z_wave:
