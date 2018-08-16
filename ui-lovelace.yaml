@@ -270,17 +270,21 @@ views:
         - type: horizontal-stack
           cards:
           - type: map
-            aspect_ratio: 81%
+            aspect_ratio: 105%
             entities:
               - device_tracker.person3_mobile
           - type: map
-            aspect_ratio: 81%
+            aspect_ratio: 105%
             entities:
               - device_tracker.person1_mobile
           - type: map
-            aspect_ratio: 81%
+            aspect_ratio: 105%
             entities:
               - device_tracker.person2_mobile
+          - type: map
+            aspect_ratio: 105%
+            entities:
+              - device_tracker.person4_mobile
   - title: Media players downstairs
     id: media_downstairs
     icon: mdi:movie
@@ -322,6 +326,15 @@ views:
     icon: mdi:cellphone-link
     cards:
       - type: glance
+        title: Mobiles etc
+        entities:
+          - sensor.battery_person3_mobile
+          - sensor.battery_person1_mobile
+          - sensor.battery_person1_tablet
+          - sensor.battery_person2_mobile
+          - sensor.battery_person2_tablet
+          - sensor.battery_person4_mobile
+      - type: glance
         title: Z-Wave sensors
         entities:
           - entity: sensor.zwave_battery_garage_closed_bike
@@ -338,16 +351,8 @@ views:
           - entity: sensor.zwave_battery_utility
             name: Utility switch
       - type: glance
-        title: Mobiles etc
-        entities:
-          - sensor.battery_person3_mobile
-          - sensor.battery_person1_mobile
-          - sensor.battery_person1_tablet
-          - sensor.battery_person2_mobile
-          - sensor.battery_person2_tablet
-          - sensor.battery_person4_mobile
-      - type: glance
         title: Devices
+        column_width: calc(100% / 4)
         entities:
         - device_tracker.person1_headphones
         - device_tracker.jayne
@@ -411,81 +416,84 @@ views:
     cards:
     - type: glance
       title: Ontime status
+      column_width: calc(100% / 2)
       entities:
       - entity: binary_sensor.trains_to_xyz_ontime
         name: To work
       - entity: binary_sensor.trains_to_abc_ontime
         name: To home
-    - type: vertical-stack
+    - type: horizontal-stack
       cards:
-      - type: glance
-        title: Next train home to station
-        #column_width: 33%
-        column_width: calc(100% / 3)
-        entities:
-        - entity: sensor.next_train_xyz_status
-          name: Status
-        - entity: sensor.next_train_xyz_scheduled
-          name: Scheduled
-        - entity: sensor.next_train_xyz_estimated
-          name: Expected
-      - type: glance
-        title: Second train home to station
-        #column_width: 33%
-        column_width: calc(100% / 3)
-        entities:
-        - entity: sensor.second_train_xyz_status
-          name: Status
-        - entity: sensor.second_train_xyz_scheduled
-          name: Scheduled
-        - entity: sensor.second_train_xyz_estimated
-          name: Expected
-      - type: glance
-        title: Third train home to station
-        #column_width: 33%
-        column_width: calc(100% / 3)
-        entities:
-        - entity: sensor.third_train_xyz_status
-          name: Status
-        - entity: sensor.third_train_xyz_scheduled
-          name: Scheduled
-        - entity: sensor.third_train_xyz_estimated
-          name: Expected
-    - type: vertical-stack
-      cards:
-      - type: glance
-        title: Next train station to home
-        #column_width: 33%
-        column_width: calc(100% / 3)
-        entities:
-        - entity: sensor.next_train_abc_status
-          name: Status
-        - entity: sensor.next_train_abc_scheduled
-          name: Scheduled
-        - entity: sensor.next_train_abc_estimated
-          name: Expected
-      - type: glance
-        title: Second train station to home
-        #column_width: 33%
-        column_width: calc(100% / 3)
-        entities:
-        - entity: sensor.second_train_abc_status
-          name: Status
-        - entity: sensor.second_train_abc_scheduled
-          name: Scheduled
-        - entity: sensor.second_train_abc_estimated
-          name: Expected
-      - type: glance
-        title: Third train station to home
-        #column_width: 33%
-        column_width: calc(100% / 3)
-        entities:
-        - entity: sensor.third_train_abc_status
-          name: Status
-        - entity: sensor.third_train_abc_scheduled
-          name: Scheduled
-        - entity: sensor.third_train_abc_estimated
-          name: Expected
+      - type: vertical-stack
+        cards:
+        - type: glance
+          title: Next train home to station
+          #column_width: 33%
+          column_width: calc(100% / 3)
+          entities:
+          - entity: sensor.next_train_xyz_status
+            name: Status
+          - entity: sensor.next_train_xyz_scheduled
+            name: Scheduled
+          - entity: sensor.next_train_xyz_estimated
+            name: Expected
+        - type: glance
+          title: Second train home to station
+          #column_width: 33%
+          column_width: calc(100% / 3)
+          entities:
+          - entity: sensor.second_train_xyz_status
+            name: Status
+          - entity: sensor.second_train_xyz_scheduled
+            name: Scheduled
+          - entity: sensor.second_train_xyz_estimated
+            name: Expected
+        - type: glance
+          title: Third train home to station
+          #column_width: 33%
+          column_width: calc(100% / 3)
+          entities:
+          - entity: sensor.third_train_xyz_status
+            name: Status
+          - entity: sensor.third_train_xyz_scheduled
+            name: Scheduled
+          - entity: sensor.third_train_xyz_estimated
+            name: Expected
+      - type: vertical-stack
+        cards:
+        - type: glance
+          title: Next train station to home
+          #column_width: 33%
+          column_width: calc(100% / 3)
+          entities:
+          - entity: sensor.next_train_abc_status
+            name: Status
+          - entity: sensor.next_train_abc_scheduled
+            name: Scheduled
+          - entity: sensor.next_train_abc_estimated
+            name: Expected
+        - type: glance
+          title: Second train station to home
+          #column_width: 33%
+          column_width: calc(100% / 3)
+          entities:
+          - entity: sensor.second_train_abc_status
+            name: Status
+          - entity: sensor.second_train_abc_scheduled
+            name: Scheduled
+          - entity: sensor.second_train_abc_estimated
+            name: Expected
+        - type: glance
+          title: Third train station to home
+          #column_width: 33%
+          column_width: calc(100% / 3)
+          entities:
+          - entity: sensor.third_train_abc_status
+            name: Status
+          - entity: sensor.third_train_abc_scheduled
+            name: Scheduled
+          - entity: sensor.third_train_abc_estimated
+            name: Expected
   - title: Floorplan
     id: floorplan
     icon: mdi:floor-plan
@@ -584,6 +592,11 @@ views:
       - type: custom:google-calendar-card
         entities: 
           - calendar.person3
+      - type: entities
+        title: person4
+        entities:
+        - device_tracker.person4_mobile
+        - sensor.person4s_time_to_home
     - type: vertical-stack
       cards:
       - type: entities
@@ -592,11 +605,13 @@ views:
         - device_tracker.person2_mobile
         - sensor.person2s_time_to_home_2
         - proximity.person2_home
-        - calendar.person2_holiday
       - type: custom:google-calendar-card
         entities:
           - calendar.person2
           - calendar.person2_work
+          - calendar.person2_holiday
+          - calendar.person2_wfh
+          - calendar.person2_away
           - calendar.birthdays_and_anniversaries
       - type: entities
         title: Work
@@ -615,7 +630,6 @@ views:
         - sensor.person1s_time_to_home_2
         - sensor.person1s_time_to_home_by_transit
         - proximity.person1_home
-        - calendar.person1_holiday
       - type: custom:google-calendar-card
         entities:
           - calendar.person1
