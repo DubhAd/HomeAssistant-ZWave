@@ -7,7 +7,6 @@ resources:
   - url: https://use.fontawesome.com/releases/v5.2.0/css/all.css
     type: css
 excluded_entities:
-  - climate.living_room
   - climate.office
   - device_tracker.echo_dot6n6
   - device_tracker.jasons_iphone
@@ -708,7 +707,6 @@ views:
       - automation.number_on_in_the_morning
       - automation.number_sign_off
       - automation.person2_up_early
-      - automation.garage_opened_at_night
     - type: entities
       title: Automations for the garden
       entities:
@@ -881,7 +879,6 @@ views:
       - automation.person1_at_work
       - automation.person1_returning
       - automation.person1_home_after_work
-      - automation.wake_person1
       - automation.person1_mobile_low_battery
       - automation.person1_travelling
     - type: entities
