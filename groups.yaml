@@ -1,8 +1,3 @@
-#trend_sensors:
-#alarm_automations:
-#bins:
-#new_batteries:
-#zwave_batteries:
 person_dor:
   name: person4
   entities:
@@ -67,48 +62,12 @@ my_family:
   - device_tracker.person1_mobile
   - device_tracker.person3_mobile_bt
   view: false
-#my_calendars:
-#my_people_terse:
-##  - sensor.person3_travel
-#my_people_states:
-#my_people:
-######################################## ########################################
-#my_pihole:
-######################################## ########################################
-#train_status:
-#trains_abc_to_xyz_1:
-#trains_abc_to_xyz_2:
-#trains_abc_to_xyz_3:
-#trains_xyz_to_abc_1:
-#trains_xyz_to_abc_2:
-#trains_xyz_to_abc_3:
-######################################### ########################################
-#my_system:
-#livingroom_tv:
-#my_work:
-#my_devices:
-#my_switches:
-#hall_lights:
 tv:
   name: TVs
   entities:
   - media_player.samsung_tv_remote
   - media_player.cast_living_room_tv
   view: false
-#squeezebox:
-#sonos:
-#my_media:
-#my_input_boolean_people:
-#my_input_boolean:
-#my_input_numbers:
-#my_input_select:
-##my_inputs:
-##  name: Inputs
-##  entities:
-##  - group.my_input_boolean
-##  - group.my_input_numbers
-#my_weather_metoffice:
-#my_weather_darksky:
 my_exterior_doors:
   name: Outside doors
   entities:
@@ -118,19 +77,6 @@ my_exterior_doors:
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
   view: false
-#my_back_doors:
-#my_sensors:
-#my_social:
-#my_scenes:
-#garden_lights:
-#number_sign:
-#utility:
-#garage:
-#outside_doors:
-#front_of_house:
-#back_of_house:
-#living_room_sensors:
-#living_room_switches:
 living_room_lights:
   name: Living room lights
   entities:
@@ -138,100 +84,12 @@ living_room_lights:
   - switch.cabinet_light_switch
   - switch.tv_light_switch
   view: false
-#downstairs_hall:
-#family_room:
-#living_room:
-#downstairs:
-#binary_sensors:
-##  - binary_sensor.garage_door_bike_sensor
-##  - binary_sensor.garage_car_sensor
-##  - binary_sensor.garage_door_l
-##  - binary_sensor.garage_door_r
-#access_control:
-#burglar:
-##  - sensor.garage_car_burglar
-##  - sensor.garage_door_bike_burglar
-#office:
-#back_bedroom:
-#media_devices:
-##  - group.livingroom_tv
-#my_alerts:
-#my_alarm:
-#my_cameras:
 default_view:
   name: My Home
   icon: mdi:home
   view: true
   entities:
   - alarm_control_panel.ha_alarm
-#my_controls_spare:
-#my_controls_switches:
-#my_controls_lights:
-#my_controls:
-#second_bedroom:
-#master_bedroom_lights:
-#master_bedroom:
-#all_lights:
-#all_rooms:
-#room_master_bedroom:
-#room_second_bedroom:
-#People:
-#camera_left:
-#camera_right:
-#camera_view:
-#Weather:
-#Entertainment:
-#z_wave:
-#my_printer:
-#my_samsung_printer:
-#########################################
-#my_trains:
-#########################################
-#Spacer:
-#########################################
-#Network:
-#Information:
-#my_scripts:
-#my_automations_startup:
-#my_automations_office:
-#my_automations_secondbed:
-#my_automations_masterbed:
-#my_automations_bedhead_remote:
-#my_automations_front:
-#my_automations_garden:
-##  - automation.utility_door_open_before_sunrise_closed
-##  - automation.utility_door_open_before_sunrise_turn_on
-##  - automation.utility_door_open_before_sunrise_turn_off
-##  - automation.garden_lights_turned_on
-##  - automation.garden_lights_turned_off
-##my_automations_remotes:
-##  name: Automations for Remotes
-##  view: false
-##  entities:
-##  - automation.remote_switch_circle_pressed
-##  - automation.remote_switch_disc_pressed
-##  - automation.remote_switch_hold_minus__activate_bedtime
-##  - automation.remote_switch_plus__lounge_lights_on
-##  - automation.remote_switch_minus__lounge_lights_off
-##  - automation.remote_switch_long_press_plus__lounge_lights_off
-#my_automations_familyroom:
-#my_automations_livingroom:
-#my_automations_downstairs_other:
-#my_automations_general:
-##  - automation.bin_collection_check
-##  - automation.flight_seen_arriving
-##  - automation.flight_seen_departing
-#my_automations_travel:
-#my_automations_people:
-#my_automations_people_person1:
-#my_automations_people_person3:
-#my_automations_people_person2:
-##  - automation.status_person2_arrived
-##  - automation.status_person2_away
-##  - automation.status_person2_home
-##  - automation.status_person2_left
-#my_automations_input:
-#my_automations_media:
 my_automations_battery:
   name: Battery level automations
   entities:
@@ -244,16 +102,3 @@ my_automations_battery:
   - automation.battery_patio_door_left
   - automation.battery_remote
   - automation.battery_green_remote
-#my_automations_seasons:
-#my_automations_downstairs:
-#my_automations_upstairs:
-#my_automations_other:
-##  - group.my_scripts
-#my_automations:
-#ha_automations_core:
-#ha_automations_misc:
-#view_ha_automations:
-#view_alarm:
-#view_inputs:
-#my_floorplan:
-#view_scripts:

@@ -60,7 +60,6 @@ views:
             tap_action: toggle
           - entity: switch.livingroom_socket_switch
             name: "Socket"
-            icon: mdi:power-socket-uk
             tap_action: toggle
           - entity: binary_sensor.patio_door_left_sensor
             name: "Patio door"
@@ -123,7 +122,6 @@ views:
             name: Home Mini
           - entity: switch.family_room_socket_switch
             name: Socket
-            icon: mdi:power-socket-uk
             tap_action: toggle
       - type: glance
         title: Utility room & outside
@@ -155,7 +153,7 @@ views:
           - entity: media_player.cast_master_bedroom_speaker
             name: Home Mini
           - entity: switch.master_bedroom_socket_switch
-            icon: mdi:power-socket-uk
+            tap_action: toggle
             name: Socket
       - type: glance
         title: Second bedroom
@@ -169,6 +167,7 @@ views:
           - entity: media_player.cast_second_bedroom_speaker
             name: Home Mini
           - entity: switch.second_bedroom_switch
+            tap_action: toggle
             name: Socket
       - type: glance
         title: Guest bedroom
@@ -178,9 +177,10 @@ views:
           - entity: media_player.cast_guest_bedroom_speaker
             name: Home Mini
           - entity: switch.front_bedroom_switch
+            tap_action: toggle
             name: Socket
           - entity: switch.spare_socket_switch
-            icon: mdi:power-socket-uk
+            tap_action: toggle
       - type: glance
         title: Office
         entities:

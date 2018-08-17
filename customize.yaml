@@ -224,7 +224,7 @@ zwave.spare_socket:
   icon: mdi:power
 switch.master_bedroom_socket_switch:
   friendly_name: "Master bedroom socket"
-  icon: mdi:power-socket-uk
+  icon: mdi:power
 switch.second_bedroom_switch:
   friendly_name: "Second bedroom socket"
   icon: mdi:power
@@ -434,13 +434,13 @@ switch.hall_downstairs_switch:
   icon: mdi:stairs
 switch.livingroom_socket_switch:
   friendly_name: "Living room socket"
-  icon: mdi:power
+  icon: mdi:power-socket-uk
 switch.front_bedroom_switch:
   friendly_name: "Front bedroom socket"
-  icon: mdi:power
+  icon: mdi:power-socket-uk
 switch.vestibule_switch:
   friendly_name: "Vestibule socket"
-  icon: mdi:power
+  icon: mdi:power-socket-uk
 zwave.family_room_socket:
   friendly_name: "Family room socket"
   icon: mdi:power
