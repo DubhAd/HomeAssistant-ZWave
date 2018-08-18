@@ -4,13 +4,15 @@
   name: 'person3 Home'
   probability_threshold: 0.95
   observations:
+    # WiFi/GPS
     - entity_id: 'device_tracker.person3_mobile'
       pperson2_given_true: 0.9
       pperson2_given_false: 0.2
       platform: 'state'
       to_state: 'home'
+    # Bluetooth
     - entity_id: 'device_tracker.nexus_5x'
-      pperson2_given_true: 0.90
+      pperson2_given_true: 1
       pperson2_given_false: 0.2
       platform: 'state'
       to_state: 'home'
