@@ -223,11 +223,6 @@ sensor.office_multi_alarm_level:
   name:
   platform: zwave
   unique_id: 17-72057594329186321
-sensor.office_multi_sourcenodeid:
-  config_entry_id:
-  name:
-  platform: zwave
-  unique_id: 17-72057594329186337
 sensor.office_multi_burglar:
   config_entry_id:
   name:
@@ -603,3 +598,8 @@ zwave.family_room_socket:
   name:
   platform: zwave
   unique_id: node-27
+sensor.office_multi_sourcenodeid:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 17-72057594329186337
