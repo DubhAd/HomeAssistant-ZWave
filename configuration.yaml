@@ -32,6 +32,11 @@ http:
   # api_password: PASSWORD
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
+  trusted_networks: 192.168.0.0/24
+  # trusted_proxies: 127.0.0.1
+  # use_x_forwarded_for: true
+  # ip_ban_enabled: true
+  # login_attempts_threshold: 3
 
 updater:
   include_used_components: true
