@@ -78,16 +78,20 @@ views:
       - type: glance
         title: Hall and front
         #column_width: 25%
-        column_width: calc(100% / 4)
+        column_width: calc(100% / 3)
         entities:
-          - entity: switch.number_sign_switch
-            tap_action: toggle
           - binary_sensor.front_door_sensor
           - entity: switch.vestibule_switch
             name: Vestibule
             tap_action: toggle
           - entity: switch.hall_downstairs_switch
             name: Hall lights
+            tap_action: toggle
+          - entity: binary_sensor.garage_closed_bike_sensor
+            name: bike
+          - entity: binary_sensor.garage_closed_car_sensor
+            name: Car
+          - entity: switch.number_sign_switch
             tap_action: toggle
     #####
     - type: vertical-stack
