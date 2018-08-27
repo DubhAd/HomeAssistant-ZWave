@@ -45,7 +45,9 @@ Each directory has a short readme explaining what's in there, and the purpose of
   * Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller, to provide a wall switch for the garden lights
 * Lighting
   * [Yeelight](https://home-assistant.io/components/light.yeelight/) component and [led strips](https://www.yeelight.com/en_US/product/pitaya), one mounted behind the headboard in the master bedroom, and one along the wall side of the bed frame in the second bedroom. These provide good enough lighting to read by at night, and also to help wake us in the morning.
-  * Outdoor mains [240V led strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
+  * Outdoor mains [240V LED strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
+  * Philips Hue compatible LED strips built following [this guide](https://char.gd/blog/2018/building-better-cheaper-philips-hue-led-strips), using the [Gledopto GL-C-008](https://www.aliexpress.com/item/GLEDOPTO-ZIGBEE-Led-Controller-Amazon-Echo-hue-lightify-tradfri-compatible-LED-controller-RGB-CCT-WW-CW/32858603964.html) RGB+CCT LED Controller, a roll of RGB-CCT LED tape, and a 24V power supply
+  * [Philips Hue](https://www2.meethue.com/en-gb/p/hue-bridge/8718696516850) bridge (v2)
 * [Google Home Mini](https://store.google.com/product/google_home_mini), with the [Google Assistant](https://home-assistant.io/components/google_assistant/) component
 * Media
   * [Sonos](https://www.sonos.com/) speakers and [component](https://home-assistant.io/components/media_player.sonos/)

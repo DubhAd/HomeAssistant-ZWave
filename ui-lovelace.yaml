@@ -972,6 +972,7 @@ views:
       - input_boolean.guest_mode
       - input_boolean.holiday_mode
       - input_boolean.alarm_mode
+      - input_boolean.update_mesh_diagram
     - type: entities
       title: Toggles for people automations
       entities:
