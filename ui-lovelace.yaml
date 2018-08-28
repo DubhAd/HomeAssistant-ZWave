@@ -718,6 +718,7 @@ views:
       - automation.hall_lights_on
       - automation.hall_lights_off
       - automation.hall_lights_off_departure
+      - automation.doors_opened_home_alone
     - type: entities
       title: Automations for the front of the house
       entities:
