@@ -25,7 +25,7 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
     - condition: state
-      entity_id: switch.hall_downstairs_switch
+      entity_id: light.hall
       state: 'off'
     - condition: numeric_state
       entity_id: sensor.sun_elevation
@@ -42,11 +42,17 @@ condition:
         entity_id: input_boolean.adults_away
         state: 'off'
 action:
-  - service: switch.turn_on
-    entity_id: switch.hall_downstairs_switch
+  - service: light.turn_on
+    data:
+      entity_id: light.hall
+      transition: 30
+      brightness: 25
   - delay: 00:01:00
   - condition: state
-    entity_id: switch.hall_downstairs_switch
+    entity_id: light.hall
     state: 'off'
-  - service: switch.turn_on
-    entity_id: switch.hall_downstairs_switch
+  - service: light.turn_on
+    data:
+      entity_id: light.hall
+      transition: 30
+      brightness: 25

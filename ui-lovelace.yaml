@@ -78,14 +78,17 @@ views:
       - type: glance
         title: Hall and front
         #column_width: 25%
-        column_width: calc(100% / 3)
+        column_width: calc(100% / 4)
         entities:
           - binary_sensor.front_door_sensor
           - entity: switch.vestibule_switch
             name: Vestibule
             tap_action: toggle
+          - entity: light.hall
+            name: Hall light
+            tap_action: toggle
           - entity: switch.hall_downstairs_switch
-            name: Hall lights
+            name: Hall socket
             tap_action: toggle
           - entity: binary_sensor.garage_closed_bike_sensor
             name: bike
@@ -221,6 +224,7 @@ views:
         image: /local/images/downstairs_hall.jpg
         title: Downstairs hall
         entities:
+          - light.hall
           - switch.hall_downstairs_switch
       - type: picture-glance
         image: /local/images/living_room_day.jpg

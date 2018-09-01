@@ -180,6 +180,14 @@ garage_door_car:
 hall_light:
     widget_type: switch
     title: Hall light
+    entity: light.hall
+    icon_on: mdi-stairs
+    icon_off: mdi-stairs
+    icon_style_active: "color: yellow"
+
+hall_switch:
+    widget_type: switch
+    title: Hall switch
     entity: switch.hall_downstairs_switch
     icon_on: mdi-stairs
     icon_off: mdi-stairs

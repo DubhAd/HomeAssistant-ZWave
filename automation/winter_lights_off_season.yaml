@@ -8,11 +8,16 @@ condition:
   - condition: state
     entity_id: input_boolean.lighting_automations
     state: 'on'
+  - condition: state
+    entity_id: light.hall
+    state: 'on'
 action:
-  - service: switch.turn_off
-    entity_id:
-      - switch.hall_downstairs_switch
+  - service: light.turn_off
+    data:
+      entity_id: light.hall
+      transition: 30
   - delay: '00:01:00'
-  - service: switch.turn_off
-    entity_id:
-      - switch.hall_downstairs_switch
+  - service: light.turn_off
+    data:
+      entity_id: light.hall
+      transition: 30
