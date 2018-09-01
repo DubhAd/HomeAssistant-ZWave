@@ -4,6 +4,11 @@ trigger:
   - platform: numeric_state
     entity_id: sensor.sun_elevation
     below: 5
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 20
+    for:
+      minutes: 5
   - platform: state
     entity_id: input_boolean.bedtime
     to: 'off'
@@ -27,14 +32,22 @@ condition:
     - condition: state
       entity_id: light.hall
       state: 'off'
-    - condition: numeric_state
-      entity_id: sensor.sun_elevation
-      below: 5
     - condition: state
       entity_id: input_boolean.bedtime
       state: 'off'
     - condition: or
       conditions:
+      # Dark in the living room
+      - condition: numeric_state
+        entity_id: sensor.living_room_multi_luminance
+        below: 13
+      # Or sun below 5 degrees
+      - condition: numeric_state
+        entity_id: sensor.sun_elevation
+        below: 5
+    - condition: or
+      conditions:
+    # We're not away
       - condition: state
         entity_id: input_boolean.all_away
         state: 'off'

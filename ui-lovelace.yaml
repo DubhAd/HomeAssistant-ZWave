@@ -86,7 +86,6 @@ views:
             tap_action: toggle
           - entity: light.hall
             name: Hall light
-            tap_action: toggle
           - entity: switch.hall_downstairs_switch
             name: Hall socket
             tap_action: toggle
@@ -244,11 +243,15 @@ views:
         image: /local/images/master_bedroom.jpg
         title: Master bedroom
         entities:
+          - media_player.cast_master_bedroom_speaker
+          - media_player.person2
           - light.master_bedroom_bedhead
       - type: picture-glance
         image: /local/images/second_bedroom.jpg
         title: Second bedroom
         entities:
+          - media_player.cast_second_bedroom_speaker
+          - media_player.person1
           - light.person1_bedroom_bedside
       - type: history-graph
         title: Temperatures
