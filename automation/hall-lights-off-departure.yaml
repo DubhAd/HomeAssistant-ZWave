@@ -14,11 +14,13 @@ condition:
       entity_id: light.hall
       state: 'on'
 action:
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
   - service: light.turn_off
     data:
       entity_id: light.hall
       transition: 10
   - delay: 00:01:00
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
   - condition: state
     entity_id: light.hall
     state: 'on'

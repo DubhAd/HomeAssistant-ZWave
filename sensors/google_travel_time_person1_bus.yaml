@@ -1,4 +1,5 @@
 - platform: google_travel_time
+  scan_interval: 900
   name: 'person1s time to home by transit'
   api_key: !secret google_travel_key
   origin: device_tracker.person1_mobile

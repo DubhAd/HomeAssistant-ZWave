@@ -55,12 +55,14 @@ condition:
         entity_id: input_boolean.adults_away
         state: 'off'
 action:
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
   - service: light.turn_on
     data:
       entity_id: light.hall
       transition: 30
       brightness: 25
   - delay: 00:01:00
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
   - condition: state
     entity_id: light.hall
     state: 'off'
