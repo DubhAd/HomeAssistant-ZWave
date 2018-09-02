@@ -2,26 +2,41 @@ alias: 'Adults away'
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: group.my_adults
-    from: 'home'
-    to: 'not_home'
+    entity_id: input_boolean.person3_home
+    to: 'off'
     for:
       minutes: 2
   - platform: state
-    entity_id: group.my_adults
-    from: 'home'
-    to: 'not_home'
+    entity_id: input_boolean.person2_home
+    to: 'off'
+    for:
+      minutes: 2
+  - platform: state
+    entity_id: input_boolean.person3_home
+    to: 'off'
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: input_boolean.person2_home
+    to: 'off'
     for:
       minutes: 10
 condition:
   condition: or
   conditions:
   # Either we've been away for a bit
-  - condition: state
-    entity_id: group.my_adults
-    state: 'not_home'
-    for: 
-      minutes: 9
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.person3_home
+      state: 'off'
+      for: 
+        minutes: 9
+    - condition: state
+      entity_id: input_boolean.person2_home
+      state: 'off'
+      for: 
+        minutes: 9
   # Or the TVs are off
   - condition: and
     conditions:
