@@ -2,14 +2,17 @@ initial_state: 'on'
 alias: 'person1 home'
 trigger:
   - platform: state
-    entity_id: group.person_person1
+    entity_id:
+    - device_tracker.person1_mobile
+    - device_tracker.person3_mobile_bt
     to: 'home'
   - platform: homeassistant
     event: start
 condition:
-  - condition: state
+  - condition: numeric_state
     entity_id: group.person_person1
-    state: 'home'
+    above: 0
+    value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person1_travelling

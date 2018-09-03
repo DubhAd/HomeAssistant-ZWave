@@ -1,24 +1,21 @@
 alias: Mark person as just left
 trigger:
   - platform: state
-    entity_id: group.person_person2
-    from: 'home'
-    to: 'not_home'
+    entity_id: input_boolean.person2_home
+    to: 'off'
   - platform: state
-    entity_id: group.person_person3
-    from: 'home'
-    to: 'not_home'
+    entity_id: input_boolean.person3_home
+    to: 'off'
   - platform: state
-    entity_id: group.person_person1
-    from: 'home'
-    to: 'not_home'
+    entity_id: input_boolean.person1_home
+    to: 'off'
 action:
   - service: input_select.select_option
     data_template:
       entity_id: >
-        {% if trigger.entity_id == 'group.person_person2' %}
+        {% if trigger.entity_id == 'input_boolean.person2_home' %}
           input_select.person2_status_dropdown
-        {% elif trigger.entity_id == 'group.person_person3' %}
+        {% elif trigger.entity_id == 'input_boolean.person3_home' %}
           input_select.person3_status_dropdown
         {% else %}
           input_select.person1_status_dropdown

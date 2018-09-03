@@ -1,0 +1,11 @@
+- platform: flux
+  lights:
+    - light.hall
+  name: Flux hall
+  start_time: '06:00'
+  stop_time: '23:00'
+  start_colortemp: 6500
+  sunset_colortemp: 3500
+  stop_colortemp: 1900
+  disable_brightness_adjust: True
+  mode: mired

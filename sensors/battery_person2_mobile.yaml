@@ -1,5 +1,5 @@
 - platform: template
   sensors:
     battery_person2_mobile:
-      value_template: "{{ state_attr('device_tracker.person2_mobile', 'battery')|default(0)|int() }}"
+      value_template: "{{ state_attr('device_tracker.person2_mobile_gps', 'battery')|default(0)|int() }}"
       unit_of_measurement: "%"

@@ -1,36 +1,33 @@
 alias: Mark person as just arrived
 trigger:
   - platform: state
-    entity_id: group.person_person2
-    from: 'not_home'
-    to: 'home'
+    entity_id: input_boolean.person2_home
+    to: 'on'
   - platform: state
-    entity_id: group.person_person3
-    from: 'not_home'
-    to: 'home'
+    entity_id: input_boolean.person3_home
+    to: 'on'
   - platform: state
-    entity_id: group.person_person1
-    from: 'not_home'
-    to: 'home'
+    entity_id: input_boolean.person1_home
+    to: 'on'
 action:
   - service: input_select.select_option
     data_template:
       entity_id: >
-        {% if trigger.entity_id == 'group.person_person2' %}
+        {% if trigger.entity_id == 'input_boolean.person2_home' %}
           input_select.person2_status_dropdown
-        {% elif trigger.entity_id == 'group.person_person3' %}
+        {% elif trigger.entity_id == 'input_boolean.person3_home' %}
           input_select.person3_status_dropdown
         {% else %}
           input_select.person1_status_dropdown
         {% endif %}
       option: >
-        {% if trigger.entity_id == 'group.person_person2' %}
+        {% if trigger.entity_id == 'input_boolean.person2_home' %}
           {% if states.input_select.person2_status_dropdown.state == 'Just Left' %}
             Home
           {% else %}
             Just Arrived
           {% endif %}
-        {% elif trigger.entity_id == 'group.person_person3' %}
+        {% elif trigger.entity_id == 'input_boolean.person3_home' %}
           {% if states.input_select.person3_status_dropdown.state == 'Just Left' %}
             Home
           {% else %}

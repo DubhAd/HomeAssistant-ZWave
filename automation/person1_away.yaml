@@ -2,19 +2,19 @@ alias: 'person1 away'
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: group.person_person1
-    from: 'home'
+    entity_id:
+    - device_tracker.person1_mobile
+    - device_tracker.person3_mobile_bt
     to: 'not_home'
     for:
       minutes: 2
   - platform: homeassistant
     event: start
 condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: group.person_person1
-      state: 'not_home'
+  - condition: numeric_state
+    entity_id: group.person_person1
+    below: 1
+    value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person1_home

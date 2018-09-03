@@ -10,8 +10,8 @@ condition:
   - condition: and
     conditions:
     - condition: state
-      entity_id: group.person_person1
-      state: 'home'
+      entity_id: input_boolean.person1_home
+      state: 'on'
     - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'

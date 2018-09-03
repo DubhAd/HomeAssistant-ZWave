@@ -60,7 +60,7 @@ action:
     data:
       entity_id: light.hall
       transition: 30
-      brightness: 25
+      brightness: 15
   - delay: 00:01:00
   - wait_template: "{{ states('light.hall') != 'unavailable' }}"
   - condition: state
@@ -70,4 +70,4 @@ action:
     data:
       entity_id: light.hall
       transition: 30
-      brightness: 25
+      brightness: 15

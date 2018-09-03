@@ -31,6 +31,9 @@ sensor.person2s_time_to_home:
 sensor.person3s_time_to_home:
   entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3's travel time to home"
+device_tracker.001d29a549ae:
+  entity_picture: /local/person4Thumb.jpg
+  friendly_name: person4
 device_tracker.person4_mobile:
   entity_picture: /local/person4Thumb.jpg
   friendly_name: person4
@@ -241,6 +244,9 @@ group.person_dor:
 group.person_person2:
   entity_picture: /local/person2Thumb.jpg
 device_tracker.person2_mobile_bt:
+  entity_picture: /local/person2Thumb.jpg
+device_tracker.person2_mobile_gps:
+  friendly_name: "person2 GPS"
   entity_picture: /local/person2Thumb.jpg
 group.person_person3:
   entity_picture: /local/person3Thumb.jpg

@@ -16,21 +16,21 @@ condition:
     - condition: or
       conditions:
       - condition: state
-        entity_id: group.person_person3
-        state: 'not_home'
+        entity_id: input_boolean.person3_home
+        state: 'off'
       - condition: and
         conditions:
         - condition: state
           entity_id: input_boolean.person3_is_awake
           state: 'off'
         - condition: state
-          entity_id: group.person_person3
-          state: 'home'
+          entity_id: input_boolean.person3_home
+          state: 'on'
     - condition: or
       conditions:
       - condition: state
-        entity_id: group.person_person2
-        state: 'not_home'
+        entity_id: input_boolean.person2_home
+        state: 'off'
       - condition: state
         entity_id: input_boolean.person2_travelling
         state: 'on'
@@ -40,21 +40,21 @@ condition:
           entity_id: input_boolean.person2_is_awake
           state: 'off'
         - condition: state
-          entity_id: group.person_person2
-          state: 'home'
+          entity_id: input_boolean.person2_home
+          state: 'on'
     - condition: or
       conditions:
       - condition: state
-        entity_id: group.person_person1
-        state: 'not_home'
+        entity_id: input_boolean.person1_home
+        state: 'off'
       - condition: and
         conditions:
         - condition: state
           entity_id: input_boolean.person1_is_awake
           state: 'off'
         - condition: state
-          entity_id: group.person_person1
-          state: 'home'
+          entity_id: input_boolean.person1_home
+          state: 'on'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.bedtime
