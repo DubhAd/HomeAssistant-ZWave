@@ -597,6 +597,7 @@ views:
       - type: entities
         title: person3
         entities:
+        - group.person_person3
         - device_tracker.person3_mobile
         - sensor.person3s_time_to_home_2
         - proximity.person3_home
@@ -638,6 +639,7 @@ views:
       - type: entities
         title: person1
         entities:
+        - group.person_person1
         - device_tracker.person1_mobile
         - sensor.person1s_time_to_home_2
         - sensor.person1s_time_to_home_by_transit

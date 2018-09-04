@@ -10,6 +10,18 @@ sensor.hass_installed:
   icon: mdi:folder-download
 sensor.current_ha_version:
   icon: mdi:github-circle
+device_tracker.person1_mobile:
+  entity_picture: /local/person1Thumb.jpg
+  friendly_name: "person1 GPS"
+device_tracker.person1_mobile_wifi:
+  entity_picture: /local/person1Thumb.jpg
+  friendly_name: "person1 WiFi"
+device_tracker.person3_mobile:
+  entity_picture: /local/person3Thumb.jpg
+  friendly_name: "person3 GPS"
+device_tracker.person3_mobile_wifi:
+  entity_picture: /local/person3Thumb.jpg
+  friendly_name: "person3 WiFi"
 sensor.person1s_time_to_home_2:
   entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1's travel time to home"
@@ -252,10 +264,10 @@ group.person_person3:
   entity_picture: /local/person3Thumb.jpg
 device_tracker.nexus_5x:
   entity_picture: /local/person3Thumb.jpg
-  friendly_name: person3 mobile
+  friendly_name: person3 BT
 device_tracker.person3_mobile_bt:
   entity_picture: /local/person3Thumb.jpg
-  friendly_name: person3 BT
+  friendly_name: person3 BT Old
 binary_sensor.living_room_motion:
   device_class: motion
 sensor.living_room_multi_luminance:

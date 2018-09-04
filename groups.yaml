@@ -31,11 +31,13 @@ person_person3:
   name: person3
   entities:
   - device_tracker.person3_mobile
+  - device_tracker.person3_mobile_wifi
   - device_tracker.nexus_5x
 person_person1:
   name: person1
   entities:
   - device_tracker.person1_mobile
+  - device_tracker.person1_mobile_wifi
   - device_tracker.person3_mobile_bt
 person_person1_tablet:
   name: person1's tablet
