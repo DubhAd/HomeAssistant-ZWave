@@ -1017,6 +1017,7 @@ views:
       title: Switches
       entities:
       - switch.fluxer
+      - switch.flux_hall
     - type: entities
       title: People
       entities:
