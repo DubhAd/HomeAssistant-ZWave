@@ -22,7 +22,7 @@ condition:
   conditions: 
     - condition: zone
       zone: zone.work
-      entity_id: device_tracker.person2_mobile
+      entity_id: device_tracker.person2_mobile_gps
     - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'

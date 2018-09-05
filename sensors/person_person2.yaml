@@ -6,7 +6,7 @@
         {% if is_state("input_boolean.person2_home", "on") %} 
           {{ states("input_select.person2_status_dropdown") }}
         {% elif not is_state("device_tracker.person2_mobile_gps", "not_home") %}
-          At {{ states("device_tracker.person2_mobile") }}
+          At {{ states("device_tracker.person2_mobile_gps") }}
         {% else %}
           {{ state_attr('sensor.person2s_time_to_home_2', 'duration') }} to home
         {% endif %}
