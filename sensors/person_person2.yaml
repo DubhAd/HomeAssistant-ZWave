@@ -5,6 +5,8 @@
       value_template: >-
         {% if is_state("input_boolean.person2_home", "on") %} 
           {{ states("input_select.person2_status_dropdown") }}
+        {% elif is_state("device_tracker.person2_mobile_gps", "home") and is_state("input_boolean.person2_home", "off") %}
+          Near home
         {% elif not is_state("device_tracker.person2_mobile_gps", "not_home") %}
           At {{ states("device_tracker.person2_mobile_gps") }}
         {% else %}

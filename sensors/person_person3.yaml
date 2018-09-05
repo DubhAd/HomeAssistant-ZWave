@@ -3,8 +3,10 @@
     person3_travel:
       friendly_name: "person3's location"
       value_template: >-
-        {% if is_state("input_boolean.person3_home", "on") %} 
+        {% if is_state("input_boolean.person3_home", "on") %}
           {{ states("input_select.person3_status_dropdown") }}
+        {% elif is_state("device_tracker.person3_mobile", "home") and is_state("input_boolean.person3_home", "off") %}
+          Near home
         {% elif not is_state("device_tracker.person3_mobile", "not_home") %}
           At {{ states("device_tracker.person3_mobile") }}
         {% else %}

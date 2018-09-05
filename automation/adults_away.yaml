@@ -33,9 +33,15 @@ condition:
       state: 'off'
       for: 
         minutes: 2
-  # Or the TVs are off
+  # Or the TVs are also off
   - condition: and
     conditions:
+      - condition: state
+        entity_id: input_boolean.person3_home
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.person2_home
+        state: 'off'
       - condition: state
         entity_id: device_tracker.family_tv
         state: 'not_home'

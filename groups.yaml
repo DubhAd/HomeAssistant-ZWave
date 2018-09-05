@@ -46,9 +46,6 @@ person_person1_tablet:
   - device_tracker.person1_tablet
   - device_tracker.pc1722372108
   - device_tracker.huawei_mediapad_m5
-#my_children:
-#my_adults:
-#my_family:
 tv:
   name: TVs
   entities:
