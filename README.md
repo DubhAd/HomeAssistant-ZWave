@@ -57,8 +57,7 @@ Each directory has a short readme explaining what's in there, and the purpose of
   * [LaMetric](https://lametric.com/) for [notifications](https://home-assistant.io/components/notify.lametric/) "in person", and it's a clock the rest of the time
   * [TTS](https://home-assistant.io/components/tts/) with the Google Home Mini's, Sonos, and Squeezeboxes
 * Presence detection:
-  * [Fritz!Box](https://en.avm.de/) [device tracking](https://www.home-assistant.io/components/device_tracker.fritz/) since I upgraded my router
-  (I no longer need [Nmap](https://nmap.org/) for [device tracking](https://home-assistant.io/components/device_tracker.nmap_tracker/))
+  * Back to using [Nmap](https://nmap.org/) for [device tracking](https://home-assistant.io/components/device_tracker.nmap_tracker/). While I did switch to [Fritz!Box](https://en.avm.de/) [device tracking](https://www.home-assistant.io/components/device_tracker.fritz/) when I upgraded my router, the router ran out of memory
   * [CSL Bluetooth adapter](https://www.amazon.co.uk/gp/product/B00VFT4LD2/) for the [Bluetooth device tracker](https://home-assistant.io/components/device_tracker.bluetooth_tracker/), to augment the Nmap device tracker (uses a CSR8510 A10 chip)
   * [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) for remote device tracking
     * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only does it have an [annoying bug](https://github.com/owntracks/android/issues/508) that causes it to randomly disable reporting, but it's been abandoned by the developer

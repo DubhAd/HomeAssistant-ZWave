@@ -5,14 +5,14 @@
   probability_threshold: 0.95
   observations:
     - entity_id: 'device_tracker.person2_mobile'
-      pperson2_given_true: 0.9
+      prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
     - entity_id: 'device_tracker.person2_mobile_bt'
-      pperson2_given_true: 0.9
+      prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
     - entity_id: 'device_tracker.person2_mobile_gps'
-      pperson2_given_true: 0.8
+      prob_given_true: 0.8
       platform: 'state'
       to_state: 'home'

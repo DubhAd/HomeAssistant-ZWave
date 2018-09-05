@@ -4,6 +4,8 @@ trigger:
   platform: state
   entity_id: device_tracker.00e04c680550
   to: 'not_home'
+  for:
+    minutes: 2
 condition:
   condition: state
   entity_id: media_player.office
