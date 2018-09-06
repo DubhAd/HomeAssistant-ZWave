@@ -139,6 +139,10 @@ panel_custom:
     sidebar_icon: mdi:floor-plan
     url_path: floorplan
     config: !include floorplan.yaml
+  - name: zwavegraph2
+    sidebar_title: ZWave Graph2
+    sidebar_icon: mdi:access-point-network
+    url_path: zwave
 
 alarm_control_panel: !include_dir_list alarm/
 
@@ -151,9 +155,5 @@ google_assistant: !include google_assistant.yaml
 #dialogflow:
 #intent_script: !include intent_scripts.yaml
 #intent_script: !include_dir_named intent_scripts/
-
-#sonos:
-#
-#cast:
 
 weather: !include_dir_merge_list weather/
