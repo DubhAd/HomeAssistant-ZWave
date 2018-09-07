@@ -6,7 +6,7 @@
         {% if is_state("group.person_dor", "home") %} 
           {{ states("input_select.person4_stats_dropdown") }}
         {% elif is_state("device_tracker.person4_mobile", "home") and is_state("input_boolean.person4_home", "off") %}
-          Near home
+          Near home ({{ states("input_select.person4_stats_dropdown") }})
         {% elif not is_state("device_tracker.person4_mobile", "not_home") %}
           At {{ states("device_tracker.person4_mobile") }}
         {% else %}
