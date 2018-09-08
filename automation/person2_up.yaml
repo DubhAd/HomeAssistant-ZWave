@@ -2,13 +2,14 @@ alias: 'person2 up'
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: media_player.person2
+    entity_id: 
+      - media_player.master_bedroom_speaker
+      - media_player.person2
     to: 'playing'
   - platform: state
-    entity_id: media_player.master_bedroom_speaker
-    to: 'playing'
-  - platform: state
-    entity_id: light.master_bedroom_bedhead
+    entity_id: 
+      - light.master_bedroom_bedhead
+      - light.yeelight_strip_286c07afc307
     to: 'on'
     for:
       minutes: 1

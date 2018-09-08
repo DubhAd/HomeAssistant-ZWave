@@ -1,20 +1,18 @@
-## Experimental sensor for tracking home or away state
+## Experimental sensor for home/away detection
 - platform: 'bayesian'
-  prior: 0.75
+  prior: 0.6
   name: 'person1 Home'
   probability_threshold: 0.95
   observations:
-    # WiFi/GPS
     - entity_id: 'device_tracker.person1_mobile_wifi'
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
-    - entity_id: 'device_tracker.person1_mobile'
+    - entity_id: 'device_tracker.person3_mobile_bt'
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
-    # Bluetooth
-    - entity_id: 'device_tracker.person3_mobile_bt'
-      prob_given_true: 0.9
+    - entity_id: 'device_tracker.person1_mobile'
+      prob_given_true: 0.8
       platform: 'state'
       to_state: 'home'

@@ -894,6 +894,7 @@ views:
       title: People driven automations - person3
       entities:
       - automation.person3_up
+      - automation.person3_asleep
       - automation.person3_home
       - automation.person3_away
       - automation.person3_travelling
@@ -1024,6 +1025,7 @@ views:
       - input_select.person3_status_dropdown
       - input_select.person1_status_dropdown
       - input_select.person2_status_dropdown
+      - input_select.person4_status_dropdown
   - title: scripts
     icon: mdi:script
     cards: 
