@@ -19,6 +19,8 @@ trigger:
       minutes: 10
   - platform: time
     at: '01:00:00'
+  - platform: time
+    at: '02:30:00'
 condition:
   - condition: and
     conditions:
@@ -37,10 +39,9 @@ condition:
     - condition: state
       entity_id: light.person1_bedroom_bedside
       state: 'off'
-### TV is off
-##    - condition: state
-##      entity_id: device_tracker.family_tv
-##      state: 'not_home'
+    - condition: state
+      entity_id: device_tracker.family_tv
+      state: 'not_home'
 ##    - condition: or
 ##      conditions:
 ### Either the living room TV is off
