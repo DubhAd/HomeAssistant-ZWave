@@ -6,6 +6,9 @@ resources:
     type: module
   - url: https://use.fontawesome.com/releases/v5.2.0/css/all.css
     type: css
+    # https://github.com/custom-cards/surveillance-card
+  - url: /local/surveillance-card.js?v=0
+    type: module
 excluded_entities:
   - climate.office
   - device_tracker.echo_dot6n6
@@ -383,14 +386,15 @@ views:
         - sensor.printer_retard_roller_remaining
         - sensor.printer_transfer_roller_remaining
         - sensor.printer_fuser_life_remaining
-  - title: Cameras
-    id: cameras
-    icon: mdi:video
+  - title: Surveillance
+    icon: mdi:cctv
     panel: true
     cards:
-      - type: picture-entity
-        entity: camera.front_camera
-        camera_image: camera.front_camera
+      - type: custom:surveillance-card
+        thumb_interval: 10
+        update_interval: 0.5
+        cameras:
+          - entity: camera.front_camera
   - title: Weather
     id: weather
     icon: mdi:weather-partlycloudy

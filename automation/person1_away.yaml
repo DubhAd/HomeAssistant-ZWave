@@ -12,6 +12,9 @@ trigger:
   - platform: homeassistant
     event: start
 condition:
+  - condition: state
+    entity_id: input_boolean.person1_home
+    state: 'on'
   - condition: numeric_state
     entity_id: group.person_person1
     below: 2
