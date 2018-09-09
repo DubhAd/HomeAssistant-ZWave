@@ -19,6 +19,7 @@ condition:
     entity_id: group.person_person2
     below: 2
     value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person2', 'entity_id'))|list)|groupby('state'))['home']|count }}"
+  # Should require sensor.last_opened to have recently been updated
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person2_home

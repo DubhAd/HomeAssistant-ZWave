@@ -14,6 +14,9 @@ trigger:
     entity_id: binary_sensor.utility_door_exterior_sensor
     to: 'on'
 condition:
+  - condition: state
+    entity_id: input_boolean.person3_is_awake
+    state: 'off'
   - condition: or
     conditions:
     - condition: and
