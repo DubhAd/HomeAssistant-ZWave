@@ -55,6 +55,7 @@ recorder:
   db_url: sqlite:///data/homeassistant/home-assistant.sqlite
   purge_interval: 1
   purge_keep_days: 4
+  #db_url: !secret mysql_url
 
 tts:
   - platform: google
