@@ -23,6 +23,13 @@ trigger:
   - platform: state
     entity_id: input_boolean.lighting_automations
     to: 'on'
+  - platform: state
+    to: 'Just Arrived'
+    entity_id: 
+      - input_select.person2_status_dropdown
+      - input_select.person3_status_dropdown
+      - input_select.person1_status_dropdown
+      - input_select.person4_status_dropdown
 condition:
   - condition: and
     conditions:
@@ -32,9 +39,25 @@ condition:
     - condition: state
       entity_id: light.hall
       state: 'off'
-    - condition: state
-      entity_id: input_boolean.bedtime
-      state: 'off'
+    - condition: or
+      conditions:
+      # We're awake
+      - condition: state
+        entity_id: input_boolean.bedtime
+        state: 'off'
+      # Or somebody just came home
+      - condition: state
+        state: 'Just Arrived'
+        entity_id: input_select.person2_status_dropdown
+      - condition: state
+        state: 'Just Arrived'
+        entity_id: input_select.person3_status_dropdown
+      - condition: state
+        state: 'Just Arrived'
+        entity_id: input_select.person1_status_dropdown
+      - condition: state
+        state: 'Just Arrived'
+        entity_id: input_select.person4_status_dropdown
     - condition: or
       conditions:
       # Dark in the living room
