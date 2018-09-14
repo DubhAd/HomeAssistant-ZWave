@@ -601,8 +601,10 @@ views:
       - type: entities
         title: person3
         entities:
-        - group.person_person3
+        - sensor.person3_travel
         - device_tracker.person3_mobile
+        - device_tracker.person3_mobile_wifi
+        - device_tracker.nexus_5x
         - sensor.person3s_time_to_home_2
         - proximity.person3_home
       - type: custom:google-calendar-card
@@ -611,15 +613,19 @@ views:
       - type: entities
         title: person4
         entities:
+        - sensor.person4_travel
         - device_tracker.person4_mobile
+        - device_tracker.001d29a549ae
         - sensor.person4s_time_to_home
     - type: vertical-stack
       cards:
       - type: entities
         title: person2
         entities:
-        - group.person_person2
+        - sensor.person2_travel
         - device_tracker.person2_mobile_gps
+        - device_tracker.404e36245315
+        - device_tracker.serenity
         - sensor.person2s_time_to_home_2
         - proximity.person2_home
       - type: custom:google-calendar-card
@@ -643,8 +649,10 @@ views:
       - type: entities
         title: person1
         entities:
-        - group.person_person1
+        - sensor.person1_travel
         - device_tracker.person1_mobile
+        - device_tracker.person1_mobile_wifi
+        - device_tracker.person3_mobile_bt
         - sensor.person1s_time_to_home_2
         - sensor.person1s_time_to_home_by_transit
         - proximity.person1_home
@@ -823,6 +831,8 @@ views:
       entities:
       - automation.play_classical_music_in_the_office
       - automation.stop_classical_music_in_the_office
+      - automation.pause_music_in_the_office
+      - automation.resume_music_in_the_office
   - title: More Automations
     icon: mdi:engine-outline
     cards:

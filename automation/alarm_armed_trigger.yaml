@@ -8,6 +8,13 @@ condition:
   - condition: state
     entity_id: alarm_control_panel.ha_alarm
     state: armed_away
+  # We're using the groups here because it's normal for WiFi detection to lead arrival, but nothing else
+  - condition: state
+    entity_id: group.person_person3
+    state: 'not_home'
+  - condition: state
+    entity_id: group.person_person2
+    state: 'not_home'
 action:
   - service: alarm_control_panel.alarm_trigger
     entity_id: alarm_control_panel.ha_alarm

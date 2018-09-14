@@ -7,8 +7,6 @@ trigger:
     - device_tracker.person1_mobile
     - device_tracker.person3_mobile_bt
     to: 'not_home'
-    for:
-      minutes: 2
   - platform: homeassistant
     event: start
 condition:
@@ -21,9 +19,9 @@ condition:
     value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|count }}"
   - condition: or
     conditions:
-    # A door was opened in the last 5 minutes
+    # A door was opened in the last 6 minutes
     - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 300 }}"
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 360 }}"
     # A door is currently open
     - condition: state
       entity_id: binary_sensor.front_door_sensor

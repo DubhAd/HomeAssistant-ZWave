@@ -1,0 +1,14 @@
+initial_state: 'on'
+alias: 'Pause music in the office'
+trigger:
+  - platform: state
+    entity_id: calendar.person2_work
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: media_player.office
+    state: 'playing'
+action:
+  - service: media_player.media_pause
+    data:
+      entity_id: media_player.office
