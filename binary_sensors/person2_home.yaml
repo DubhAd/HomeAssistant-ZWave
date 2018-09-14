@@ -4,11 +4,11 @@
   name: 'person2 Home'
   probability_threshold: 0.95
   observations:
-    - entity_id: 'device_tracker.person2_mobile'
+    - entity_id: 'device_tracker.404e36245315'
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
-    - entity_id: 'device_tracker.person2_mobile_bt'
+    - entity_id: 'device_tracker.serenity'
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
