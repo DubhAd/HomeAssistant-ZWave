@@ -1,5 +1,6 @@
 - platform: template
   sensors:
     zwave_battery_patio_door_left:
+      entity_id: zwave.patio_door_left
       value_template: "{{ state_attr('zwave.patio_door_left', 'battery_level')|default(75) }}"
       unit_of_measurement: "%"

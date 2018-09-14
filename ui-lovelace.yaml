@@ -598,36 +598,63 @@ views:
     cards:
     - type: vertical-stack
       cards:
-      - type: entities
+      - type: glance
         title: person3
+        column_width: calc(100% / 4)
         entities:
         - sensor.person3_travel
-        - device_tracker.person3_mobile
-        - device_tracker.person3_mobile_wifi
-        - device_tracker.nexus_5x
-        - sensor.person3s_time_to_home_2
-        - proximity.person3_home
+        - entity: device_tracker.person3_mobile
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.person3_mobile_wifi
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.nexus_5x
+          name: BT
+          icon: mdi:bluetooth
+        - entity: sensor.person3s_time_to_home_2
+          name: To home
+          icon: mdi:map-marker-distance
+        - entity: proximity.person3_home
+          name: To home
       - type: custom:google-calendar-card
         entities: 
           - calendar.person3
-      - type: entities
+      - type: glance
         title: person4
+        column_width: calc(100% / 4)
         entities:
         - sensor.person4_travel
-        - device_tracker.person4_mobile
-        - device_tracker.001d29a549ae
-        - sensor.person4s_time_to_home
+        - entity: device_tracker.person4_mobile
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.001d29a549ae
+          name: BT
+          icon: mdi:bluetooth
+        - entity: sensor.person4s_time_to_home
+          name: To home
+          icon: mdi:map-marker-distance
     - type: vertical-stack
       cards:
-      - type: entities
+      - type: glance
         title: person2
+        column_width: calc(100% / 4)
         entities:
         - sensor.person2_travel
-        - device_tracker.person2_mobile_gps
-        - device_tracker.404e36245315
-        - device_tracker.serenity
-        - sensor.person2s_time_to_home_2
-        - proximity.person2_home
+        - entity: device_tracker.person2_mobile_gps
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.404e36245315
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.serenity
+          name: BT
+          icon: mdi:bluetooth
+        - entity: sensor.person2s_time_to_home_2
+          name: To home
+          icon: mdi:map-marker-distance
+        - entity: proximity.person2_home
+          name: To home
       - type: custom:google-calendar-card
         entities:
           - calendar.person2
@@ -636,26 +663,42 @@ views:
           - calendar.person2_wfh
           - calendar.person2_away
           - calendar.birthdays_and_anniversaries
-      - type: entities
+      - type: glance
         title: Work
         entities:
         - group.person_person2_work
-        - device_tracker.00e04c680550
-        - proximity.person2_work
-        - calendar.person2_wfh
+        - entity: device_tracker.00e04c680550
+          name: WiFi
+          icon: mdi:wifi
+        - entity: proximity.person2_work
+          name: To work
+        - entity: calendar.person2_wfh
+          name: WFH
         - calendar.person2_away
     - type: vertical-stack
       cards:
-      - type: entities
+      - type: glance
         title: person1
+        column_width: calc(100% / 4)
         entities:
         - sensor.person1_travel
-        - device_tracker.person1_mobile
-        - device_tracker.person1_mobile_wifi
-        - device_tracker.person3_mobile_bt
-        - sensor.person1s_time_to_home_2
-        - sensor.person1s_time_to_home_by_transit
-        - proximity.person1_home
+        - entity: device_tracker.person1_mobile
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.person1_mobile_wifi
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.person3_mobile_bt
+          name: BT
+          icon: mdi:bluetooth
+        - entity: sensor.person1s_time_to_home_2
+          name: Walking home
+          icon: mdi:map-marker-distance
+        - entity: sensor.person1s_time_to_home_by_transit
+          name: Bus home
+          icon: mdi:map-marker-distance
+        - entity: proximity.person1_home
+          name: To home
       - type: custom:google-calendar-card
         entities:
           - calendar.person1

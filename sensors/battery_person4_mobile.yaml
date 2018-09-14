@@ -1,5 +1,6 @@
 - platform: template
   sensors:
     battery_person4_mobile:
+      entity_id: device_tracker.person4_mobile
       value_template: "{{ state_attr('device_tracker.person4_mobile', 'battery')|default(0)|int() }}"
       unit_of_measurement: "%"
