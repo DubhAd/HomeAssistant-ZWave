@@ -365,13 +365,43 @@ views:
           - entity: sensor.zwave_battery_utility
             name: Utility switch
       - type: glance
-        title: Devices
+        title: person1's Devices
         column_width: calc(100% / 4)
         entities:
-        - device_tracker.person1_headphones
-        - device_tracker.jayne
-        - group.person_person1_tablet
-        - group.person_person2_tablet
+        - entity: device_tracker.person1_headphones
+          name: Headphones
+        - entity: device_tracker.person1_tablet
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.pc1722372108
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.huawei_mediapad_m5
+          name: BT
+          icon: mdi:bluetooth
+      - type: glance
+        title: person2's laptop
+        column_width: calc(100% / 2)
+        entities:
+        - entity: device_tracker.jayne
+          name: Laptop WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.9c305b3c6c87
+          name: Laptop BT
+          icon: mdi:bluetooth
+      - type: glance
+        title: person2's tablet
+        column_width: calc(100% / 3)
+        entities:
+        - entity: device_tracker.person2_tablet_5
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.pc1722372113
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.person2s_m5
+          name: BT
+          icon: mdi:bluetooth
       - type: glance
         title: Printer status
         entities:
@@ -666,10 +696,12 @@ views:
       - type: glance
         title: Work
         entities:
-        - group.person_person2_work
         - entity: device_tracker.00e04c680550
           name: WiFi
           icon: mdi:wifi
+        - entity: device_tracker.timetrveller
+          name: BT
+          icon: mdi:bluetooth
         - entity: proximity.person2_work
           name: To work
         - entity: calendar.person2_wfh

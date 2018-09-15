@@ -63,7 +63,7 @@ condition:
       # Dark in the living room
       - condition: numeric_state
         entity_id: sensor.living_room_multi_luminance
-        below: 13
+        below: 30
       # Or sun below 5 degrees
       - condition: numeric_state
         entity_id: sensor.sun_elevation
