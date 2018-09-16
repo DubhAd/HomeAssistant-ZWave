@@ -290,10 +290,12 @@ views:
           - type: map
             aspect_ratio: 105%
             entities:
+              - device_tracker.person1_tablet
               - device_tracker.person1_mobile
           - type: map
             aspect_ratio: 105%
             entities:
+              - device_tracker.person2_tablet
               - device_tracker.person2_mobile_gps
           - type: map
             aspect_ratio: 105%
@@ -335,87 +337,6 @@ views:
           entity: media_player.cast_master_bedroom_speaker
         - type: media-control
           entity: media_player.cast_guest_bedroom_speaker
-  - title: Device status
-    id: device_status
-    icon: mdi:cellphone-link
-    cards:
-      - type: glance
-        title: Mobiles etc
-        entities:
-          - sensor.battery_person3_mobile
-          - sensor.battery_person1_mobile
-          - sensor.battery_person1_tablet
-          - sensor.battery_person2_mobile
-          - sensor.battery_person2_tablet
-          - sensor.battery_person4_mobile
-      - type: glance
-        title: Z-Wave sensors
-        entities:
-          - entity: sensor.zwave_battery_garage_closed_bike
-            name: Garage left
-          - entity: sensor.zwave_battery_garage_closed_car
-            name: Garage car
-          - sensor.zwave_battery_front_door
-          - sensor.zwave_battery_patio_door_left
-          - entity: sensor.zwave_battery_utility_door_exterior
-            name: Utility door
-          - sensor.zwave_battery_living_room_multi
-          - sensor.zwave_battery_nodon_crc3100_octan_remote
-          - sensor.zwave_battery_green_remote
-          - entity: sensor.zwave_battery_utility
-            name: Utility switch
-      - type: glance
-        title: person1's Devices
-        column_width: calc(100% / 4)
-        entities:
-        - entity: device_tracker.person1_headphones
-          name: Headphones
-        - entity: device_tracker.person1_tablet
-          name: GPS
-          icon: mdi:crosshairs-gps
-        - entity: device_tracker.pc1722372108
-          name: WiFi
-          icon: mdi:wifi
-        - entity: device_tracker.huawei_mediapad_m5
-          name: BT
-          icon: mdi:bluetooth
-      - type: glance
-        title: person2's laptop
-        column_width: calc(100% / 2)
-        entities:
-        - entity: device_tracker.jayne
-          name: Laptop WiFi
-          icon: mdi:wifi
-        - entity: device_tracker.9c305b3c6c87
-          name: Laptop BT
-          icon: mdi:bluetooth
-      - type: glance
-        title: person2's tablet
-        column_width: calc(100% / 3)
-        entities:
-        - entity: device_tracker.person2_tablet_5
-          name: GPS
-          icon: mdi:crosshairs-gps
-        - entity: device_tracker.pc1722372113
-          name: WiFi
-          icon: mdi:wifi
-        - entity: device_tracker.person2s_m5
-          name: BT
-          icon: mdi:bluetooth
-      - type: glance
-        title: Printer status
-        entities:
-        - entity: sensor.samsung_m283x_series_172237250_toner_black
-          name: Toner
-        - sensor.printer_toner_remaining
-        - entity: sensor.samsung_m283x_series_172237250_drum_black
-          name: Drum
-        - sensor.printer_imaging_unit_remaining
-        - sensor.printer_forward_roller_remaining
-        - sensor.printer_pick_up_roller_remaining
-        - sensor.printer_retard_roller_remaining
-        - sensor.printer_transfer_roller_remaining
-        - sensor.printer_fuser_life_remaining
   - title: Surveillance
     icon: mdi:cctv
     panel: true
@@ -539,87 +460,9 @@ views:
             name: Scheduled
           - entity: sensor.third_train_abc_estimated
             name: Expected
-  - title: Floorplan
-    id: floorplan
-    icon: mdi:floor-plan
-    panel: true
-    cards: 
-      - type: picture-elements
-        image: /local/images/lovelace-floorplan.svg
-        elements:
-        - type: image
-          image: /local/images/patio.svg
-          entity: binary_sensor.patio_door_left_sensor
-          state_filter:
-            'on': hue-rotate(90deg)
-            'off': hue-rotate(30deg)
-          style:
-            top: 8.7%
-            left: 11.5%
-            width: 3.5%
-        - type: image
-          image: /local/images/patio.svg
-          entity: binary_sensor.utility_door_exterior_sensor
-          state_filter:
-            'on': hue-rotate(90deg)
-            'off': hue-rotate(30deg)
-          style:
-            top: 8.7%
-            left: 29.6%
-            width: 3.8%
-        - type: image
-          image: /local/images/light-circle.svg
-          entity: switch.tv_light_switch
-          tap_action: toggle
-          state_filter:
-            'on': brightness(310%) hue-rotate(10deg)
-            'off': brightness(10%) hue-rotate(0deg)
-          style:
-            top: 14%
-            left: 7.5%
-        - type: image
-          image: /local/images/light-circle.svg
-          entity: switch.table_light_switch
-          tap_action: toggle
-          state_filter:
-            'on': brightness(310%) hue-rotate(10deg)
-            'off': brightness(10%) hue-rotate(0deg)
-          style:
-            top: 44%
-            left: 5%
-        - type: image
-          image: /local/images/light-circle.svg
-          entity: switch.cabinet_light_switch
-          tap_action: toggle
-          state_filter:
-            'off': brightness(10%) 
-            'on': brightness(300%) 
-          style:
-            top: 14%
-            left: 23%
-            "color": yellow
-        - type: image
-          image: /local/images/tv.svg
-          entity: media_player.samsung_tv_remote
-          state_filter:
-            'off': brightness(10%)
-            'on': brightness(180%) hue-rotate(120deg)
-          style:
-            top: 16.2%
-            left: 4.7%
-            "transform": rotate(335deg) scale(1.3,1.3)
-        - type: image
-          image: /local/images/tv.svg
-          entity: device_tracker.family_tv
-          state_filter:
-            'off': brightness(10%)
-            'on': brightness(300%)
-          style:
-            top: 69%
-            left: 33%
-            "transform": rotate(270deg) scale(1,1)
  
   - title: Spacer
+    id: spacer
     icon: mdi:dots-horizontal
     cards: []
   - title: People
@@ -630,7 +473,7 @@ views:
       cards:
       - type: glance
         title: person3
-        column_width: calc(100% / 4)
+        column_width: calc(100% / 5)
         entities:
         - sensor.person3_travel
         - entity: device_tracker.person3_mobile
@@ -642,6 +485,8 @@ views:
         - entity: device_tracker.nexus_5x
           name: BT
           icon: mdi:bluetooth
+        - entity: sensor.battery_person3_mobile
+          name: Battery
         - entity: sensor.person3s_time_to_home_2
           name: To home
           icon: mdi:map-marker-distance
@@ -652,7 +497,6 @@ views:
           - calendar.person3
       - type: glance
         title: person4
-        column_width: calc(100% / 4)
         entities:
         - sensor.person4_travel
         - entity: device_tracker.person4_mobile
@@ -664,11 +508,13 @@ views:
         - entity: sensor.person4s_time_to_home
           name: To home
           icon: mdi:map-marker-distance
+        - entity: sensor.battery_person4_mobile
+          name: Battery
     - type: vertical-stack
       cards:
       - type: glance
         title: person2
-        column_width: calc(100% / 4)
+        column_width: calc(100% / 5)
         entities:
         - sensor.person2_travel
         - entity: device_tracker.person2_mobile_gps
@@ -680,11 +526,34 @@ views:
         - entity: device_tracker.serenity
           name: BT
           icon: mdi:bluetooth
+        - entity: sensor.battery_person2_mobile
+          name: Battery
         - entity: sensor.person2s_time_to_home_2
           name: To home
           icon: mdi:map-marker-distance
         - entity: proximity.person2_home
           name: To home
+      - type: glance
+        title: person2's devices
+        column_width: calc(100% / 6)
+        entities:
+        - entity: device_tracker.person2_tablet_5
+          name: Tablet
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.pc1722372113
+          name: Tablet
+          icon: mdi:wifi
+        - entity: device_tracker.person2s_m5
+          name: Tablet
+          icon: mdi:bluetooth
+        - entity: sensor.battery_person2_tablet
+          name: Tablet
+        - entity: device_tracker.jayne
+          name: Laptop
+          icon: mdi:wifi
+        - entity: device_tracker.9c305b3c6c87
+          name: Laptop
+          icon: mdi:bluetooth
       - type: custom:google-calendar-card
         entities:
           - calendar.person2
@@ -695,6 +564,7 @@ views:
           - calendar.birthdays_and_anniversaries
       - type: glance
         title: Work
+        column_width: calc(100% / 6)
         entities:
         - entity: device_tracker.00e04c680550
           name: WiFi
@@ -702,6 +572,9 @@ views:
         - entity: device_tracker.timetrveller
           name: BT
           icon: mdi:bluetooth
+        - entity: device_tracker.work_laptop
+          name: Laptop
+          icon: mdi:laptop
         - entity: proximity.person2_work
           name: To work
         - entity: calendar.person2_wfh
@@ -711,7 +584,7 @@ views:
       cards:
       - type: glance
         title: person1
-        column_width: calc(100% / 4)
+        column_width: calc(100% / 5)
         entities:
         - sensor.person1_travel
         - entity: device_tracker.person1_mobile
@@ -723,6 +596,8 @@ views:
         - entity: device_tracker.person3_mobile_bt
           name: BT
           icon: mdi:bluetooth
+        - entity: sensor.battery_person1_mobile
+          name: Battery
         - entity: sensor.person1s_time_to_home_2
           name: Walking home
           icon: mdi:map-marker-distance
@@ -731,6 +606,22 @@ views:
           icon: mdi:map-marker-distance
         - entity: proximity.person1_home
           name: To home
+      - type: glance
+        title: person1's Devices
+        entities:
+        - entity: device_tracker.person1_headphones
+          name: Headphones
+        - entity: device_tracker.person1_tablet
+          name: Tablet
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.pc1722372108
+          name: Tablet
+          icon: mdi:wifi
+        - entity: device_tracker.huawei_mediapad_m5
+          name: Tablet
+          icon: mdi:bluetooth
+        - entity: sensor.battery_person1_tablet
+          name: Tablet
       - type: custom:google-calendar-card
         entities:
           - calendar.person1
@@ -742,6 +633,11 @@ views:
       entities:
       - sun.sun
       - sensor.sun_elevation
+    - type: entities
+      title: Trend sensors
+      entities:
+      - binary_sensor.trend_living_room_light
+      - binary_sensor.trend_sun_elevation
     - type: history-graph
       title: Sun
       entities:
@@ -749,11 +645,36 @@ views:
           name: Elevation
       hours_to_show: 48
       refresh_interval: 600
-    - type: entities
-      title: Trend sensors
+    - type: glance
+      title: Printer status
       entities:
-      - binary_sensor.trend_living_room_light
-      - binary_sensor.trend_sun_elevation
+      - entity: sensor.samsung_m283x_series_172237250_toner_black
+        name: Toner
+      - sensor.printer_toner_remaining
+      - entity: sensor.samsung_m283x_series_172237250_drum_black
+        name: Drum
+      - sensor.printer_imaging_unit_remaining
+      - sensor.printer_forward_roller_remaining
+      - sensor.printer_pick_up_roller_remaining
+      - sensor.printer_retard_roller_remaining
+      - sensor.printer_transfer_roller_remaining
+      - sensor.printer_fuser_life_remaining
+    - type: glance
+      title: Z-Wave battery levels
+      entities:
+        - entity: sensor.zwave_battery_garage_closed_bike
+          name: Garage left
+        - entity: sensor.zwave_battery_garage_closed_car
+          name: Garage car
+        - sensor.zwave_battery_front_door
+        - sensor.zwave_battery_patio_door_left
+        - entity: sensor.zwave_battery_utility_door_exterior
+          name: Utility door
+        - sensor.zwave_battery_living_room_multi
+        - sensor.zwave_battery_nodon_crc3100_octan_remote
+        - sensor.zwave_battery_green_remote
+        - entity: sensor.zwave_battery_utility
+          name: Utility switch
     - type: entities
       title: Z-Wave information
       entities:
