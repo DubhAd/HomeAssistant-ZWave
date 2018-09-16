@@ -580,6 +580,7 @@ views:
         - entity: calendar.person2_wfh
           name: WFH
         - calendar.person2_away
+        - binary_sensor.workday_sensor
     - type: vertical-stack
       cards:
       - type: glance
@@ -633,6 +634,7 @@ views:
       entities:
       - sun.sun
       - sensor.sun_elevation
+      - binary_sensor.zwave_health
     - type: entities
       title: Trend sensors
       entities:

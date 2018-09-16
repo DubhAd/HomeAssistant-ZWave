@@ -5,11 +5,16 @@ trigger:
     entity_id:
     - device_tracker.person3_mobile
     - device_tracker.nexus_5x
+    - device_tracker.person3_mobile_wifi
     to: 'not_home'
   - platform: state
     entity_id:
+    - device_tracker.person3_mobile
+    - device_tracker.nexus_5x
     - device_tracker.person3_mobile_wifi
     to: 'not_home'
+    for:
+      minutes: 5
   - platform: homeassistant
     event: start
 condition:
@@ -22,19 +27,28 @@ condition:
     value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|count }}"
   - condition: or
     conditions:
-    # A door was opened in the last 6 minutes
-    - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 360 }}"
-    # A door is currently open
+    # Door was recently opened/is open
+    - condition: or
+      conditions:
+      # A door was opened in the last 10 minutes
+      - condition: template
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 600 }}"
+      # A door is currently open
+      - condition: state
+        entity_id: binary_sensor.front_door_sensor
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.patio_door_left_sensor
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.utility_door_exterior_sensor
+        state: 'on'
+    # All away for at least 4 minutes
     - condition: state
-      entity_id: binary_sensor.front_door_sensor
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.patio_door_left_sensor
-      state: 'on'
-    - condition: state
-      entity_id: binary_sensor.utility_door_exterior_sensor
-      state: 'on'
+      entity_id: group.person_person3
+      state: 'not_home'
+      for:
+        minutes: 4
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person3_home
