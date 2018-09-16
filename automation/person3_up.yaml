@@ -4,9 +4,13 @@ trigger:
   - platform: state
     entity_id: media_player.samsung_tv_remote
     to: 'on'
+    for:
+      minutes: 5
   - platform: state
     entity_id: device_tracker.livingroom_chromecast
     to: 'home'
+    for:
+      minutes: 5
   - platform: state
     entity_id: input_select.person3_status_dropdown
     to: 'Away'

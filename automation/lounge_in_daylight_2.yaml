@@ -4,6 +4,8 @@ trigger:
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     above: 20
+    for:
+      minutes: 5
 condition:
   condition: and
   conditions:
