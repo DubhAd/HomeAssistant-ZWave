@@ -236,7 +236,6 @@ zwave.garage_car:
   friendly_name: "Garage door (tilt), car"
 zwave.spare_socket:
   friendly_name: "Spare socket"
-  icon: mdi:power
 switch.master_bedroom_socket_switch:
   friendly_name: "Master bedroom socket"
   icon: mdi:power
@@ -465,19 +464,14 @@ switch.vestibule_switch:
   icon: mdi:power-socket-uk
 zwave.family_room_socket:
   friendly_name: "Family room socket"
-  icon: mdi:power
 zwave.hall_downstairs:
   friendly_name: "Downstairs hall socket"
-  icon: mdi:stairs
 zwave.livingroom_socket:
   friendly_name: "Living room socket"
-  icon: mdi:power
 zwave.vestibule:
   friendly_name: "Vestibule socket"
-  icon: mdi:power
 zwave.front_bedroom:
   friendly_name: "Front bedroom socket"
-  icon: mdi:power
 binary_sensor.front_door_sensor:
   device_class: door
   friendly_name: Front door

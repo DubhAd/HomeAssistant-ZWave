@@ -2,14 +2,22 @@
   api_key: !secret darksky_api_key
   update_interval: '00:04:30'
   units: uk2
+  forecast:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
   monitored_conditions:
     - summary
     - minutely_summary
     - hourly_summary
+    - daily_summary
     - precip_type
     - precip_intensity
     - precip_intensity_max
     - precip_probability
+    - precip_accumulation
     - temperature
     - apparent_temperature
     - wind_speed
@@ -19,7 +27,9 @@
     - icon
     - humidity
     - pressure
-    - temperature_max
-    - temperature_min
-    - apparent_temperature_max
-    - apparent_temperature_min
+    - temperature_high
+    - temperature_low
+    - apparent_temperature_high
+    - apparent_temperature_low
+    - ozone
+    - uv_index
