@@ -1,0 +1,93 @@
+#
+initial_state: 'on'
+alias: 'Returned home'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.front_door_sensor
+    to: 'on'
+  # Folks nearly home
+  - platform: numeric_state
+    entity_id: proximity.person3_home
+    below: 500
+  - platform: numeric_state
+    entity_id: proximity.person1_home
+    below: 500
+  - platform: numeric_state
+    entity_id: proximity.person2_home
+    below: 500
+  # Should also include some travel time magic here
+  # Basically, travel time < 15 for 10 minutes, travelling towards home
+condition:
+  condition: and
+  conditions: 
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: numeric_state
+      entity_id: sensor.living_room_multi_luminance
+      below: 15
+    # Hall light is off
+    - condition: state
+      entity_id: light.hall
+      state: 'off'
+    # Home/nearly home
+    - condition: or
+      conditions: 
+      # Either nearly home
+      - condition: or
+        conditions: 
+        - condition: and
+          conditions:
+          - condition: template
+            value_template: "{{ is_state_attr('proximity.person3_home', 'dir_of_travel', 'towards') }}"
+          - condition: numeric_state
+            entity_id: proximity.person3_home
+            below: 500
+        - condition: and
+          conditions:
+          - condition: template
+            value_template: "{{ is_state_attr('proximity.person1_home', 'dir_of_travel', 'towards') }}"
+          - condition: numeric_state
+            entity_id: proximity.person1_home
+            below: 500
+        - condition: and
+          conditions:
+          - condition: template
+            value_template: "{{ is_state_attr('proximity.person2_home', 'dir_of_travel', 'towards') }}"
+          - condition: numeric_state
+            entity_id: proximity.person2_home
+            below: 500
+      # Or at least one tracker shows home
+      - condition: or
+        conditions: 
+        - condition: state
+          entity_id: group.person_person3
+          state: 'home'
+        - condition: state
+          entity_id: group.person_person1
+          state: 'home'
+        - condition: state
+          entity_id: group.person_person2
+          state: 'home'
+      # Or the garage door has been opened
+      - condition: template
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.garage_closed_car_sensor.last_updated)) | int < 300 }}"
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hall
+      transition: 30
+      brightness: 15
+  - service: scene.turn_on
+    entity_id: scene.lounge_lights_on
+  - delay: 00:00:10
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
+  - condition: state
+    entity_id: light.hall
+    state: 'off'
+  - service: light.turn_on
+    data:
+      entity_id: light.hall
+      transition: 30
+      brightness: 15
+

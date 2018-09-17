@@ -487,8 +487,11 @@ views:
           icon: mdi:bluetooth
         - entity: sensor.battery_person3_mobile
           name: Battery
+        - entity: sensor.person3s_time_to_home
+          name: Car home
+          icon: mdi:map-marker-distance
         - entity: sensor.person3s_time_to_home_2
-          name: To home
+          name: Bus home
           icon: mdi:map-marker-distance
         - entity: proximity.person3_home
           name: To home
@@ -529,7 +532,7 @@ views:
         - entity: sensor.battery_person2_mobile
           name: Battery
         - entity: sensor.person2s_time_to_home_2
-          name: To home
+          name: Car home
           icon: mdi:map-marker-distance
         - entity: proximity.person2_home
           name: To home
@@ -604,6 +607,9 @@ views:
           icon: mdi:map-marker-distance
         - entity: sensor.person1s_time_to_home_by_transit
           name: Bus home
+          icon: mdi:map-marker-distance
+        - entity: sensor.person1s_time_to_home
+          name: Car home
           icon: mdi:map-marker-distance
         - entity: proximity.person1_home
           name: To home
@@ -754,6 +760,7 @@ views:
       - automation.number_on_in_the_morning
       - automation.number_sign_off
       - automation.person2_up_early
+      - automation.returned_home
     - type: entities
       title: Automations for the garden
       entities:
