@@ -1,3 +1,4 @@
 - name: Lounge lights off
   entities:
     group.living_room_lights: off
+    switch.livingroom_socket_switch: off
