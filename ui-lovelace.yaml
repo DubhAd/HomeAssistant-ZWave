@@ -500,6 +500,7 @@ views:
           - calendar.person3
       - type: glance
         title: person4
+        column_width: calc(100% / 6)
         entities:
         - sensor.person4_travel
         - entity: device_tracker.person4_mobile
@@ -508,11 +509,13 @@ views:
         - entity: device_tracker.001d29a549ae
           name: BT
           icon: mdi:bluetooth
+        - entity: sensor.battery_person4_mobile
+          name: Battery
         - entity: sensor.person4s_time_to_home
           name: To home
           icon: mdi:map-marker-distance
-        - entity: sensor.battery_person4_mobile
-          name: Battery
+        - entity: proximity.person4_home
+          name: To home
     - type: vertical-stack
       cards:
       - type: glance
@@ -1025,6 +1028,7 @@ views:
       - input_boolean.person2_home
       - input_boolean.person1_home
       - input_boolean.person3_home
+      - input_boolean.person4_home
       - input_boolean.notify_train_status_work
       - input_boolean.notify_person2_working
       - input_boolean.notify_person1_work
