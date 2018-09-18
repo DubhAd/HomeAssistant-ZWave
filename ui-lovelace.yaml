@@ -907,6 +907,7 @@ views:
       - automation.mark_person_as_away
       - automation.mark_person_as_home
       - automation.mark_person_as_just_left
+      - automation.person4_coming_home
     - type: entities
       title: People driven automations - person2
       entities:
