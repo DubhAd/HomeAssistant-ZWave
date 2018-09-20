@@ -192,6 +192,7 @@ views:
             tap_action: toggle
       - type: glance
         title: Office
+        column_width: calc(100% / 6)
         entities:
           - entity: media_player.office
             name: Sonos
@@ -203,6 +204,8 @@ views:
             name: Temperature
           - entity: sensor.office_multi_luminance
             name: Light level
+          - entity: sensor.office_multi_relative_humidity
+            name: Humidity
   - title: Rooms
     id: rooms
     icon: mdi:floor-plan
@@ -644,6 +647,10 @@ views:
       - sun.sun
       - sensor.sun_elevation
       - binary_sensor.zwave_health
+      - entity: sensor.last_opened
+        icon: mdi:door
+      - entity: sensor.last_motion
+        icon: mdi:run
     - type: entities
       title: Trend sensors
       entities:
