@@ -608,3 +608,8 @@ light.downstairs_hall:
   name:
   platform: hue
   unique_id: 00:de:ad:be:ef:c5:e6:76-0b
+sensor.master_bedroom_socket_previous_reading_2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: 23-72057594428817682
