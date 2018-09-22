@@ -3,7 +3,7 @@ initial_state: 'on'
 trigger:
   - platform: numeric_state
     entity_id: sensor.person4s_time_to_home
-    below: 30
+    below: 20
 condition:
   condition: and
   conditions:
