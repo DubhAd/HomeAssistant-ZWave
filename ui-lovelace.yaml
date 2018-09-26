@@ -581,7 +581,7 @@ views:
         - entity: device_tracker.timetrveller
           name: BT
           icon: mdi:bluetooth
-        - entity: device_tracker.work_laptop
+        - entity: device_tracker.00e04c680550
           name: Laptop
           icon: mdi:laptop
         - entity: proximity.person2_work
