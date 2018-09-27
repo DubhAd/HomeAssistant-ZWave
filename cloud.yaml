@@ -17,3 +17,37 @@ google_actions:
       name: "Wake person1"
     input_boolean.guest_mode:
       name: "Guest mode"
+    light.downstairs_hall:
+      room: "Downstairs hall"
+    light.hall:
+      room: "Downstairs hall"
+    switch.hall_downstairs_switch:
+      room: "Downstairs hall"
+    switch.flux_hall:
+      room: "Attic"
+    switch.fluxer:
+      room: "Attic"
+    switch.family_room_socket_switch:
+      room: "Family Room"
+    switch.cabinet_light_switch:
+      room: "Living Room"
+    switch.tv_light_switch:
+      room: "Living Room"
+    switch.table_light_switch:
+      room: "Living Room"
+    switch.livingroom_socket_switch:
+      room: "Living Room"
+    switch.master_bedroom_socket_switch:
+      room: "Master Bedroom"
+    light.master_bedroom_bedhead:
+      room: "Master Bedroom"
+    switch.garden_lights_switch:
+      room: "Outside"
+    switch.second_bedroom_switch:
+      room: "Second Bedroom"
+    switch.spare_socket_switch:
+      room: "Spare Bedroom"
+    switch.vestibule_switch:
+      room: "Vestibule"
+    switch.front_bedroom_switch:
+      room: "Guest Room"
