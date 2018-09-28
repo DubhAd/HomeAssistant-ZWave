@@ -72,6 +72,8 @@ mqtt:
 
 #mqtt_eventstream:
 
+#mqtt_eventstream:
+
 ####################
 
 device_tracker: !include_dir_list device_tracker/
