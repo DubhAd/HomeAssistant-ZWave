@@ -1,8 +1,0 @@
-- platform: limitlessled
-  bridges:
-    - host: 192.168.0.61
-      groups:
-      - number: 1
-        type: rgbww
-        name: Downstairs hall
-        fade: on

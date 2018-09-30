@@ -17,8 +17,6 @@ google_actions:
       name: "Wake person1"
     input_boolean.guest_mode:
       name: "Guest mode"
-    light.downstairs_hall:
-      room: "Downstairs hall"
     light.hall:
       room: "Downstairs hall"
     switch.hall_downstairs_switch:

@@ -603,13 +603,13 @@ sensor.office_multi_sourcenodeid:
   name:
   platform: zwave
   unique_id: 17-72057594329186337
-light.downstairs_hall:
-  config_entry_id: 80619ac0a3494be9933baa9d6a9f153e
-  name:
-  platform: hue
-  unique_id: 00:de:ad:be:ef:c5:e6:76-0b
 sensor.master_bedroom_socket_previous_reading_2:
   config_entry_id:
   name:
   platform: zwave
   unique_id: 23-72057594428817682
+light.downstairs_hall:
+  config_entry_id: efe3bf116ad5449d8c065f863ecfed89
+  name:
+  platform: hue
+  unique_id: 00:de:ad:be:ef:c5:e6:76-0b

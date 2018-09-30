@@ -16,3 +16,8 @@
       prob_given_true: 0.8
       platform: 'state'
       to_state: 'home'
+    # External logic
+    - entity_id: 'input_boolean.person1_home'
+      prob_given_true: 1.0
+      platform: 'state'
+      to_state: 'on'

@@ -161,4 +161,9 @@ google_assistant: !include google_assistant.yaml
 
 weather: !include_dir_merge_list weather/
 
-#image_processing:
+image_processing:
+ - platform: openalpr_cloud
+   api_key: !secret openalpr_key
+   region: eu
+   source:
+    - entity_id: camera.front_camera

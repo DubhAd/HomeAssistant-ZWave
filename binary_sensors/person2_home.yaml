@@ -4,15 +4,23 @@
   name: 'person2 Home'
   probability_threshold: 0.95
   observations:
+    # Wifi
     - entity_id: 'device_tracker.404e36245315'
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
+    # Bluetooth
     - entity_id: 'device_tracker.serenity'
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
+    # GPS
     - entity_id: 'device_tracker.person2_mobile_gps'
       prob_given_true: 0.8
       platform: 'state'
       to_state: 'home'
+    # External logic
+    - entity_id: 'input_boolean.person2_home'
+      prob_given_true: 1.0
+      platform: 'state'
+      to_state: 'on'
