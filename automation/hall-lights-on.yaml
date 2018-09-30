@@ -1,4 +1,4 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'Hall lights on'
 trigger:
   - platform: numeric_state
@@ -37,7 +37,7 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
     - condition: state
-      entity_id: light.hall
+      entity_id: switch.hall_downstairs_switch
       state: 'off'
     - condition: or
       conditions:
@@ -78,19 +78,5 @@ condition:
         entity_id: input_boolean.adults_away
         state: 'off'
 action:
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
-      brightness: 15
-  - delay: 00:01:00
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-  - condition: state
-    entity_id: light.hall
-    state: 'off'
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
-      brightness: 15
+  - service: switch.turn_on
+    entity_id: switch.hall_downstairs_switch

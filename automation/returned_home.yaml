@@ -28,7 +28,7 @@ condition:
       below: 15
     # Hall light is off
     - condition: state
-      entity_id: light.hall
+      entity_id: switch.hall_downstairs_switch
       state: 'off'
     # Home/nearly home
     - condition: or
@@ -73,21 +73,7 @@ condition:
       - condition: template
         value_template: "{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.garage_closed_car_sensor.last_updated)) | int < 300 }}"
 action:
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
-      brightness: 15
+  - service: switch.turn_on
+    entity_id: switch.hall_downstairs_switch
   - service: scene.turn_on
     entity_id: scene.lounge_lights_on
-  - delay: 00:00:10
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-  - condition: state
-    entity_id: light.hall
-    state: 'off'
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
-      brightness: 15
-

@@ -78,6 +78,8 @@ action:
     entity_id: automation.lounge_in_daylight_2
   - service: scene.turn_on
     entity_id: scene.lounge_lights_on
+  - service: switch.turn_on
+    entity_id: switch.livingroom_socket_switch
   - delay: 00:00:10
   - service: homeassistant.turn_on
     entity_id: automation.lounge_in_daylight_2

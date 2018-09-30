@@ -22,7 +22,7 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
     - condition: state
-      entity_id: light.hall
+      entity_id: switch.hall_downstairs_switch
       state: 'on'
     - condition: or
       conditions:
@@ -41,17 +41,5 @@ condition:
           entity_id: input_boolean.guest_mode
           state: 'off'
 action:
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-  - service: light.turn_off
-    data:
-      entity_id: light.hall
-      transition: 30
-  - delay: 00:01:00
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-  - condition: state
-    entity_id: light.hall
-    state: 'on'
-  - service: light.turn_off
-    data:
-      entity_id: light.hall
-      transition: 30
+  - service: switch.turn_off
+    entity_id: switch.hall_downstairs_switch

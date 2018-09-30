@@ -30,19 +30,7 @@ condition:
           after: '14:00:00'
           before: '23:00:00'
 action:
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
-      brightness: 15
+  - service: switch.turn_on
+    entity_id: switch.hall_downstairs_switch
   - service: scene.turn_on
     entity_id: scene.lounge_lights_on
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-  - condition: state
-    entity_id: light.hall
-    state: 'off'
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
-      brightness: 15

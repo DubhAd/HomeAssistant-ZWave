@@ -31,7 +31,7 @@ condition:
       after: '05:00:00'
       before: '23:00:00'
     - condition: state
-      entity_id: light.hall
+      entity_id: switch.hall_downstairs_switch
       state: 'off'
     - condition: or
       conditions:
@@ -43,11 +43,4 @@ condition:
           state: 'off'
 action:
   - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
-  - delay: '00:01:00'
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
+    entity_id: switch.hall_downstairs_switch
