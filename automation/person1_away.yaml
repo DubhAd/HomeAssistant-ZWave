@@ -27,22 +27,13 @@ condition:
     value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|count }}"
   - condition: or
     conditions:
-    # Door was recently opened/is open
-    - condition: or
-      conditions:
-      # A door was opened in the last 10 minutes
-      - condition: template
-        value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 600 }}"
-      # A door is currently open
-      - condition: state
-        entity_id: binary_sensor.front_door_sensor
-        state: 'on'
-      - condition: state
-        entity_id: binary_sensor.patio_door_left_sensor
-        state: 'on'
-      - condition: state
-        entity_id: binary_sensor.utility_door_exterior_sensor
-        state: 'on'
+    # A door was opened in the last 10 minutes
+    - condition: template
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 600 }}"
+    # A door is currently open
+    - condition: state
+      entity_id: group.my_exterior_doors
+      state: 'on'
     # All away for at least 4 minutes
     - condition: state
       entity_id: group.person_person1
