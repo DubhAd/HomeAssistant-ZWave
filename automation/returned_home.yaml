@@ -5,7 +5,7 @@ trigger:
   - platform: state
     entity_id: binary_sensor.front_door_sensor
     to: 'on'
-  # Folks nearly home
+  # People nearly home
   - platform: numeric_state
     entity_id: proximity.person3_home
     below: 500
@@ -41,12 +41,14 @@ condition:
       # Either nearly home
       - condition: or
         conditions: 
+        # Filter of above 50 is to stop it triggering if we're already home
         - condition: and
           conditions:
           - condition: template
             value_template: "{{ is_state_attr('proximity.person3_home', 'dir_of_travel', 'towards') }}"
           - condition: numeric_state
             entity_id: proximity.person3_home
+            above: 50
             below: 500
         - condition: and
           conditions:
@@ -54,6 +56,7 @@ condition:
             value_template: "{{ is_state_attr('proximity.person1_home', 'dir_of_travel', 'towards') }}"
           - condition: numeric_state
             entity_id: proximity.person1_home
+            above: 50
             below: 500
         - condition: and
           conditions:
@@ -61,25 +64,17 @@ condition:
             value_template: "{{ is_state_attr('proximity.person2_home', 'dir_of_travel', 'towards') }}"
           - condition: numeric_state
             entity_id: proximity.person2_home
+            above: 50
             below: 500
-      # Or at least one tracker shows home
-      - condition: or
-        conditions: 
-        - condition: state
-          entity_id: group.person_person3
-          state: 'home'
-        - condition: state
-          entity_id: group.person_person1
-          state: 'home'
-        - condition: state
-          entity_id: group.person_person2
-          state: 'home'
-      # Or the garage door has been opened
+      # Or at least one tracker shows home, but not everybody is home already
+      - condition: numeric_state
+        below: 8
+        above: 0
+        value_template: "{{ (dict((states|selectattr('entity_id', 'in', state_attr('group.person_person2', 'entity_id'))|list)|groupby('state'))['home']|default([]) + dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|default([]) + dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|default([]))|count }}"
+      # Or the garage or front door has been opened in the last 5 minutes
       - condition: template
-        value_template: "{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.garage_closed_car_sensor.last_updated)) | int < 300 }}"
+        value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 300 }}"
 action:
-  - service: scene.turn_on
-    entity_id: scene.lounge_lights_on
   - service_template: >-
       {% if is_state('input_select.season', 'Christmas') %}
         script.hall_string_on
