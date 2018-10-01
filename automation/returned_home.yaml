@@ -70,6 +70,7 @@ condition:
       - condition: numeric_state
         below: 8
         above: 0
+        entity_id: group.person_person2
         value_template: "{{ (dict((states|selectattr('entity_id', 'in', state_attr('group.person_person2', 'entity_id'))|list)|groupby('state'))['home']|default([]) + dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|default([]) + dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|default([]))|count }}"
       # Or the garage or front door has been opened in the last 5 minutes
       - condition: template
