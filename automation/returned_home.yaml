@@ -27,9 +27,14 @@ condition:
       entity_id: sensor.living_room_multi_luminance
       below: 15
     # Hall light is off
-    - condition: state
-      entity_id: switch.hall_downstairs_switch
-      state: 'off'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: switch.hall_downstairs_switch
+        state: 'off'
+      - condition: state
+        entity_id: light.hall
+        state: 'off'
     # Home/nearly home
     - condition: or
       conditions: 
@@ -73,7 +78,15 @@ condition:
       - condition: template
         value_template: "{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.garage_closed_car_sensor.last_updated)) | int < 300 }}"
 action:
-  - service: switch.turn_on
-    entity_id: switch.hall_downstairs_switch
   - service: scene.turn_on
     entity_id: scene.lounge_lights_on
+  - service_template: >-
+      {% if is_state('input_select.season', 'Christmas') %}
+        script.hall_string_on
+      {% else %}
+        script.hall_strip_on
+      {% endif %}
+  - service: notify.logfile
+    data_template:
+      message: >
+        Returned home triggered by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
