@@ -15,7 +15,7 @@ condition:
 action:
   - service: notify.person3
     data_template:
-      message: "Parents will be here in about {{ states('sensor.person4s_time_to_home') }} minutes"
+      message: "person4 will be here in about {{ states('sensor.person4s_time_to_home') }} minutes"
   - service: notify.lametric_info
     data_template:
-      message: "Parents will be here in about {{ states('sensor.person4s_time_to_home') }} minutes"
+      message: "person4 will be here in about {{ states('sensor.person4s_time_to_home') }} minutes"

@@ -3,4 +3,4 @@
     battery_person2_tablet:
       entity_id: device_tracker.person2_tablet_5
       value_template: "{{ state_attr('device_tracker.person2_tablet_5', 'battery')|default(0)|int() }}"
-      unit_of_measurement: "%"
+      device_class: battery
