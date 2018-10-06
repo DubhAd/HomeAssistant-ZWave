@@ -8,7 +8,7 @@ trigger:
       minutes: 5
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    below: 13
+    below: 14
     for:
       minutes: 1
   - platform: state
@@ -23,6 +23,26 @@ trigger:
   - platform: state
     entity_id: media_player.living_room
     to: 'playing'
+  - platform: state
+    entity_id: media_player.samsung_tv_remote
+    to: 'on'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: media_player.cast_living_room_tv
+    to: 'playing'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+    to: 'home'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: media_player.living_room
+    to: 'playing'
+    for:
+      minutes: 5
   - platform: state
     entity_id: input_boolean.lighting_automations
     to: 'on'
@@ -39,14 +59,43 @@ condition:
       state: 'off'
       for:
         minutes: 5
-    # Room is dark
+    # Room is dark, but not too dark
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
       below: 18
+      above: 12
     # During operational hours
     - condition: time
       after: '04:00:00'
       before: '23:00:00'
+    - condition: or
+      conditions:
+      # Media's been on for at least 5 minutes
+      - condition: state
+        entity_id: media_player.samsung_tv_remote
+        state: 'on'
+        for:
+          minutes: 5
+      # Chromecast
+      - condition: state
+        entity_id: media_player.cast_living_room_tv
+        state: 'playing'
+        for:
+          minutes: 5
+      - condition: state
+        entity_id: device_tracker.livingroom_chromecast
+        state: 'home'
+        for:
+          minutes: 5
+      # Sonos
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'playing'
+        for:
+          minutes: 5
+      # There's been motion in the last 3 minutes
+      - condition: template
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.binary_sensor.living_room_motion.last_updated) ) < 180 }}"
     # We're home
     - condition: or
       conditions:
