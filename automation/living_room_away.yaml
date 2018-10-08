@@ -1,0 +1,50 @@
+initial_state: 'on'
+alias: 'Living room away'
+trigger:
+  - platform: state
+    entity_id: media_player.samsung_tv_remote
+    to: 'off'
+    for:
+      minutes: 3
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+    to: 'not_home'
+    for:
+      minutes: 3
+  - platform: state
+    entity_id: media_player.cast_living_room_tv
+    to: 'unavailable'
+    for:
+      minutes: 3
+  - platform: state
+    entity_id: media_player.living_room
+    to: 'paused'
+    for:
+      minutes: 3
+  - platform: state
+    entity_id: input_boolean.all_away
+    to: 'on'
+condition:
+  condition: and
+  conditions:
+    # Requires all the media devices to be off
+  - condition: state
+    entity_id: media_player.samsung_tv_remote
+    state: 'off'
+  - condition: state
+    entity_id: device_tracker.livingroom_chromecast
+    state: 'not_home'
+  - condition: state
+    entity_id: media_player.cast_living_room_tv
+    state: 'unavailable'
+  - condition: state
+    entity_id: media_player.living_room
+    state: 'paused'
+  # There's been no motion in the last 3 minutes
+  - condition: template
+    value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.binary_sensor.living_room_motion.last_updated) ) > 180 }}"
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.living_room
+      option: Away

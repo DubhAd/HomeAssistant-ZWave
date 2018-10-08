@@ -752,6 +752,11 @@ views:
       - automation.lounge_in_daylight
       - automation.lounge_in_daylight_2
       - automation.lounge_off
+      - automation.living_room_away
+      - automation.living_room_day_off
+      - automation.living_room_day_on
+      - automation.living_room_night_off
+      - automation.living_room_night_on
     - type: entities
       title: Automations for the Family room
       entities:

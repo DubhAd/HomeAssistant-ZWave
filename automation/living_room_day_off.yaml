@@ -1,0 +1,48 @@
+initial_state: 'on'
+alias: 'Living room day off'
+trigger:
+  - platform: state
+    entity_id: sun.sun
+    to: above_horizon
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 70
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 50
+    for:
+      minutes: 10
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 30
+    for:
+      minutes: 20
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 20
+    for:
+      minutes: 30
+condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: above_horizon
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: or
+      conditions:
+        # Bright, or...
+      - condition: numeric_state
+        entity_id: sensor.living_room_multi_luminance
+        above: 40
+        # Sun is rising
+      - condition: state
+        entity_id: binary_sensor.trend_sun_elevation
+        state: 'on'
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.living_room
+      option: Day off
