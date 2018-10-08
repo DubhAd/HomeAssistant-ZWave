@@ -1,0 +1,40 @@
+initial_state: 'on'
+alias: 'Family room occupied'
+trigger:
+  - platform: state
+    entity_id: device_tracker.family_tv
+    to: 'home'
+  - platform: state
+    entity_id: media_player.family_room
+    to: 'playing'
+  - platform: state
+    entity_id: media_player.cast_kitchen_speaker
+    to: 'playing'
+condition:
+  # TV or music on
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: device_tracker.family_tv
+      state: 'home'
+    - condition: state
+      entity_id: media_player.family_room
+      state: 'playing'
+    - condition: state
+      entity_id: media_player.cast_kitchen_speaker
+      state: 'playing'
+  - condition: or
+    conditions:
+    # Somebody is home, or guest mode is on
+    - condition: state
+      entity_id: input_boolean.all_away
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.adults_away
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'on'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.family_room_occupied

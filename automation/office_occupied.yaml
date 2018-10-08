@@ -1,0 +1,9 @@
+initial_state: 'on'
+alias: 'Office occupied'
+trigger:
+  - platform: state
+    entity_id: device_tracker.00e04c680550
+    to: 'home'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.office_occupied

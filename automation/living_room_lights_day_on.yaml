@@ -1,0 +1,20 @@
+initial_state: 'off'
+alias: 'Living room lights day on'
+trigger:
+  - platform: state
+    entity_id: input_select.living_room
+    to: Day on
+condition:
+  condition: and
+  conditions:
+    # Lighting automations are enabled
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+action:
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.livingroom_lights_auto
+  - service: switch.turn_on
+    entity_id: switch.tv_light_switch
+  - service: switch.turn_on
+    entity_id: switch.livingroom_socket_switch

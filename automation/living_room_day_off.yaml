@@ -1,9 +1,6 @@
 initial_state: 'on'
 alias: 'Living room day off'
 trigger:
-  - platform: state
-    entity_id: sun.sun
-    to: above_horizon
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     above: 70
@@ -22,14 +19,14 @@ trigger:
     above: 20
     for:
       minutes: 30
+  - platform: state
+    entity_id: input_boolean.living_room_occupied
+    to: 'on'
 condition:
   - condition: and
     conditions:
     - condition: state
-      entity_id: sun.sun
-      state: above_horizon
-    - condition: state
-      entity_id: input_boolean.lighting_automations
+      entity_id: input_boolean.living_room_occupied
       state: 'on'
     - condition: or
       conditions:
@@ -37,10 +34,27 @@ condition:
       - condition: numeric_state
         entity_id: sensor.living_room_multi_luminance
         above: 40
-        # Sun is rising
-      - condition: state
-        entity_id: binary_sensor.trend_sun_elevation
-        state: 'on'
+      - condition: and
+        conditions:
+          # Sun is rising
+        - condition: state
+          entity_id: binary_sensor.trend_sun_elevation
+          state: 'on'
+        - condition: numeric_state
+          entity_id: sensor.living_room_multi_luminance
+          above: 20
+  # We're here or guest mode is on
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: input_boolean.all_away
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.adults_away
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'on'
 action:
   - service: input_select.select_option
     data:

@@ -1,0 +1,102 @@
+initial_state: 'on'
+alias: 'Living room occupied'
+trigger:
+  - platform: state
+    entity_id: media_player.samsung_tv_remote
+    to: 'on'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: media_player.cast_living_room_tv
+    to: 'playing'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+    to: 'home'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: media_player.living_room
+    to: 'playing'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: media_player.samsung_tv_remote
+    to: 'on'
+  - platform: state
+    entity_id: media_player.cast_living_room_tv
+    to: 'playing'
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+    to: 'home'
+  - platform: state
+    entity_id: media_player.living_room
+    to: 'playing'
+  - platform: state
+    entity_id: binary_sensor.living_room_motion
+    to: 'on'
+condition:
+  condition: and
+  conditions:
+    # Somebody home, or guest mode is on
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: input_boolean.all_away
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.adults_away
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'on'
+    # Either things have been on for at least 5 minutes, or things are on and there's been motion 
+    - condition: or
+      conditions:
+      # Media's been on for at least 5 minutes
+      - condition: state
+        entity_id: media_player.samsung_tv_remote
+        state: 'on'
+        for:
+          minutes: 5
+      # Chromecast
+      - condition: state
+        entity_id: media_player.cast_living_room_tv
+        state: 'playing'
+        for:
+          minutes: 5
+      - condition: state
+        entity_id: device_tracker.livingroom_chromecast
+        state: 'home'
+        for:
+          minutes: 5
+      # Sonos
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'playing'
+        for:
+          minutes: 5
+      # There's been motion in the last 3 minutes
+      - condition: template
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.binary_sensor.living_room_motion.last_updated) ) < 180 }}"
+    - condition: or
+      conditions:
+      # TV
+      - condition: state
+        entity_id: media_player.samsung_tv_remote
+        state: 'on'
+      # Chromecast
+      - condition: state
+        entity_id: media_player.cast_living_room_tv
+        state: 'playing'
+      - condition: state
+        entity_id: device_tracker.livingroom_chromecast
+        state: 'home'
+      # Sonos
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'playing'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.living_room_occupied

@@ -642,6 +642,14 @@ views:
     icon: mdi:information-outline
     cards:
     - type: entities
+      title: Rooms
+      entities:
+      - input_select.living_room
+      - input_boolean.living_room_occupied
+      - input_select.family_room
+      - input_boolean.family_room_occupied
+      - input_boolean.office_occupied
+    - type: entities
       title: Sensors
       entities:
       - sun.sun
@@ -738,32 +746,15 @@ views:
     icon: mdi:home-variant
     cards:
     - type: entities
-      title: Automations for the Living room
-      entities:
-      - automation.all_away_lights_off
-      - automation.all_away_media_off
-      - automation.adults_home_lights_on
-      - automation.dark_tv_on
-      - automation.darker_tv_on
-      - automation.lounge_dark_motion
-      - automation.lounge_dull
-      - automation.table_light_on
-      - automation.tv_off_bedtime
-      - automation.lounge_in_daylight
-      - automation.lounge_in_daylight_2
-      - automation.lounge_off
-      - automation.living_room_away
-      - automation.living_room_day_off
-      - automation.living_room_day_on
-      - automation.living_room_night_off
-      - automation.living_room_night_on
-    - type: entities
       title: Automations for the Family room
       entities:
       - automation.moved_to_family_room
+      - automation.family_room_occupied
+      - automation.family_room_not_occupied
     - type: entities
       title: Automations for downstairs
       entities:
+      - automation.adults_home_lights_on
       - automation.hall_lights_on
       - automation.hall_lights_off
       - automation.hall_lights_off_departure
@@ -785,14 +776,47 @@ views:
       - automation.nighttime_garden_off
       - automation.garden_lights_left_on
       - binary_sensor.garden_lights_left_on
+  - title: Living room automations
+    icon: mdi:home-circle
+    cards:
+    - type: entities
+      title: Automations for the Living room Old
+      entities:
+      - automation.all_away_lights_off
+      - automation.dark_tv_on
+      - automation.darker_tv_on
+      - automation.lounge_in_daylight
+      - automation.lounge_in_daylight_2
+      - automation.lounge_off
+      - automation.lounge_dull
+    - type: entities
+      title: Automations for the Living room Current
+      entities:
+      - automation.all_away_media_off
+      - automation.lounge_dark_motion
+      - automation.table_light_on
+      - automation.tv_off_bedtime
+    - type: entities
+      title: Automations for the Living room New
+      entities:
+      - automation.living_room_away
+      - automation.living_room_day_off
+      - automation.living_room_day_on
+      - automation.living_room_night_off
+      - automation.living_room_night_on
+      - automation.living_room_occupied
+      - automation.living_room_not_occupied
+      - automation.living_room_lights_day_on
+      - automation.living_room_lights_night_on
+      - automation.living_room_lights_off
     - type: entities
       title: Media automations
       entities:
       - automation.tv_on_sonos_off
       - automation.sonos_on_tv_mute
       - automation.sonos_off_tv_unmute
-  - title: Upstairs automations
-    icon: mdi:home-modern
+  - title: Master bedroom automations
+    icon: mdi:hotel
     cards:
     - type: entities
       title: Automations for the master bedroom
@@ -833,6 +857,9 @@ views:
       - automation.master_bedhead_cool_stop
       - automation.master_bedhead_warm
       - automation.master_bedhead_warm_stop
+  - title: Upstairs automations
+    icon: mdi:home-modern
+    cards:
     - type: entities
       title: Automations for the second bedroom
       entities:
@@ -861,6 +888,8 @@ views:
       - automation.stop_classical_music_in_the_office
       - automation.pause_music_in_the_office
       - automation.resume_music_in_the_office
+      - automation.office_occupied
+      - automation.office_not_occupied
   - title: More Automations
     icon: mdi:engine-outline
     cards:

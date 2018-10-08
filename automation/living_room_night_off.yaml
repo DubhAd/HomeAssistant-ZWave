@@ -2,49 +2,37 @@ initial_state: 'on'
 alias: 'Living room night off'
 trigger:
   - platform: state
+    entity_id: input_boolean.living_room_occupied
+    to: 'off'
+  - platform: state
     entity_id: sun.sun
-    to: below_horizon
-  - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
-    above: 70
-  - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
-    above: 50
-    for:
-      minutes: 20
-  - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
-    above: 30
-    for:
-      minutes: 50
+    to: 'below_horizon'
 condition:
   - condition: and
     conditions:
     - condition: state
-      entity_id: sun.sun
-      state: below_horizon
+      entity_id: input_boolean.living_room_occupied
+      state: 'off'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: state
+        entity_id: input_select.living_room
+        state: Night on
+  # We're here or guest mode is on
+  - condition: or
+    conditions:
     - condition: state
-      entity_id: input_boolean.lighting_automations
+      entity_id: input_boolean.all_away
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.adults_away
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.guest_mode
       state: 'on'
-    # Lights are on
-    - condition: or
-      conditions:
-      - condition: state
-        entity_id: group.living_room_lights
-        state: 'on'
-      - condition: state
-        entity_id: switch.livingroom_socket_switch
-        state: 'on'
-    - condition: or
-      conditions:
-        # Very bright, or...
-      - condition: numeric_state
-        entity_id: sensor.living_room_multi_luminance
-        above: 40
-        # Sun is rising
-      - condition: state
-        entity_id: binary_sensor.trend_sun_elevation
-        state: 'on'
 action:
   - service: input_select.select_option
     data:
