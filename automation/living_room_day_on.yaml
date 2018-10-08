@@ -6,7 +6,7 @@ trigger:
     to: 'on'
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    below: 20
+    below: 18
     for:
       minutes: 5
   - platform: numeric_state
@@ -20,7 +20,7 @@ condition:
     # Room is dark, but not too dark
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
-      below: 20
+      below: 18
       above: 11
     - condition: state
       entity_id: input_boolean.living_room_occupied

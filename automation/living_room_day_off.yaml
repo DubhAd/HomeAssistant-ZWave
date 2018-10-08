@@ -8,17 +8,17 @@ trigger:
     entity_id: sensor.living_room_multi_luminance
     above: 50
     for:
-      minutes: 10
+      minutes: 5
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     above: 30
     for:
-      minutes: 20
+      minutes: 10
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     above: 20
     for:
-      minutes: 30
+      minutes: 20
   - platform: state
     entity_id: input_boolean.living_room_occupied
     to: 'on'
@@ -33,7 +33,7 @@ condition:
         # Bright, or...
       - condition: numeric_state
         entity_id: sensor.living_room_multi_luminance
-        above: 40
+        above: 30
       - condition: and
         conditions:
           # Sun is rising

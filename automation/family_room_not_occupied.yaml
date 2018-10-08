@@ -25,7 +25,7 @@ condition:
     conditions:
     - condition: state
       entity_id: media_player.family_room
-      state: 'playing'
+      state: 'paused'
     - condition: state
       entity_id: media_player.family_room
       state: 'off'
@@ -33,10 +33,10 @@ condition:
     conditions:
     - condition: state
       entity_id: media_player.cast_kitchen_speaker
-      state: 'playing'
+      state: 'idle'
     - condition: state
       entity_id: media_player.cast_kitchen_speaker
-      state: 'idle'
+      state: 'off'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.family_room_occupied
