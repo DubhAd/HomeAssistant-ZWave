@@ -1,12 +1,12 @@
-alias: 'Utility door open after sunset turn on'
+alias: 'Utility door open after sunset turn off'
 initial_state: 'on'
 trigger:
   - platform: state
     entity_id: binary_sensor.utility_door_exterior_sensor
-    to: 'on'
+    to: 'off'
   - platform: state
     entity_id: binary_sensor.patio_door_left_sensor
-    to: 'on'
+    to: 'off'
 condition:
   condition: and
   conditions:
@@ -18,7 +18,7 @@ condition:
       below: -5
     - condition: state
       entity_id: switch.garden_lights_switch
-      state: 'off'
+      state: 'on'
 action:
-  - service: script.turn_on
-    entity_id: script.garden_door_after_sunset
+  - service: homeassistant.turn_off
+    entity_id: switch.garden_lights_switch

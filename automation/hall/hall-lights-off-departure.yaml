@@ -4,6 +4,9 @@ trigger:
   - platform: state
     entity_id: input_boolean.all_away
     to: 'on'
+  - platform: state
+    entity_id: input_boolean.adults_away
+    to: 'on'
 condition:
   - condition: and
     conditions:

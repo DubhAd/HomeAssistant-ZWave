@@ -37,9 +37,6 @@ condition:
     - condition: state
       entity_id: media_player.living_room
       state: 'paused'
-    - condition: state
-      entity_id: sun.sun
-      state: 'below_horizon'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.living_room_occupied
