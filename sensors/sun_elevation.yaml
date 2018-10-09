@@ -2,10 +2,10 @@
   sensors:
     sun_elevation:
       entity_id: sun.sun
-      value_template: '{{ states.sun.sun.attributes.elevation }}'
+      value_template: "{{ state_attr('sun.sun', 'elevation') }}"
       unit_of_measurement: "degrees"
       icon_template: >
-        {% set elevation = states.sun.sun.attributes.elevation|default(0) %}
+        {% set elevation = state_attr('sun.sun', 'elevation')|default(0) %}
         {% if elevation > 0 %}
           mdi:weather-sunny
         {% else %}

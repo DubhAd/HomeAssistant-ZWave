@@ -3,4 +3,4 @@
     zwave_battery_front_door:
       entity_id: zwave.front_door
       value_template: "{{ state_attr('zwave.front_door', 'battery_level')|default(75) }}"
-      unit_of_measurement: "%"
+      device_class: battery

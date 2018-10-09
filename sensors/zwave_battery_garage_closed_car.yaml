@@ -3,4 +3,4 @@
     zwave_battery_garage_closed_car:
       entity_id: zwave.garage_closed_car
       value_template: "{{ state_attr('zwave.garage_closed_car', 'battery_level')|default(75) }}"
-      unit_of_measurement: "%"
+      device_class: battery

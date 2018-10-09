@@ -2,6 +2,8 @@
   sensors:
     last_motion:
       friendly_name: 'Last Motion'
+      entity_id:
+        - binary_sensor.living_room_motion
       value_template: >-
         {%- set sensors = [states.binary_sensor.living_room_motion] %}
         {% for sensor in sensors %}

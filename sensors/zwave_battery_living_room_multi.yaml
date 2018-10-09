@@ -3,4 +3,4 @@
     zwave_battery_living_room_multi:
       entity_id: zwave.living_room_multi
       value_template: "{{ state_attr('zwave.living_room_multi', 'battery_level')|default(75) }}"
-      unit_of_measurement: "%"
+      device_class: battery

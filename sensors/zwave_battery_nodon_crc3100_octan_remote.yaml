@@ -3,4 +3,4 @@
     zwave_battery_nodon_crc3100_octan_remote:
       entity_id: zwave.nodon_crc3100_octan_remote
       value_template: "{{ state_attr('zwave.nodon_crc3100_octan_remote', 'battery_level')|default(75) }}"
-      unit_of_measurement: "%"
+      device_class: battery

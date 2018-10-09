@@ -3,4 +3,4 @@
     zwave_battery_green_remote:
       entity_id: zwave.green_remote
       value_template: "{{ state_attr('zwave.green_remote', 'battery_level')|default(75) }}"
-      unit_of_measurement: "%"
+      device_class: battery
