@@ -23,7 +23,7 @@ Turns off fluxer at 23:00
 
 ---
 
-These automations control the brightness, depending on the time of day/night
+These automations control the brightness, depending on the time of day/night - details to follow
 
 #### bedhead-light-bright-sunrise.yaml
 #### bedhead-light-dim-2.yaml
@@ -40,7 +40,7 @@ These automations control the brightness, depending on the time of day/night
 
 ---
 
-These are triggered by the Z-Wave remote
+These are triggered by the Z-Wave remote - details to follow
 
 #### bedhead_turn_off.yaml
 #### bedhead_turn_on_cool.yaml
