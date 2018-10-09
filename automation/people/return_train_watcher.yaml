@@ -5,7 +5,7 @@ trigger:
     value_template: >-
       {%- macro getTrainStatus() -%}
       
-      {%- for train in states.sensor.next_train_to_abc.attributes.next_trains -%}
+      {%- for train in state_attr('sensor.next_train_to_abc', 'next_trains') -%}
       {%- if train.status == "ON TIME" -%}
         X
       {%- endif -%}
@@ -18,8 +18,8 @@ trigger:
       false
       {%- endif -%}
 condition:
-  condition: and
-  conditions: 
+  - condition: and
+    conditions: 
     - condition: zone
       zone: zone.work
       entity_id: device_tracker.person2_mobile_gps
@@ -27,6 +27,6 @@ condition:
       entity_id: binary_sensor.workday_sensor
       state: 'on'
 action:
-  service: notify.person2
-  data_template: 
-    message: "You need to check the trains, they're looking a bit messed up"
+  - service: notify.person2
+    data_template: 
+      message: "You need to check the trains, they're looking a bit messed up"

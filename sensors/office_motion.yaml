@@ -2,4 +2,5 @@
   sensors:
     office_motion:
       friendly_name: 'Office motion'
+      entity_id: sensor.office_multi_burglar
       value_template: '{% if is_state("sensor.office_multi_burglar", "0") %} false {% else %} true {% endif %}'
