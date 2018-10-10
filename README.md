@@ -46,7 +46,7 @@ Each directory has a short readme explaining what's in there, and the purpose of
 * Lighting
   * [Yeelight](https://home-assistant.io/components/light.yeelight/) component and [led strips](https://www.yeelight.com/en_US/product/pitaya), one mounted behind the headboard in the master bedroom, and one along the wall side of the bed frame in the second bedroom. These provide good enough lighting to read by at night, and also to help wake us in the morning.
   * Outdoor mains [240V LED strip](https://www.lightingever.co.uk/220-240-v-ac-led-strip-multicolour-5050-50m.html) which we turn on and off with one of the wall plugs
-  * Philips Hue compatible LED strips built following [this guide](https://char.gd/blog/2018/building-better-cheaper-philips-hue-led-strips), using the [Gledopto GL-C-008](https://www.aliexpress.com/item/GLEDOPTO-ZIGBEE-Led-Controller-Amazon-Echo-hue-lightify-tradfri-compatible-LED-controller-RGB-CCT-WW-CW/32858603964.html) RGB+CCT LED Controller, a roll of RGB-CCT LED tape, and a 24V power supply
+  * [Philips Hue](https://www.home-assistant.io/components/hue/) compatible LED strips built following [this guide](https://char.gd/blog/2018/building-better-cheaper-philips-hue-led-strips), using the [Gledopto GL-C-008](https://www.aliexpress.com/item/GLEDOPTO-ZIGBEE-Led-Controller-Amazon-Echo-hue-lightify-tradfri-compatible-LED-controller-RGB-CCT-WW-CW/32858603964.html) RGB+CCT LED Controller, a roll of RGB-CCT LED tape, and a 24V power supply
   * [Philips Hue](https://www2.meethue.com/en-gb/p/hue-bridge/8718696516850) bridge (v2)
 * [Google Home Mini](https://store.google.com/product/google_home_mini), with the [Google Assistant](https://home-assistant.io/components/google_assistant/) component
 * Media
@@ -77,65 +77,15 @@ Each directory has a short readme explaining what's in there, and the purpose of
 
 ## Presence detection
 
-* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html).
-
-## Template sensors
-
-* [Skalavala](https://github.com/skalavala/smarthome) provided a fantastic [template](sensors/zwave_battery_front_door.yaml) that sets the icon for the entity to a representation of the battery level. I use this for all mobile devices, and sensors.
-  * ![Screenshot of battery template](https://i.imgur.com/4MnzuLM.png)
-* Recycling collection [file and template sensors](sensors/bin.yaml), and [supporting script](local/bin/parse-email)
-  * Notifications about upcoming collections are sent by email, the supporting script parses these emails and writes the date of the next collection for each type to it's own file, in JSON formatting
-  * A file sensor for each collection type, using the above files
-  * A template sensor for each collection type. This tracks whether the collection is two or more days away (future), tomorrow (tomorrow), this morning (today) or past (past). These states are used in automations, and in the HA Dashboard display.
-
-## Automations
-
-* Master and second bedrooms
-  * Using the remote with the light strip to control the light, including dimming and colour temperature
-  * Dim the light through the night, turning it to lowest brightness and red at midnight
-  * Turn the light off if it was left on for half an hour
-  * Turn the light on with the alarm
-* Front of the house
-  * Turn on the light by the house number on at dusk, and at 06:00 (or earlier if we're awake earlier than normal)
-  * Turn the light off at sunrise and (just before) midnight
-  * Send alerts if we've left the garage doors open for 10 minutes (and nag every 10 minutes)
-  * Warn us if an outside door is opened when we're away from home
-  * Warn us if the garage doors are opened once we've gone to bed
-* Back of the house
-  * Turn on the garden lights if the utility door is opened between dusk and dawn (elevation below -5). This temporarily turns off the "off" automations - for 8 seconds (controlled by an input_number)
-  * Turn off the garden lights when the utility door is closed
-  * Turn off the lights if they're left on and the door is closed
-* Lounge
-  * Turn on the lights when we come home and it's dark
-  * Turn off the lights if we all leave (and the TV is off)
-  * Turn on lights as the room gets dark (if we're home, and the TV is on)
-  * Turn on the table light if motion is detected in the dark, and turn it off 2 minutes after the last motion detection
-  * Mute the TV if the Sonos starts playing, and unmute when it stops
-  * Stop the Sonos if the TV is turned on
-  * At the end of the night, when the TV has been off for 5 minutes, or the utility door has been shut after the TV is turned off, run the bedtime script (turns of the lights one at a time)
-* Hall
-  * During Autumn and Winter, turn on the LED lights when the sun is below 5 degrees elevation (and we're home). Our hall is an internal hall with no windows, so it gets dark quickly.
-* Home office
-  * When I'm working for home, start music at the beginning of the day, and stop it at the end
-* People
-  * Track when we get up, go to bed, leave, and return, for other automations
-  * Notify about commute delays
-  * Let the adults know when the other is going to be home
-* Misc
-  * When battery powered sensors are getting low (25%) warn us so that we know to order a replacement, remind again at 10% and 5%
-  * Check the health of the Z-Wave mesh (by looking to see that at least one device has checked in within the last 5 minutes) and run a Heal and Test if necessary
-  * Send notifications on startup and shutdown of HA, and when the Z-Wave mesh is ready
-  * Notify us about bin collections being due (links in with a green/amber/red Floorplan notification)
-* MoreToDo 
-
-### Garden lights
-
-This is the most complex of my current automations, to make it "human friendly". The basic logic is that there are automations to turn the light on when the door opens, and off when it closes. To stop that simply having the light on when the door is open, it actually calls a script to turn on the lights. That script turns off the "off" automation temporarily - the duration is determined by the value of `input_number.door_delay` (in seconds).  That means that if we open and close the door (to let the dog out or going out into the garden for some other reason) the lights will stay on when the door closes.  There's another automation (and a template binary sensor) to track if the lights have been left on, and if so to turn them off. That supports a variable delay up to 2 hours, or we can just turn off the automation.
+* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html). Short version - I don't use groups, or merge the trackers. Both of those approaches have major shortcomings, for the first if you have a misbehaving sensor that's stuck at `home` you'll never be marked as away. For the second, the last one to update wins, so you can flip flop between two states. I'm experimenting with the [Bayesian](https://www.home-assistant.io/components/binary_sensor.bayesian) sensor and some automation logic.
 
 ## Notes
 
 * These are (automatically) modified versions of my actual configurations
-* My primary goal is to minimise human actions, and where that isn't possible streamline those human actions
+* The goals with Home Assistant have been:
+  1. Minimise human actions, and where that isn't possible streamline those human actions
+  2. Provide voice control where the automations don't get it right (but try to fix that)
+  3. Have a minimal UI (HA Dashboard currently) to provide manual control
 
 # Future plans
 
@@ -168,4 +118,7 @@ A large amount of this will require a rewire of the lighting circuits, so that a
 * [Home Assistant documentation](https://home-assistant.io/docs/) and [component list](https://home-assistant.io/components/)
 * Problems with Z-Wave delays and inconsistencies? Try [this script](https://hastebin.com/igujenogud.coffeescript) in the dev-states section and you'll see if you've problem devices - shown by an RTT value of 1,000 or more, and retries significantly more than other devices
 * [My blog](https://ceard.tech/) on home automation and other things
-* If I've helped you, and you really want to, you can [buy me a coffee](https://buymeacoff.ee/9MWvkxr8P), but don't feel obliged - I'm not doing this for free coffee ;)
+
+# Coffee
+
+If I've helped you, and you really want to, you can [buy me a coffee](https://buymeacoff.ee/9MWvkxr8P), but don't feel obliged - I'm not doing this for free coffee ;)
