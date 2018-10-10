@@ -24,6 +24,10 @@ trigger:
 condition:
   - condition: and
     conditions:
+    # Room must currently be occupied
+    - condition: state
+      entity_id: input_boolean.living_room_occupied
+      state: 'on'
     # Requires all the media devices to be off
     - condition: state
       entity_id: media_player.samsung_tv_remote

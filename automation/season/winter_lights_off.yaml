@@ -1,5 +1,5 @@
 alias: 'Winter lights off'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: state
     entity_id: input_boolean.all_away

@@ -1,4 +1,4 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'TV off Bedtime'
 trigger:
   - platform: state
@@ -33,9 +33,6 @@ condition:
         - condition: time
           after: '22:00:00'
 action:
-    # Disable the turning on of the lights automatically
-  - service: homeassistant.turn_off
-    entity_id: automation.adults_home_lights_on
     # Now turn the lights off
   - service: script.turn_on
     entity_id: script.bedtime_slow_off

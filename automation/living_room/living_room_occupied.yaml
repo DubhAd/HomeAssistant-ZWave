@@ -39,6 +39,10 @@ trigger:
 condition:
   condition: and
   conditions:
+    # Room must currently be not occupied
+    - condition: state
+      entity_id: input_boolean.living_room_occupied
+      state: 'off'
     # Somebody home, or guest mode is on
     - condition: or
       conditions:

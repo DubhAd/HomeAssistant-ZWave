@@ -85,4 +85,9 @@ action:
   - service: notify.logfile
     data_template:
       message: >
-        Returned home triggered by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
+        Returned home triggered at {{ now() }} by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
+          person1's proximity: {{ states('proximity.person1_home') }}
+          person3's proximity: {{ states('proximity.person3_home') }}
+          person2's proximity: {{ states('proximity.person2_home') }}
+          Trackers home already: {{ (dict((states|selectattr('entity_id', 'in', state_attr('group.person_person2', 'entity_id'))|list)|groupby('state'))['home']|default([]) + dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|default([]) + dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|default([]))|count }}
+          Door was opened {{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int }} seconds ago
