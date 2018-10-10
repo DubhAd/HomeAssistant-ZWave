@@ -168,3 +168,4 @@ A large amount of this will require a rewire of the lighting circuits, so that a
 * [Home Assistant documentation](https://home-assistant.io/docs/) and [component list](https://home-assistant.io/components/)
 * Problems with Z-Wave delays and inconsistencies? Try [this script](https://hastebin.com/igujenogud.coffeescript) in the dev-states section and you'll see if you've problem devices - shown by an RTT value of 1,000 or more, and retries significantly more than other devices
 * [My blog](https://ceard.tech/) on home automation and other things
+* If I've helped you, and you really want to, you can [buy me a coffee](https://buymeacoff.ee/9MWvkxr8P), but don't feel obliged - I'm not doing this for free coffee ;)
