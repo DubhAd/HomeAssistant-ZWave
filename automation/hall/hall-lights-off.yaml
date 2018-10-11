@@ -7,8 +7,6 @@ trigger:
   - platform: state
     entity_id: input_boolean.bedtime
     to: 'on'
-    for:
-      minutes: 2
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     above: 30

@@ -806,6 +806,7 @@ views:
       - automation.living_room_lights_day_on
       - automation.living_room_lights_night_on
       - automation.living_room_lights_off
+      - automation.tv_light_on
     - type: entities
       title: Media automations
       entities:
