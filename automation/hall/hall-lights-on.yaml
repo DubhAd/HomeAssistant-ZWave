@@ -13,11 +13,9 @@ trigger:
     entity_id: input_boolean.bedtime
     to: 'off'
   - platform: state
-    entity_id: input_boolean.adults_away
-    from: 'on'
-    to: 'off'
-  - platform: state
-    entity_id: input_boolean.all_away
+    entity_id: 
+      - input_boolean.adults_away
+      - input_boolean.all_away
     from: 'on'
     to: 'off'
   - platform: state
@@ -30,6 +28,11 @@ trigger:
       - input_select.person3_status_dropdown
       - input_select.person1_status_dropdown
       - input_select.person4_status_dropdown
+  - platform: state
+    to: 'on'
+    entity_id:
+      - input_boolean.living_room_occupied
+      - input_boolean.family_room_occupied
 condition:
   - condition: and
     conditions:
