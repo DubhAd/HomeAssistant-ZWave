@@ -16,27 +16,46 @@ trigger:
   - platform: state
     entity_id: media_player.cast_kitchen_speaker
     to: 'idle'
+  - platform: state
+    entity_id: calendar.person2
+    to: 'off'
 condition:
-  # TV and music off
-  - condition: state
-    entity_id: device_tracker.family_tv
-    state: 'not_home'
   - condition: or
     conditions:
-    - condition: state
-      entity_id: media_player.family_room
-      state: 'paused'
-    - condition: state
-      entity_id: media_player.family_room
-      state: 'off'
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: media_player.cast_kitchen_speaker
-      state: 'idle'
-    - condition: state
-      entity_id: media_player.cast_kitchen_speaker
-      state: 'off'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.person2_home
+        state: 'on'
+      - condition: template
+        value_template: >-
+          {% if trigger.entity_id == calendar.person2 %}
+            {{ trigger.from_state.state == 'on' and trigger.from_state.attributes.message == 'Game night' }}
+          {% else %}
+            False
+          {% endif %}
+    # TV and music off
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: device_tracker.family_tv
+        state: 'not_home'
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: media_player.family_room
+          state: 'paused'
+        - condition: state
+          entity_id: media_player.family_room
+          state: 'off'
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: media_player.cast_kitchen_speaker
+          state: 'idle'
+        - condition: state
+          entity_id: media_player.cast_kitchen_speaker
+          state: 'off'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.family_room_occupied
