@@ -46,6 +46,9 @@ condition:
         above: 30
       - condition: and
         conditions:
+        - condition: state
+          entity_id: input_boolean.guest_mode
+          state: 'off'
         - condition: or
           conditions:
           - condition: state
@@ -59,9 +62,6 @@ condition:
             - condition: state
               entity_id: input_boolean.family_room_occupied
               state: 'off'
-        - condition: state
-          entity_id: input_boolean.guest_mode
-          state: 'off'
 action:
   - service_template: >-
       {% if is_state('input_select.season', 'Christmas') %}
