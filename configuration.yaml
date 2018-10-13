@@ -29,7 +29,7 @@ frontend: !include frontend.yaml
 
 http:
   # Uncomment this to add a password (recommended!)
-  api_password: !secret api_password
+  api_password: !secret api_passsword
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: !secret base_url
   trusted_networks: 192.168.0.0/24
@@ -153,7 +153,7 @@ alarm_control_panel: !include_dir_list alarm/
 
 #zoneminder:
 
-google_assistant: !include google_assistant.yaml
+#google_assistant: !include google_assistant.yaml
 
 #dialogflow:
 #intent_script: !include intent_scripts.yaml

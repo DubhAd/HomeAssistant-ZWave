@@ -54,3 +54,8 @@ action:
     data:
       entity_id: input_select.living_room
       option: Day off
+  - service: notify.logfile
+    data_template:
+      message: >
+        Day off triggered at {{ now() }} by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
+          Light level is {{ states('sensor.living_room_multi_luminance') }}

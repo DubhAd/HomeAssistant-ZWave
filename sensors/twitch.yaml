@@ -1,3 +1,1 @@
-- platform: twitch
-  channels:
-    - !secret twitch_channel
+#- platform: twitch

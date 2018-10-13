@@ -11,59 +11,48 @@ sensor.hass_installed:
 sensor.current_ha_version:
   icon: mdi:github-circle
 device_tracker.person1_mobile:
-  entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1 GPS"
 device_tracker.person1_mobile_wifi:
-  entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1 WiFi"
+  icon: mdi:wifi
 device_tracker.person3_mobile:
-  entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3 GPS"
 device_tracker.person3_mobile_wifi:
-  entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3 WiFi"
+  icon: mdi:wifi
 sensor.person1s_time_to_home_2:
-  entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1's travel time to home"
 sensor.person2s_time_to_home_2:
-  entity_picture: /local/person2Thumb.jpg
   friendly_name: "person2's travel time to home"
 sensor.person3s_time_to_home_2:
-  entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3's travel time to home"
 sensor.person1s_time_to_home:
-  entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1's travel time to home"
 sensor.person1s_time_to_home_by_transit:
-  entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1's bus time to home"
 sensor.person2s_time_to_home:
-  entity_picture: /local/person2Thumb.jpg
   friendly_name: "person2's travel time to home"
 sensor.person3s_time_to_home:
-  entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3's travel time to home"
 device_tracker.001d29a549ae:
-  entity_picture: /local/person4Thumb.jpg
   friendly_name: person4
+  icon: mdi:bluetooth
 device_tracker.person4_mobile:
-  entity_picture: /local/person4Thumb.jpg
   friendly_name: person4
 sensor.person4s_time_to_home:
-  entity_picture: /local/person4Thumb.jpg
   friendly_name: "person4's travel time to home"
 sensor.person4_travel:
-  entity_picture: /local/person4Thumb.jpg
   friendly_name: "person4"
+  entity_picture: /local/person4Thumb.jpg
 sensor.person2_travel:
-  entity_picture: /local/person2Thumb.jpg
   friendly_name: "person2"
+  entity_picture: /local/person2Thumb.jpg
 sensor.person3_travel:
-  entity_picture: /local/person3Thumb.jpg
   friendly_name: "person3"
+  entity_picture: /local/person3Thumb.jpg
 sensor.person1_travel:
-  entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1"
+  entity_picture: /local/person1Thumb.jpg
 #input_slider.garden_time:
 #input_slider.door_delay:
 input_number.garden_time:
@@ -256,20 +245,13 @@ group.person_person2:
   entity_picture: /local/person2Thumb.jpg
 device_tracker.serenity:
   friendly_name: "person2 BT"
-  entity_picture: /local/person2Thumb.jpg
 device_tracker.404e36245315:
   friendly_name: "person2 WiFi"
-  entity_picture: /local/person2Thumb.jpg
 device_tracker.person2_mobile_gps:
   friendly_name: "person2 GPS"
-  entity_picture: /local/person2Thumb.jpg
-group.person_person3:
-  entity_picture: /local/person3Thumb.jpg
 device_tracker.nexus_5x:
-  entity_picture: /local/person3Thumb.jpg
   friendly_name: person3 BT
 device_tracker.person3_mobile_bt:
-  entity_picture: /local/person3Thumb.jpg
   friendly_name: person3 BT Old
 binary_sensor.living_room_motion:
   device_class: motion
@@ -294,7 +276,6 @@ device_tracker.person2_tablet:
 device_tracker.person1_tablet:
   icon: mdi:tablet-android
 device_tracker.person3_mobile_bt:
-  entity_picture: /local/person1Thumb.jpg
   friendly_name: "person1's mobile (BT)"
 group.person_person1:
   entity_picture: /local/person1Thumb.jpg
