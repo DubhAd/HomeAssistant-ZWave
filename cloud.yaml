@@ -6,17 +6,26 @@ google_actions:
       - climate
     exclude_entities:
       - switch.number_sign_switch
+      # Duplicates of actual bedroom lights
+      - light.yeelight_strip_286c07afc307
+      - light.yeelight_strip_7811dca22b87
+      # Individual light, we're using the group
+      - light.downstairs_hall
+      # Controls
+      - switch.flux_hall
+      - switch.fluxer
     include_entities:
       - script.bedtime_slow_off
       - script.wake_person1
       - input_boolean.guest_mode
   entity_config:
+    input_boolean.guest_mode:
+      room: "Guest Room"
+      name: "Guest mode"
     script.bedtime_slow_off:
       name: "Bedtime"
     script.wake_person1:
       name: "Wake person1"
-    input_boolean.guest_mode:
-      name: "Guest mode"
     light.hall:
       room: "Downstairs hall"
     switch.hall_downstairs_switch:

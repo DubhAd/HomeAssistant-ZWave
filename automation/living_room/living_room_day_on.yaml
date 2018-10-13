@@ -14,29 +14,34 @@ trigger:
     below: 15
     for:
       minutes: 1
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 11
+    for:
+      minutes: 10
 condition:
   - condition: and
     conditions:
     # Room is dark, but not too dark
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
-      below: 18
+      below: 20
       above: 11
     - condition: state
       entity_id: input_boolean.living_room_occupied
       state: 'on'
-  # We're here or guest mode is on
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: input_boolean.all_away
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.adults_away
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'on'
+    # We're here or guest mode is on
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: input_boolean.all_away
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.adults_away
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'on'
 action:
   - service: input_select.select_option
     data:

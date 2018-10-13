@@ -14,11 +14,6 @@ trigger:
     above: 30
     for:
       minutes: 10
-  - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
-    above: 20
-    for:
-      minutes: 20
 condition:
   - condition: and
     conditions:
@@ -27,7 +22,7 @@ condition:
         # Bright, or...
       - condition: numeric_state
         entity_id: sensor.living_room_multi_luminance
-        above: 30
+        above: 50
       - condition: and
         conditions:
           # Sun is rising
@@ -36,7 +31,7 @@ condition:
           state: 'on'
         - condition: numeric_state
           entity_id: sensor.living_room_multi_luminance
-          above: 20
+          above: 30
   # We're here or guest mode is on
   - condition: or
     conditions:
