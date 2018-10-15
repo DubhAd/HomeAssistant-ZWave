@@ -42,29 +42,38 @@ condition:
         conditions:
         - condition: template
           value_template: "{{ is_state_attr('proximity.person3_home', 'dir_of_travel', 'towards') }}"
-        - condition: template
-          value_template: "{{ is_state('input_select.person3_status_dropdown','Away') or is_state('input_select.person3_status_dropdown','Just Arrived') }}"
         - condition: numeric_state
           entity_id: proximity.person3_home
           below: 500
+        - condition: state
+          entity_id: input_select.person3_status_dropdown
+          state: Away
       - condition: and
         conditions:
         - condition: template
           value_template: "{{ is_state_attr('proximity.person1_home', 'dir_of_travel', 'towards') }}"
-        - condition: template
-          value_template: "{{ is_state('input_select.person1_status_dropdown','Away') or is_state('input_select.person1_status_dropdown','Just Arrived') }}"
         - condition: numeric_state
           entity_id: proximity.person1_home
           below: 500
+        - condition: state
+          entity_id: input_select.person1_status_dropdown
+          state: Away
       - condition: and
         conditions:
         - condition: template
           value_template: "{{ is_state_attr('proximity.person2_home', 'dir_of_travel', 'towards') }}"
-        - condition: template
-          value_template: "{{ is_state('input_select.person2_status_dropdown','Away') or is_state('input_select.person2_status_dropdown','Just Arrived') }}"
         - condition: numeric_state
           entity_id: proximity.person2_home
           below: 500
+        - condition: state
+          entity_id: input_select.person2_status_dropdown
+          state: Away
+      - condition: template
+        value_template: "{{ is_state('group.person_person1','home') or is_state('input_select.person1_status_dropdown','Just Arrived') }}"
+      - condition: template
+        value_template: "{{ is_state('group.person_person2','home') or is_state('input_select.person2_status_dropdown','Just Arrived') }}"
+      - condition: template
+        value_template: "{{ is_state('group.person_person3','home') or is_state('input_select.person3_status_dropdown','Just Arrived') }}"
       # Or an exterior door has been opened in the last 5 minutes
       - condition: template
         value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 300 }}"
