@@ -1049,12 +1049,13 @@ views:
       - input_boolean.bedtime
       - input_boolean.adults_away
       - input_boolean.all_away
+      - input_boolean.holiday_mode
+      - type: divider
       - input_boolean.lighting_automations
       - input_boolean.livingroom_lights_auto
+      - type: divider
       - input_boolean.guest_mode
-      - input_boolean.holiday_mode
       - input_boolean.alarm_mode
-      - input_boolean.update_mesh_diagram
     - type: entities
       title: Toggles for people automations
       entities:
