@@ -3,7 +3,7 @@ interval_seconds: 30
 consider_home: 180
 track_new_devices: yes
 #scan_options: " --privileged -n -sn "
-scan_options: " --privileged -F -n --host-timeout 5s "
+scan_options: " --privileged -F -n --host-timeout 5s --exclude 192.168.0.10 "
 hosts:
   - 192.168.0.0/24
   - 192.168.179.0/24
