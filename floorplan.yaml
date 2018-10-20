@@ -4,8 +4,8 @@
       
       # These options are optional
       warnings:            # enable warnings (to find out why things might not be working correctly)
-     # pan_zoom:            # enable experimental panning / zooming
-      # hide_app_toolbar:    # hide the application toolbar (when used as a custom panel)
+      #pan_zoom:            # enable experimental panning / zooming
+      #hide_app_toolbar:    # hide the application toolbar (when used as a custom panel)
 
       date_format: YYYY-MM-DD
 
@@ -33,13 +33,17 @@
 
         - name: People
           entities:
-             - device_tracker.person3_mobile
-             - device_tracker.person1_mobile
-             - device_tracker.person1_tablet
-             - device_tracker.person2_mobile
+             - input_boolean.person2_home
+             - input_boolean.person1_home
+             - input_boolean.person1_tablet_home
+             - input_boolean.person3_home
              - device_tracker.00e04c680550
              - group.person_person2_work
           states:
+            - state: 'on'
+              class: 'tracker-home'
+            - state: 'off'
+              class: 'tracker-away'
             - state: 'home'
               class: 'tracker-home'
             - state: 'not_home'
@@ -272,6 +276,7 @@
           entities:
              - light.master_bedroom_bedhead
              - light.person1_bedroom_bedside
+             - light.hall
           states:
             - state: 'on'
               class: 'light-on'
