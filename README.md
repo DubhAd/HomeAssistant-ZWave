@@ -64,7 +64,7 @@ Each directory has a short readme explaining what's in there, and the purpose of
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service with the [UK transport](https://home-assistant.io/components/sensor.uk_transport/) component
 * [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint), along with the [associated](https://home-assistant.io/components/sensor.darksky/) sensor [components](https://home-assistant.io/components/sensor.metoffice/)
 * [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles. I don't currently use [the component](https://home-assistant.io/components/media_player.plex/)
-* [Xbox Live sensor(https://home-assistant.io/components/sensor.xbox_live/) which uses the [XBoxAPI](https://xboxapi.com/) to track when one of us is on the XBox
+* [Xbox Live sensor](https://home-assistant.io/components/sensor.xbox_live/) which uses the [XBoxAPI](https://xboxapi.com/) to track when one of us is on the XBox
 * [Google Travel Time component](https://home-assistant.io/components/sensor.google_travel_time/) which uses the Google [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/) to provide estimated time to home
 * [Getmail](http://pyropus.ca/software/getmail/) with [a script](local/bin/parse-email) that acts as the message delivery agent, to parse the recycling collection emails
   * I gave up on the the [IMAP email content](https://home-assistant.io/components/sensor.imap_email_content/) sensor since it doesn't keep state through restarts (which isn't unique to it, Home Assistant doesn't have a persistence mechanism other than for the `input_*` entities)
