@@ -735,7 +735,7 @@ views:
       - zwave.front_bedroom
   - title: Z-Wave
     panel: true
-    icon: mdi:nfc
+    icon: mdi:z-wave
     cards:
     - type: iframe
       url: /local/z-wave-graph.html
