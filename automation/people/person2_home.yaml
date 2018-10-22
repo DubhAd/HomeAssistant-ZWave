@@ -13,10 +13,20 @@ condition:
   - condition: state
     entity_id: input_boolean.person2_home
     state: 'off'
-  - condition: numeric_state
-    entity_id: group.person_person2
-    above: 1
-    value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person2', 'entity_id'))|list)|groupby('state'))['home']|count }}"
+  - condition: or
+    conditions:
+    # WiFi and BT are our truth data, as soon as one of them shows us as home we're home
+    - condition: state
+      entity_id: device_tracker.404e36245315
+      state: 'home'
+    - condition: state
+      entity_id: device_tracker.serenity
+      state: 'home'
+    # But any two win too
+    - condition: numeric_state
+      entity_id: group.person_person2
+      above: 1
+      value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person2', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
   # Should wait for sensor.last_opened to have been updated in the last few minutes
   - service: input_boolean.turn_on
