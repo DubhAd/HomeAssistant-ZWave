@@ -21,13 +21,12 @@ Each directory has a short readme explaining what's in there, and the purpose of
     * All the mobiles are home, as is the tablet. 
     * Oh, and the printer isn't yet low on consumables.
   * The floorplan was created in [Inkscape](https://inkscape.org/), by importing the image of the house's floorplan from the purchase paperwork, then drawing over it. If you look [at it](www/custom_ui/floorplan/floorplan.svg) you'll see that I built it up in layers, one for the foundation (ground), one for the structure, and one for the sensors. I don't really use those currently, other than to ensure that the right things are on top (sensors).
-* [HA Dashboard](https://appdaemon.readthedocs.io/en/latest/DASHBOARD_INSTALL.html) for a "finger friendly" interface
-  * ![Screenshot of HA Dashboard](https://i.imgur.com/gEvzY9x.png)
 * [nginx](https://nginx.org/en/) to provide remote access, in conjunction with [Let's Encrypt](https://letsencrypt.org/)
-* [rpi-clone](https://github.com/billw2/rpi-clone) for bootable backups
-* [rclone](https://rclone.org/) for offsite backups
-* [pi-hole](https://pi-hole.net/) so I can easily block "smart" devices from calling home
-* [netdata](https://my-netdata.io/) so I can keep an eye on the performance
+
+I used to run the following, but don't any more:
+
+* [HA Dashboard](https://appdaemon.readthedocs.io/en/latest/DASHBOARD_INSTALL.html) for a "finger friendly" interface, but it's been replaced by the new Google Home app
+  * ![Screenshot of HA Dashboard](https://i.imgur.com/gEvzY9x.png)
 
 ## The devices, services, and software I use (with HA)
 
@@ -60,7 +59,7 @@ Each directory has a short readme explaining what's in there, and the purpose of
   * Back to using [Nmap](https://nmap.org/) for [device tracking](https://home-assistant.io/components/device_tracker.nmap_tracker/). While I did switch to [Fritz!Box](https://en.avm.de/) [device tracking](https://www.home-assistant.io/components/device_tracker.fritz/) when I upgraded my router, the router ran out of memory
   * [CSL Bluetooth adapter](https://www.amazon.co.uk/gp/product/B00VFT4LD2/) for the [Bluetooth device tracker](https://home-assistant.io/components/device_tracker.bluetooth_tracker/), to augment the Nmap device tracker (uses a CSR8510 A10 chip)
   * [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) for remote device tracking
-    * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only does it have an [annoying bug](https://github.com/owntracks/android/issues/508) that causes it to randomly disable reporting, but it's been abandoned by the developer
+    * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only does it have an [annoying bug](https://github.com/owntracks/android/issues/508) that causes it to randomly disable reporting, but had been abandoned by the developer
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service with the [UK transport](https://home-assistant.io/components/sensor.uk_transport/) component
 * [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint), along with the [associated](https://home-assistant.io/components/sensor.darksky/) sensor [components](https://home-assistant.io/components/sensor.metoffice/)
 * [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles. I don't currently use [the component](https://home-assistant.io/components/media_player.plex/)
@@ -74,10 +73,14 @@ Each directory has a short readme explaining what's in there, and the purpose of
 
 * [PiVPN](http://www.pivpn.io/) for remote access to my network
 * [Pi Hole](https://pi-hole.net/) for blocking those pesky adverts
+* [netdata](https://my-netdata.io/) so I can keep an eye on the performance
+* [rpi-clone](https://github.com/billw2/rpi-clone) for bootable backups
+* [rclone](https://rclone.org/) for offsite backups
+* [rsnapshot](https://rsnapshot.org/) runs on another system, and pulls backups 
 
 ## Presence detection
 
-* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html). Short version - I don't use groups, or merge the trackers. Both of those approaches have major shortcomings, for the first if you have a misbehaving sensor that's stuck at `home` you'll never be marked as away. For the second, the last one to update wins, so you can flip flop between two states. I'm experimenting with the [Bayesian](https://www.home-assistant.io/components/binary_sensor.bayesian) sensor and some automation logic.
+* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html), and [another update](https://blog.ceard.tech/2018/10/presence-detection-update-3.html) (there will probably be a third update). Short version - I don't use groups, or merge the trackers. Both of those approaches have major shortcomings, for the first if you have a misbehaving sensor that's stuck at `home` you'll never be marked as away. For the second, the last one to update wins, so you can flip flop between two states. I'm experimenting with the [Bayesian](https://www.home-assistant.io/components/binary_sensor.bayesian) sensor and some automation logic - so far it's the automation logic that's winning for me.
 
 ## Notes
 
