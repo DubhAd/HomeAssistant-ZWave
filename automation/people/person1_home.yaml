@@ -3,9 +3,9 @@ alias: 'person1 home'
 trigger:
   - platform: state
     entity_id:
-    - device_tracker.person1_mobile_wifi
     - device_tracker.person1_mobile
-    - device_tracker.person3_mobile_bt
+    - device_tracker.404e36d4772f
+    - device_tracker.pixie
     to: 'home'
   - platform: homeassistant
     event: start

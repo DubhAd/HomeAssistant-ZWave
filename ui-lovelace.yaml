@@ -612,10 +612,10 @@ views:
         - entity: device_tracker.person1_mobile
           name: GPS
           icon: mdi:crosshairs-gps
-        - entity: device_tracker.person1_mobile_wifi
+        - entity: device_tracker.404e36d4772f
           name: WiFi
           icon: mdi:wifi
-        - entity: device_tracker.person3_mobile_bt
+        - entity: device_tracker.pixie
           name: BT
           icon: mdi:bluetooth
         - entity: sensor.battery_person1_mobile
