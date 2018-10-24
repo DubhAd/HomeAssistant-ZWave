@@ -153,7 +153,7 @@ views:
       - type: glance
         title: Master bedroom
         #column_width: 25%
-        column_width: calc(100% / 4)
+        column_width: calc(100% / 5)
         entities:
           - entity: light.master_bedroom_bedhead
             name: Bedhead
@@ -161,13 +161,17 @@ views:
             name: Squeezebox
           - entity: media_player.cast_master_bedroom_speaker
             name: Home Mini
+          - entity: switch.radio_person2
+            icon: mdi:alarm
+            tap_action: toggle
+            name: Alarms
           - entity: switch.master_bedroom_socket_switch
             tap_action: toggle
             name: Socket
       - type: glance
         title: Second bedroom
         #column_width: 25%
-        column_width: calc(100% / 4)
+        column_width: calc(100% / 5)
         entities:
           - entity: light.person1_bedroom_bedside
             name: Bedhead
@@ -175,6 +179,10 @@ views:
             name: Squeezebox
           - entity: media_player.cast_second_bedroom_speaker
             name: Home Mini
+          - entity: switch.radio_person1
+            icon: mdi:alarm
+            tap_action: toggle
+            name: Alarms
           - entity: switch.second_bedroom_switch
             tap_action: toggle
             name: Socket
@@ -251,6 +259,8 @@ views:
         entities:
           - media_player.cast_master_bedroom_speaker
           - media_player.person2
+          - entity: switch.radio_person2
+            icon: mdi:alarm
           - light.master_bedroom_bedhead
       - type: picture-glance
         image: /local/images/second_bedroom.jpg
@@ -258,6 +268,8 @@ views:
         entities:
           - media_player.cast_second_bedroom_speaker
           - media_player.person1
+          - entity: switch.radio_person1
+            icon: mdi:alarm
           - light.person1_bedroom_bedside
       - type: history-graph
         title: Temperatures
@@ -539,6 +551,9 @@ views:
           icon: mdi:map-marker-distance
         - entity: proximity.person2_home
           name: To home
+        - entity: switch.radio_person2
+          icon: mdi:alarm
+          name: Alarms
       - type: glance
         title: person2's devices
         column_width: calc(100% / 6)
@@ -616,6 +631,10 @@ views:
           icon: mdi:map-marker-distance
         - entity: proximity.person1_home
           name: To home
+        - entity: switch.radio_person1
+          icon: mdi:alarm
+          tap_action: toggle
+          name: Alarms
       - type: glance
         title: person1's Devices
         entities:
@@ -859,16 +878,11 @@ views:
     icon: mdi:home-modern
     cards:
     - type: entities
-      title: Automations for the second bedroom
+      title: Automations for the 2nd bedroom light
       entities:
       - automation.person1_up_bedhead_light_on
       - automation.person1_up_bedhead_light_off
       - automation.person1_bedside_left_on
-      - automation.person1_radio_on
-      - automation.person1_radio_on_late
-      - automation.person1_radio_on_night
-      - automation.person1_radio_off
-      - automation.person1_radio_off_late
       - automation.person1_bedside_turn_on
       - automation.person1_bedside_turn_off
       - automation.person1_bedside_turn_on_min
@@ -879,6 +893,16 @@ views:
       - automation.person1_bedside_turn_white_max
       - automation.person1_bedside_turn_on_red
       - automation.person1_bedside_turn_red
+    - type: entities
+      title: Automations for the second bedroom
+      entities:
+      - automation.person1_alarm_on
+      - automation.person1_alarm_off
+      - automation.person1_radio_on
+      - automation.person1_radio_on_late
+      - automation.person1_radio_on_night
+      - automation.person1_radio_off
+      - automation.person1_radio_off_late
     - type: entities
       title: Automations for the office
       entities:
