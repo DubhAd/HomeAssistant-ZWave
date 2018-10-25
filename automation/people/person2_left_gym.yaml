@@ -1,0 +1,12 @@
+alias: 'person2 left gym'
+initial_state: 'off'
+trigger:
+  - platform: state
+    entity_id: device_tracker.person2_mobile_gps
+    from: 'Gym'
+action:
+  - service: notify.lm_notify
+    data_template:
+      message: "person2 just left the gym, they should be home in around {% set travel_time = state_attr('sensor.person2s_time_to_home_2', 'duration_in_traffic').split(' ') %} {{ travel_time[0] }} to {{ travel_time[0] | int + 15 }} {{ travel_time[1] }}"
+  - service: homeassistant.turn_off
+    entity_id: automation.person2_left_gym

@@ -1010,6 +1010,8 @@ views:
       entities:
       - automation.person2_coming_home
       - automation.person2_at_station
+      - automation.person2_at_gym
+      - automation.person2_left_gym
       - automation.person3_coming_home
       - automation.train_status
       - automation.return_train_status
