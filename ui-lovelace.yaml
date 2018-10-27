@@ -287,6 +287,7 @@ views:
         cards:
         - type: map
           aspect_ratio: 29%
+          default_zoom: 17
           entities:
             - device_tracker.person3_mobile
             - device_tracker.person1_mobile
@@ -300,20 +301,22 @@ views:
           cards:
           - type: map
             aspect_ratio: 105%
+            default_zoom: 18
             entities:
               - device_tracker.person3_mobile
           - type: map
             aspect_ratio: 105%
+            default_zoom: 18
             entities:
-              - device_tracker.person1_tablet
               - device_tracker.person1_mobile
           - type: map
             aspect_ratio: 105%
+            default_zoom: 18
             entities:
-              - device_tracker.person2_tablet
               - device_tracker.person2_mobile_gps
           - type: map
             aspect_ratio: 105%
+            default_zoom: 18
             entities:
               - device_tracker.person4_mobile
   - title: Media players downstairs
@@ -353,6 +356,7 @@ views:
         - type: media-control
           entity: media_player.cast_guest_bedroom_speaker
   - title: Surveillance
+    id: surveillance
     icon: mdi:cctv
     panel: true
     cards:
@@ -655,6 +659,7 @@ views:
         entities:
           - calendar.person1
   - title: Information
+    id: information
     icon: mdi:information-outline
     cards:
     - type: entities
@@ -753,12 +758,14 @@ views:
       - zwave.vestibule
       - zwave.front_bedroom
   - title: Z-Wave
+    id: zwave
     panel: true
     icon: mdi:z-wave
     cards:
     - type: iframe
       url: /local/z-wave-graph.html
   - title: Automations
+    id: automations
     icon: mdi:home-variant
     cards:
     - type: entities
@@ -793,6 +800,7 @@ views:
       - automation.garden_lights_left_on
       - binary_sensor.garden_lights_left_on
   - title: Living room automations
+    id: automations_living_room
     icon: mdi:home-circle
     cards:
     - type: entities
@@ -833,6 +841,7 @@ views:
       - automation.sonos_on_tv_mute
       - automation.sonos_off_tv_unmute
   - title: Master bedroom automations
+    id: automations_master_bedroom
     icon: mdi:hotel
     cards:
     - type: entities
@@ -875,6 +884,7 @@ views:
       - automation.master_bedhead_warm
       - automation.master_bedhead_warm_stop
   - title: Upstairs automations
+    id: automations_upstairs
     icon: mdi:home-modern
     cards:
     - type: entities
@@ -913,6 +923,7 @@ views:
       - automation.office_occupied
       - automation.office_not_occupied
   - title: More Automations
+    id: automations_more
     icon: mdi:engine-outline
     cards:
     - type: entities
@@ -959,6 +970,7 @@ views:
       - automation.season_is_summer
       - automation.season_is_autumn
   - title: Automations
+    id: automations_engine
     icon: mdi:engine
     cards:
     - type: entities
@@ -1029,6 +1041,7 @@ views:
       - automation.work_day_for_person1
       - automation.not_work_day_for_person1
   - title: Automations about Home Assistant
+    id: automations_platform
     icon: mdi:settings
     cards:
     - type: entities
@@ -1050,6 +1063,7 @@ views:
       - automation.sunrise_enable_automations
       - automation.recorder_purge
   - title: Alarm automations
+    id: automations_alarm
     icon: mdi:alarm-bell
     cards:
     - type: entities
@@ -1067,6 +1081,7 @@ views:
       - automation.alarm_triggered_away
       - automation.alarm_triggered_home
   - title: Inputs
+    id: inputs
     icon: mdi:information-variant
     cards:
     - type: entities
@@ -1126,6 +1141,7 @@ views:
       - input_select.person2_status_dropdown
       - input_select.person4_status_dropdown
   - title: scripts
+    id: scripts
     icon: mdi:script
     cards: 
     - type: entities
@@ -1144,21 +1160,3 @@ views:
       - script.garden_door_after_sunset
       - script.garden_door_before_sunrise
       - script.wake_person1
-  - title: Test
-    id: monster-test
-    cards:
-    - type: custom:monster-card
-      card:
-        type: glance
-        title: Monster
-      filter:
-        include:
-          - domain: light
-            state: 'on'
-    - type: custom:google-calendar-card
-      entities: 
-        - calendar.person3
-        - calendar.person2
-        - calendar.person1
-        - calendar.birthdays_and_anniversaries
-        - calendar.person2_work
