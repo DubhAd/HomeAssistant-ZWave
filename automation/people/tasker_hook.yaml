@@ -1,0 +1,11 @@
+initial_state: 'on'
+alias: 'Tasker hook'
+trigger:
+  - platform: webhook
+    webhook_id: !secret assistant_api_key
+action:
+  - event: tasker_webhook
+    event_data_template:
+      id: "{{ trigger.webhook_id }}"
+      who: "{{ trigger.json.who }}"
+      what: "{{ trigger.json.what }}"
