@@ -390,8 +390,6 @@ views:
       entity: weather.dark_sky  # hourly
     - type: weather-forecast
       entity: weather.openweathermap # hourly
-    - type: weather-forecast
-      entity: weather.yweather # Daily
   - title: Train status
     id: train_status
     icon: mdi:train
