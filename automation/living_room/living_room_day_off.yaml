@@ -17,6 +17,8 @@ trigger:
 condition:
   - condition: and
     conditions:
+    - condition: template
+      value_template: "{{ not is_state('input_select.living_room','Day off') }}"
     - condition: or
       conditions:
         # Bright, or...

@@ -13,10 +13,20 @@ condition:
   - condition: state
     entity_id: input_boolean.person3_home
     state: 'off'
-  - condition: numeric_state
-    entity_id: group.person_person3
-    above: 1
-    value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|count }}"
+  - condition: or
+    conditions:
+    # WiFi and BT are our truth data, as soon as one of them shows us as home we're home
+    - condition: state
+      entity_id: device_tracker.person3_mobile_wifi
+      state: 'home'
+    - condition: state
+      entity_id: device_tracker.nexus_5x
+      state: 'home'
+    # But any two win too
+    - condition: numeric_state
+      entity_id: group.person_person3
+      above: 1
+      value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person3_travelling

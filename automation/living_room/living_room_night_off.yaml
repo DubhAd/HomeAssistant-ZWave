@@ -10,6 +10,8 @@ trigger:
 condition:
   - condition: and
     conditions:
+    - condition: template
+      value_template: "{{ not is_state('input_select.living_room','Night off') }}"
     - condition: state
       entity_id: input_boolean.living_room_occupied
       state: 'off'

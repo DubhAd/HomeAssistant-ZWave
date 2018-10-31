@@ -11,6 +11,8 @@ trigger:
     entity_id: input_boolean.adults_away
     to: 'off'
 condition:
+  - condition: template
+    value_template: "{{ not is_state('input_select.living_room','Away') }}"
   - condition: state
     entity_id: input_boolean.living_room_occupied
     state: 'off'

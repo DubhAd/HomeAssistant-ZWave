@@ -21,10 +21,12 @@ condition:
   - condition: state
     entity_id: input_boolean.person1_home
     state: 'on'
+  # No more than one tracker puts the person at home
   - condition: numeric_state
     entity_id: group.person_person1
     below: 2
     value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|count }}"
+  # Either a door was opened in the last 10 minutes, a door is open, or they've been gone for at least 4 minutes
   - condition: or
     conditions:
     # A door was opened in the last 10 minutes
@@ -34,12 +36,19 @@ condition:
     - condition: state
       entity_id: group.my_exterior_doors
       state: 'on'
-    # All away for at least 4 minutes
-    - condition: state
-      entity_id: group.person_person1
-      state: 'not_home'
-      for:
-        minutes: 4
+    - condition: and
+      conditions:
+      # WiFi and BT away for at least 4 minutes
+      - condition: state
+        entity_id: device_tracker.404e36d4772f
+        state: 'not_home'
+        for:
+          minutes: 4
+      - condition: state
+        entity_id: device_tracker.pixie
+        state: 'not_home'
+        for:
+          minutes: 4
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person1_home

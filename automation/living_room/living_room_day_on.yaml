@@ -22,6 +22,8 @@ trigger:
 condition:
   - condition: and
     conditions:
+    - condition: template
+      value_template: "{{ not is_state('input_select.living_room','Day on') }}"
     # Room is dark, but not too dark
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
