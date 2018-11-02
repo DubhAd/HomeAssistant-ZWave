@@ -802,24 +802,14 @@ views:
     icon: mdi:home-circle
     cards:
     - type: entities
-      title: Automations for the Living room Old
-      entities:
-      - automation.all_away_lights_off
-      - automation.dark_tv_on
-      - automation.darker_tv_on
-      - automation.lounge_in_daylight
-      - automation.lounge_in_daylight_2
-      - automation.lounge_off
-      - automation.lounge_dull
-    - type: entities
       title: Automations for the Living room Current
       entities:
       - automation.all_away_media_off
       - automation.lounge_dark_motion
       - automation.table_light_on
-      - automation.tv_off_bedtime
+      - automation.living_room_arrival
     - type: entities
-      title: Automations for the Living room New
+      title: Automations for the Living room 
       entities:
       - automation.living_room_away
       - automation.living_room_day_off
