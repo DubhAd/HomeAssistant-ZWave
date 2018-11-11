@@ -45,42 +45,8 @@ sequence:
     entity_id: media_player.cast_second_bedroom_speaker
     data:
       message: "Time to get up"
-  # Turn off the GHome
-  - service: media_player.turn_off
+  - service: media_player.play_media
     data:
       entity_id: media_player.cast_second_bedroom_speaker
-  # And if the Squeezebox isn't playing, let's turn it on and up
-  - condition: state
-    entity_id: media_player.person1
-    state: 'off'
-  - service: media_player.turn_on
-    data:
-      entity_id: media_player.person1
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.person1
-      volume_level: 0.3
-  - service: media_player.media_play_pause
-    data:
-      entity_id: media_player.person1
-  # Still playing a minute later?
-  - delay: 00:01:00
-  - condition: state
-    entity_id: media_player.person1
-    state: 'playing'
-  - service: light.turn_on
-    data:
-      entity_id: light.person1_bedroom_bedside
-      transition: 30
-      color_temp: 394
-      brightness_pct: 100
-  # Still playing half a minute later?
-  - delay: 00:00:30
-  - condition: state
-    entity_id: media_player.person1
-    state: 'playing'
-  # Make it very loud!
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.person1
-      volume_level: 0.6
+      media_content_id: http://vis.media-ice.musicradio.com/CapitalUKMP3
+      media_content_type: 'audio/mp3'

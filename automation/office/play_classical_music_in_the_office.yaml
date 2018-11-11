@@ -2,8 +2,8 @@ initial_state: 'on'
 alias: 'Play classical music in the office'
 trigger:
   - platform: state
-    entity_id: device_tracker.00e04c680550
-    to: 'home'
+    entity_id: input_boolean.office_occupied
+    to: 'on'
 condition:
   - condition: or
     conditions:
