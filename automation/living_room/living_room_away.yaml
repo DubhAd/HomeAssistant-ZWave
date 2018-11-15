@@ -5,14 +5,27 @@ trigger:
     entity_id: input_boolean.living_room_occupied
     to: 'off'
   - platform: state
+    entity_id: input_boolean.living_room_occupied
+    to: 'off'
+    for:
+      minutes: 10
+  - platform: state
     entity_id: input_boolean.all_away
     to: 'off'
   - platform: state
     entity_id: input_boolean.adults_away
     to: 'off'
+  - platform: state
+    entity_id: input_boolean.all_away
+    to: 'off'
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: input_boolean.adults_away
+    to: 'off'
+    for:
+      minutes: 10
 condition:
-  - condition: template
-    value_template: "{{ not is_state('input_select.living_room','Away') }}"
   - condition: state
     entity_id: input_boolean.living_room_occupied
     state: 'off'

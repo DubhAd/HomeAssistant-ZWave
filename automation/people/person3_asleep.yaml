@@ -6,6 +6,11 @@ trigger:
     to: Night off
     for:
       minutes: 5
+  - platform: state
+    entity_id: input_boolean.living_room_occupied
+    to: 'off'
+    for:
+      minutes: 5
 condition:
   - condition: and
     conditions:
