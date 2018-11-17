@@ -1,5 +1,5 @@
 #
-initial_state: 'on'
+initial_state: 'off'
 alias: 'Adults home lights on'
 trigger:
   - platform: state

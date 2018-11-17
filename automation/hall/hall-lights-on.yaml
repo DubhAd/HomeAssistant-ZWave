@@ -39,7 +39,7 @@ condition:
     - condition: state
       entity_id: input_boolean.lighting_automations
       state: 'on'
-    - condition: or
+    - condition: and
       conditions:
       - condition: state
         entity_id: switch.hall_downstairs_switch
