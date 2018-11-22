@@ -2,7 +2,7 @@ initial_state: 'on'
 alias: 'Number on in the morning'
 trigger:
   - platform: time
-    at: '06:00:00'
+    at: '06:30:00'
 condition: 
   - condition: sun
     before: sunrise
