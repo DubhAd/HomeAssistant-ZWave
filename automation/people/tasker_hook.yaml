@@ -9,8 +9,9 @@ action:
       id: "{{ trigger.webhook_id }}"
       who: "{{ trigger.json.who }}"
       what: "{{ trigger.json.what }}"
+      when: "{{ trigger.json.when }}"
   - service: notify.logfile
     data_template:
       message: >
-        Triggered by {{ trigger.webhook_id }} user {{ trigger.json.who }} with {{ trigger.json.what }}
+        Triggered by {{ trigger.webhook_id }} user {{ trigger.json.who }} with {{ trigger.json.what }} at {{ trigger.json.when }}
 

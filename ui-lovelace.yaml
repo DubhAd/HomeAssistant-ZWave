@@ -589,7 +589,7 @@ views:
         title: Work
         column_width: calc(100% / 6)
         entities:
-        - entity: device_tracker.00e04c680550
+        - entity: device_tracker.person2_work
           name: WiFi
           icon: mdi:wifi
         - entity: device_tracker.timetrveller
@@ -977,9 +977,10 @@ views:
     - type: entities
       title: People driven automations - person2
       entities:
+      - automation.person2_next_alarm
       - automation.person2_asleep
-      - automation.person2_home
       - automation.person2_away
+      - automation.person2_home
       - automation.person2_up
       - automation.workday_for_person2
       - automation.person2_travelling
@@ -987,22 +988,24 @@ views:
     - type: entities
       title: People driven automations - person3
       entities:
-      - automation.person3_up
+      - automation.person3_next_alarm
       - automation.person3_asleep
-      - automation.person3_home
       - automation.person3_away
+      - automation.person3_home
+      - automation.person3_up
       - automation.person3_travelling
     - type: entities
       title: People driven automations - person1
       entities:
+      - automation.person1_next_alarm
       - automation.person1_asleep
+      - automation.person1_at_work
+      - automation.person1_away
+      - automation.person1_home
+      - automation.person1_home_after_work
+      - automation.person1_returning
       - automation.person1_up
       - automation.person1_up_reminder
-      - automation.person1_home
-      - automation.person1_away
-      - automation.person1_at_work
-      - automation.person1_returning
-      - automation.person1_home_after_work
       - automation.person1_mobile_low_battery
       - automation.person1_travelling
     - type: entities

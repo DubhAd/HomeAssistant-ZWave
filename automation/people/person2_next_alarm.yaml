@@ -1,0 +1,14 @@
+initial_state: 'off'
+alias: 'person2 next alarm'
+trigger:
+  - platform: event
+    event_type: tasker_webhook
+    event_data:
+      what: next_alarm
+      who: person2
+action:
+  - service: input_datetime.set_datetime
+    entity_id: input_datetime.person2_next_alarm
+    data_template:
+      time: '{{ as_timestamp(trigger.event.data.when)|timestamp_custom("%T") }}'
+      date: '{{ as_timestamp(trigger.event.data.when)|timestamp_custom("%F") }}'
