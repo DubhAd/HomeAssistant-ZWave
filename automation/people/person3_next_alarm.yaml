@@ -10,5 +10,15 @@ action:
   - service: input_datetime.set_datetime
     entity_id: input_datetime.person3_next_alarm
     data_template:
-      time: '{{ as_timestamp(trigger.event.data.when)|timestamp_custom("%T") }}'
-      date: '{{ as_timestamp(trigger.event.data.when)|timestamp_custom("%F") }}'
+      time: >-
+        {% if trigger.event.data.when.split(' ')[1] == '%taskertime' %}
+          12:00
+        {% else %}
+          {{ as_timestamp(trigger.event.data.when)|timestamp_custom("%T") }}
+        {% endif %}
+      date: >-
+        {% if trigger.event.data.when.split(' ')[1] == '%taskertime' %}
+          1970-01-01
+        {% else %}
+          {{ as_timestamp(trigger.event.data.when)|timestamp_custom("%F") }}
+        {% endif %}
