@@ -78,6 +78,8 @@ views:
             name: "Sonos"
           - entity: media_player.cast_living_room_speaker
             name: "Home Mini"
+          - entity: media_player.lenovosmartdisplay106746
+            name: "Home Hub"
       - type: glance
         title: Hall and front
         #column_width: 25%
@@ -200,12 +202,8 @@ views:
             tap_action: toggle
       - type: glance
         title: Office
-        column_width: calc(100% / 6)
+        column_width: calc(100% / 4)
         entities:
-          - entity: media_player.office
-            name: Sonos
-          - entity: media_player.cast_office_speaker
-            name: Home Mini
           - entity: binary_sensor.office_multi_sensor
             name: Motion
           - entity: sensor.office_multi_temperature
@@ -214,6 +212,12 @@ views:
             name: Light level
           - entity: sensor.office_multi_relative_humidity
             name: Humidity
+          - entity: media_player.office
+            name: Sonos
+          - entity: media_player.cast_office_speaker
+            name: Home Mini
+          - entity: media_player.googlehomehub8747
+            name: "Home Hub"
   - title: Rooms
     id: rooms
     icon: mdi:floor-plan
@@ -985,6 +989,8 @@ views:
       - automation.workday_for_person2
       - automation.person2_travelling
       - automation.person2_returning
+      - automation.person2_is_travelling
+      - automation.person2_is_not_travelling
     - type: entities
       title: People driven automations - person3
       entities:
@@ -1008,6 +1014,8 @@ views:
       - automation.person1_up_reminder
       - automation.person1_mobile_low_battery
       - automation.person1_travelling
+      - automation.person1_is_travelling
+      - automation.person1_is_not_travelling
     - type: entities
       title: Automations for travel
       entities:
