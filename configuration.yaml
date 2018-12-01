@@ -125,7 +125,9 @@ media_player: !include_dir_merge_list media_player/
 ####################
 
 script: !include_dir_named scripts/
+ # This is for the automation editor, you'll not find anything in there
 automation: !include automations.yaml
+ # This is for my automations, `old` is just a tag - see https://www.home-assistant.io/docs/configuration/devices/
 automation old: !include_dir_list automation/
 scene: !include_dir_list scenes/
 shell_command: !include_dir_merge_named shell_commands/

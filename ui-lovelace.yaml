@@ -78,7 +78,7 @@ views:
             name: "Sonos"
           - entity: media_player.cast_living_room_speaker
             name: "Home Mini"
-          - entity: media_player.lenovosmartdisplay106746
+          - entity: media_player.lenovosmartdisplay109233
             name: "Home Hub"
       - type: glance
         title: Hall and front
