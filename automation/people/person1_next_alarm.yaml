@@ -1,4 +1,4 @@
-initial_state: 'off'
+initial_state: 'on'
 alias: 'person1 next alarm'
 trigger:
   - platform: event
