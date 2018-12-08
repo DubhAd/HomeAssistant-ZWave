@@ -21,24 +21,16 @@ condition:
   - condition: state
     entity_id: input_boolean.person3_is_awake
     state: 'off'
+  - condition: state
+    entity_id: input_boolean.person3_home
+    state: 'on'
   - condition: or
     conditions:
     - condition: and
       conditions:
       - condition: state
-        entity_id: input_boolean.person3_is_awake
-        state: 'off'
-      - condition: state
         entity_id: binary_sensor.utility_door_exterior_sensor
         state: 'on'
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: input_boolean.person3_home
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.person3_travelling
-        state: 'off'
     - condition: and
       conditions:
       - condition: state
