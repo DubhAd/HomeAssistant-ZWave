@@ -513,6 +513,10 @@ views:
           icon: mdi:map-marker-distance
         - entity: proximity.person3_home
           name: To home
+      - type: entities
+        entities:
+        - entity: input_datetime.person3_next_alarm
+          name: Next alarm
       - type: custom:google-calendar-card
         entities: 
           - calendar.person3
@@ -560,6 +564,10 @@ views:
         - entity: switch.radio_person2
           icon: mdi:alarm
           name: Alarms
+      - type: entities
+        entities:
+        - entity: input_datetime.person2_next_alarm
+          name: Next alarm
       - type: glance
         title: person2's devices
         column_width: calc(100% / 6)
@@ -641,6 +649,10 @@ views:
           icon: mdi:alarm
           tap_action: toggle
           name: Alarms
+      - type: entities
+        entities:
+        - entity: input_datetime.person1_next_alarm
+          name: Next alarm
       - type: glance
         title: person1's Devices
         entities:
