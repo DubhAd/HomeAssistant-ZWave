@@ -13,7 +13,12 @@ condition:
 action:
   - service: homeassistant.turn_off
     entity_id: input_boolean.livingroom_lights_auto
-  - service: scene.turn_on
-    entity_id: scene.lounge_lights_on
   - service: switch.turn_on
-    entity_id: switch.livingroom_socket_switch
+    entity_id: 
+      - switch.livingroom_socket_switch
+      - switch.table_light_switch
+      - switch.tv_light_switch
+  - condition: template
+    value_template: '{{ states("input_select.season") != "Christmas" }}'
+  - service: switch.turn_on
+    entity_id: switch.cabinet_light_switch

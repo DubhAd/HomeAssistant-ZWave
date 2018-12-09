@@ -22,9 +22,8 @@ condition:
         entity_id: light.hall
         state: 'on'
 action:
-  - service_template: >-
-      {% if is_state('input_select.season', 'Christmas') %}
-        script.hall_string_off
-      {% else %}
-        script.hall_strip_off
-      {% endif %}
+  - service: light.turn_off
+    data:
+      entity_id: light.hall
+  - service: switch.turn_off
+    entity_id: switch.hall_downstairs_switch
