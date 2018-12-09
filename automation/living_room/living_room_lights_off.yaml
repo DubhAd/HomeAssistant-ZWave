@@ -17,5 +17,12 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
 action:
-  - service: scene.turn_on
-    entity_id: scene.lounge_lights_off
+  - service: switch.turn_off
+    entity_id: 
+      - switch.tv_light_switch
+      - switch.table_light_switch
+      - switch.cabinet_light_switch
+  - condition: template
+    value_template: "{{ not is_state('input_select.season', 'Christmas') }}"
+  - service: switch.turn_off
+    entity_id: switch.livingroom_socket_switch
