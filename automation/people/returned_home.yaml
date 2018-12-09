@@ -30,13 +30,15 @@ trigger:
 condition:
   condition: and
   conditions: 
+    # Lighting automations are enabled
     - condition: state
       entity_id: input_boolean.lighting_automations
       state: 'on'
+    # It's getting dark
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance
       below: 15
-    # Hall light is off
+    # Hall lights are off
     - condition: or
       conditions:
       - condition: state
@@ -48,20 +50,37 @@ condition:
     # Somebody is nearly home, or just arrived
     - condition: or
       conditions: 
+      # Front door is open, somebody is nearly home or just arrived
+      - condition: and
+        conditions:
+        - condition: state
+          entity_id: binary_sensor.front_door_sensor
+          state: 'on'
+        - condition: or
+          conditions:
+          - condition: template
+            value_template: "{{ ( (states('proximity.person3_home')|int) < 500 ) and is_state_attr('proximity.person3_home', 'dir_of_travel', 'towards') and (not is_state('input_select.person3_status_dropdown','Home') ) }}"
+          - condition: template
+            value_template: "{{ ( (states('proximity.person1_home')|int) < 500 ) and is_state_attr('proximity.person1_home', 'dir_of_travel', 'towards') and (not is_state('input_select.person1_status_dropdown','Home') ) }}"
+          - condition: template
+            value_template: "{{ ( (states('proximity.person2_home')|int) < 500 ) and is_state_attr('proximity.person2_home', 'dir_of_travel', 'towards') and (not is_state('input_select.person2_status_dropdown','Home') ) }}"
+      # person3 is nearly home, but not home yet
       - condition: and
         conditions:
         - condition: template
-          value_template: "{{ ( trigger.entity_id == 'proximity.person3_home' ) and ( trigger.from_state.state > 500 ) and ( trigger.to_state.state < 500 ) and is_state_attr('proximity.person2_home', 'dir_of_travel', 'towards') }}"
+          value_template: "{{ ( trigger.entity_id == 'proximity.person3_home' ) and ( trigger.from_state.state > 500 ) and ( trigger.to_state.state < 500 ) and is_state_attr('proximity.person3_home', 'dir_of_travel', 'towards') }}"
         - condition: state
           entity_id: input_select.person3_status_dropdown
           state: Away
+      # person1 is nearly home, but not home yet
       - condition: and
         conditions:
         - condition: template
-          value_template: "{{ ( trigger.entity_id == 'proximity.person1_home' ) and ( trigger.from_state.state > 500 ) and ( trigger.to_state.state < 500 ) and is_state_attr('proximity.person2_home', 'dir_of_travel', 'towards') }}"
+          value_template: "{{ ( trigger.entity_id == 'proximity.person1_home' ) and ( trigger.from_state.state > 500 ) and ( trigger.to_state.state < 500 ) and is_state_attr('proximity.person1_home', 'dir_of_travel', 'towards') }}"
         - condition: state
           entity_id: input_select.person1_status_dropdown
           state: Away
+      # person2 is nearly home, but not home yet
       - condition: and
         conditions:
         - condition: template
@@ -69,19 +88,13 @@ condition:
         - condition: state
           entity_id: input_select.person2_status_dropdown
           state: Away
-      # Or an exterior door has been opened in the last 5 minutes, and somebody has just arrived
-      - condition: and
-        conditions:
-        - condition: template
-          value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 300 }}"
-        - condition: or
-          conditions:
-          - condition: template
-            value_template: "{{ is_state('input_select.person1_status_dropdown','Just Arrived') }}"
-          - condition: template
-            value_template: "{{ is_state('input_select.person2_status_dropdown','Just Arrived') }}"
-          - condition: template
-            value_template: "{{ is_state('input_select.person3_status_dropdown','Just Arrived') }}"
+      # Or somebody has just arrived
+      - condition: template
+        value_template: "{{ is_state('input_select.person1_status_dropdown','Just Arrived') }}"
+      - condition: template
+        value_template: "{{ is_state('input_select.person2_status_dropdown','Just Arrived') }}"
+      - condition: template
+        value_template: "{{ is_state('input_select.person3_status_dropdown','Just Arrived') }}"
 action:
   - service_template: >-
       {% if is_state('input_select.season', 'Christmas') %}
