@@ -785,17 +785,14 @@ views:
     - type: entities
       title: Automations for the Family room
       entities:
-      - automation.moved_to_family_room
       - automation.family_room_occupied
       - automation.family_room_not_occupied
     - type: entities
       title: Automations for downstairs
       entities:
-      - automation.adults_home_lights_on
       - automation.hall_lights_on
       - automation.hall_lights_off
       - automation.hall_lights_off_departure
-      - automation.doors_opened_home_alone
     - type: entities
       title: Automations for the front of the house
       entities:
@@ -964,9 +961,6 @@ views:
       - automation.christmas_lights_on
       - automation.christmas_lights_off
       - automation.christmas_lights_off_season
-      - automation.winter_lights_on
-      - automation.winter_lights_off
-      - automation.winter_lights_off_season
       - automation.season_is_christmas
       - automation.season_is_easter
       - automation.season_is_winter

@@ -1,4 +1,0 @@
-- name: Lounge lights on
-  entities:
-    group.living_room_lights: on
-    switch.livingroom_socket_switch: on
