@@ -66,6 +66,8 @@ condition:
             - condition: state
               entity_id: input_boolean.family_room_occupied
               state: 'off'
+            - condition: template
+              value_template: "{{ not is_state('input_select.season', 'Christmas') }}"
 action:
   - service: light.turn_off
     data:
