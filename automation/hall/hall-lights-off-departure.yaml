@@ -10,9 +10,18 @@ trigger:
 condition:
   - condition: and
     conditions:
+    # Lighting automations are enabled
     - condition: state
       entity_id: input_boolean.lighting_automations
       state: 'on'
+    # Living room isn't in use
+    - condition: state
+      entity_id: input_boolean.living_room_occupied
+      state: 'off'
+    # Family room isn't in use
+    - condition: state
+      entity_id: input_boolean.family_room_occupied
+      state: 'off'
     - condition: or
       conditions:
       - condition: state
