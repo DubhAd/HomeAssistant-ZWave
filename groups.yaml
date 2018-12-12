@@ -25,8 +25,8 @@ person_person2_laptop:
 person_person2_work:
   name: person2's work phone
   entities:
-  - device_tracker.person2_work
-  - device_tracker.timetrveller
+  - device_tracker.80b03de23ba2
+  - device_tracker.gloaming
 person_person3:
   name: person3
   entities:

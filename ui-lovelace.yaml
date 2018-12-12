@@ -601,10 +601,10 @@ views:
         title: Work
         column_width: calc(100% / 6)
         entities:
-        - entity: device_tracker.person2_work
+        - entity: device_tracker.80b03de23ba2
           name: WiFi
           icon: mdi:wifi
-        - entity: device_tracker.timetrveller
+        - entity: device_tracker.gloaming
           name: BT
           icon: mdi:bluetooth
         - entity: device_tracker.00e04c680550
