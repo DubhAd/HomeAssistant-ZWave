@@ -583,10 +583,10 @@ views:
           icon: mdi:bluetooth
         - entity: sensor.battery_person2_tablet
           name: Tablet
-        - entity: device_tracker.jayne
+        - entity: device_tracker.9c305b3c6c87
           name: Laptop
           icon: mdi:wifi
-        - entity: device_tracker.9c305b3c6c87
+        - entity: device_tracker.jayne
           name: Laptop
           icon: mdi:bluetooth
       - type: custom:google-calendar-card

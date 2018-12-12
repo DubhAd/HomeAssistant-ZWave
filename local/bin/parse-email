@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-LOGFILE=/data/homeassistant/notify.log
+LOGFILE=/data/homeassistant/email.log
 BINFILE=/data/homeassistant/bin
 
 SENDER=$(echo ${1}|tr -d '/'| sed "s/@/-a-/")
@@ -18,6 +18,41 @@ case ${SENDER} in
 
 		cat << EOM >> ${BINFILE}.${WHAT:l}.json
 { "collection_date":"${WHEN}", "collection_type":"${WHAT} Bin Collection","timestamp":"$(date +"%F %T")" }
+EOM
+		;;
+	*-a-COUNCIL.gov.uk )
+		TDIR=$(mktemp --directory --suffix=.pe)
+		MASTER=${TDIR}/email.file.${SENDER}
+		cat > ${MASTER}
+
+		cat ${MASTER} | sed "1,/^$/d" | sed ':a;N;$!ba;s/=\n//g' | sed 's/<[^>]*>//g' | csplit -f ${TDIR}/xx - '/^----/' '{*}' >/dev/null 2>&1
+
+		WHAT=$(cat ${TDIR}/xx02 | grep "email reminder" |  sed -e "s/.* POST CODE. Your //" -e "s/ .*//")
+		WHEN=$(cat ${TDIR}/xx02 | grep "email reminder" |  sed -e "s/.*will be collected //" -e "s/.\s*$//" -e "s/\([0-9]\)[snrt][tdh]/\1/")
+		case ${WHEN} in
+			tomorrow* )	WHEN="$(date --date='tomorrow' +'%F 00:00:00')"
+				;;
+			* ) 	WHEN="$(echo "${WHEN}" | sed -e "s/^.*\([0-9]\)/\1" -e "s/\.$//")"
+				# If this is December, and that's January, we need to add a year
+				if [[ $(date +%m) -eq 12 && $(date --date="${WHEN}" +%m) -eq 01 ]]; then
+					WHEN=$"(date --date="${WHEN} year" +"%F %T")"
+				fi
+				;;
+		esac
+
+		cat << EOM >> ${BINFILE}.${WHAT:l}.json
+{ "collection_date":"${WHEN}", "collection_type":"${WHAT} Bin Collection","timestamp":"$(date +"%F %T")" }
+EOM
+		;;
+	* )	TDIR=$(mktemp --directory --suffix=.pe)
+		MASTER=${TDIR}/email.file.${SENDER}
+		cat > ${MASTER}
+		cat << EOM >> ${LOGFILE}
+==========
+${SENDER}
+-----
+$(cat ${MASTER})
+----------
 EOM
 		;;
 esac
