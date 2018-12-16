@@ -1,14 +1,9 @@
 alias: 'person3 up'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: state
-    entity_id: media_player.samsung_tv_remote
+    entity_id: input_boolean.living_room_occupied
     to: 'on'
-    for:
-      minutes: 5
-  - platform: state
-    entity_id: device_tracker.livingroom_chromecast
-    to: 'home'
     for:
       minutes: 5
   - platform: state
@@ -49,4 +44,18 @@ condition:
           state: 'home'
 action:
   - service: input_boolean.turn_on
+    entity_id: input_boolean.person3_is_awake
+  - service: notify.logfile
+    data_template:
+      message: >
+        Turned on person3 awake because of {{ trigger.entity_id }}
+    # Wait 15 minutes
+  - condition: state
+    entity_id: input_boolean.living_room_occupied
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.person3_home
+    state: 'on'
+    # Clearly gone back to bed
+  - service: input_boolean.turn_off
     entity_id: input_boolean.person3_is_awake

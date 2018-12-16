@@ -16,7 +16,7 @@ sequence:
   - service: switch.turn_off
     entity_id: switch.livingroom_socket_switch
   - delay:
-      minutes: 5
+      minutes: 1
   - service: input_boolean.turn_off
     entity_id: input_boolean.person3_is_awake
   - delay:
@@ -25,9 +25,6 @@ sequence:
     entity_id: switch.vestibule_switch
   - delay:
       seconds: 10
-  - condition: state
-    entity_id: input_boolean.bedtime
-    state: 'on'
   - condition: state
     entity_id: input_boolean.guest_mode
     state: 'off'
