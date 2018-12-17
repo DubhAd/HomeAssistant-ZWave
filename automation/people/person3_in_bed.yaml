@@ -1,0 +1,46 @@
+initial_state: 'on'
+alias: 'person3 in bed'
+trigger:
+  - platform: event
+    event_type: tasker_webhook
+    event_data:
+      who: person3
+condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.person3_is_awake
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person3_home
+      state: 'on'
+    - condition: time
+      after: '22:00:00'
+      before: '04:00:00'
+    - condition: or
+      conditions: 
+action:
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 in bed riggered by {{ trigger.webhook_id }} user {{ trigger.json.who }} with {{ trigger.json.what }} at {{ now() }}
+  - condition: template
+    value_template: >-
+      {{ 'Plugged' in trigger.event.data.what }}
+  - service: notify.logfile
+    data_template:
+      message: >
+        The phone was Plugged in
+  - condition: state
+    entity_id: input_boolean.person3_awake
+    state: 'on'
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 was awake
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.person3_awake
+  - service: notify.logfile
+    data_template:
+      message: >
+        Turned on person3 awake because the phone was plugged in at {{ now() }}
