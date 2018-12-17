@@ -9,12 +9,14 @@ condition:
   - condition: state
     entity_id: input_boolean.person3_awake
     state: 'off'
+action:
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 awake riggered by {{ trigger.webhook_id }} user {{ trigger.json.who }} with {{ trigger.json.what }} at {{ now() }}
   - condition: template
     value_template: >-
-      {{ ',Unplugged,' in trigger.event.data.what }}
-  - condition: time
-    after: '03:00:00'
-action:
+      {{ 'Unplugged' in trigger.event.data.what }}
   - service: input_boolean.turn_on
     entity_id: input_boolean.person3_awake
   - service: notify.logfile
