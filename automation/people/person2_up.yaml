@@ -1,11 +1,17 @@
 alias: 'person2 up'
 initial_state: 'on'
 trigger:
+  # Music is playing
   - platform: state
     entity_id: 
       - media_player.master_bedroom_speaker
       - media_player.person2
     to: 'playing'
+  # Phone is unplugged
+  - platform: state
+    entity_id: input_boolean.person2_phone_charging
+    to: 'off'
+  # Bedhead light is on
   - platform: state
     entity_id: 
       - light.master_bedroom_bedhead
@@ -13,11 +19,13 @@ trigger:
     to: 'on'
     for:
       minutes: 1
+  # I leave home
   - platform: state
     entity_id: input_boolean.person2_home
     to: 'off'
     for:
       minutes: 5
+  # The laptop is on
   - platform: state
     entity_id: group.person_person2_laptop
     to: 'home'

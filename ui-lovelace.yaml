@@ -491,7 +491,7 @@ views:
       cards:
       - type: glance
         title: person3
-        column_width: calc(100% / 5)
+        column_width: calc(100% / 6)
         entities:
         - sensor.person3_travel
         - entity: device_tracker.person3_mobile
@@ -505,6 +505,8 @@ views:
           icon: mdi:bluetooth
         - entity: sensor.battery_person3_mobile
           name: Battery
+        - entity: input_boolean.person3_phone_charging
+          name: Phone charging
         - entity: sensor.person3s_time_to_home
           name: Car home
           icon: mdi:map-marker-distance
@@ -542,7 +544,7 @@ views:
       cards:
       - type: glance
         title: person2
-        column_width: calc(100% / 5)
+        column_width: calc(100% / 6)
         entities:
         - sensor.person2_travel
         - entity: device_tracker.person2_mobile_gps
@@ -556,6 +558,8 @@ views:
           icon: mdi:bluetooth
         - entity: sensor.battery_person2_mobile
           name: Battery
+        - entity: input_boolean.person2_phone_charging
+          name: Phone charging
         - entity: sensor.person2s_time_to_home_2
           name: Car home
           icon: mdi:map-marker-distance
@@ -620,7 +624,7 @@ views:
       cards:
       - type: glance
         title: person1
-        column_width: calc(100% / 5)
+        column_width: calc(100% / 6)
         entities:
         - sensor.person1_travel
         - entity: device_tracker.person1_mobile
@@ -634,6 +638,8 @@ views:
           icon: mdi:bluetooth
         - entity: sensor.battery_person1_mobile
           name: Battery
+        - entity: input_boolean.person1_phone_charging
+          name: Phone charging
         - entity: sensor.person1s_time_to_home_2
           name: Walking home
           icon: mdi:map-marker-distance
@@ -1107,8 +1113,11 @@ views:
       title: Toggles for people automations
       entities:
       - input_boolean.person2_is_awake
+      - input_boolean.person2_in_bed
       - input_boolean.person1_is_awake
+      - input_boolean.person1_in_bed
       - input_boolean.person3_is_awake
+      - input_boolean.person3_in_bed
       - input_boolean.person2_travelling
       - input_boolean.person1_travelling
       - input_boolean.person3_travelling
