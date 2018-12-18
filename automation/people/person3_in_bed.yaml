@@ -4,23 +4,30 @@ trigger:
   - platform: state
     entity_id: input_boolean.person3_phone_charging
     to: 'on'
-condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: input_boolean.person3_is_awake
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.person3_home
-      state: 'on'
-    - condition: time
-      after: '22:00:00'
-      before: '04:00:00'
-    - condition: or
-      conditions: 
 action:
+  - condition: state
+    entity_id: input_boolean.person3_is_awake
+    state: 'on'
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 in bed - currently awake
+  - condition: state
+    entity_id: input_boolean.person3_home
+    state: 'on'
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 in bed - currently at home
+  - condition: time
+    after: '22:00:00'
+    before: '03:00:00'
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 in bed - after 22:00
   - service: input_boolean.turn_off
-    entity_id: input_boolean.person3_awake
+    entity_id: input_boolean.person3_is_awake
   - service: input_boolean.turn_on
     entity_id: input_boolean.person3_in_bed
   - service: notify.logfile

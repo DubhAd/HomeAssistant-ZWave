@@ -973,9 +973,91 @@ views:
       - automation.season_is_spring
       - automation.season_is_summer
       - automation.season_is_autumn
+  - title: Automations person2
+    id: automations_person2
+    icon: mdi:account-star
+    cards:
+    - type: entities
+      title: People driven automations - person2
+      entities:
+      - automation.person2_next_alarm
+      - automation.person2_asleep
+      - automation.person2_in_bed
+      - automation.person2_away
+      - automation.person2_home
+      - automation.person2_up
+      - automation.workday_for_person2
+      - automation.person2_travelling
+      - automation.person2_returning
+      - automation.person2_is_travelling
+      - automation.person2_is_not_travelling
+      - automation.person2_phone_unplugged
+      - automation.person2_phone_plugged
+    - type: entities
+      title: Automations for travel - person2
+      entities:
+      - automation.person2_coming_home
+      - automation.person2_at_station
+      - automation.person2_at_gym
+      - automation.person2_left_gym
+      - automation.train_status
+      - automation.return_train_status
+      - automation.return_train_watcher
+    - type: entities
+      title: Automations changing inputs - person2
+      entities:
+      - automation.not_workday_for_person2
+      - automation.person2_working_from_home
+      - automation.person2_working_trains
+      - automation.person2_working_away
+      - automation.person2_not_working_away
+  - title: Automations person3
+    id: automations_person3
+    icon: mdi:account-heart
+    cards:
+    - type: entities
+      title: People driven automations - person3
+      entities:
+      - automation.person3_next_alarm
+      - automation.person3_asleep
+      - automation.person3_in_bed
+      - automation.person3_away
+      - automation.person3_home
+      - automation.person3_up
+      - automation.person3_awake
+      - automation.person3_travelling
+      - automation.person3_phone_unplugged
+      - automation.person3_phone_plugged
+      - automation.person3_coming_home
+  - title: Automations person1
+    id: automations_person1
+    icon: mdi:account-circle
+    cards:
+    - type: entities
+      title: People driven automations - person1
+      entities:
+      - automation.person1_next_alarm
+      - automation.person1_asleep
+      - automation.person1_in_bed
+      - automation.person1_at_work
+      - automation.person1_away
+      - automation.person1_home
+      - automation.person1_home_after_work
+      - automation.person1_returning
+      - automation.person1_up
+      - automation.person1_up_reminder
+      - automation.person1_mobile_low_battery
+      - automation.person1_travelling
+      - automation.person1_is_travelling
+      - automation.person1_is_not_travelling
+    - type: entities
+      title: Automations changing inputs
+      entities:
+      - automation.work_day_for_person1
+      - automation.not_work_day_for_person1
   - title: Automations
-    id: automations_engine
-    icon: mdi:engine
+    id: automations_group
+    icon: mdi:account-group
     cards:
     - type: entities
       title: People driven automations
@@ -991,67 +1073,10 @@ views:
       - automation.mark_person_as_just_left
       - automation.person4_coming_home
     - type: entities
-      title: People driven automations - person2
-      entities:
-      - automation.person2_next_alarm
-      - automation.person2_asleep
-      - automation.person2_away
-      - automation.person2_home
-      - automation.person2_up
-      - automation.workday_for_person2
-      - automation.person2_travelling
-      - automation.person2_returning
-      - automation.person2_is_travelling
-      - automation.person2_is_not_travelling
-    - type: entities
-      title: People driven automations - person3
-      entities:
-      - automation.person3_next_alarm
-      - automation.person3_asleep
-      - automation.person3_away
-      - automation.person3_home
-      - automation.person3_up
-      - automation.person3_awake
-      - automation.person3_travelling
-    - type: entities
-      title: People driven automations - person1
-      entities:
-      - automation.person1_next_alarm
-      - automation.person1_asleep
-      - automation.person1_at_work
-      - automation.person1_away
-      - automation.person1_home
-      - automation.person1_home_after_work
-      - automation.person1_returning
-      - automation.person1_up
-      - automation.person1_up_reminder
-      - automation.person1_mobile_low_battery
-      - automation.person1_travelling
-      - automation.person1_is_travelling
-      - automation.person1_is_not_travelling
-    - type: entities
       title: Automations for travel
       entities:
-      - automation.person2_coming_home
-      - automation.person2_at_station
-      - automation.person2_at_gym
-      - automation.person2_left_gym
-      - automation.person3_coming_home
-      - automation.train_status
-      - automation.return_train_status
-      - automation.return_train_watcher
       - automation.holiday
       - automation.holiday_over
-    - type: entities
-      title: Automations changing inputs
-      entities:
-      - automation.not_workday_for_person2
-      - automation.person2_working_from_home
-      - automation.person2_working_trains
-      - automation.person2_working_away
-      - automation.person2_not_working_away
-      - automation.work_day_for_person1
-      - automation.not_work_day_for_person1
   - title: Automations about Home Assistant
     id: automations_platform
     icon: mdi:settings

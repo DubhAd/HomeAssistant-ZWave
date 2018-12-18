@@ -4,7 +4,13 @@ trigger:
   - platform: state
     entity_id:
     - device_tracker.person3_mobile_wifi
-    - device_tracker.person3_mobile
+    - device_tracker.nexus_5x
+    to: 'home'
+    for:
+      minutes: 5
+  - platform: state
+    entity_id:
+    - device_tracker.person3_mobile_wifi
     - device_tracker.nexus_5x
     to: 'home'
   - platform: homeassistant
@@ -22,11 +28,6 @@ condition:
     - condition: state
       entity_id: device_tracker.nexus_5x
       state: 'home'
-    # But any two win too
-    - condition: numeric_state
-      entity_id: group.person_person3
-      above: 1
-      value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person3_travelling
