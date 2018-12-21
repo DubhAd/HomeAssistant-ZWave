@@ -8,7 +8,7 @@ trigger:
 condition: 
   - condition: template
     value_template: >-
-      {{ 'Plugged' in trigger.event.data.what }}
+      {{ 'Unplugged' in trigger.event.data.what }}
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person3_phone_charging

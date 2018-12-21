@@ -4,11 +4,26 @@ trigger:
   - platform: state
     entity_id: input_boolean.person3_phone_charging
     to: 'off'
-condition:
+#condition:
+action:
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 awake - phone unplugged
+  - condition: state
+    entity_id: input_boolean.person3_is_awake
+    state: 'off'
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 awake - is asleep
   - condition: time
     after: '03:00:00'
     before: '21:00:00'
-action:
+  - service: notify.logfile
+    data_template:
+      message: >
+        person3 awake - between 03:00 and 21:00
   - service: input_boolean.turn_on
     entity_id: input_boolean.person3_is_awake
   - service: input_boolean.turn_off
