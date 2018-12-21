@@ -12,6 +12,6 @@ condition:
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person3_phone_charging
-  - delay: '00:00:02'
+  - delay: '00:00:01'
   - service: input_boolean.turn_on
     entity_id: input_boolean.person3_phone_charging

@@ -1,5 +1,5 @@
 alias: 'person3 up'
-initial_state: 'off'
+initial_state: 'on'
 trigger:
   - platform: state
     entity_id: input_boolean.living_room_occupied
@@ -16,9 +16,6 @@ condition:
   - condition: state
     entity_id: input_boolean.person3_is_awake
     state: 'off'
-  - condition: state
-    entity_id: input_boolean.person3_home
-    state: 'on'
   - condition: or
     conditions:
     - condition: and
@@ -26,22 +23,20 @@ condition:
       - condition: state
         entity_id: binary_sensor.utility_door_exterior_sensor
         state: 'on'
-    - condition: and
-      conditions:
       - condition: state
         entity_id: input_boolean.person3_home
         state: 'on'
-      - condition: or
-        conditions:
-        - condition: time
-          after: '04:00:00'
-          before: '18:00:00'
-        - condition: state
-          entity_id: media_player.samsung_tv_remote
-          state: 'on'
-        - condition: state
-          entity_id: device_tracker.livingroom_chromecast
-          state: 'home'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.living_room_occupied
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.person3_home
+        state: 'on'
+      - condition: time
+        after: '03:00:00'
+        before: '18:00:00'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person3_is_awake
