@@ -1,5 +1,5 @@
 alias: 'person3 up'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: state
     entity_id: input_boolean.living_room_occupied
