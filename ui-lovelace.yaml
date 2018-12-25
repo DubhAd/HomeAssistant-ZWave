@@ -618,7 +618,10 @@ views:
           name: To work
         - entity: calendar.person2_wfh
           name: WFH
-        - calendar.person2_away
+        - entity: calendar.person2_holiday
+          name: Holiday
+        - entity: calendar.person2_away
+          name: Away
         - binary_sensor.workday_sensor
     - type: vertical-stack
       cards:
@@ -655,6 +658,8 @@ views:
           icon: mdi:alarm
           tap_action: toggle
           name: Alarms
+        - entity: calendar.person1_holiday
+          name: Holiday
       - type: entities
         entities:
         - entity: input_datetime.person1_next_alarm
@@ -1004,6 +1009,11 @@ views:
       - automation.return_train_status
       - automation.return_train_watcher
     - type: entities
+      title: Automations for alarms - person2
+      entities:
+      - automation.person2_on_holiday
+      - automation.person2_off_holiday
+    - type: entities
       title: Automations changing inputs - person2
       entities:
       - automation.not_workday_for_person2
@@ -1055,6 +1065,11 @@ views:
       entities:
       - automation.work_day_for_person1
       - automation.not_work_day_for_person1
+    - type: entities
+      title: Automations for alarms - person1
+      entities:
+      - automation.person1_on_holiday
+      - automation.person1_off_holiday
   - title: Automations
     id: automations_group
     icon: mdi:account-group
