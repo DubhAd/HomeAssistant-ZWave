@@ -32,6 +32,9 @@ trigger:
     for:
       minutes: 2
 condition:
+  - condition: state
+    entity_id: input_boolean.person2_is_awake
+    state: 'off'
   - condition: or
     conditions:
     - condition: time

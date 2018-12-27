@@ -1,0 +1,25 @@
+initial_state: 'on'
+alias: 'person2 tablet unplugged'
+trigger:
+  - platform: event
+    event_type: tasker_webhook
+    event_data:
+      who: person2_tablet
+condition: 
+  - condition: template
+    value_template: >-
+      {{ 'Unplugged' in trigger.event.data.what }}
+  - condition: state
+    entity_id: input_boolean.person2_is_awake
+    state: 'off'
+  - condition: or
+    conditions:
+    - condition: time
+      after: '04:00:00'
+      before: '18:00:00'
+    - condition: state
+      entity_id: input_boolean.person2_home
+      state: 'off'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.person2_is_awake
