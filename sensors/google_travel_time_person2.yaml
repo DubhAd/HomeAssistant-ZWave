@@ -1,6 +1,6 @@
 - platform: google_travel_time
+  scan_interval: 3600
   name: 'person2s time to home 2'
-  scan_interval: 600
   api_key: !secret google_travel_key
   origin: device_tracker.person2_mobile_gps
   destination: !secret home_location

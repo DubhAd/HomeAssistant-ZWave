@@ -45,7 +45,7 @@ views:
           title: Alerts
       - type: glance
         title: People
-        column_width: calc(100% / 4)
+        columns: 4
         entities:
           - sensor.person3_travel
           - sensor.person1_travel
@@ -53,7 +53,7 @@ views:
           - sensor.person4_travel
       - type: glance
         title: Living room
-        column_width: calc(100% / 4)
+        columns: 4
         entities:
           - entity: switch.tv_light_switch
             tap_action: toggle
@@ -82,8 +82,7 @@ views:
             name: "Home Hub"
       - type: glance
         title: Hall and front
-        #column_width: 25%
-        column_width: calc(100% / 4)
+        columns: 4
         entities:
           - binary_sensor.front_door_sensor
           - entity: switch.vestibule_switch
@@ -136,8 +135,7 @@ views:
             tap_action: toggle
       - type: glance
         title: Utility room & outside
-        #column_width: 25%
-        column_width: calc(100% / 4)
+        columns: 4
         entities:
           - entity: binary_sensor.utility_door_exterior_sensor
             name: Door
@@ -155,7 +153,7 @@ views:
       - type: glance
         title: Master bedroom
         #column_width: 25%
-        column_width: calc(100% / 5)
+        columns: 5
         entities:
           - entity: light.master_bedroom_bedhead
             name: Bedhead
@@ -173,7 +171,7 @@ views:
       - type: glance
         title: Second bedroom
         #column_width: 25%
-        column_width: calc(100% / 5)
+        columns: 5
         entities:
           - entity: light.person1_bedroom_bedside
             name: Bedhead
@@ -191,7 +189,7 @@ views:
       - type: glance
         title: Guest bedroom
         #column_width: 33%
-        column_width: calc(100% / 3)
+        columns: 3
         entities:
           - entity: media_player.cast_guest_bedroom_speaker
             name: Home Mini
@@ -202,7 +200,7 @@ views:
             tap_action: toggle
       - type: glance
         title: Office
-        column_width: calc(100% / 4)
+        columns: 4
         entities:
           - entity: binary_sensor.office_multi_sensor
             name: Motion
@@ -400,7 +398,7 @@ views:
     cards:
     - type: glance
       title: Ontime status
-      column_width: calc(100% / 2)
+      columns: 2
       entities:
       - entity: binary_sensor.trains_to_xyz_ontime
         name: To work
@@ -413,7 +411,7 @@ views:
         - type: glance
           title: Next train home to station
           #column_width: 33%
-          column_width: calc(100% / 3)
+          columns: 3
           entities:
           - entity: sensor.next_train_xyz_status
             name: Status
@@ -424,7 +422,7 @@ views:
         - type: glance
           title: Second train home to station
           #column_width: 33%
-          column_width: calc(100% / 3)
+          columns: 3
           entities:
           - entity: sensor.second_train_xyz_status
             name: Status
@@ -435,7 +433,7 @@ views:
         - type: glance
           title: Third train home to station
           #column_width: 33%
-          column_width: calc(100% / 3)
+          columns: 3
           entities:
           - entity: sensor.third_train_xyz_status
             name: Status
@@ -448,7 +446,7 @@ views:
         - type: glance
           title: Next train station to home
           #column_width: 33%
-          column_width: calc(100% / 3)
+          columns: 3
           entities:
           - entity: sensor.next_train_abc_status
             name: Status
@@ -459,7 +457,7 @@ views:
         - type: glance
           title: Second train station to home
           #column_width: 33%
-          column_width: calc(100% / 3)
+          columns: 3
           entities:
           - entity: sensor.second_train_abc_status
             name: Status
@@ -470,7 +468,7 @@ views:
         - type: glance
           title: Third train station to home
           #column_width: 33%
-          column_width: calc(100% / 3)
+          columns: 3
           entities:
           - entity: sensor.third_train_abc_status
             name: Status
@@ -491,7 +489,7 @@ views:
       cards:
       - type: glance
         title: person3
-        column_width: calc(100% / 6)
+        columns: 6
         entities:
         - sensor.person3_travel
         - entity: device_tracker.person3_mobile
@@ -524,7 +522,7 @@ views:
           - calendar.person3
       - type: glance
         title: person4
-        column_width: calc(100% / 6)
+        columns: 6
         entities:
         - sensor.person4_travel
         - entity: device_tracker.person4_mobile
@@ -544,7 +542,7 @@ views:
       cards:
       - type: glance
         title: person2
-        column_width: calc(100% / 6)
+        columns: 6
         entities:
         - sensor.person2_travel
         - entity: device_tracker.person2_mobile_gps
@@ -574,7 +572,7 @@ views:
           name: Next alarm
       - type: glance
         title: person2's devices
-        column_width: calc(100% / 6)
+        columns: 6
         entities:
         - entity: device_tracker.person2_tablet_5
           name: Tablet
@@ -603,7 +601,7 @@ views:
           - calendar.birthdays_and_anniversaries
       - type: glance
         title: Work
-        column_width: calc(100% / 6)
+        columns: 6
         entities:
         - entity: device_tracker.80b03de23ba2
           name: WiFi
@@ -627,7 +625,7 @@ views:
       cards:
       - type: glance
         title: person1
-        column_width: calc(100% / 6)
+        columns: 6
         entities:
         - sensor.person1_travel
         - entity: device_tracker.person1_mobile
@@ -738,7 +736,7 @@ views:
       - sensor.printer_fuser_life_remaining
     - type: glance
       title: Z-Wave battery devices
-      column_width: calc(100% / 4)
+      columns: 4
       entities:
         - entity: zwave.garage_closed_bike
           name: Garage left
@@ -1009,6 +1007,7 @@ views:
       - automation.train_status
       - automation.return_train_status
       - automation.return_train_watcher
+      - automation.person2_on_the_move
     - type: entities
       title: Automations for alarms - person2
       entities:
@@ -1036,10 +1035,14 @@ views:
       - automation.person3_home
       - automation.person3_up
       - automation.person3_awake
-      - automation.person3_travelling
       - automation.person3_phone_unplugged
       - automation.person3_phone_plugged
+    - type: entities
+      title: Automations for travel - person3
+      entities:
+      - automation.person3_travelling
       - automation.person3_coming_home
+      - automation.person3_on_the_move
   - title: Automations person1
     id: automations_person1
     icon: mdi:account-circle
@@ -1054,13 +1057,17 @@ views:
       - automation.person1_away
       - automation.person1_home
       - automation.person1_home_after_work
-      - automation.person1_returning
       - automation.person1_up
       - automation.person1_up_reminder
       - automation.person1_mobile_low_battery
+    - type: entities
+      title: Automations for travel - person1
+      entities:
+      - automation.person1_returning
       - automation.person1_travelling
       - automation.person1_is_travelling
       - automation.person1_is_not_travelling
+      - automation.person1_on_the_move
     - type: entities
       title: Automations changing inputs
       entities:

@@ -1,0 +1,42 @@
+initial_state: 'on'
+alias: 'person3 on the move'
+trigger:
+  # I've moved
+  - platform: state
+    entity_id: proximity.person3_home
+condition:
+  # Not home 
+  - condition: state
+    entity_id: input_boolean.person3_home
+    state: 'off'
+  - condition: or
+    conditions:
+    # It's been at least 10 minutes, and I'm close
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person3s_time_to_home_2.last_changed)|float ) > 600 }}"
+      - condition: numeric_state
+        entity_id: proximity.person3_home
+        above: 10
+        below: 2000  
+    # It's been at least 15 minutes, and I'm a moderate distance away
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person3s_time_to_home_2.last_changed)|float ) > 900 }}"
+      - condition: numeric_state
+        entity_id: proximity.person3_home
+        above: 1999  
+        below: 10000
+    # It's been at least an hour, and I'm far away
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person3s_time_to_home_2.last_changed)|float ) > 3600 }}"
+      - condition: numeric_state
+        entity_id: proximity.person3_home
+        above: 10000
+action:
+  - service: homeassistant.update_entity
+    entity_id: sensor.person3s_time_to_home_2

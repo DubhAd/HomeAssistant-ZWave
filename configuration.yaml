@@ -27,6 +27,9 @@ cloud: !include cloud.yaml
 
 frontend: !include frontend.yaml
 
+lovelace:
+  mode: yaml
+
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret api_passsword
