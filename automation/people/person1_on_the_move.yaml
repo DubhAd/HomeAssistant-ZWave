@@ -5,6 +5,9 @@ trigger:
   - platform: state
     entity_id: proximity.person1s_home
 condition:
+  # Been at least 5 minutes
+  - condition: template
+    value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('script.person1_traveltime','last_triggered'))|float)|float > 300 }}"
   # Not home 
   - condition: state
     entity_id: input_boolean.person1s_home
@@ -15,7 +18,7 @@ condition:
     - condition: and
       conditions:
       - condition: template
-        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person1ss_time_to_home_2.last_changed)|float ) > 600 }}"
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person1ss_time_to_home_2.last_changed)|float)|float > 600 }}"
       - condition: numeric_state
         entity_id: proximity.person1s_home
         above: 10
@@ -24,7 +27,7 @@ condition:
     - condition: and
       conditions:
       - condition: template
-        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person1ss_time_to_home_2.last_changed)|float ) > 900 }}"
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person1ss_time_to_home_2.last_changed)|float)|float > 900 }}"
       - condition: numeric_state
         entity_id: proximity.person1s_home
         above: 1999  
@@ -33,13 +36,9 @@ condition:
     - condition: and
       conditions:
       - condition: template
-        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person1ss_time_to_home_2.last_changed)|float ) > 3600 }}"
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person1ss_time_to_home_2.last_changed)|float)|float > 3600 }}"
       - condition: numeric_state
         entity_id: proximity.person1s_home
         above: 10000
 action:
-  - service: homeassistant.update_entity
-    entity_id: sensor.person1s_time_to_home_2
-  - delay: '00:00:10'
-  - service: homeassistant.update_entity
-    entity_id: sensor.person1s_time_to_home_by_transit
+  - service: script.person1_traveltime

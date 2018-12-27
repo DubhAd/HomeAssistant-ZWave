@@ -1,4 +1,5 @@
 - platform: waze_travel_time
+  scan_interval: 3600
   name: 'person3s time to home'
   origin: device_tracker.person3_mobile
   destination: zone.home

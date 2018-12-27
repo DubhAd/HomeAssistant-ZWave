@@ -26,3 +26,4 @@ condition:
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person4_home
+  - service: script.person4_traveltime

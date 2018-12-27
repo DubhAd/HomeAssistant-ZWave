@@ -90,7 +90,7 @@ I used to run the following, but don't any more:
 * The goals with Home Assistant have been:
   1. Minimise human actions, and where that isn't possible streamline those human actions
   2. Provide voice control where the automations don't get it right (but try to fix that)
-  3. Have a minimal UI (HA Dashboard currently) to provide manual control
+  3. Have a minimal UI to provide manual control (this is currently the Google Home app)
 
 # Future plans
 
