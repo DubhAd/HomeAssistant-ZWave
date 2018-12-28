@@ -1,5 +1,9 @@
 alias: person2 traveltime
 sequence:
+  - service: notify.logfile
+    data_template:
+      message: >
+        Updated travel time for person2 at {{ now() }}
   - service: homeassistant.update_entity
     entity_id: sensor.person2s_time_to_home
   - service: homeassistant.update_entity
