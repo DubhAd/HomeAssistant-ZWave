@@ -373,6 +373,7 @@ views:
     cards:
     - type: entities
       title: Weather from Dark Sky
+      show_header_toggle: false
       entities:
       - sensor.dark_sky_summary
       - sensor.dark_sky_minutely_summary
@@ -687,6 +688,7 @@ views:
     cards:
     - type: entities
       title: Rooms
+      show_header_toggle: false
       entities:
       - input_select.living_room
       - input_boolean.living_room_occupied
@@ -695,6 +697,7 @@ views:
       - input_boolean.office_occupied
     - type: entities
       title: Sensors
+      show_header_toggle: false
       entities:
       - sun.sun
       - sensor.sun_elevation
@@ -705,11 +708,13 @@ views:
         icon: mdi:run
     - type: entities
       title: Trend sensors
+      show_header_toggle: false
       entities:
       - binary_sensor.trend_living_room_light
       - binary_sensor.trend_sun_elevation
     - type: glance
       title: Devices
+      show_header_toggle: false
       entities:
       - entity: device_tracker.family_tv
         name: Family room
@@ -722,6 +727,7 @@ views:
       refresh_interval: 600
     - type: glance
       title: Printer status
+      show_header_toggle: false
       entities:
       - entity: sensor.samsung_m283x_series_172237250_toner_black
         name: Toner
@@ -736,6 +742,7 @@ views:
       - sensor.printer_fuser_life_remaining
     - type: glance
       title: Z-Wave battery devices
+      show_header_toggle: false
       columns: 4
       entities:
         - entity: zwave.garage_closed_bike
@@ -764,6 +771,7 @@ views:
           name: Utility switch
     - type: glance
       title: Z-Wave mains
+      show_header_toggle: false
       entities:
       - zwave.zwaveme_razberry_controller_2016_zwave
       - zwave.table_light
@@ -793,17 +801,20 @@ views:
     cards:
     - type: entities
       title: Automations for the Family room
+      show_header_toggle: false
       entities:
       - automation.family_room_occupied
       - automation.family_room_not_occupied
     - type: entities
       title: Automations for downstairs
+      show_header_toggle: false
       entities:
       - automation.hall_lights_on
       - automation.hall_lights_off
       - automation.hall_lights_off_departure
     - type: entities
       title: Automations for the front of the house
+      show_header_toggle: false
       entities:
       - automation.number_on_at_sunset
       - automation.number_on_in_the_morning
@@ -812,6 +823,7 @@ views:
       - automation.returned_home
     - type: entities
       title: Automations for the garden
+      show_header_toggle: false
       entities:
       - automation.utility_door_open_after_sunset_closed
       - automation.utility_door_open_after_sunset_turn_on
@@ -825,6 +837,7 @@ views:
     cards:
     - type: entities
       title: Automations for the Living room Current
+      show_header_toggle: false
       entities:
       - automation.all_away_media_off
       - automation.lounge_dark_motion
@@ -832,6 +845,7 @@ views:
       - automation.living_room_arrival
     - type: entities
       title: Automations for the Living room 
+      show_header_toggle: false
       entities:
       - automation.living_room_away
       - automation.living_room_day_off
@@ -846,6 +860,7 @@ views:
       - automation.tv_light_on
     - type: entities
       title: Media automations
+      show_header_toggle: false
       entities:
       - automation.tv_on_sonos_off
       - automation.sonos_on_tv_mute
@@ -856,6 +871,7 @@ views:
     cards:
     - type: entities
       title: Automations for the master bedroom
+      show_header_toggle: false
       entities:
       - automation.person2_up_bedhead_light_on
       - automation.person2_up_bedhead_light_off
@@ -874,6 +890,7 @@ views:
       - automation.late_disable_fluxer
     - type: entities
       title: Remote automations for the light
+      show_header_toggle: false
       entities:
       - automation.bedhead_turn_on
       - automation.bedhead_turn_off
@@ -899,6 +916,7 @@ views:
     cards:
     - type: entities
       title: Automations for the 2nd bedroom light
+      show_header_toggle: false
       entities:
       - automation.person1_up_bedhead_light_on
       - automation.person1_up_bedhead_light_off
@@ -915,6 +933,7 @@ views:
       - automation.person1_bedside_turn_red
     - type: entities
       title: Automations for the second bedroom
+      show_header_toggle: false
       entities:
       - automation.person1_alarm_on
       - automation.person1_alarm_off
@@ -925,6 +944,7 @@ views:
       - automation.person1_radio_off_late
     - type: entities
       title: Automations for the office
+      show_header_toggle: false
       entities:
       - automation.play_classical_music_in_the_office
       - automation.stop_classical_music_in_the_office
@@ -938,12 +958,14 @@ views:
     cards:
     - type: entities
       title: Automations at startup
+      show_header_toggle: false
       entities:
       - automation.startup_person3_up
       - automation.startup_person1_up
       - automation.startup_person2_up
     - type: entities
       title: Battery level automations
+      show_header_toggle: false
       entities:
       - automation.battery_garage_door_closed_car
       - automation.battery_garage_door_closed_bike
@@ -956,6 +978,7 @@ views:
       - automation.battery_green_remote
     - type: entities
       title: Misc automations
+      show_header_toggle: false
       entities:
       - automation.house_awake
       - automation.weather_notification
@@ -966,6 +989,7 @@ views:
       - automation.test_media
     - type: entities
       title: Seasonal automations
+      show_header_toggle: false
       entities:
       - automation.christmas_lights_on
       - automation.christmas_lights_off
@@ -982,6 +1006,7 @@ views:
     cards:
     - type: entities
       title: People driven automations - person2
+      show_header_toggle: false
       entities:
       - automation.person2_next_alarm
       - automation.person2_asleep
@@ -999,6 +1024,7 @@ views:
       - automation.person2_tablet_unplugged
     - type: entities
       title: Automations for travel - person2
+      show_header_toggle: false
       entities:
       - automation.person2_coming_home
       - automation.person2_at_station
@@ -1010,11 +1036,13 @@ views:
       - automation.person2_on_the_move
     - type: entities
       title: Automations for alarms - person2
+      show_header_toggle: false
       entities:
       - automation.person2_on_holiday
       - automation.person2_off_holiday
     - type: entities
       title: Automations changing inputs - person2
+      show_header_toggle: false
       entities:
       - automation.not_workday_for_person2
       - automation.person2_working_from_home
@@ -1027,6 +1055,7 @@ views:
     cards:
     - type: entities
       title: People driven automations - person3
+      show_header_toggle: false
       entities:
       - automation.person3_next_alarm
       - automation.person3_asleep
@@ -1039,6 +1068,7 @@ views:
       - automation.person3_phone_plugged
     - type: entities
       title: Automations for travel - person3
+      show_header_toggle: false
       entities:
       - automation.person3_travelling
       - automation.person3_coming_home
@@ -1049,6 +1079,7 @@ views:
     cards:
     - type: entities
       title: People driven automations - person1
+      show_header_toggle: false
       entities:
       - automation.person1_next_alarm
       - automation.person1_asleep
@@ -1062,6 +1093,7 @@ views:
       - automation.person1_mobile_low_battery
     - type: entities
       title: Automations for travel - person1
+      show_header_toggle: false
       entities:
       - automation.person1_returning
       - automation.person1_travelling
@@ -1070,11 +1102,13 @@ views:
       - automation.person1_on_the_move
     - type: entities
       title: Automations changing inputs
+      show_header_toggle: false
       entities:
       - automation.work_day_for_person1
       - automation.not_work_day_for_person1
     - type: entities
       title: Automations for alarms - person1
+      show_header_toggle: false
       entities:
       - automation.person1_on_holiday
       - automation.person1_off_holiday
@@ -1084,6 +1118,7 @@ views:
     cards:
     - type: entities
       title: People driven automations
+      show_header_toggle: false
       entities:
       - automation.bedtime
       - automation.adults_away
@@ -1097,6 +1132,7 @@ views:
       - automation.person4_coming_home
     - type: entities
       title: Automations for travel
+      show_header_toggle: false
       entities:
       - automation.holiday
       - automation.holiday_over
@@ -1106,6 +1142,7 @@ views:
     cards:
     - type: entities
       title: Core HA automations
+      show_header_toggle: false
       entities:
       - automation.ha_update_available_notifications
       - automation.ha_started
@@ -1114,6 +1151,7 @@ views:
       - automation.ha_ready
     - type: entities
       title: Misc HA automations
+      show_header_toggle: false
       entities:
       - automation.test_zwave_network
       - automation.zwave_check
@@ -1128,9 +1166,11 @@ views:
     cards:
     - type: entities
       title: Alarm
+      show_header_toggle: false
       entities:
       - alarm_control_panel.ha_alarm
     - type: entities
+      show_header_toggle: false
       title: Alarm automations
       entities:
       - automation.alarm_arm_away
@@ -1146,6 +1186,7 @@ views:
     cards:
     - type: entities
       title: Toggles for automations
+      show_header_toggle: false
       entities:
       - input_boolean.bedtime
       - input_boolean.adults_away
@@ -1159,6 +1200,7 @@ views:
       - input_boolean.alarm_mode
     - type: entities
       title: Toggles for people automations
+      show_header_toggle: false
       entities:
       - input_boolean.person2_is_awake
       - input_boolean.person2_in_bed
@@ -1179,6 +1221,7 @@ views:
       - input_boolean.notify_person1_work
     - type: entities
       title: Inputs for automations
+      show_header_toggle: false
       entities:
       - input_number.room_low_light
       - input_number.room_dark
@@ -1188,16 +1231,19 @@ views:
       - input_number.light_step_colour
     - type: entities
       title: Selections for automations
+      show_header_toggle: false
       entities:
       - input_select.season
       - sensor.season
     - type: entities
       title: Switches
+      show_header_toggle: false
       entities:
       - switch.fluxer
       - switch.flux_hall
     - type: entities
       title: People
+      show_header_toggle: false
       entities:
       - input_select.person3_status_dropdown
       - input_select.person1_status_dropdown
