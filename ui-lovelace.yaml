@@ -121,6 +121,7 @@ views:
           title: Open doors
       - type: glance
         title: Family room
+        columns: 6
         entities:
           - entity: sensor.person1
             name: XBox
@@ -130,6 +131,8 @@ views:
             name: Sonos
           - entity: media_player.cast_kitchen_speaker
             name: Home Mini
+          - entity: media_player.googlehomehub3435
+            name: Home Hub
           - entity: switch.family_room_socket_switch
             name: Socket
             tap_action: toggle
