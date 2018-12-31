@@ -21,10 +21,16 @@ condition:
   - condition: state
     entity_id: input_boolean.person3_home
     state: 'on'
-  - condition: numeric_state
-    entity_id: group.person_person3
-    below: 2
-    value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person3', 'entity_id'))|list)|groupby('state'))['home']|count }}"
+  # Both Wifi and BT say away
+  - condition: and
+    conditions:
+    # WiFi and BT away for at least 4 minutes
+    - condition: state
+      entity_id: device_tracker.person3_mobile_wifi
+      state: 'not_home'
+    - condition: state
+      entity_id: device_tracker.nexus_5x
+      state: 'not_home'
   - condition: or
     conditions:
     # A door was opened in the last 10 minutes

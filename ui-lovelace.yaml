@@ -120,7 +120,7 @@ views:
           type: glance
           title: Open doors
       - type: glance
-        title: Family room
+        title: Family room and Kitchen
         columns: 6
         entities:
           - entity: sensor.person1
