@@ -44,7 +44,6 @@ views:
           type: entities
           title: Alerts
       - type: glance
-        title: People
         columns: 4
         entities:
           - sensor.person3_travel
@@ -56,14 +55,18 @@ views:
         columns: 4
         entities:
           - entity: switch.tv_light_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
           - entity: switch.cabinet_light_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
           - entity: switch.table_light_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
           - entity: switch.livingroom_socket_switch
             name: "Socket"
-            tap_action: toggle
+            tap_action: 
+              action: toggle
           - entity: binary_sensor.patio_door_left_sensor
             name: "Patio door"
           - entity: binary_sensor.living_room_motion
@@ -81,24 +84,29 @@ views:
           - entity: media_player.lenovosmartdisplay109233
             name: "Home Hub"
       - type: glance
-        title: Hall and front
-        columns: 4
+        columns: 2
         entities:
-          - binary_sensor.front_door_sensor
-          - entity: switch.vestibule_switch
-            name: Vestibule
-            tap_action: toggle
           - entity: light.hall
             name: Hall light
           - entity: switch.hall_downstairs_switch
             name: Hall socket
-            tap_action: toggle
+            tap_action: 
+              action: toggle
+      - type: glance
+        columns: 5
+        entities:
+          - binary_sensor.front_door_sensor
           - entity: binary_sensor.garage_closed_bike_sensor
             name: bike
           - entity: binary_sensor.garage_closed_car_sensor
             name: Car
+          - entity: switch.vestibule_switch
+            name: Vestibule
+            tap_action: 
+              action: toggle
           - entity: switch.number_sign_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
     #####
     - type: vertical-stack
       cards:
@@ -120,7 +128,7 @@ views:
           type: glance
           title: Open doors
       - type: glance
-        title: Family room and Kitchen
+        title: Family room & Kitchen
         columns: 6
         entities:
           - entity: sensor.person1
@@ -135,15 +143,17 @@ views:
             name: Home Hub
           - entity: switch.family_room_socket_switch
             name: Socket
-            tap_action: toggle
+            tap_action: 
+              action: toggle
       - type: glance
-        title: Utility room & outside
+        title: Utility room & back
         columns: 4
         entities:
           - entity: binary_sensor.utility_door_exterior_sensor
             name: Door
           - entity: switch.garden_lights_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
           - entity: sensor.dark_sky_apparent_temperature
             name: Temperature
           - entity: sensor.dark_sky_minutely_summary
@@ -166,10 +176,12 @@ views:
             name: Home Mini
           - entity: switch.radio_person2
             icon: mdi:alarm
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             name: Alarms
           - entity: switch.master_bedroom_socket_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             name: Socket
       - type: glance
         title: Second bedroom
@@ -184,25 +196,27 @@ views:
             name: Home Mini
           - entity: switch.radio_person1
             icon: mdi:alarm
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             name: Alarms
           - entity: switch.second_bedroom_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             name: Socket
       - type: glance
-        title: Guest bedroom
         #column_width: 33%
         columns: 3
         entities:
           - entity: media_player.cast_guest_bedroom_speaker
             name: Home Mini
           - entity: switch.front_bedroom_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
             name: Socket
           - entity: switch.spare_socket_switch
-            tap_action: toggle
+            tap_action: 
+              action: toggle
       - type: glance
-        title: Office
         columns: 4
         entities:
           - entity: binary_sensor.office_multi_sensor
@@ -658,7 +672,8 @@ views:
           name: To home
         - entity: switch.radio_person1
           icon: mdi:alarm
-          tap_action: toggle
+          tap_action: 
+            action: toggle
           name: Alarms
         - entity: calendar.person1_holiday
           name: Holiday
