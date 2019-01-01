@@ -85,6 +85,7 @@ views:
             name: "Home Hub"
       - type: glance
         columns: 2
+        show_state: false
         entities:
           - entity: light.hall
             name: Hall light
@@ -94,6 +95,7 @@ views:
               action: toggle
       - type: glance
         columns: 5
+        show_state: false
         entities:
           - binary_sensor.front_door_sensor
           - entity: binary_sensor.garage_closed_bike_sensor
@@ -413,87 +415,86 @@ views:
   - title: Train status
     id: train_status
     icon: mdi:train
+    panel: true
     cards:
-    - type: glance
-      title: Ontime status
-      columns: 2
-      entities:
-      - entity: binary_sensor.trains_to_xyz_ontime
-        name: To work
-      - entity: binary_sensor.trains_to_abc_ontime
-        name: To home
-    - type: horizontal-stack
+    - type: vertical-stack
       cards:
-      - type: vertical-stack
+      - type: glance
+        columns: 2
+        entities:
+        - entity: binary_sensor.trains_to_xyz_ontime
+          name: To work
+        - entity: binary_sensor.trains_to_abc_ontime
+          name: To home
+      - type: horizontal-stack
         cards:
-        - type: glance
-          title: Next train home to station
-          #column_width: 33%
-          columns: 3
-          entities:
-          - entity: sensor.next_train_xyz_status
-            name: Status
-          - entity: sensor.next_train_xyz_scheduled
-            name: Scheduled
-          - entity: sensor.next_train_xyz_estimated
-            name: Expected
-        - type: glance
-          title: Second train home to station
-          #column_width: 33%
-          columns: 3
-          entities:
-          - entity: sensor.second_train_xyz_status
-            name: Status
-          - entity: sensor.second_train_xyz_scheduled
-            name: Scheduled
-          - entity: sensor.second_train_xyz_estimated
-            name: Expected
-        - type: glance
-          title: Third train home to station
-          #column_width: 33%
-          columns: 3
-          entities:
-          - entity: sensor.third_train_xyz_status
-            name: Status
-          - entity: sensor.third_train_xyz_scheduled
-            name: Scheduled
-          - entity: sensor.third_train_xyz_estimated
-            name: Expected
-      - type: vertical-stack
-        cards:
-        - type: glance
-          title: Next train station to home
-          #column_width: 33%
-          columns: 3
-          entities:
-          - entity: sensor.next_train_abc_status
-            name: Status
-          - entity: sensor.next_train_abc_scheduled
-            name: Scheduled
-          - entity: sensor.next_train_abc_estimated
-            name: Expected
-        - type: glance
-          title: Second train station to home
-          #column_width: 33%
-          columns: 3
-          entities:
-          - entity: sensor.second_train_abc_status
-            name: Status
-          - entity: sensor.second_train_abc_scheduled
-            name: Scheduled
-          - entity: sensor.second_train_abc_estimated
-            name: Expected
-        - type: glance
-          title: Third train station to home
-          #column_width: 33%
-          columns: 3
-          entities:
-          - entity: sensor.third_train_abc_status
-            name: Status
-          - entity: sensor.third_train_abc_scheduled
-            name: Scheduled
-          - entity: sensor.third_train_abc_estimated
-            name: Expected
+        - type: vertical-stack
+          cards:
+          - type: glance
+            title: 1st home to station
+            columns: 3
+            entities:
+            - entity: sensor.next_train_xyz_status
+              name: Status
+            - entity: sensor.next_train_xyz_scheduled
+              name: Scheduled
+            - entity: sensor.next_train_xyz_estimated
+              name: Expected
+          - type: glance
+            title: 2nd home to station
+            #column_width: 33%
+            columns: 3
+            entities:
+            - entity: sensor.second_train_xyz_status
+              name: Status
+            - entity: sensor.second_train_xyz_scheduled
+              name: Scheduled
+            - entity: sensor.second_train_xyz_estimated
+              name: Expected
+          - type: glance
+            title: 3rd home to station
+            columns: 3
+            entities:
+            - entity: sensor.third_train_xyz_status
+              name: Status
+            - entity: sensor.third_train_xyz_scheduled
+              name: Scheduled
+            - entity: sensor.third_train_xyz_estimated
+              name: Expected
+        - type: vertical-stack
+          cards:
+          - type: glance
+            title: 1st station to home
+            columns: 3
+            entities:
+            - entity: sensor.next_train_abc_status
+              name: Status
+            - entity: sensor.next_train_abc_scheduled
+              name: Scheduled
+            - entity: sensor.next_train_abc_estimated
+              name: Expected
+          - type: glance
+            title: 2nd station to home
+            #column_width: 33%
+            columns: 3
+            entities:
+            - entity: sensor.second_train_abc_status
+              name: Status
+            - entity: sensor.second_train_abc_scheduled
+              name: Scheduled
+            - entity: sensor.second_train_abc_estimated
+              name: Expected
+          - type: glance
+            title: 3rd station to home
+            #column_width: 33%
+            columns: 3
+            entities:
+            - entity: sensor.third_train_abc_status
+              name: Status
+            - entity: sensor.third_train_abc_scheduled
+              name: Scheduled
+            - entity: sensor.third_train_abc_estimated
+              name: Expected
  
   - title: Spacer
     id: spacer
@@ -1147,7 +1148,12 @@ views:
       - automation.mark_person_as_away
       - automation.mark_person_as_home
       - automation.mark_person_as_just_left
+      - automation.tasker_hook
+      - type: divider
       - automation.person4_coming_home
+      - automation.person4_away
+      - automation.person4_home
+      - automation.person4_on_the_move
     - type: entities
       title: Automations for travel
       show_header_toggle: false
@@ -1178,6 +1184,7 @@ views:
       - automation.clear_states
       - automation.sunrise_enable_automations
       - automation.recorder_purge
+      - automation.plex_hook
   - title: Alarm automations
     id: automations_alarm
     icon: mdi:alarm-bell
@@ -1273,8 +1280,6 @@ views:
     cards: 
     - type: entities
       entities:
-      - script.alarm_lights_enable
-      - script.alarm_lights_on
       - script.bedhead_light_bright_pause
       - script.bedhead_light_bright
       - script.bedhead_light_cool_pause
@@ -1284,6 +1289,10 @@ views:
       - script.bedhead_light_warm_pause
       - script.bedhead_light_warm
       - script.bedtime_slow_off
+    - type: entities
+      entities:
+      - script.alarm_lights_enable
+      - script.alarm_lights_on
       - script.garden_door_after_sunset
       - script.garden_door_before_sunrise
       - script.person3_traveltime
