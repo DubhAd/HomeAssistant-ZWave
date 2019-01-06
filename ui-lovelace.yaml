@@ -234,8 +234,6 @@ views:
             name: Home Mini
           - entity: media_player.googlehomehub8747
             name: "Home Hub"
-      - type: thermostat
-        entity: climate.office
   - title: Rooms
     id: rooms
     icon: mdi:floor-plan
@@ -275,6 +273,19 @@ views:
           "on": /local/images/living_room_night.jpg
           "off": /local/images/living_room_day.jpg
         entity: group.living_room_lights
+      - type: vertical-stack
+        cards:
+        - type: light
+          name: Hall
+          entity: light.hall
+        - type: horizontal-stack
+          cards:
+          - type: light
+            name: Master bedroom
+            entity: light.master_bedroom_bedhead
+          - type: light
+            name: Second bedroom
+            entity: light.person1_bedroom_bedside
       - type: picture-glance
         image: /local/images/master_bedroom.jpg
         title: Master bedroom
@@ -293,13 +304,6 @@ views:
           - entity: switch.radio_person1
             icon: mdi:alarm
           - light.person1_bedroom_bedside
-      - type: history-graph
-        title: Temperatures
-        entities:
-          - sensor.living_room_multi_temperature
-          - sensor.office_multi_temperature
-        hours_to_show: 36
-        refresh_interval: 600
   - title: Map
     id: map
     icon: mdi:map
