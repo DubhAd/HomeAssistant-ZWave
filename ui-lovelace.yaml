@@ -10,7 +10,6 @@ resources:
   - url: /local/surveillance-card.js?v=0
     type: module
 excluded_entities:
-  - climate.office
   - device_tracker.echo_dot6n6
   - device_tracker.jasons_iphone
   - device_tracker.link_sc17_zgp
@@ -235,6 +234,8 @@ views:
             name: Home Mini
           - entity: media_player.googlehomehub8747
             name: "Home Hub"
+      - type: thermostat
+        entity: climate.office
   - title: Rooms
     id: rooms
     icon: mdi:floor-plan
