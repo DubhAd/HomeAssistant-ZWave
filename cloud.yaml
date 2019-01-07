@@ -6,6 +6,11 @@ google_actions:
       - climate
     exclude_entities:
       - switch.number_sign_switch
+      - switch.front_bedroom_switch
+      - switch.radio_person1
+      - switch.radio_person2
+      - switch.second_bedroom_switch
+      - switch.spare_socket_switch
       # Duplicates of actual bedroom lights
       - light.yeelight_strip_286c07afc307
       - light.yeelight_strip_7811dca22b87
@@ -15,7 +20,6 @@ google_actions:
       - switch.flux_hall
       - switch.fluxer
     include_entities:
-      - script.bedtime_slow_off
       - script.wake_person1
       - input_boolean.guest_mode
   entity_config:
@@ -58,3 +62,7 @@ google_actions:
       room: "Vestibule"
     switch.front_bedroom_switch:
       room: "Guest Room"
+alexa:
+  filter:
+    include_domains:
+      - cover
