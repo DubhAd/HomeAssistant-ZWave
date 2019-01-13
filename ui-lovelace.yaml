@@ -1108,6 +1108,7 @@ views:
       - automation.return_train_status
       - automation.return_train_watcher
       - automation.person2_on_the_move
+      - automation.person2_in_the_car
     - type: entities
       title: Automations for alarms - person2
       show_header_toggle: false
