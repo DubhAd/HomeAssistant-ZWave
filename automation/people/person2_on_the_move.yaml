@@ -3,7 +3,7 @@ alias: 'person2 on the move'
 trigger:
   # I've moved
   - platform: state
-    entity_id: proximity.person2_home
+    entity_id: device_tracker.person2_mobile_gps
 condition:
   # Been at least 5 minutes
   - condition: template
@@ -39,6 +39,15 @@ condition:
         value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person2s_time_to_home_2.last_changed)|float)|float > 3600 }}"
       - condition: numeric_state
         entity_id: proximity.person2_home
-        above: 10000
+        above: 9999
+        below: 30000
+    # It's been at least three hours, and I'm far, far away
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person2s_time_to_home_2.last_changed)|float)|float > 10800 }}"
+      - condition: numeric_state
+        entity_id: proximity.person2_home
+        below: 29999
 action:
   - service: script.person2_traveltime

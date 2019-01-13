@@ -3,7 +3,7 @@ alias: 'person1 on the move'
 trigger:
   # I've moved
   - platform: state
-    entity_id: proximity.person1s_home
+    entity_id: device_tracker.person1_mobile
 condition:
   # Been at least 5 minutes
   - condition: template
