@@ -26,8 +26,6 @@ views:
   - title: Overview
     id: overview
     icon: mdi:home
-    badges:
-    - alarm_control_panel.ha_alarm
     cards:
     #####
     - type: vertical-stack
@@ -45,8 +43,9 @@ views:
           type: entities
           title: Alerts
       - type: glance
-        columns: 4
+        columns: 5
         entities:
+          - alarm_control_panel.ha_alarm
           - sensor.person3_travel
           - sensor.person1_travel
           - sensor.person2_travel
@@ -85,6 +84,7 @@ views:
           - entity: media_player.lenovosmartdisplay109233
             name: "Home Hub"
       - type: glance
+        title: Hall
         columns: 2
         show_state: false
         entities:
@@ -95,6 +95,7 @@ views:
             tap_action: 
               action: toggle
       - type: glance
+        title: Front of house
         columns: 5
         show_state: false
         entities:
@@ -189,6 +190,16 @@ views:
     #####
     - type: vertical-stack
       cards:
+      - type: entity-filter
+        entities:
+          - entity: sun.sun
+            name: Sun
+        show_empty: false
+        state_filter:
+          - 'lost'
+        card:
+          type: entities
+          title: OCD alignment fixer
       - type: glance
         title: Master bedroom
         #column_width: 25%
@@ -230,7 +241,7 @@ views:
               action: toggle
             name: Socket
       - type: glance
-        #column_width: 33%
+        title: Guest bedroom
         columns: 3
         entities:
           - entity: media_player.cast_guest_bedroom_speaker
@@ -243,6 +254,7 @@ views:
             tap_action: 
               action: toggle
       - type: glance
+        title: Office
         columns: 4
         entities:
           - entity: binary_sensor.office_multi_sensor
@@ -792,6 +804,12 @@ views:
       entities:
       - entity: device_tracker.family_tv
         name: Family room
+      - entity: device_tracker.livingroom_chromecast
+        name: Living room chromecast
+      - entity: media_player.cast_living_room_tv
+        name: Living room chromecast
+      - entity: media_player.samsung_tv_remote
+        name: Living room TV
     - type: history-graph
       title: Sun
       entities:
