@@ -1,0 +1,11 @@
+initial_state: 'on'
+alias: 'person2 location update'
+trigger:
+  # I've moved
+  - platform: state
+    entity_id: device_tracker.person2_mobile_gps
+action:
+  - service: notify.logfile
+    data_template:
+      message: >
+        Location for person2 updated at {{ now() }}
