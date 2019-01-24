@@ -12,7 +12,7 @@ trigger:
       {%- endfor -%}
       {%- endmacro -%}
       
-      {%- if getTrainStatus()[1,4] == "XXXX" -%}
+      {%- if getTrainStatus()[0:4] == "XXXX" -%}
       true
       {%- else -%}
       false
@@ -20,9 +20,14 @@ trigger:
 condition:
   - condition: and
     conditions: 
-    - condition: zone
-      zone: zone.work
-      entity_id: device_tracker.person2_mobile_gps
+    - condition: or
+      conditions:
+      - condition: zone
+        zone: zone.work
+        entity_id: device_tracker.person2_mobile_gps
+      - condition: numeric_state
+        entity_id: proximity.person2_work
+        below: 2
     - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'

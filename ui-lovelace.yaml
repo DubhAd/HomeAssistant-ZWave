@@ -449,11 +449,7 @@ views:
       - sensor.dark_sky_humidity
       - sensor.dark_sky_cloud_coverage
     - type: weather-forecast
-      entity: weather.met_office_home
-    - type: weather-forecast
       entity: weather.dark_sky  # hourly
-    - type: weather-forecast
-      entity: weather.openweathermap # hourly
     - type: custom:dark-sky-weather-card
       entity_sun: sun.sun
       entity_daily_summary: sensor.dark_sky_daily_summary
