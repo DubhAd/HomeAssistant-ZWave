@@ -4,13 +4,13 @@ trigger:
   - platform: time
     at: '22:15:00'
 condition:
-  condition: and
-  conditions:
-    - condition: state
-      entity_id: light.master_bedroom_bedhead
-      state: 'off'
-    - condition: template
-      value_template: "{{ state_attr('light.master_bedroom_bedhead', 'brightness')|default(0)|int > 120 }}"
+  - condition: and
+    conditions:
+      - condition: state
+        entity_id: light.master_bedroom_bedhead
+        state: 'off'
+      - condition: template
+        value_template: "{{ state_attr('light.master_bedroom_bedhead', 'brightness')|default(0)|int > 120 }}"
 action:
   - service: light.turn_on
     data:
