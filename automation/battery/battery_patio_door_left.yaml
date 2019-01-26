@@ -1,5 +1,5 @@
 initial_state: 'on'
-alias: 'Battery patio door (left)'
+alias: 'Battery patio door left'
 trigger:
   - platform: numeric_state
     entity_id: sensor.zwave_battery_patio_door_left
