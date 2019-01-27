@@ -876,6 +876,8 @@ views:
       - zwave.livingroom_socket
       - zwave.vestibule
       - zwave.front_bedroom
+    - type: thermostat
+      entity: climate.office
   - title: Z-Wave
     id: zwave
     panel: true
