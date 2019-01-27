@@ -11,6 +11,8 @@ resources:
     type: module
   - url: /local/custom_ui/dark-sky-weather-card.js?v=1
     type: js
+  - url: /local/mini-media-player-bundle.js?v=0.9.8
+    type: module
 excluded_entities:
   - device_tracker.echo_dot6n6
   - device_tracker.jasons_iphone
@@ -382,42 +384,158 @@ views:
             default_zoom: 18
             entities:
               - device_tracker.person4_mobile
-  - title: Media players downstairs
-    id: media_downstairs
+  - title: Media players 
+    id: media
     icon: mdi:movie
     cards:
-      - type: vertical-stack
-        cards:
-        - type: media-control
-          entity: media_player.samsung_tv_remote
-        - type: media-control
-          entity: media_player.cast_living_room_tv
-        - type: media-control
-          entity: media_player.cast_living_room_speaker
-        - type: media-control
-          entity: media_player.living_room
-      - type: vertical-stack
-        cards:
-        - type: media-control
-          entity: media_player.cast_kitchen_speaker
-        - type: media-control
-          entity: media_player.family_room
-        - type: media-control
-          entity: media_player.cast_office_speaker
-        - type: media-control
-          entity: media_player.office
-      - type: vertical-stack
-        cards:
-        - type: media-control
-          entity: media_player.person1
-        - type: media-control
-          entity: media_player.cast_second_bedroom_speaker
-        - type: media-control
-          entity: media_player.person2
-        - type: media-control
-          entity: media_player.cast_master_bedroom_speaker
-        - type: media-control
-          entity: media_player.cast_guest_bedroom_speaker
+      - type: entities
+        title: Living room
+        show_header_toggle: false
+        entities:
+          - entity: media_player.living_room
+            name: Sonos
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:speaker
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+          - entity: media_player.cast_living_room_speaker
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:google-home
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+          - entity: media_player.lenovosmartdisplay109233
+            type: custom:mini-media-player
+            group: true
+            show_tts: google
+            icon: mdi:cast-connected
+            artwork: cover
+            power_color: true
+          - entity: media_player.cast_living_room_tv
+            name: Chromecast
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:google-chrome
+            power_color: true
+          - entity: media_player.samsung_tv_remote
+            name: Samsung TV
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:television
+            power_color: true
+      - type: entities
+        title: Family room & Kitchen
+        show_header_toggle: false
+        entities:
+          - entity: media_player.family_room
+            name: Sonos
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:speaker
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+          - entity: media_player.cast_kitchen_speaker
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:google-home
+            artwork: cover
+            show_source: true
+            power_color: true
+          - entity: media_player.googlehomehub3435
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:cast-connected
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+      - type: entities
+        title: Office
+        show_header_toggle: false
+        entities:
+          - entity: media_player.office
+            name: Sonos
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:speaker
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+          - entity: media_player.cast_office_speaker
+            type: custom:mini-media-player
+            group: true
+            artwork: cover
+            icon: mdi:google-home
+            show_source: true
+            show_tts: google
+            power_color: true
+          - entity: media_player.googlehomehub8747
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:cast-connected
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+      - type: entities
+        title: Master bedroom
+        show_header_toggle: false
+        entities:
+          - entity: media_player.person2
+            name: Squeezebox
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:speaker
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+          - entity: media_player.cast_master_bedroom_speaker
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:google-home
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+      - type: entities
+        title: Second bedroom
+        show_header_toggle: false
+        entities:
+          - entity: media_player.person1
+            name: Squeezebox
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:speaker
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+          - entity: media_player.cast_second_bedroom_speaker
+            type: custom:mini-media-player
+            group: true
+            icon: mdi:google-home
+            artwork: cover
+            show_source: true
+            show_tts: google
+            power_color: true
+      - type: custom:mini-media-player
+        entity: media_player.cast_guest_bedroom_speaker
+        name: Guest bedroom
+        artwork: cover
+        icon: mdi:google-home
+        power_color: true
+        show_progress: true
+        show_tts: google
+        show_source: true
   - title: Surveillance
     id: surveillance
     icon: mdi:cctv
