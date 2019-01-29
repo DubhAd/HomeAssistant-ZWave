@@ -86,3 +86,8 @@ my_automations_battery:
   - automation.battery_patio_door_left
   - automation.battery_remote
   - automation.battery_green_remote
+garage_alert:
+  name: Garage alert
+  entities:
+  - alert.garage_door_l
+  - alert.garage_door_r

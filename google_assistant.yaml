@@ -25,3 +25,5 @@ entity_config:
     room: "Master Bedroom"
   switch.master_bedroom_socket_switch:
     room: "Master Bedroom"
+  group.garage_alert:
+    expose: true
