@@ -13,6 +13,8 @@ resources:
     type: js
   - url: /local/mini-media-player-bundle.js?v=0.9.8
     type: module
+  - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/weather-card/weather-card.min.js
+    type: module
 excluded_entities:
   - device_tracker.echo_dot6n6
   - device_tracker.jasons_iphone
@@ -164,6 +166,9 @@ views:
             name: Temperature
           - entity: sensor.dark_sky_minutely_summary
             name: Weather
+##      - type: custom:weather-card
+##        entity: weather.dark_sky
+##        name: Weather
       - type: custom:dark-sky-weather-card
         entity_sun: sun.sun
         entity_daily_summary: sensor.dark_sky_daily_summary
