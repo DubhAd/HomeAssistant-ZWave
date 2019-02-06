@@ -7,6 +7,11 @@ trigger:
   - platform: state
     entity_id: sun.sun
     to: 'below_horizon'
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 11
+    for:
+      minutes: 5
 condition:
   - condition: and
     conditions:
@@ -23,6 +28,9 @@ condition:
       - condition: state
         entity_id: input_select.living_room
         state: Night on
+      - condition: numeric_state
+        entity_id: sensor.living_room_multi_luminance
+        below: 11
   # We're here or guest mode is on
   - condition: or
     conditions:
