@@ -155,17 +155,13 @@ views:
               action: toggle
       - type: glance
         title: Utility room & back
-        columns: 4
+        columns: 2
         entities:
           - entity: binary_sensor.utility_door_exterior_sensor
             name: Door
           - entity: switch.garden_lights_switch
             tap_action: 
               action: toggle
-          - entity: sensor.dark_sky_apparent_temperature
-            name: Temperature
-          - entity: sensor.dark_sky_minutely_summary
-            name: Weather
 ##      - type: custom:weather-card
 ##        entity: weather.dark_sky
 ##        name: Weather
