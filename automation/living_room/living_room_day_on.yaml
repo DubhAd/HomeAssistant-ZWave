@@ -11,7 +11,7 @@ trigger:
       minutes: 5
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    below: 15
+    below: 16
     for:
       minutes: 1
   - platform: numeric_state
@@ -23,7 +23,7 @@ condition:
   - condition: and
     conditions:
     - condition: template
-      value_template: "{{ not is_state('input_select.living_room','Day on') }}"
+      value_template: "{{ not is_state('input_select.living_room','Day on') and not is_state('input_select.living_room','Night on')}}"
     # Room is dark, but not too dark
     - condition: numeric_state
       entity_id: sensor.living_room_multi_luminance

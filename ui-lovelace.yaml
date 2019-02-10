@@ -551,53 +551,10 @@ views:
         update_interval: 0.5
         cameras:
           - entity: camera.front_camera
-  - title: Weather
-    id: weather
-    icon: mdi:weather-partlycloudy
-    cards:
-    - type: entities
-      title: Weather from Dark Sky
-      show_header_toggle: false
-      entities:
-      - sensor.dark_sky_summary
-      - sensor.dark_sky_minutely_summary
-      - sensor.dark_sky_hourly_summary
-      - sensor.dark_sky_apparent_temperature
-      - sensor.dark_sky_temperature
-      - sensor.dark_sky_precip
-      - sensor.dark_sky_precip_intensity
-      - sensor.dark_sky_precip_probability
-      - sensor.dark_sky_wind_speed
-      - sensor.dark_sky_visibility
-      - sensor.dark_sky_humidity
-      - sensor.dark_sky_cloud_coverage
-    - type: weather-forecast
-      entity: weather.dark_sky  # hourly
-    - type: custom:dark-sky-weather-card
-      entity_sun: sun.sun
-      entity_daily_summary: sensor.dark_sky_daily_summary
-      entity_current_conditions: sensor.dark_sky_icon  
-      entity_humidity: sensor.dark_sky_humidity
-      entity_pressure: sensor.dark_sky_pressure
-      entity_temperature: sensor.dark_sky_temperature
-      entity_visibility: sensor.dark_sky_visibility
-      entity_wind_cabineting: sensor.dark_sky_wind_cabineting
-      entity_wind_speed: sensor.dark_sky_wind_speed
-      entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
-      entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
-      entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
-      entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
-      entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
-      entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1
-      entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2
-      entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3
-      entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4
-      entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5
-      entity_forecast_icon_1: sensor.dark_sky_icon_1
-      entity_forecast_icon_2: sensor.dark_sky_icon_2
-      entity_forecast_icon_3: sensor.dark_sky_icon_3
-      entity_forecast_icon_4: sensor.dark_sky_icon_4
-      entity_forecast_icon_5: sensor.dark_sky_icon_5
+##    - type: weather-forecast
+##      entity: weather.met_office_home
+##    - type: weather-forecast
+##      entity: weather.openweathermap # hourly
   - title: Train status
     id: train_status
     icon: mdi:train
@@ -929,13 +886,6 @@ views:
         name: Living room chromecast
       - entity: media_player.samsung_tv_remote
         name: Living room TV
-    - type: history-graph
-      title: Sun
-      entities:
-        - entity: sensor.sun_elevation
-          name: Elevation
-      hours_to_show: 48
-      refresh_interval: 600
     - type: glance
       title: Printer status
       show_header_toggle: false
@@ -999,8 +949,6 @@ views:
       - zwave.livingroom_socket
       - zwave.vestibule
       - zwave.front_bedroom
-    - type: thermostat
-      entity: climate.office
   - title: Z-Wave
     id: zwave
     panel: true
