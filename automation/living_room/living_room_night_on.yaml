@@ -4,6 +4,9 @@ trigger:
   - platform: state
     entity_id: input_boolean.living_room_occupied
     to: 'on'
+  - platform: state
+    entity_id: switch.cabinet_light_switch
+    to: 'on'
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     below: 12
@@ -22,13 +25,28 @@ condition:
     conditions:
     - condition: template
       value_template: "{{ not is_state('input_select.living_room','Night on') }}"
-    - condition: numeric_state
-      entity_id: sensor.living_room_multi_luminance
-      below: 13
-    # Sonos
     - condition: state
       entity_id: input_boolean.living_room_occupied
       state: 'on'
+    # cabinet light off, and dull, or cabinet light on and brighter
+    - condition: or
+      conditions:
+      - condition: and
+        conditions:
+        - condition: state
+          entity_id: switch.cabinet_light_switch
+          state: 'off'
+        - condition: numeric_state
+          entity_id: sensor.living_room_multi_luminance
+          below: 13
+      - condition: and
+        conditions:
+        - condition: state
+          entity_id: switch.cabinet_light_switch
+          state: 'on'
+        - condition: numeric_state
+          entity_id: sensor.living_room_multi_luminance
+          below: 20
   # We're here or guest mode is on
   - condition: or
     conditions:
