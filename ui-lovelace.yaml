@@ -29,6 +29,7 @@ excluded_entities:
 views:
   - title: Overview
     id: overview
+    path: home
     icon: mdi:home
     cards:
     #####
@@ -276,6 +277,7 @@ views:
             name: "Home Hub"
   - title: Rooms
     id: rooms
+    path: rooms
     icon: mdi:floor-plan
     cards:
       - type: picture-glance
@@ -346,6 +348,7 @@ views:
           - light.person1_bedroom_bedside
   - title: Map
     id: map
+    path: map
     icon: mdi:map
     panel: true
     cards:
@@ -387,6 +390,7 @@ views:
               - device_tracker.person4_mobile
   - title: Media players 
     id: media
+    path: media
     icon: mdi:movie
     cards:
       - type: entities
@@ -539,6 +543,7 @@ views:
         show_source: true
   - title: Surveillance
     id: surveillance
+    path: cameras
     icon: mdi:cctv
     panel: true
     cards:
@@ -553,6 +558,7 @@ views:
 ##      entity: weather.openweathermap # hourly
   - title: Train status
     id: train_status
+    path: trains
     icon: mdi:train
     panel: true
     cards:
@@ -641,6 +647,7 @@ views:
     cards: []
   - title: People
     id: people
+    path: people
     icon: mdi:account-multiple
     cards:
     - type: vertical-stack
@@ -842,6 +849,7 @@ views:
           - calendar.person1
   - title: Information
     id: information
+    path: info
     icon: mdi:information-outline
     cards:
     - type: entities
@@ -947,6 +955,7 @@ views:
       - zwave.front_bedroom
   - title: Z-Wave
     id: zwave
+    path: zwave
     panel: true
     icon: mdi:z-wave
     cards:
@@ -954,6 +963,7 @@ views:
       url: /local/z-wave-graph.html
   - title: Automations
     id: automations
+    path: automations
     icon: mdi:home-variant
     cards:
     - type: entities
@@ -990,6 +1000,7 @@ views:
       - binary_sensor.garden_lights_left_on
   - title: Living room automations
     id: automations_living_room
+    path: automations_living_room
     icon: mdi:home-circle
     cards:
     - type: entities
@@ -1024,6 +1035,7 @@ views:
       - automation.sonos_off_tv_unmute
   - title: Master bedroom automations
     id: automations_master_bedroom
+    path: automations_master_bedroom
     icon: mdi:hotel
     cards:
     - type: entities
@@ -1069,6 +1081,7 @@ views:
       - automation.master_bedhead_warm_stop
   - title: Upstairs automations
     id: automations_upstairs
+    path: automations_upstairs
     icon: mdi:home-modern
     cards:
     - type: entities
@@ -1111,6 +1124,7 @@ views:
       - automation.office_not_occupied
   - title: More Automations
     id: automations_more
+    path: automations_more
     icon: mdi:engine-outline
     cards:
     - type: entities
@@ -1159,6 +1173,7 @@ views:
       - automation.season_is_autumn
   - title: Automations person2
     id: automations_person2
+    path: automations_person2
     icon: mdi:account-star
     cards:
     - type: entities
@@ -1209,6 +1224,7 @@ views:
       - automation.person2_not_working_away
   - title: Automations person3
     id: automations_person3
+    path: automations_person3
     icon: mdi:account-heart
     cards:
     - type: entities
@@ -1233,6 +1249,7 @@ views:
       - automation.person3_on_the_move
   - title: Automations person1
     id: automations_person1
+    path: automations_person1
     icon: mdi:account-circle
     cards:
     - type: entities
@@ -1272,6 +1289,7 @@ views:
       - automation.person1_off_holiday
   - title: Automations
     id: automations_group
+    path: automations_group
     icon: mdi:account-group
     cards:
     - type: entities
@@ -1301,6 +1319,7 @@ views:
       - automation.holiday_over
   - title: Automations about Home Assistant
     id: automations_platform
+    path: automations_platform
     icon: mdi:settings
     cards:
     - type: entities
@@ -1326,6 +1345,7 @@ views:
       - automation.plex_hook
   - title: Alarm automations
     id: automations_alarm
+    path: automations_alarm
     icon: mdi:alarm-bell
     cards:
     - type: entities
@@ -1346,6 +1366,7 @@ views:
       - automation.alarm_triggered_home
   - title: Inputs
     id: inputs
+    path: inputs
     icon: mdi:information-variant
     cards:
     - type: entities
@@ -1415,6 +1436,7 @@ views:
       - input_select.person4_status_dropdown
   - title: scripts
     id: scripts
+    path: scripts
     icon: mdi:script
     cards: 
     - type: entities
