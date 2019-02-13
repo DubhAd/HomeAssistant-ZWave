@@ -1,0 +1,18 @@
+initial_state: 'on'
+alias: 'Living room lights dim on'
+trigger:
+  - platform: state
+    entity_id: input_select.living_room
+    to: 'Dim'
+condition:
+  condition: and
+  conditions:
+    # Lighting automations are enabled
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+action:
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.livingroom_lights_auto
+  - service: switch.turn_on
+    entity_id: switch.livingroom_socket_switch

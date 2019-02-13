@@ -9,6 +9,9 @@ trigger:
   - platform: state
     entity_id: input_select.person1_status_dropdown
     to: 'Just Arrived'
+  - platform: state
+    entity_id: input_boolean.bedtime
+    to: 'off'
 condition:
   - condition: state
     entity_id: input_boolean.living_room_occupied
@@ -16,9 +19,8 @@ condition:
   - condition: numeric_state
     entity_id: sensor.living_room_multi_luminance
     below: 20
-  - condition: state
-    entity_id: switch.livingroom_socket_switch
-    state: 'off'
 action:
-  - service: switch.turn_on
-    entity_id: switch.livingroom_socket_switch
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.living_room
+      option: 'Dim'

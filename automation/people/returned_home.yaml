@@ -102,8 +102,6 @@ action:
       {% else %}
         script.hall_strip_on
       {% endif %}
-  - service: switch.turn_on
-    entity_id: switch.livingroom_socket_switch
   - service: notify.logfile
     data_template:
       message: >
