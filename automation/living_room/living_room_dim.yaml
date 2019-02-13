@@ -1,14 +1,12 @@
-alias: Living room arrival
+alias: Living room dim
 trigger:
   - platform: state
-    entity_id: input_select.person2_status_dropdown
-    to: 'Just Arrived'
-  - platform: state
-    entity_id: input_select.person3_status_dropdown
-    to: 'Just Arrived'
-  - platform: state
-    entity_id: input_select.person1_status_dropdown
-    to: 'Just Arrived'
+    entity_id: input_boolean.bedtime
+    to: 'off'
+  # Home and the room is getting dark
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 5
 condition:
   - condition: state
     entity_id: input_boolean.living_room_occupied
@@ -16,6 +14,8 @@ condition:
   - condition: numeric_state
     entity_id: sensor.living_room_multi_luminance
     below: 20
+  - condition: template
+    value_template: "{{ not is_state('input_select.living_room','Dim') }}"
 action:
   - service: input_select.select_option
     data:

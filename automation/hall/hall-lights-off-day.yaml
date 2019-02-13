@@ -1,21 +1,26 @@
 initial_state: 'on'
-alias: 'Hall lights off'
+alias: 'Hall lights off day'
 trigger:
-  - platform: state
-    entity_id: input_boolean.bedtime
-    to: 'on'
-    for:
-      minutes: 2
   - platform: state
     entity_id: input_boolean.living_room_occupied
     to: 'off'
     for:
-      minutes: 2
+      minutes: 5
   - platform: state
     entity_id: input_boolean.family_room_occupied
     to: 'off'
     for:
-      minutes: 2
+      minutes: 5
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 30
+    for:
+      minutes: 10
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    above: 50
+    for:
+      minutes: 5
 ## Also need to turn off if we've got up in the night and gone back to bed
 condition:
   - condition: and
@@ -31,18 +36,13 @@ condition:
       - condition: state
         entity_id: light.hall
         state: 'on'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.bedtime
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.living_room_occupied
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.family_room_occupied
-      state: 'off'
+    - condition: and
+      conditions:
+      - condition: numeric_state
+        entity_id: sensor.living_room_multi_luminance
+        above: 30
+      - condition: template
+        value_template: "{{ not is_state('input_select.season', 'Christmas') }}"
 action:
   - service: light.turn_off
     data:

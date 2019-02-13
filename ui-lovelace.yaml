@@ -978,6 +978,7 @@ views:
       entities:
       - automation.hall_lights_on
       - automation.hall_lights_off
+      - automation.hall_lights_off_day
       - automation.hall_lights_off_departure
     - type: entities
       title: Automations for the front of the house
@@ -1016,6 +1017,7 @@ views:
       show_header_toggle: false
       entities:
       - automation.living_room_away
+      - automation.living_room_dim
       - automation.living_room_day_off
       - automation.living_room_day_on
       - automation.living_room_night_off
@@ -1023,6 +1025,7 @@ views:
       - automation.living_room_occupied
       - automation.living_room_not_occupied
       - automation.living_room_lights_day_on
+      - automation.living_room_lights_dim_on
       - automation.living_room_lights_night_on
       - automation.living_room_lights_off
       - automation.tv_light_on
@@ -1207,6 +1210,7 @@ views:
       - automation.return_train_watcher
       - automation.person2_on_the_move
       - automation.person2_in_the_car
+      - automation.person2_location_update
     - type: entities
       title: Automations for alarms - person2
       show_header_toggle: false
