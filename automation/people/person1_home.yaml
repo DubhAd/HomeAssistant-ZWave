@@ -4,8 +4,8 @@ trigger:
   - platform: state
     entity_id:
     - device_tracker.person1_mobile
-    - device_tracker.404e36d4772f
-    - device_tracker.pixie
+    - device_tracker.c08c71a4c5d9
+    - device_tracker.moto_e5
     to: 'home'
   - platform: homeassistant
     event: start
@@ -17,10 +17,10 @@ condition:
     conditions:
     # WiFi and BT are our truth data, as soon as one of them shows us as home we're home
     - condition: state
-      entity_id: device_tracker.404e36d4772f
+      entity_id: device_tracker.c08c71a4c5d9
       state: 'home'
     - condition: state
-      entity_id: device_tracker.pixie
+      entity_id: device_tracker.moto_e5
       state: 'home'
     # But any two win too
     - condition: numeric_state
