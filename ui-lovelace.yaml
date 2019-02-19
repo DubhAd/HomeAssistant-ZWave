@@ -713,7 +713,7 @@ views:
         - entity: device_tracker.person2_mobile_gps
           name: GPS
           icon: mdi:crosshairs-gps
-        - entity: device_tracker.c08c71a4c5d9
+        - entity: device_tracker.404e36245315
           name: WiFi
           icon: mdi:wifi
         - entity: device_tracker.serenity
@@ -796,10 +796,10 @@ views:
         - entity: device_tracker.person1_mobile
           name: GPS
           icon: mdi:crosshairs-gps
-        - entity: device_tracker.c08c71a4c5d9
+        - entity: device_tracker.3c286ddaeba1
           name: WiFi
           icon: mdi:wifi
-        - entity: device_tracker.moto_e5
+        - entity: device_tracker.pixie3
           name: BT
           icon: mdi:bluetooth
         - entity: sensor.battery_person1_mobile

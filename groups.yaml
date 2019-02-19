@@ -37,8 +37,8 @@ person_person1:
   name: person1
   entities:
   - device_tracker.person1_mobile
-  - device_tracker.c08c71a4c5d9
-  - device_tracker.pixie
+  - device_tracker.3c286ddaeba1
+  - device_tracker.pixie3
 person_person1_tablet:
   name: person1's tablet
   icon: mdi:tablet
