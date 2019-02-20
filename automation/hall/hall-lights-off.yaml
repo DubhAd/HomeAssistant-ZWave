@@ -4,18 +4,12 @@ trigger:
   - platform: state
     entity_id: input_boolean.bedtime
     to: 'on'
-    for:
-      minutes: 2
   - platform: state
     entity_id: input_boolean.living_room_occupied
     to: 'off'
-    for:
-      minutes: 2
   - platform: state
     entity_id: input_boolean.family_room_occupied
     to: 'off'
-    for:
-      minutes: 2
 ## Also need to turn off if we've got up in the night and gone back to bed
 condition:
   - condition: and
@@ -44,9 +38,19 @@ condition:
       entity_id: input_boolean.family_room_occupied
       state: 'off'
 action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hall
+      transition: 30
+      brightness: 5
+      color_name: red
+  - delay: '00:02:00'
   - service: light.turn_off
     data:
       entity_id: light.hall
+  - condition: state
+    entity_id: switch.hall_downstairs_switch
+    state: 'on'
   - service: switch.turn_off
     entity_id: 
       - switch.hall_downstairs_switch
