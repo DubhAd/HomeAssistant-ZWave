@@ -7,6 +7,7 @@ sequence:
       entity_id: light.hall
       transition: 30
       brightness: 15
+      color_name: white
   - delay: 00:01:00
   - wait_template: "{{ states('light.hall') != 'unavailable' }}"
     timeout: '00:05:00'
@@ -18,3 +19,4 @@ sequence:
       entity_id: light.hall
       transition: 30
       brightness: 15
+      color_name: white
