@@ -39,6 +39,14 @@ action:
     data:
       entity_id: light.hall
       transition: 30
+      color_name: red
+  - delay: '00:00:30'
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
+    timeout: '00:05:00'
+  - service: light.turn_on
+    data:
+      entity_id: light.hall
+      transition: 30
       brightness: 5
       color_name: red
   - condition: state
