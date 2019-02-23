@@ -33,6 +33,8 @@ condition:
       entity_id: input_boolean.family_room_occupied
       state: 'off'
 action:
+  - service: switch.turn_off
+    entity_id: switch.flux_hall
   - wait_template: "{{ states('light.hall') != 'unavailable' }}"
     timeout: '00:05:00'
   - service: light.turn_on
