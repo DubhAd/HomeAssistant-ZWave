@@ -29,8 +29,4 @@ condition:
       entity_id: device_tracker.nexus_5x
       state: 'home'
 action:
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.person3_travelling
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.person3_home
-  - service: script.person3_traveltime
+  - service: script.person3_home

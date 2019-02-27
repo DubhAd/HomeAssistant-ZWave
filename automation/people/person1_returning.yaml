@@ -27,14 +27,14 @@ condition:
         weekday:
           - fri
 action:
-  - wait_template: "{{ states('sensor.person1s_time_to_home_2') < 8 }}"
+  - wait_template: "{{ states('sensor.proximity.person1_home') < 600 }}"
     timeout: 00:10:00
   - service: notify.lametric_info
     data_template:
-      message: "person1 should be home from work in about {{ states('sensor.person1s_time_to_home_2') }} to {{ states('sensor.person1s_time_to_home_2')|int + 15 }} minutes"
+      message: "person1 should be home from work shortly"
   - condition: state
     entity_id: input_boolean.person3_home
     state: 'on'
   - service: notify.person3
     data_template:
-      message: "person1 should be home from work in about {{ states('sensor.person1s_time_to_home_2') }} to {{ states('sensor.person1s_time_to_home_2')|int + 15 }} minutes"
+      message: "person1 should be home from work shortly"
