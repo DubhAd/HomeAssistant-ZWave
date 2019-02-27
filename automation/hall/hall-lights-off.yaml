@@ -38,6 +38,15 @@ condition:
       entity_id: input_boolean.family_room_occupied
       state: 'off'
 action:
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
+    timeout: '00:05:00'
+  - service: light.turn_on
+    data:
+      entity_id: light.hall
+      color_name: red
+  - delay: '00:02:00'
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
+    timeout: '00:05:00'
   - service: light.turn_on
     data:
       entity_id: light.hall
@@ -45,6 +54,8 @@ action:
       brightness: 5
       color_name: red
   - delay: '00:02:00'
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
+    timeout: '00:05:00'
   - service: light.turn_off
     data:
       entity_id: light.hall
