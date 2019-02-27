@@ -1,0 +1,58 @@
+initial_state: 'on'
+alias: 'Hall lights off delay'
+trigger:
+  - platform: state
+    entity_id: input_boolean.bedtime
+    to: 'on'
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: input_boolean.living_room_occupied
+    to: 'off'
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: input_boolean.family_room_occupied
+    to: 'off'
+    for:
+      minutes: 10
+## Also need to turn off if we've got up in the night and gone back to bed
+condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: switch.hall_downstairs_switch
+        state: 'on'
+      - condition: state
+        entity_id: light.hall
+        state: 'on'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.bedtime
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.living_room_occupied
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.family_room_occupied
+      state: 'off'
+action:
+  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
+    timeout: '00:05:00'
+  - service: light.turn_off
+    data:
+      entity_id: light.hall
+  - condition: state
+    entity_id: switch.hall_downstairs_switch
+    state: 'on'
+  - service: switch.turn_off
+    entity_id: 
+      - switch.hall_downstairs_switch
+      - switch.vestibule_switch
