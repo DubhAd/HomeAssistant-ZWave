@@ -7,7 +7,7 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.hall
-      transition: 30
+      transition: 5
       brightness: 15
       color_name: white
   - delay: 00:01:00
@@ -19,6 +19,6 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.hall
-      transition: 30
+      transition: 5
       brightness: 15
       color_name: white
