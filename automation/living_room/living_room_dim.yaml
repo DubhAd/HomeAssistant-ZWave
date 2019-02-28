@@ -16,6 +16,9 @@ condition:
     below: 20
   - condition: template
     value_template: "{{ not is_state('input_select.living_room','Dim') }}"
+  - condition: state
+    entity_id: input_boolean.bedtime
+    state: 'off'
 action:
   - service: input_select.select_option
     data:
