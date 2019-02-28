@@ -86,6 +86,8 @@ condition:
         entity_id: input_boolean.adults_away
         state: 'off'
 action:
+  - service: switch.turn_on
+    entity_id: switch.flux_hall
   - service_template: >-
       {% if is_state('input_select.season', 'Christmas') %}
         script.hall_string_on
