@@ -28,10 +28,4 @@ condition:
       above: 1
       value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.person1_travelling
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.person1_home
-  - service: automation.turn_on
-    entity_id: automation.person1_at_work
-  - service: script.person1_traveltime
+  - service: script.person1_home
