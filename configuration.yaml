@@ -15,6 +15,9 @@ homeassistant:
   whitelist_external_dirs: 
     - /data/homeassistant
 
+default_config:
+#person:
+
 #introduction:
 
 #logger:
