@@ -5,6 +5,9 @@ trigger:
   # Event can also be 'shutdown'
   event: shutdown
 action:
+  - service: script.notify_person2
+    data:
+      message: "Home Assistant has shut down"
   - service: notify.slack_notify
     data:
       message: "Home Assistant has shut down"

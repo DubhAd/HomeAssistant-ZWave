@@ -4,6 +4,9 @@ trigger:
   platform: event
   event_type: zwave.network_ready
 action:
+  - service: script.notify_person2
+    data:
+      message: "The Z-Wave network is now ready"
   - service: notify.slack_notify
     data:
       message: "The Z-Wave network is now ready"
