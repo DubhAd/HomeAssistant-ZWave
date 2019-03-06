@@ -33,9 +33,6 @@ trigger:
   - platform: state
     entity_id: media_player.living_room
     to: 'playing'
-  - platform: state
-    entity_id: binary_sensor.living_room_motion
-    to: 'on'
 condition:
   condition: and
   conditions:

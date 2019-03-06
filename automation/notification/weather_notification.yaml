@@ -1,9 +1,9 @@
 initial_state: 'on'
 alias: 'Weather notification'
 trigger:
-  - platform: time
+  - platform: time_pattern
     minutes: '/5'
-    seconds: 00
+    seconds: '00'
 condition:
   - condition: state
     entity_id: input_boolean.living_room_occupied

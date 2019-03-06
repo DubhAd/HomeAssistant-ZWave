@@ -953,14 +953,6 @@ views:
       - zwave.livingroom_socket
       - zwave.vestibule
       - zwave.front_bedroom
-  - title: Z-Wave
-    id: zwave
-    path: zwave
-    panel: true
-    icon: mdi:z-wave
-    cards:
-    - type: iframe
-      url: /local/z-wave-graph.html
   - title: Automations
     id: automations
     path: automations
@@ -1344,7 +1336,6 @@ views:
       - automation.test_zwave_network
       - automation.zwave_check
       - automation.zwave_health_check
-      - automation.generate_zwave_graph
       - automation.clear_states
       - automation.sunrise_enable_automations
       - automation.recorder_purge

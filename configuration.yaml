@@ -15,7 +15,7 @@ homeassistant:
   whitelist_external_dirs: 
     - /data/homeassistant
 
-#default_config:
+default_config:
 
 #introduction:
 
@@ -143,7 +143,7 @@ group: !include groups.yaml
 
 #datadog:
 
-panel_iframe: !include_dir_merge_named panel_iframe/
+#panel_iframe: !include_dir_merge_named panel_iframe/
 
 panel_custom:
   - name: floorplan
@@ -151,9 +151,9 @@ panel_custom:
     sidebar_icon: mdi:floor-plan
     url_path: floorplan
     config: !include floorplan.yaml
-  - name: zwavegraph2
+  - name: zwavegraph
     sidebar_title: ZWave Graph2
-    sidebar_icon: mdi:access-point-network
+    sidebar_icon: mdi:z-wave
     url_path: zwave
 
 alarm_control_panel: !include_dir_list alarm/

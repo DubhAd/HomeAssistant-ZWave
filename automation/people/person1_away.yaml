@@ -34,13 +34,9 @@ condition:
   # Either a door was opened in the last 10 minutes, a door is open, or they've been gone for at least 4 minutes
   - condition: or
     conditions:
-    # A door was opened in the last 10 minutes
+    # A door was opened/closed in the last 10 minutes
     - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.sensor.last_opened.last_updated)) | int < 600 }}"
-    # A door is currently open
-    - condition: state
-      entity_id: group.my_exterior_doors
-      state: 'on'
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exterior_doors.last_updated)) | int < 600 }}"
     - condition: and
       conditions:
       # WiFi and BT away for at least 4 minutes
