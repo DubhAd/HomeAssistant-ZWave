@@ -5,5 +5,5 @@
   title_param_name: username
   data:
     username: Home Assistant
-  resource: "magic_discord_webhook/hVeNujTxXeHg09SHEj5kl0_mcnEMxn-f236sVMM9WBgM4vSPxMLUT_DrI1yqhbpU8EAY"
+  resource: "magic_discord_webhook
 

@@ -17,6 +17,8 @@ homeassistant:
 
 default_config:
 
+person:
+
 #introduction:
 
 #logger:
