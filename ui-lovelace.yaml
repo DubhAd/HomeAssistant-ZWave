@@ -15,17 +15,6 @@ resources:
     type: module
   - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/weather-card/weather-card.min.js
     type: module
-excluded_entities:
-  - device_tracker.echo_dot6n6
-  - device_tracker.jasons_iphone
-  - device_tracker.link_sc17_zgp
-  - device_tracker.parrot_ck3100
-  - device_tracker.rac_cf19
-  - device_tracker.person2_5x
-  - sensor.samsung_m283x_series_172237250
-  - sensor.samsung_m283x_series_172237250_output_tray_0
-  - sensor.samsung_m283x_series_172237250_tray_1
-  - sensor.printer
 views:
   - title: Overview
     id: overview
