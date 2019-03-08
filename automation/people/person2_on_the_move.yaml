@@ -48,6 +48,6 @@ condition:
         value_template: "{{ ( as_timestamp(now()) - as_timestamp(states.sensor.person2s_time_to_home_2.last_changed)|float)|float > 10800 }}"
       - condition: numeric_state
         entity_id: proximity.person2_home
-        below: 29999
+        above: 29999
 action:
   - service: script.person2_traveltime

@@ -1,6 +1,16 @@
 title: Our Home
 resources:
-  - url: /local/monster-card.js?v=2
+    # https://github.com/maykar/compact-custom-header
+  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1
+    type: module
+    # https://github.com/thomasloven/lovelace-card-tools
+  - url: /local/thomasloven/card-tools.js?v=1
+    type: js
+    # https://github.com/thomasloven/lovelace-layout-card
+  - url: /local/thomasloven/layout-card.js?v=1
+    type: js
+    # https://github.com/thomasloven/lovelace-popup-card
+  - url: /local/thomasloven/popup-card.js?v=1
     type: js
   - url: /local/dist/google-calendar-card.js?v=1
     type: module
@@ -21,6 +31,13 @@ views:
     path: home
     icon: mdi:home
     cards:
+    - type: custom:compact-custom-header
+      main_config: true
+      menu: overflow
+      notifications: overflow
+      options: clock
+      voice: hide
+      clock_format: 24
     #####
     - type: vertical-stack
       cards:
@@ -91,7 +108,6 @@ views:
       - type: glance
         title: Front of house
         columns: 5
-        show_state: false
         entities:
           - binary_sensor.front_door_sensor
           - entity: binary_sensor.garage_closed_bike_sensor
@@ -269,6 +285,7 @@ views:
     path: rooms
     icon: mdi:floor-plan
     cards:
+      - type: custom:compact-custom-header
       - type: picture-glance
         title: "The house"
         image: /local/images/house.jpg
@@ -377,11 +394,13 @@ views:
             default_zoom: 18
             entities:
               - device_tracker.person4_mobile
+      - type: custom:compact-custom-header
   - title: Media players 
     id: media
     path: media
     icon: mdi:movie
     cards:
+      - type: custom:compact-custom-header
       - type: entities
         title: Living room
         show_header_toggle: false
@@ -541,10 +560,7 @@ views:
         update_interval: 0.5
         cameras:
           - entity: camera.front_camera
-##    - type: weather-forecast
-##      entity: weather.met_office_home
-##    - type: weather-forecast
-##      entity: weather.openweathermap # hourly
+      - type: custom:compact-custom-header
   - title: Train status
     id: train_status
     path: trains
@@ -629,7 +645,7 @@ views:
               name: Scheduled
             - entity: sensor.third_train_abc_estimated
               name: Expected
- 
+    - type: custom:compact-custom-header
   - title: Spacer
     id: spacer
     icon: mdi:dots-horizontal
@@ -638,39 +654,164 @@ views:
     id: people
     path: people
     icon: mdi:account-multiple
+    popup_cards:
+      sensor.person3_travel:
+        title: person3
+        large: false
+        card:
+          type: vertical-stack
+          cards: 
+          - type: glance
+            entities:
+            - entity: device_tracker.person3_mobile
+              name: GPS
+              icon: mdi:crosshairs-gps
+            - entity: device_tracker.person3_mobile_wifi
+              name: WiFi
+              icon: mdi:wifi
+            - entity: device_tracker.nexus_5x
+              name: BT
+              icon: mdi:bluetooth
+            - entity: sensor.battery_person3_mobile
+              name: Battery
+            - entity: input_boolean.person3_phone_charging
+              name: Phone charging
+            - entity: sensor.person3s_time_to_home
+              name: Car home
+              icon: mdi:map-marker-distance
+            - entity: sensor.person3s_time_to_home_2
+              name: Bus home
+              icon: mdi:map-marker-distance
+            - entity: proximity.person3_home
+              name: To home
+          - type: entities
+            entities:
+            - entity: input_datetime.person3_next_alarm
+              name: Next alarm
+      sensor.person2_travel:
+        title: person2
+        large: false
+        card:
+          type: vertical-stack
+          cards: 
+          - type: glance
+            entities:
+            - sensor.person2_travel
+            - entity: device_tracker.person2_mobile_gps
+              name: GPS
+              icon: mdi:crosshairs-gps
+            - entity: device_tracker.404e36245315
+              name: WiFi
+              icon: mdi:wifi
+            - entity: device_tracker.serenity
+              name: BT
+              icon: mdi:bluetooth
+            - entity: sensor.battery_person2_mobile
+              name: Battery
+            - entity: input_boolean.person2_phone_charging
+              name: Phone charging
+            - entity: sensor.person2s_time_to_home_2
+              name: Car home
+              icon: mdi:map-marker-distance
+            - entity: proximity.person2_home
+              name: To home
+            - entity: switch.radio_person2
+              icon: mdi:alarm
+              name: Alarms
+          - type: entities
+            entities:
+            - entity: input_datetime.person2_next_alarm
+              name: Next alarm
+          - type: glance
+            title: person2's devices
+            columns: 6
+            entities:
+            - entity: device_tracker.person2_tablet_5
+              name: Tablet
+              icon: mdi:crosshairs-gps
+            - entity: device_tracker.pc1722372113
+              name: Tablet
+              icon: mdi:wifi
+            - entity: device_tracker.person2s_m5
+              name: Tablet
+              icon: mdi:bluetooth
+            - entity: sensor.battery_person2_tablet
+              name: Tablet
+            - entity: device_tracker.9c305b3c6c87
+              name: Laptop
+              icon: mdi:wifi
+            - entity: device_tracker.jayne
+              name: Laptop
+              icon: mdi:bluetooth
+      sensor.person1_travel:
+        title: person1
+        large: false
+        card:
+          type: vertical-stack
+          cards: 
+          - type: glance
+            title: person1
+            columns: 6
+            entities:
+            - sensor.person1_travel
+            - entity: device_tracker.person1_mobile
+              name: GPS
+              icon: mdi:crosshairs-gps
+            - entity: device_tracker.3c286ddaeba1
+              name: WiFi
+              icon: mdi:wifi
+            - entity: device_tracker.pixie3
+              name: BT
+              icon: mdi:bluetooth
+            - entity: sensor.battery_person1_mobile
+              name: Battery
+            - entity: input_boolean.person1_phone_charging
+              name: Phone charging
+            - entity: sensor.person1s_time_to_home_2
+              name: Walking home
+              icon: mdi:map-marker-distance
+            - entity: sensor.person1s_time_to_home_by_transit
+              name: Bus home
+              icon: mdi:map-marker-distance
+            - entity: sensor.person1s_time_to_home
+              name: Car home
+              icon: mdi:map-marker-distance
+            - entity: proximity.person1_home
+              name: To home
+            - entity: switch.radio_person1
+              icon: mdi:alarm
+              tap_action: 
+                action: toggle
+              name: Alarms
+            - entity: calendar.person1_holiday
+              name: Holiday
+          - type: entities
+            entities:
+            - entity: input_datetime.person1_next_alarm
+              name: Next alarm
+          - type: glance
+            title: person1's Devices
+            entities:
+            - entity: device_tracker.person1_headphones
+              name: Headphones
+            - entity: device_tracker.person1_tablet
+              name: Tablet
+              icon: mdi:crosshairs-gps
+            - entity: device_tracker.pc1722372108
+              name: Tablet
+              icon: mdi:wifi
+            - entity: device_tracker.huawei_mediapad_m5
+              name: Tablet
+              icon: mdi:bluetooth
+            - entity: sensor.battery_person1_tablet
+              name: Tablet
     cards:
+    - type: custom:compact-custom-header
     - type: vertical-stack
       cards:
-      - type: glance
-        title: person3
-        columns: 6
-        entities:
-        - sensor.person3_travel
-        - entity: device_tracker.person3_mobile
-          name: GPS
-          icon: mdi:crosshairs-gps
-        - entity: device_tracker.person3_mobile_wifi
-          name: WiFi
-          icon: mdi:wifi
-        - entity: device_tracker.nexus_5x
-          name: BT
-          icon: mdi:bluetooth
-        - entity: sensor.battery_person3_mobile
-          name: Battery
-        - entity: input_boolean.person3_phone_charging
-          name: Phone charging
-        - entity: sensor.person3s_time_to_home
-          name: Car home
-          icon: mdi:map-marker-distance
-        - entity: sensor.person3s_time_to_home_2
-          name: Bus home
-          icon: mdi:map-marker-distance
-        - entity: proximity.person3_home
-          name: To home
-      - type: entities
-        entities:
-        - entity: input_datetime.person3_next_alarm
-          name: Next alarm
+      - type: picture-entity
+        entity: sensor.person3_travel
+        image: /local/person3.png
       - type: custom:google-calendar-card
         entities: 
           - calendar.person3
@@ -694,57 +835,9 @@ views:
           name: To home
     - type: vertical-stack
       cards:
-      - type: glance
-        title: person2
-        columns: 6
-        entities:
-        - sensor.person2_travel
-        - entity: device_tracker.person2_mobile_gps
-          name: GPS
-          icon: mdi:crosshairs-gps
-        - entity: device_tracker.404e36245315
-          name: WiFi
-          icon: mdi:wifi
-        - entity: device_tracker.serenity
-          name: BT
-          icon: mdi:bluetooth
-        - entity: sensor.battery_person2_mobile
-          name: Battery
-        - entity: input_boolean.person2_phone_charging
-          name: Phone charging
-        - entity: sensor.person2s_time_to_home_2
-          name: Car home
-          icon: mdi:map-marker-distance
-        - entity: proximity.person2_home
-          name: To home
-        - entity: switch.radio_person2
-          icon: mdi:alarm
-          name: Alarms
-      - type: entities
-        entities:
-        - entity: input_datetime.person2_next_alarm
-          name: Next alarm
-      - type: glance
-        title: person2's devices
-        columns: 6
-        entities:
-        - entity: device_tracker.person2_tablet_5
-          name: Tablet
-          icon: mdi:crosshairs-gps
-        - entity: device_tracker.pc1722372113
-          name: Tablet
-          icon: mdi:wifi
-        - entity: device_tracker.person2s_m5
-          name: Tablet
-          icon: mdi:bluetooth
-        - entity: sensor.battery_person2_tablet
-          name: Tablet
-        - entity: device_tracker.9c305b3c6c87
-          name: Laptop
-          icon: mdi:wifi
-        - entity: device_tracker.jayne
-          name: Laptop
-          icon: mdi:bluetooth
+      - type: picture-entity
+        entity: sensor.person2_travel
+        image: /local/person2.png
       - type: custom:google-calendar-card
         entities:
           - calendar.person2
@@ -777,62 +870,9 @@ views:
         - binary_sensor.workday_sensor
     - type: vertical-stack
       cards:
-      - type: glance
-        title: person1
-        columns: 6
-        entities:
-        - sensor.person1_travel
-        - entity: device_tracker.person1_mobile
-          name: GPS
-          icon: mdi:crosshairs-gps
-        - entity: device_tracker.3c286ddaeba1
-          name: WiFi
-          icon: mdi:wifi
-        - entity: device_tracker.pixie3
-          name: BT
-          icon: mdi:bluetooth
-        - entity: sensor.battery_person1_mobile
-          name: Battery
-        - entity: input_boolean.person1_phone_charging
-          name: Phone charging
-        - entity: sensor.person1s_time_to_home_2
-          name: Walking home
-          icon: mdi:map-marker-distance
-        - entity: sensor.person1s_time_to_home_by_transit
-          name: Bus home
-          icon: mdi:map-marker-distance
-        - entity: sensor.person1s_time_to_home
-          name: Car home
-          icon: mdi:map-marker-distance
-        - entity: proximity.person1_home
-          name: To home
-        - entity: switch.radio_person1
-          icon: mdi:alarm
-          tap_action: 
-            action: toggle
-          name: Alarms
-        - entity: calendar.person1_holiday
-          name: Holiday
-      - type: entities
-        entities:
-        - entity: input_datetime.person1_next_alarm
-          name: Next alarm
-      - type: glance
-        title: person1's Devices
-        entities:
-        - entity: device_tracker.person1_headphones
-          name: Headphones
-        - entity: device_tracker.person1_tablet
-          name: Tablet
-          icon: mdi:crosshairs-gps
-        - entity: device_tracker.pc1722372108
-          name: Tablet
-          icon: mdi:wifi
-        - entity: device_tracker.huawei_mediapad_m5
-          name: Tablet
-          icon: mdi:bluetooth
-        - entity: sensor.battery_person1_tablet
-          name: Tablet
+      - type: picture-entity
+        entity: sensor.person1_travel
+        image: /local/person1.png
       - type: custom:google-calendar-card
         entities:
           - calendar.person1
@@ -841,6 +881,7 @@ views:
     path: info
     icon: mdi:information-outline
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Rooms
       show_header_toggle: false
@@ -947,6 +988,7 @@ views:
     path: automations
     icon: mdi:home-variant
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Automations for the Family room
       show_header_toggle: false
@@ -987,6 +1029,7 @@ views:
     path: automations_living_room
     icon: mdi:home-circle
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Automations for the Living room Current
       show_header_toggle: false
@@ -1024,6 +1067,7 @@ views:
     path: automations_master_bedroom
     icon: mdi:hotel
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Automations for the master bedroom
       show_header_toggle: false
@@ -1070,6 +1114,7 @@ views:
     path: automations_upstairs
     icon: mdi:home-modern
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Automations for the 2nd bedroom light
       show_header_toggle: false
@@ -1113,6 +1158,7 @@ views:
     path: automations_more
     icon: mdi:engine-outline
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Automations at startup
       show_header_toggle: false
@@ -1162,6 +1208,7 @@ views:
     path: automations_person2
     icon: mdi:account-star
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: People driven automations - person2
       show_header_toggle: false
@@ -1214,6 +1261,7 @@ views:
     path: automations_person3
     icon: mdi:account-heart
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: People driven automations - person3
       show_header_toggle: false
@@ -1239,6 +1287,7 @@ views:
     path: automations_person1
     icon: mdi:account-circle
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: People driven automations - person1
       show_header_toggle: false
@@ -1279,6 +1328,7 @@ views:
     path: automations_group
     icon: mdi:account-group
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: People driven automations
       show_header_toggle: false
@@ -1309,6 +1359,7 @@ views:
     path: automations_platform
     icon: mdi:settings
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Core HA automations
       show_header_toggle: false
@@ -1334,6 +1385,7 @@ views:
     path: automations_alarm
     icon: mdi:alarm-bell
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Alarm
       show_header_toggle: false
@@ -1355,6 +1407,7 @@ views:
     path: inputs
     icon: mdi:information-variant
     cards:
+    - type: custom:compact-custom-header
     - type: entities
       title: Toggles for automations
       show_header_toggle: false
@@ -1425,6 +1478,7 @@ views:
     path: scripts
     icon: mdi:script
     cards: 
+    - type: custom:compact-custom-header
     - type: entities
       entities:
       - script.bedhead_light_bright_pause

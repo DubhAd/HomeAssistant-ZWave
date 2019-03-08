@@ -479,3 +479,9 @@ input_boolean.person3_home:
   icon: mdi:human-female
 input_boolean.person1_home:
   icon: mdi:human-child
+input_boolean.alarm_mode:
+  icon: mdi:shield-home
+input_boolean.holiday_mode:
+  icon: mdi:shield-airplane
+input_boolean.all_away:
+  icon: mdi:account-group
