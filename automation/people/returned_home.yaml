@@ -68,7 +68,7 @@ condition:
       - condition: and
         conditions:
         - condition: template
-          value_template: "{{ ( trigger.entity_id == 'proximity.person3_home' ) and ( trigger.from_state.state > 500 ) and ( trigger.to_state.state < 500 ) and is_state_attr('proximity.person3_home', 'dir_of_travel', 'towards') }}"
+          value_template: "{{ ( trigger.entity_id == 'proximity.person3_home' ) and ( (trigger.from_state.state|int) > 500 ) and ( (trigger.to_state.state|int) < 500 ) and is_state_attr('proximity.person3_home', 'dir_of_travel', 'towards') }}"
         - condition: state
           entity_id: input_select.person3_status_dropdown
           state: Away
@@ -76,7 +76,7 @@ condition:
       - condition: and
         conditions:
         - condition: template
-          value_template: "{{ ( trigger.entity_id == 'proximity.person1_home' ) and ( trigger.from_state.state > 500 ) and ( trigger.to_state.state < 500 ) and is_state_attr('proximity.person1_home', 'dir_of_travel', 'towards') }}"
+          value_template: "{{ ( trigger.entity_id == 'proximity.person1_home' ) and ( (trigger.from_state.state|int) > 500 ) and ( (trigger.to_state.state|int) < 500 ) and is_state_attr('proximity.person1_home', 'dir_of_travel', 'towards') }}"
         - condition: state
           entity_id: input_select.person1_status_dropdown
           state: Away
@@ -84,7 +84,7 @@ condition:
       - condition: and
         conditions:
         - condition: template
-          value_template: "{{ ( trigger.entity_id == 'proximity.person2_home' ) and ( trigger.from_state.state > 500 ) and ( trigger.to_state.state < 500 ) and is_state_attr('proximity.person2_home', 'dir_of_travel', 'towards') }}"
+          value_template: "{{ ( trigger.entity_id == 'proximity.person2_home' ) and ( (trigger.from_state.state|int) > 500 ) and ( (trigger.to_state.state|int) < 500 ) and is_state_attr('proximity.person2_home', 'dir_of_travel', 'towards') }}"
         - condition: state
           entity_id: input_select.person2_status_dropdown
           state: Away
@@ -105,7 +105,7 @@ action:
   - service: notify.logfile
     data_template:
       message: >
-        Returned home triggered at {{ now() }} by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
+        Returned home triggered at {{ now() }} by {{ trigger.entity_id }}, was {{ (trigger.from_state.state|int) }} is {{ (trigger.to_state.state|int) }}
           person1's proximity: {{ states('proximity.person1_home') }} ({{ state_attr('proximity.person1_home', 'dir_of_travel') }} and {{ states('input_select.person1_status_dropdown') }})
           person3's proximity: {{ states('proximity.person3_home') }} ({{ state_attr('proximity.person3_home', 'dir_of_travel') }} and {{ states('input_select.person3_status_dropdown') }})
           person2's proximity: {{ states('proximity.person2_home') }} ({{ state_attr('proximity.person2_home', 'dir_of_travel') }} and {{ states('input_select.person2_status_dropdown') }})
