@@ -6,5 +6,3 @@ sequence:
     data:
       topic: location/person2
       payload: 'not_home'
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.person2_is_awake
