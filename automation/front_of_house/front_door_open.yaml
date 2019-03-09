@@ -1,0 +1,11 @@
+initial_state: 'on'
+alias: 'Front door open'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.front_door_sensor
+    to: 'on'
+action:
+  - service: mqtt.publish
+    data:
+      topic: monitor/scan/arrive
+      payload: ''
