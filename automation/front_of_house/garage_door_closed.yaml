@@ -1,11 +1,12 @@
 initial_state: 'on'
-alias: 'Garage door open'
+alias: 'Garage door closed'
 trigger:
   - platform: state
     entity_id: binary_sensor.garage_closed_car_sensor
-    to: 'on'
+    to: 'off'
 action:
+  - delay: '00:00:15'
   - service: mqtt.publish
     data:
-      topic: monitor/scan/arrive
+      topic: monitor/scan/depart
       payload: ''
