@@ -4,14 +4,12 @@ trigger:
   - platform: state
     entity_id: 
     - device_tracker.404e36245315
-    - device_tracker.serenity
-    - device_tracker.person2_mobile_gps
+    - device_tracker.person2_bt_mobile
     to: 'not_home'
   - platform: state
     entity_id: 
     - device_tracker.404e36245315
-    - device_tracker.serenity
-    - device_tracker.person2_mobile_gps
+    - device_tracker.person2_bt_mobile
     to: 'not_home'
     for:
       minutes: 5
@@ -24,12 +22,12 @@ condition:
   # Both Wifi and BT say away
   - condition: and
     conditions:
-    # WiFi and BT away for at least 4 minutes
+    # WiFi and BT away 
     - condition: state
       entity_id: device_tracker.404e36245315
       state: 'not_home'
     - condition: state
-      entity_id: device_tracker.serenity
+      entity_id: device_tracker.person2_bt_mobile
       state: 'not_home'
   # Either a door was opened in the last 10 minutes, a door is open, or they've been gone for at least 4 minutes
   - condition: or
@@ -46,7 +44,7 @@ condition:
         for:
           minutes: 4
       - condition: state
-        entity_id: device_tracker.serenity
+        entity_id: device_tracker.person2_bt_mobile
         state: 'not_home'
         for:
           minutes: 4

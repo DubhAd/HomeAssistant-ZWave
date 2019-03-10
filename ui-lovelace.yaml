@@ -811,6 +811,11 @@ views:
       - type: picture-entity
         entity: sensor.person3_travel
         image: /local/person3.png
+        tap_action:
+          action: call-service
+          service: input_boolean.toggle
+          service_data:
+            entity_id: input_boolean.lovelace_person3_more
       - type: custom:google-calendar-card
         entities: 
           - calendar.person3

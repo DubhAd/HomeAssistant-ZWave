@@ -4,14 +4,14 @@ trigger:
   - platform: state
     entity_id:
     - device_tracker.person3_mobile_wifi
-    - device_tracker.nexus_5x
+    - device_tracker.person3_bt_mobile
     to: 'home'
     for:
       minutes: 5
   - platform: state
     entity_id:
     - device_tracker.person3_mobile_wifi
-    - device_tracker.nexus_5x
+    - device_tracker.person3_bt_mobile
     to: 'home'
   - platform: homeassistant
     event: start
@@ -26,7 +26,7 @@ condition:
       entity_id: device_tracker.person3_mobile_wifi
       state: 'home'
     - condition: state
-      entity_id: device_tracker.nexus_5x
+      entity_id: device_tracker.person3_bt_mobile
       state: 'home'
 action:
   - service: script.person3_home

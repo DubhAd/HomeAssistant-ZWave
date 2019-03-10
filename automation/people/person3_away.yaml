@@ -3,15 +3,13 @@ initial_state: 'on'
 trigger:
   - platform: state
     entity_id:
-    - device_tracker.person3_mobile
-    - device_tracker.nexus_5x
     - device_tracker.person3_mobile_wifi
+    - device_tracker.person3_bt_mobile
     to: 'not_home'
   - platform: state
     entity_id:
-    - device_tracker.person3_mobile
-    - device_tracker.nexus_5x
     - device_tracker.person3_mobile_wifi
+    - device_tracker.person3_bt_mobile
     to: 'not_home'
     for:
       minutes: 5
@@ -29,7 +27,7 @@ condition:
       entity_id: device_tracker.person3_mobile_wifi
       state: 'not_home'
     - condition: state
-      entity_id: device_tracker.nexus_5x
+      entity_id: device_tracker.person3_bt_mobile
       state: 'not_home'
   - condition: or
     conditions:
@@ -45,7 +43,7 @@ condition:
         for:
           minutes: 4
       - condition: state
-        entity_id: device_tracker.nexus_5x
+        entity_id: device_tracker.person3_bt_mobile
         state: 'not_home'
         for:
           minutes: 4

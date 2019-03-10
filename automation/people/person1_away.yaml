@@ -3,15 +3,13 @@ initial_state: 'on'
 trigger:
   - platform: state
     entity_id:
-    - device_tracker.person1_mobile
     - device_tracker.3c286ddaeba1
-    - device_tracker.pixie3
+    - device_tracker.person1_bt_mobile
     to: 'not_home'
   - platform: state
     entity_id:
-    - device_tracker.person1_mobile
     - device_tracker.3c286ddaeba1
-    - device_tracker.pixie3
+    - device_tracker.person1_bt_mobile
     to: 'not_home'
     for:
       minutes: 5
@@ -29,7 +27,7 @@ condition:
       entity_id: device_tracker.3c286ddaeba1
       state: 'not_home'
     - condition: state
-      entity_id: device_tracker.pixie3
+      entity_id: device_tracker.person1_bt_mobile
       state: 'not_home'
   # Either a door was opened in the last 10 minutes, a door is open, or they've been gone for at least 4 minutes
   - condition: or
@@ -46,7 +44,7 @@ condition:
         for:
           minutes: 4
       - condition: state
-        entity_id: device_tracker.pixie3
+        entity_id: device_tracker.person1_bt_mobile
         state: 'not_home'
         for:
           minutes: 4

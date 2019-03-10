@@ -3,9 +3,8 @@ alias: 'person1 home'
 trigger:
   - platform: state
     entity_id:
-    - device_tracker.person1_mobile
     - device_tracker.3c286ddaeba1
-    - device_tracker.pixie3
+    - device_tracker.person1_bt_mobile
     to: 'home'
   - platform: homeassistant
     event: start
@@ -20,12 +19,7 @@ condition:
       entity_id: device_tracker.3c286ddaeba1
       state: 'home'
     - condition: state
-      entity_id: device_tracker.pixie3
+      entity_id: device_tracker.person1_bt_mobile
       state: 'home'
-    # But any two win too
-    - condition: numeric_state
-      entity_id: group.person_person1
-      above: 1
-      value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person1', 'entity_id'))|list)|groupby('state'))['home']|count }}"
 action:
   - service: script.person1_home
