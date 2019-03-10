@@ -3,12 +3,30 @@
   value_template: '{{ value_json.confidence }}'
   unit_of_measurement: '%'
   name: 'person2 mobile first floor rear'
+  json_attributes:
+    - id
+    - name 
+    - version
+    - manufacturer
+    - type
+    - timestamp
+    - retained
+    - confidence 
 
 - platform: mqtt
   state_topic: 'monitor/first floor front/person2_mobile'
   value_template: '{{ value_json.confidence }}'
   unit_of_measurement: '%'
   name: 'person2 mobile first floor front'
+  json_attributes:
+    - id
+    - name 
+    - version
+    - manufacturer
+    - type
+    - timestamp
+    - retained
+    - confidence 
 
 #- platform: mqtt
 #

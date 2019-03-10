@@ -21,3 +21,7 @@ action:
           input_select.person1_status_dropdown
         {% endif %}
       option: Just Left
+  - service: mqtt.publish
+    data:
+      topic: monitor/scan/depart
+      payload: ''

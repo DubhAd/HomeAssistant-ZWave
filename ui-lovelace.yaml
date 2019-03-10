@@ -1013,6 +1013,10 @@ views:
       - automation.number_sign_off
       - automation.person2_up_early
       - automation.returned_home
+      - automation.front_door_open
+      - automation.front_door_closed
+      - automation.garage_door_open
+      - automation.garage_door_closed
     - type: entities
       title: Automations for the garden
       show_header_toggle: false

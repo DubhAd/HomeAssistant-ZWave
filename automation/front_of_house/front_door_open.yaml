@@ -1,10 +1,10 @@
-initial_state: 'on'
 alias: 'Front door open'
 trigger:
   - platform: state
     entity_id: binary_sensor.front_door_sensor
     to: 'on'
 action:
+  - delay: '00:00:15'
   - service: mqtt.publish
     data:
       topic: monitor/scan/arrive
