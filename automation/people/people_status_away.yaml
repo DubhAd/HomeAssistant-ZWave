@@ -27,7 +27,3 @@ action:
           input_select.person1_status_dropdown
         {% endif %}
       option: Away
-  - service: mqtt.publish
-    data:
-      topic: monitor/scan/depart
-      payload: ''

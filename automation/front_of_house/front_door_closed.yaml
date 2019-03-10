@@ -5,8 +5,4 @@ trigger:
     entity_id: binary_sensor.front_door_sensor
     to: 'off'
 action:
-  - delay: '00:00:15'
-  - service: mqtt.publish
-    data:
-      topic: monitor/scan/depart
-      payload: ''
+  - service: script.scan_bt_depart
