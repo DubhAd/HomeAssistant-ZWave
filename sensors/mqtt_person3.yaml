@@ -33,13 +33,13 @@
   type: max
   round_digits: 0
   entity_ids:
-    - sensor.person3_first_floor_rear
-    - sensor.person3_first_floor_front
+    - sensor.person3_mobile_first_floor_rear
+    - sensor.person3_mobile_first_floor_front
 
 - platform: min_max
   name: "person3 Mobile BT rssi"
   type: max
   round_digits: 0
   entity_ids:
-    - sensor.person3_rssi_first_floor_rear
-    - sensor.person3_rssi_first_floor_front
+    - sensor.person3_mobile_rssi_first_floor_rear
+    - sensor.person3_mobile_rssi_first_floor_front

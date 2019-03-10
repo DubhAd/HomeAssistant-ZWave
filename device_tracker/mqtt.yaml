@@ -4,6 +4,7 @@ devices:
   person2_bt_mobile: 'monitor/first floor rear/person2_mobile/device_tracker'
   person2_bt_tablet: 'monitor/first floor rear/person2_tablet/device_tracker'
   person2_bt_laptop: 'monitor/first floor rear/person2_laptop/device_tracker'
+  person2_bt_work: 'monitor/first floor rear/person2_work_mobile/device_tracker'
   person3: 'location/person3'
   person3_bt_mobile: 'monitor/first floor rear/person3_mobile/device_tracker'
   person1: 'location/person1'
