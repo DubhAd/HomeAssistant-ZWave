@@ -8,7 +8,11 @@
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
-    - entity_id: 'device_tracker.person3_mobile_bt'
+    - entity_id: 'device_tracker.pixie'
+      prob_given_true: 0.9
+      platform: 'state'
+      to_state: 'home'
+    - entity_id: 'device_tracker.person1_bt_mobile'
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'

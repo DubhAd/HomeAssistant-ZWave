@@ -14,6 +14,10 @@
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
+    - entity_id: 'device_tracker.person2_bt_mobile'
+      prob_given_true: 0.9
+      platform: 'state'
+      to_state: 'home'
     # GPS
     - entity_id: 'device_tracker.person2_mobile_gps'
       prob_given_true: 0.8

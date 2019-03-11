@@ -18,6 +18,10 @@
       prob_given_true: 0.9
       platform: 'state'
       to_state: 'home'
+    - entity_id: 'device_tracker.person3_bt_mobile'
+      prob_given_true: 0.9
+      platform: 'state'
+      to_state: 'home'
     # External logic
     - entity_id: 'input_boolean.person3_home'
       prob_given_true: 1.0

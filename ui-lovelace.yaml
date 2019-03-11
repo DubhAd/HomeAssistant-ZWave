@@ -682,6 +682,12 @@ views:
             - entity: device_tracker.person3_bt_mobile
               name: BT
               icon: mdi:bluetooth
+            - entity: sensor.person3_mobile_first_floor_rear
+              name: Confidence
+              icon: mdi:bluetooth
+            - entity: sensor.person3_mobile_rssi_first_floor_rear
+              name: RSSI
+              icon: mdi:bluetooth
             - entity: sensor.battery_person3_mobile
               name: Battery
             - entity: input_boolean.person3_phone_charging
@@ -883,6 +889,12 @@ views:
               icon: mdi:wifi
             - entity: device_tracker.person1_bt_mobile
               name: BT
+              icon: mdi:bluetooth
+            - entity: sensor.person1_mobile_first_floor_rear
+              name: Confidence
+              icon: mdi:bluetooth
+            - entity: sensor.person1_mobile_rssi_first_floor_rear
+              name: RSSI
               icon: mdi:bluetooth
             - entity: sensor.battery_person1_mobile
               name: Battery
