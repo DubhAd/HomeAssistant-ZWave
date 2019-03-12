@@ -849,6 +849,12 @@ views:
             - entity: device_tracker.gloaming
               name: BT
               icon: mdi:bluetooth
+            - entity: sensor.person2_work_first_floor_rear
+              name: Confidence
+              icon: mdi:bluetooth
+            - entity: sensor.person2_work_rssi_first_floor_rear
+              name: RSSI
+              icon: mdi:bluetooth
             - entity: device_tracker.00e04c680550
               name: Laptop
               icon: mdi:laptop
