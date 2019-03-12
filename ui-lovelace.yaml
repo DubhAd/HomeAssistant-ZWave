@@ -274,8 +274,6 @@ views:
             name: Humidity
           - entity: media_player.office
             name: Sonos
-          - entity: media_player.cast_office_speaker
-            name: Home Mini
           - entity: media_player.googlehomehub8747
             name: "Home Hub"
   - title: Rooms
@@ -480,14 +478,6 @@ views:
             show_source: true
             show_tts: google
             power_color: true
-          - entity: media_player.cast_office_speaker
-            type: custom:mini-media-player
-            group: true
-            artwork: cover
-            icon: mdi:google-home
-            show_source: true
-            show_tts: google
-            power_color: true
           - entity: media_player.googlehomehub8747
             type: custom:mini-media-player
             group: true
@@ -672,6 +662,7 @@ views:
           type: vertical-stack
           cards: 
           - type: glance
+            columns: 6
             entities:
             - entity: device_tracker.person3_mobile
               name: GPS
@@ -679,14 +670,11 @@ views:
             - entity: device_tracker.person3_mobile_wifi
               name: WiFi
               icon: mdi:wifi
-            - entity: device_tracker.person3_bt_mobile
+            - entity: device_tracker.person3_bt_front_mobile
               name: BT
               icon: mdi:bluetooth
-            - entity: sensor.person3_mobile_first_floor_rear
-              name: Confidence
-              icon: mdi:bluetooth
-            - entity: sensor.person3_mobile_rssi_first_floor_rear
-              name: RSSI
+            - entity: device_tracker.person3_bt_mobile
+              name: BT
               icon: mdi:bluetooth
             - entity: sensor.battery_person3_mobile
               name: Battery
@@ -700,6 +688,20 @@ views:
               icon: mdi:map-marker-distance
             - entity: proximity.person3_home
               name: To home
+          - type: glance
+            entities:
+            - entity: sensor.person3_mobile_first_floor_front
+              name: Front
+              icon: mdi:gauge
+            - entity: sensor.person3_mobile_rssi_first_floor_front
+              name: Front
+              icon: mdi:signal-cellular-2
+            - entity: sensor.person3_mobile_first_floor_rear
+              name: Rear
+              icon: mdi:gauge
+            - entity: sensor.person3_mobile_rssi_first_floor_rear
+              name: Rear
+              icon: mdi:signal-cellular-2
           - type: entities
             entities:
             - entity: input_datetime.person3_next_alarm
@@ -756,6 +758,7 @@ views:
           type: vertical-stack
           cards: 
           - type: glance
+            columns: 6
             entities:
             - entity: device_tracker.person2_mobile_gps
               name: GPS
@@ -763,8 +766,11 @@ views:
             - entity: device_tracker.404e36245315
               name: WiFi
               icon: mdi:wifi
+            - entity: device_tracker.person2_bt_front_mobile
+              name: Front
+              icon: mdi:bluetooth
             - entity: device_tracker.person2_bt_mobile
-              name: BT
+              name: Rear
               icon: mdi:bluetooth
             - entity: sensor.battery_person2_mobile
               name: Battery
@@ -775,22 +781,30 @@ views:
               icon: mdi:map-marker-distance
             - entity: proximity.person2_home
               name: To home
-            - entity: sensor.person2_mobile_first_floor_rear
-              name: Confidence
-              icon: mdi:bluetooth
-            - entity: sensor.person2_mobile_rssi_first_floor_rear
-              name: RSSI
-              icon: mdi:bluetooth
             - entity: switch.radio_person2
               icon: mdi:alarm
               name: Alarms
+          - type: glance
+            entities:
+            - entity: sensor.person2_mobile_first_floor_front
+              name: Front
+              icon: mdi:gauge
+            - entity: sensor.person2_mobile_rssi_first_floor_front
+              name: Front
+              icon: mdi:signal-cellular-2
+            - entity: sensor.person2_mobile_first_floor_rear
+              name: Rear
+              icon: mdi:gauge
+            - entity: sensor.person2_mobile_rssi_first_floor_rear
+              name: Rear
+              icon: mdi:signal-cellular-2
           - type: entities
             entities:
             - entity: input_datetime.person2_next_alarm
               name: Next alarm
           - type: glance
             title: person2's devices
-            columns: 6
+            columns: 5
             entities:
             - entity: device_tracker.person2_tablet_5
               name: Tablet
@@ -798,14 +812,11 @@ views:
             - entity: device_tracker.pc1722372113
               name: Tablet
               icon: mdi:wifi
+            - entity: device_tracker.person2_bt_front_tablet
+              name: Front
+              icon: mdi:bluetooth
             - entity: device_tracker.person2_bt_tablet
-              name: Tablet
-              icon: mdi:bluetooth
-            - entity: sensor.person2_tablet_first_floor_rear
-              name: Confidence
-              icon: mdi:bluetooth
-            - entity: sensor.person2_tablet_rssi_first_floor_rear
-              name: RSSI
+              name: Rear
               icon: mdi:bluetooth
             - entity: sensor.battery_person2_tablet
               name: Tablet
@@ -815,6 +826,20 @@ views:
             - entity: device_tracker.person2_bt_laptop
               name: Laptop
               icon: mdi:bluetooth
+          - type: glance
+            entities:
+            - entity: sensor.person2_tablet_first_floor_front
+              name: Front
+              icon: mdi:gauge
+            - entity: sensor.person2_tablet_rssi_first_floor_front
+              name: Front
+              icon: mdi:signal-cellular-2
+            - entity: sensor.person2_tablet_first_floor_rear
+              name: Rear
+              icon: mdi:gauge
+            - entity: sensor.person2_tablet_rssi_first_floor_rear
+              name: Rear
+              icon: mdi:signal-cellular-2
           - type: custom:google-calendar-card
             entities:
               - calendar.person2
@@ -846,14 +871,11 @@ views:
             - entity: device_tracker.80b03de23ba2
               name: WiFi
               icon: mdi:wifi
-            - entity: device_tracker.gloaming
+            - entity: device_tracker.person2_bt_front_work
               name: BT
               icon: mdi:bluetooth
-            - entity: sensor.person2_work_first_floor_rear
-              name: Confidence
-              icon: mdi:bluetooth
-            - entity: sensor.person2_work_rssi_first_floor_rear
-              name: RSSI
+            - entity: device_tracker.person2_bt_work
+              name: BT
               icon: mdi:bluetooth
             - entity: device_tracker.00e04c680550
               name: Laptop
@@ -867,6 +889,20 @@ views:
             - entity: calendar.person2_away
               name: Away
             - binary_sensor.workday_sensor
+          - type: glance
+            entities:
+            - entity: sensor.person2_work_first_floor_front
+              name: Front
+              icon: mdi:gauge
+            - entity: sensor.person2_work_rssi_first_floor_front
+              name: Front
+              icon: mdi:signal-cellular-2
+            - entity: sensor.person2_work_first_floor_rear
+              name: Rear
+              icon: mdi:gauge
+            - entity: sensor.person2_work_rssi_first_floor_rear
+              name: Rear
+              icon: mdi:signal-cellular-2
     - type: vertical-stack
       cards:
       - type: picture-entity
@@ -886,6 +922,7 @@ views:
           cards: 
           - type: glance
             title: person1
+            columns: 6
             entities:
             - entity: device_tracker.person1_mobile
               name: GPS
@@ -893,14 +930,11 @@ views:
             - entity: device_tracker.3c286ddaeba1
               name: WiFi
               icon: mdi:wifi
-            - entity: device_tracker.person1_bt_mobile
+            - entity: device_tracker.person1_bt_front_mobile
               name: BT
               icon: mdi:bluetooth
-            - entity: sensor.person1_mobile_first_floor_rear
-              name: Confidence
-              icon: mdi:bluetooth
-            - entity: sensor.person1_mobile_rssi_first_floor_rear
-              name: RSSI
+            - entity: device_tracker.person1_bt_mobile
+              name: BT
               icon: mdi:bluetooth
             - entity: sensor.battery_person1_mobile
               name: Battery
@@ -924,6 +958,20 @@ views:
               name: Alarms
             - entity: calendar.person1_holiday
               name: Holiday
+          - type: glance
+            entities:
+            - entity: sensor.person1_mobile_first_floor_front
+              name: Front
+              icon: mdi:gauge
+            - entity: sensor.person1_mobile_rssi_first_floor_front
+              name: Front
+              icon: mdi:signal-cellular-2
+            - entity: sensor.person1_mobile_first_floor_rear
+              name: Rear
+              icon: mdi:gauge
+            - entity: sensor.person1_mobile_rssi_first_floor_rear
+              name: Rear
+              icon: mdi:signal-cellular-2
           - type: entities
             entities:
             - entity: input_datetime.person1_next_alarm

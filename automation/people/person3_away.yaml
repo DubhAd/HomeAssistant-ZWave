@@ -5,11 +5,13 @@ trigger:
     entity_id:
     - device_tracker.person3_mobile_wifi
     - device_tracker.person3_bt_mobile
+    - device_tracker.person3_bt_front_mobile
     to: 'not_home'
   - platform: state
     entity_id:
     - device_tracker.person3_mobile_wifi
     - device_tracker.person3_bt_mobile
+    - device_tracker.person3_bt_front_mobile
     to: 'not_home'
     for:
       minutes: 5
@@ -29,6 +31,9 @@ condition:
     - condition: state
       entity_id: device_tracker.person3_bt_mobile
       state: 'not_home'
+    - condition: state
+      entity_id: device_tracker.person3_bt_front_mobile
+      state: 'not_home'
   - condition: or
     conditions:
     # A door was opened/closed in the last 10 minutes
@@ -44,6 +49,11 @@ condition:
           minutes: 4
       - condition: state
         entity_id: device_tracker.person3_bt_mobile
+        state: 'not_home'
+        for:
+          minutes: 4
+      - condition: state
+        entity_id: device_tracker.person3_bt_front_mobile
         state: 'not_home'
         for:
           minutes: 4

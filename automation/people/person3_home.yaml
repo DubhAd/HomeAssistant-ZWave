@@ -5,6 +5,7 @@ trigger:
     entity_id:
     - device_tracker.person3_mobile_wifi
     - device_tracker.person3_bt_mobile
+    - device_tracker.person3_bt_front_mobile
     to: 'home'
     for:
       minutes: 5
@@ -12,6 +13,7 @@ trigger:
     entity_id:
     - device_tracker.person3_mobile_wifi
     - device_tracker.person3_bt_mobile
+    - device_tracker.person3_bt_front_mobile
     to: 'home'
   - platform: homeassistant
     event: start
@@ -27,6 +29,9 @@ condition:
       state: 'home'
     - condition: state
       entity_id: device_tracker.person3_bt_mobile
+      state: 'home'
+    - condition: state
+      entity_id: device_tracker.person3_bt_front_mobile
       state: 'home'
 action:
   - service: script.person3_home

@@ -5,6 +5,7 @@ trigger:
     entity_id:
     - device_tracker.3c286ddaeba1
     - device_tracker.person1_bt_mobile
+    - device_tracker.person1_bt_front_mobile
     to: 'home'
   - platform: homeassistant
     event: start
@@ -20,6 +21,9 @@ condition:
       state: 'home'
     - condition: state
       entity_id: device_tracker.person1_bt_mobile
+      state: 'home'
+    - condition: state
+      entity_id: device_tracker.person1_bt_front_mobile
       state: 'home'
 action:
   - service: script.person1_home
