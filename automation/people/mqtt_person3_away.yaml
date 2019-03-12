@@ -1,0 +1,12 @@
+alias: 'MQTT person3 away'
+trigger:
+  - platform: homeassistant
+    event: start
+  - platform: numeric_state
+    entity_id: sensor.person3_mobile_first_floor_rear
+    below: 10
+  - platform: numeric_state
+    entity_id: sensor.person3_mobile_first_floor_front
+    below: 10
+action:
+  - service: script.mqtt_person3_status
