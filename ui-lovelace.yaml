@@ -671,10 +671,10 @@ views:
               name: WiFi
               icon: mdi:wifi
             - entity: device_tracker.person3_bt_front_mobile
-              name: BT
+              name: Front
               icon: mdi:bluetooth
             - entity: device_tracker.person3_bt_mobile
-              name: BT
+              name: Rear
               icon: mdi:bluetooth
             - entity: sensor.battery_person3_mobile
               name: Battery
@@ -731,8 +731,8 @@ views:
             name: GPS
             icon: mdi:crosshairs-gps
           - entity: device_tracker.001d29a549ae
-            name: BT
-            icon: mdi:bluetooth
+            name: WiFi
+            icon: mdi:wifi
           - entity: sensor.battery_person4_mobile
             name: Battery
           - entity: sensor.person4s_time_to_home
@@ -872,10 +872,10 @@ views:
               name: WiFi
               icon: mdi:wifi
             - entity: device_tracker.person2_bt_front_work
-              name: BT
+              name: Front
               icon: mdi:bluetooth
             - entity: device_tracker.person2_bt_work
-              name: BT
+              name: Rear
               icon: mdi:bluetooth
             - entity: device_tracker.00e04c680550
               name: Laptop
@@ -931,10 +931,10 @@ views:
               name: WiFi
               icon: mdi:wifi
             - entity: device_tracker.person1_bt_front_mobile
-              name: BT
+              name: Front
               icon: mdi:bluetooth
             - entity: device_tracker.person1_bt_mobile
-              name: BT
+              name: Rear
               icon: mdi:bluetooth
             - entity: sensor.battery_person1_mobile
               name: Battery
@@ -1357,6 +1357,7 @@ views:
       entities:
       - automation.person2_coming_home
       - automation.person2_at_station
+      - automation.person2_at_station_returning
       - automation.person2_at_gym
       - automation.person2_left_gym
       - automation.train_status

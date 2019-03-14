@@ -1,0 +1,31 @@
+alias: 'person2 at station returning'
+trigger:
+  - platform: event
+    event_type: tasker_webhook
+    event_data:
+      who: person2
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_boolean.adults_away
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.person2_home
+      state: 'off'
+    # In, or leaving, the car
+    - condition: template
+      value_template: >-
+        {{ 'profile=enter:BT Car' in trigger.event.data.what }}
+action:
+  - service: script.person2_traveltime
+  # Wait 30 seconds for the update
+  - delay: '00:00:30'
+  - service: notify.person3
+    data_template:
+      message: "person2's at home station, they should be home in around {% set travel_time = state_attr('sensor.person2s_time_to_home_2', 'duration_in_traffic').split(' ') %} {{ travel_time[0] | int + 15 }} to {{ travel_time[0] | int + 25 }} {{ travel_time[1] }}"
+  - service: notify.logfile
+    data_template:
+      message: "person2's at home station, they should be home in around {% set travel_time = state_attr('sensor.person2s_time_to_home_2', 'duration_in_traffic').split(' ') %} {{ travel_time[0] | int + 15 }} to {{ travel_time[0] | int + 25 }} {{ travel_time[1] }}"
+  - service: automation.turn_off
+    entity_id: automation.person2_at_station_returning

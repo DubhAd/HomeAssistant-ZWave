@@ -3,9 +3,7 @@ alias: 'person2 home'
 trigger:
   - platform: state
     entity_id: 
-    - device_tracker.404e36245315
-    - device_tracker.person2_bt_mobile
-    - device_tracker.person2_bt_front_mobile
+    - group.person_person2
     to: 'home'
   - platform: homeassistant
     event: start
@@ -13,17 +11,8 @@ condition:
   - condition: state
     entity_id: input_boolean.person2_home
     state: 'off'
-  - condition: or
-    conditions:
-    # WiFi and BT are our truth data, as soon as one of them shows us as home we're home
-    - condition: state
-      entity_id: device_tracker.404e36245315
-      state: 'home'
-    - condition: state
-      entity_id: device_tracker.person2_bt_mobile
-      state: 'home'
-    - condition: state
-      entity_id: device_tracker.person2_bt_front_mobile
-      state: 'home'
+  - condition: state
+    entity_id: group.person_person2
+    state: 'home'
 action:
   - service: script.person2_home

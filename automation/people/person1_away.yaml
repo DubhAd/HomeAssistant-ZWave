@@ -3,15 +3,11 @@ initial_state: 'on'
 trigger:
   - platform: state
     entity_id:
-    - device_tracker.3c286ddaeba1
-    - device_tracker.person1_bt_mobile
-    - device_tracker.person1_bt_front_mobile
+    - group.person_person1
     to: 'not_home'
   - platform: state
     entity_id:
-    - device_tracker.3c286ddaeba1
-    - device_tracker.person1_bt_mobile
-    - device_tracker.person1_bt_front_mobile
+    - group.person_person1
     to: 'not_home'
     for:
       minutes: 5
@@ -22,41 +18,18 @@ condition:
     entity_id: input_boolean.person1_home
     state: 'on'
   # Both BT and WiFi are away
-  - condition: and
-    conditions:
-    # WiFi and BT away for at least 4 minutes
-    - condition: state
-      entity_id: device_tracker.3c286ddaeba1
-      state: 'not_home'
-    - condition: state
-      entity_id: device_tracker.person1_bt_mobile
-      state: 'not_home'
-    - condition: state
-      entity_id: device_tracker.person1_bt_front_mobile
-      state: 'not_home'
+  - condition: state
+    entity_id: group.person_person1
+    state: 'not_home'
   # Either a door was opened in the last 10 minutes, a door is open, or they've been gone for at least 4 minutes
   - condition: or
     conditions:
     # A door was opened/closed in the last 10 minutes
     - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exterior_doors.last_updated)) | int < 600 }}"
-    - condition: and
-      conditions:
-      # WiFi and BT away for at least 4 minutes
-      - condition: state
-        entity_id: device_tracker.3c286ddaeba1
-        state: 'not_home'
-        for:
-          minutes: 4
-      - condition: state
-        entity_id: device_tracker.person1_bt_mobile
-        state: 'not_home'
-        for:
-          minutes: 4
-      - condition: state
-        entity_id: device_tracker.person1_bt_front_mobile
-        state: 'not_home'
-        for:
-          minutes: 4
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exterior_doors.last_updated)) | int < 300 }}"
+    - condition: state
+      entity_id: group.person_person1
+      state: 'not_home'
+      for: '00:04:00'
 action:
   - service: script.person1_away
