@@ -979,19 +979,34 @@ views:
           - type: glance
             title: person1's Devices
             entities:
-            - entity: device_tracker.person1_headphones
-              name: Headphones
             - entity: device_tracker.person1_tablet
-              name: Tablet
+              name: GPS
               icon: mdi:crosshairs-gps
             - entity: device_tracker.pc1722372108
-              name: Tablet
+              name: WiFi
               icon: mdi:wifi
-            - entity: device_tracker.huawei_mediapad_m5
-              name: Tablet
+            - entity: device_tracker.person1_bt_front_tablet
+              name: Front
+              icon: mdi:bluetooth
+            - entity: device_tracker.person1_bt_tablet
+              name: Rear
               icon: mdi:bluetooth
             - entity: sensor.battery_person1_tablet
-              name: Tablet
+              name: Battery
+          - type: glance
+            entities:
+            - entity: sensor.person1_tablet_first_floor_front
+              name: Front
+              icon: mdi:gauge
+            - entity: sensor.person1_tablet_rssi_first_floor_front
+              name: Front
+              icon: mdi:signal-cellular-2
+            - entity: sensor.person1_tablet_first_floor_rear
+              name: Rear
+              icon: mdi:gauge
+            - entity: sensor.person1_tablet_rssi_first_floor_rear
+              name: Rear
+              icon: mdi:signal-cellular-2
           - type: custom:google-calendar-card
             entities:
               - calendar.person1
