@@ -1683,3 +1683,4 @@ views:
       - script.hall_string_on
       - script.hall_strip_off
       - script.hall_strip_on
+      - script.hall_strip_night
