@@ -337,7 +337,7 @@ cards:
         - entity: input_datetime.person1_next_alarm
           name: Next alarm
       - type: glance
-        title: person1's Devices
+        title: person1's tablet
         entities:
         - entity: device_tracker.person1_tablet
           name: GPS
