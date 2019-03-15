@@ -1,0 +1,71 @@
+title: Inputs
+id: inputs
+path: inputs
+icon: mdi:information-variant
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: Toggles for automations
+  show_header_toggle: false
+  entities:
+  - input_boolean.bedtime
+  - input_boolean.adults_away
+  - input_boolean.all_away
+  - input_boolean.holiday_mode
+  - type: divider
+  - input_boolean.lighting_automations
+  - input_boolean.livingroom_lights_auto
+  - type: divider
+  - input_boolean.guest_mode
+  - input_boolean.alarm_mode
+- type: entities
+  title: Toggles for people automations
+  show_header_toggle: false
+  entities:
+  - input_boolean.person2_is_awake
+  - input_boolean.person2_in_bed
+  - input_boolean.person1_is_awake
+  - input_boolean.person1_in_bed
+  - input_boolean.person3_is_awake
+  - input_boolean.person3_in_bed
+  - input_boolean.person2_travelling
+  - input_boolean.person1_travelling
+  - input_boolean.person3_travelling
+  - input_boolean.person2_home
+  - input_boolean.person1_home
+  - input_boolean.person3_home
+  - input_boolean.person4_home
+  - type: divider
+  - input_boolean.notify_train_status_work
+  - input_boolean.notify_person2_working
+  - input_boolean.notify_person1_work
+- type: entities
+  title: Inputs for automations
+  show_header_toggle: false
+  entities:
+  - input_number.room_low_light
+  - input_number.room_dark
+  - input_number.light_step
+  - input_number.light_minimum
+  - input_number.light_maximum
+  - input_number.light_step_colour
+- type: entities
+  title: Selections for automations
+  show_header_toggle: false
+  entities:
+  - input_select.season
+  - sensor.season
+- type: entities
+  title: Switches
+  show_header_toggle: false
+  entities:
+  - switch.fluxer
+  - switch.flux_hall
+- type: entities
+  title: People
+  show_header_toggle: false
+  entities:
+  - input_select.person3_status_dropdown
+  - input_select.person1_status_dropdown
+  - input_select.person2_status_dropdown
+  - input_select.person4_status_dropdown

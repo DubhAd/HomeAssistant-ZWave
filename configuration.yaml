@@ -115,8 +115,6 @@ climate: !include_dir_merge_list climate/
 
 #ffmpeg:
 
-#history_graph: !include_dir_named history_graph/
-
 ####################
 
 input_number: !include_dir_named input_number/

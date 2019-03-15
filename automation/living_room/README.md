@@ -86,14 +86,3 @@ If the TV is on when the Sonos starts playing, mute the TV.
 ### sonos_off_tv_unmute.yaml
 
 Unmute the TV if it's on when we stop playing music on the Sonos.
-
-## Old automations
-
-These are the old lighting automations, it was getting unwieldy, with lots of duplicate logic for whether the room is occupied or not. At some point I'll break out the light level parts of the above automations into another sensor that simply states whether the room is well lit, a bit dull, or dark.
-
-darker_tv_on.yaml  
-dark_tv_on.yaml  
-lounge_dull.yaml  
-lounge_in_daylight_2.yaml  
-lounge_in_daylight.yaml  
-lounge_off.yaml  

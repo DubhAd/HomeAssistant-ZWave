@@ -1,0 +1,38 @@
+title: Living room automations
+id: automations_living_room
+path: automations_living_room
+icon: mdi:home-circle
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: Automations for the Living room Current
+  show_header_toggle: false
+  entities:
+  - automation.all_away_media_off
+  - automation.lounge_dark_motion
+  - automation.table_light_on
+  - automation.living_room_arrival
+- type: entities
+  title: Automations for the Living room 
+  show_header_toggle: false
+  entities:
+  - automation.living_room_away
+  - automation.living_room_dim
+  - automation.living_room_day_off
+  - automation.living_room_day_on
+  - automation.living_room_night_off
+  - automation.living_room_night_on
+  - automation.living_room_occupied
+  - automation.living_room_not_occupied
+  - automation.living_room_lights_day_on
+  - automation.living_room_lights_dim_on
+  - automation.living_room_lights_night_on
+  - automation.living_room_lights_off
+  - automation.tv_light_on
+- type: entities
+  title: Media automations
+  show_header_toggle: false
+  entities:
+  - automation.tv_on_sonos_off
+  - automation.sonos_on_tv_mute
+  - automation.sonos_off_tv_unmute

@@ -10,10 +10,6 @@ These are notifications for things people should be aware of - mostly this is ba
 
 Uses the bin sensors to send a notification to the LaMetric clock the day before the recycling is due to be collected. It is pushed every 5 minutes, at 30 seconds past the minute.
 
-### doors_opened_home_alone.yaml
-
-Experiment that isn't really working.
-
 ### weather_notification.yaml
 
 Sends a notification about the forthcoming weather conditions to the LaMetric clock every 5 minutes.

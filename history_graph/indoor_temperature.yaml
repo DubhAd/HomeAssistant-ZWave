@@ -1,6 +1,0 @@
-name: Indoor temperature
-entities:
-  - sensor.living_room_multi_temperature
-  - sensor.office_multi_temperature
-hours_to_show: 48
-refresh: 600

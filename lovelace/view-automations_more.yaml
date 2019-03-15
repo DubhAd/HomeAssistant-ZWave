@@ -1,0 +1,50 @@
+title: More Automations
+id: automations_more
+path: automations_more
+icon: mdi:engine-outline
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: Automations at startup
+  show_header_toggle: false
+  entities:
+  - automation.startup_person3_up
+  - automation.startup_person1_up
+  - automation.startup_person2_up
+- type: entities
+  title: Battery level automations
+  show_header_toggle: false
+  entities:
+  - automation.battery_garage_door_closed_car
+  - automation.battery_garage_door_closed_bike
+  - automation.battery_livingroom_multi
+  - automation.battery_utility_door
+  - automation.battery_utility_light_switch
+  - automation.battery_front_door
+  - automation.battery_patio_door_left
+  - automation.battery_remote
+  - automation.battery_green_remote
+- type: entities
+  title: Misc automations
+  show_header_toggle: false
+  entities:
+  - automation.house_awake
+  - automation.weather_notification
+  - automation.bin_notification
+  - automation.printer_low
+  - automation.test
+  - automation.test_notify
+  - automation.test_media
+- type: entities
+  title: Seasonal automations
+  show_header_toggle: false
+  entities:
+  - automation.christmas_lights_on
+  - automation.christmas_lights_off
+  - automation.christmas_lights_off_season
+  - automation.season_is_christmas
+  - automation.season_is_easter
+  - automation.season_is_winter
+  - automation.season_is_spring
+  - automation.season_is_summer
+  - automation.season_is_autumn

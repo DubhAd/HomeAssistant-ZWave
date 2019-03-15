@@ -1,9 +1,0 @@
-sequence:
-  - service: mqtt.publish
-    data_template:
-      topic: 'monitor/first floor rear/person3_mobile/device_tracker'
-      payload: "{{ 'not_home' if ((states('sensor.person3_mobile_first_floor_rear')|int) < 10) else 'home' }}"
-  - service: mqtt.publish
-    data_template:
-      topic: 'monitor/first floor front/person3_mobile/device_tracker'
-      payload: "{{ 'not_home' if ((states('sensor.person3_mobile_first_floor_front')|int) < 10) else 'home' }}"

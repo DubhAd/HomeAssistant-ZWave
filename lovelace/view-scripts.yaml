@@ -1,0 +1,69 @@
+title: scripts
+id: scripts
+path: scripts
+icon: mdi:script
+cards: 
+- type: custom:compact-custom-header
+- type: entities
+  title: person3
+  entities:
+  - script.person3_traveltime
+  - script.notify_person3_at_home
+  - script.person3_home
+  - script.person3_away
+  - script.mqtt_person3_status
+- type: entities
+  title: person4
+  entities:
+  - script.person4_traveltime
+  - script.person4_home
+  - script.person4_away
+- type: entities
+  title: person1
+  entities:
+  - script.person1_traveltime
+  - script.wake_person1
+  - script.person1_home
+  - script.person1_away
+  - script.mqtt_person1_status
+- type: entities
+  title: person2
+  entities:
+  - script.person2_traveltime
+  - script.notify_person2_at_home
+  - script.person2_home
+  - script.person2_away
+  - script.mqtt_person2_status
+- type: entities
+  title: Lights
+  entities:
+  - script.bedhead_light_bright_pause
+  - script.bedhead_light_bright
+  - script.bedhead_light_cool_pause
+  - script.bedhead_light_cool
+  - script.bedhead_light_dim_pause
+  - script.bedhead_light_dim
+  - script.bedhead_light_warm_pause
+  - script.bedhead_light_warm
+  - script.bedtime_slow_off
+- type: entities
+  Title: Misc
+  entities:
+  - script.alarm_lights_enable
+  - script.alarm_lights_on
+  - script.garden_door_after_sunset
+  - script.garden_door_before_sunrise
+- type: entities
+  title: Presence
+  entities:
+  - script.scan_bt_arrive
+  - script.scan_bt_depart
+- type: entities
+  title: Hall
+  entities:
+  - script.hall_lights_night
+  - script.hall_string_off
+  - script.hall_string_on
+  - script.hall_strip_off
+  - script.hall_strip_on
+  - script.hall_strip_night

@@ -24,3 +24,7 @@ Turns the number sign light on at 06:00, as long as that's before sunrise
 ### person2-up-early.yaml
 
 If they get up before sunrise, turn on the number sign. Probably if this happens a taxi is coming.
+
+### Doors
+
+These automations call scripts to tell monitor to scan for arriving or departing Bluetooth devices.

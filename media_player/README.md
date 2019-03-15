@@ -1,7 +1,7 @@
 # Media players
 
 Components:
-* [cast](https://home-assistant.io/components/media_player.cast/)
+* [cast](https://home-assistant.io/components/cast/)
 * [plex](https://home-assistant.io/components/media_player.plex/)
 * [sonos](https://home-assistant.io/components/media_player.sonos/)
 * [squeezebox](https://home-assistant.io/components/media_player.squeezebox/)

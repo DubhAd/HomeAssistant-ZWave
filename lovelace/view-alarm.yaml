@@ -1,0 +1,22 @@
+title: Alarm automations
+id: automations_alarm
+path: automations_alarm
+icon: mdi:alarm-bell
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: Alarm
+  show_header_toggle: false
+  entities:
+  - alarm_control_panel.ha_alarm
+- type: entities
+  show_header_toggle: false
+  title: Alarm automations
+  entities:
+  - automation.alarm_arm_away
+  - automation.alarm_arm_at_night
+  - automation.alarm_disarm_in_the_morning
+  - automation.alarm_disarm_upon_return
+  - automation.alarm_armed_trigger
+  - automation.alarm_triggered_away
+  - automation.alarm_triggered_home

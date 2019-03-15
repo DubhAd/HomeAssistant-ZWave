@@ -1,0 +1,12 @@
+title: Surveillance
+id: surveillance
+path: cameras
+icon: mdi:cctv
+panel: true
+cards:
+  - type: custom:surveillance-card
+    thumb_interval: 10
+    update_interval: 0.5
+    cameras:
+      - entity: camera.front_camera
+  - type: custom:compact-custom-header

@@ -1,0 +1,31 @@
+title: Automations
+id: automations_group
+path: automations_group
+icon: mdi:account-group
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: People driven automations
+  show_header_toggle: false
+  entities:
+  - automation.bedtime
+  - automation.adults_away
+  - automation.adults_returned
+  - automation.all_away
+  - automation.all_returned
+  - automation.mark_person_as_just_arrived
+  - automation.mark_person_as_away
+  - automation.mark_person_as_home
+  - automation.mark_person_as_just_left
+  - automation.tasker_hook
+  - type: divider
+  - automation.person4_coming_home
+  - automation.person4_away
+  - automation.person4_home
+  - automation.person4_on_the_move
+- type: entities
+  title: Automations for travel
+  show_header_toggle: false
+  entities:
+  - automation.holiday
+  - automation.holiday_over

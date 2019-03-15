@@ -1,6 +1,6 @@
 # Dashboards
 
-Currently there's only one of these that sees regular use - the one for the phone.
+There was only one of these that saw regular use - the one for the phone.
 
 At some point I'll set up permanent displays and make more use of these.
 

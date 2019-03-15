@@ -1,0 +1,47 @@
+title: Master bedroom automations
+id: automations_master_bedroom
+path: automations_master_bedroom
+icon: mdi:hotel
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: Automations for the master bedroom
+  show_header_toggle: false
+  entities:
+  - automation.person2_up_bedhead_light_on
+  - automation.person2_up_bedhead_light_off
+  - automation.bedhead_light_left_on
+  - automation.bedhead_light_on_night
+  - automation.bedhead_light_dim_sunset
+  - automation.bedhead_light_dim_sunset_off
+  - automation.bedhead_light_dim
+  - automation.bedhead_light_dim_off
+  - automation.bedhead_light_dim_late
+  - automation.bedhead_light_dim_late_off
+  - automation.bedhead_light_dim_midnight
+  - automation.bedhead_light_dim_midnight_off
+  - automation.bedhead_light_bright_sunrise
+  - automation.bedhead_light_on_morning
+  - automation.late_disable_fluxer
+- type: entities
+  title: Remote automations for the light
+  show_header_toggle: false
+  entities:
+  - automation.bedhead_turn_on
+  - automation.bedhead_turn_off
+  - automation.bedhead_turn_on_min
+  - automation.bedhead_turn_on_max
+  - automation.bedhead_turn_on_cool
+  - automation.bedhead_turn_on_warm
+  - automation.bedhead_turn_white
+  - automation.bedhead_turn_white_max
+  - automation.bedhead_turn_on_red
+  - automation.bedhead_turn_red
+  - automation.master_bedhead_bright
+  - automation.master_bedhead_bright_stop
+  - automation.master_bedhead_dim
+  - automation.master_bedhead_dim_stop
+  - automation.master_bedhead_cool
+  - automation.master_bedhead_cool_stop
+  - automation.master_bedhead_warm
+  - automation.master_bedhead_warm_stop

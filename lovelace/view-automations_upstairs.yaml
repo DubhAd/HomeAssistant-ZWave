@@ -1,0 +1,44 @@
+title: Upstairs automations
+id: automations_upstairs
+path: automations_upstairs
+icon: mdi:home-modern
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: Automations for the 2nd bedroom light
+  show_header_toggle: false
+  entities:
+  - automation.person1_up_bedhead_light_on
+  - automation.person1_up_bedhead_light_off
+  - automation.person1_bedside_left_on
+  - automation.person1_bedside_turn_on
+  - automation.person1_bedside_turn_off
+  - automation.person1_bedside_turn_on_min
+  - automation.person1_bedside_turn_on_max
+  - automation.person1_bedside_turn_on_cool
+  - automation.person1_bedside_turn_on_warm
+  - automation.person1_bedside_turn_white
+  - automation.person1_bedside_turn_white_max
+  - automation.person1_bedside_turn_on_red
+  - automation.person1_bedside_turn_red
+- type: entities
+  title: Automations for the second bedroom
+  show_header_toggle: false
+  entities:
+  - automation.person1_alarm_on
+  - automation.person1_alarm_off
+  - automation.person1_radio_on
+  - automation.person1_radio_on_late
+  - automation.person1_radio_on_night
+  - automation.person1_radio_off
+  - automation.person1_radio_off_late
+- type: entities
+  title: Automations for the office
+  show_header_toggle: false
+  entities:
+  - automation.play_classical_music_in_the_office
+  - automation.stop_classical_music_in_the_office
+  - automation.pause_music_in_the_office
+  - automation.resume_music_in_the_office
+  - automation.office_occupied
+  - automation.office_not_occupied

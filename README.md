@@ -22,10 +22,11 @@ Each directory has a short readme explaining what's in there, and the purpose of
     * Oh, and the printer isn't yet low on consumables.
   * The floorplan was created in [Inkscape](https://inkscape.org/), by importing the image of the house's floorplan from the purchase paperwork, then drawing over it. If you look [at it](www/custom_ui/floorplan/floorplan.svg) you'll see that I built it up in layers, one for the foundation (ground), one for the structure, and one for the sensors. I don't really use those currently, other than to ensure that the right things are on top (sensors).
 * [nginx](https://nginx.org/en/) to provide remote access, in conjunction with [Let's Encrypt](https://letsencrypt.org/)
+* [Mosquitto](https://mosquitto.org/) for the MQTT broker
 
-I used to run the following, but don't any more:
+I used to run the following, but don't currently:
 
-* [HA Dashboard](https://appdaemon.readthedocs.io/en/latest/DASHBOARD_INSTALL.html) for a "finger friendly" interface, but it's been replaced by the new Google Home app
+* [HA Dashboard](https://appdaemon.readthedocs.io/en/latest/DASHBOARD_INSTALL.html) for a "finger friendly" interface, but it's been replaced by the new Google Home app (for now anyway)
   * ![Screenshot of HA Dashboard](https://i.imgur.com/gEvzY9x.png)
 
 ## The devices, services, and software I use (with HA)
@@ -54,14 +55,14 @@ I used to run the following, but don't any more:
   * [Sonos](https://www.sonos.com/) speakers and [component](https://home-assistant.io/components/media_player.sonos/)
   * [Squeezebox Radio](http://support.logitech.com/en_us/product/squeezebox-radio-black) as a smart alarm clock, and [associated component](https://home-assistant.io/components/media_player.squeezebox/)
 * Notifications:
-  * [HTML5 push](https://home-assistant.io/components/notify.html5/), alongside [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, and for rich notifications I'm experimenting with [Slack](https://slack.com/)
+  * [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, and I'm looking at replacing it with the [REST notifier](https://www.home-assistant.io/components/notify.rest/) and [Discord](https://discordapp.com/)
   * [LaMetric](https://lametric.com/) for [notifications](https://home-assistant.io/components/notify.lametric/) "in person", and it's a clock the rest of the time
   * [TTS](https://home-assistant.io/components/tts/) with the Google Home Mini's, Sonos, and Squeezeboxes
 * Presence detection:
   * Back to using [Nmap](https://nmap.org/) for [device tracking](https://home-assistant.io/components/device_tracker.nmap_tracker/). While I did switch to [Fritz!Box](https://en.avm.de/) [device tracking](https://www.home-assistant.io/components/device_tracker.fritz/) when I upgraded my router, the router ran out of memory
-  * [CSL Bluetooth adapter](https://www.amazon.co.uk/gp/product/B00VFT4LD2/) for the [Bluetooth device tracker](https://home-assistant.io/components/device_tracker.bluetooth_tracker/), to augment the Nmap device tracker (uses a CSR8510 A10 chip)
+  * [Monitor](https://github.com/andrewjfreyer/monitor) on another Pi3, and a Pi Zero W. This has completely replaced the use of the built in Bluetooth device tracker, and more than halved the startup time of HA.
   * [GPS Logger](https://home-assistant.io/components/device_tracker.gpslogger/) for remote device tracking
-    * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only does it have an [annoying bug](https://github.com/owntracks/android/issues/508) that causes it to randomly disable reporting, but had been abandoned by the developer
+    * I used to use [OwnTracks](http://owntracks.org/) for device tracking, using the [HTTP interface](https://home-assistant.io/components/device_tracker.owntracks_http/), but not only did it have an [annoying bug](https://github.com/owntracks/android/issues/508) that caused it to randomly disable reporting, but it had been abandoned by the developer. Version 2.0 of the app solved both of those, but I've seen no reason to go back.
 * [TransportAPI](https://developer.transportapi.com/) for information on the local train service with the [UK transport](https://home-assistant.io/components/sensor.uk_transport/) component
 * [DarkSky](https://darksky.net/dev/) for weather data, alongside the [Met Office](https://www.metoffice.gov.uk/datapoint), along with the [associated](https://home-assistant.io/components/sensor.darksky/) sensor [components](https://home-assistant.io/components/sensor.metoffice/)
 * [Plex](https://www.plex.tv/sign-in/) for watching media, on TV, tablets and mobiles. I don't currently use [the component](https://home-assistant.io/components/media_player.plex/)
@@ -82,7 +83,7 @@ I used to run the following, but don't any more:
 
 ## Presence detection
 
-* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html), and [another update](https://blog.ceard.tech/2018/10/presence-detection-update-3.html) (there will probably be a third update). Short version - I don't use groups, or merge the trackers. Both of those approaches have major shortcomings, for the first if you have a misbehaving sensor that's stuck at `home` you'll never be marked as away. For the second, the last one to update wins, so you can flip flop between two states. I'm experimenting with the [Bayesian](https://www.home-assistant.io/components/binary_sensor.bayesian) sensor and some automation logic - so far it's the automation logic that's winning for me.
+* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html), and [another update](https://blog.ceard.tech/2018/10/presence-detection-update-3.html) (there will be a fourth update now I'm using monitor). Short version - I don't use groups, or merge the trackers. Both of those approaches have major shortcomings, for the first if you have a misbehaving sensor that's stuck at `home` you'll never be marked as away. For the second, the last one to update wins, so you can flip flop between two states. I'm experimenting with the [Bayesian](https://www.home-assistant.io/components/binary_sensor.bayesian) sensor and some automation logic - so far it's the automation logic that's winning for me.
 
 ## Notes
 

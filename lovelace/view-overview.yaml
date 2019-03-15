@@ -1,0 +1,249 @@
+title: Overview
+id: overview
+path: home
+icon: mdi:home
+cards:
+- type: custom:compact-custom-header
+  main_config: true
+  menu: overflow
+  notifications: overflow
+  options: clock
+  voice: hide
+  clock_format: 24
+#####
+- type: vertical-stack
+  cards:
+  - type: entity-filter
+    entities:
+      - entity: alert.garage_door_l
+        name: Garage door, bike
+      - entity: alert.garage_door_r
+        name: Garage door, car
+    show_empty: false
+    state_filter:
+      - 'on'
+    card:
+      type: entities
+      title: Alerts
+  - type: glance
+    columns: 5
+    entities:
+      - alarm_control_panel.ha_alarm
+      - sensor.person3_travel
+      - sensor.person1_travel
+      - sensor.person2_travel
+      - sensor.person4_travel
+  - type: glance
+    title: Living room
+    columns: 4
+    entities:
+      - entity: switch.tv_light_switch
+        tap_action: 
+          action: toggle
+      - entity: switch.cabinet_light_switch
+        tap_action: 
+          action: toggle
+      - entity: switch.table_light_switch
+        tap_action: 
+          action: toggle
+      - entity: switch.livingroom_socket_switch
+        name: "Socket"
+        tap_action: 
+          action: toggle
+      - entity: binary_sensor.patio_door_left_sensor
+        name: "Patio door"
+      - entity: binary_sensor.living_room_motion
+        name: "Motion"
+      - entity: sensor.living_room_multi_temperature
+        name: "Temperature"
+      - entity: sensor.living_room_multi_luminance
+        name: "Light level"
+      - entity: media_player.samsung_tv_remote
+        name: TV
+      - entity: media_player.living_room
+        name: "Sonos"
+      - entity: media_player.cast_living_room_speaker
+        name: "Home Mini"
+      - entity: media_player.lenovosmartdisplay109233
+        name: "Home Hub"
+  - type: glance
+    title: Hall
+    columns: 2
+    show_state: false
+    entities:
+      - entity: light.hall
+        name: Hall light
+      - entity: switch.hall_downstairs_switch
+        name: Hall socket
+        tap_action: 
+          action: toggle
+  - type: glance
+    title: Front of house
+    columns: 5
+    entities:
+      - binary_sensor.front_door_sensor
+      - entity: binary_sensor.garage_closed_bike_sensor
+        name: bike
+      - entity: binary_sensor.garage_closed_car_sensor
+        name: Car
+      - entity: switch.vestibule_switch
+        name: Vestibule
+        tap_action: 
+          action: toggle
+      - entity: switch.number_sign_switch
+        tap_action: 
+          action: toggle
+#####
+- type: vertical-stack
+  cards:
+  - type: entity-filter
+    entities:
+      - binary_sensor.front_door_sensor
+      - entity: binary_sensor.garage_closed_bike_sensor
+        name: bike
+      - entity: binary_sensor.garage_closed_car_sensor
+        name: Car
+      - entity: binary_sensor.patio_door_left_sensor
+        name: Patio door
+      - entity: binary_sensor.utility_door_exterior_sensor
+        name: Utility
+    show_empty: false
+    state_filter:
+      - 'on'
+    card:
+      type: glance
+      title: Open doors
+  - type: glance
+    title: Family room & Kitchen
+    columns: 6
+    entities:
+      - entity: sensor.person1
+        name: XBox
+      - entity: device_tracker.family_tv
+        name: TV
+      - entity: media_player.family_room
+        name: Sonos
+      - entity: media_player.cast_kitchen_speaker
+        name: Home Mini
+      - entity: media_player.googlehomehub3435
+        name: Home Hub
+      - entity: switch.family_room_socket_switch
+        name: Socket
+        tap_action: 
+          action: toggle
+  - type: glance
+    title: Utility room & back
+    columns: 2
+    entities:
+      - entity: binary_sensor.utility_door_exterior_sensor
+        name: Door
+      - entity: switch.garden_lights_switch
+        tap_action: 
+          action: toggle
+  - type: custom:dark-sky-weather-card
+    entity_sun: sun.sun
+    entity_daily_summary: sensor.dark_sky_daily_summary
+    entity_current_conditions: sensor.dark_sky_icon  
+    entity_humidity: sensor.dark_sky_humidity
+    entity_pressure: sensor.dark_sky_pressure
+    entity_temperature: sensor.dark_sky_temperature
+    entity_visibility: sensor.dark_sky_visibility
+    entity_wind_cabineting: sensor.dark_sky_wind_cabineting
+    entity_wind_speed: sensor.dark_sky_wind_speed
+    entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
+    entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
+    entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
+    entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
+    entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
+    entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1
+    entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2
+    entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3
+    entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4
+    entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5
+    entity_forecast_icon_1: sensor.dark_sky_icon_1
+    entity_forecast_icon_2: sensor.dark_sky_icon_2
+    entity_forecast_icon_3: sensor.dark_sky_icon_3
+    entity_forecast_icon_4: sensor.dark_sky_icon_4
+    entity_forecast_icon_5: sensor.dark_sky_icon_5
+#####
+- type: vertical-stack
+  cards:
+  - type: entity-filter
+    entities:
+      - entity: sun.sun
+        name: Sun
+    show_empty: false
+    state_filter:
+      - 'lost'
+    card:
+      type: entities
+      title: OCD alignment fixer
+  - type: glance
+    title: Master bedroom
+    #column_width: 25%
+    columns: 5
+    entities:
+      - entity: light.master_bedroom_bedhead
+        name: Bedhead
+      - entity: media_player.person2
+        name: Squeezebox
+      - entity: media_player.cast_master_bedroom_speaker
+        name: Home Mini
+      - entity: switch.radio_person2
+        icon: mdi:alarm
+        tap_action: 
+          action: toggle
+        name: Alarms
+      - entity: switch.master_bedroom_socket_switch
+        tap_action: 
+          action: toggle
+        name: Socket
+  - type: glance
+    title: Second bedroom
+    #column_width: 25%
+    columns: 5
+    entities:
+      - entity: light.person1_bedroom_bedside
+        name: Bedhead
+      - entity: media_player.person1
+        name: Squeezebox
+      - entity: media_player.cast_second_bedroom_speaker
+        name: Home Mini
+      - entity: switch.radio_person1
+        icon: mdi:alarm
+        tap_action: 
+          action: toggle
+        name: Alarms
+      - entity: switch.second_bedroom_switch
+        tap_action: 
+          action: toggle
+        name: Socket
+  - type: glance
+    title: Guest bedroom
+    columns: 3
+    entities:
+      - entity: media_player.cast_guest_bedroom_speaker
+        name: Home Mini
+      - entity: switch.front_bedroom_switch
+        tap_action: 
+          action: toggle
+        name: Socket
+      - entity: switch.spare_socket_switch
+        tap_action: 
+          action: toggle
+  - type: glance
+    title: Office
+    columns: 4
+    entities:
+      - entity: binary_sensor.office_multi_sensor
+        name: Motion
+      - entity: sensor.office_multi_temperature
+        name: Temperature
+      - entity: sensor.office_multi_luminance
+        name: Light level
+      - entity: sensor.office_multi_relative_humidity
+        name: Humidity
+      - entity: media_player.office
+        name: Sonos
+      - entity: media_player.googlehomehub8747
+        name: "Home Hub"

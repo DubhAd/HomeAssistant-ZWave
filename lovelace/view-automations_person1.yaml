@@ -1,0 +1,42 @@
+title: Automations person1
+id: automations_person1
+path: automations_person1
+icon: mdi:account-circle
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: People driven automations - person1
+  show_header_toggle: false
+  entities:
+  - automation.person1_next_alarm
+  - automation.person1_asleep
+  - automation.person1_in_bed
+  - automation.person1_at_work
+  - automation.person1_away
+  - automation.person1_home
+  - automation.person1_home_after_work
+  - automation.person1_up
+  - automation.person1_up_reminder
+  - automation.person1_mobile_low_battery
+  - automation.mqtt_person1_away
+- type: entities
+  title: Automations for travel - person1
+  show_header_toggle: false
+  entities:
+  - automation.person1_returning
+  - automation.person1_travelling
+  - automation.person1_is_travelling
+  - automation.person1_is_not_travelling
+  - automation.person1_on_the_move
+- type: entities
+  title: Automations changing inputs
+  show_header_toggle: false
+  entities:
+  - automation.work_day_for_person1
+  - automation.not_work_day_for_person1
+- type: entities
+  title: Automations for alarms - person1
+  show_header_toggle: false
+  entities:
+  - automation.person1_on_holiday
+  - automation.person1_off_holiday

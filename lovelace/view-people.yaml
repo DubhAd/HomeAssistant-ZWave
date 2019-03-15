@@ -1,0 +1,372 @@
+title: People
+id: people
+path: people
+icon: mdi:account-multiple
+cards:
+- type: custom:compact-custom-header
+- type: vertical-stack
+  cards:
+  - type: picture-entity
+    entity: sensor.person3_travel
+    image: /local/person3.png
+    tap_action:
+      action: call-service
+      service: input_boolean.toggle
+      service_data:
+        entity_id: input_boolean.lovelace_person3_more
+  - type: conditional
+    conditions:
+      - entity: input_boolean.lovelace_person3_more
+        state: 'on'
+    card:
+      type: vertical-stack
+      cards: 
+      - type: glance
+        columns: 6
+        entities:
+        - entity: device_tracker.person3_mobile
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.person3_mobile_wifi
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.person3_bt_front_mobile
+          name: Front
+          icon: mdi:bluetooth
+        - entity: device_tracker.person3_bt_mobile
+          name: Rear
+          icon: mdi:bluetooth
+        - entity: sensor.battery_person3_mobile
+          name: Battery
+        - entity: input_boolean.person3_phone_charging
+          name: Phone charging
+        - entity: sensor.person3s_time_to_home
+          name: Car home
+          icon: mdi:map-marker-distance
+        - entity: sensor.person3s_time_to_home_2
+          name: Bus home
+          icon: mdi:map-marker-distance
+        - entity: proximity.person3_home
+          name: To home
+      - type: glance
+        entities:
+        - entity: sensor.person3_mobile_first_floor_front
+          name: Front
+          icon: mdi:gauge
+        - entity: sensor.person3_mobile_rssi_first_floor_front
+          name: Front
+          icon: mdi:signal-cellular-2
+        - entity: sensor.person3_mobile_first_floor_rear
+          name: Rear
+          icon: mdi:gauge
+        - entity: sensor.person3_mobile_rssi_first_floor_rear
+          name: Rear
+          icon: mdi:signal-cellular-2
+      - type: entities
+        entities:
+        - entity: input_datetime.person3_next_alarm
+          name: Next alarm
+      - type: custom:google-calendar-card
+        entities: 
+          - calendar.person3
+- type: picture-entity
+  entity: sensor.person4_travel
+  image: /local/person4.png
+  tap_action:
+    action: call-service
+    service: input_boolean.toggle
+    service_data:
+      entity_id: input_boolean.lovelace_person4_more
+- type: conditional
+  conditions:
+    - entity: input_boolean.lovelace_person4_more
+      state: 'on'
+  card:
+    type: vertical-stack
+    cards: 
+    - type: glance
+      title: person4
+      entities:
+      - entity: device_tracker.person4_mobile
+        name: GPS
+        icon: mdi:crosshairs-gps
+      - entity: device_tracker.001d29a549ae
+        name: WiFi
+        icon: mdi:wifi
+      - entity: sensor.battery_person4_mobile
+        name: Battery
+      - entity: sensor.person4s_time_to_home
+        name: To home
+        icon: mdi:map-marker-distance
+      - entity: proximity.person4_home
+        name: To home
+- type: vertical-stack
+  cards:
+  - type: picture-entity
+    entity: sensor.person2_travel
+    image: /local/person2.png
+    tap_action:
+      action: call-service
+      service: input_boolean.toggle
+      service_data:
+        entity_id: input_boolean.lovelace_person2_more
+  - type: conditional
+    conditions:
+      - entity: input_boolean.lovelace_person2_more
+        state: 'on'
+    card:
+      type: vertical-stack
+      cards: 
+      - type: glance
+        columns: 6
+        entities:
+        - entity: device_tracker.person2_mobile_gps
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.404e36245315
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.person2_bt_front_mobile
+          name: Front
+          icon: mdi:bluetooth
+        - entity: device_tracker.person2_bt_mobile
+          name: Rear
+          icon: mdi:bluetooth
+        - entity: sensor.battery_person2_mobile
+          name: Battery
+        - entity: input_boolean.person2_phone_charging
+          name: Phone charging
+        - entity: sensor.person2s_time_to_home_2
+          name: Car home
+          icon: mdi:map-marker-distance
+        - entity: proximity.person2_home
+          name: To home
+        - entity: switch.radio_person2
+          icon: mdi:alarm
+          name: Alarms
+      - type: glance
+        entities:
+        - entity: sensor.person2_mobile_first_floor_front
+          name: Front
+          icon: mdi:gauge
+        - entity: sensor.person2_mobile_rssi_first_floor_front
+          name: Front
+          icon: mdi:signal-cellular-2
+        - entity: sensor.person2_mobile_first_floor_rear
+          name: Rear
+          icon: mdi:gauge
+        - entity: sensor.person2_mobile_rssi_first_floor_rear
+          name: Rear
+          icon: mdi:signal-cellular-2
+      - type: entities
+        entities:
+        - entity: input_datetime.person2_next_alarm
+          name: Next alarm
+      - type: glance
+        title: person2's devices
+        columns: 5
+        entities:
+        - entity: device_tracker.person2_tablet_5
+          name: Tablet
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.pc1722372113
+          name: Tablet
+          icon: mdi:wifi
+        - entity: device_tracker.person2_bt_front_tablet
+          name: Front
+          icon: mdi:bluetooth
+        - entity: device_tracker.person2_bt_tablet
+          name: Rear
+          icon: mdi:bluetooth
+        - entity: sensor.battery_person2_tablet
+          name: Tablet
+        - entity: device_tracker.9c305b3c6c87
+          name: Laptop
+          icon: mdi:wifi
+        - entity: device_tracker.person2_bt_laptop
+          name: Laptop
+          icon: mdi:bluetooth
+      - type: glance
+        entities:
+        - entity: sensor.person2_tablet_first_floor_front
+          name: Front
+          icon: mdi:gauge
+        - entity: sensor.person2_tablet_rssi_first_floor_front
+          name: Front
+          icon: mdi:signal-cellular-2
+        - entity: sensor.person2_tablet_first_floor_rear
+          name: Rear
+          icon: mdi:gauge
+        - entity: sensor.person2_tablet_rssi_first_floor_rear
+          name: Rear
+          icon: mdi:signal-cellular-2
+      - type: custom:google-calendar-card
+        entities:
+          - calendar.person2
+          - calendar.person2_work
+          - calendar.person2_holiday
+          - calendar.person2_wfh
+          - calendar.person2_away
+          - calendar.birthdays_and_anniversaries
+  - type: picture-entity
+    entity: group.person_person2_work
+    image: /local/person2_Work.png
+    name: Work
+    tap_action:
+      action: call-service
+      service: input_boolean.toggle
+      service_data:
+        entity_id: input_boolean.lovelace_person2_work_more
+  - type: conditional
+    conditions:
+      - entity: input_boolean.lovelace_person2_work_more
+        state: 'on'
+    card:
+      type: vertical-stack
+      cards: 
+      - type: glance
+        title: Work
+        columns: 6
+        entities:
+        - entity: device_tracker.80b03de23ba2
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.person2_bt_front_work
+          name: Front
+          icon: mdi:bluetooth
+        - entity: device_tracker.person2_bt_work
+          name: Rear
+          icon: mdi:bluetooth
+        - entity: device_tracker.00e04c680550
+          name: Laptop
+          icon: mdi:laptop
+        - entity: proximity.person2_work
+          name: To work
+        - entity: calendar.person2_wfh
+          name: WFH
+        - entity: calendar.person2_holiday
+          name: Holiday
+        - entity: calendar.person2_away
+          name: Away
+        - binary_sensor.workday_sensor
+      - type: glance
+        entities:
+        - entity: sensor.person2_work_first_floor_front
+          name: Front
+          icon: mdi:gauge
+        - entity: sensor.person2_work_rssi_first_floor_front
+          name: Front
+          icon: mdi:signal-cellular-2
+        - entity: sensor.person2_work_first_floor_rear
+          name: Rear
+          icon: mdi:gauge
+        - entity: sensor.person2_work_rssi_first_floor_rear
+          name: Rear
+          icon: mdi:signal-cellular-2
+- type: vertical-stack
+  cards:
+  - type: picture-entity
+    entity: sensor.person1_travel
+    image: /local/person1.png
+    tap_action:
+      action: call-service
+      service: input_boolean.toggle
+      service_data:
+        entity_id: input_boolean.lovelace_person1_more
+  - type: conditional
+    conditions:
+      - entity: input_boolean.lovelace_person1_more
+        state: 'on'
+    card:
+      type: vertical-stack
+      cards: 
+      - type: glance
+        title: person1
+        columns: 6
+        entities:
+        - entity: device_tracker.person1_mobile
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.3c286ddaeba1
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.person1_bt_front_mobile
+          name: Front
+          icon: mdi:bluetooth
+        - entity: device_tracker.person1_bt_mobile
+          name: Rear
+          icon: mdi:bluetooth
+        - entity: sensor.battery_person1_mobile
+          name: Battery
+        - entity: input_boolean.person1_phone_charging
+          name: Phone charging
+        - entity: sensor.person1s_time_to_home_2
+          name: Walking home
+          icon: mdi:map-marker-distance
+        - entity: sensor.person1s_time_to_home_by_transit
+          name: Bus home
+          icon: mdi:map-marker-distance
+        - entity: sensor.person1s_time_to_home
+          name: Car home
+          icon: mdi:map-marker-distance
+        - entity: proximity.person1_home
+          name: To home
+        - entity: switch.radio_person1
+          icon: mdi:alarm
+          tap_action: 
+            action: toggle
+          name: Alarms
+        - entity: calendar.person1_holiday
+          name: Holiday
+      - type: glance
+        entities:
+        - entity: sensor.person1_mobile_first_floor_front
+          name: Front
+          icon: mdi:gauge
+        - entity: sensor.person1_mobile_rssi_first_floor_front
+          name: Front
+          icon: mdi:signal-cellular-2
+        - entity: sensor.person1_mobile_first_floor_rear
+          name: Rear
+          icon: mdi:gauge
+        - entity: sensor.person1_mobile_rssi_first_floor_rear
+          name: Rear
+          icon: mdi:signal-cellular-2
+      - type: entities
+        entities:
+        - entity: input_datetime.person1_next_alarm
+          name: Next alarm
+      - type: glance
+        title: person1's Devices
+        entities:
+        - entity: device_tracker.person1_tablet
+          name: GPS
+          icon: mdi:crosshairs-gps
+        - entity: device_tracker.pc1722372108
+          name: WiFi
+          icon: mdi:wifi
+        - entity: device_tracker.person1_bt_front_tablet
+          name: Front
+          icon: mdi:bluetooth
+        - entity: device_tracker.person1_bt_tablet
+          name: Rear
+          icon: mdi:bluetooth
+        - entity: sensor.battery_person1_tablet
+          name: Battery
+      - type: glance
+        entities:
+        - entity: sensor.person1_tablet_first_floor_front
+          name: Front
+          icon: mdi:gauge
+        - entity: sensor.person1_tablet_rssi_first_floor_front
+          name: Front
+          icon: mdi:signal-cellular-2
+        - entity: sensor.person1_tablet_first_floor_rear
+          name: Rear
+          icon: mdi:gauge
+        - entity: sensor.person1_tablet_rssi_first_floor_rear
+          name: Rear
+          icon: mdi:signal-cellular-2
+      - type: custom:google-calendar-card
+        entities:
+          - calendar.person1

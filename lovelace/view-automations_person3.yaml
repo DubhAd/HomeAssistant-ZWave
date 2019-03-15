@@ -1,0 +1,27 @@
+title: Automations person3
+id: automations_person3
+path: automations_person3
+icon: mdi:account-heart
+cards:
+- type: custom:compact-custom-header
+- type: entities
+  title: People driven automations - person3
+  show_header_toggle: false
+  entities:
+  - automation.person3_next_alarm
+  - automation.person3_asleep
+  - automation.person3_in_bed
+  - automation.person3_away
+  - automation.person3_home
+  - automation.person3_up
+  - automation.person3_awake
+  - automation.person3_phone_unplugged
+  - automation.person3_phone_plugged
+  - automation.mqtt_person3_away
+- type: entities
+  title: Automations for travel - person3
+  show_header_toggle: false
+  entities:
+  - automation.person3_travelling
+  - automation.person3_coming_home
+  - automation.person3_on_the_move

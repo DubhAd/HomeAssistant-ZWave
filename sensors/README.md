@@ -6,12 +6,11 @@ Components:
 * [file sensor](https://home-assistant.io/components/sensor.file/)
 * [Google Travel Time](https://home-assistant.io/components/sensor.google_travel_time/)
 * [have i been pwned sensor](https://home-assistant.io/components/sensor.haveibeenpwned/)
-* [Met Office sensor](https://home-assistant.io/components/sensor.metoffice/)
 * [Season](https://home-assistant.io/components/sensor.season/)
 * [Sun](https://home-assistant.io/components/sun/)
 * [template sensor](https://home-assistant.io/components/sensor.template/)
-* [Twitch sensor](https://home-assistant.io/components/sensor.twitch/)
 * [UK transport sensor](https://home-assistant.io/components/sensor.uk_transport/)
+* [Waze travel time](https://www.home-assistant.io/components/sensor.waze_travel_time/)
 * [XBox Live](https://home-assistant.io/components/sensor.xbox_live/)
 
 Sooo many sensors.
@@ -30,9 +29,9 @@ This mass of sensors then pulls out the dates for each collection type, and then
 
 The [Dark Sky sensor](https://home-assistant.io/components/sensor.darksky/) for local weather conditions - in theory anyway.
 
-## Google Travel Time
+## Travel Time
 
-Knowing how long it'll take people to get places is handy for various automations, so I use the [Google Travel Time](https://home-assistant.io/components/sensor.google_travel_time/) sensor.
+Knowing how long it'll take people to get places is handy for various automations, so I use the Google and Waze travel time sensors. I've an automation that triggers the updates of these intelligently, rather than blindly updating every X minutes.
 
 The names of the resulting sensor entities are personXs_time_to_home.
 
@@ -84,17 +83,9 @@ These are for the train status, but I lumped them all together in a single templ
 
 Automations to get the status of the trains (for the commute) and the status message. I generate these from shell scripts, and then pull them to HA here.
 
-## Twitch
-
-Configuration for the [Twitch sensor](https://home-assistant.io/components/sensor.twitch/)
-
 ## UK Transport
 
 Configuration for the [UK transport sensor](https://home-assistant.io/components/sensor.uk_transport/), for the commute
-
-## Utility
-
-This was for displaying the door state as text, but with recent changes it's no longer required
 
 ## XBox
 

@@ -1,9 +1,9 @@
 # Notifiers
 
 Components:
-* [HTML5 push](https://home-assistant.io/components/notify.html5/)
 * [LaMetric component](https://home-assistant.io/components/notify.lametric/)
 * [Pushover](https://home-assistant.io/components/notify.pushover/)
+* [REST](https://www.home-assistant.io/components/notify.rest/)
 * [Slack](https://home-assistant.io/components/notify.slack/)
 
 ## Adults
@@ -26,12 +26,12 @@ Sometimes it's been useful to spit things out to logs so I can see what's happen
 
 ## People
 
-Individual notifiers for different methods for different people. I'm using a combination of [HTML5 push](https://home-assistant.io/components/notify.html5/), [Pushover](https://home-assistant.io/components/notify.pushover/), and [Slack](https://home-assistant.io/components/notify.slack/).
+Individual notifiers for different methods for different people. I'm using a combination of Pushover and REST currently.
 
-## Push
+## REST
 
-HTML5 push configuration
+For use with Discord, since I'm using Discord anyway. This will replace Slack, and probably Pushover
 
 ## Slack
 
-Slack configuration
+Slack is being phased out

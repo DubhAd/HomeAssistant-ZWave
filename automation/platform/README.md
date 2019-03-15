@@ -13,10 +13,10 @@ These are for Home Assistant
 ### ha-started-later.yaml
 ### ha-started.yaml
 ### ha-stopped.yaml
+### plex_hook.yaml
 ### recorder_purge.yaml
 ### sunrise-enable-automations.yaml
 ### test_zwave.yaml
 ### updater-notify.yaml
 ### zwave_check.yaml
-### z-wave-graph.yaml
 ### zwave_health_check.yaml

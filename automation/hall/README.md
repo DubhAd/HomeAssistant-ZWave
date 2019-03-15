@@ -22,6 +22,10 @@ Triggered by:
 * The sun rising enough
 * Enough sunlight (in the living room, waiting for the latest Hank multi-sensor to be released to market)
 
+### hall-lights-off.yaml
+
+Turn the hall lights off during the day.
+
 ### hall-lights-on.yaml
 
 This one is more complicated, it triggers when:
@@ -36,3 +40,7 @@ As long as the following conditions are met, the light will turn on:
 * Dark or the sun is below 5 degrees
 * We're not all asleep or somebody just came home
 * Somebody is home
+
+### hall-lights-night.yaml
+
+If we've guests over and then at bedtime rather than turning the hall light off, dim the hall lights to the absolute minimum and turn them red

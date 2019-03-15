@@ -4,7 +4,7 @@ Documentation: [automation](https://home-assistant.io/docs/automation/)
 
 _Some of these were first written when I started with HA, and didn't know better. You'll find that I've used hyphens (-) in some file names and underscores (\_) to match Home Assistant in others. Mostly I'm not renaming files._
 
-People based automations. More complete descriptions to follow, but as a summary
+People based automations. I really need to split these up into a folder per person too. More complete descriptions to follow, but as a summary
 
 adults_away.yaml
 adults_returned.yaml

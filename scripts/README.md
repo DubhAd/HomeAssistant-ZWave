@@ -25,6 +25,15 @@ Basically, when we open the door after dark, this:
 * Waits for a delay (in seconds) defined by an input number
 * Turns the "turn off the lights when the door closes" automation back on
 
+## Notifications
+
+Some scripts for notifications
+
 ## People
 
-Some people in this house are hard to wake. This is to ensure that they get up, by controlling lights and speakers
+* The actions for the home and away automations for each person is now a script
+* Some people in this house are hard to wake. This is to ensure that they get up, by controlling lights and speakers
+
+## Scan
+
+Triggers scans by monitor
