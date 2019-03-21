@@ -150,7 +150,7 @@ panel_custom:
     sidebar_icon: mdi:floor-plan
     url_path: floorplan
     config: !include floorplan.yaml
-  - name: zwavegraph
+  - name: zwavegraph2
     sidebar_title: ZWave Graph2
     sidebar_icon: mdi:z-wave
     url_path: zwave
