@@ -6,11 +6,11 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.hall
-      color_name: red
+      rgb_color: (255, 127, 127)
   - service: light.turn_on
     data:
       entity_id: light.hall
-      color_name: red
+      rgb_color: (255, 0, 0)
   - delay: '00:02:00'
   - wait_template: "{{ states('light.hall') != 'unavailable' }}"
     timeout: '00:05:00'
@@ -19,14 +19,14 @@ sequence:
       entity_id: light.hall
       transition: 30
       brightness: 5
-      color_name: red
+      rgb_color: (255, 0, 0)
   - delay: '00:00:30'
   - service: light.turn_on
     data:
       entity_id: light.hall
       transition: 30
       brightness: 5
-      color_name: red
+      rgb_color: (255, 0, 0)
   - delay: '00:01:00'
   - wait_template: "{{ states('light.hall') != 'unavailable' }}"
     timeout: '00:05:00'
