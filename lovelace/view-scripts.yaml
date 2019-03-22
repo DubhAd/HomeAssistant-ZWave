@@ -11,7 +11,6 @@ cards:
   - script.notify_person3_at_home
   - script.person3_home
   - script.person3_away
-  - script.mqtt_person3_status
 - type: entities
   title: person4
   entities:
@@ -25,7 +24,6 @@ cards:
   - script.wake_person1
   - script.person1_home
   - script.person1_away
-  - script.mqtt_person1_status
 - type: entities
   title: person2
   entities:
@@ -33,7 +31,6 @@ cards:
   - script.notify_person2_at_home
   - script.person2_home
   - script.person2_away
-  - script.mqtt_person2_status
 - type: entities
   title: Lights
   entities:
