@@ -3,7 +3,7 @@ sequence:
   - condition: state
     entity_id: input_boolean.person2_home
     state: 'on'
-  - service: notify.person2
+  - service: notify.discord_webhook
     data_template:
       title: "{{ title }}"
       message: "{{ message }}"

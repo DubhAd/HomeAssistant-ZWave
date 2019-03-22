@@ -30,9 +30,5 @@ action:
   - service: notify.lametric_info
     data_template:
       message: "person1 should be home from work shortly"
-  - condition: state
-    entity_id: input_boolean.person3_home
-    state: 'on'
-  - service: notify.person3
-    data_template:
-      message: "person1 should be home from work shortly"
+  - service: script.notify_person3_at_home
+  - service: script.notify_person2_at_home
