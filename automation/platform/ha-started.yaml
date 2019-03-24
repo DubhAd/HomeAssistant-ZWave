@@ -11,5 +11,3 @@ action:
   - service: frontend.set_theme
     data:
       name: 'midnight'
-  - service: switch.turn_on
-    entity_id: switch.flux_hall

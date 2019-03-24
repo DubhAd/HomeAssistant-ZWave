@@ -29,7 +29,7 @@ condition:
         entity_id: switch.hall_downstairs_switch
         state: 'on'
       - condition: state
-        entity_id: light.hall
+        entity_id: light.hall_downstairs
         state: 'on'
     - condition: state
       entity_id: input_boolean.guest_mode
@@ -44,11 +44,9 @@ condition:
       entity_id: input_boolean.family_room_occupied
       state: 'off'
 action:
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
   - service: light.turn_off
     data:
-      entity_id: light.hall
+      entity_id: light.hall_downstairs
   - condition: state
     entity_id: switch.hall_downstairs_switch
     state: 'on'

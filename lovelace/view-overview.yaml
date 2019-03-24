@@ -71,7 +71,7 @@ cards:
     columns: 2
     show_state: false
     entities:
-      - entity: light.hall
+      - entity: light.hall_downstairs
         name: Hall light
       - entity: switch.hall_downstairs_switch
         name: Hall socket

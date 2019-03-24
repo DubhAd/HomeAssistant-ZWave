@@ -1,38 +1,17 @@
 sequence:
-  - service: switch.turn_off
-    entity_id: switch.flux_hall
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
   - service: light.turn_on
     data:
-      entity_id: light.hall
-      rgb_color: (255, 127, 127)
+      entity_id: light.hall_downstairs
+      color_name: "red"
   - service: light.turn_on
     data:
-      entity_id: light.hall
-      rgb_color: (255, 0, 0)
-  - delay: '00:02:00'
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
+      entity_id: light.hall_downstairs
       transition: 30
       brightness: 5
-      rgb_color: (255, 0, 0)
-  - delay: '00:00:30'
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      transition: 30
-      brightness: 5
-      rgb_color: (255, 0, 0)
-  - delay: '00:01:00'
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
+      color_name: "red"
   - service: light.turn_off
     data:
-      entity_id: light.hall
+      entity_id: light.hall_downstairs
   - condition: state
     entity_id: switch.hall_downstairs_switch
     state: 'on'

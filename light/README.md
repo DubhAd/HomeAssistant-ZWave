@@ -2,11 +2,18 @@
 
 Components:
 * [Yeelight](https://home-assistant.io/components/light.yeelight/)
-* [Hue](https://www.home-assistant.io/components/hue/)
+* [Flux LED](https://www.home-assistant.io/components/light.flux_led/)
 * [light group](https://home-assistant.io/components/light.group/)
 
 I'm using the [Yeelight](https://home-assistant.io/components/light.yeelight/) with a couple of LED strips, and a light group containing both lights. These are in the main bedrooms, to provide low level lighting, but also come on with the smart radio alarms.
 
-The Hue hub I'm using with a [Gledopto GL-C-008](https://www.aliexpress.com/item/GLEDOPTO-ZIGBEE-Led-Controller-Amazon-Echo-hue-lightify-tradfri-compatible-LED-controller-RGB-CCT-WW-CW/32858603964.html) 
-RGB+CCT LED Controller, a roll of 60 LED/m RGB-CCT LED tape, and a 24V power supply, as explained [here](https://www.howtogeek.com/361560/how-to-make-your-own-philips-hue-lightstrips-for-cheap/) 
-and [here](https://char.gd/blog/2018/building-better-cheaper-philips-hue-led-strips). At minimum brightness this provides sufficient low level lighting for our hall, at maximum brightness it lights up the adjoining rooms.
+FluxLED I'm using with [this RGBW controller](https://smile.amazon.co.uk/gp/product/B07BFPWZNJ/). Cheap, simple, and works. The only downside is that the component only supports RGBW, not RGB-CCT. 
+Still, it works reliably, which is more than I can say about the old Hue Bridge. 
+
+The controller is connected a roll of 60 LED/m RGB-CCT LED tape and a 24V power supply.  At minimum brightness this provides sufficient low level lighting for our hall, at maximum brightness it lights up the adjoining rooms.
+
+<HR>
+
+The [Hue](https://www.home-assistant.io/components/hue/) hub I had been using with a [Gledopto GL-C-008](https://www.aliexpress.com/item/GLEDOPTO-ZIGBEE-Led-Controller-Amazon-Echo-hue-lightify-tradfri-compatible-LED-controller-RGB-CCT-WW-CW/32858603964.html) 
+RGB+CCT LED Controller, as explained [here](https://www.howtogeek.com/361560/how-to-make-your-own-philips-hue-lightstrips-for-cheap/) and [here](https://char.gd/blog/2018/building-better-cheaper-philips-hue-led-strips). 
+

@@ -1,30 +1,17 @@
 alias: Hall lights night
 sequence:
-  - service: switch.turn_off
-    entity_id: switch.flux_hall
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
   - service: light.turn_on
     data:
-      entity_id: light.hall
-      transition: 5
+      entity_id: light.hall_downstairs
       color_name: red
-  - delay: '00:00:05'
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
+      white_value: 0
   - service: light.turn_on
     data:
-      entity_id: light.hall
-      color_name: red
-  - delay: '00:00:30'
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
+      entity_id: light.hall_downstairs
       transition: 30
       brightness: 5
       color_name: red
+      white_value: 0
   - condition: state
     entity_id: switch.hall_downstairs_switch
     state: 'on'

@@ -1,18 +1,13 @@
 alias: Hall strip off
 sequence:
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
   - service: light.turn_off
     data:
-      entity_id: light.hall
+      entity_id: light.hall_downstairs
       transition: 30
-  - delay: 00:01:00
-  - wait_template: "{{ states('light.hall') != 'unavailable' }}"
-    timeout: '00:05:00'
   - condition: state
-    entity_id: light.hall
+    entity_id: light.hall_downstairs
     state: 'on'
-  - service: light.turn_on
+  - service: light.turn_off
     data:
-      entity_id: light.hall
+      entity_id: light.hall_downstairs
       transition: 30

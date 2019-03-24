@@ -28,11 +28,11 @@ condition:
         entity_id: switch.hall_downstairs_switch
         state: 'on'
       - condition: state
-        entity_id: light.hall
+        entity_id: light.hall_downstairs
         state: 'on'
 action:
   - service: light.turn_off
     data:
-      entity_id: light.hall
+      entity_id: light.hall_downstairs
   - service: switch.turn_off
     entity_id: switch.hall_downstairs_switch
