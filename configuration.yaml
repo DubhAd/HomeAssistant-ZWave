@@ -82,6 +82,13 @@ zwave:
 
 mqtt:
   broker: 127.0.0.1
+  discovery: true
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
 
 #mqtt_eventstream:
 

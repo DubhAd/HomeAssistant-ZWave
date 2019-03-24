@@ -370,3 +370,9 @@ cards:
       - type: custom:google-calendar-card
         entities:
           - calendar.person1
+- type: vertical-stack
+  cards:
+  - type: picture-entity
+    name: Car
+    entity: device_tracker.car_rear
+    image: /local/images/car.jpg
