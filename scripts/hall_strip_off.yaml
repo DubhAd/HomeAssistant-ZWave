@@ -3,11 +3,9 @@ sequence:
   - service: light.turn_off
     data:
       entity_id: light.hall_downstairs
-      transition: 30
   - condition: state
     entity_id: light.hall_downstairs
     state: 'on'
   - service: light.turn_off
     data:
       entity_id: light.hall_downstairs
-      transition: 30

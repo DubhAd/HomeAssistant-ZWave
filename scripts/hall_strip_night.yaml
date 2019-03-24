@@ -2,16 +2,10 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.hall_downstairs
+      brightness: 3
+      white_value: 3
       color_name: "red"
-  - service: light.turn_on
-    data:
-      entity_id: light.hall_downstairs
-      transition: 30
-      brightness: 5
-      color_name: "red"
-  - service: light.turn_off
-    data:
-      entity_id: light.hall_downstairs
+  - delay: '00:01:00'
   - condition: state
     entity_id: switch.hall_downstairs_switch
     state: 'on'
@@ -19,3 +13,7 @@ sequence:
     entity_id:
       - switch.hall_downstairs_switch
       - switch.vestibule_switch
+  - delay: '00:03:00'
+  - service: light.turn_off
+    data:
+      entity_id: light.hall_downstairs

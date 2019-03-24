@@ -3,7 +3,6 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.hall_downstairs
-      transition: 5
       brightness: 0
       rgb_color: [0, 0, 0]
       white_value: 15
@@ -13,7 +12,6 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.hall_downstairs
-      transition: 5
       brightness: 0
       rgb_color: [0, 0, 0]
       white_value: 15

@@ -3,15 +3,9 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.hall_downstairs
+      brightness: 1
       color_name: red
-      white_value: 0
-  - service: light.turn_on
-    data:
-      entity_id: light.hall_downstairs
-      transition: 30
-      brightness: 5
-      color_name: red
-      white_value: 0
+      white_value: 1
   - condition: state
     entity_id: switch.hall_downstairs_switch
     state: 'on'
