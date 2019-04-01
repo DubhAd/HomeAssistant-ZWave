@@ -23,6 +23,7 @@ cards:
   - automation.bedhead_light_bright_sunrise
   - automation.bedhead_light_on_morning
   - automation.late_disable_fluxer
+  - automation.alarm_monitor_person2
 - type: entities
   title: Remote automations for the light
   show_header_toggle: false
@@ -37,6 +38,10 @@ cards:
   - automation.bedhead_turn_white_max
   - automation.bedhead_turn_on_red
   - automation.bedhead_turn_red
+- type: entities
+  title: Remote automations for the light (more)
+  show_header_toggle: false
+  entities:
   - automation.master_bedhead_bright
   - automation.master_bedhead_bright_stop
   - automation.master_bedhead_dim

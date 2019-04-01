@@ -32,6 +32,7 @@ cards:
   - automation.person1_radio_on_night
   - automation.person1_radio_off
   - automation.person1_radio_off_late
+  - automation.alarm_monitor_person1
 - type: entities
   title: Automations for the office
   show_header_toggle: false
