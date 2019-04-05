@@ -126,7 +126,8 @@ sun:
 camera: !include_dir_list camera/
 climate: !include_dir_merge_list climate/
 
-#ffmpeg:
+ffmpeg:
+#stream:
 
 ####################
 
