@@ -374,5 +374,5 @@ cards:
   cards:
   - type: picture-entity
     name: Car
-    entity: device_tracker.car_rear
+    entity: group.car
     image: /local/images/car.jpg
