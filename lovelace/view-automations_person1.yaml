@@ -19,6 +19,8 @@ cards:
   - automation.person1_up_reminder
   - automation.person1_mobile_low_battery
   - automation.mqtt_person1_away
+  - automation.person1_tablet_away
+  - automation.person1_tablet_home
 - type: entities
   title: Automations for travel - person1
   show_header_toggle: false

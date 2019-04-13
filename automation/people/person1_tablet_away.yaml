@@ -1,0 +1,20 @@
+alias: 'person1 tablet away'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id:
+    - group.person_person1_tablet
+    to: 'not_home'
+  - platform: homeassistant
+    event: start
+condition:
+  - condition: state
+    entity_id: input_boolean.person1_tablet_home
+    state: 'on'
+  # Both BT and WiFi are away
+  - condition: state
+    entity_id: group.person_person1_tablet
+    state: 'not_home'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.person1_tablet_home
