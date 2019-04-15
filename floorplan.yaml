@@ -114,6 +114,9 @@
              - media_player.cast_second_bedroom_speaker
              - media_player.cast_kitchen_speaker
              - media_player.cast_guest_bedroom_speaker
+             - media_player.lenovosmartdisplay109233
+             - media_player.googlehomehub8747
+             - media_player.googlehomehub3435
           states:
             - state: 'playing'
               class: 'squeezebox-on'
@@ -275,7 +278,7 @@
           entities:
              - light.master_bedroom_bedhead
              - light.person1_bedroom_bedside
-             - light.hall
+             - light.hall_downstairs
           states:
             - state: 'on'
               class: 'light-on'
