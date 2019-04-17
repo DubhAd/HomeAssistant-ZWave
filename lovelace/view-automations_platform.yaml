@@ -24,3 +24,4 @@ cards:
   - automation.sunrise_enable_automations
   - automation.recorder_purge
   - automation.plex_hook
+  - automation.ha_theme
