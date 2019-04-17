@@ -4,10 +4,28 @@ trigger:
   - platform: state
     entity_id: calendar.person2_work
     to: 'on'
+  - platform: state
+    entity_id: input_boolean.office_occupied
+    to: 'off'
 condition:
-  - condition: state
-    entity_id: media_player.office
-    state: 'playing'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: media_player.office
+      state: 'playing'
+    - condition: state
+      entity_id: calendar.person2_work
+      state: 'on'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: media_player.office
+      state: 'playing'
+      for:
+        minutes: 10
+    - condition: state
+      entity_id: input_boolean.office_occupiet
+      state: 'off'
 action:
   - service: media_player.media_pause
     data:

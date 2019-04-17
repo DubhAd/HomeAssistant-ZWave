@@ -1,5 +1,4 @@
 alias: 'Alarm monitor person2'
-initial_state: 'on'
 trigger:
     # Alarm scheduled for "now"
   - platform: template

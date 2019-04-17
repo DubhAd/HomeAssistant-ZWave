@@ -37,8 +37,7 @@ cards:
   title: Automations for the office
   show_header_toggle: false
   entities:
-  - automation.play_classical_music_in_the_office
-  - automation.stop_classical_music_in_the_office
+  - automation.play_music_in_the_office
   - automation.pause_music_in_the_office
   - automation.resume_music_in_the_office
   - automation.office_occupied

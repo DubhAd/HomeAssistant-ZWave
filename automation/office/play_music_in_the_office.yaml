@@ -1,5 +1,5 @@
 initial_state: 'on'
-alias: 'Play classical music in the office'
+alias: 'Play music in the office'
 trigger:
   - platform: state
     entity_id: input_boolean.office_occupied
@@ -14,8 +14,7 @@ condition:
       entity_id: media_player.office
       state: 'off'
 action:
-  - service: media_player.select_source
+  - service: media_player.media_play_pause
     data:
       entity_id: media_player.office
-      source: classical
 
