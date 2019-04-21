@@ -1,5 +1,4 @@
 alias: 'MQTT person3 away'
-initial_state: 'on'
 trigger:
   - platform: homeassistant
     event: start
