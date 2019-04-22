@@ -32,18 +32,6 @@ condition:
     - condition: state
       entity_id: input_boolean.living_room_occupied
       state: 'on'
-    # We're here or guest mode is on
-    - condition: or
-      conditions:
-      - condition: state
-        entity_id: input_boolean.all_away
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.adults_away
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.guest_mode
-        state: 'on'
 action:
   - service: input_select.select_option
     data:

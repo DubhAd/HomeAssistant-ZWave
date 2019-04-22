@@ -31,18 +31,6 @@ condition:
       - condition: numeric_state
         entity_id: sensor.living_room_multi_luminance
         below: 11
-  # We're here or guest mode is on
-  - condition: or
-    conditions:
-    - condition: state
-      entity_id: input_boolean.all_away
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.adults_away
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.guest_mode
-      state: 'on'
 action:
   - service: input_select.select_option
     data:

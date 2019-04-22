@@ -9,37 +9,7 @@ trigger:
     to: 'off'
     for:
       minutes: 10
-  - platform: state
-    entity_id: input_boolean.all_away
-    to: 'off'
-  - platform: state
-    entity_id: input_boolean.adults_away
-    to: 'off'
-  - platform: state
-    entity_id: input_boolean.all_away
-    to: 'off'
-    for:
-      minutes: 10
-  - platform: state
-    entity_id: input_boolean.adults_away
-    to: 'off'
-    for:
-      minutes: 10
-condition:
-  - condition: state
-    entity_id: input_boolean.living_room_occupied
-    state: 'off'
-  - condition: or
-    conditions: 
-    - condition: state
-      entity_id: input_boolean.all_away
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.adults_away
-      state: 'on'
-  - condition: state
-    entity_id: input_boolean.guest_mode
-    state: 'off'
+#condition:
 action:
   - service: input_select.select_option
     data:

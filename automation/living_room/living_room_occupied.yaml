@@ -40,18 +40,6 @@ condition:
     - condition: state
       entity_id: input_boolean.living_room_occupied
       state: 'off'
-    # Somebody home, or guest mode is on
-    - condition: or
-      conditions:
-      - condition: state
-        entity_id: input_boolean.all_away
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.adults_away
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.guest_mode
-        state: 'on'
     # Either things have been on for at least 5 minutes, or things are on and there's been motion 
     - condition: or
       conditions:
