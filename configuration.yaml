@@ -189,3 +189,7 @@ intent_script: !include_dir_named intent_scripts/
 weather: !include_dir_merge_list weather/
 
 #image_processing:
+
+circadian_lighting:
+  interval: 300
+  transition: 60

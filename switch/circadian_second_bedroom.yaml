@@ -1,0 +1,3 @@
+- platform: circadian_lighting
+  lights_ct:
+    - light.person1_bedroom_bedside

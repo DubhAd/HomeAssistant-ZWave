@@ -1,0 +1,4 @@
+- platform: circadian_lighting
+  lights_xy:
+    - light.hall_downstairs
+  disable_brightness_adjust: true
