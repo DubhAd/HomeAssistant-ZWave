@@ -1,0 +1,17 @@
+alias: 'Garage open nobody home'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_closed_car_sensor
+    to: 'on'
+condition:
+  - condition: state
+    state: 'on'
+    entity_id: input_boolean.all_away
+action:
+  - service: notify.person2
+    data:
+      message: "Nobody is home right now, turn off the alarm"
+      priority: '1'
+      sound: 'siren'
+      device: 'MyPhone'
