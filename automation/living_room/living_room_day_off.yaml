@@ -14,40 +14,28 @@ trigger:
     above: 35
     for:
       minutes: 10
-  - platform: state
-    entity_id: input_boolean.living_room_occupied
-    to: 'off'
+## Room no longer occupied
 condition:
   # Either it's bright, or the room is empty
-  - condition: or
+  - condition: and
     conditions:
-    - condition: and
+    - condition: template
+      value_template: "{{ not is_state('input_select.living_room','Day off') }}"
+    - condition: or
       conditions:
-      - condition: state
-        entity_id: input_boolean.living_room_occupied
-        state: 'off'
+        # Bright, or...
       - condition: numeric_state
         entity_id: sensor.living_room_multi_luminance
-        above: 10
-    - condition: and
-      conditions:
-      - condition: template
-        value_template: "{{ not is_state('input_select.living_room','Day off') }}"
-      - condition: or
+        above: 50
+      - condition: and
         conditions:
-          # Bright, or...
+          # Sun is rising
+        - condition: state
+          entity_id: binary_sensor.trend_sun_elevation
+          state: 'on'
         - condition: numeric_state
           entity_id: sensor.living_room_multi_luminance
-          above: 50
-        - condition: and
-          conditions:
-            # Sun is rising
-          - condition: state
-            entity_id: binary_sensor.trend_sun_elevation
-            state: 'on'
-          - condition: numeric_state
-            entity_id: sensor.living_room_multi_luminance
-            above: 35
+          above: 35
 action:
   - service: input_select.select_option
     data:

@@ -9,7 +9,13 @@ trigger:
     to: 'off'
     for:
       minutes: 10
-#condition:
+  - platform: state
+    entity_id: input_boolean.all_away
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: input_boolean.living_room_occupied
+    state: 'off'
 action:
   - service: input_select.select_option
     data:

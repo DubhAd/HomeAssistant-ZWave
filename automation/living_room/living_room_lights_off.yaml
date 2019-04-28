@@ -3,9 +3,6 @@ alias: 'Living room lights off'
 trigger:
   - platform: state
     entity_id: input_select.living_room
-    to: Night off
-  - platform: state
-    entity_id: input_select.living_room
     to: Day off
   - platform: state
     entity_id: input_select.living_room

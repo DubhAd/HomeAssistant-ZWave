@@ -15,6 +15,13 @@ action:
   - service: homeassistant.turn_off
     entity_id: input_boolean.livingroom_lights_auto
   - service: switch.turn_on
-    entity_id: switch.tv_light_switch
-  - service: switch.turn_on
-    entity_id: switch.livingroom_socket_switch
+    entity_id:
+      - switch.tv_light_switch
+      - switch.livingroom_socket_switch
+  - condition: state
+    entity_id: switch.cabinet_light_switch
+    state: 'on'
+  - service: switch.turn_off
+    entity_id:
+      - switch.cabinet_light_switch
+      - switch.table_light_switch
