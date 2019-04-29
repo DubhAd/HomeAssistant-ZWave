@@ -6,8 +6,11 @@ trigger:
     to: 'on'
 condition:
   - condition: state
-    state: 'on'
-    entity_id: input_boolean.all_away
+    state: 'off'
+    entity_id: input_boolean.person3_home
+  - condition: state
+    state: 'off'
+    entity_id: input_boolean.person1_home
 action:
   - service: notify.person2
     data:
