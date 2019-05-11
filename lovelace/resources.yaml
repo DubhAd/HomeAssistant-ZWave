@@ -21,3 +21,6 @@
   type: module
 - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/weather-card/weather-card.min.js
   type: module
+  # https://github.com/pkozul/lovelace-floorplan
+- type: module
+  url: /local/floorplan/floorplan-card.js?v=1
