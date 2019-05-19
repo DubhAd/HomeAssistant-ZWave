@@ -2,7 +2,7 @@ initial_state: 'on'
 alias: 'Alarm armed trigger'
 trigger:
   - platform: state
-    entity_id: group.my_exterior_doors
+    entity_id: group.my_alarm_sensors
     to: 'on'
 condition:
   # Alarm is armed

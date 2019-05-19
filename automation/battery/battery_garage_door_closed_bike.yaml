@@ -17,6 +17,6 @@ trigger:
     for:
       minutes: 5
 action:
-  service: notify.person2
+  service: notify.logfile
   data:
-    message: "The garage door sensor for the bike is at {{ states('zwave_battery_garage_closed_bike') }}% battery, it uses a ER14250 battery"
+    message: "SENDME The garage door sensor for the bike is at {{ states('zwave_battery_garage_closed_bike') }}% battery, it uses a ER14250 battery"

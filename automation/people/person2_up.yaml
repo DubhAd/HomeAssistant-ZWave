@@ -25,12 +25,6 @@ trigger:
     to: 'off'
     for:
       minutes: 5
-  # The laptop is on
-  - platform: state
-    entity_id: group.person_person2_laptop
-    to: 'home'
-    for:
-      minutes: 2
 condition:
   - condition: state
     entity_id: input_boolean.person2_is_awake

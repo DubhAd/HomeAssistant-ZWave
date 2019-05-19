@@ -19,6 +19,8 @@ cards:
   - automation.mark_person_as_just_left
   - automation.tasker_hook
   - type: divider
+  - automation.adults_away_something_open
+  - type: divider
   - automation.person4_coming_home
   - automation.person4_away
   - automation.person4_home
@@ -29,3 +31,12 @@ cards:
   entities:
   - automation.holiday
   - automation.holiday_over
+  - automation.person2_at_amsterdam_airport
+  - automation.person2_at_brussels_airport
+  - automation.person2_at_paris_cdg_airport
+  - automation.person2_at_work_airport_returning
+  - automation.person2_at_work_airport
+  - automation.person2_at_dulles_airport
+  - automation.person2_at_lcy
+  - automation.person2_at_lhr
+  - automation.person2_at_sin

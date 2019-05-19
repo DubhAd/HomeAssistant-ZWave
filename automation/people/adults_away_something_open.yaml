@@ -1,0 +1,27 @@
+alias: 'Adults away something open'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: input_boolean.adults_away
+    from: 'off'
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: group.my_alarm_sensors
+    state: 'on'
+action:
+  # Notify the last person to leave
+  - service_template: >-
+      {% if as_timestamp(states.input_boolean.person2_home.last_updated) > as_timestamp(states.input_boolean.person3_home.last_updated) %}
+        notify.person2
+      {% else %}
+        notify.person3
+      {% endif %}
+    data_template: 
+      message: >-
+        The following are open: 
+        {%- for my_entity in states.group.my_alarm_sensors.attributes.entity_id -%}
+          {% set parts = my_entity.split('.') -%}
+          {%- if states(my_entity) == 'on' %}
+          {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}
+        {%- endfor %}

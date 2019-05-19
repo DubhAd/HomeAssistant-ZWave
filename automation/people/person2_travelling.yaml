@@ -2,8 +2,8 @@ alias: 'person2 Travelling'
 initial_state: 'on'
 trigger:
   - platform: numeric_state
-    entity_id: sensor.person2s_time_to_home_2
-    above: '180'
+    entity_id: proximity.person2_home
+    above: 100000
     for:
       hours: 3
   - platform: homeassistant
@@ -17,8 +17,8 @@ condition:
     entity_id: input_boolean.person2_home
     state: 'off'
   - condition: numeric_state
-    entity_id: sensor.person2s_time_to_home_2
-    above: '180'
+    entity_id: proximity.person2_home
+    above: 100000
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person2_travelling

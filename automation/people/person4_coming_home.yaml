@@ -2,8 +2,8 @@ alias: 'person4 coming home'
 initial_state: 'on'
 trigger:
   - platform: numeric_state
-    entity_id: sensor.person4s_time_to_home
-    below: 20
+    entity_id: proximity.person4_home
+    below: 15
 condition:
   condition: and
   conditions:

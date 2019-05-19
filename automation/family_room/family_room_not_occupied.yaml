@@ -4,22 +4,30 @@ trigger:
   - platform: state
     entity_id: device_tracker.family_tv
     to: 'not_home'
+    for: '00:03:00'
   - platform: state
     entity_id: media_player.family_room
     to: 'paused'
+    for: '00:03:00'
   - platform: state
     entity_id: media_player.family_room
     to: 'off'
+    for: '00:03:00'
   - platform: state
     entity_id: media_player.cast_kitchen_speaker
     to: 'off'
+    for: '00:03:00'
   - platform: state
     entity_id: media_player.cast_kitchen_speaker
     to: 'idle'
+    for: '00:03:00'
   - platform: state
     entity_id: calendar.person2
     to: 'off'
 condition:
+  - condition: state
+    entity_id: input_boolean.family_room_occupied
+    state: 'on'
   - condition: or
     conditions:
     - condition: and

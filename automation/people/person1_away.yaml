@@ -15,5 +15,8 @@ condition:
   - condition: state
     entity_id: group.person_person1
     state: 'not_home'
+  # An exit door recently opened or closed
+  - condition: template
+    value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exit_doors.last_updated)) | int < 600 }}"
 action:
   - service: script.person1_away

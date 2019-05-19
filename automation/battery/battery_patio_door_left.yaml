@@ -17,6 +17,6 @@ trigger:
     for:
       minutes: 5
 action:
-  service: notify.person2
+  service: notify.logfile
   data:
-    message: "The utility door sensor is at {{ states('sensor.zwave_battery_patio_door_left') }}% battery, buy a replacement soon"
+    message: "SENDME The utility door sensor is at {{ states('sensor.zwave_battery_patio_door_left') }}% battery, buy a replacement soon"

@@ -16,6 +16,6 @@ condition:
       entity_id: input_select.person2_status_dropdown
       state: 'Home'
 action:
-  - service: notify.person2
+  - service: notify.logfile
     data:
-      message: "person3's nearly home"
+      message: "SENDME person3's nearly home"

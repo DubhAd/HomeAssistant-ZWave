@@ -5,5 +5,5 @@
   title_param_name: username
   data:
     username: Home Assistant
-  resource: "magic_discord_webhook
+  resource: !secret discord_webhook
 

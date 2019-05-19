@@ -13,6 +13,9 @@ trigger:
   - platform: template
     value_template: "{{ is_state('calendar.person2', 'on') and is_state_attr('calendar.person2', 'message', 'Game night') and is_state('input_boolean.person2_home', 'on') }}"
 condition:
+  - condition: state
+    entity_id: input_boolean.family_room_occupied
+    state: 'off'
   # TV or music on or game night
   - condition: or
     conditions:

@@ -19,9 +19,9 @@ condition:
       entity_id: input_boolean.person2_home
       state: 'on'
 action:
-  - service: notify.person2
+  - service: notify.logfile
     data_template: 
-      message: "{{ states.sensor.trains_to_station.state }}"
+      message: "SENDME {{ states.sensor.trains_to_station.state }}"
   - service: notify.lm_notify
     data_template: 
       message: "{{ states.sensor.trains_to_station.state }}"

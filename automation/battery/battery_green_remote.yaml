@@ -17,6 +17,6 @@ trigger:
     for:
       minutes: 5
 action:
-  service: notify.person2
+  service: notify.logfile
   data:
-    message: "The remote is at {{ states('sensor.zwave_battery_green_remote') }}% battery, it uses a CR2032 coin cell"
+    message: "SENDME The remote is at {{ states('sensor.zwave_battery_green_remote') }}% battery, it uses a CR2032 coin cell"

@@ -4,104 +4,128 @@ path: info
 icon: mdi:information-outline
 cards:
 - type: custom:compact-custom-header
-- type: entities
-  title: Rooms
-  show_header_toggle: false
-  entities:
-  - input_select.living_room
-  - input_boolean.living_room_occupied
-  - input_select.family_room
-  - input_boolean.family_room_occupied
-  - input_boolean.office_occupied
-- type: entities
-  title: Sensors
-  show_header_toggle: false
-  entities:
-  - sun.sun
-  - sensor.sun_elevation
-  - binary_sensor.zwave_health
-  - entity: sensor.last_opened
-    icon: mdi:door
-  - entity: sensor.last_motion
-    icon: mdi:run
-- type: entities
-  title: Trend sensors
-  show_header_toggle: false
-  entities:
-  - binary_sensor.trend_living_room_light
-  - binary_sensor.trend_sun_elevation
-- type: glance
-  title: Devices
-  show_header_toggle: false
-  entities:
-  - entity: device_tracker.family_tv
-    name: Family room
-  - entity: device_tracker.livingroom_chromecast
-    name: Living room chromecast
-  - entity: media_player.cast_living_room_tv
-    name: Living room chromecast
-  - entity: media_player.samsung_tv_remote
-    name: Living room TV
-- type: glance
-  title: Printer status
-  show_header_toggle: false
-  entities:
-  - entity: sensor.samsung_m283x_series_172237250_toner_black
-    name: Toner
-  - sensor.printer_toner_remaining
-  - entity: sensor.samsung_m283x_series_172237250_drum_black
-    name: Drum
-  - sensor.printer_imaging_unit_remaining
-  - sensor.printer_forward_roller_remaining
-  - sensor.printer_pick_up_roller_remaining
-  - sensor.printer_retard_roller_remaining
-  - sensor.printer_transfer_roller_remaining
-  - sensor.printer_fuser_life_remaining
-- type: glance
-  title: Z-Wave battery devices
-  show_header_toggle: false
-  columns: 4
-  entities:
-    - entity: zwave.garage_closed_bike
-      name: Garage left
-    - entity: sensor.zwave_battery_garage_closed_bike
-      name: Garage left
-    - entity: zwave.garage_closed_car
-      name: Garage car
-    - entity: sensor.zwave_battery_garage_closed_car
-      name: Garage car
-    - zwave.front_door
-    - sensor.zwave_battery_front_door
-    - zwave.patio_door_left
-    - sensor.zwave_battery_patio_door_left
-    - zwave.utility_door_exterior
-    - entity: sensor.zwave_battery_utility_door_exterior
-      name: Utility door
-    - zwave.living_room_multi
-    - sensor.zwave_battery_living_room_multi
-    - zwave.nodon_crc3100_octan_remote
-    - sensor.zwave_battery_nodon_crc3100_octan_remote
-    - zwave.green_remote
-    - sensor.zwave_battery_green_remote
-    - zwave.utility
-    - entity: sensor.zwave_battery_utility
-      name: Utility switch
-- type: glance
-  title: Z-Wave mains
-  show_header_toggle: false
-  entities:
-  - zwave.zwaveme_razberry_controller_2016_zwave
-  - zwave.table_light
-  - zwave.cabinet_light
-  - zwave.tv_light
-  - zwave.number_sign
-  - zwave.garden_lights
-  - zwave.spare_socket
-  - zwave.master_bedroom_socket
-  - zwave.office_multi
-  - zwave.second_bedroom
-  - zwave.family_room_socket
-  - zwave.hall_downstairs
-  - zwave.livingroom_socket
-  - zwave.vestibule
-  - zwave.front_bedroom
+- type: vertical-stack
+  cards:
+  - type: entities
+    title: Rooms
+    show_header_toggle: false
+    entities:
+    - input_select.living_room
+    - input_boolean.living_room_occupied
+    - input_select.family_room
+    - input_boolean.family_room_occupied
+    - input_boolean.office_occupied
+  - type: glance
+    title: Devices
+    show_header_toggle: false
+    entities:
+    - entity: device_tracker.family_tv
+      name: Family room
+    - entity: device_tracker.livingroom_chromecast
+      name: Living room chromecast
+    - entity: media_player.cast_living_room_tv
+      name: Living room chromecast
+    - entity: media_player.samsung_tv_remote
+      name: Living room TV
+  - type: glance
+    title: Printer status
+    show_header_toggle: false
+    entities:
+    - entity: sensor.samsung_m283x_series_172237250_toner_black
+      name: Toner
+    - sensor.printer_toner_remaining
+    - entity: sensor.samsung_m283x_series_172237250_drum_black
+      name: Drum
+    - sensor.printer_imaging_unit_remaining
+    - sensor.printer_forward_roller_remaining
+    - sensor.printer_pick_up_roller_remaining
+    - sensor.printer_retard_roller_remaining
+    - sensor.printer_transfer_roller_remaining
+    - sensor.printer_fuser_life_remaining
+- type: vertical-stack
+  cards:
+  - type: entities
+    title: Zigbee
+    show_header_toggle: false
+    entities:
+    - entity: switch.zigbee2mqtt_enable_join
+      name: Join
+      icon: mdi:toggle-switch
+    - entity: sensor.zigbee2mqtt_bridge_state
+      name: Bridge
+    - entity: binary_sensor.zigbee2mqtt_router_1
+      name: Router
+  - type: glance
+    title: Zigbee battery devices
+    show_header_toggle: false
+    columns: 4
+    entities:
+      - entity: sensor.guestbedroom_window_left_battery
+        name: Guest left
+      - entity: sensor.guestbedroom_window_right_battery
+        name: Guest right
+  - type: entities
+    title: Sensors
+    show_header_toggle: false
+    entities:
+    - sun.sun
+    - sensor.sun_elevation
+    - binary_sensor.zwave_health
+    - entity: sensor.last_opened
+      icon: mdi:door
+    - entity: sensor.last_motion
+      icon: mdi:run
+    - entity: binary_sensor.trend_living_room_light
+      name: Living room getting brighter
+    - entity: binary_sensor.trend_sun_elevation
+      name: Sun rising
+- type: vertical-stack
+  cards:
+  - type: glance
+    title: Z-Wave battery devices
+    show_header_toggle: false
+    columns: 4
+    entities:
+      - entity: zwave.garage_closed_bike
+        name: Garage left
+      - entity: sensor.zwave_battery_garage_closed_bike
+        name: Garage left
+      - entity: zwave.garage_closed_car
+        name: Garage car
+      - entity: sensor.zwave_battery_garage_closed_car
+        name: Garage car
+      - zwave.front_door
+      - sensor.zwave_battery_front_door
+      - zwave.patio_door_left
+      - sensor.zwave_battery_patio_door_left
+      - zwave.utility_door_exterior
+      - entity: sensor.zwave_battery_utility_door_exterior
+        name: Utility door
+      - zwave.living_room_multi
+      - sensor.zwave_battery_living_room_multi
+      - zwave.nodon_crc3100_octan_remote
+      - sensor.zwave_battery_nodon_crc3100_octan_remote
+      - zwave.green_remote
+      - sensor.zwave_battery_green_remote
+      - zwave.utility
+      - entity: sensor.zwave_battery_utility
+        name: Utility switch
+  - type: glance
+    title: Z-Wave mains
+    show_header_toggle: false
+    entities:
+    - zwave.zwaveme_razberry_controller_2016_zwave
+    - zwave.table_light
+    - zwave.cabinet_light
+    - zwave.tv_light
+    - zwave.number_sign
+    - zwave.garden_lights
+    - zwave.spare_socket
+    - zwave.master_bedroom_socket
+    - zwave.office_multi
+    - zwave.second_bedroom
+    - zwave.family_room_socket
+    - zwave.hall_downstairs
+    - zwave.livingroom_socket
+    - zwave.vestibule
+    - zwave.front_bedroom

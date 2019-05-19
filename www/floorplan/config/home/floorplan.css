@@ -269,6 +269,18 @@ background-color: var(--primary-background-color);
 
 /* Media player */
 
+.homehub-off {
+  fill: #515151 !important;
+}
+
+.homehub-paused {
+  fill: #518151 !important;
+}
+
+.homehub-on {
+  fill: #F1F1F1 !important;
+}
+
 .squeezebox-off {
   fill: #8270A2 !important;
 }
@@ -293,7 +305,7 @@ background-color: var(--primary-background-color);
 /* People */
 
 .tracker-away {
-  fill: #445044 !important;
+  fill: #585858 !important;
 }
 
 .tracker-travel {

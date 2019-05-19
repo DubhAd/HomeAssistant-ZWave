@@ -13,8 +13,8 @@ condition:
         entity_id: input_boolean.all_away
         state: 'on'
 action:
-  - service: notify.person2
+  - service: notify.logfile
     data:
-      message: "Nobody's home right now"
+      message: "SENDME Nobody's home right now"
   - service: homeassistant.turn_off
     entity_id: automation.person2_coming_home

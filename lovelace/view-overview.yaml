@@ -220,7 +220,7 @@ cards:
         name: Socket
   - type: glance
     title: Guest bedroom
-    columns: 3
+    columns: 5
     entities:
       - entity: media_player.cast_guest_bedroom_speaker
         name: Home Mini
@@ -231,6 +231,10 @@ cards:
       - entity: switch.spare_socket_switch
         tap_action: 
           action: toggle
+      - entity: binary_sensor.guest_bedroom_window_left
+        name: Left window
+      - entity: binary_sensor.guest_bedroom_window_right
+        name: Right window
   - type: glance
     title: Office
     columns: 4

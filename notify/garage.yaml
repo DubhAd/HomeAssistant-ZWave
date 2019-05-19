@@ -4,4 +4,4 @@
     - service: lm_notify
     - service: slack_notify
     - service: person3
-    - service: push
+    - service: hangouts_webhook

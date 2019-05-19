@@ -4,6 +4,6 @@ trigger:
   platform: state
   entity_id: updater.updater
 action:
-  service: notify.person2
+  service: notify.logfile
   data:
-    message: 'Update for Home Assistant is available.'
+    message: 'SENDME Update for Home Assistant is available.'

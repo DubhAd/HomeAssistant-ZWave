@@ -19,22 +19,11 @@ condition:
   - condition: state
     entity_id: input_boolean.person4_home
     state: 'on'
-  - condition: numeric_state
+  # An exit door recently opened or closed
+  - condition: template
+    value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exit_doors.last_updated)) | int < 600 }}"
+  - condition: state
     entity_id: group.person_dor
-    below: 2
-    value_template: "{{ dict((states|selectattr('entity_id', 'in', state_attr('group.person_person4', 'entity_id'))|list)|groupby('state'))['home']|count }}"
-  - condition: or
-    conditions:
-    # A door was opened/closed in the last 10 minutes
-    - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exterior_doors.last_updated)) | int < 600 }}"
-    - condition: and
-      conditions:
-      # WiFi and BT away for at least 4 minutes
-      - condition: state
-        entity_id: device_tracker.001d29a549ae
-        state: 'not_home'
-        for:
-          minutes: 4
+    state: 'not_home'
 action:
-  - service: script.person1_away
+  - service: script.person4_away

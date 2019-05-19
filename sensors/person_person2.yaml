@@ -10,6 +10,8 @@
           Near home ({{ states("input_select.person2_status_dropdown") }})
         {% elif not is_state("device_tracker.person2_mobile_gps", "not_home") %}
           At {{ states("device_tracker.person2_mobile_gps") }}
+        {% elif ( not 'UK' in state_attr('sensor.person2s_time_to_home_2', 'origin_addresses')[0] ) or ( states('proximity.person2_home') > 670000 ) %}
+          Overseas
         {% else %}
           {{ state_attr('sensor.person2s_time_to_home_2', 'duration') }} to home
         {% endif %}

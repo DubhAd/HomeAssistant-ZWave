@@ -66,6 +66,21 @@ my_exterior_doors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
+my_exterior_windows:
+  name: Windows
+  entities:
+  - binary_sensor.guest_bedroom_window_left
+  - binary_sensor.guest_bedroom_window_right
+my_alarm_sensors:
+  name: Alarm sensors
+  entities:
+  - binary_sensor.front_door_sensor
+  - binary_sensor.patio_door_left_sensor
+  - binary_sensor.utility_door_exterior_sensor
+  - binary_sensor.garage_closed_bike_sensor
+  - binary_sensor.garage_closed_car_sensor
+  - binary_sensor.guest_bedroom_window_left
+  - binary_sensor.guest_bedroom_window_right
 my_exit_doors:
   name: Doors we exit by
   entities:

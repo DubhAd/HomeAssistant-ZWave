@@ -17,6 +17,6 @@ trigger:
     for:
       minutes: 5
 action:
-  service: notify.person2
+  service: notify.logfile
   data:
-    message: "The livingroom multi sensor is at {{ states('sensor.zwave_battery_living_room_multi') }}% battery, it uses a CR123A lithium battery"
+    message: "SENDME The livingroom multi sensor is at {{ states('sensor.zwave_battery_living_room_multi') }}% battery, it uses a CR123A lithium battery"

@@ -11,14 +11,9 @@ condition:
   - condition: state
     entity_id: input_boolean.person3_home
     state: 'on'
-  - condition: or
-    conditions:
-    # awake, or door opened recently - BT intermittently fails
-    - condition: state
-      entity_id: input_boolean.person3_is_awake
-      state: 'on'
-    - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exterior_doors.last_updated)) | int < 600 }}"
+  # Door recently opened
+  - condition: template
+    value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exit_doors.last_updated)) | int < 600 }}"
   # Both Wifi and BT say away
   - condition: state
     entity_id: group.person_person3
