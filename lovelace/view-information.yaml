@@ -64,6 +64,8 @@ cards:
         name: Guest left
       - entity: sensor.guestbedroom_window_right_battery
         name: Guest right
+      - entity: sensor.hall_downstairs_motion_battery
+        name: Downstairs hall motion
   - type: entities
     title: Sensors
     show_header_toggle: false

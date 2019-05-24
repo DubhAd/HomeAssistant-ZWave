@@ -222,6 +222,7 @@ cards:
         - entities:
             - sensor.living_room_multi_luminance
             - sensor.office_multi_luminance
+            - sensor.hall_downstairs_illuminance
           text_template: '${entity.state ? entity.state : "unknown"} lux'
           class_template: '
             var light = parseFloat(entity.state.replace("°", ""));
@@ -300,6 +301,7 @@ cards:
         - entities:
             - binary_sensor.living_room_motion
             - binary_sensor.office_multi_sensor
+            - binary_sensor.hall_downstairs_occupancy
           states:
             - state: 'off'
               class: 'motion-background'
@@ -347,4 +349,4 @@ cards:
               class: 'alarm-armed_custom_bypass'
           propagate: true
 
-  - type: custom:compact-custom-header
+  #- type: custom:compact-custom-header

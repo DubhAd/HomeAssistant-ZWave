@@ -68,8 +68,7 @@ cards:
         name: "Home Hub"
   - type: glance
     title: Hall
-    columns: 2
-    show_state: false
+    columns: 4
     entities:
       - entity: light.hall_downstairs
         name: Hall light
@@ -77,6 +76,10 @@ cards:
         name: Hall socket
         tap_action: 
           action: toggle
+      - entity: binary_sensor.hall_downstairs_occupancy
+        name: Motion
+      - entity: sensor.hall_downstairs_illuminance
+        name: "Light level"
   - type: glance
     title: Front of house
     columns: 5

@@ -23,6 +23,7 @@ cards:
     image: /local/images/downstairs_hall.jpg
     title: Downstairs hall
     entities:
+      - binary_sensor.hall_downstairs_occupancy
       - light.hall_downstairs
       - switch.hall_downstairs_switch
   - type: picture-glance
