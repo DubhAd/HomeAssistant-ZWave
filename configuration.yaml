@@ -71,7 +71,7 @@ recorder:
       - sensor.time
       - sensor.time_utc
 
-#influxdb: !include influxdb.yaml
+influxdb: !include influxdb.yaml
 
 tts:
   - platform: google
