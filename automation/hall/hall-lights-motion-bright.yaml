@@ -1,0 +1,26 @@
+initial_state: 'on'
+alias: 'Hall lights motion bright'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.hall_downstairs_occupancy
+    to: 'on'
+condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    - condition: state
+      entity_id: light.hall_downstairs
+      state: 'on'
+    - condition: numeric_state
+      entity_id: light.hall_downstairs
+      value_template: "{{ state_attr('light.hall_downstairs','white_value') }}"
+      below: 15
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 15

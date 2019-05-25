@@ -5,7 +5,7 @@ sequence:
       entity_id: light.hall_downstairs
       brightness: 0
       rgb_color: [0, 0, 0]
-      white_value: 15
+      white_value: 1
   - condition: state
     entity_id: light.hall_downstairs
     state: 'off'
@@ -14,4 +14,4 @@ sequence:
       entity_id: light.hall_downstairs
       brightness: 0
       rgb_color: [0, 0, 0]
-      white_value: 15
+      white_value: 5

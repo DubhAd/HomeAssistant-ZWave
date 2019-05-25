@@ -20,6 +20,8 @@ cards:
   - automation.hall_lights_off_departure
   - automation.hall_lights_off_delay
   - automation.hall_lights_night
+  - automation.hall_lights_motion_bright
+  - automation.hall_lights_motion_dull
 - type: entities
   title: Automations for the front of the house
   show_header_toggle: false
