@@ -10,14 +10,104 @@ condition:
     - condition: state
       entity_id: input_boolean.lighting_automations
       state: 'on'
-    - condition: state
-      entity_id: light.hall_downstairs
-      state: 'on'
-    - condition: numeric_state
-      entity_id: light.hall_downstairs
-      value_template: "{{ state_attr('light.hall_downstairs','white_value') }}"
-      below: 15
+    - condition: or
+      conditions:
+      - condition: and
+        conditions:
+        # And the hall light is on and dim
+        - condition: state
+          entity_id: light.hall_downstairs
+          state: 'on'
+        - condition: numeric_state
+          entity_id: light.hall_downstairs
+          value_template: "{{ state_attr('light.hall_downstairs','white_value') }}"
+          below: 15
+      - condition: and
+        conditions:
+        # Hall light is off, light levels are generally low
+        - condition: state
+          entity_id: light.hall_downstairs
+          state: 'off'
+        - condition: numeric_state
+          entity_id: sensor.hall_downstairs_illuminance
+          below: 1
+        - condition: numeric_state
+          entity_id: sensor.living_room_multi_luminance
+          below: 40
 action:
+  # Doesn't, currently, support transitions
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 6
+  - delay:
+      milliseconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 7
+  - delay:
+      milliseconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 8
+  - delay:
+      milliseconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 9
+  - delay:
+      milliseconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 10
+  - delay:
+      milliseconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 11
+  - delay:
+      milliseconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 12
+  - delay:
+      milliseconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 13
+  - delay:
+      milliseconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.hall_downstairs
+      brightness: 0
+      rgb_color: [0, 0, 0]
+      white_value: 14
+  - delay:
+      milliseconds: 10
   - service: light.turn_on
     data:
       entity_id: light.hall_downstairs
