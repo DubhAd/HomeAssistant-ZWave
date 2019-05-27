@@ -37,6 +37,15 @@ condition:
         - condition: state
           entity_id: input_boolean.bedtime
           state: 'off'
+        # Home or guest mode
+        - condition: or
+          conditions:
+          - condition: state
+            entity_id: input_boolean.all_away
+            state: 'off'
+          - condition: state
+            entity_id: input_boolean.guest_mode
+            state: 'on'
 action:
   # Doesn't, currently, support transitions
   - service: light.turn_on
