@@ -12,6 +12,7 @@ action:
   - service: notify.person2
     data:
       message: "You idiot, you left the garage door open"
-      priority: '1'
-      sound: 'siren'
-      device: 'MyPhone'
+      data:
+        priority: '1'
+        sound: 'siren'
+        device: 'MyPhone'

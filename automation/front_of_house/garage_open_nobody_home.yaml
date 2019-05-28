@@ -15,6 +15,7 @@ action:
   - service: notify.person2
     data:
       message: "Nobody is home right now, turn off the alarm"
-      priority: '1'
-      sound: 'siren'
-      device: 'MyPhone'
+      data:
+        priority: '1'
+        sound: 'siren'
+        device: 'MyPhone'

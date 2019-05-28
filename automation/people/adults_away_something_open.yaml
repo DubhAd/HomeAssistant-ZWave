@@ -25,3 +25,12 @@ action:
           {%- if states(my_entity) == 'on' %}
           {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}
         {%- endfor %}
+      data:
+        priority: '1'
+        sound: 'siren'
+        device: >-
+          {% if (as_timestamp(states.input_boolean.person2_home.last_updated) > as_timestamp(states.input_boolean.person3_home.last_updated)) %} 
+            MyPhone
+          {% else %}
+            nexus5x
+          {% endif %}
