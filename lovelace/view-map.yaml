@@ -40,4 +40,4 @@ cards:
         default_zoom: 18
         entities:
           - device_tracker.person4_mobile
-  - type: custom:compact-custom-header
+    - type: custom:compact-custom-header
