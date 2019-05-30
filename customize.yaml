@@ -128,7 +128,7 @@ binary_sensor.garage_closed_car_sensor:
   device_class: garage_door
 sensor.office_multi_luminance:
   friendly_name: Office light level
-  icon: mdi:white-balance-sunny
+  device_class: illuminance
 sensor.office_multi_relative_humidity:
   friendly_name: Office humidity
   icon: mdi:water-percent
@@ -251,7 +251,7 @@ binary_sensor.living_room_motion:
   device_class: motion
 sensor.living_room_multi_luminance:
   friendly_name: Lounge Light level
-  icon: mdi:white-balance-sunny
+  device_class: illuminance
 sensor.living_room_multi_temperature:
   friendly_name: Lounge Temperature
 zwave.living_room_multi:

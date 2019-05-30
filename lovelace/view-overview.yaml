@@ -133,22 +133,30 @@ cards:
       type: entities
       title: OCD alignment fixer
   - type: glance
-    title: Environment
-    columns: 5
+    title: Light
+    columns: 3
     entities:
-      - entity: sensor.hall_downstairs_illuminance
-        name: "Hall light level"
-      - entity: sensor.living_room_multi_temperature
-        name: "Living room Temperature"
       - entity: sensor.living_room_multi_luminance
-        name: "Living room light level"
-      - entity: sensor.master_ensuite_temperature
-        name: "Master ensuite temperature"
-      - entity: sensor.master_ensuite_humidity
-        name: "Master ensuite humidity"
-      - entity: sensor.office_multi_temperature
-        name: "Office temperature"
+        name: "Living room"
+      - entity: sensor.hall_downstairs_illuminance
+        name: "Downstairs hall"
       - entity: sensor.office_multi_luminance
-        name: "Office light level"
+        name: "Office"
+  - type: glance
+    title: Temperature
+    columns: 3
+    entities:
+      - entity: sensor.living_room_multi_temperature
+        name: "Living room"
+      - entity: sensor.master_ensuite_temperature
+        name: "Master ensuite"
+      - entity: sensor.office_multi_temperature
+        name: "Office"
+  - type: glance
+    title: Humidity
+    columns: 3
+    entities:
+      - entity: sensor.master_ensuite_humidity
+        name: "Master ensuite"
       - entity: sensor.office_multi_relative_humidity
-        name: "Office humdity"
+        name: "Office"
