@@ -84,13 +84,14 @@ cards:
       title: Lights
   - type: entity-filter
     entities:
-      - entity: device_tracker.family_tv
-        name: Family room
       - entity: media_player.samsung_tv_remote
         name: Living room
+      - entity: device_tracker.family_tv
+        name: Family room
     show_empty: false
     state_filter:
       - 'on'
+      - 'home'
     card:
       type: glance
       title: TVs
