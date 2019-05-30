@@ -1,0 +1,94 @@
+title: First floor
+id: first-floor
+path: first-floor
+icon: mdi:numeric-1-box
+cards:
+- type: custom:compact-custom-header
+  main_config: true
+  menu: overflow
+  notifications: overflow
+  options: clock
+  voice: hide
+  clock_format: 24
+- type: glance
+  title: Master bedroom
+  columns: 5
+  entities:
+    - entity: light.master_bedroom_bedhead
+      name: Bedhead
+    - entity: media_player.person2
+      name: Squeezebox
+    - entity: media_player.cast_master_bedroom_speaker
+      name: Home Mini
+    - entity: switch.radio_person2
+      icon: mdi:alarm
+      tap_action: 
+        action: toggle
+      name: Alarms
+    - entity: switch.master_bedroom_socket_switch
+      tap_action: 
+        action: toggle
+      name: Socket
+- type: glance
+  title: Master ensuite
+  columns: 3
+  entities:
+    - entity: sensor.master_ensuite_humidity
+      name: Humidity
+    - entity: sensor.master_ensuite_temperature
+      name: Temperature
+    - entity: sensor.master_ensuite_pressure
+      name: Pressure
+- type: glance
+  title: Second bedroom
+  #column_width: 25%
+  columns: 5
+  entities:
+    - entity: light.person1_bedroom_bedside
+      name: Bedhead
+    - entity: media_player.person1
+      name: Squeezebox
+    - entity: media_player.cast_second_bedroom_speaker
+      name: Home Mini
+    - entity: switch.radio_person1
+      icon: mdi:alarm
+      tap_action: 
+        action: toggle
+      name: Alarms
+    - entity: switch.second_bedroom_switch
+      tap_action: 
+        action: toggle
+      name: Socket
+- type: glance
+  title: Guest bedroom
+  columns: 5
+  entities:
+    - entity: media_player.cast_guest_bedroom_speaker
+      name: Home Mini
+    - entity: switch.front_bedroom_switch
+      tap_action: 
+        action: toggle
+      name: Socket
+    - entity: switch.spare_socket_switch
+      tap_action: 
+        action: toggle
+    - entity: binary_sensor.guest_bedroom_window_left
+      name: Left window
+    - entity: binary_sensor.guest_bedroom_window_right
+      name: Right window
+- type: glance
+  title: Office
+  columns: 4
+  entities:
+    - entity: binary_sensor.office_multi_sensor
+      name: Motion
+    - entity: sensor.office_multi_temperature
+      name: Temperature
+    - entity: sensor.office_multi_luminance
+      name: Light level
+    - entity: sensor.office_multi_relative_humidity
+      name: Humidity
+    - entity: media_player.office
+      name: Sonos
+    - entity: media_player.googlehomehub8747
+      name: "Home Hub"

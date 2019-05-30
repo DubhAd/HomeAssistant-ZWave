@@ -2,6 +2,8 @@ title: Our Home
 resources: !include lovelace/resources.yaml
 views:
   - !include lovelace/view-overview.yaml
+  - !include lovelace/view-floor-ground.yaml
+  - !include lovelace/view-floor-first.yaml
   - !include lovelace/view-rooms.yaml
   - !include lovelace/view-floorplan.yaml
   - !include lovelace/view-map.yaml

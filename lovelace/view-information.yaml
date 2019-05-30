@@ -66,6 +66,8 @@ cards:
         name: Guest right
       - entity: sensor.hall_downstairs_motion_battery
         name: Downstairs hall motion
+      - entity: sensor.master_ensuite_environment_battery
+        name: Master ensuite environment
   - type: entities
     title: Sensors
     show_header_toggle: false
