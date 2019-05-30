@@ -19,7 +19,7 @@ cards:
         name: Garage door, bike
       - entity: alert.garage_door_r
         name: Garage door, car
-    show_empty: true
+    show_empty: false
     state_filter:
       - 'on'
     card:
@@ -33,33 +33,6 @@ cards:
       - sensor.person1_travel
       - sensor.person2_travel
       - sensor.person4_travel
-  - type: glance
-    title: Living room
-    columns: 4
-    entities:
-      - entity: switch.tv_light_switch
-        tap_action: 
-          action: toggle
-      - entity: switch.cabinet_light_switch
-        tap_action: 
-          action: toggle
-      - entity: switch.table_light_switch
-        tap_action: 
-          action: toggle
-      - entity: switch.livingroom_socket_switch
-        name: "Socket"
-        tap_action: 
-          action: toggle
-  - type: glance
-    title: Environment
-    columns: 4
-    entities:
-      - entity: sensor.hall_downstairs_illuminance
-        name: "Hall light level"
-      - entity: sensor.living_room_multi_temperature
-        name: "Living room Temperature"
-      - entity: sensor.living_room_multi_luminance
-        name: "Living room light level"
 #####
 - type: vertical-stack
   cards:
@@ -78,7 +51,7 @@ cards:
         name: Left window
       - entity: binary_sensor.guest_bedroom_window_right
         name: Right window
-    show_empty: true
+    show_empty: false
     state_filter:
       - 'on'
     card:
@@ -103,7 +76,7 @@ cards:
         name: Hall socket
         tap_action: 
           action: toggle
-    show_empty: true
+    show_empty: false
     state_filter:
       - 'on'
     card:
@@ -115,7 +88,7 @@ cards:
         name: Family room
       - entity: media_player.samsung_tv_remote
         name: Living room
-    show_empty: true
+    show_empty: false
     state_filter:
       - 'on'
     card:
@@ -153,10 +126,29 @@ cards:
     entities:
       - entity: sun.sun
         name: Sun
-    show_empty: true
+    show_empty: false
     state_filter:
       - 'lost'
     card:
       type: entities
       title: OCD alignment fixer
-
+  - type: glance
+    title: Environment
+    columns: 5
+    entities:
+      - entity: sensor.hall_downstairs_illuminance
+        name: "Hall light level"
+      - entity: sensor.living_room_multi_temperature
+        name: "Living room Temperature"
+      - entity: sensor.living_room_multi_luminance
+        name: "Living room light level"
+      - entity: sensor.master_ensuite_temperature
+        name: "Master ensuite temperature"
+      - entity: sensor.master_ensuite_humidity
+        name: "Master ensuite humidity"
+      - entity: sensor.office_multi_temperature
+        name: "Office temperature"
+      - entity: sensor.office_multi_luminance
+        name: "Office light level"
+      - entity: sensor.office_multi_relative_humidity
+        name: "Office humdity"

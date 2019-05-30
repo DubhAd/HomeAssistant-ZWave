@@ -33,7 +33,7 @@ condition:
           below: 1
         - condition: numeric_state
           entity_id: sensor.living_room_multi_luminance
-          below: 40
+          below: 20
         - condition: state
           entity_id: input_boolean.bedtime
           state: 'off'
