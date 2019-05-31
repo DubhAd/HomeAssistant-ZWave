@@ -58,7 +58,7 @@ cards:
   - type: glance
     title: Zigbee battery devices
     show_header_toggle: false
-    columns: 4
+    columns: 5
     entities:
       - entity: sensor.guestbedroom_window_left_battery
         name: Guest left
@@ -68,6 +68,8 @@ cards:
         name: Downstairs hall motion
       - entity: sensor.master_ensuite_environment_battery
         name: Master ensuite environment
+      - entity: sensor.office_button_battery
+        name: Office button
   - type: entities
     title: Sensors
     show_header_toggle: false
