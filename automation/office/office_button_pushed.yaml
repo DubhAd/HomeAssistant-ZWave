@@ -6,7 +6,7 @@ trigger:
 condition:
   - condition: template
     value_template: >
-      {{ trigger.to_state.attributes.click == 'single' or ( trigger.to_state.attributes.click == trigger.from_state.attributes.click ) }}
+      {{ trigger.to_state.attributes.click == 'single' }}
 action:
   - service: media_player.media_play_pause
     data:
