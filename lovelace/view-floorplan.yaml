@@ -50,7 +50,7 @@ cards:
                 class: 'tracker-work'
               - state: 'London 2'
                 class: 'tracker-work'
-              - state: 'work'
+              - state: 'At work'
                 class: 'tracker-other'
               - state: 'home station'
                 class: 'tracker-travel'
