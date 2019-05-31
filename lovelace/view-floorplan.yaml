@@ -189,6 +189,7 @@ cards:
               - sensor.living_room_multi_temperature
               - sensor.office_multi_temperature
               - sensor.dark_sky_temperature
+              - sensor.master_ensuite_temperature
             text_template: '${entity.state ? entity.state : "unknown"} C'
             # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
             # text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'
@@ -209,6 +210,7 @@ cards:
   
           - entities:
               - sensor.office_multi_relative_humidity
+              - sensor.master_ensuite_humidity
             text_template: '${entity.state ? entity.state : "unknown"} %'
             class_template: '
               var humid = parseFloat(entity.state.replace("%", ""));
