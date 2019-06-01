@@ -480,3 +480,5 @@ binary_sensor.guest_bedroom_window_left:
   device_class: window
 binary_sensor.guest_bedroom_window_right:
   device_class: window
+binary_sensor.master_window_ensuite:
+  device_class: window

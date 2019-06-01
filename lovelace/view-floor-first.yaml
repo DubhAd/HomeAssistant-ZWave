@@ -31,7 +31,7 @@ cards:
       name: Socket
 - type: glance
   title: Master ensuite
-  columns: 3
+  columns: 4
   entities:
     - entity: sensor.master_ensuite_humidity
       name: Humidity
@@ -39,6 +39,8 @@ cards:
       name: Temperature
     - entity: sensor.master_ensuite_pressure
       name: Pressure
+    - entity: binary_sensor.master_window_ensuite
+      name: Window
 - type: glance
   title: Second bedroom
   #column_width: 25%

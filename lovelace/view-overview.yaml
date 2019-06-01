@@ -65,17 +65,19 @@ cards:
     entities:
       - binary_sensor.front_door_sensor
       - entity: binary_sensor.garage_closed_bike_sensor
-        name: bike
+        name: Garage door bike
       - entity: binary_sensor.garage_closed_car_sensor
-        name: Car
+        name: Garage door car
       - entity: binary_sensor.patio_door_left_sensor
         name: Patio door
       - entity: binary_sensor.utility_door_exterior_sensor
-        name: Utility
+        name: Utility door
       - entity: binary_sensor.guest_bedroom_window_left
-        name: Left window
+        name: Guest bedroom left
       - entity: binary_sensor.guest_bedroom_window_right
-        name: Right window
+        name: Guest bedroom right
+      - entity: binary_sensor.master_window_ensuite
+        name: Master ensuite window
     show_empty: false
     state_filter:
       - 'on'

@@ -68,6 +68,8 @@ cards:
         name: Downstairs hall motion
       - entity: sensor.master_ensuite_environment_battery
         name: Master ensuite environment
+      - entity: sensor.master_window_ensuite_battery
+        name: Master ensuite window
       - entity: sensor.office_button_battery
         name: Office button
   - type: entities
