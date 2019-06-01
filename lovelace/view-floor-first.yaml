@@ -92,3 +92,19 @@ cards:
       name: Sonos
     - entity: media_player.googlehomehub8747
       name: "Home Hub"
+- type: history-graph
+  title: Humidity
+  hours_to_show: 12
+  entities:
+    - entity: sensor.office_multi_relative_humidity
+      name: Office
+    - entity: sensor.master_ensuite_humidity
+      name: Master ensuite
+- type: history-graph
+  title: Temperature
+  hours_to_show: 12
+  entities:
+    - entity: sensor.office_multi_temperature
+      name: Office
+    - entity: sensor.master_ensuite_temperature
+      name: Master ensuite
