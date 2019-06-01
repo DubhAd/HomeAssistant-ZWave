@@ -100,3 +100,17 @@ cards:
     - entity: switch.garden_lights_switch
       tap_action: 
         action: toggle
+- type: history-graph
+  title: Light level
+  hours_to_show: 12
+  entities:
+    - entity: sensor.living_room_multi_luminance
+      name: Living room
+- type: history-graph
+  title: Temperature
+  hours_to_show: 12
+  entities:
+    - entity: sensor.living_room_multi_temperature
+      name: Living room
+    - entity: sensor.dark_sky_temperature
+      name: Outside
