@@ -72,6 +72,8 @@ cards:
         name: Patio door
       - entity: binary_sensor.utility_door_exterior_sensor
         name: Utility door
+      - entity: binary_sensor.office_window
+        name: Office window
       - entity: binary_sensor.guest_bedroom_window_left
         name: Guest bedroom left
       - entity: binary_sensor.guest_bedroom_window_right

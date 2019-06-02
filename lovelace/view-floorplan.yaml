@@ -337,6 +337,7 @@ cards:
               - binary_sensor.guest_bedroom_window_left
               - binary_sensor.guest_bedroom_window_right
               - binary_sensor.master_window_ensuite
+              - binary_sensor.office_window
             states:
               - state: 'off'
                 class: 'door-closed'

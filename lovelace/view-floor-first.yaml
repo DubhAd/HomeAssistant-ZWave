@@ -90,6 +90,8 @@ cards:
       name: Light level
     - entity: sensor.office_multi_relative_humidity
       name: Humidity
+    - entity: binary_sensor.office_window
+      name: Office window
     - entity: media_player.office
       name: Sonos
     - entity: media_player.googlehomehub8747
