@@ -110,7 +110,7 @@ cards:
       name: "Home Hub"
 - type: glance
   title: Spare bedroom
-  columns: 4
+  columns: 2
   entities:
     - entity: binary_sensor.spare_bedroom_window_left
       name: Left
@@ -132,4 +132,3 @@ cards:
       name: Office
     - entity: sensor.master_ensuite_temperature
       name: Master ensuite
-

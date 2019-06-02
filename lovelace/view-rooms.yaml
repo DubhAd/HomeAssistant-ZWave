@@ -62,6 +62,7 @@ cards:
       - entity: switch.radio_person2
         icon: mdi:alarm
       - light.master_bedroom_bedhead
+      - binary_sensor.master_window_ensuite
   - type: picture-glance
     image: /local/images/second_bedroom.jpg
     title: Second bedroom
@@ -71,3 +72,6 @@ cards:
       - entity: switch.radio_person1
         icon: mdi:alarm
       - light.person1_bedroom_bedside
+      - binary_sensor.second_bedroom_window_ensuite
+      - binary_sensor.second_bedroom_window_left
+      - binary_sensor.second_bedroom_window_right
