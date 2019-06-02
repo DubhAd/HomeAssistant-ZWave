@@ -74,7 +74,19 @@ cards:
         name: Utility door
       - entity: binary_sensor.office_window
         name: Office window
-      - entity: binary_sensor.guest_bedroom_window_left
+      - entity: binary_sensor.spare_bedroom_window_left
+        name: Spare bedroom left
+      - entity: binary_sensor.spare_bedroom_window_right
+        name: Spare bedroom right
+      - entity: binary_sensor.second_bedroom_window_ensuite
+        name: Second bedroom ensuite
+      - entity: binary_sensor.second_bedroom_window_left
+        name: Second bedroom left
+      - entity: binary_sensor.second_bedroom_window_right
+        name: Second bedroom right
+      - entity: binary_sensor.bathroom_window
+        name: Bathroom
+      - entity: binary_sensor.bathroom_window
         name: Guest bedroom left
       - entity: binary_sensor.guest_bedroom_window_right
         name: Guest bedroom right

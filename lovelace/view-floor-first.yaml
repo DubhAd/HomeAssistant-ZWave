@@ -61,6 +61,12 @@ cards:
       tap_action: 
         action: toggle
       name: Socket
+    - entity: binary_sensor.second_bedroom_window_ensuite
+      name: Ensuite
+    - entity: binary_sensor.second_bedroom_window_left
+      name: Left
+    - entity: binary_sensor.second_bedroom_window_right
+      name: Right
 - type: glance
   title: Guest bedroom
   columns: 5
@@ -79,6 +85,12 @@ cards:
     - entity: binary_sensor.guest_bedroom_window_right
       name: Right window
 - type: glance
+  title: Bathroom
+  columns: 1
+  entities:
+    - entity: binary_sensor.bathroom_window
+      name: Bathroom
+- type: glance
   title: Office
   columns: 4
   entities:
@@ -96,6 +108,14 @@ cards:
       name: Sonos
     - entity: media_player.googlehomehub8747
       name: "Home Hub"
+- type: glance
+  title: Spare bedroom
+  columns: 4
+  entities:
+    - entity: binary_sensor.spare_bedroom_window_left
+      name: Left
+    - entity: binary_sensor.spare_bedroom_window_right
+      name: Right
 - type: history-graph
   title: Humidity
   hours_to_show: 12
@@ -112,3 +132,4 @@ cards:
       name: Office
     - entity: sensor.master_ensuite_temperature
       name: Master ensuite
+

@@ -73,6 +73,12 @@ my_exterior_windows:
   - binary_sensor.guest_bedroom_window_right
   - binary_sensor.master_window_ensuite
   - binary_sensor.office_window
+  - binary_sensor.spare_bedroom_window_left
+  - binary_sensor.spare_bedroom_window_right
+  - binary_sensor.second_bedroom_window_ensuite
+  - binary_sensor.second_bedroom_window_left
+  - binary_sensor.second_bedroom_window_right
+  - binary_sensor.bathroom_window
 my_alarm_sensors:
   name: Alarm sensors
   entities:
@@ -85,6 +91,12 @@ my_alarm_sensors:
   - binary_sensor.guest_bedroom_window_right
   - binary_sensor.master_window_ensuite
   - binary_sensor.office_window
+  - binary_sensor.spare_bedroom_window_left
+  - binary_sensor.spare_bedroom_window_right
+  - binary_sensor.second_bedroom_window_ensuite
+  - binary_sensor.second_bedroom_window_left
+  - binary_sensor.second_bedroom_window_right
+  - binary_sensor.bathroom_window
 my_exit_doors:
   name: Doors we exit by
   entities:

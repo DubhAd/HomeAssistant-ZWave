@@ -482,3 +482,17 @@ binary_sensor.guest_bedroom_window_right:
   device_class: window
 binary_sensor.master_window_ensuite:
   device_class: window
+binary_sensor.second_bedroom_window_ensuite:
+  device_class: window
+binary_sensor.second_bedroom_window_left_actual:
+  device_class: window
+binary_sensor.second_bedroom_window_right:
+  device_class: window
+binary_sensor.spare_bedroom_window_left:
+  device_class: window
+binary_sensor.spare_bedroom_window_right:
+  device_class: window
+binary_sensor.bathroom_window:
+  device_class: window
+binary_sensor.second_bedroom_window_left:
+  device_class: window

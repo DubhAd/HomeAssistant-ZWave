@@ -2,7 +2,22 @@ initial_state: 'on'
 alias: 'Alarm armed trigger'
 trigger:
   - platform: state
-    entity_id: group.my_alarm_sensors
+    entity_id:
+      - binary_sensor.front_door_sensor
+      - binary_sensor.patio_door_left_sensor
+      - binary_sensor.utility_door_exterior_sensor
+      - binary_sensor.garage_closed_bike_sensor
+      - binary_sensor.garage_closed_car_sensor
+      - binary_sensor.guest_bedroom_window_left
+      - binary_sensor.guest_bedroom_window_right
+      - binary_sensor.master_window_ensuite
+      - binary_sensor.office_window
+      - binary_sensor.spare_bedroom_window_left
+      - binary_sensor.spare_bedroom_window_right
+      - binary_sensor.second_bedroom_window_ensuite
+      - binary_sensor.second_bedroom_window_left
+      - binary_sensor.second_bedroom_window_right
+      - binary_sensor.bathroom_window
     to: 'on'
 condition:
   # Alarm is armed
@@ -11,7 +26,7 @@ condition:
     state: armed_away
   # Nobody's home
   - condition: state
-    entity_id: input_boolean.adults_away
+    entity_id: input_boolean.all_away
     state: 'on'
 action:
   - service: alarm_control_panel.alarm_trigger
