@@ -27,6 +27,14 @@ cards:
             propagate: true
   
           - entities:
+              - group.car
+            states:
+              - state: 'home'
+                class: 'car-home'
+              - state: 'not_home'
+                class: 'car-away'
+
+          - entities:
               - input_boolean.person2_home
               - input_boolean.person1_home
               - input_boolean.person1_tablet_home

@@ -81,7 +81,7 @@ background-color: var(--primary-background-color);
 }
 
 .alarm-armed_night {
-  fill: #FFCC66; !important;
+  fill: #FF8A0D; !important;
 }
 
 .alarm-armed_away {
@@ -89,7 +89,7 @@ background-color: var(--primary-background-color);
 }
 
 .alarm-armed_home {
-  fill: #FFCC66; !important;
+  fill: #FF8A0D; !important;
 }
 
 .alarm-armed_custom_bypass {
@@ -303,6 +303,14 @@ background-color: var(--primary-background-color);
 }
 
 /* People */
+
+.car-away {
+  fill: #585858 !important;
+}
+
+.car-home {
+ fill: #181818 !important;
+}
 
 .tracker-away {
   fill: #585858 !important;
