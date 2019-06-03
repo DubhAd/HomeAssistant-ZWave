@@ -2,16 +2,14 @@ alias: Hall strip on
 sequence:
   - service: light.turn_on
     data:
-      entity_id: light.hall_downstairs
-      brightness: 0
-      rgb_color: [0, 0, 0]
-      white_value: 1
+      entity_id: light.hall
+      brightness_pct: 2
+      color_name: "white"
   - condition: state
-    entity_id: light.hall_downstairs
+    entity_id: light.hall
     state: 'off'
   - service: light.turn_on
     data:
-      entity_id: light.hall_downstairs
-      brightness: 0
-      rgb_color: [0, 0, 0]
-      white_value: 5
+      entity_id: light.hall
+      brightness_pct: 2
+      color_name: "white"

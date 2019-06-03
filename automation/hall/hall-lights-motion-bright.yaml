@@ -16,17 +16,17 @@ condition:
         conditions:
         # And the hall light is on and dim
         - condition: state
-          entity_id: light.hall_downstairs
+          entity_id: light.hall
           state: 'on'
         - condition: numeric_state
-          entity_id: light.hall_downstairs
-          value_template: "{{ state_attr('light.hall_downstairs','white_value') }}"
-          below: 15
+          entity_id: light.hall
+          value_template: "{{ state_attr('light.hall','brightness') }}"
+          below: 10
       - condition: and
         conditions:
         # Hall light is off, light levels are generally low
         - condition: state
-          entity_id: light.hall_downstairs
+          entity_id: light.hall
           state: 'off'
         - condition: numeric_state
           entity_id: sensor.hall_downstairs_illuminance
@@ -47,42 +47,8 @@ condition:
             entity_id: input_boolean.guest_mode
             state: 'on'
 action:
-  # Doesn't, currently, support transitions
   - service: light.turn_on
     data:
-      entity_id: light.hall_downstairs
-      brightness: 0
-      rgb_color: [0, 0, 0]
-      white_value: 7
-  - delay:
-      milliseconds: 1
-  - service: light.turn_on
-    data:
-      entity_id: light.hall_downstairs
-      brightness: 0
-      rgb_color: [0, 0, 0]
-      white_value: 9
-  - delay:
-      milliseconds: 1
-  - service: light.turn_on
-    data:
-      entity_id: light.hall_downstairs
-      brightness: 0
-      rgb_color: [0, 0, 0]
-      white_value: 11
-  - delay:
-      milliseconds: 1
-  - service: light.turn_on
-    data:
-      entity_id: light.hall_downstairs
-      brightness: 0
-      rgb_color: [0, 0, 0]
-      white_value: 13
-  - delay:
-      milliseconds: 1
-  - service: light.turn_on
-    data:
-      entity_id: light.hall_downstairs
-      brightness: 0
-      rgb_color: [0, 0, 0]
-      white_value: 15
+      entity_id: light.hall
+      brightness_pct: 6
+      transition: 5

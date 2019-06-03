@@ -2,10 +2,10 @@ alias: Hall strip off
 sequence:
   - service: light.turn_off
     data:
-      entity_id: light.hall_downstairs
+      entity_id: light.hall
   - condition: state
-    entity_id: light.hall_downstairs
+    entity_id: light.hall
     state: 'on'
   - service: light.turn_off
     data:
-      entity_id: light.hall_downstairs
+      entity_id: light.hall

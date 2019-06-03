@@ -27,21 +27,21 @@ cards:
       name: Living room chromecast
     - entity: media_player.samsung_tv_remote
       name: Living room TV
-  - type: glance
-    title: Printer status
+  - type: entities
+    title: Sensors
     show_header_toggle: false
     entities:
-    - entity: sensor.samsung_m283x_series_172237250_toner_black
-      name: Toner
-    - sensor.printer_toner_remaining
-    - entity: sensor.samsung_m283x_series_172237250_drum_black
-      name: Drum
-    - sensor.printer_imaging_unit_remaining
-    - sensor.printer_forward_roller_remaining
-    - sensor.printer_pick_up_roller_remaining
-    - sensor.printer_retard_roller_remaining
-    - sensor.printer_transfer_roller_remaining
-    - sensor.printer_fuser_life_remaining
+    - sun.sun
+    - sensor.sun_elevation
+    - binary_sensor.zwave_health
+    - entity: sensor.last_opened
+      icon: mdi:door
+    - entity: sensor.last_motion
+      icon: mdi:run
+    - entity: binary_sensor.trend_living_room_light
+      name: Living room getting brighter
+    - entity: binary_sensor.trend_sun_elevation
+      name: Sun rising
 - type: vertical-stack
   cards:
   - type: entities
@@ -72,23 +72,73 @@ cards:
         name: Master ensuite window
       - entity: sensor.office_button_battery
         name: Office button
-  - type: entities
-    title: Sensors
+      - entity:  sensor.master_window_ensuite_battery
+        name: Master ensuite window
+      - entity:  sensor.office_window_battery
+        name: Office window
+      - entity:  sensor.second_bedroom_window_ensuite_battery
+        name: Second bedroom ensuite window
+      - entity:  sensor.second_bedroom_window_right_battery
+        name: Second bedroom right window
+      - entity:  sensor.second_bedroom_window_left_battery
+        name: Second bedroom left window
+      - entity:  sensor.spare_bedroom_window_left_battery
+        name: Spare bedroom left window
+      - entity:  sensor.spare_bedroom_window_right_battery
+        name: Spare bedroom right window
+      - entity:  sensor.bathroom_window_battery
+        name: Bathroom window
+  - type: glance
+    title: Links
     show_header_toggle: false
     entities:
-    - sun.sun
-    - sensor.sun_elevation
-    - binary_sensor.zwave_health
-    - entity: sensor.last_opened
-      icon: mdi:door
-    - entity: sensor.last_motion
-      icon: mdi:run
-    - entity: binary_sensor.trend_living_room_light
-      name: Living room getting brighter
-    - entity: binary_sensor.trend_sun_elevation
-      name: Sun rising
+    - entity: sensor.bathroom_window_linkquality
+      name: Bathroom window
+    - entity: sensor.downstairs_hall_light_link
+      name: Hall light
+    - entity: sensor.downstairs_hall_motion_linkquality 
+      name: Hall motion
+    - entity: sensor.guest_bedroom_window_left_linkquality
+      name: Guest left
+    - entity: sensor.guest_bedroom_window_right_linkquality
+      name: Guest right
+    - entity: sensor.master_ensuite_environment_linkquality
+      name: Master ensuite env
+    - entity: sensor.master_window_ensuite_linkquality
+      name: Master ensuite window
+    - entity: sensor.office_button_linkquality
+      name: Office button
+    - entity: sensor.office_window_linkquality
+      name: Office window
+    - entity: sensor.second_bedroom_window_ensuite_linkquality
+      name: Second ensuite window
+    - entity: sensor.second_bedroom_window_left_linkquality
+      name: Second left
+    - entity: sensor.second_bedroom_window_right_linkquality
+      name: Second right
+    - entity: sensor.spare_bedroom_window_left_linkquality
+      name: Spare left
+    - entity: sensor.spare_bedroom_window_right_linkquality
+      name: Spare right
+    - entity: sensor.zigbee_router1_linkquality
+      name: Router
 - type: vertical-stack
   cards:
+  - type: glance
+    title: Printer status
+    show_header_toggle: false
+    entities:
+    - entity: sensor.samsung_m283x_series_172237250_toner_black
+      name: Toner
+    - sensor.printer_toner_remaining
+    - entity: sensor.samsung_m283x_series_172237250_drum_black
+      name: Drum
+    - sensor.printer_imaging_unit_remaining
+    - sensor.printer_forward_roller_remaining
+    - sensor.printer_pick_up_roller_remaining
+    - sensor.printer_retard_roller_remaining
+    - sensor.printer_transfer_roller_remaining
+    - sensor.printer_fuser_life_remaining
   - type: glance
     title: Z-Wave battery devices
     show_header_toggle: false

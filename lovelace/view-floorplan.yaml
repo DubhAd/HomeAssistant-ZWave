@@ -293,7 +293,7 @@ cards:
           - entities:
               - light.master_bedroom_bedhead
               - light.person1_bedroom_bedside
-              - light.hall_downstairs
+              - light.hall
             states:
               - state: 'on'
                 class: 'light-on'

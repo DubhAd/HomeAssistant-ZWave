@@ -112,7 +112,7 @@ cards:
         name: Family room
         tap_action: 
           action: toggle
-      - entity: light.hall_downstairs
+      - entity: light.hall
         name: Hall light
       - entity: switch.hall_downstairs_switch
         name: Hall socket

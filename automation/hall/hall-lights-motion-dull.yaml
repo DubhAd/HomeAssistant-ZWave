@@ -12,16 +12,15 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
     - condition: state
-      entity_id: light.hall_downstairs
+      entity_id: light.hall
       state: 'on'
     - condition: numeric_state
-      entity_id: light.hall_downstairs
-      value_template: "{{ state_attr('light.hall_downstairs','white_value') }}"
+      entity_id: light.hall
+      value_template: "{{ state_attr('light.hall','brightness') }}"
       above: 10
 action:
   - service: light.turn_on
     data:
       entity_id: light.hall_downstairs
-      brightness: 0
-      rgb_color: [0, 0, 0]
-      white_value: 5
+      brightness_pct: 2
+      transition: 5

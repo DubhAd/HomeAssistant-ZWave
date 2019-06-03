@@ -24,7 +24,7 @@ cards:
     title: Downstairs hall
     entities:
       - binary_sensor.hall_downstairs_occupancy
-      - light.hall_downstairs
+      - light.hall
       - switch.hall_downstairs_switch
   - type: picture-glance
     image: /local/images/living_room_day.jpg
@@ -44,7 +44,7 @@ cards:
     cards:
     - type: light
       name: Hall
-      entity: light.hall_downstairs
+      entity: light.hall
     - type: horizontal-stack
       cards:
       - type: light

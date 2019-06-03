@@ -2,10 +2,9 @@ alias: Hall lights night
 sequence:
   - service: light.turn_on
     data:
-      entity_id: light.hall_downstairs
-      brightness: 1
+      entity_id: light.hall
+      brightness_pct: 1
       color_name: red
-      white_value: 1
   - condition: state
     entity_id: switch.hall_downstairs_switch
     state: 'on'

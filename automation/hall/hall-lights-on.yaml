@@ -45,7 +45,7 @@ condition:
         entity_id: switch.hall_downstairs_switch
         state: 'off'
       - condition: state
-        entity_id: light.hall_downstairs
+        entity_id: light.hall
         state: 'off'
     - condition: or
       conditions:
