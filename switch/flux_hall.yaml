@@ -5,7 +5,7 @@
   start_time: '06:00'
   stop_time: '23:00'
   start_colortemp: 6500
-  sunset_colortemp: 2900
+  sunset_colortemp: 2800
   stop_colortemp: 2000
   disable_brightness_adjust: True
   mode: mired
