@@ -193,3 +193,5 @@ weather: !include_dir_merge_list weather/
 circadian_lighting:
   interval: 300
   transition: 60
+  min_colortemp: 2000
+  max_colortemp: 6500
