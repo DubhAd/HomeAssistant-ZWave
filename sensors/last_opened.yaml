@@ -11,7 +11,7 @@
         - binary_sensor.guest_bedroom_window_left
         - binary_sensor.guest_bedroom_window_right
       value_template: >-
-        {%- set sensors = [states.binary_sensor.front_door_sensor, states.binary_sensor.garage_closed_bike_sensor, states.binary_sensor.garage_closed_car_sensor, states.binary_sensor.patio_door_left_sensor, states.binary_sensor.utility_door_exterior_sensor, binary_sensor.guest_bedroom_window_left, binary_sensor.guest_bedroom_window_right] %}
+        {%- set sensors = [states.binary_sensor.front_door_sensor, states.binary_sensor.garage_closed_bike_sensor, states.binary_sensor.garage_closed_car_sensor, states.binary_sensor.patio_door_left_sensor, states.binary_sensor.utility_door_exterior_sensor, states.binary_sensor.guest_bedroom_window_left, states.binary_sensor.guest_bedroom_window_right] %}
         {% for sensor in sensors %}
           {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(attribute='last_changed') | max) %}
             {{ sensor.name }}
