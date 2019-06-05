@@ -37,6 +37,7 @@ cards:
   - input_boolean.person4_home
   - type: divider
   - input_boolean.notify_train_status_work
+  - input_boolean.person2_work_home
   - input_boolean.notify_person2_working
   - input_boolean.notify_person1_work
 - type: entities
@@ -61,6 +62,9 @@ cards:
   entities:
   - switch.fluxer
   - switch.flux_hall
+  - switch.circadian_lighting_circadian_hall
+  - switch.circadian_lighting_circadian_master_bedroom
+  - switch.circadian_lighting_circadian_second_bedroom
 - type: entities
   title: People
   show_header_toggle: false

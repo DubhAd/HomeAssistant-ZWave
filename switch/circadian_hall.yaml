@@ -1,5 +1,6 @@
 - platform: circadian_lighting
-  lights_xy:
+  name: circadian hall
+  lights_ct:
     - light.hall
   disable_brightness_adjust: true
   sleep_entity: input_boolean.bedtime

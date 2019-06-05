@@ -1,5 +1,5 @@
 alias: 'HA started later'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: homeassistant
     # Event can also be 'shutdown'

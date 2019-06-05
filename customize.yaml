@@ -496,3 +496,5 @@ binary_sensor.bathroom_window:
   device_class: window
 binary_sensor.second_bedroom_window_left:
   device_class: window
+input_boolean.person2_work_home:
+  icon: mdi:remote-desktop

@@ -40,3 +40,5 @@ cards:
   - automation.person2_at_lcy
   - automation.person2_at_lhr
   - automation.person2_at_sin
+  - automation.trains_to_work
+  - automation.trains_from_work

@@ -1,5 +1,5 @@
 alias: 'Trains to work'
-initial_state: 'off'
+initial_state: 'on'
 trigger:
   - platform: time_pattern
     minutes: '/5'
@@ -19,5 +19,8 @@ condition:
   - condition: time
     before: '12:00:00'
 action:
+  - service: notify.logfile
+    data:
+      message: "Updating train times to work"
   - service: homeassistant.update_entity
     entity_id: sensor.next_train_to_xyz

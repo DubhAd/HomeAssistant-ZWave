@@ -8,5 +8,5 @@ cards:
     cards:
     - type: picture-entity
       entity: sensor.zigbee2mqtt_bridge_state
-      image: /local/maps/zigbee.svg
+      camera_image: camera.local_file
     - type: custom:compact-custom-header

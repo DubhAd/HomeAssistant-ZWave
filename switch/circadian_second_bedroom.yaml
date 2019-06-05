@@ -1,3 +1,4 @@
 - platform: circadian_lighting
+  name: circadian second bedroom
   lights_ct:
     - light.person1_bedroom_bedside
