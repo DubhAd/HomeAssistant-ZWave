@@ -2,3 +2,4 @@
   name: circadian master bedroom
   lights_ct:
     - light.master_bedroom_bedhead
+  disable_brightness_adjust: true
