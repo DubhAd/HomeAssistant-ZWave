@@ -5,8 +5,6 @@ trigger:
   entity_id: device_tracker.person1_mobile
   from: 'work'
   to: 'not_home'
-  for:
-    minutes: 10
 condition:
   condition: and
   conditions:
@@ -26,6 +24,9 @@ condition:
         after: '12:00:00'
         weekday:
           - fri
+    - condition: state
+      entity_id: input_boolean.person1_home
+      state: 'off'
 action:
   - service: notify.lametric_info
     data:
