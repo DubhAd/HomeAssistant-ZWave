@@ -12,6 +12,8 @@ condition:
       - condition: template
         value_template: "{{ state_attr('light.master_bedroom_bedhead', 'brightness')|default(0)|int > 10 }}"
 action:
+  - service: switch.turn_off
+    entity_id: switch.circadian_lighting_circadian_master_bedroom
   - service: light.turn_on
     data:
       entity_id: light.master_bedroom_bedhead

@@ -1,4 +1,6 @@
 sequence:
+  - service: switch.turn_off
+    entity_id: switch.circadian_lighting_circadian_hall
   - service: light.turn_on
     data:
       entity_id: light.hall

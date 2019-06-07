@@ -11,6 +11,8 @@ condition:
     entity_id: light.master_bedroom_bedhead
     state: 'on'
 action:
+  - service: switch.turn_off
+    entity_id: switch.circadian_lighting_circadian_master_bedroom
   - service: light.turn_on
     data:
       entity_id: light.master_bedroom_bedhead
@@ -19,5 +21,3 @@ action:
   - service: script.turn_off
     data:
       entity_id: script.bedhead_light_warm_pause, script.bedhead_light_cool_pause, script.bedhead_light_bright_pause, script.bedhead_light_dim_pause, script.bedhead_light_warm, script.bedhead_light_cool, script.bedhead_light_bright, script.bedhead_light_dim
-  - service: switch.turn_off
-    entity_id: switch.fluxer
