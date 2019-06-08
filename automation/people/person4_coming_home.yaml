@@ -3,7 +3,7 @@ initial_state: 'on'
 trigger:
   - platform: numeric_state
     entity_id: proximity.person4_home
-    below: 15
+    below: 10
 condition:
   condition: and
   conditions:
