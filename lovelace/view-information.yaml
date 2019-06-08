@@ -89,8 +89,9 @@ cards:
       - entity:  sensor.bathroom_window_battery
         name: Bathroom window
   - type: glance
-    title: Links
+    title: Zigbee links
     show_header_toggle: false
+    columns: 4
     entities:
     - entity: sensor.bathroom_window_linkquality
       name: Bathroom window
@@ -122,6 +123,10 @@ cards:
       name: Spare right
     - entity: sensor.zigbee_router1_linkquality
       name: Router
+    - entity: sensor.router_masterbedroom_linkquality
+      name: "Router (Master)"
+    - entity: sensor.router_sparebed_linkquality
+      name: "Router (Spare)"
 - type: vertical-stack
   cards:
   - type: glance
