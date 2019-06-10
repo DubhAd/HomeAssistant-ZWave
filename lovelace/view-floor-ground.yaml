@@ -58,18 +58,26 @@ cards:
     - entity: sensor.hall_downstairs_illuminance
       name: "Light level"
 - type: glance
-  title: Front of house
-  columns: 5
+  title: Vestibule
+  columns: 4
   entities:
     - binary_sensor.front_door_sensor
+    - entity: binary_sensor.vestibule_occupancy
+      name: Motion
+    - entity: sensor.vestibule_illuminance
+      name: "Light level"
+    - entity: switch.vestibule_switch
+      name: Socket
+      tap_action: 
+        action: toggle
+- type: glance
+  title: Front of house
+  columns: 3
+  entities:
     - entity: binary_sensor.garage_closed_bike_sensor
       name: bike
     - entity: binary_sensor.garage_closed_car_sensor
       name: Car
-    - entity: switch.vestibule_switch
-      name: Vestibule
-      tap_action: 
-        action: toggle
     - entity: switch.number_sign_switch
       tap_action: 
         action: toggle

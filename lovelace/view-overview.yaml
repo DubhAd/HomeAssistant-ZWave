@@ -178,12 +178,14 @@ cards:
         title: OCD alignment fixer
     - type: glance
       title: Luminance 
-      columns: 3
+      columns: 4
       entities:
         - entity: sensor.living_room_multi_luminance
           name: "Living room"
         - entity: sensor.hall_downstairs_illuminance
           name: "Downstairs hall"
+        - entity: sensor.vestibule_illuminance
+          name: "Vestibule"
         - entity: sensor.office_multi_luminance
           name: "Office"
     - type: glance
