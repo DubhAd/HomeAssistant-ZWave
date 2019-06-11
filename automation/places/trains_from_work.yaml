@@ -12,4 +12,4 @@ action:
     data:
       message: "Updating train times from work"
   - service: homeassistant.update_entity
-    entity_id: sensor.next_train_to_xyz
+    entity_id: sensor.next_train_to_abc
