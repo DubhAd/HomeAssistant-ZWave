@@ -1,5 +1,5 @@
 alias: 'Bedhead light dim sunset off'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   platform: sun
   event: sunset

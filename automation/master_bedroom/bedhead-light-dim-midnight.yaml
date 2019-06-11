@@ -1,5 +1,5 @@
 alias: 'Bedhead light dim midnight off'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: time
     at: '00:00:00'

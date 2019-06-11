@@ -89,6 +89,21 @@ cards:
         show_state: false
     - type: entity-filter
       entities:
+        - entity: binary_sensor.living_room_motion
+          name: Living room
+        - entity: binary_sensor.hall_downstairs_occupancy
+          name: Hall
+        - entity: binary_sensor.vestibule_occupancy
+          name: Vestibule
+      show_empty: false
+      state_filter:
+        - 'on'
+      card:
+        type: glance
+        title: Motion
+        show_state: false
+    - type: entity-filter
+      entities:
         - binary_sensor.front_door_sensor
         - entity: binary_sensor.garage_closed_bike_sensor
           name: Garage door bike
