@@ -4,6 +4,7 @@
   scan_interval: '00:04:30'
   units: uk2
   forecast:
+    - 0
     - 1
     - 2
     - 3
@@ -20,7 +21,11 @@
     - precip_probability
     - precip_accumulation
     - temperature
+    - temperature_high
+    - temperature_low
     - apparent_temperature
+    - apparent_temperature_high
+    - apparent_temperature_low
     - wind_speed
     - wind_cabineting
     - cloud_cover
@@ -28,9 +33,8 @@
     - icon
     - humidity
     - pressure
-    - temperature_high
-    - temperature_low
-    - apparent_temperature_high
-    - apparent_temperature_low
     - ozone
     - uv_index
+    - nearest_storm_distance
+    - nearest_storm_cabineting
+
