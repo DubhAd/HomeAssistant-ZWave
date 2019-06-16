@@ -14,7 +14,7 @@ condition:
       entity_id: sensor.living_room_multi_luminance
       below: 5
     - condition: state
-      entity_id: switch.table_light_switch
+      entity_id: light.living_room_table
       state: 'off'
     - condition: or
       conditions:
@@ -27,5 +27,6 @@ condition:
 action:
   - service: homeassistant.turn_on
     entity_id: input_boolean.livingroom_lights_auto
-  - service: switch.turn_on
-    entity_id: switch.table_light_switch
+  - service: light.turn_on
+    entity_id: 
+      - light.living_room_table

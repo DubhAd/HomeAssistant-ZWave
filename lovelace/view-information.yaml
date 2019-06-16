@@ -68,6 +68,8 @@ cards:
         name: Downstairs hall motion
       - entity: sensor.vestibule_motion_battery
         name: Vestibule motion
+      - entity: sensor.living_room_table_linkquality
+        name: Living room table light
       - entity: sensor.master_ensuite_environment_battery
         name: Master ensuite environment
       - entity: sensor.master_window_ensuite_battery

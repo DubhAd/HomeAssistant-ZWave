@@ -1,0 +1,17 @@
+initial_state: 'on'
+alias: 'Living room table light'
+trigger:
+  platform: state
+  entity_id: sensor.circadian_values
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: light.living_room_table
+      state: 'on'
+action:
+  - service: light.turn_on
+    data_template:
+      entity_id: light.living_room_table
+      kelvin: "{{ state_attr('sensor.circadian_values','colortemp')|round }}"
+      transition: 30

@@ -500,3 +500,5 @@ input_boolean.person2_work_home:
   icon: mdi:remote-desktop
 binary_sensor.office_window:
   device_class: window
+light.living_room_table:
+  icon: mdi:spotlight

@@ -28,6 +28,7 @@ cards:
   - automation.living_room_lights_dim_on
   - automation.living_room_lights_night_on
   - automation.living_room_lights_off
+  - automation.living_room_table_light
 - type: entities
   title: Media automations
   show_header_toggle: false

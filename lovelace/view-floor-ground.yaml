@@ -20,9 +20,8 @@ cards:
     - entity: switch.cabinet_light_switch
       tap_action: 
         action: toggle
-    - entity: switch.table_light_switch
-      tap_action: 
-        action: toggle
+    - entity: light.living_room_table
+      name: "Table"
     - entity: switch.livingroom_socket_switch
       name: "Socket"
       tap_action: 

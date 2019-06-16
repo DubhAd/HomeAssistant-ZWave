@@ -105,9 +105,9 @@ my_exit_doors:
 living_room_lights:
   name: Living room lights
   entities:
-  - switch.table_light_switch
   - switch.cabinet_light_switch
   - switch.tv_light_switch
+  - light.living_room_table
 default_view:
   name: My Home
   icon: mdi:home
