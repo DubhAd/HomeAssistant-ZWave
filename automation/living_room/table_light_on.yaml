@@ -23,7 +23,8 @@ condition:
       state: 'off'
 action:
   - service: light.turn_off
-    entity_id: 
-      - light.living_room_table
+    data:
+      entity_id: light.living_room_table
+      transition: 5
   - service: homeassistant.turn_off
     entity_id: input_boolean.livingroom_lights_auto

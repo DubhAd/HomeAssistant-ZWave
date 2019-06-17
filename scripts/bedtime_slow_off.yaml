@@ -1,30 +1,18 @@
  # No longer used
 alias: Bedtime slow off
 sequence:
+  - service: light.turn_off
+    data:
+      entity_id: light.living_room_table
+      transition: 30
   - service: switch.turn_off
-    entity_id: switch.tv_light_switch
-  - delay:
-      seconds: 10
-  - service: switch.turn_off
-    entity_id: light.living_room_table
-  - delay:
-      seconds: 10
-  - service: switch.turn_off
-    entity_id: switch.cabinet_light_switch
-  - delay:
-      seconds: 10
-  - service: switch.turn_off
-    entity_id: switch.livingroom_socket_switch
-  - delay:
-      minutes: 1
+    entity_id: 
+      - switch.tv_light_switch
+      - switch.cabinet_light_switch
+      - switch.livingroom_socket_switch
+      - switch.vestibule_switch
   - service: input_boolean.turn_off
     entity_id: input_boolean.person3_is_awake
-  - delay:
-      seconds: 10
-  - service: switch.turn_off
-    entity_id: switch.vestibule_switch
-  - delay:
-      seconds: 10
   - condition: state
     entity_id: input_boolean.guest_mode
     state: 'off'

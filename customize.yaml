@@ -69,9 +69,6 @@ calendar.person2_family_tripit:
   icon: mdi:calendar-clock
 calendar.person2_work:
   icon: mdi:calendar-multiple
-switch.table_light_switch:
-  friendly_name: Table light
-  icon: mdi:spotlight-beam
 switch.cabinet_light_switch:
   friendly_name: cabinet light
   icon: mdi:lamp
@@ -502,3 +499,5 @@ binary_sensor.office_window:
   device_class: window
 light.living_room_table:
   icon: mdi:spotlight
+switch.table_light_switch:
+  icon: mdi:power-socket-uk

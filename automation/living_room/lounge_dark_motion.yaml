@@ -28,5 +28,7 @@ action:
   - service: homeassistant.turn_on
     entity_id: input_boolean.livingroom_lights_auto
   - service: light.turn_on
-    entity_id: 
-      - light.living_room_table
+    data:
+      entity_id: light.living_room_table
+      brightness_pct: 75
+      transition: 5

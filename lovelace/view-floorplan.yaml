@@ -276,7 +276,6 @@ cards:
             propagate: true
   
           - entities:
-              - switch.table_light_switch
               - switch.cabinet_light_switch
               - switch.tv_light_switch
               - switch.garden_lights_switch
@@ -294,6 +293,7 @@ cards:
               - light.master_bedroom_bedhead
               - light.person1_bedroom_bedside
               - light.hall
+              - light.living_room_table
             states:
               - state: 'on'
                 class: 'light-on'

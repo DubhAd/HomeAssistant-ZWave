@@ -27,6 +27,8 @@ cards:
       name: Living room chromecast
     - entity: media_player.samsung_tv_remote
       name: Living room TV
+    - entity: switch.table_light_switch
+      name: Table light switch
   - type: entities
     title: Sensors
     show_header_toggle: false
@@ -68,8 +70,6 @@ cards:
         name: Downstairs hall motion
       - entity: sensor.vestibule_motion_battery
         name: Vestibule motion
-      - entity: sensor.living_room_table_linkquality
-        name: Living room table light
       - entity: sensor.master_ensuite_environment_battery
         name: Master ensuite environment
       - entity: sensor.master_window_ensuite_battery
@@ -95,7 +95,7 @@ cards:
   - type: glance
     title: Zigbee links
     show_header_toggle: false
-    columns: 4
+    columns: 5
     entities:
     - entity: sensor.bathroom_window_linkquality
       name: Bathroom window
@@ -105,6 +105,8 @@ cards:
       name: Hall motion
     - entity: sensor.vestibule_motion_linkquality
       name: Vestibule motion
+    - entity: sensor.living_room_table_linkquality
+      name: Living room table light
     - entity: sensor.guest_bedroom_window_left_linkquality
       name: Guest left
     - entity: sensor.guest_bedroom_window_right_linkquality
