@@ -6,7 +6,7 @@ sequence:
   - delay:
       seconds: 10
   - service: switch.turn_off
-    entity_id: switch.table_light_switch
+    entity_id: light.living_room_table
   - delay:
       seconds: 10
   - service: switch.turn_off
