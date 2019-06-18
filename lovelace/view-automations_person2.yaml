@@ -51,6 +51,7 @@ cards:
   entities:
   - automation.not_workday_for_person2
   - automation.person2_working_from_home
+  - automation.person2_not_working_from_home
   - automation.person2_working_trains
   - automation.person2_working_away
   - automation.person2_not_working_away

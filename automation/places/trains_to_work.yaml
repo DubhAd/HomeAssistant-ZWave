@@ -14,8 +14,8 @@ condition:
     entity_id: input_boolean.person2_home
     state: 'on'
   - condition: state
-    entity_id: input_boolean.person2_work_home
-    state: 'off'
+    entity_id: input_boolean.notify_train_status_work
+    state: 'on'
   - condition: time
     before: '12:00:00'
 action:
