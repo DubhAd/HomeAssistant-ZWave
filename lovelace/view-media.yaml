@@ -17,14 +17,6 @@ cards:
         show_source: true
         show_tts: google
         power_color: true
-      - entity: media_player.cast_living_room_speaker
-        type: custom:mini-media-player
-        group: true
-        icon: mdi:google-home
-        artwork: cover
-        show_source: true
-        show_tts: google
-        power_color: true
       - entity: media_player.lenovosmartdisplay109233
         type: custom:mini-media-player
         group: true

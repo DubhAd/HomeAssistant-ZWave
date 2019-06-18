@@ -38,8 +38,6 @@ cards:
       name: TV
     - entity: media_player.living_room
       name: "Sonos"
-    - entity: media_player.cast_living_room_speaker
-      name: "Home Mini"
     - entity: media_player.lenovosmartdisplay109233
       name: "Home Hub"
 - type: glance
