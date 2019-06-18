@@ -11,14 +11,20 @@ google_actions:
       - switch.radio_person2
       - switch.second_bedroom_switch
       - switch.spare_socket_switch
+      - switch.table_light_switch
       # Duplicates of actual bedroom lights
       - light.yeelight_strip_286c07afc307
       - light.yeelight_strip_7811dca22b87
+      - light.0x00124b0019c5e676_light
       # Individual light, we're using the group
       - light.downstairs_hall
       # Controls
       - switch.flux_hall
       - switch.fluxer
+      - switch.circadian_lighting_circadian_hall
+      - switch.circadian_lighting_circadian_master_bedroom
+      - switch.circadian_lighting_circadian_second_bedroom
+      - switch.zigbee2mqtt_enable_join
     include_entities:
       - script.wake_person1
       - input_boolean.guest_mode
@@ -26,25 +32,17 @@ google_actions:
     input_boolean.guest_mode:
       room: "Guest Room"
       name: "Guest mode"
-    script.bedtime_slow_off:
-      name: "Bedtime"
     script.wake_person1:
       name: "Wake person1"
     light.hall:
       room: "Downstairs hall"
     switch.hall_downstairs_switch:
       room: "Downstairs hall"
-    switch.flux_hall:
-      room: "Attic"
-    switch.fluxer:
-      room: "Attic"
     switch.family_room_socket_switch:
       room: "Family Room"
     switch.cabinet_light_switch:
       room: "Living Room"
     switch.tv_light_switch:
-      room: "Living Room"
-    switch.table_light_switch:
       room: "Living Room"
     switch.livingroom_socket_switch:
       room: "Living Room"
