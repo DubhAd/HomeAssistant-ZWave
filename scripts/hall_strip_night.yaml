@@ -6,10 +6,12 @@ sequence:
       entity_id: light.hall
       brightness_pct: 2
       color_name: "red"
+      transition: 30
   - delay: '00:04:00'
   - service: light.turn_off
     data:
       entity_id: light.hall
+      transition: 30
   - condition: state
     entity_id: switch.hall_downstairs_switch
     state: 'on'
