@@ -12,6 +12,12 @@ trigger:
     for:
       minutes: 5
   - platform: state
+    entity_id: media_player.cast_living_room_tv
+    to: 'off'
+    from: 'unavailable'
+    for:
+      minutes: 5
+  - platform: state
     entity_id: device_tracker.livingroom_chromecast
     to: 'home'
     for:
@@ -28,11 +34,20 @@ trigger:
     entity_id: media_player.cast_living_room_tv
     to: 'playing'
   - platform: state
+    entity_id: media_player.cast_living_room_tv
+    to: 'off'
+    from: 'unavailable'
+  - platform: state
+    entity_id: device_tracker.livingroom_chromecast
+  - platform: state
     entity_id: device_tracker.livingroom_chromecast
     to: 'home'
   - platform: state
     entity_id: media_player.living_room
     to: 'playing'
+  - platform: state
+    entity_id: binary_sensor.living_room_motion
+    to: 'on'
 condition:
   condition: and
   conditions:
@@ -49,21 +64,9 @@ condition:
         state: 'on'
         for:
           minutes: 5
-      # Chromecast
-      - condition: state
-        entity_id: media_player.cast_living_room_tv
-        state: 'playing'
-        for:
-          minutes: 5
       - condition: state
         entity_id: device_tracker.livingroom_chromecast
         state: 'home'
-        for:
-          minutes: 5
-      # Sonos
-      - condition: state
-        entity_id: media_player.living_room
-        state: 'playing'
         for:
           minutes: 5
       # There's been motion in the last 3 minutes
@@ -79,6 +82,9 @@ condition:
       - condition: state
         entity_id: media_player.cast_living_room_tv
         state: 'playing'
+      - condition: state
+        entity_id: media_player.cast_living_room_tv
+        state: 'off'
       - condition: state
         entity_id: device_tracker.livingroom_chromecast
         state: 'home'

@@ -29,10 +29,10 @@ trigger:
       - input_select.person1_status_dropdown
       - input_select.person4_status_dropdown
   - platform: state
-    to: 'on'
     entity_id:
       - input_boolean.living_room_occupied
       - input_boolean.family_room_occupied
+    to: 'on'
 condition:
   - condition: and
     conditions:

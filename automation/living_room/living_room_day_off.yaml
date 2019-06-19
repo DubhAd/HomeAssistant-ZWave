@@ -14,7 +14,9 @@ trigger:
     above: 35
     for:
       minutes: 10
-## Room no longer occupied
+  - platform: state
+    entity_id: input_boolean.bedtime
+    to: 'on'
 condition:
   # Either it's bright, or the room is empty
   - condition: and
