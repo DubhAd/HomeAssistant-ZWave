@@ -5,15 +5,6 @@ sequence:
   - service: light.turn_on
     data:
       entity_id: light.hall
-      brightness_pct: 3
-      color_name: "white"
-      transition: 5
-  - condition: state
-    entity_id: light.hall
-    state: 'off'
-  - service: light.turn_on
-    data:
-      entity_id: light.hall
-      brightness_pct: 3
+      brightness_pct: 4
       color_name: "white"
       transition: 5
