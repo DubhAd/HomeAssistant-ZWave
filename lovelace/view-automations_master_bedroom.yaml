@@ -50,3 +50,8 @@ cards:
   - automation.master_bedhead_cool_stop
   - automation.master_bedhead_warm
   - automation.master_bedhead_warm_stop
+- type: entities
+  title: Remote automations for the en-suite
+  show_header_toggle: false
+  entities:
+  - automation.extractor_notification
