@@ -22,6 +22,10 @@ trigger:
     to: 'idle'
     for: '00:03:00'
   - platform: state
+    entity_id: media_player.cast_kitchen_speaker
+    to: 'paused'
+    for: '00:03:00'
+  - platform: state
     entity_id: calendar.person2
     to: 'off'
 condition:
@@ -64,6 +68,9 @@ condition:
         - condition: state
           entity_id: media_player.cast_kitchen_speaker
           state: 'off'
+        - condition: state
+          entity_id: media_player.cast_kitchen_speaker
+          state: 'paused'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.family_room_occupied
