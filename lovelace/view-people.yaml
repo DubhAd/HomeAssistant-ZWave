@@ -48,6 +48,10 @@ cards:
           icon: mdi:map-marker-distance
         - entity: proximity.person3_home
           name: To home
+        - entity: input_boolean.person3_is_awake
+          name: Awake
+        - entity: input_boolean.person3_in_bed
+          name: In bed
       - type: glance
         entities:
         - entity: sensor.person3_mobile_first_floor_front
@@ -144,6 +148,10 @@ cards:
         - entity: switch.radio_person2
           icon: mdi:alarm
           name: Alarms
+        - entity: input_boolean.person2_is_awake
+          name: Awake
+        - entity: input_boolean.person2_in_bed
+          name: In bed
       - type: glance
         entities:
         - entity: sensor.person2_mobile_first_floor_front
@@ -282,7 +290,7 @@ cards:
       cards: 
       - type: glance
         title: person1
-        columns: 6
+        columns: 5
         entities:
         - entity: device_tracker.person1_mobile
           name: GPS
@@ -296,10 +304,21 @@ cards:
         - entity: device_tracker.person1_bt_mobile
           name: Rear
           icon: mdi:bluetooth
+        - entity: switch.radio_person1
+          icon: mdi:alarm
+          tap_action: 
+            action: toggle
+          name: Alarms
         - entity: sensor.battery_person1_mobile
           name: Battery
         - entity: input_boolean.person1_phone_charging
           name: Phone charging
+        - entity: calendar.person1_holiday
+          name: Holiday
+        - entity: input_boolean.person1_is_awake
+          name: Awake
+        - entity: input_boolean.person1_in_bed
+          name: In bed
         - entity: sensor.person1s_time_to_home_2
           name: Walking home
           icon: mdi:map-marker-distance
@@ -311,13 +330,6 @@ cards:
           icon: mdi:map-marker-distance
         - entity: proximity.person1_home
           name: To home
-        - entity: switch.radio_person1
-          icon: mdi:alarm
-          tap_action: 
-            action: toggle
-          name: Alarms
-        - entity: calendar.person1_holiday
-          name: Holiday
       - type: glance
         entities:
         - entity: sensor.person1_mobile_first_floor_front
