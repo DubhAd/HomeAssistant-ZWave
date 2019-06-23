@@ -1,8 +1,12 @@
 alias: 'Clear states'
-initial_state: 'off'
+initial_state: 'on'
 trigger:
-  - platform: time
-    at: '12:00:00'
+  - platform: state
+    entity_id: input_boolean.bedtime
+    to: 'off'
 action:
   - service: switch.turn_on
-    entity_id: switch.fluxer
+    entity_id: 
+      - switch.circadian_lighting_circadian_hall
+      - switch.circadian_lighting_circadian_master_bedroom
+      - switch.circadian_lighting_circadian_second_bedroom
