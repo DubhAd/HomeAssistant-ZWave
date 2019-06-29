@@ -1,3 +1,4 @@
+## Needs renamed, and to use if the room is in Dim mode
 initial_state: 'on'
 alias: 'Table light on'
 trigger:
@@ -19,12 +20,12 @@ condition:
       entity_id: light.living_room_table
       state: 'on'
     - condition: state
-      entity_id: switch.tv_light_switch
-      state: 'off'
+      entity_id: input_select.living_room
+      state: 'Dim'
 action:
-  - service: light.turn_off
-    data:
-      entity_id: light.living_room_table
-      transition: 5
   - service: homeassistant.turn_off
     entity_id: input_boolean.livingroom_lights_auto
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.living_room
+      option: 'Day off'

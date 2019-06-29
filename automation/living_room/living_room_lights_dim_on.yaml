@@ -16,3 +16,8 @@ action:
     entity_id: input_boolean.livingroom_lights_auto
   - service: switch.turn_on
     entity_id: switch.livingroom_socket_switch
+  - service: light.turn_on
+    data:
+      entity_id: light.living_room_table
+      brightness_pct: 5
+      transition: 5
