@@ -1,25 +1,16 @@
 initial_state: 'on'
-alias: 'Hall lights on'
+alias: 'Hall lights arrival'
 trigger:
-  - platform: numeric_state
-    entity_id: sensor.sun_elevation
-    below: 5
-  - platform: numeric_state
-    entity_id: sensor.living_room_multi_luminance
-    below: 20
-    for:
-      minutes: 5
-  - platform: state
-    entity_id: input_boolean.bedtime
-    to: 'off'
   - platform: state
     entity_id: input_boolean.lighting_automations
     to: 'on'
   - platform: state
-    entity_id:
-      - input_boolean.living_room_occupied
-      - input_boolean.family_room_occupied
-    to: 'on'
+    to: 'Just Arrived'
+    entity_id: 
+      - input_select.person2_status_dropdown
+      - input_select.person3_status_dropdown
+      - input_select.person1_status_dropdown
+      - input_select.person4_status_dropdown
 condition:
   - condition: and
     conditions:
@@ -36,10 +27,19 @@ condition:
         state: 'off'
     - condition: or
       conditions:
-      # We're awake
+      # Or somebody just came home
       - condition: state
-        entity_id: input_boolean.bedtime
-        state: 'off'
+        state: 'Just Arrived'
+        entity_id: input_select.person2_status_dropdown
+      - condition: state
+        state: 'Just Arrived'
+        entity_id: input_select.person3_status_dropdown
+      - condition: state
+        state: 'Just Arrived'
+        entity_id: input_select.person1_status_dropdown
+      - condition: state
+        state: 'Just Arrived'
+        entity_id: input_select.person4_status_dropdown
     - condition: or
       conditions:
       # Dark in the living room

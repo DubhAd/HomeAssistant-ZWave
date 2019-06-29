@@ -1,5 +1,5 @@
 initial_state: 'on'
-alias: 'Lounge dark motion'
+alias: 'Living room dark motion'
 trigger:
   platform: state
   entity_id: binary_sensor.living_room_motion

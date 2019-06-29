@@ -9,8 +9,8 @@ cards:
   show_header_toggle: false
   entities:
   - automation.all_away_media_off
-  - automation.lounge_dark_motion
-  - automation.table_light_on
+  - automation.living_room_dark_motion
+  - automation.living_room_dark_no_motion
   - automation.tv_light_on
 - type: entities
   title: Automations for the Living room 
@@ -29,7 +29,6 @@ cards:
   - automation.living_room_lights_night_on
   - automation.living_room_lights_off
   - automation.living_room_table_light
-  - automation.table_switch_off
 - type: entities
   title: Media automations
   show_header_toggle: false

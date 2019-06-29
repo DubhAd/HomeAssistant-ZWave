@@ -66,8 +66,8 @@ my_exterior_doors:
   - binary_sensor.utility_door_exterior_sensor
   - binary_sensor.garage_closed_bike_sensor
   - binary_sensor.garage_closed_car_sensor
-my_exterior_windows:
-  name: Windows
+my_downstairs_windows:
+  name: Downstairs windows
   entities:
   - binary_sensor.guest_bedroom_window_left
   - binary_sensor.guest_bedroom_window_right
@@ -79,6 +79,10 @@ my_exterior_windows:
   - binary_sensor.second_bedroom_window_left
   - binary_sensor.second_bedroom_window_right
   - binary_sensor.bathroom_window
+my_exterior_windows:
+  name: Windows
+  entities:
+  - group.my_downstairs_windows
 my_alarm_sensors:
   name: Alarm sensors
   entities:

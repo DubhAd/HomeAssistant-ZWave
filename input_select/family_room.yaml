@@ -1,7 +1,7 @@
 name: Family room
 options:
   - Away
-  - Day off
-  - Night off
+  - Off
   - Day on
   - Night on
+  - Dim

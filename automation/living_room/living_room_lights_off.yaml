@@ -6,6 +6,9 @@ trigger:
     to: Day off
   - platform: state
     entity_id: input_select.living_room
+    to: Night off
+  - platform: state
+    entity_id: input_select.living_room
     to: Away
 condition:
   condition: and
@@ -14,14 +17,14 @@ condition:
       entity_id: input_boolean.lighting_automations
       state: 'on'
 action:
-  - service: light.turn_off
-    data:
-      entity_id: light.living_room_table
-      transition: 30
   - service: switch.turn_off
     entity_id: 
       - switch.tv_light_switch
       - switch.cabinet_light_switch
+  - service: light.turn_off
+    data:
+      entity_id: light.living_room_table
+      transition: 15
   - condition: template
     value_template: "{{ not is_state('input_select.season', 'Christmas') }}"
   - service: switch.turn_off
