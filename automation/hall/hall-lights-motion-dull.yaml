@@ -26,4 +26,4 @@ action:
       entity_id: light.hall_downstairs
       brightness_pct: 3
       transition: 5
-      kelvin: "{{ state_attr('sensor.circadian_values','colortemp')|round }}"
+      kelvin: "{{ state_attr('sensor.circadian_values','colortemp')|round|int }}"

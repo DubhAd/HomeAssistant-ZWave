@@ -7,4 +7,4 @@ sequence:
       entity_id: light.hall
       brightness_pct: 4
       transition: 5
-      kelvin: "{{ state_attr('sensor.circadian_values','colortemp')|round }}"
+      kelvin: "{{ state_attr('sensor.circadian_values','colortemp')|round|int }}"

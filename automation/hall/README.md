@@ -10,6 +10,18 @@ Oh, except at Christmas, when we'll want the Christmas light string controlled b
 
 The decision is controlled by an input select for the season/holiday, and a couple of scripts.
 
+### hall-lights-arrival.yaml
+
+This manages turning on the hall light when we arrive
+
+### hall-lights-motion-bright.yaml
+
+Turn the lights brighter if there's motion. This, and the one below, use the Circadian Lighting sensor to set the Kelvin value of the light at this point. It means if we're suddenly turning the lights on they come on at the right white level
+
+### hall-lights-motion-dull.yaml
+
+And when there's been no motion, dull them down.
+
 ### hall-lights-off-departure.yaml
 
 We leave, turn the light off.
@@ -30,7 +42,6 @@ Turn the hall lights off during the day.
 
 This one is more complicated, it triggers when:
 
-* Anybody comes home
 * The sun sets below 5 degrees
 * It gets dark (in the living room)
 * We wake up

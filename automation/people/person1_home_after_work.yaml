@@ -1,4 +1,4 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'person1 home after work'
 trigger:
   platform: state
@@ -26,9 +26,5 @@ condition:
         weekday:
           - fri
 action:
-  - service: notify.push
-    data:
-      message: "Don't forget to take your lunch out of your workbag"
-      target: "unnamed device_3"
   - service: homeassistant.turn_off
     entity_id: automation.person1_home_after_work
