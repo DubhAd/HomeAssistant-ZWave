@@ -14,9 +14,12 @@ trigger:
       minutes: 5
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    below: 6
+    below: 8
     for:
       minutes: 1
+  - platform: numeric_state
+    entity_id: sensor.living_room_multi_luminance
+    below: 6
   - platform: numeric_state
     entity_id: sensor.living_room_multi_luminance
     below: 1
