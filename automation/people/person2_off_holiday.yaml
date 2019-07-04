@@ -12,6 +12,9 @@ condition:
   - condition: state
     entity_id: calendar.person2_holiday
     state: 'off'
+  - condition: state
+    entity_id: input_boolean.person2_travelling
+    state: 'off'
 action:
   - service: switch.turn_on
     entity_id: switch.radio_person2
