@@ -22,9 +22,9 @@ condition:
     conditions: 
     - condition: or
       conditions:
-      - condition: zone
-        zone: zone.work
+      - condition: state
         entity_id: device_tracker.person2_mobile_gps
+        state: 'Work'
       - condition: numeric_state
         entity_id: proximity.person2_work
         below: 2

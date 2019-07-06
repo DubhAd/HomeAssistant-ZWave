@@ -2,8 +2,7 @@ initial_state: 'on'
 alias: 'person2 home'
 trigger:
   - platform: state
-    entity_id: 
-    - group.person_person2
+    entity_id: group.person_person2
     to: 'home'
   - platform: homeassistant
     event: start
