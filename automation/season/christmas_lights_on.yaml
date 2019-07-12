@@ -9,9 +9,8 @@ trigger:
     from: 'on'
     to: 'off'
   - platform: state
-    entity_id: input_boolean.all_away
-    from: 'on'
-    to: 'off'
+    entity_id: input_boolean.home_occupied
+    to: 'on'
   - platform: state
     entity_id: input_select.season
     to: 'Christmas'
@@ -27,14 +26,9 @@ condition:
     - condition: time
       after: '05:00:00'
       before: '22:00:00'
-    - condition: or
-      conditions:
-        - condition: state
-          entity_id: input_boolean.adults_away
-          state: 'off'
-        - condition: state
-          entity_id: input_boolean.all_away
-          state: 'off'
+    - condition: state
+      entity_id: input_boolean.home_occupied
+      state: 'on'
 action:
   - service: switch.turn_on
     entity_id:

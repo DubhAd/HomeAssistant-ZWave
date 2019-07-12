@@ -8,6 +8,9 @@ condition:
   condition: and
   conditions:
     - condition: state
+      entity_id: input_boolean.home_occupied
+      state: 'on'
+    - condition: state
       entity_id: input_boolean.lighting_automations
       state: 'on'
     - condition: numeric_state

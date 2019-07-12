@@ -11,6 +11,7 @@ cards:
   - input_boolean.bedtime
   - input_boolean.adults_away
   - input_boolean.all_away
+  - input_boolean.home_occupied
   - input_boolean.holiday_mode
   - type: divider
   - input_boolean.lighting_automations

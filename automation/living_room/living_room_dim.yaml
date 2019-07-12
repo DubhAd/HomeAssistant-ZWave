@@ -12,9 +12,12 @@ condition:
   - condition: state
     entity_id: input_boolean.living_room_occupied
     state: 'off'
+  - condition: state
+    entity_id: input_boolean.home_occupied
+    state: 'on'
   - condition: numeric_state
     entity_id: sensor.living_room_multi_luminance
-    below: 20
+    below: 10
   - condition: template
     value_template: "{{ not is_state('input_select.living_room','Dim') }}"
   - condition: state

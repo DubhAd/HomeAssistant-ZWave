@@ -2,8 +2,8 @@ initial_state: 'on'
 alias: 'Alarm arm away'
 trigger:
   - platform: state
-    entity_id: input_boolean.all_away
-    to: 'on'
+    entity_id: input_boolean.home_occupied
+    to: 'off'
 action:
   - service: alarm_control_panel.alarm_arm_away
     entity_id: alarm_control_panel.ha_alarm

@@ -21,6 +21,9 @@ condition:
   # Either it's bright, or the room is empty
   - condition: and
     conditions:
+    - condition: state
+      entity_id: input_boolean.home_occupied
+      state: 'on'
     - condition: template
       value_template: "{{ not is_state('input_select.living_room','Day off') }}"
     - condition: or

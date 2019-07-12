@@ -10,8 +10,8 @@ trigger:
     for:
       minutes: 10
   - platform: state
-    entity_id: input_boolean.all_away
-    to: 'on'
+    entity_id: input_boolean.home_occupied
+    to: 'off'
 condition:
   - condition: state
     entity_id: input_boolean.living_room_occupied

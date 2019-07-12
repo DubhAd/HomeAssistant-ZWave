@@ -8,8 +8,8 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: input_boolean.adults_away
-      state: 'off'
+      entity_id: input_boolean.home_occupied
+      state: 'on'
 action:
   - service: notify.logfile
     data_template: 
