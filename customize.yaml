@@ -503,3 +503,5 @@ switch.table_light_switch:
   icon: mdi:power-socket-uk
 binary_sensor.master_window_right:
   device_class: window
+binary_sensor.master_window_left:
+  device_class: window
