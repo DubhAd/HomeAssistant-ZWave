@@ -29,6 +29,8 @@ cards:
       tap_action: 
         action: toggle
       name: Socket
+    - entity: binary_sensor.master_window_right
+      name: Right window
 - type: glance
   title: Master ensuite
   columns: 4

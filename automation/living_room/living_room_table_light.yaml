@@ -1,14 +1,16 @@
 initial_state: 'on'
 alias: 'Living room table light'
 trigger:
-  platform: state
-  entity_id: sensor.circadian_values
+  - platform: state
+    entity_id: sensor.circadian_values
 condition:
-  condition: and
-  conditions:
+  - condition: and
+    conditions:
     - condition: state
       entity_id: light.living_room_table
       state: 'on'
+    - condition: template
+      value_template: "{{ not is_state('input_select.living_room','Day off') }}"
 action:
   - service: light.turn_on
     data_template:

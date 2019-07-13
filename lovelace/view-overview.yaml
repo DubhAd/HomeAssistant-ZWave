@@ -115,6 +115,8 @@ cards:
         name: Guest bedroom left
       - entity: binary_sensor.guest_bedroom_window_right
         name: Guest bedroom right
+      - entity: binary_sensor.master_window_right
+        name: Master window right
       - entity: binary_sensor.master_window_ensuite
         name: Master ensuite window
     show_empty: false
