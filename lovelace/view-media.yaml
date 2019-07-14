@@ -128,7 +128,7 @@ cards:
         show_tts: google
         power_color: true
   - type: custom:mini-media-player
-    entity: media_player.cast_guest_bedroom_speaker
+    entity: media_player.cast_master_bedroom_display
     name: Guest bedroom
     artwork: cover
     icon: mdi:google-home

@@ -6,9 +6,17 @@ trigger:
     from: 'off'
     to: 'on'
 condition:
-  - condition: state
-    entity_id: group.my_alarm_sensors
-    state: 'on'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: group.my_exterior_doors
+      state: 'on'
+    - condition: state
+      entity_id: group.my_downstairs_windows
+      state: 'on'
+    - condition: state
+      entity_id: group.my_upstairs_windows
+      state: 'on'
 action:
   # Notify the last person to leave
   - service_template: >-
@@ -20,11 +28,7 @@ action:
     data_template: 
       message: >-
         The following are open: 
-        {%- for my_entity in states.group.my_alarm_sensors.attributes.entity_id -%}
-          {% set parts = my_entity.split('.') -%}
-          {%- if states(my_entity) == 'on' %}
-          {%- if loop.first %} {% elif loop.last %} and the {% else %}, the {% endif -%}{{ states[parts[0]][parts[1]].name }}{% endif -%}
-        {%- endfor %}
+        {{ dict((states|selectattr('entity_id', 'in', state_attr('group.my_downstairs_windows', 'entity_id') + state_attr('group.my_upstairs_windows', 'entity_id') + state_attr('group.my_exterior_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(', ') }}
       data:
         priority: '1'
         sound: 'siren'
