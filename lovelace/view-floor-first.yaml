@@ -65,12 +65,22 @@ cards:
       tap_action: 
         action: toggle
       name: Socket
-    - entity: binary_sensor.second_bedroom_window_ensuite
-      name: Ensuite
     - entity: binary_sensor.second_bedroom_window_left
       name: Left
     - entity: binary_sensor.second_bedroom_window_right
       name: Right
+- type: glance
+  title: Second bedroom ensuite
+  columns: 4
+  entities:
+    - entity: sensor.second_bedroom_ensuite_humidity
+      name: Humidity
+    - entity: sensor.second_bedroom_ensuite_temperature
+      name: Temperature
+    - entity: sensor.second_bedroom_ensuite_pressure
+      name: Pressure
+    - entity: binary_sensor.second_bedroom_window_ensuite
+      name: Ensuite
 - type: glance
   title: Guest bedroom
   columns: 5
@@ -90,8 +100,14 @@ cards:
       name: Right window
 - type: glance
   title: Bathroom
-  columns: 1
+  columns: 4
   entities:
+    - entity: sensor.bathroom_humidity
+      name: Humidity
+    - entity: sensor.bathroom_temperature
+      name: Temperature
+    - entity: sensor.bathroom_pressure
+      name: Pressure
     - entity: binary_sensor.bathroom_window
       name: Bathroom
 - type: glance
@@ -128,6 +144,10 @@ cards:
       name: Office
     - entity: sensor.master_ensuite_humidity
       name: Master ensuite
+    - entity: sensor.second_bedroom_ensuite_humidity
+      name: Second bedroom ensuite
+    - entity: sensor.bathroom_humidity
+      name: Bathroom
 - type: history-graph
   title: Temperature
   hours_to_show: 12
@@ -136,3 +156,17 @@ cards:
       name: Office
     - entity: sensor.master_ensuite_temperature
       name: Master ensuite
+    - entity: sensor.second_bedroom_ensuite_temperature
+      name: Second bedroom ensuite
+    - entity: sensor.bathroom_temperature
+      name: Bathroom
+- type: history-graph
+  title: Pressure
+  hours_to_show: 12
+  entities:
+    - entity: sensor.master_ensuite_pressure
+      name: Master ensuite
+    - entity: sensor.second_bedroom_ensuite_pressure
+      name: Second bedroom ensuite
+    - entity: sensor.bathroom_pressure
+      name: Bathroom

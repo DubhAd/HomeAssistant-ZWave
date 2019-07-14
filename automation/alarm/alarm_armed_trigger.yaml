@@ -26,9 +26,14 @@ condition:
     entity_id: alarm_control_panel.ha_alarm
     state: armed_away
   # Nobody's home
-  - condition: state
-    entity_id: input_boolean.home_occupied
-    state: 'off'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: input_boolean.home_occupied
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.all_away
+      state: 'on'
 action:
   - service: alarm_control_panel.alarm_trigger
     entity_id: alarm_control_panel.ha_alarm

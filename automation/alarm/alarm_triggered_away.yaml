@@ -5,11 +5,14 @@ trigger:
     entity_id: alarm_control_panel.ha_alarm
     to: 'triggered'
 condition:
-  condition: and
+  condition: or
   conditions:
-    - condition: state
-      entity_id: input_boolean.home_occupied
-      state: 'off'
+  - condition: state
+    entity_id: input_boolean.home_occupied
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.all_away
+    state: 'on'
 action:
   - service: notify.logfile
     data_template: 
