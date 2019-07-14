@@ -56,9 +56,14 @@ cards:
       name: "Light level"
 - type: glance
   title: Vestibule
-  columns: 4
+  columns: 3
   entities:
-    - binary_sensor.front_door_sensor
+    - entity: binary_sensor.front_door_sensor
+      name: Front door
+    - entity: binary_sensor.vestibule_window_front
+      name: Front window
+    - entity: binary_sensor.vestibule_window_side
+      name: Side window
     - entity: binary_sensor.vestibule_occupancy
       name: Motion
     - entity: sensor.vestibule_illuminance

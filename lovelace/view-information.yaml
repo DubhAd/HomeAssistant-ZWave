@@ -62,8 +62,20 @@ cards:
     show_header_toggle: false
     columns: 5
     entities:
+      - entity: sensor.bathroom_environment_battery
+        name: Bathroom environment
+      - entity: sensor.master_window_left_battery
+        name: Master bed left
+      - entity: sensor.master_window_right_battery
+        name: Master bed right
       - entity: sensor.guestbedroom_window_left_battery
         name: Guest left
+      - entity: sensor.second_bedroom_ensuite_environment_battery
+        name: Second bed ensuite environment
+      - entity: sensor.vestibule_window_front_battery
+        name: Vestibule window front
+      - entity: sensor.vestibule_window_side_battery
+        name: Vestibule window side
       - entity: sensor.guestbedroom_window_right_battery
         name: Guest right
       - entity: sensor.hall_downstairs_motion_battery
@@ -97,6 +109,12 @@ cards:
     show_header_toggle: false
     columns: 5
     entities:
+    - sensor.bathroom_environment_linkquality
+    - sensor.master_window_left_linkquality
+    - sensor.master_window_right_linkquality
+    - sensor.second_bedroom_ensuite_environment_linkquality
+    - sensor.vestibule_window_front_linkquality
+    - sensor.vestibule_window_side_linkquality
     - entity: sensor.bathroom_window_linkquality
       name: Bathroom window
     - entity: sensor.downstairs_hall_light_link

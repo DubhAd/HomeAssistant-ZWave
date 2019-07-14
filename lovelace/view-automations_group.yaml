@@ -13,12 +13,14 @@ cards:
   - automation.adults_returned
   - automation.all_away
   - automation.all_returned
+  - type: divider
   - automation.mark_person_as_just_arrived
   - automation.mark_person_as_away
   - automation.mark_person_as_home
   - automation.mark_person_as_just_left
   - automation.tasker_hook
   - type: divider
+  - automation.bedtime_something_open
   - automation.adults_away_something_open
   - type: divider
   - automation.person4_coming_home

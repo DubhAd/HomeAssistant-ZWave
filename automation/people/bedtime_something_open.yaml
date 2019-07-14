@@ -1,0 +1,46 @@
+alias: 'Bedtime something open'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: input_boolean.person3_is_awake
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.person2_is_awake
+    to: 'off'
+condition:
+  condition: and
+  conditions:
+    # We're both in bed
+    - condition: state
+      entity_id: input_boolean.person3_is_awake
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.person2_is_awake
+      state: 'off'
+    - condition: or
+      conditions:
+      # Either the phone or tablet are away, or the family room isn't occupied
+      - condition: state
+        entity_id: group.my_downstairs_windows
+        state: 'on'
+      - condition: state
+        entity_id: group.my_exterior_doors
+        state: 'on'
+action:
+  - service_template: >-
+      {% if as_timestamp(states.input_boolean.person2_is_awake.last_updated) > as_timestamp(states.input_boolean.person3_is_awake.last_updated) %}
+        notify.person2
+      {% else %}
+        notify.person3
+      {% endif %}
+    data_template:
+      message: >-
+        The following are open:
+          {{ (dict((states|selectattr('entity_id', 'in', state_attr('group.my_upstairs_windows', 'entity_id'))|list)|groupby('state'))['on'] + dict((states|selectattr('entity_id', 'in', state_attr('group.my_exterior_doors', 'entity_id'))|list)|groupby('state'))['on'])|map(attribute='name')|list|join(', ') }}
+      data:
+        device: >-
+          {% if (as_timestamp(states.input_boolean.person2_is_awake.last_updated) > as_timestamp(states.input_boolean.person3_is_awake.last_updated)) %}
+            MyPhone
+          {% else %}
+            nexus5x
+          {% endif %}
