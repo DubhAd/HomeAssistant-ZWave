@@ -1,0 +1,39 @@
+initial_state: 'off'
+alias: 'Return train watcher'
+trigger:
+  - platform: time_pattern
+    minutes: 10
+condition:
+  - condition: and
+    conditions: 
+    - condition: template
+      value_template: >-
+        {%- macro getTrainStatus() -%}
+        
+        {%- for train in state_attr('sensor.next_train_to_abc', 'next_trains') -%}
+        {%- if train.status == "ON TIME" -%}
+          X
+        {%- endif -%}
+        {%- endfor -%}
+        {%- endmacro -%}
+        
+        {%- if getTrainStatus()[0:4] == "XXXX" -%}
+        true
+        {%- else -%}
+        false
+        {%- endif -%}
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: device_tracker.person2_mobile_gps
+        state: 'Work'
+      - condition: numeric_state
+        entity_id: proximity.person2_work
+        below: 2
+action:
+  - service: notify.logfile
+    data_template: 
+      message: "SENDME You need to check the trains, they're looking a bit messed up"

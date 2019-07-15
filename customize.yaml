@@ -509,3 +509,7 @@ binary_sensor.vestibule_window_front:
   device_class: window
 binary_sensor.vestibule_window_side:
   device_class: window
+binary_sensor.family_window_left:
+  device_class: window
+binary_sensor.family_window_right:
+  device_class: window

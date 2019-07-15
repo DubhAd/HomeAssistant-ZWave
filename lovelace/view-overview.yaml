@@ -91,6 +91,8 @@ cards:
       - binary_sensor.front_door_sensor
       - binary_sensor.vestibule_window_front
       - binary_sensor.vestibule_window_side
+      - binary_sensor.family_window_left
+      - binary_sensor.family_window_right
       - entity: binary_sensor.garage_closed_bike_sensor
         name: Garage door bike
       - entity: binary_sensor.garage_closed_car_sensor

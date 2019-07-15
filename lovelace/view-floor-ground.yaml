@@ -85,8 +85,14 @@ cards:
         action: toggle
 - type: glance
   title: Family room & Kitchen
-  columns: 6
+  columns: 4
   entities:
+    - binary_sensor.family_window_left
+    - binary_sensor.family_window_right
+    - entity: switch.family_room_socket_switch
+      name: Socket
+      tap_action: 
+        action: toggle
     - entity: sensor.person1
       name: XBox
     - entity: device_tracker.family_tv
@@ -97,10 +103,6 @@ cards:
       name: Home Mini
     - entity: media_player.googlehomehub3435
       name: Home Hub
-    - entity: switch.family_room_socket_switch
-      name: Socket
-      tap_action: 
-        action: toggle
 - type: glance
   title: Utility room & back
   columns: 2
