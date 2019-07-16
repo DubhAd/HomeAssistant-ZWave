@@ -8,6 +8,6 @@ action:
   - service: notify.logfile
     data:
       message: "SENDME person1's phone is at {{ states('sensor.battery_person1_mobile') }}% battery"
-  - service: notify.person3
+  - service: notify.logfile
     data:
-      message: "person1's phone is at {{ states('sensor.battery_person1_mobile') }}% battery"
+      message: "SENDperson3 person1's phone is at {{ states('sensor.battery_person1_mobile') }}% battery"

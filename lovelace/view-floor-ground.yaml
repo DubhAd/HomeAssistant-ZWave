@@ -25,7 +25,9 @@ cards:
     - entity: switch.livingroom_socket_switch
       name: "Socket"
       tap_action: 
-        action: toggle
+        action: toggle 
+    - entity: binary_sensor.patio_window_left
+      name: "Left"
     - entity: binary_sensor.patio_door_left_sensor
       name: "Patio door"
     - entity: binary_sensor.living_room_motion

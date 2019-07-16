@@ -42,3 +42,4 @@ cards:
   - automation.resume_music_in_the_office
   - automation.office_occupied
   - automation.office_not_occupied
+  - automation.office_button_pushed

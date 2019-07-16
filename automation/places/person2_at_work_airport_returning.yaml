@@ -10,11 +10,8 @@ condition:
       entity_id: input_boolean.person2_home
       state: 'off'
 action:
-  - service: notify.person3
-    data_template:
-      message: "person2's landed at work Aiport"
   - service: notify.logfile
     data_template:
-      message: "person2's landed at work Aiport"
+      message: "SENDperson3 person2's landed at work Aiport"
   - service: automation.turn_off
     entity_id: automation.person2_at_work_airport_returning

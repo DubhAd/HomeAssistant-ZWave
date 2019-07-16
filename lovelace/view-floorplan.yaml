@@ -12,6 +12,16 @@ cards:
         stylesheet: /local/floorplan/config/home/floorplan.css
         rules:
           - entities:
+              - input_boolean.living_room_occupied
+              - input_boolean.family_room_occupied
+              - input_boolean.office_occupied
+            states:
+              - state: 'on'
+                class: room-occupied
+              - state: 'off'
+                class: room-empty
+
+          - entities:
               - sensor.bin_blue
               - sensor.bin_grey
               - sensor.bin_brown
@@ -27,11 +37,11 @@ cards:
             propagate: true
   
           - entities:
-              - group.car
+              - input_boolean.car_home
             states:
-              - state: 'home'
+              - state: 'on'
                 class: 'car-home'
-              - state: 'not_home'
+              - state: 'off'
                 class: 'car-away'
 
           - entities:
@@ -344,6 +354,7 @@ cards:
           - entities:
               - binary_sensor.utility_door_exterior_sensor
               - binary_sensor.patio_door_left_sensor
+              - binary_sensor.patio_window_left
               - binary_sensor.front_door_sensor
               - binary_sensor.vestibule_window_front
               - binary_sensor.vestibule_window_side

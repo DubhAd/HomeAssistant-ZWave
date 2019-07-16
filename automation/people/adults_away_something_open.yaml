@@ -19,22 +19,12 @@ condition:
       state: 'on'
 action:
   # Notify the last person to leave
-  - service_template: >-
-      {% if as_timestamp(states.input_boolean.person2_home.last_updated) > as_timestamp(states.input_boolean.person3_home.last_updated) %}
-        notify.person2
-      {% else %}
-        notify.person3
-      {% endif %}
+  - service: notify.logfile
     data_template: 
       message: >-
-        The following are open: 
+        {% if as_timestamp(states.input_boolean.person2_home.last_updated) > as_timestamp(states.input_boolean.person3_home.last_updated) %}
+          SENDME The following are open: 
+        {% else %}
+          SENDperson3 The following are open: 
+        {% endif %}
         {{ dict((states|selectattr('entity_id', 'in', state_attr('group.my_downstairs_windows', 'entity_id') + state_attr('group.my_upstairs_windows', 'entity_id') + state_attr('group.my_exterior_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(', ') }}
-      data:
-        priority: '1'
-        sound: 'siren'
-        device: >-
-          {% if (as_timestamp(states.input_boolean.person2_home.last_updated) > as_timestamp(states.input_boolean.person3_home.last_updated)) %} 
-            MyPhone
-          {% else %}
-            nexus5x
-          {% endif %}

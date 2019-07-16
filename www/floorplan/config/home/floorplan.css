@@ -46,6 +46,15 @@ background-color: var(--primary-background-color);
   visibility: hidden !important;
 }
 
+.room-empty {
+  fill: #5d5d5d !important;
+}
+
+.room-occupied {
+  fill: #596170 !important;
+  /* fill: #5d5d6f !important;*/
+}
+
 .door-closed {
   /* fill: #77FF77 !important; */
   /* fill: #81c9a7 !important; */

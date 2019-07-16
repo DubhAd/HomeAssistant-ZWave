@@ -25,3 +25,5 @@ cards:
   - automation.recorder_purge
   - automation.plex_hook
   - automation.ha_theme
+  - automation.zigbee_offline
+  - automation.device_unavailable

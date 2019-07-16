@@ -36,6 +36,12 @@ cards:
   - automation.test_notify
   - automation.test_media
 - type: entities
+  title: Car related automations
+  show_header_toggle: false
+  entities:
+  - automation.car_home
+  - automation.car_away
+- type: entities
   title: Seasonal automations
   show_header_toggle: false
   entities:

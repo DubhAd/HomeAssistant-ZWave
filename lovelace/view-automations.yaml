@@ -38,6 +38,7 @@ cards:
   - automation.garage_door_closed
   - automation.garage_open_nobody_home
   - automation.person2_away_garage_open
+  - automation.probably_leaving
 - type: entities
   title: Automations for the garden
   show_header_toggle: false

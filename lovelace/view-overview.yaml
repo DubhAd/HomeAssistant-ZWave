@@ -97,6 +97,7 @@ cards:
         name: Garage door bike
       - entity: binary_sensor.garage_closed_car_sensor
         name: Garage door car
+      - binary_sensor.patio_window_left
       - entity: binary_sensor.patio_door_left_sensor
         name: Patio door
       - entity: binary_sensor.utility_door_exterior_sensor
