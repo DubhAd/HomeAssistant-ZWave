@@ -33,6 +33,7 @@ cards:
   entities:
   - automation.holiday
   - automation.holiday_over
+  - type: divider
   - automation.person2_at_amsterdam_airport
   - automation.person2_at_brussels_airport
   - automation.person2_at_paris_cdg_airport
@@ -42,5 +43,11 @@ cards:
   - automation.person2_at_lcy
   - automation.person2_at_lhr
   - automation.person2_at_sin
+- type: entities
+  title: Automations for work
+  show_header_toggle: false
+  entities:
+  - automation.person2_at_work
+  - automation.person2_left_work
   - automation.trains_to_work
   - automation.trains_from_work
