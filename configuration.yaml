@@ -154,7 +154,7 @@ script: !include_dir_named scripts/
 automation: !include automations.yaml
  # This is for my automations, `old` is just a tag - see https://www.home-assistant.io/docs/configuration/devices/
 automation old: !include_dir_list automation/
-scene: !include_dir_list scenes/
+#scene: !include_dir_list scenes/
 shell_command: !include_dir_merge_named shell_commands/
 group: !include groups.yaml
 

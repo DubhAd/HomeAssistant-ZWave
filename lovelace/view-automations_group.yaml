@@ -10,6 +10,7 @@ cards:
   entities:
   - automation.bedtime
   - automation.adults_away
+  - automation.adults_away_home_off
   - automation.adults_returned
   - automation.all_away
   - automation.all_returned

@@ -55,6 +55,7 @@ cards:
   entities:
   - script.scan_bt_arrive
   - script.scan_bt_depart
+  - script.scan_bt_restart
 - type: entities
   title: Hall
   entities:
