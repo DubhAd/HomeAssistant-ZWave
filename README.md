@@ -44,9 +44,9 @@ I used to run the following, but don't currently:
   * NodOn [Soft Remote](https://nodon.fr/en/nodon/z-wave-soft-remote/) in the second bedroom, to also provide manual control of that room's Yeelight.
   * Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller, to provide a wall switch for the garden lights
 * Zigbee, using [Zigbee2MQTT](https://www.zigbee2mqtt.io/) running on another system
-  * Xiaomi Aqara [door/window sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-aqara-window-door-sensor/)
+  * Xiaomi Aqara [door/window sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-aqara-window-door-sensor/) - one on every external window (yes, that's a lot)
   * Xiaomi Aqara [motion and light sensor](https://xiaomi-mi.com/sockets-and-sensors/aqara-human-body-sensor/)
-  * Xiaomi Aqara [temperature and humidity sensor](https://xiaomi-mi.com/sockets-and-sensors/aqara-temperature-and-humidity-sensor/)
+  * Xiaomi Aqara [temperature and humidity sensor](https://xiaomi-mi.com/sockets-and-sensors/aqara-temperature-and-humidity-sensor/) in the bathrooms
   * Gledopto [GL-C-008 RGB+CCT](https://www.aliexpress.com/item/32858603964.html) LED controller (along with some RGB-CCT LED tape)
 * Lighting
   * [Yeelight](https://home-assistant.io/components/light.yeelight/) component and [led strips](https://www.yeelight.com/en_US/product/pitaya), one mounted behind the headboard in the master bedroom, and one along the wall side of the bed frame in the second bedroom. These provide good enough lighting to read by at night, and also to help wake us in the morning.
@@ -87,7 +87,8 @@ I used to run the following, but don't currently:
 
 ## Presence detection
 
-* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html), and [another update](https://blog.ceard.tech/2018/10/presence-detection-update-3.html) (there will be a fourth update now I'm using monitor). Short version - I don't use groups, or merge the trackers. Both of those approaches have major shortcomings, for the first if you have a misbehaving sensor that's stuck at `home` you'll never be marked as away. For the second, the last one to update wins, so you can flip flop between two states. I'm experimenting with the [Bayesian](https://www.home-assistant.io/components/binary_sensor.bayesian) sensor and some automation logic - so far it's the automation logic that's winning for me.
+* If you were following along, you'll note I use three different device trackers, two for home (nmap, bluetooth) and one for away (GPSLogger). I explain more about [this here](https://blog.ceard.tech/2018/01/home-assistant-and-basic-presence.html), with an update [here](https://blog.ceard.tech/2018/09/a-while-back-i-covered-how-i-was-doing.html), and [another update](https://blog.ceard.tech/2018/10/presence-detection-update-3.html), and semi-finally [a fourth](https://blog.ceard.tech/2019/03/presence-detection-are-we-nearly-there.html). Short version - I don't merge the trackers (that's going away anyway), but I do use groups again.  I've experimented with the [Bayesian](https://www.home-assistant.io/components/binary_sensor.bayesian) sensor, but compared to what I can do with the automations, it's not flexible enough for me.
+* When I said semi-finally, that's because I've a few tweaks to write up, and some other thoughts. I'll eventually get around to summarising these.
 
 ## Notes
 
