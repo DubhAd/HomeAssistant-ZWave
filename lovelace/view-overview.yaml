@@ -152,8 +152,6 @@ cards:
         name: Hall socket
         tap_action: 
           action: toggle
-      - entity: light.living_room_table
-        name: "Table light"
       - entity: switch.tv_light_switch
         tap_action: 
           action: toggle

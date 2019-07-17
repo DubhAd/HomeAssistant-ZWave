@@ -25,5 +25,11 @@ cards:
   - automation.recorder_purge
   - automation.plex_hook
   - automation.ha_theme
-  - automation.zigbee_offline
   - automation.device_unavailable
+- type: entities
+  title: Zigbee mesh automations
+  show_header_toggle: false
+  entities:
+  - automation.zigbee_offline
+  - automation.living_room_table_on
+  - automation.living_room_table_off

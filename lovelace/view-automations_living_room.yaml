@@ -5,15 +5,13 @@ icon: mdi:home-circle
 cards:
 - type: custom:compact-custom-header
 - type: entities
-  title: Automations for the Living room Current
+  title: Motion related
   show_header_toggle: false
   entities:
-  - automation.all_away_media_off
   - automation.living_room_dark_motion
   - automation.living_room_dark_no_motion
-  - automation.tv_light_on
 - type: entities
-  title: Automations for the Living room 
+  title: Room status
   show_header_toggle: false
   entities:
   - automation.living_room_arrival
@@ -24,6 +22,11 @@ cards:
   - automation.living_room_night_on
   - automation.living_room_occupied
   - automation.living_room_not_occupied
+- type: entities
+  title: Automations for the lights
+  show_header_toggle: false
+  entities:
+  - automation.tv_light_on
   - automation.living_room_lights_day_on
   - automation.living_room_lights_dim_on
   - automation.living_room_lights_night_on
@@ -33,6 +36,7 @@ cards:
   title: Media automations
   show_header_toggle: false
   entities:
+  - automation.all_away_media_off
   - automation.tv_on_sonos_off
   - automation.sonos_on_tv_mute
   - automation.sonos_off_tv_unmute
