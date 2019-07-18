@@ -306,6 +306,7 @@ cards:
               - light.master_bedroom_bedhead
               - light.person1_bedroom_bedside
               - light.hall
+              - light.living_room_table
             states:
               - state: 'on'
                 class: 'light-on'

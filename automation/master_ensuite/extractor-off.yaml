@@ -1,0 +1,17 @@
+alias: 'Extractor off'
+initial_state: 'off'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.master_ensuite_humidity
+    below: 60
+    for: '00:01:00'
+condition:
+  - condition: state
+    entity_id: input_boolean.office_occupied
+    state: 'on'
+action:
+  - service: script.notify_person2_at_home
+    data:
+      message: "You can turn the extractor fan off now"
+  - service: homeassistant.turn_off
+    entity_id: automation.extractor_off

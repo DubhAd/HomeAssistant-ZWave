@@ -1,0 +1,14 @@
+alias: 'Extractor on'
+initial_state: 'on'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.master_ensuite_humidity
+    above: 80
+    for: '00:01:00'
+condition:
+  - condition: state
+    entity_id: input_boolean.office_occupied
+    state: 'on'
+action:
+  - service: homeassistant.turn_on
+    entity_id: automation.extractor_off
