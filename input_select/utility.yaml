@@ -1,8 +1,7 @@
-name: Family room
+name: Utility room
 options:
   - Away
-  - Dim
+  - Off
   - Day on
   - Night on
-  - On
-  - Off
+  - Dim

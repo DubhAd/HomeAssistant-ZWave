@@ -1,9 +1,8 @@
-name: Living room
+name: Kitchen
 options:
   - Away
+  - Off
   - Dim
-  - Day off
   - Day on
   - Night on
   - On
-  - Off

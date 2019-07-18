@@ -1,0 +1,6 @@
+name: Utility room
+options:
+  - Away
+  - Off
+  - On
+  - Dim
