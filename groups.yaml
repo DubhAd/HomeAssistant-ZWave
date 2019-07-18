@@ -37,7 +37,7 @@ person_person2_work:
 person_person3:
   name: person3
   entities:
-  - device_tracker.person3_mobile_wifi
+  - device_tracker.person3_mobile
   - device_tracker.person3_bt_mobile
   - device_tracker.person3_bt_front_mobile
 person_person1:

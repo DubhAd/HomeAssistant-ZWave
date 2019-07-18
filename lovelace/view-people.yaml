@@ -27,9 +27,8 @@ cards:
         - entity: device_tracker.person3_mobile
           name: GPS
           icon: mdi:crosshairs-gps
-        - entity: device_tracker.person3_mobile_wifi
+        - entity: device_tracker.person3_mobile
           name: WiFi
-          icon: mdi:wifi
         - entity: device_tracker.person3_bt_front_mobile
           name: Front
           icon: mdi:bluetooth
