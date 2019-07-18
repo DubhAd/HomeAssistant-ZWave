@@ -26,6 +26,8 @@ cards:
         action: toggle 
     - entity: binary_sensor.patio_window_left
       name: "Left"
+    - entity: binary_sensor.patio_window_right
+      name: "Right"
     - entity: binary_sensor.patio_door_left_sensor
       name: "Patio door"
     - entity: binary_sensor.living_room_motion

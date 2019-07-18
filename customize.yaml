@@ -515,3 +515,5 @@ binary_sensor.family_window_right:
   device_class: window
 binary_sensor.patio_window_left:
   device_class: window
+binary_sensor.patio_window_right:
+  device_class: window
