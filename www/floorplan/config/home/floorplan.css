@@ -46,6 +46,22 @@ background-color: var(--primary-background-color);
   visibility: hidden !important;
 }
 
+.awake {
+  fill: #949494 !important;
+}
+
+.sleeping {
+  fill: #0e0e6e !important;
+}
+
+.in-bed {
+  fill: #504c66 !important;
+}
+
+.out-of-bed {
+  fill: #57565c !important;
+}
+
 .room-empty {
   fill: #5d5d5d !important;
 }

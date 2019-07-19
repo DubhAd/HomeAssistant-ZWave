@@ -12,6 +12,26 @@ cards:
         stylesheet: /local/floorplan/config/home/floorplan.css
         rules:
           - entities:
+              - input_boolean.person3_in_bed
+              - input_boolean.person1_in_bed
+              - input_boolean.person2_in_bed
+            states:
+              - state: 'on'
+                class: in-bed
+              - state: 'off'
+                class: out-of-bed
+
+          - entities:
+              - input_boolean.person3_is_awake
+              - input_boolean.person1_is_awake
+              - input_boolean.person2_is_awake
+            states:
+              - state: 'on'
+                class: awake
+              - state: 'off'
+                class: sleeping
+
+          - entities:
               - input_boolean.living_room_occupied
               - input_boolean.family_room_occupied
               - input_boolean.office_occupied
