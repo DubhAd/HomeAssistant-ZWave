@@ -5,5 +5,5 @@ sequence:
     state: 'on'
   - service: notify.discord_webhook
     data_template:
-      title: "{{ title }}"
-      message: "<@Tinkerer0042> {{ message }}"
+      title: "{{ title|default('Notification') }}"
+      message: "<@Tinkerer0042> {{ message|default('A message should have been here') }}"
