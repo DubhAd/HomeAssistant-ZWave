@@ -2,14 +2,14 @@ initial_state: 'on'
 alias: 'Bedtime'
 trigger:
   - platform: state
-    entity_id: input_boolean.person3_is_awake
-    to: 'off'
+    entity_id: input_boolean.person3_in_bed
+    to: 'on'
   - platform: state
-    entity_id: input_boolean.person2_is_awake
-    to: 'off'
+    entity_id: input_boolean.person2_in_bed
+    to: 'on'
   - platform: state
-    entity_id: input_boolean.person1_is_awake
-    to: 'off'
+    entity_id: input_boolean.person1_in_bed
+    to: 'on'
 condition:
   - condition: and
     conditions:
@@ -21,8 +21,8 @@ condition:
       - condition: and
         conditions:
         - condition: state
-          entity_id: input_boolean.person3_is_awake
-          state: 'off'
+          entity_id: input_boolean.person3_in_bed
+          state: 'on'
         - condition: state
           entity_id: input_boolean.person3_home
           state: 'on'
@@ -37,8 +37,8 @@ condition:
       - condition: and
         conditions:
         - condition: state
-          entity_id: input_boolean.person2_is_awake
-          state: 'off'
+          entity_id: input_boolean.person2_in_bed
+          state: 'on'
         - condition: state
           entity_id: input_boolean.person2_home
           state: 'on'
@@ -50,8 +50,8 @@ condition:
       - condition: and
         conditions:
         - condition: state
-          entity_id: input_boolean.person1_is_awake
-          state: 'off'
+          entity_id: input_boolean.person1_in_bed
+          state: 'on'
         - condition: state
           entity_id: input_boolean.person1_home
           state: 'on'

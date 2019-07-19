@@ -5,12 +5,14 @@ icon: mdi:floor-plan
 cards:
   - type: custom:compact-custom-header
   - type: picture-glance
-    title: "The house"
+    title: "Home"
     image: /local/images/house.jpg
     entities:
       - binary_sensor.garage_closed_bike_sensor
       - binary_sensor.garage_closed_car_sensor
       - binary_sensor.front_door_sensor
+      - binary_sensor.vestibule_window_front
+      - binary_sensor.vestibule_window_side
       - switch.number_sign_switch
       - input_boolean.person3_home
       - input_boolean.person1_home
@@ -31,10 +33,12 @@ cards:
     title: Living room
     entities:
       - switch.cabinet_light_switch
-      - switch.table_light_switch
       - switch.tv_light_switch
       - switch.livingroom_socket_switch
+      - light.living_room_table
+      - binary_sensor.patio_window_left
       - binary_sensor.patio_door_left_sensor
+      - binary_sensor.patio_window_right
       - binary_sensor.living_room_motion
     state_image: 
       "on": /local/images/living_room_night.jpg
@@ -62,6 +66,8 @@ cards:
       - entity: switch.radio_person2
         icon: mdi:alarm
       - light.master_bedroom_bedhead
+      - binary_sensor.master_window_left
+      - binary_sensor.master_window_right
       - binary_sensor.master_window_ensuite
   - type: picture-glance
     image: /local/images/second_bedroom.jpg
@@ -72,6 +78,6 @@ cards:
       - entity: switch.radio_person1
         icon: mdi:alarm
       - light.person1_bedroom_bedside
-      - binary_sensor.second_bedroom_window_ensuite
       - binary_sensor.second_bedroom_window_left
       - binary_sensor.second_bedroom_window_right
+      - binary_sensor.second_bedroom_window_ensuite

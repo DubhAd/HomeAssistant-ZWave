@@ -15,11 +15,9 @@ condition:
     after: '22:00:00'
     before: '03:00:00'
 action:
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.person3_is_awake
   - service: input_boolean.turn_on
     entity_id: input_boolean.person3_in_bed
   - service: notify.logfile
     data_template:
       message: >
-        Turned off person3 awake because the phone was plugged in at {{ now() }}
+        Marked person3 as being in bed because the phone was plugged in at {{ now() }}

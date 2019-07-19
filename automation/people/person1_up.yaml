@@ -1,4 +1,4 @@
-alias: 'person1 in bed'
+alias: 'person1 Up'
 initial_state: 'on'
 trigger:
   - platform: state
@@ -14,36 +14,27 @@ trigger:
     entity_id: media_player.cast_second_bedroom_speaker
     to: 'idle'
   - platform: state
+    entity_id: input_boolean.person1_home
+    to: 'off'
+  - platform: state
     entity_id: light.person1_bedroom_bedside
     to: 'on'
   - platform: state
     entity_id: input_boolean.family_room_occupied
-    to: 'off'
+    to: 'on'
     for:
-      minutes: 10
-  - platform: time
-    at: '22:30:00'
-  - platform: time
-    at: '23:00:00'
-  - platform: time
-    at: '23:30:00'
-  - platform: time
-    at: '00:00:00'
+      minutes: 5
 condition:
   - condition: and
     conditions:
     - condition: state
       entity_id: input_boolean.person1_is_awake
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.person1_home
-      state: 'on'
-    - condition: time
-      after: '22:00:00'
-      before: '04:00:00'
-    - condition: state
-      entity_id: input_boolean.family_room_occupied
       state: 'off'
+    - condition: time
+      before: '22:00:00'
+      after: '04:00:00'
 action:
-  - service: input_boolean.turn_on
+  - service: input_boolean.turn_off
     entity_id: input_boolean.person1_in_bed
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.person1_is_awake

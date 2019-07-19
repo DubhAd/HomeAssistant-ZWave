@@ -18,7 +18,6 @@ cards:
   - automation.person1_up
   - automation.person1_up_reminder
   - automation.person1_mobile_low_battery
-  - automation.mqtt_person1_away
   - automation.person1_tablet_away
   - automation.person1_tablet_home
 - type: entities

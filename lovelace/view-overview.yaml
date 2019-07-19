@@ -86,6 +86,7 @@ cards:
       type: glance
       title: Motion
       show_state: false
+
   - type: entity-filter
     entities:
       - binary_sensor.front_door_sensor
@@ -133,6 +134,7 @@ cards:
     card:
       type: glance
       title: Open doors and windows
+      show_state: false
   - type: entity-filter
     entities:
       - entity: switch.garden_lights_switch
@@ -171,6 +173,7 @@ cards:
     card:
       type: glance
       title: Lights
+      show_state: false
   - type: conditional
     conditions:
       - entity: input_boolean.living_room_occupied

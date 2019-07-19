@@ -17,7 +17,6 @@ cards:
   - automation.person3_awake
   - automation.person3_phone_unplugged
   - automation.person3_phone_plugged
-  - automation.mqtt_person3_away
 - type: entities
   title: Automations for travel - person3
   show_header_toggle: false

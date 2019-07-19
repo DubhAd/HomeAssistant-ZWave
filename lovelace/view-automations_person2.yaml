@@ -22,7 +22,6 @@ cards:
   - automation.person2_phone_unplugged
   - automation.person2_phone_plugged
   - automation.person2_tablet_unplugged
-  - automation.mqtt_person2_away
 - type: entities
   title: Automations for travel - person2
   show_header_toggle: false
