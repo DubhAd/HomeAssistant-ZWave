@@ -80,6 +80,8 @@ my_downstairs_windows:
   - binary_sensor.vestibule_window_side
   - binary_sensor.family_window_left
   - binary_sensor.family_window_right
+  - binary_sensor.patio_window_left
+  - binary_sensor.patio_window_right
 my_upstairs_windows:
   name: Upstairs windows
   entities:

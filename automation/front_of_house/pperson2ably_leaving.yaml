@@ -43,14 +43,19 @@ condition:
   - condition: state
     entity_id: binary_sensor.front_door_sensor
     state: 'on'
+  # Office isn't occupied
+  - condition: state
+    entity_id: input_boolean.office_occupied
+    state: 'off'
 action:
-  # Notify the last person to leave
+  # Notify us
   - service: notify.logfile
     data_template: 
       message: >-
-        {% if as_timestamp(states.input_boolean.person2_home.last_updated) > as_timestamp(states.input_boolean.person3_home.last_updated) %}
-          SENDME The following are open: 
-        {% else %}
-          SENDperson3 The following are open: 
-        {% endif %}
+        SENDME The following are open: 
+        {{ dict((states|selectattr('entity_id', 'in', state_attr('group.my_downstairs_windows', 'entity_id') + state_attr('group.my_upstairs_windows', 'entity_id') + state_attr('group.my_other_exterior_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(', ') }}
+  - service: notify.logfile
+    data_template: 
+      message: >-
+        SENDperson3 The following are open: 
         {{ dict((states|selectattr('entity_id', 'in', state_attr('group.my_downstairs_windows', 'entity_id') + state_attr('group.my_upstairs_windows', 'entity_id') + state_attr('group.my_other_exterior_doors', 'entity_id'))|list)|groupby('state'))['on']|map(attribute='name')|list|join(', ') }}
