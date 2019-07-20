@@ -171,7 +171,7 @@ cards:
           name: Next alarm
       - type: glance
         title: person2's devices
-        columns: 5
+        columns: 6
         entities:
         - entity: device_tracker.person2_tablet_5
           name: Tablet
@@ -187,11 +187,16 @@ cards:
           icon: mdi:bluetooth
         - entity: sensor.battery_person2_tablet
           name: Tablet
+        - entity: input_boolean.person2_tablet_charging
+          name: Tablet charging
         - entity: device_tracker.9c305b3c6c87
           name: Laptop
           icon: mdi:wifi
         - entity: device_tracker.person2_bt_laptop
-          name: Laptop
+          name: Laptop Rear
+          icon: mdi:bluetooth
+        - entity: device_tracker.person2_bt_front_laptop
+          name: Laptop Front
           icon: mdi:bluetooth
       - type: glance
         entities:
@@ -387,3 +392,25 @@ cards:
     name: Car
     entity: group.car
     image: /local/images/car.jpg
+    tap_action:
+      action: call-service
+      service: input_boolean.toggle
+      service_data:
+        entity_id: input_boolean.lovelace_car_more
+  - type: conditional
+    conditions:
+      - entity: input_boolean.lovelace_car_more
+        state: 'on'
+    card:
+      type: vertical-stack
+      cards: 
+      - type: glance
+        title: Car
+        columns: 2
+        entities:
+        - entity: device_tracker.car_front
+          name: Front
+          icon: mdi:bluetooth
+        - entity: device_tracker.car_rear
+          name: Rear
+          icon: mdi:bluetooth
