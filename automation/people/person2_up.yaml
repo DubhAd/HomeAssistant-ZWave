@@ -9,7 +9,9 @@ trigger:
     to: 'playing'
   # Phone is unplugged
   - platform: state
-    entity_id: input_boolean.person2_phone_charging
+    entity_id: 
+      - input_boolean.person2_phone_charging
+      - input_boolean.person2_tablet_charging
     to: 'off'
   # Bedhead light is on
   - platform: state

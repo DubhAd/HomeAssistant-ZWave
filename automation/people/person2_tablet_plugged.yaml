@@ -1,5 +1,5 @@
 initial_state: 'on'
-alias: 'person2 tablet unplugged'
+alias: 'person2 tablet plugged'
 trigger:
   - platform: event
     event_type: tasker_webhook
@@ -8,7 +8,7 @@ trigger:
 condition: 
   - condition: template
     value_template: >-
-      {{ 'Unplugged' in trigger.event.data.what }}
+      {{ 'Plugged' in trigger.event.data.what }}
 action:
-  - service: input_boolean.turn_off
+  - service: input_boolean.turn_on
     entity_id: input_boolean.person2_tablet_charging
