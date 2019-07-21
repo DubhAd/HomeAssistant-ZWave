@@ -1,0 +1,19 @@
+initial_state: 'on'
+alias: 'Nearly bedtime'
+trigger:
+  - platform: state
+    entity_id: input_boolean.person2_phone_charging
+    to: 'on'
+condition:
+  - condition: time
+    after: '22:00:00'
+    before: '04:00:00'
+action:
+  - service: light.turn_on
+    data_template:
+      entity_id: light.master_bedroom_bedhead
+      kelvin: >-
+        {{ state_attr('sensor.circadian_values','colortemp')|round|int }}
+      brightness_pct: 100
+      transition: 30
+
