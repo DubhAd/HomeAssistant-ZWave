@@ -12,10 +12,6 @@
   name: 'person2 mobile first floor front'
   json_attributes_topic: 'monitor/first floor front/person2_mobile'
 
-#- platform: mqtt
-#
-#- platform: mqtt
-
 - platform: mqtt
   state_topic: 'monitor/first floor rear/person2_mobile/rssi'
   unit_of_measurement: 'dBm'
@@ -25,10 +21,6 @@
   state_topic: 'monitor/first floor front/person2_mobile/rssi'
   unit_of_measurement: 'dBm'
   name: 'person2 mobile rssi first floor front'
-
-#- platform: mqtt
-#
-#- platform: mqtt
 
 - platform: min_max
   name: "Home Occupancy confidence for person2 mobile BT"

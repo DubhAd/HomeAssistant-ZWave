@@ -1,4 +1,3 @@
-## Turns the non-binary motion sensor into a binary sensor - which is more useful for automations
 - platform: template
   sensors: 
     living_room_motion:

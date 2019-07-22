@@ -19,10 +19,6 @@ default_config:
 
 person:
 
-#introduction:
-
-#logger:
-
 config:
 
 map:
@@ -34,24 +30,9 @@ frontend: !include frontend.yaml
 lovelace:
   mode: yaml
 
-http:
-  # Uncomment this to add a password (recommended!)
-  #api_password: !secret api_passsword
-  # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: !secret base_url
-  #trusted_networks: 192.168.0.0/24
-  trusted_proxies: 127.0.0.1
-  use_x_forwarded_for: true
-  # ip_ban_enabled: true
-  # login_attempts_threshold: 3
-
-#updater:
+http: !include http.yaml
 
 discovery:
-
-#zeroconf:
-
-#conversation:
 
 history:
 
@@ -67,25 +48,14 @@ tts:
     language: 'en-GB'
 
 zwave:
-  usb_path: /dev/ttyAMA0
-  network_key: !secret zwave_network_key
-  autoheal: false
 
 mqtt: !include mqtt.yaml
-
-#mqtt_eventstream:
-
-#mqtt_eventstream:
-
-####################
 
 device_tracker: !include_dir_list device_tracker/
 
 zone: !include zones.yaml
 
 proximity: !include_dir_merge_named proximity/ 
-
-####################
 
 notify: !include_dir_merge_list notify/
 
@@ -95,23 +65,16 @@ lametric:
   client_id: !secret lametric_id
   client_secret: !secret lametric_secret
 
-####################
-
 google: !include google.yaml
-
-####################
 
 sensor: !include_dir_merge_list sensors/
 binary_sensor: !include_dir_merge_list binary_sensors/
 
 sun:
-camera: !include_dir_list camera/
 climate: !include_dir_merge_list climate/
 
+camera: !include_dir_list camera/
 ffmpeg:
-#stream:
-
-####################
 
 input_number: !include_dir_named input_number/
 input_boolean: !include_dir_named input_boolean/
@@ -119,55 +82,23 @@ input_select: !include_dir_named input_select/
 input_datetime: !include_dir_named input_datetime/
 input_text: !include_dir_named input_text/
 
-####################
-
 light: !include_dir_merge_list light/
 switch: !include_dir_merge_list switch/
 media_player: !include_dir_merge_list media_player/ 
-
-####################
 
 script: !include_dir_named scripts/
  # This is for the automation editor, you'll not find anything in there
 automation: !include automations.yaml
  # This is for my automations, `old` is just a tag - see https://www.home-assistant.io/docs/configuration/devices/
 automation old: !include_dir_list automation/
-#scene: !include_dir_list scenes/
 shell_command: !include_dir_merge_named shell_commands/
 group: !include groups.yaml
 
-####################
-
-#datadog:
-
-#panel_iframe: !include_dir_merge_named panel_iframe/
-
-panel_custom:
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:floor-plan
-    url_path: floorplan
-    config: !include floorplan.yaml
-  - name: zwavegraph2
-    sidebar_title: ZWave Graph2
-    sidebar_icon: mdi:z-wave
-    url_path: zwave
+panel_custom: !include_dir_list panel_custom/
 
 alarm_control_panel: !include_dir_list alarm/
 
-####################
-
-#zoneminder:
-
-#google_assistant: !include google_assistant.yaml
-
-#dialogflow:
-#intent_script: !include intent_scripts.yaml
-intent_script: !include_dir_named intent_scripts/
-
 weather: !include_dir_merge_list weather/
-
-#image_processing:
 
 circadian_lighting:
   interval: 300

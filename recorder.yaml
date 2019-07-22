@@ -1,4 +1,3 @@
-#db_url: sqlite:///data/homeassistant/home-assistant.sqlite
 db_url: !secret mysql_url
 purge_interval: 1
 purge_keep_days: 7

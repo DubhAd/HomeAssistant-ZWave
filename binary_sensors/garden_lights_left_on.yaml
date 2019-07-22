@@ -1,4 +1,3 @@
-## Turns on if the garden lights have been on for more minutes than input_number.garden_time is set to
 - platform: template
   sensors: 
     garden_lights_left_on:

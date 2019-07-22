@@ -10,10 +10,6 @@
   unit_of_measurement: '%'
   name: 'person2 Tablet first floor front'
 
-#- platform: mqtt
-#
-#- platform: mqtt
-
 - platform: mqtt
   state_topic: 'monitor/first floor rear/person2_tablet/rssi'
   unit_of_measurement: 'dBm'
@@ -23,10 +19,6 @@
   state_topic: 'monitor/first floor front/person2_tablet/rssi'
   unit_of_measurement: 'dBm'
   name: 'person2 Tablet rssi first floor front'
-
-#- platform: mqtt
-#
-#- platform: mqtt
 
 - platform: min_max
   name: "Home Occupancy confidence for person2 Tablet BT"

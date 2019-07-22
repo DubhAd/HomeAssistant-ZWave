@@ -14,5 +14,7 @@ devices:
   person1_bt_front_mobile: 'monitor/first floor front/person1_mobile/device_tracker'
   person1_bt_tablet: 'monitor/first floor rear/person1_tablet/device_tracker'
   person1_bt_front_tablet: 'monitor/first floor front/person1_tablet/device_tracker'
+  person4_bt_mobile: 'monitor/first floor rear/person4_mobile/device_tracker'
+  person4_bt_front_mobile: 'monitor/first floor front/person4_mobile/device_tracker'
   car_rear: 'monitor/first floor rear/car/device_tracker'
   car_front: 'monitor/first floor front/car/device_tracker'

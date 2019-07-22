@@ -1,4 +1,3 @@
-## Not used any more
 
 alias: Garden door before sunrise
 sequence:
@@ -14,4 +13,3 @@ sequence:
     entity_id: automation.utility_door_open_before_sunrise_turn_off
     data: {}
 
-## Not used any more

@@ -1,3 +1,2 @@
-## Standard workday sensor - nothing to see here, move along
 - platform: workday
   classical: Scotland

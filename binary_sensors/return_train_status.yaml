@@ -1,4 +1,3 @@
-## For indicating whether the return trains are generally ok
 - platform: template
   sensors: 
     return_train_status:

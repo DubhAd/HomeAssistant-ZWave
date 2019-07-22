@@ -16,7 +16,6 @@ trigger:
     to: 'off'
     for:
       minutes: 10
-## Also need to turn off if we've got up in the night and gone back to bed
 condition:
   - condition: and
     conditions:

@@ -10,7 +10,6 @@ trigger:
   - platform: state
     entity_id: input_boolean.person2_home
     to: 'on'
-#condition:
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.all_away

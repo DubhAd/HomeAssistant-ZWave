@@ -12,10 +12,6 @@
   name: 'Car first floor front'
   json_attributes_topic: 'monitor/first floor front/car'
 
-#- platform: mqtt
-#
-#- platform: mqtt
-
 - platform: min_max
   name: "Home confidence for Car"
   type: max
