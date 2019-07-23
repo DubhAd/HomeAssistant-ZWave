@@ -13,7 +13,7 @@ condition:
     state: 'on'
   # Door recently opened
   - condition: template
-    value_template: "{{ (as_timestamp(now()) - as_timestamp(states.group.my_exit_doors.last_updated)) | int < 600 }}"
+    value_template: "{{ (as_timestamp(now()) - as_timestamp(states.binary_sensor.front_door_sensor.last_updated)) | int < 600 }}"
   # Both Wifi and BT say away
   - condition: state
     entity_id: group.person_person3

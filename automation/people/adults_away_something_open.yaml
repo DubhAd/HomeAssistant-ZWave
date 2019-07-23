@@ -17,6 +17,9 @@ condition:
     - condition: state
       entity_id: group.my_upstairs_windows
       state: 'on'
+  - condition: state
+    entity_id: input_boolean.living_room_occupied
+    state: 'off'
 action:
   # Notify the last person to leave
   - service: notify.logfile
