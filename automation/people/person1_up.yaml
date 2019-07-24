@@ -13,17 +13,20 @@ trigger:
   - platform: state
     entity_id: media_player.cast_second_bedroom_speaker
     to: 'idle'
+  # Left home
   - platform: state
     entity_id: input_boolean.person1_home
+    to: 'off'
+  # Something gets unplugged
+  - platform: state
+    entity_id: input_boolean.person1_phone_charging
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.person1_tablet_charging
     to: 'off'
   - platform: state
     entity_id: light.person1_bedroom_bedside
     to: 'on'
-  - platform: state
-    entity_id: input_boolean.family_room_occupied
-    to: 'on'
-    for:
-      minutes: 5
 condition:
   - condition: and
     conditions:

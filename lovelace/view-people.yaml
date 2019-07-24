@@ -354,6 +354,7 @@ cards:
           name: Next alarm
       - type: glance
         title: person1's tablet
+        columns: 6
         entities:
         - entity: device_tracker.person1_tablet
           name: GPS
@@ -369,6 +370,8 @@ cards:
           icon: mdi:bluetooth
         - entity: sensor.battery_person1_tablet
           name: Battery
+        - entity: input_boolean.person1_tablet_charging
+          name: Tablet charging
       - type: glance
         entities:
         - entity: sensor.person1_tablet_first_floor_front
