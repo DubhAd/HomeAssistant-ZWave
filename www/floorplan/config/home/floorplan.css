@@ -246,9 +246,16 @@ background-color: var(--primary-background-color);
 }
 
 .light-on {
-  fill: #FFE500 !important;
-  stroke: #FFE500 !important;
+  fill: #FFF27F !important;
+  stroke: #FFF27F !important;
   stroke-width: 20px !important;
+  stroke-opacity: 0.25 !important;
+}
+
+.light-strip-on {
+  fill: #FFF27F !important;
+  stroke: #FFF27F !important;
+  stroke-width: 10px !important;
   stroke-opacity: 0.25 !important;
 }
 

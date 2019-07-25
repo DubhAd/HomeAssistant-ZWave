@@ -20,21 +20,20 @@ trigger:
     entity_id: input_boolean.family_room_occupied
     to: 'off'
     for:
-      minutes: 10
-  - platform: time
-    at: '22:30:00'
-  - platform: time
-    at: '23:00:00'
-  - platform: time
-    at: '23:30:00'
-  - platform: time
-    at: '00:00:00'
+      minutes: 5
+  # Something gets plugged in
+  - platform: state
+    entity_id: input_boolean.person1_phone_charging
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.person1_tablet_charging
+    to: 'on'
 condition:
   - condition: and
     conditions:
     - condition: state
-      entity_id: input_boolean.person1_is_awake
-      state: 'on'
+      entity_id: input_boolean.person1_in_bed
+      state: 'off'
     - condition: state
       entity_id: input_boolean.person1_home
       state: 'on'
@@ -44,6 +43,12 @@ condition:
     - condition: state
       entity_id: input_boolean.family_room_occupied
       state: 'off'
+    - condition: state
+      entity_id: input_boolean.person1_phone_charging
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.person1_tablet_charging
+      state: 'on'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person1_in_bed

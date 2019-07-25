@@ -308,11 +308,12 @@ cards:
   #            service: toggle
             propagate: true
   
+  # Normal lights
           - entities:
               - switch.cabinet_light_switch
               - switch.tv_light_switch
-              - switch.garden_lights_switch
               - switch.livingroom_socket_switch
+              - light.living_room_table
             states:
               - state: 'on'
                 class: 'light-on'
@@ -322,14 +323,15 @@ cards:
   #            service: homeassistant.toggle
             propagate: true
   
+  # Light strips
           - entities:
+              - switch.garden_lights_switch
               - light.master_bedroom_bedhead
               - light.person1_bedroom_bedside
               - light.hall
-              - light.living_room_table
             states:
               - state: 'on'
-                class: 'light-on'
+                class: 'light-strip-on'
               - state: 'off'
                 class: 'light-off'
   #          state_transitions:
@@ -337,7 +339,8 @@ cards:
   #              to_state: 'off'
   #              duration: 10
             propagate: true
-  
+
+  # Sockets
           - entities:
               - switch.spare_socket_switch
               - switch.master_bedroom_socket_switch

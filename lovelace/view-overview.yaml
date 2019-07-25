@@ -30,31 +30,6 @@ cards:
       - sensor.person1_travel
       - sensor.person2_travel
       - sensor.person4_travel
-  - type: custom:dark-sky-weather-card
-    entity_sun: sun.sun
-    entity_daily_summary: sensor.dark_sky_daily_summary
-    entity_current_conditions: sensor.dark_sky_icon  
-    entity_humidity: sensor.dark_sky_humidity
-    entity_pressure: sensor.dark_sky_pressure
-    entity_temperature: sensor.dark_sky_temperature
-    entity_visibility: sensor.dark_sky_visibility
-    entity_wind_cabineting: sensor.dark_sky_wind_cabineting
-    entity_wind_speed: sensor.dark_sky_wind_speed
-    entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
-    entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
-    entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
-    entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
-    entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
-    entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1
-    entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2
-    entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3
-    entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4
-    entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5
-    entity_forecast_icon_1: sensor.dark_sky_icon_1
-    entity_forecast_icon_2: sensor.dark_sky_icon_2
-    entity_forecast_icon_3: sensor.dark_sky_icon_3
-    entity_forecast_icon_4: sensor.dark_sky_icon_4
-    entity_forecast_icon_5: sensor.dark_sky_icon_5
   - type: entity-filter
     entities:
       - entity: input_boolean.family_room_occupied
@@ -86,54 +61,71 @@ cards:
       type: glance
       title: Motion
       show_state: false
-
   - type: entity-filter
     entities:
-      - binary_sensor.front_door_sensor
-      - binary_sensor.vestibule_window_front
-      - binary_sensor.vestibule_window_side
-      - binary_sensor.family_window_left
-      - binary_sensor.family_window_right
+      - entity: binary_sensor.front_door_sensor
+        name: Front
+      - entity: binary_sensor.vestibule_window_front
+        name: Vestibule Front
+      - entity: binary_sensor.vestibule_window_side
+        name: Vestibule Side
+      - entity: binary_sensor.family_window_left
+        name: Family left
+      - entity: binary_sensor.family_window_right
+        name: Family right
       - entity: binary_sensor.garage_closed_bike_sensor
-        name: Garage door bike
+        name: Garage - bike
       - entity: binary_sensor.garage_closed_car_sensor
-        name: Garage door car
-      - binary_sensor.patio_window_left
-      - binary_sensor.patio_window_right
+        name: Garage - car
+      - entity: binary_sensor.patio_window_left
+        name: Patio left
+      - entity: binary_sensor.patio_window_right
+        name: Patio right
       - entity: binary_sensor.patio_door_left_sensor
-        name: Patio door
+        name: Patio
       - entity: binary_sensor.utility_door_exterior_sensor
-        name: Utility door
-      - entity: binary_sensor.office_window
-        name: Office window
-      - entity: binary_sensor.spare_bedroom_window_left
-        name: Spare bedroom left
-      - entity: binary_sensor.spare_bedroom_window_right
-        name: Spare bedroom right
-      - entity: binary_sensor.second_bedroom_window_ensuite
-        name: Second bedroom ensuite
-      - entity: binary_sensor.second_bedroom_window_left
-        name: Second bedroom left
-      - entity: binary_sensor.second_bedroom_window_right
-        name: Second bedroom right
-      - entity: binary_sensor.bathroom_window
-        name: Bathroom
-      - entity: binary_sensor.bathroom_window
-        name: Guest bedroom left
-      - entity: binary_sensor.guest_bedroom_window_right
-        name: Guest bedroom right
-      - entity: binary_sensor.master_window_left
-        name: Master window left
-      - entity: binary_sensor.master_window_right
-        name: Master window right
-      - entity: binary_sensor.master_window_ensuite
-        name: Master ensuite window
+        name: Utility
     show_empty: false
     state_filter:
       - 'on'
     card:
       type: glance
-      title: Open doors and windows
+      columns: 4
+      title: Downstairs doors and windows
+      show_state: false
+  - type: entity-filter
+    entities:
+      - entity: binary_sensor.office_window
+        name: Office
+      - entity: binary_sensor.spare_bedroom_window_left
+        name: L Spare bedroom 
+      - entity: binary_sensor.spare_bedroom_window_right
+        name: R Spare bedroom
+      - entity: binary_sensor.second_bedroom_window_ensuite
+        name: 2nd ensuite
+      - entity: binary_sensor.second_bedroom_window_left
+        name: 2nd bed left
+      - entity: binary_sensor.second_bedroom_window_right
+        name: 2nd bed right
+      - entity: binary_sensor.bathroom_window
+        name: Bathroom
+      - entity: binary_sensor.guest_bedroom_window_left
+        name: Guest left
+      - entity: binary_sensor.guest_bedroom_window_right
+        name: Guest right
+      - entity: binary_sensor.master_window_left
+        name: Master left
+      - entity: binary_sensor.master_window_right
+        name: Master right
+      - entity: binary_sensor.master_window_ensuite
+        name: Master ensuite
+    show_empty: false
+    state_filter:
+      - 'on'
+    card:
+      type: glance
+      columns: 4
+      title: Upstairs windows
       show_state: false
   - type: entity-filter
     entities:
@@ -150,17 +142,18 @@ cards:
         tap_action: 
           action: toggle
       - entity: light.hall
-        name: Hall light
+        name: Hall
       - entity: switch.hall_downstairs_switch
         name: Hall socket
         tap_action: 
           action: toggle
       - entity: light.living_room_table
-        name: "Table light"
+        name: Table
       - entity: switch.tv_light_switch
         tap_action: 
           action: toggle
       - entity: switch.cabinet_light_switch
+        name: "Corner"
         tap_action: 
           action: toggle
       - entity: switch.livingroom_socket_switch
@@ -172,55 +165,31 @@ cards:
       - 'on'
     card:
       type: glance
+      columns: 4
       title: Lights
       show_state: false
-  - type: conditional
-    conditions:
-      - entity: input_boolean.living_room_occupied
-        state: 'on'
-    card:
-      type: glance
-      title: Living room 
-      entities:
-        - entity: sensor.living_room_multi_luminance
-          name: "Light"
-        - entity: sensor.living_room_multi_temperature
-          name: "Temperature"
-  - type: conditional
-    conditions:
-      - entity: input_boolean.office_occupied
-        state: 'on'
-    card:
-      type: glance
-      title: Office
-      entities:
-        - entity: sensor.office_multi_luminance
-          name: "Light"
-        - entity: sensor.office_multi_temperature
-          name: "Temperature"
-        - entity: sensor.office_multi_relative_humidity
-          name: "Humidity"
-  - type: conditional
-    conditions:
-      - entity: input_boolean.all_away
-        state: 'off'
-    card:
-      type: glance
-      title: Hall and Vestibule 
-      entities:
-        - entity: sensor.hall_downstairs_illuminance
-          name: "Downstairs hall"
-        - entity: sensor.vestibule_illuminance
-          name: "Vestibule"
-  - type: conditional
-    conditions:
-      - entity: input_boolean.adults_away
-        state: 'off'
-    card:
-      type: glance
-      title: Master bedroom
-      entities:
-        - entity: sensor.master_ensuite_temperature
-          name: "Master ensuite"
-        - entity: sensor.master_ensuite_humidity
-          name: "Master ensuite"
+  - type: custom:dark-sky-weather-card
+    entity_sun: sun.sun
+    entity_daily_summary: sensor.dark_sky_daily_summary
+    entity_current_conditions: sensor.dark_sky_icon  
+    entity_humidity: sensor.dark_sky_humidity
+    entity_pressure: sensor.dark_sky_pressure
+    entity_temperature: sensor.dark_sky_temperature
+    entity_visibility: sensor.dark_sky_visibility
+    entity_wind_cabineting: sensor.dark_sky_wind_cabineting
+    entity_wind_speed: sensor.dark_sky_wind_speed
+    entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
+    entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
+    entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
+    entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
+    entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
+    entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1
+    entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2
+    entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3
+    entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4
+    entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5
+    entity_forecast_icon_1: sensor.dark_sky_icon_1
+    entity_forecast_icon_2: sensor.dark_sky_icon_2
+    entity_forecast_icon_3: sensor.dark_sky_icon_3
+    entity_forecast_icon_4: sensor.dark_sky_icon_4
+    entity_forecast_icon_5: sensor.dark_sky_icon_5
