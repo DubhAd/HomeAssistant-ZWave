@@ -16,7 +16,7 @@ condition:
     # In, or leaving, the car
     - condition: template
       value_template: >-
-        {{ 'profile=enter:BT Car' in trigger.event.data.what }}
+        {{ ',BT Car,' in trigger.event.data.what }}
 action:
   - service: script.person2_traveltime
   # Wait 30 seconds for the update
