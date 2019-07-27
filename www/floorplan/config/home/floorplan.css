@@ -241,6 +241,12 @@ background-color: var(--primary-background-color);
 
 /* Light */
 
+.light-unavailable {
+  fill: #8270A2 !important;
+  stroke: #FFFFFF !important;
+  stroke-width: 1px !important;
+}
+
 .light-off {
   fill: #4d4d3e !important;
 }

@@ -248,6 +248,7 @@ cards:
             propagate: true
   
           - entities:
+              - sensor.dark_sky_humidity
               - sensor.office_multi_relative_humidity
               - sensor.master_ensuite_humidity
               - sensor.second_bedroom_ensuite_humidity
@@ -319,6 +320,8 @@ cards:
                 class: 'light-on'
               - state: 'off'
                 class: 'light-off'
+              - state: 'unavailable'
+                class: 'light-unavailable'
   #          action:
   #            service: homeassistant.toggle
             propagate: true
@@ -334,6 +337,8 @@ cards:
                 class: 'light-strip-on'
               - state: 'off'
                 class: 'light-off'
+              - state: 'unavailable'
+                class: 'light-unavailable'
   #          state_transitions:
   #            - from_state: 'on'
   #              to_state: 'off'
