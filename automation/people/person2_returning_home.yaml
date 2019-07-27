@@ -16,13 +16,13 @@ condition:
     # In, or leaving, the car
     - condition: template
       value_template: >-
-        {{ ',BT Car,' in trigger.event.data.what }}
+        {{ 'BT Car' in trigger.event.data.what }}
 action:
   - service: script.person2_traveltime
   # Wait 30 seconds for the update
   - delay: '00:00:30'
   - service: notify.logfile
     data_template:
-      message: "SENDperson3 person2 should be home in around {% set travel_time = state_attr('sensor.person2s_time_to_home_2', 'duration_in_traffic').split(' ') %} {{ travel_time[0] }} to {{ travel_time[0] | int + 25 }} {{ travel_time[1] }}"
+      message: "SENDperson3 person2 should be home from {{ state('device_tracker.person2_mobile_gps') }} in around {% set travel_time = state_attr('sensor.person2s_time_to_home_2', 'duration_in_traffic').split(' ') %} {{ travel_time[0] }} to {{ travel_time[0] | int + 25 }} {{ travel_time[1] }}"
   - service: automation.turn_off
     entity_id: automation.person2_returning_home

@@ -11,9 +11,9 @@ condition:
     value_template: >-
       {{ 'BT Car' in trigger.event.data.what }}
   # Not home
-  - condition: template
-    value_template: >
-      {{ not is_state('input_boolean.person2_home','on') }}
+  - condition: state
+    entity_id: input_boolean.person2_home
+    state: 'off'
 action:
   # Update 
   - service: notify.logfile
