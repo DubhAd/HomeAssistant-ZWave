@@ -7,5 +7,5 @@ action:
   - service: media_player.play_media
     data:
       entity_id: media_player.cast_kitchen_speaker
-      media_content_id: https://myhost.dynamic.dom:18443/local/sounds/sub_alert.mp3
+      media_content_id: http://192.168.0.10:8123/local/sounds/sub_alert.mp3
       media_content_type: music
