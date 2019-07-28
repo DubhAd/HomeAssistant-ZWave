@@ -13,8 +13,8 @@ condition:
     entity_id: input_boolean.living_room_occupied
     state: 'off'
   - condition: state
-    entity_id: input_boolean.home_occupied
-    state: 'on'
+    entity_id: input_boolean.all_away
+    state: 'off'
   - condition: numeric_state
     entity_id: sensor.living_room_multi_luminance
     below: 10
