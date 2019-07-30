@@ -104,6 +104,8 @@ cards:
         name: Spare bedroom right window
       - entity:  sensor.bathroom_window_battery
         name: Bathroom window
+      - entity: sensor.dimmer_switch_battery
+        name: Dimmer switch
   - type: glance
     title: Zigbee links
     show_header_toggle: false
@@ -153,6 +155,7 @@ cards:
       name: "Router (Master)"
     - entity: sensor.router_sparebed_linkquality
       name: "Router (Spare)"
+    - sensor.dimmer_switch_linkquality
 - type: vertical-stack
   cards:
   - type: glance

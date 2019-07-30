@@ -1,0 +1,13 @@
+alias: Dimmer on while off
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: sensor.dimmer_switch_action
+    to: 'off-press'
+condition:
+  - condition: state
+    entity_id: input_select.living_room
+    state: 'Day off'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.living_room_occupied
