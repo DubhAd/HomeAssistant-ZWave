@@ -1,33 +1,26 @@
 google_actions:
   filter:
     include_domains:
-      - switch
-      - light
       - climate
-    exclude_entities:
-      - switch.number_sign_switch
-      - switch.front_bedroom_switch
-      - switch.radio_person1
-      - switch.radio_person2
-      - switch.second_bedroom_switch
-      - switch.spare_socket_switch
-      - switch.table_light_switch
-      # Duplicates of actual bedroom lights
-      - light.yeelight_strip_286c07afc307
-      - light.yeelight_strip_7811dca22b87
-      - light.0x00124b0019c5e676_light
-      # Individual light, we're using the group
-      - light.downstairs_hall
-      # Controls
-      - switch.flux_hall
-      - switch.fluxer
-      - switch.circadian_lighting_circadian_hall
-      - switch.circadian_lighting_circadian_master_bedroom
-      - switch.circadian_lighting_circadian_second_bedroom
-      - switch.zigbee2mqtt_enable_join
     include_entities:
+      # Lights
+      - light.hall
+      - light.person1_bedroom_bedside
+      - light.living_room_table
+      - light.master_bedroom_bedhead
+      # Scripts
       - script.wake_person1
+      # Virtual controls
       - input_boolean.guest_mode
+      # Switches
+      - switch.cabinet_light_switch
+      - switch.garden_lights_switch
+      - switch.hall_downstairs_switch
+      - switch.family_room_socket_switch
+      - switch.livingroom_socket_switch
+      - switch.table_light_switch
+      - switch.tv_light_switch
+      - switch.vestibule_switch
   entity_config:
     input_boolean.guest_mode:
       room: "Guest Room"
@@ -46,20 +39,12 @@ google_actions:
       room: "Living Room"
     switch.livingroom_socket_switch:
       room: "Living Room"
-    switch.master_bedroom_socket_switch:
-      room: "Master Bedroom"
     light.master_bedroom_bedhead:
       room: "Master Bedroom"
     switch.garden_lights_switch:
       room: "Outside"
-    switch.second_bedroom_switch:
-      room: "Second Bedroom"
-    switch.spare_socket_switch:
-      room: "Spare Bedroom"
     switch.vestibule_switch:
       room: "Vestibule"
-    switch.front_bedroom_switch:
-      room: "Guest Room"
 alexa:
   filter:
     include_domains:
