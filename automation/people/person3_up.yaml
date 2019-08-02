@@ -35,7 +35,7 @@ condition:
         entity_id: input_boolean.person3_home
         state: 'on'
       - condition: time
-        after: '03:00:00'
+        after: '04:00:00'
         before: '18:00:00'
 action:
   - service: input_boolean.turn_on

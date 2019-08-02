@@ -39,7 +39,7 @@ condition:
       state: 'on'
     - condition: time
       after: '22:00:00'
-      before: '04:00:00'
+      before: '05:00:00'
     - condition: state
       entity_id: input_boolean.family_room_occupied
       state: 'off'

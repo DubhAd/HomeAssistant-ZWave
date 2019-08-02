@@ -13,7 +13,7 @@ condition:
     state: 'on'
   - condition: time
     after: '22:00:00'
-    before: '03:00:00'
+    before: '04:00:00'
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.person3_in_bed
