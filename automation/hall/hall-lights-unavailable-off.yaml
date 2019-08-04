@@ -1,0 +1,31 @@
+initial_state: 'on'
+alias: 'Hall lights unavailable off'
+trigger:
+  - platform: state
+    entity_id: light.hall
+    from: 'unavailable'
+    to: 'off'
+condition:
+  - condition: and
+    conditions:
+    # Lighting automations are enabled
+    - condition: state
+      entity_id: input_boolean.lighting_automations
+      state: 'on'
+    # Bedtime or away
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: input_boolean.bedtime
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.all_away
+        state: 'on'
+action:
+  # Wait up to two minutes for the light to turn itself on
+  - wait_template: "{{ is_state('light.hall','on') }}"
+    timeout: '00:02:00'
+    continue_on_timeout: 'false'
+  - service: light.turn_off
+    data:
+      entity_id: light.hall
