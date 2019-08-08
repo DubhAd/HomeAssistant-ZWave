@@ -7,7 +7,7 @@ trigger:
       - media_player.master_bedroom_speaker
       - media_player.person2
     to: 'playing'
-  # Phone is unplugged
+  # Phone or tablet is unplugged
   - platform: state
     entity_id: 
       - input_boolean.person2_phone_charging
@@ -21,24 +21,18 @@ trigger:
     to: 'on'
     for:
       minutes: 1
-  # I leave home
-  - platform: state
-    entity_id: input_boolean.person2_home
-    to: 'off'
-    for:
-      minutes: 5
 condition:
-  - condition: state
-    entity_id: input_boolean.person2_is_awake
-    state: 'off'
   - condition: or
     conditions:
-    - condition: time
-      after: '03:00:00'
-      before: '18:00:00'
     - condition: state
-      entity_id: input_boolean.person2_home
+      entity_id: input_boolean.person2_is_awake
       state: 'off'
+    - condition: state
+      entity_id: input_boolean.person2_in_bed
+      state: 'on'
+  - condition: state
+    entity_id: input_boolean.person2_home
+    state: 'on'
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.person2_in_bed

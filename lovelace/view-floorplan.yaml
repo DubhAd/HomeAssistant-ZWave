@@ -222,10 +222,10 @@ cards:
               '
             propagate: true
   
+          # Indoors should be moderate
           - entities:
               - sensor.living_room_multi_temperature
               - sensor.office_multi_temperature
-              - sensor.dark_sky_temperature
               - sensor.master_ensuite_temperature
               - sensor.bathroom_temperature
               - sensor.second_bedroom_ensuite_temperature
@@ -247,12 +247,51 @@ cards:
               '
             propagate: true
   
+          # Outside is expected to be colder/hotter
           - entities:
-              - sensor.dark_sky_humidity
-              - sensor.office_multi_relative_humidity
+              - sensor.dark_sky_temperature
+            text_template: '${entity.state ? entity.state : "unknown"} C'
+            # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
+            # text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'
+            class_template: '
+              var temp = parseFloat(entity.state.replace("°", ""));
+              if (temp < 5)
+                return "temp-freeze";
+              else if (temp < 10)
+                return "temp-low";
+              else if (temp < 25)
+                return "temp-medium";
+              else if (temp >= 25)
+                return "temp-high";
+              else
+                return "temp-unknown";
+              '
+            propagate: true
+  
+          # Bathrooms are expected to be a bit more humid
+          - entities:
               - sensor.master_ensuite_humidity
               - sensor.second_bedroom_ensuite_humidity
               - sensor.bathroom_humidity
+            text_template: '${entity.state ? entity.state : "unknown"} %'
+            class_template: '
+              var humid = parseFloat(entity.state.replace("%", ""));
+              if (humid < 30)
+                return "humid-low";
+              else if (humid < 45)
+                return "humid-med-low";
+              else if (humid < 60)
+                return "humid-medium";
+              else if (humid < 70)
+                return "humid-med-high";
+              else
+                return "humid-high";
+              '
+            propagate: true
+
+          - entities:
+              - sensor.dark_sky_humidity
+              - sensor.office_multi_relative_humidity
             text_template: '${entity.state ? entity.state : "unknown"} %'
             class_template: '
               var humid = parseFloat(entity.state.replace("%", ""));

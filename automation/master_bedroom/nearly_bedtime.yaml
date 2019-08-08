@@ -8,6 +8,9 @@ condition:
   - condition: time
     after: '22:00:00'
     before: '04:00:00'
+  - condition: state
+    entity_id: input_boolean.person2_home
+    state: 'on'
 action:
   - service: light.turn_on
     data_template:
