@@ -13,10 +13,6 @@ trigger:
   - platform: state
     entity_id: media_player.cast_second_bedroom_speaker
     to: 'idle'
-  # Left home
-  - platform: state
-    entity_id: input_boolean.person1_home
-    to: 'off'
   # Something gets unplugged
   - platform: state
     entity_id: input_boolean.person1_phone_charging
@@ -30,6 +26,9 @@ trigger:
 condition:
   - condition: and
     conditions:
+    - condition: state
+      entity_id: input_boolean.person1_home
+      state: 'off'
     - condition: state
       entity_id: input_boolean.person1_is_awake
       state: 'off'

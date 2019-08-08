@@ -13,7 +13,6 @@ cards:
   - automation.person3_in_bed
   - automation.person3_away
   - automation.person3_home
-  - automation.person3_up
   - automation.person3_awake
   - automation.person3_phone_unplugged
   - automation.person3_phone_plugged

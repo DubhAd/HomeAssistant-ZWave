@@ -8,6 +8,9 @@ condition:
   - condition: state
     entity_id: input_boolean.person3_is_awake
     state: 'off'
+  - condition: state
+    entity_id: input_boolean.person3_home
+    state: 'on'
   - condition: time
     after: '03:00:00'
     before: '21:00:00'
