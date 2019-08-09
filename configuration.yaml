@@ -47,7 +47,7 @@ tts:
   - platform: picotts
     language: 'en-GB'
 
-zwave:
+zwave: !include zwave.yaml
 
 mqtt: !include mqtt.yaml
 
