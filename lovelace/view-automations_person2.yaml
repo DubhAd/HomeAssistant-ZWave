@@ -36,6 +36,8 @@ cards:
   - automation.person2_on_the_move
   - automation.person2_in_the_car
   - automation.person2_location_update
+  - automation.person2_driving
+  - automation.person2_not_driving
 - type: entities
   title: Automations for alarms - person2
   show_header_toggle: false

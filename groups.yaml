@@ -34,6 +34,10 @@ person_person2_work:
   - device_tracker.80b03de23ba2
   - device_tracker.person2_bt_work
   - device_tracker.person2_bt_front_work
+work_laptop:
+  name: Work laptop
+  entities:
+  - device_tracker.00e04c680550
 person_person3:
   name: person3
   entities:
@@ -133,12 +137,6 @@ living_room_lights:
   - switch.cabinet_light_switch
   - switch.tv_light_switch
   - light.living_room_table
-default_view:
-  name: My Home
-  icon: mdi:home
-  view: true
-  entities:
-  - alarm_control_panel.ha_alarm
 my_automations_battery:
   name: Battery level automations
   entities:
@@ -156,3 +154,7 @@ garage_alert:
   entities:
   - alert.garage_door_l
   - alert.garage_door_r
+guests:
+  name: Guests
+  entities:
+  - input_boolean.person4_home

@@ -520,3 +520,5 @@ binary_sensor.patio_window_right:
 device_tracker.person3_mobile:
   friendly_name: person3 mobile
   icon: mdi:wifi
+input_boolean.person2_driving:
+  icon: mdi:car-estate

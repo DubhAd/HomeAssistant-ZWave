@@ -23,11 +23,17 @@ cards:
   - type: divider
   - automation.bedtime_something_open
   - automation.adults_away_something_open
-  - type: divider
+- type: entities
+  title: Guest and visitor related automations
+  show_header_toggle: false
+  entities:
   - automation.person4_coming_home
   - automation.person4_away
   - automation.person4_home
   - automation.person4_on_the_move
+  - type: divider
+  - automation.guest_mode_on
+  - automation.guest_mode_off
 - type: entities
   title: Automations for travel
   show_header_toggle: false
