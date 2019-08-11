@@ -141,3 +141,4 @@ circadian_lighting:
   transition: 60
   min_colortemp: 2000
   max_colortemp: 6500
+
