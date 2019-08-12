@@ -45,6 +45,8 @@ cards:
   show_header_toggle: false
   entities:
   - automation.dimmer_on
+  - automation.dimmer_off
   - automation.dimmer_on_while_away
-  - automation.dimmer_on_while_off
+  - automation.dimmer_off_while_off
   - automation.dimmer_up_while_on
+  - automation.dimmer_down_while_on

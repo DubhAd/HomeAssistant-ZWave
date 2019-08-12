@@ -1,8 +1,10 @@
 name: Utility room
 options:
-  - Away
-  - Dim
-  - Day on
-  - Night on
+  - 'Auto'
+  - 'Away'
+  - 'Dim'
+  - 'Bedtime'
+  - 'Day on'
+  - 'Night on'
   - 'On'
   - 'Off'

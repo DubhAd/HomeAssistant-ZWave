@@ -532,8 +532,10 @@ input_select.garage:
   icon: mdi:car
 input_select.living_room:
   options:
+  - Auto
   - Away
   - Dim
+  - Bedtime
   - Day on
   - Night on
   - 'On'

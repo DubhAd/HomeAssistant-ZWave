@@ -1,8 +1,9 @@
 name: Second bedroom
 options:
-  - Away
-  - Wake
-  - Bedtime
-  - Dim
+  - 'Auto'
+  - 'Away'
+  - 'Wake'
+  - 'Bedtime'
+  - 'Dim'
   - 'On'
   - 'Off'
