@@ -27,4 +27,4 @@ action:
   - service: input_select.select_option
     data:
       entity_id: input_select.living_room
-      option: 'Day off'
+      option: 'Off'

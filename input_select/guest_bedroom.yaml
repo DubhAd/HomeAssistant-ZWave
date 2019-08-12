@@ -4,5 +4,5 @@ options:
   - Wake
   - Bedtime
   - Dim
-  - On
-  - Off
+  - 'On'
+  - 'Off'

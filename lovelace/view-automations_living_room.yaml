@@ -40,3 +40,11 @@ cards:
   - automation.tv_on_sonos_off
   - automation.sonos_on_tv_mute
   - automation.sonos_off_tv_unmute
+- type: entities
+  title: Remote automations
+  show_header_toggle: false
+  entities:
+  - automation.dimmer_on
+  - automation.dimmer_on_while_away
+  - automation.dimmer_on_while_off
+  - automation.dimmer_up_while_on

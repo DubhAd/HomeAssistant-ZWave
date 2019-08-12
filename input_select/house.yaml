@@ -1,7 +1,11 @@
-name: Family room
+name: House
 options:
+  - Auto
   - Away
+  - Holiday
   - Dim
+  - Wake
+  - Bedtime
   - Day on
   - Night on
   - 'On'

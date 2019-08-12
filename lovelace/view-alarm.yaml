@@ -17,7 +17,10 @@ cards:
   - automation.alarm_arm_at_night
   - automation.alarm_disarm_in_the_morning
   - automation.alarm_disarm_upon_return
-  - automation.alarm_armed_trigger
+  - automation.alarm_armed_away_trigger
+  - automation.alarm_armed_home_trigger
+  - automation.alarm_armed_trigger_night
   - automation.alarm_armed_trigger_frontdoor
   - automation.alarm_triggered_away
   - automation.alarm_triggered_home
+  - automation.alarm_disarm_hall

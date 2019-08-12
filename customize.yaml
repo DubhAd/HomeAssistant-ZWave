@@ -522,3 +522,19 @@ device_tracker.person3_mobile:
   icon: mdi:wifi
 input_boolean.person2_driving:
   icon: mdi:car-estate
+input_select.second_bedroom: {}
+input_select.spare_bedroom:
+  friendly_name: Spare bedroom
+input_select.utility:
+  icon: mdi:washing-machine
+input_select.garage:
+  friendly_name: Garage
+  icon: mdi:car
+input_select.living_room:
+  options:
+  - Away
+  - Dim
+  - Day on
+  - Night on
+  - 'On'
+  - 'Off'

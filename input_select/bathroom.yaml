@@ -1,0 +1,8 @@
+name: Bathroom
+options:
+  - 'Away'
+  - 'Wake'
+  - 'Bedtime'
+  - 'Dim'
+  - 'On'
+  - 'Off'

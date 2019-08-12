@@ -1,8 +1,8 @@
-name: Second bedroom
+name: Spare bedroom
 options:
   - Away
   - Wake
   - Bedtime
   - Dim
-  - On
-  - Off
+  - 'On'
+  - 'Off'

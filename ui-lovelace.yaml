@@ -2,18 +2,18 @@ title: Our Home
 resources: !include lovelace/resources.yaml
 views:
   - !include lovelace/view-overview.yaml
+  - !include lovelace/view-floorplan.yaml
   - !include lovelace/view-floor-ground.yaml
   - !include lovelace/view-floor-first.yaml
-  - !include lovelace/view-floorplan.yaml
   - !include lovelace/view-map.yaml
   - !include lovelace/view-surveillance.yaml
   - !include lovelace/view-spacer2.yaml
   - !include lovelace/view-train_status.yaml
-  - !include lovelace/view-rooms.yaml
   - !include lovelace/view-media.yaml
   - !include lovelace/view-people.yaml
   - !include lovelace/view-spacer.yaml
   - !include lovelace/view-information.yaml
+  - !include lovelace/view-devices.yaml
   - !include lovelace/view-zigbee.yaml
   - !include lovelace/view-automations.yaml
   - !include lovelace/view-automations_living_room.yaml

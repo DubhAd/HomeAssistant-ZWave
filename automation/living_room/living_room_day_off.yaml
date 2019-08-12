@@ -25,7 +25,7 @@ condition:
       entity_id: input_boolean.home_occupied
       state: 'on'
     - condition: template
-      value_template: "{{ not is_state('input_select.living_room','Day off') }}"
+      value_template: "{{ not is_state('input_select.living_room','Off') }}"
     - condition: or
       conditions:
         # Bright, or...
@@ -45,9 +45,9 @@ action:
   - service: input_select.select_option
     data:
       entity_id: input_select.living_room
-      option: Day off
+      option: 'Off'
   - service: notify.logfile
     data_template:
       message: >
-        Day off triggered at {{ now() }} by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
+        Off triggered at {{ now() }} by {{ trigger.entity_id }}, was {{ trigger.from_state.state }} is {{ trigger.to_state.state }}
           Light level is {{ states('sensor.living_room_multi_luminance') }}

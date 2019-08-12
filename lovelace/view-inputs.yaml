@@ -19,6 +19,8 @@ cards:
   - type: divider
   - input_boolean.guest_mode
   - input_boolean.alarm_mode
+  - type: divider
+  - input_boolean.test_mode
 - type: entities
   title: Toggles for people automations
   show_header_toggle: false
@@ -61,11 +63,10 @@ cards:
   title: Switches
   show_header_toggle: false
   entities:
-  - switch.fluxer
-  - switch.flux_hall
   - switch.circadian_lighting_circadian_hall
   - switch.circadian_lighting_circadian_master_bedroom
   - switch.circadian_lighting_circadian_second_bedroom
+  - switch.circadian_lighting_living_room
 - type: entities
   title: People
   show_header_toggle: false

@@ -1,8 +1,8 @@
-name: Family room
+name: Toilet
 options:
   - Away
+  - Wake
+  - Bedtime
   - Dim
-  - Day on
-  - Night on
   - 'On'
   - 'Off'

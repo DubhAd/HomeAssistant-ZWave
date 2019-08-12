@@ -1,8 +1,8 @@
-name: Family room
+name: Master ensuite
 options:
   - Away
+  - Wake
+  - Bedtime
   - Dim
-  - Day on
-  - Night on
   - 'On'
   - 'Off'

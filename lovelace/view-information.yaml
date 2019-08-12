@@ -4,220 +4,60 @@ path: info
 icon: mdi:information-outline
 cards:
 - type: custom:compact-custom-header
-- type: vertical-stack
-  cards:
-  - type: entities
-    title: Rooms
-    show_header_toggle: false
-    entities:
-    - input_select.living_room
-    - input_boolean.living_room_occupied
-    - input_select.family_room
-    - input_boolean.family_room_occupied
-    - input_boolean.office_occupied
-  - type: glance
-    title: Devices
-    show_header_toggle: false
-    entities:
-    - entity: device_tracker.family_tv
-      name: Family room
-    - entity: device_tracker.livingroom_chromecast
-      name: Living room chromecast
-    - entity: media_player.cast_living_room_tv
-      name: Living room chromecast
-    - entity: media_player.samsung_tv_remote
-      name: Living room TV
-    - entity: switch.table_light_switch
-      name: Table light switch
-  - type: entities
-    title: Sensors
-    show_header_toggle: false
-    entities:
-    - sun.sun
-    - sensor.sun_elevation
-    - binary_sensor.zwave_health
-    - entity: sensor.last_opened
-      icon: mdi:door
-    - entity: sensor.last_motion
-      icon: mdi:run
-    - entity: binary_sensor.trend_living_room_light
-      name: Living room getting brighter
-    - entity: binary_sensor.trend_sun_elevation
-      name: Sun rising
-- type: vertical-stack
-  cards:
-  - type: entities
-    title: Zigbee
-    show_header_toggle: false
-    entities:
-    - entity: switch.zigbee2mqtt_enable_join
-      name: Join
-      icon: mdi:toggle-switch
-    - entity: sensor.zigbee2mqtt_bridge_state
-      name: Bridge
-    - entity: binary_sensor.zigbee2mqtt_router_1
-      name: Router
-  - type: glance
-    title: Zigbee battery devices
-    show_header_toggle: false
-    columns: 5
-    entities:
-      - entity: sensor.bathroom_environment_battery
-        name: Bathroom environment
-      - entity: sensor.master_window_left_battery
-        name: Master bed left
-      - entity: sensor.master_window_right_battery
-        name: Master bed right
-      - entity: sensor.guestbedroom_window_left_battery
-        name: Guest left
-      - entity: sensor.second_bedroom_ensuite_environment_battery
-        name: Second bed ensuite environment
-      - entity: sensor.vestibule_window_front_battery
-        name: Vestibule window front
-      - entity: sensor.vestibule_window_side_battery
-        name: Vestibule window side
-      - entity: sensor.guestbedroom_window_right_battery
-        name: Guest right
-      - entity: sensor.hall_downstairs_motion_battery
-        name: Downstairs hall motion
-      - entity: sensor.vestibule_motion_battery
-        name: Vestibule motion
-      - entity: sensor.master_ensuite_environment_battery
-        name: Master ensuite environment
-      - entity: sensor.master_window_ensuite_battery
-        name: Master ensuite window
-      - entity: sensor.office_button_battery
-        name: Office button
-      - entity:  sensor.master_window_ensuite_battery
-        name: Master ensuite window
-      - entity:  sensor.office_window_battery
-        name: Office window
-      - entity:  sensor.second_bedroom_window_ensuite_battery
-        name: Second bedroom ensuite window
-      - entity:  sensor.second_bedroom_window_right_battery
-        name: Second bedroom right window
-      - entity:  sensor.second_bedroom_window_left_battery
-        name: Second bedroom left window
-      - entity:  sensor.spare_bedroom_window_left_battery
-        name: Spare bedroom left window
-      - entity:  sensor.spare_bedroom_window_right_battery
-        name: Spare bedroom right window
-      - entity:  sensor.bathroom_window_battery
-        name: Bathroom window
-      - entity: sensor.dimmer_switch_battery
-        name: Dimmer switch
-  - type: glance
-    title: Zigbee links
-    show_header_toggle: false
-    columns: 5
-    entities:
-    - sensor.bathroom_environment_linkquality
-    - sensor.master_window_left_linkquality
-    - sensor.master_window_right_linkquality
-    - sensor.second_bedroom_ensuite_environment_linkquality
-    - sensor.vestibule_window_front_linkquality
-    - sensor.vestibule_window_side_linkquality
-    - entity: sensor.bathroom_window_linkquality
-      name: Bathroom window
-    - entity: sensor.downstairs_hall_light_link
-      name: Hall light
-    - entity: sensor.downstairs_hall_motion_linkquality 
-      name: Hall motion
-    - entity: sensor.vestibule_motion_linkquality
-      name: Vestibule motion
-    - entity: sensor.living_room_table_linkquality
-      name: Living room table light
-    - entity: sensor.guest_bedroom_window_left_linkquality
-      name: Guest left
-    - entity: sensor.guest_bedroom_window_right_linkquality
-      name: Guest right
-    - entity: sensor.master_ensuite_environment_linkquality
-      name: Master ensuite env
-    - entity: sensor.master_window_ensuite_linkquality
-      name: Master ensuite window
-    - entity: sensor.office_button_linkquality
-      name: Office button
-    - entity: sensor.office_window_linkquality
-      name: Office window
-    - entity: sensor.second_bedroom_window_ensuite_linkquality
-      name: Second ensuite window
-    - entity: sensor.second_bedroom_window_left_linkquality
-      name: Second left
-    - entity: sensor.second_bedroom_window_right_linkquality
-      name: Second right
-    - entity: sensor.spare_bedroom_window_left_linkquality
-      name: Spare left
-    - entity: sensor.spare_bedroom_window_right_linkquality
-      name: Spare right
-    - entity: sensor.zigbee_router1_linkquality
-      name: Router
-    - entity: sensor.router_masterbedroom_linkquality
-      name: "Router (Master)"
-    - entity: sensor.router_sparebed_linkquality
-      name: "Router (Spare)"
-    - sensor.dimmer_switch_linkquality
-- type: vertical-stack
-  cards:
-  - type: glance
-    title: Printer status
-    show_header_toggle: false
-    entities:
-    - entity: sensor.samsung_m283x_series_172237250_toner_black
-      name: Toner
-    - sensor.printer_toner_remaining
-    - entity: sensor.samsung_m283x_series_172237250_drum_black
-      name: Drum
-    - sensor.printer_imaging_unit_remaining
-    - sensor.printer_forward_roller_remaining
-    - sensor.printer_pick_up_roller_remaining
-    - sensor.printer_retard_roller_remaining
-    - sensor.printer_transfer_roller_remaining
-    - sensor.printer_fuser_life_remaining
-  - type: glance
-    title: Z-Wave battery devices
-    show_header_toggle: false
-    columns: 4
-    entities:
-      - entity: zwave.garage_closed_bike
-        name: Garage left
-      - entity: sensor.zwave_battery_garage_closed_bike
-        name: Garage left
-      - entity: zwave.garage_closed_car
-        name: Garage car
-      - entity: sensor.zwave_battery_garage_closed_car
-        name: Garage car
-      - zwave.front_door
-      - sensor.zwave_battery_front_door
-      - zwave.patio_door_left
-      - sensor.zwave_battery_patio_door_left
-      - zwave.utility_door_exterior
-      - entity: sensor.zwave_battery_utility_door_exterior
-        name: Utility door
-      - zwave.living_room_multi
-      - sensor.zwave_battery_living_room_multi
-      - zwave.nodon_crc3100_octan_remote
-      - sensor.zwave_battery_nodon_crc3100_octan_remote
-      - zwave.green_remote
-      - sensor.zwave_battery_green_remote
-      - zwave.utility
-      - entity: sensor.zwave_battery_utility
-        name: Utility switch
-  - type: glance
-    title: Z-Wave mains
-    show_header_toggle: false
-    entities:
-    - zwave.zwaveme_razberry_controller_2016_zwave
-    - zwave.table_light
-    - zwave.cabinet_light
-    - zwave.tv_light
-    - zwave.number_sign
-    - zwave.garden_lights
-    - zwave.spare_socket
-    - zwave.master_bedroom_socket
-    - zwave.office_multi
-    - zwave.second_bedroom
-    - zwave.family_room_socket
-    - zwave.hall_downstairs
-    - zwave.livingroom_socket
-    - zwave.vestibule
-    - zwave.front_bedroom
+- type: entities
+  title: Downstairs rooms
+  show_header_toggle: false
+  entities:
+  - input_select.living_room
+  - input_boolean.living_room_occupied
+  - type: divider
+  - input_select.family_room
+  - input_boolean.family_room_occupied
+  - type: divider
+  - input_select.kitchen
+  - input_boolean.kitchen_occupied
+  - type: divider
+  - input_select.utility
+  - input_boolean.utility_occupied
+  - type: divider
+  - input_boolean.toilet_occupied
+  - type: divider
+  - input_select.garage
+  - input_boolean.garage_occupied
+- type: entities
+  title: Upstairs rooms
+  show_header_toggle: false
+  entities:
+  - input_select.office
+  - input_boolean.office_occupied
+  - type: divider
+  - input_select.master_bedroom
+  - input_boolean.master_bedroom_occupied
+  - input_boolean.master_ensuite_occupied
+  - type: divider
+  - input_select.second_bedroom
+  - input_boolean.second_bedroom_occupied
+  - input_boolean.second_ensuite_occupied
+  - type: divider
+  - input_select.guest_bedroom
+  - input_boolean.guest_bedroom_occupied
+  - type: divider
+  - input_select.spare_bedroom
+  - input_boolean.spare_bedroom_occupied
+  - type: divider
+  - input_boolean.bathroom_occupied
+- type: entities
+  title: Sensors
+  show_header_toggle: false
+  entities:
+  - sun.sun
+  - sensor.sun_elevation
+  - binary_sensor.zwave_health
+  - entity: sensor.last_opened
+    icon: mdi:door
+  - entity: sensor.last_motion
+    icon: mdi:run
+  - entity: binary_sensor.trend_living_room_light
+    name: Living room getting brighter
+  - entity: binary_sensor.trend_sun_elevation
+    name: Sun rising

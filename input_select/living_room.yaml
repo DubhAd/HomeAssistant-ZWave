@@ -2,8 +2,7 @@ name: Living room
 options:
   - Away
   - Dim
-  - Day off
   - Day on
   - Night on
-  - On
-  - Off
+  - 'On'
+  - 'Off'

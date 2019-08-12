@@ -1,8 +1,8 @@
 name: Kitchen
 options:
   - Away
-  - Off
+  - 'Off'
   - Dim
   - Day on
   - Night on
-  - On
+  - 'On'

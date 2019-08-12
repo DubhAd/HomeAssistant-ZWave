@@ -21,6 +21,7 @@ cards:
   - automation.person2_is_not_travelling
   - automation.person2_phone_unplugged
   - automation.person2_phone_plugged
+  - automation.person2_tablet_plugged
   - automation.person2_tablet_unplugged
 - type: entities
   title: Automations for travel - person2
@@ -49,6 +50,7 @@ cards:
   show_header_toggle: false
   entities:
   - automation.not_workday_for_person2
+  - automation.workday_for_person2_too
   - automation.person2_working_from_home
   - automation.person2_not_working_from_home
   - automation.person2_working_trains

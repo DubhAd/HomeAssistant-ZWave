@@ -1,6 +1,6 @@
-name: Utility room
+name: Garage
 options:
   - Away
-  - Off
-  - On
+  - 'Off'
+  - 'On'
   - Dim

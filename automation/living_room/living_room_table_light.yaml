@@ -1,4 +1,4 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'Living room table light'
 trigger:
   - platform: state
@@ -10,7 +10,7 @@ condition:
       entity_id: light.living_room_table
       state: 'on'
     - condition: template
-      value_template: "{{ not is_state('input_select.living_room','Day off') }}"
+      value_template: "{{ not is_state('input_select.living_room','Off') }}"
 action:
   - service: light.turn_on
     data_template:

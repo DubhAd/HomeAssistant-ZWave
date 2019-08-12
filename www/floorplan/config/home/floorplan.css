@@ -63,7 +63,7 @@ background-color: var(--primary-background-color);
 }
 
 .room-empty {
-  fill: #5d5d5d !important;
+  fill: #5d5757 !important;
 }
 
 .room-occupied {

@@ -1,7 +1,7 @@
 name: Office
 options:
   - Away
-  - Off
+  - 'Off'
   - Day on
   - Night on
   - Dim

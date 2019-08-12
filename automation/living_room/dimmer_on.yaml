@@ -15,7 +15,7 @@ action:
     data_template:
       entity_id: input_select.living_room
       option: >-
-        {% if is_state('input_select.living_room','Day off') %}
+        {% if is_state('input_select.living_room','Off') %}
           Dim
         {% elif is_state('input_select.living_room','Dim') %}
           Day on

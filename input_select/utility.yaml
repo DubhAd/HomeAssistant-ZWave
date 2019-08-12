@@ -1,7 +1,8 @@
 name: Utility room
 options:
   - Away
-  - Off
+  - Dim
   - Day on
   - Night on
-  - Dim
+  - 'On'
+  - 'Off'
