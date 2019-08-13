@@ -31,9 +31,6 @@ condition:
       - condition: state
         entity_id: input_boolean.person2_home
         state: 'off'
-      - condition: state
-        entity_id: input_boolean.person2_travelling
-        state: 'on'
       - condition: and
         conditions:
         - condition: state
