@@ -83,7 +83,7 @@ cards:
       name: Ensuite
 - type: glance
   title: Guest bedroom
-  columns: 5
+  columns: 4
   entities:
     - entity: media_player.cast_master_bedroom_display
       name: Home Mini
@@ -91,9 +91,6 @@ cards:
       tap_action: 
         action: toggle
       name: Socket
-    - entity: switch.spare_socket_switch
-      tap_action: 
-        action: toggle
     - entity: binary_sensor.guest_bedroom_window_left
       name: Left window
     - entity: binary_sensor.guest_bedroom_window_right
@@ -130,12 +127,15 @@ cards:
       name: "Home Hub"
 - type: glance
   title: Spare bedroom
-  columns: 2
+  columns: 3
   entities:
     - entity: binary_sensor.spare_bedroom_window_left
       name: Left
     - entity: binary_sensor.spare_bedroom_window_right
       name: Right
+    - entity: switch.spare_socket_switch
+      tap_action: 
+        action: toggle
 - type: history-graph
   title: Humidity
   hours_to_show: 12
