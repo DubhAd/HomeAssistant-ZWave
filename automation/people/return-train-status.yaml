@@ -1,4 +1,3 @@
-initial_state: 'on'
 alias: 'Return train status'
 trigger:
   platform: time

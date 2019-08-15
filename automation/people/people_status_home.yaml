@@ -1,5 +1,4 @@
 alias: Mark person as home
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: input_select.person2_status_dropdown

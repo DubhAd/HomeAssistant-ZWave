@@ -1,5 +1,4 @@
 alias: 'Bedtime something open'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: input_boolean.person3_is_awake

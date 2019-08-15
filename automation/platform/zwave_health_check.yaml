@@ -1,5 +1,4 @@
 alias: 'ZWave health check'
-initial_state: 'on'
 trigger:
   platform: state
   entity_id: binary_sensor.zwave_health

@@ -1,5 +1,4 @@
 alias: 'HA stopped'
-initial_state: 'on'
 trigger:
   platform: homeassistant
   # Event can also be 'shutdown'

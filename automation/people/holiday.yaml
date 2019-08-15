@@ -1,5 +1,4 @@
 alias: 'Holiday'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: input_boolean.person2_travelling

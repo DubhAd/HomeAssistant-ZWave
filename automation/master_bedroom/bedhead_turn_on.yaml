@@ -1,5 +1,4 @@
 alias: 'Bedhead turn on'
-initial_state: 'on'
 trigger:
   - platform: event
     event_type: zwave.scene_activated

@@ -1,4 +1,3 @@
-initial_state: 'off'
 alias: 'Hall lights motion dull'
 trigger:
   - platform: state

@@ -1,5 +1,4 @@
 alias: 'person2 away Garage open'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: input_boolean.person2_home

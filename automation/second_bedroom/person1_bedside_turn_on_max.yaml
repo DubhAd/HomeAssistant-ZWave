@@ -1,5 +1,4 @@
 alias: 'person1 bedside turn on max'
-initial_state: 'on'
 trigger:
   - platform: event
     event_type: zwave.scene_activated

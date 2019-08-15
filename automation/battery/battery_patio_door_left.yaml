@@ -1,4 +1,3 @@
-initial_state: 'on'
 alias: 'Battery patio door left'
 trigger:
   - platform: numeric_state

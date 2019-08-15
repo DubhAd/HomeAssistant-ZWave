@@ -1,5 +1,4 @@
 alias: 'person2 at LCY'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: device_tracker.person2_mobile_gps

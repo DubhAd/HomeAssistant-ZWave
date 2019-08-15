@@ -1,5 +1,4 @@
 alias: 'Trains from work'
-initial_state: 'on'
 trigger:
   - platform: time_pattern
     minutes: '/10'

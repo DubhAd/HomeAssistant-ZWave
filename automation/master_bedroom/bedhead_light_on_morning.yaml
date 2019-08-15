@@ -1,5 +1,4 @@
 alias: 'Bedhead light on morning'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: light.master_bedroom_bedhead

@@ -1,5 +1,4 @@
 alias: 'Garage door open'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: binary_sensor.garage_closed_car_sensor

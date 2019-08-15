@@ -1,5 +1,4 @@
 alias: 'Front door open'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: binary_sensor.front_door_sensor

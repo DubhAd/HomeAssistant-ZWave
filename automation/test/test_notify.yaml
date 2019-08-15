@@ -1,5 +1,4 @@
 alias: 'Test notify'
-initial_state: 'off'
 trigger:
   - platform: time
     at: '14:00:00'

@@ -1,5 +1,4 @@
 alias: 'Alarm triggered away'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: alarm_control_panel.ha_alarm

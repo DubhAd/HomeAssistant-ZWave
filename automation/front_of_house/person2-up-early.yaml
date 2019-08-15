@@ -1,4 +1,3 @@
-initial_state: 'on'
 alias: 'person2 up early'
 trigger:
   - platform: state

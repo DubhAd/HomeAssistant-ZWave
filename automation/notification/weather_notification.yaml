@@ -1,4 +1,3 @@
-initial_state: 'off'
 alias: 'Weather notification'
 trigger:
   - platform: time_pattern
