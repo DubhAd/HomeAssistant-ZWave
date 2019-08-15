@@ -1,5 +1,5 @@
 alias: Dimmer on 
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: state
     entity_id: sensor.dimmer_switch_action

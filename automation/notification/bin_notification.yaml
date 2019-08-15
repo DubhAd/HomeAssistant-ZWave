@@ -1,4 +1,4 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'Bin notification'
 trigger:
   - platform: time_pattern

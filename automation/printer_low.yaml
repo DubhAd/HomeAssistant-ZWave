@@ -1,4 +1,4 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'Printer low'
 trigger:
   - platform: numeric_state

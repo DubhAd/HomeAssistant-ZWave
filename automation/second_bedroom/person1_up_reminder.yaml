@@ -1,5 +1,5 @@
 alias: 'person1 up reminder'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: state
     entity_id: input_boolean.person1_is_awake

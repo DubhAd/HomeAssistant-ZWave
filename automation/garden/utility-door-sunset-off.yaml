@@ -1,5 +1,5 @@
 alias: 'Utility door open after sunset turn off'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: state
     entity_id: binary_sensor.utility_door_exterior_sensor
