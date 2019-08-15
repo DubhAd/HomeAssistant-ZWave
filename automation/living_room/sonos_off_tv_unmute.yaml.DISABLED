@@ -1,10 +1,10 @@
-initial_state: 'on'
-alias: 'Sonos on TV mute'
+initial_state: 'off'
+alias: 'Sonos off TV unmute'
 trigger:
   platform: state
   entity_id: media_player.living_room
-  from: 'paused'
-  to: 'playing'
+  from: 'playing'
+  to: 'paused'
 condition:
   condition: state
   entity_id: media_player.samsung_tv_remote
@@ -13,4 +13,4 @@ action:
   service: media_player.volume_mute
   data:
     entity_id: media_player.samsung_tv_remote
-    is_volume_muted: true
+    is_volume_muted: false

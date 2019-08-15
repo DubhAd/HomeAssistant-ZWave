@@ -1,5 +1,5 @@
 alias: 'Season is spring'
-initial_state: 'on'
+initial_state: 'off'
 trigger:
   - platform: homeassistant
     event: start

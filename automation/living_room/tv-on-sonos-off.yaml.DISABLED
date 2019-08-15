@@ -1,4 +1,4 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'TV on Sonos off'
 trigger:
   - platform: state

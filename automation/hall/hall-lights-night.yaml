@@ -1,4 +1,4 @@
-initial_state: 'on'
+initial_state: 'off'
 alias: 'Hall lights night'
 trigger:
   - platform: state

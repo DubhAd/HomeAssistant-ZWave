@@ -1,3 +1,14 @@
+# Change in progress
+
+You'll note that many files have the DISABLED extension. Yes, they've been disabled _in this instance_. I'm doing
+a [live migration between instances](https://blog.ceard.tech/2019/08/my-great-migration-part-one.html), mostly moving to a VM. However, I can't move everything since I'm using a 
+Z-Wave GPIO hat. As a result my Pi is using [MQTT statestream](https://www.home-assistant.io/components/mqtt_statestream) to send
+the details of the Z-Wave switches and sensors to my VM instance. I'm then using the [REST API](https://developers.home-assistant.io/docs/en/external_api_rest.html)
+to allow that VM instance to control the Pi instance.
+
+For the time being I'm only pushing the config of the Pi instance to Git. Once this transition completes (which
+could be weeks away) I'll spin up a separate Git repo for the Pi, and this one will be updated from the VM.
+
 # Automations, automations everywhere, and all the brains did hurt
 
 Documentation: [automation](https://home-assistant.io/docs/automation/)
