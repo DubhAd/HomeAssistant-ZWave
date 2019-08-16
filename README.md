@@ -1,6 +1,8 @@
 # Home Assistant (0.88.2) configuration - Z-Wave node
 This is my [Home Assistant](https://home-assistant.io/) configuration for my Z-Wave node, I'm currently running 0.88.2. It is installed on a Raspberry Pi 3, using the old All in One installer (effectively a [manual install like this](https://blog.ceard.tech/2017/12/installing-home-assistant-in-virtual.html), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
 
+The configuration for my primary instance [can be found here](https://github.com/DubhAd/Home-AssistantConfig).
+
 To limit the risk brought by SD card corruption (a known risk with Pi3) I store the Home Assistant database on a USB stick, and use a multi-port USB charger with sufficient power for all ports, but have left one unused. The power cables are short, and high quality, to minimise issues with voltage drop. Of course, I also take [many different backups](https://blog.ceard.tech/2017/10/backing-up-home-assistant.html) to reduce the risk of losing anything.
 
 This is one of a number of Pi3s I've got, and they're all in a [Multi-Pi stackable case](https://www.modmypi.com/raspberry-pi/cases-183/multi-pi-stacker/multi-pi-stackable-raspberry-pi-case), to keep the footprint down. They share an HDMI cable to a nearby monitor, and an old USB keyboard I've got kicking around, because having a Pi fail to respond isn't that uncommon.
@@ -26,7 +28,7 @@ Each directory has a short readme explaining what's in there, and the purpose of
   * NodOn [Octan Remote](http://nodon.fr/en/z-wave/octan-remote_7-2) in the master bedroom to provide manual control of the Yeelight. It was originally used by the kitchen door, where the next item is now mounted.
   * NodOn [Soft Remote](https://nodon.fr/en/nodon/z-wave-soft-remote/) in the second bedroom, to also provide manual control of that room's Yeelight.
   * Z-Wave.me [WALLC-S](http://eng.z-wave.me/index.php?id=30) wall controller, to provide a wall switch for the garden lights
-* Notifications:
+* Notifications (For now):
   * [Pushover](https://pushover.net/) for lightweight notifications to phones/tablets, and I'm looking at replacing it with the [REST notifier](https://www.home-assistant.io/components/notify.rest/) and [Discord](https://discordapp.com/)
   * [LaMetric](https://lametric.com/) for [notifications](https://home-assistant.io/components/notify.lametric/) "in person", and it's a clock the rest of the time
   * [TTS](https://home-assistant.io/components/tts/) with the Google Home Mini's, Sonos, and Squeezeboxes
