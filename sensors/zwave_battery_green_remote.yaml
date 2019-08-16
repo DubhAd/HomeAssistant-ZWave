@@ -1,7 +1,0 @@
-- platform: template
-  sensors:
-    zwave_battery_green_remote:
-      entity_id: zwave.green_remote
-      value_template: "{{ state_attr('zwave.green_remote', 'battery_level')|int|default(75) }}"
-      device_class: battery
-      unit_of_measurement: '%'

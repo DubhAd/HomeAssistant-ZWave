@@ -1,7 +1,0 @@
-- platform: template
-  sensors:
-    zwave_battery_utility_door_exterior:
-      entity_id: zwave.utility_door_exterior
-      value_template: "{{ state_attr('zwave.utility_door_exterior', 'battery_level')|int|default(75) }}"
-      device_class: battery
-      unit_of_measurement: '%'

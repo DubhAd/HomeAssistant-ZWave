@@ -1,7 +1,0 @@
-alias: 'Garage door open'
-trigger:
-  - platform: state
-    entity_id: binary_sensor.garage_closed_car_sensor
-    to: 'on'
-action:
-  - service: script.scan_bt_arrive

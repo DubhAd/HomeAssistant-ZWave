@@ -1,5 +1,0 @@
-sequence:
-  - service: mqtt.publish
-    data:
-      topic: monitor/scan/restart
-      payload: ''

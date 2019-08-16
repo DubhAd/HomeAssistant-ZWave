@@ -1,7 +1,0 @@
-- platform: template
-  sensors:
-    zwave_battery_utility:
-      entity_id: zwave.utility
-      value_template: "{{ state_attr('zwave.utility', 'battery_level')|int|default(75) }}"
-      device_class: battery
-      unit_of_measurement: '%'

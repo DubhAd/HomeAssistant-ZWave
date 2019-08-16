@@ -1,6 +1,0 @@
-- platform: waze_travel_time
-  scan_interval: 10800
-  name: 'person2s time to home'
-  origin: device_tracker.person2_mobile_gps
-  destination: zone.home
-  region: 'EU'

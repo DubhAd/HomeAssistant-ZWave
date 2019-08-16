@@ -40,8 +40,6 @@ logbook:
 
 recorder: !include recorder.yaml
 
-influxdb: !include influxdb.yaml
-
 tts:
   - platform: google
   - platform: picotts
@@ -57,26 +55,17 @@ device_tracker: !include_dir_list device_tracker/
 
 zone: !include zones.yaml
 
-proximity: !include_dir_merge_named proximity/ 
-
 notify: !include_dir_merge_list notify/
-
-alert: !include_dir_named alerts/
 
 lametric:
   client_id: !secret lametric_id
   client_secret: !secret lametric_secret
-
-google: !include google.yaml
 
 sensor: !include_dir_merge_list sensors/
 binary_sensor: !include_dir_merge_list binary_sensors/
 
 sun:
 climate: !include_dir_merge_list climate/
-
-camera: !include_dir_list camera/
-ffmpeg:
 
 input_number: !include_dir_named input_number/
 input_boolean: !include_dir_named input_boolean/
@@ -86,7 +75,6 @@ input_text: !include_dir_named input_text/
 
 light: !include_dir_merge_list light/
 switch: !include_dir_merge_list switch/
-media_player: !include_dir_merge_list media_player/ 
 
 script: !include_dir_named scripts/
  # This is for the automation editor, you'll not find anything in there
@@ -97,14 +85,4 @@ shell_command: !include_dir_merge_named shell_commands/
 group: !include groups.yaml
 
 panel_custom: !include_dir_list panel_custom/
-
-alarm_control_panel: !include_dir_list alarm/
-
-weather: !include_dir_merge_list weather/
-
-circadian_lighting:
-  interval: 300
-  transition: 60
-  min_colortemp: 2000
-  max_colortemp: 6500
 

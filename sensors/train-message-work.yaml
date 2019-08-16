@@ -1,4 +1,0 @@
-- platform: command_line
-  command: /local/bin/train-status-message
-  name: Trains to station
-  scan_interval: 60

@@ -1,7 +1,0 @@
-alias: 'Front door closed'
-trigger:
-  - platform: state
-    entity_id: binary_sensor.front_door_sensor
-    to: 'off'
-action:
-  - service: script.scan_bt_depart

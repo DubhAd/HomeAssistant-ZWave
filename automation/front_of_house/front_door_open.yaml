@@ -1,7 +1,0 @@
-alias: 'Front door open'
-trigger:
-  - platform: state
-    entity_id: binary_sensor.front_door_sensor
-    to: 'on'
-action:
-  - service: script.scan_bt_arrive
