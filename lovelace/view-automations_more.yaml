@@ -5,13 +5,6 @@ icon: mdi:engine-outline
 cards:
 - type: custom:compact-custom-header
 - type: entities
-  title: Automations at startup
-  show_header_toggle: false
-  entities:
-  - automation.startup_person3_up
-  - automation.startup_person1_up
-  - automation.startup_person2_up
-- type: entities
   title: Battery level automations
   show_header_toggle: false
   entities:
@@ -25,32 +18,19 @@ cards:
   - automation.battery_remote
   - automation.battery_green_remote
 - type: entities
-  title: Misc automations
+  title: Core HA automations
   show_header_toggle: false
   entities:
-  - automation.house_awake
-  - automation.weather_notification
-  - automation.bin_notification
-  - automation.printer_low
-  - automation.test
-  - automation.test_notify
-  - automation.test_media
+  - automation.ha_started
+  - automation.ha_stopped
+  - automation.ha_ready
 - type: entities
-  title: Car related automations
+  title: Misc HA automations
   show_header_toggle: false
   entities:
-  - automation.car_home
-  - automation.car_away
-- type: entities
-  title: Seasonal automations
-  show_header_toggle: false
-  entities:
-  - automation.christmas_lights_on
-  - automation.christmas_lights_off
-  - automation.christmas_lights_off_season
-  - automation.season_is_christmas
-  - automation.season_is_easter
-  - automation.season_is_winter
-  - automation.season_is_spring
-  - automation.season_is_summer
-  - automation.season_is_autumn
+  - automation.test_zwave_network
+  - automation.zwave_health_check
+  - automation.recorder_purge
+  - automation.plex_hook
+  - automation.disable_garage_l_alert
+  - automation.disable_garage_r_alert

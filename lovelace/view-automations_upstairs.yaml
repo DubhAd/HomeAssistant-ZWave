@@ -8,9 +8,6 @@ cards:
   title: Automations for the 2nd bedroom light
   show_header_toggle: false
   entities:
-  - automation.person1_up_bedhead_light_on
-  - automation.person1_up_bedhead_light_off
-  - automation.person1_bedside_left_on
   - automation.person1_bedside_turn_on
   - automation.person1_bedside_turn_off
   - automation.person1_bedside_turn_on_min
@@ -22,24 +19,28 @@ cards:
   - automation.person1_bedside_turn_on_red
   - automation.person1_bedside_turn_red
 - type: entities
-  title: Automations for the second bedroom
+  title: Remote automations for the light
   show_header_toggle: false
   entities:
-  - automation.person1_alarm_on
-  - automation.person1_alarm_off
-  - automation.person1_radio_on
-  - automation.person1_radio_on_late
-  - automation.person1_radio_on_night
-  - automation.person1_radio_off
-  - automation.person1_radio_off_late
-  - automation.alarm_monitor_person1
+  - automation.bedhead_turn_on
+  - automation.bedhead_turn_off
+  - automation.bedhead_turn_on_min
+  - automation.bedhead_turn_on_max
+  - automation.bedhead_turn_on_cool
+  - automation.bedhead_turn_on_warm
+  - automation.bedhead_turn_white
+  - automation.bedhead_turn_white_max
+  - automation.bedhead_turn_on_red
+  - automation.bedhead_turn_red
 - type: entities
-  title: Automations for the office
+  title: Remote automations for the light (more)
   show_header_toggle: false
   entities:
-  - automation.play_music_in_the_office
-  - automation.pause_music_in_the_office
-  - automation.resume_music_in_the_office
-  - automation.office_occupied
-  - automation.office_not_occupied
-  - automation.office_button_pushed
+  - automation.master_bedhead_bright
+  - automation.master_bedhead_bright_stop
+  - automation.master_bedhead_dim
+  - automation.master_bedhead_dim_stop
+  - automation.master_bedhead_cool
+  - automation.master_bedhead_cool_stop
+  - automation.master_bedhead_warm
+  - automation.master_bedhead_warm_stop

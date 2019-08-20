@@ -12,42 +12,6 @@ cards:
     clock_format: 24
   - type: entity-filter
     entities:
-      - entity: alert.garage_door_l
-        name: Garage door, bike
-      - entity: alert.garage_door_r
-        name: Garage door, car
-    show_empty: false
-    state_filter:
-      - 'on'
-    card:
-      type: entities
-      title: Alerts
-  - type: glance
-    columns: 5
-    entities:
-      - alarm_control_panel.ha_alarm
-      - sensor.person3_travel
-      - sensor.person1_travel
-      - sensor.person2_travel
-      - sensor.person4_travel
-  - type: entity-filter
-    entities:
-      - entity: input_boolean.family_room_occupied
-        name: Family room
-      - entity: input_boolean.living_room_occupied
-        name: Living room
-        icon: mdi:seat
-      - entity: input_boolean.office_occupied
-        name: Office
-    show_empty: false
-    state_filter:
-      - 'on'
-    card:
-      type: glance
-      title: Occupied rooms
-      show_state: false
-  - type: entity-filter
-    entities:
       - entity: binary_sensor.living_room_motion
         name: Living room
       - entity: binary_sensor.hall_downstairs_occupancy
@@ -168,28 +132,3 @@ cards:
       columns: 4
       title: Lights
       show_state: false
-  - type: custom:dark-sky-weather-card
-    entity_sun: sun.sun
-    entity_daily_summary: sensor.dark_sky_daily_summary
-    entity_current_conditions: sensor.dark_sky_icon  
-    entity_humidity: sensor.dark_sky_humidity
-    entity_pressure: sensor.dark_sky_pressure
-    entity_temperature: sensor.dark_sky_temperature
-    entity_visibility: sensor.dark_sky_visibility
-    entity_wind_cabineting: sensor.dark_sky_wind_cabineting
-    entity_wind_speed: sensor.dark_sky_wind_speed
-    entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
-    entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
-    entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
-    entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
-    entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
-    entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1
-    entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2
-    entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3
-    entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4
-    entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5
-    entity_forecast_icon_1: sensor.dark_sky_icon_1
-    entity_forecast_icon_2: sensor.dark_sky_icon_2
-    entity_forecast_icon_3: sensor.dark_sky_icon_3
-    entity_forecast_icon_4: sensor.dark_sky_icon_4
-    entity_forecast_icon_5: sensor.dark_sky_icon_5
