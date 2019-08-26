@@ -3,8 +3,8 @@ username: !secret mqtt_user
 password: !secret mqtt_password
 discovery: true
 birth_message:
-  topic: 'hass/status'
+  topic: 'pi3/status'
   payload: 'online'
 will_message:
-  topic: 'hass/status'
+  topic: 'pi3/status'
   payload: 'offline'
