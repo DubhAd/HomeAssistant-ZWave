@@ -1,8 +1,0 @@
-alias: 'Disable garage r alert'
-trigger:
-  - platform: state
-    entity_id: alert.garage_door_r
-    to: 'on'
-action:
-  - service: alert.turn_off
-    entity_id: alert.garage_door_r

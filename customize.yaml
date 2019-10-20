@@ -498,7 +498,7 @@ input_boolean.person2_work_home:
 binary_sensor.office_window:
   device_class: window
 light.living_room_table:
-  icon: mdi:spotlight
+  icon: mdi:lightbulb-outline
 switch.table_light_switch:
   icon: mdi:power-socket-uk
 binary_sensor.master_window_right:
@@ -540,3 +540,9 @@ input_select.living_room:
   - Night on
   - 'On'
   - 'Off'
+light.master_bedroom_bedhead:
+  icon: mdi:lightbulb-outline
+light.person1_bedroom_bedside:
+  icon: mdi:lightbulb-outline
+alarm_control_panel.ha_alarm:
+  friendly_name: Alarm

@@ -23,16 +23,12 @@ config:
 
 map:
 
-cloud: !include cloud.yaml
-
 frontend: !include frontend.yaml
 
 lovelace:
   mode: yaml
 
 http: !include http.yaml
-
-discovery:
 
 history:
 
@@ -60,20 +56,13 @@ binary_sensor: !include_dir_merge_list binary_sensors/
 
 sun:
 
-input_number: !include_dir_named input_number/
-input_boolean: !include_dir_named input_boolean/
-input_select: !include_dir_named input_select/
-input_datetime: !include_dir_named input_datetime/
-input_text: !include_dir_named input_text/
-
 switch: !include_dir_merge_list switch/
 
-script: !include_dir_named scripts/
+script: !include scripts.yaml
  # This is for the automation editor, you'll not find anything in there
 automation: !include automations.yaml
  # This is for my automations, `old` is just a tag - see https://www.home-assistant.io/docs/configuration/devices/
 automation old: !include_dir_list automation/
-shell_command: !include_dir_merge_named shell_commands/
 group: !include groups.yaml
 
 panel_custom: !include_dir_list panel_custom/
