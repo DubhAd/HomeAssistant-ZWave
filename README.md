@@ -12,7 +12,6 @@ Each directory has a short readme explaining what's in there, and the purpose of
 ## On this Pi I run
 
 * [Home Assistant](https://home-assistant.io/)
-* [nginx](https://nginx.org/en/) to provide remote access, in conjunction with [Let's Encrypt](https://letsencrypt.org/) - this is moving to the primary instance
 
 ## The devices, services, and software I use with this Pi
 
