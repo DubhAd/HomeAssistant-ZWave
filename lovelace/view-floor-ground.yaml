@@ -20,58 +20,32 @@ cards:
     - entity: switch.cabinet_light_switch
       tap_action: 
         action: toggle
-    - entity: light.living_room_table
-      name: "Table"
     - entity: switch.livingroom_socket_switch
       name: "Socket"
       tap_action: 
         action: toggle 
-    - entity: binary_sensor.patio_window_left
-      name: "Left"
     - entity: binary_sensor.patio_door_left_sensor
       name: "Patio door"
-    - entity: binary_sensor.patio_window_right
-      name: "Right"
     - entity: binary_sensor.living_room_motion
       name: "Motion"
     - entity: sensor.living_room_multi_temperature
       name: "Temperature"
     - entity: sensor.living_room_multi_luminance
       name: "Light level"
-    - entity: media_player.samsung_tv_remote
-      name: TV
-    - entity: media_player.living_room
-      name: "Sonos"
-    - entity: media_player.lenovosmartdisplay109233
-      name: "Home Hub"
 - type: glance
   title: Hall
   columns: 4
   entities:
-    - entity: light.hall
-      name: Hall light
     - entity: switch.hall_downstairs_switch
       name: Hall socket
       tap_action: 
         action: toggle
-    - entity: binary_sensor.hall_downstairs_occupancy
-      name: Motion
-    - entity: sensor.hall_downstairs_illuminance
-      name: "Light level"
 - type: glance
   title: Vestibule
   columns: 3
   entities:
     - entity: binary_sensor.front_door_sensor
       name: Front door
-    - entity: binary_sensor.vestibule_window_front
-      name: Front window
-    - entity: binary_sensor.vestibule_window_side
-      name: Side window
-    - entity: binary_sensor.vestibule_occupancy
-      name: Motion
-    - entity: sensor.vestibule_illuminance
-      name: "Light level"
     - entity: switch.vestibule_switch
       name: Socket
       tap_action: 
@@ -91,22 +65,10 @@ cards:
   title: Family room & Kitchen
   columns: 4
   entities:
-    - binary_sensor.family_window_left
-    - binary_sensor.family_window_right
     - entity: switch.family_room_socket_switch
       name: Socket
       tap_action: 
         action: toggle
-    - entity: sensor.person1
-      name: XBox
-    - entity: device_tracker.family_tv
-      name: TV
-    - entity: media_player.family_room
-      name: Sonos
-    - entity: media_player.cast_kitchen_speaker
-      name: Home Mini
-    - entity: media_player.googlehomehub3435
-      name: Home Hub
 - type: glance
   title: Utility room & back
   columns: 2
@@ -116,17 +78,3 @@ cards:
     - entity: switch.garden_lights_switch
       tap_action: 
         action: toggle
-- type: history-graph
-  title: Light level
-  hours_to_show: 12
-  entities:
-    - entity: sensor.living_room_multi_luminance
-      name: Living room
-- type: history-graph
-  title: Temperature
-  hours_to_show: 12
-  entities:
-    - entity: sensor.living_room_multi_temperature
-      name: Living room
-    - entity: sensor.dark_sky_temperature
-      name: Outside

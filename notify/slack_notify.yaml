@@ -1,4 +1,0 @@
-- name: slack_notify
-  platform: slack
-  api_key: !secret slack_pi3
-  default_channel: '#automation'

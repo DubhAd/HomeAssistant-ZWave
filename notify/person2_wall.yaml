@@ -1,7 +1,0 @@
-- name: person2_wall
-  platform: group
-  services:
-    - service: html5
-      data:
-        target: ["person2 Phone", "person2 Tablet", "person2 Laptop"]
-    - service: person2

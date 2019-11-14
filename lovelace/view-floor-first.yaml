@@ -14,99 +14,27 @@ cards:
   title: Master bedroom
   columns: 5
   entities:
-    - entity: light.master_bedroom_bedhead
-      name: Bedhead
-    - entity: media_player.person2
-      name: Squeezebox
-    - entity: media_player.cast_master_bedroom_speaker
-      name: Home Mini
-    - entity: switch.radio_person2
-      icon: mdi:alarm
-      tap_action: 
-        action: toggle
-      name: Alarms
     - entity: switch.master_bedroom_socket_switch
       tap_action: 
         action: toggle
       name: Socket
-    - entity: binary_sensor.master_window_left
-      name: Left window
-    - entity: binary_sensor.master_window_right
-      name: Right window
-- type: glance
-  title: Master ensuite
-  columns: 4
-  entities:
-    - entity: sensor.master_ensuite_humidity
-      name: Humidity
-    - entity: sensor.master_ensuite_temperature
-      name: Temperature
-    - entity: sensor.master_ensuite_pressure
-      name: Pressure
-    - entity: binary_sensor.master_window_ensuite
-      name: Window
 - type: glance
   title: Second bedroom
   #column_width: 25%
   columns: 5
   entities:
-    - entity: light.person1_bedroom_bedside
-      name: Bedhead
-    - entity: media_player.person1
-      name: Squeezebox
-    - entity: media_player.cast_second_bedroom_speaker
-      name: Home Mini
-    - entity: switch.radio_person1
-      icon: mdi:alarm
-      tap_action: 
-        action: toggle
-      name: Alarms
     - entity: switch.second_bedroom_switch
       tap_action: 
         action: toggle
       name: Socket
-    - entity: binary_sensor.second_bedroom_window_left
-      name: Left
-    - entity: binary_sensor.second_bedroom_window_right
-      name: Right
-- type: glance
-  title: Second bedroom ensuite
-  columns: 4
-  entities:
-    - entity: sensor.second_bedroom_ensuite_humidity
-      name: Humidity
-    - entity: sensor.second_bedroom_ensuite_temperature
-      name: Temperature
-    - entity: sensor.second_bedroom_ensuite_pressure
-      name: Pressure
-    - entity: binary_sensor.second_bedroom_window_ensuite
-      name: Ensuite
 - type: glance
   title: Guest bedroom
   columns: 4
   entities:
-    - entity: media_player.cast_master_bedroom_display
-      name: Home Mini
     - entity: switch.front_bedroom_switch
       tap_action: 
         action: toggle
       name: Socket
-    - entity: binary_sensor.guest_bedroom_window_left
-      name: Left window
-    - entity: binary_sensor.guest_bedroom_window_right
-      name: Right window
-- type: glance
-  title: Bathroom
-  columns: 4
-  entities:
-    - entity: sensor.bathroom_humidity
-      name: Humidity
-    - entity: sensor.bathroom_temperature
-      name: Temperature
-    - entity: sensor.bathroom_pressure
-      name: Pressure
-    - entity: binary_sensor.bathroom_window
-      name: Bathroom
 - type: glance
   title: Office
   columns: 4
@@ -119,54 +47,10 @@ cards:
       name: Light level
     - entity: sensor.office_multi_relative_humidity
       name: Humidity
-    - entity: binary_sensor.office_window
-      name: Office window
-    - entity: media_player.office
-      name: Sonos
-    - entity: media_player.googlehomehub8747
-      name: "Home Hub"
 - type: glance
   title: Spare bedroom
   columns: 3
   entities:
-    - entity: binary_sensor.spare_bedroom_window_left
-      name: Left
-    - entity: binary_sensor.spare_bedroom_window_right
-      name: Right
     - entity: switch.spare_socket_switch
       tap_action: 
         action: toggle
-- type: history-graph
-  title: Humidity
-  hours_to_show: 12
-  entities:
-    - entity: sensor.office_multi_relative_humidity
-      name: Office
-    - entity: sensor.master_ensuite_humidity
-      name: Master ensuite
-    - entity: sensor.second_bedroom_ensuite_humidity
-      name: Second bedroom ensuite
-    - entity: sensor.bathroom_humidity
-      name: Bathroom
-- type: history-graph
-  title: Temperature
-  hours_to_show: 12
-  entities:
-    - entity: sensor.office_multi_temperature
-      name: Office
-    - entity: sensor.master_ensuite_temperature
-      name: Master ensuite
-    - entity: sensor.second_bedroom_ensuite_temperature
-      name: Second bedroom ensuite
-    - entity: sensor.bathroom_temperature
-      name: Bathroom
-- type: history-graph
-  title: Pressure
-  hours_to_show: 12
-  entities:
-    - entity: sensor.master_ensuite_pressure
-      name: Master ensuite
-    - entity: sensor.second_bedroom_ensuite_pressure
-      name: Second bedroom ensuite
-    - entity: sensor.bathroom_pressure
-      name: Bathroom

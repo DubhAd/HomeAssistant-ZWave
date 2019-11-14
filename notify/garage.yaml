@@ -1,7 +1,0 @@
-- name: garage
-  platform: group
-  services:
-    - service: lm_notify
-    - service: slack_notify
-    - service: person3
-    - service: hangouts_webhook

@@ -1,7 +1,0 @@
-name: Garage
-options:
-  - 'Auto'
-  - 'Away'
-  - 'Off'
-  - 'On'
-  - 'Dim'

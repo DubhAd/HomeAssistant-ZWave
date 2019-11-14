@@ -1,6 +1,0 @@
-- name: lametric_alert
-  platform: lametric
-  lifetime: 30
-  cycles: 3
-  display_time: 30
-  sound: "lose1"

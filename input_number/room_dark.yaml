@@ -1,6 +1,0 @@
-name: 'How many lux is dark'
-initial: 6
-min: 0
-max: 15
-step: 1
-mode: slider

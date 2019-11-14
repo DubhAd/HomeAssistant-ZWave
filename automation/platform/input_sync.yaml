@@ -1,9 +1,0 @@
-alias: 'Input symc'
-trigger:
-  - platform: state
-    entity_id: input_text.last_motion
-action:
-  - service: input_text.set_value
-    data_template:
-      entity_id: input_text.last_opened
-      value: "{{ states('input_text.last_motion') }}"

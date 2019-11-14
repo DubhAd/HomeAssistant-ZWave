@@ -1,2 +1,0 @@
-speech:
-  text: The temperature at home is {{ states('sensor.living_room_multi_temperature') }} degrees
