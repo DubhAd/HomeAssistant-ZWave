@@ -1,5 +1,5 @@
-# Home Assistant (0.88.2) configuration - Z-Wave node
-This is my [Home Assistant](https://home-assistant.io/) configuration for my Z-Wave node, I'm currently running 0.88.2 (and is unlikely to change, since this install only runs my Z-Wave). It is installed on a Raspberry Pi 3, using the old All in One installer (effectively a [manual install like this](https://blog.ceard.tech/2017/12/installing-home-assistant-in-virtual.html), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
+# Home Assistant Core (0.88.2) configuration - Z-Wave node
+This is my [Home Assistant](https://home-assistant.io/) Core configuration for my Z-Wave node, I'm currently running 0.88.2 (and is unlikely to change, since this install only runs my Z-Wave). It is installed on a Raspberry Pi 3, using the old All in One installer (effectively a [manual install like this](https://blog.ceard.tech/2017/12/installing-home-assistant-in-virtual.html), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
 
 The configuration for my primary instance [can be found here](https://github.com/DubhAd/Home-AssistantConfig). The primary instance uses [Home Assistant Remote](https://github.com/lukas-hetzenecker/home-assistant-remote) to connect to this instance.
 
