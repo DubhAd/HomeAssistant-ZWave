@@ -1,7 +1,11 @@
-# Home Assistant Core (0.88.2) configuration - Z-Wave node
-This is my [Home Assistant](https://home-assistant.io/) Core configuration for my Z-Wave node, I'm currently running 0.88.2 (and is unlikely to change, since this install only runs my Z-Wave). It is installed on a Raspberry Pi 3, using the old All in One installer (effectively a [manual install like this](https://blog.ceard.tech/2017/12/installing-home-assistant-in-virtual.html), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I use a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
+# Decommissioned
 
-The configuration for my primary instance [can be found here](https://github.com/DubhAd/Home-AssistantConfig). The primary instance uses [Home Assistant Remote](https://github.com/lukas-hetzenecker/home-assistant-remote) to connect to this instance.
+# Home Assistant Core (0.88.2) configuration - Z-Wave node
+This was my [Home Assistant](https://home-assistant.io/) Core configuration for my Z-Wave node, it was running 0.88.2 due to problems with the original Z-Wave stack. It was decomissioned in 2022 when the batteries in one of my Sensative strips finally failed, and it was easier to switch everything to Zigbee.
+
+It was installed on a Raspberry Pi 3, using the old All in One installer (effectively a [manual install like this](https://blog.ceard.tech/2017/12/installing-home-assistant-in-virtual.html), on a 16 GB card, that I've [upgraded to Python 3.6](https://blog.ceard.tech/2017/12/upgrading-python-virtual-environment.html). I used a [Razberry](https://razberry.z-wave.me/) board for Z-Wave control.
+
+The configuration for my primary instance [can be found here](https://github.com/DubhAd/Home-AssistantConfig). The primary instance used [Home Assistant Remote](https://github.com/lukas-hetzenecker/home-assistant-remote) to connect to this instance.
 
 To limit the risk brought by SD card corruption (a known risk with Pi3) I store the Home Assistant database on a USB stick, and use a multi-port USB charger with sufficient power for all ports, but have left one unused. The power cables are short, and high quality, to minimise issues with voltage drop. Of course, I also take [many different backups](https://blog.ceard.tech/2017/10/backing-up-home-assistant.html) to reduce the risk of losing anything.
 
